@@ -322,7 +322,7 @@ const handleLoginClick = () => {
                 
        <p className="block text-sm font-normal sm:text-2xl sm:font-normal text-gray-600 leading-tight mt-1 sm:mt-3">
          <span className="sm:hidden font-normal">We're a community of career professionals fixing the eldercare crisis together</span> 
-         <span className="hidden sm:inline font-normal">We're a community of career professionals fixing the eldercare crisis today</span> 
+         <span className="hidden sm:inline font-normal">We're a community of career professionals fixing the eldercare crisis today.</span> 
          </p>
               </span>
             </p>
