@@ -161,25 +161,25 @@ const handleJoinCommunity = async (e: React.FormEvent) => {
 
         <form onSubmit={handleJoinCommunity} className="space-y-4 text-center">
 
-          <div>
+        <div>
             <label htmlFor="email" className="block text-left px-1 text-sm font-medium text-gray-700">
-              Email Address
+              Email
             </label>
             <input
               type="email"
-              id="email"
+              id="email address"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               disabled={loading}
-              placeholder="type email address"
-              className="text-left text-sm px-2 mt-1 py-2 block w-full rounded-md border border-red-100 placeholder-text-sm outline-none focus:border-red-500 focus:ring-0 focus:ring-red-500"
-              //required
+              placeholder="email address"
+              className="text-left text-sm px-2 mt-1 py-2 block w-full rounded-md border border-red-100 hover:border-red-200 placeholder-text-sm outline-none focus:border-red-500 focus:ring-0 focus:ring-red-500"
+              required
             />
           </div>
 
            <div>
             <label  className="block text-left px-1 text-sm font-medium text-gray-700">
-              First Name
+              Name
             </label>
             <input
               type="text"
@@ -187,8 +187,8 @@ const handleJoinCommunity = async (e: React.FormEvent) => {
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
               disabled={loading}
-              placeholder="type your name"
-              className="text-left text-sm px-2 mt-1 py-2 block w-full rounded-md border border-red-100 placeholder-text-sm outline-none focus:border-red-500 focus:ring-0 focus:ring-red-500"
+              placeholder="first name"
+              className="text-left text-sm px-2 mt-1 py-2 block w-full rounded-md border border-red-100 hover:border-red-200 placeholder-text-sm outline-none focus:border-red-500 focus:ring-0 focus:ring-red-500"
               required
             />
           </div>
@@ -203,8 +203,8 @@ const handleJoinCommunity = async (e: React.FormEvent) => {
               value={linkedinProfile}
               onChange={(e) => setLinkedinProfile(e.target.value)}
               disabled={loading}
-              placeholder="type LinkedIn URL"
-              className="text-left text-sm px-2 mt-1 py-2 block w-full rounded-md border border-red-100 placeholder-text-sm outline-none focus:border-red-500 focus:ring-0 focus:ring-red-500"
+              placeholder="LinkedIn URL"
+              className="text-left text-sm px-2 mt-1 py-2 block w-full rounded-md border border-red-100 hover:border-red-200 placeholder-text-sm outline-none focus:border-red-500 focus:ring-0 focus:ring-red-500"
               required
             />
           </div>
