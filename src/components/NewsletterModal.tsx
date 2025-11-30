@@ -24,6 +24,7 @@ export function NewsletterModal({ isOpen, onClose, onSuccess }: NewsletterModalP
   const [email, setEmail] = useState('');
   //const [name, setName] = useState('');
   //const [discount, setDiscount] = useState('');
+  const [welcomeMail, setWelcomeMail] = useState(false);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false); 
   const [showSuccessScreen, setShowSuccessScreen] = useState(false); // New state for success screen
@@ -37,6 +38,7 @@ export function NewsletterModal({ isOpen, onClose, onSuccess }: NewsletterModalP
     setEmail('');
     //setName('');
     //setDiscount('');
+    setWelcomeMail(false);
     setError('');
     setLoading(false);
     setShowSuccessScreen(false); // Reset success screen state
@@ -57,7 +59,8 @@ const handleJoinNewsletter = async (e: React.FormEvent) => {
       const { error: supabaseError } = await supabase.from('newsletter_list').insert({
         //first_name: name, // Map 'name' from form to 'first_name' column
         email: email,
-        project_name: 'poetiq community'
+        welcome_email: welcomeMail,
+        project_name: 'poetiq community',
         //discount: discount,
       });
 
