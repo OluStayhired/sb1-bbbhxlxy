@@ -573,7 +573,8 @@ const handleLoginClick = () => {
                 className="group flex items-center justify-center space-x-2 w-full sm:w-auto px-6 py-3 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 transition-colors shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-4 sm:text-lg mx-auto">
                 <span>Join Community</span>
                 {/* Placeholder for ArrowRight icon or similar */}
-                <span className="w-5 h-5 ml-1 transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+                {/*<span className="w-5 h-5 ml-1 transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>*/}
+                <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
             </button> 
 
         </div>
