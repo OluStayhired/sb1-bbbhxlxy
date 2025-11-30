@@ -172,7 +172,7 @@ const handleJoinCommunity = async (e: React.FormEvent) => {
               onChange={(e) => setEmail(e.target.value)}
               disabled={loading}
               placeholder="email address"
-              className="text-left text-sm px-2 mt-1 py-2 block w-full rounded-md border border-red-100 hover:border-red-200 placeholder-text-sm outline-none focus:border-red-500 focus:ring-0 focus:ring-red-500"
+              className="text-left text-xs px-2 mt-1 py-2 block w-full rounded-md border border-red-100 hover:border-red-200 placeholder-text-sm outline-none focus:border-red-500 focus:ring-0 focus:ring-red-500"
               required
             />
           </div>
@@ -188,7 +188,7 @@ const handleJoinCommunity = async (e: React.FormEvent) => {
               onChange={(e) => setFirstName(e.target.value)}
               disabled={loading}
               placeholder="first name"
-              className="text-left text-sm px-2 mt-1 py-2 block w-full rounded-md border border-red-100 hover:border-red-200 placeholder-text-sm outline-none focus:border-red-500 focus:ring-0 focus:ring-red-500"
+              className="text-left text-xs px-2 mt-1 py-2 block w-full rounded-md border border-red-100 hover:border-red-200 placeholder-text-sm outline-none focus:border-red-500 focus:ring-0 focus:ring-red-500"
               required
             />
           </div>
@@ -204,7 +204,7 @@ const handleJoinCommunity = async (e: React.FormEvent) => {
               onChange={(e) => setLinkedinProfile(e.target.value)}
               disabled={loading}
               placeholder="LinkedIn URL"
-              className="text-left text-sm px-2 mt-1 py-2 block w-full rounded-md border border-red-100 hover:border-red-200 placeholder-text-sm outline-none focus:border-red-500 focus:ring-0 focus:ring-red-500"
+              className="text-left text-xs px-2 mt-1 py-2 block w-full rounded-md border border-red-100 hover:border-red-200 placeholder-text-sm outline-none focus:border-red-500 focus:ring-0 focus:ring-red-500"
               required
             />
           </div>
