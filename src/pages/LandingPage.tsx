@@ -307,7 +307,8 @@ const handleLoginClick = () => {
           
         <span className="sm:hidden text-xs sm:text-lg p-3 font-semibold bg-red-100 rounded-full text-red-500 border-8 border-red-50">A Community Fixing ElderCare</span>
 
-          <span className="hidden sm:inline text-xs sm:text-lg p-3 font-semibold bg-red-100 rounded-full text-red-500 border-8 border-red-50">A Private Community Rebuilding ElderCare Together</span>
+          {/*<span className="hidden sm:inline text-xs sm:text-lg p-3 font-semibold bg-red-100 rounded-full text-red-500 border-8 border-red-50">A Private Community Rebuilding ElderCare Together</span>*/}
+          <span className="hidden sm:inline text-xs sm:text-lg p-3 font-semibold bg-red-100 rounded-full text-red-500 border-8 border-red-50">Community of Professionals Supporting Aging Parents</span>
           
            {/*start alternative header */}
     
@@ -322,7 +323,8 @@ const handleLoginClick = () => {
                 
        <p className="block text-sm font-normal sm:text-2xl sm:font-normal text-gray-600 leading-tight mt-1 sm:mt-3">
          <span className="sm:hidden font-normal">We're a community of career professionals fixing the eldercare crisis together</span> 
-         <span className="hidden sm:inline font-normal">We're a community of career professionals fixing the eldercare crisis today.</span> 
+                  {/*<span className="hidden sm:inline font-normal">We're a community of career professionals fixing the eldercare crisis today</span> */}
+                  <span className="hidden sm:inline font-normal">We're a private network of career professionals navigating the eldercare crisis together</span>  
          </p>
               </span>
             </p>
