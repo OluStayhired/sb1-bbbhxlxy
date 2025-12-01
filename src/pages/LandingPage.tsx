@@ -1033,7 +1033,7 @@ const handleLoginClick = () => {
       {/* Company Info */}
       <div className="space-y-4 space-x-1">
 
-        <div className="inline-flex bg-red-500 rounded-full p-1">
+        <div className="inline-flex bg-red-500 rounded-full p-0.5">
             <HeartPulse className="h-5 w-5 fill-white stroke-red-500" />
         </div>
             <span className="text-xl  font-bold text-red-500 sm:text-xl">poetiq</span>
