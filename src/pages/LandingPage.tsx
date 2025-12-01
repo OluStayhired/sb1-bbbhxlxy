@@ -564,8 +564,8 @@ const handleLoginClick = () => {
                 Why join our <br className="sm:hidden"/> Community
             </h2> 
             <p className="text-xl sm:text-2xl text-gray-700 mb-12 max-w-3xl mx-auto">
-                The Poetiq Community is where career professionals go to restore strategic focus and reclaim the hours required to execute their parental duty without compromising parental dignity. <br/><br/>
-                It’s a private, high-integrity network where you'll get direct access to experienced peers who share unfiltered insights on the crisis. They help each other dismantle a system designed for the 19th Century. <br/><br/>
+            The Poetiq Community is where career professionals go to restore strategic focus and reclaim the hours needed to provide parental care without sacrificing their careers or compromising parental dignity. <br/><br/>
+                It’s a private, high-integrity network where you'll get direct access to experienced peers who share unfiltered insights on the crisis. They help each other dismantle a bureaucratic eldercare system that's unfit for purpose. <br/><br/>
                 The Poetiq Community is where to find clarity, control, and the professional blueprint for dignified parental care
             </p>
 
