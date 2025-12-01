@@ -1031,15 +1031,16 @@ const handleLoginClick = () => {
   <div className="max-w-7xl mx-auto px-4 py-12">
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"> {/* Responsive grid */}
       {/* Company Info */}
-      <div className="space-y-4">
+      <div className="space-y-4 space-x-1">
 
-              <div className="inline-flex bg-red-500 rounded-full p-2">
-                <HeartPulse className="h-9 w-9 fill-white stroke-red-500" />
-              </div>
-        
-        <p className="text-sm text-gray-600">
-          The best community for career professionals struggling with eldercare!
-        </p>
+        <div className="inline-flex bg-red-500 rounded-full p-1">
+            <HeartPulse className="h-5 w-5 fill-white stroke-red-500" />
+        </div>
+            <span className="text-xl  font-bold text-red-500 sm:text-xl">poetiq</span>
+
+          <p className="text-sm text-gray-600">
+            The best community for career professionals struggling with eldercare!
+          </p>
         {/* Social links */}
       </div>
 
