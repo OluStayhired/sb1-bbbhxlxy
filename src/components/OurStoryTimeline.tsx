@@ -16,19 +16,24 @@ const storyPoints: StoryPoint[] = [
   {
     id: 1,
     title: "How we Started",
-    description: "We began not as a company, but as weekly phone calls. We were friends, but we shared the same private crisis. Watching the immense toll of eldercare fall on our families.",
+    description: "We began not as a company, but as fellow founders in other companies advising on weekly check-ins.We were friends, but we shared the same private challenge - Watching the immense toll of elder care falling on our families.",
+
+    
+
     icon: Phone,
   },
   {
     id: 2,
     title: "The Turning Point",
-    description: "My father-in-law's vascular dementia was the turning point. I watched my wife, a banking executive, wrestle with hospital appointments, frustrating calls to health officials, and endless financial applications just to provide a dignified life for her father. For us, this was the very definition of the administrative chaos most career professionals have to endure.",
+    description: "My (Olu) father-in-law's vascular dementia was the turning point. I watched my wife, a banking executive, wrestle with hospital appointments, frustrating calls to health officials, and endless financial applications just to provide a dignified life for her father. For us, this was the very definition of the administrative chaos most career professionals have to endure.",
     icon: HeartPulse,
   },
   {
     id: 3,
     title: "Our Therapeutic Space",
-    description: "We were successful professionals who felt powerless. Our weekly calls became our only therapeutic space, a place where we could trade insights, admit the sheer impossibility of the juggling act and be completely vulnerable about the stresses we both faced supporting our wives and keeping our families together.",
+    description: "We were successful professionals who felt powerless. Our weekly check-ins became a therapeutic space, a place where we could trade insights, admit the sheer scale of the juggling act, and be completely vulnerable about the stresses we both faced supporting our entire families, not just our aging parents.",
+
+
     icon: Briefcase,
   },
   {
@@ -40,19 +45,19 @@ const storyPoints: StoryPoint[] = [
   {
     id: 5,
     title: "Our Strategic Approach",
-    description: "Enough was enough, we are competent career professionals with 30+ years in corporate spaces as Lawyers, directors, founders, vice presidents. So we decided to stop trying to simply survive. We started applying three decades of building solutions to our personal chaos.",
+    description: "Enough is enough. As founders and executives with decades of experience, we decided to stop trying to simply survive. We started applying years of building companies, teams, and solutions to our own eldercare challenges.", 
     icon: Lightbulb,
   },
   {
     id: 6,
     title: "The Profound Relief",
-    description: "Now, we are committed to sharing that blueprint. We don't just help you find answers to complex demands like grant applications or care home reviews; we help you experience the profound relief of knowing you are not compromising your parents' dignity or your own professional future.",
+    description: "Now, we are committed to sharing that blueprint. We don't just help you find answers to complex demands like grant applications or care home reviews; we help you experience the profound relief of knowing you are not compromising your parents' dignity or your own professional future by unlocking the collective wisdom of the Poetiq Community..",
     icon: CheckCircle,
   },
   {
     id: 7,
     title: "Our Promise to You",
-    description: <>We’re building a community of exceptional professionals who care deeply about the current state of eldercare and strive to fix it. Not just for their parents but for generations to come. We're building this community because we need it. <br/><br/> Let's build it together! ❤️🧡💛</>,
+    description: <>We’re building a community of exceptional professionals who care deeply about the current state of elder care and strive to navigate it while thriving, not just surviving. Not just for their parents but for generations to come. We're building this community because we need it. <br/><br/> Let's build it together! ❤️🧡💛</>,
     icon: Users,
   },
 ];

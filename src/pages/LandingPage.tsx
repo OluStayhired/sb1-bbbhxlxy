@@ -121,7 +121,7 @@ const handleLoginClick = () => {
 
       <div id="top_page" className="min-h-screen bg-white">
         <nav className="px-4 py-3 flex items-center justify-between sm:px-6 sm:py-4">
-        <a href="https://www.poetiq.io">
+        <a href="https://www.sosavvy.so">
         <div className="flex items-center space-x-2">
 
          <div className="bg-red-500 rounded-full p-1.5 sm:p-2">
@@ -308,7 +308,8 @@ const handleLoginClick = () => {
         <span className="sm:hidden text-xs sm:text-lg p-3 font-semibold bg-red-100 rounded-full text-red-500 border-8 border-red-50">A Community Fixing ElderCare</span>
 
           {/*<span className="hidden sm:inline text-xs sm:text-lg p-3 font-semibold bg-red-100 rounded-full text-red-500 border-8 border-red-50">A Private Community Rebuilding ElderCare Together</span>*/}
-          <span className="hidden sm:inline text-xs sm:text-lg p-3 font-semibold bg-red-100 rounded-full text-red-500 border-8 border-red-50">Community of Professionals Supporting Aging Parents</span>
+
+        <span className="hidden sm:inline text-xs sm:text-lg p-3 font-semibold bg-red-100 rounded-full text-red-500 border-8 border-red-50">Community of Professionals Supporting Aging Parents</span>
           
            {/*start alternative header */}
     
@@ -318,13 +319,17 @@ const handleLoginClick = () => {
             <p>
               <span className="inline-block bg-gradient-to-l from-red-300 via-red-400 to-red-500 text-transparent bg-clip-text mt-12">
               
-              Strive for Better <br className="sm:hidden" />  Care in Later Life <br className="sm:hidden" /> 
+                {/*Strive for Better <br className="sm:hidden" />  Care in Later Life <br className="sm:hidden" /> */}
+                Strive for Balance <br className="sm:hidden" /> in Eldercare <br className="sm:hidden" /> 
                 {/* This is the key change! */}
                 
-       <p className="block text-sm font-normal sm:text-2xl sm:font-normal text-gray-600 leading-tight mt-1 sm:mt-3">
-         <span className="sm:hidden font-normal">We're a community of career professionals fixing the eldercare crisis together</span> 
-                  {/*<span className="hidden sm:inline font-normal">We're a community of career professionals fixing the eldercare crisis today</span> */}
-                  <span className="hidden sm:inline font-normal">We're a private network of career professionals navigating the eldercare crisis together</span>  
+       <p className="block text-sm font-normal sm:text-xl sm:font-normal text-gray-600 leading-tight mt-1 sm:mt-3">
+         {/*<span className="sm:hidden font-normal">We're a community of career professionals fixing the eldercare crisis together</span>*/}
+       <span className="sm:hidden font-normal">Join a network of career professionals navigating eldercare together</span>   
+        
+      {/*<span className="hidden sm:inline font-normal">We're a community of career professionals fixing the eldercare crisis today</span> */}
+      {/*<span className="hidden sm:inline font-normal">We're a private network of career professionals navigating the eldercare crisis together</span> */}
+         <span className="hidden sm:inline font-normal">Join a network of career professionals navigating the overwhelming challenges of eldercare together</span> 
          </p>
               </span>
             </p>
@@ -564,8 +569,9 @@ const handleLoginClick = () => {
                 Why join our <br className="sm:hidden"/> Community
             </h2> 
             <p className="text-xl sm:text-2xl text-gray-700 mb-12 max-w-3xl mx-auto">
-            The Poetiq Community is where career professionals go to restore strategic focus and reclaim the hours needed to provide parental care without sacrificing their careers or compromising parental dignity. <br/><br/>
-                It’s a private, high-integrity network where you'll get direct access to experienced peers who share unfiltered insights on the crisis. They help each other dismantle a bureaucratic eldercare system that's unfit for purpose. <br/><br/>
+                The Poetiq Community is where career professionals go to restore strategic focus and reclaim the hours needed to provide parental care without sacrificing their careers or compromising parental dignity. <br/><br/>
+                It’s a private, high-integrity network where you'll get direct access to experienced peers who share unfiltered insights on the unique and tremendous challenges of caring for aging family members.<br/><br/> 
+              They help each other navigate a labyrinth of elder care choices that can threaten to overwhelm us as we struggle to maintain the delicate balance between our careers and families. <br/><br/>
                 The Poetiq Community is where to find clarity, control, and the professional blueprint for dignified parental care
             </p>
 
@@ -575,8 +581,8 @@ const handleLoginClick = () => {
                 className="group flex items-center justify-center space-x-2 w-full sm:w-auto px-6 py-3 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 transition-colors shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-4 sm:text-lg mx-auto">
                 <span>Join Community</span>
                 {/* Placeholder for ArrowRight icon or similar */}
-                {/*<span className="w-5 h-5 ml-1 transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>*/}
-                <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+              {/*<span className="w-5 h-5 ml-1 transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>*/}
+               <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
             </button> 
 
         </div>
@@ -831,7 +837,8 @@ const handleLoginClick = () => {
   </summary>
   <div className="px-5 pb-5 text-gray-700">
     <p>
-      This is a private, high-integrity council, not a general support forum. We reject the noise and low-signal advice that plagues social media. We are built for action and efficiency. Our sole mandate is to pool the collective executive knowledge of our members to build a definitive solution. You join to exchange unfiltered intelligence with peers who share the same time constraints and ethical standards, ensuring every interaction is high-value and directly contributes to fixing the system.
+      This is a private, high-integrity council, not a general support forum. We reject the noise and low-signal advice that plagues social media. We are built for action and efficiency. Our sole mandate is to pool the collective executive knowledge of our members to build definitive solutions for each member's shared, yet unique challenges. . You join to exchange unfiltered intelligence with peers who share the same time constraints and ethical standards, ensuring every interaction is high-value and directly contributes to fixing the system.
+
     </p>
   </div>
 </details>
@@ -851,7 +858,8 @@ const handleLoginClick = () => {
     </div>
   </summary>
   <div className="px-5 pb-5 text-gray-700">
-    <p>The link is direct: Administrative chaos is the primary source of compromised care. When you are stressed, isolated, and forced to make rapid decisions due to lack of time, you compromise on quality. By joining Poetiq, you are building the professional logistics layer that eliminates that chaos, giving you the time and clarity to make informed decisions that uphold your parent's dignity and honor your duty, without sacrificing your professional standing.</p>
+    <p>The link is direct: Administrative chaos is the primary source of compromised care. When you are stressed, isolated, and forced to make rapid decisions due to lack of time, you compromise on quality. It can become a doom loop when the time demands then threaten the careers that provide required financial stability. By joining Poetiq, you are building the professional logistics layer that eliminates that chaos, giving you the time and clarity to make informed decisions that uphold your parent's dignity and honor your duty, without sacrificing your professional standing. 
+    </p>
   </div>
 </details>
 
@@ -870,7 +878,8 @@ const handleLoginClick = () => {
     </div>
   </summary>
   <div className="px-5 pb-5 text-gray-700">
-    <p>We are pioneering the professional blueprint for dignified parental care. This blueprint is the high-integrity framework—from data standards and vendor vetting protocols to administrative automation—that should exist but doesn't. Your role is crucial: by sharing your specific logistical failures and successes, you provide the essential, real-world data that allows the community to stress-test and finalize this professional-grade solution, turning your personal agony into systemic change.</p>
+    <p>We are pioneering the professional blueprint for dignified parental care. This blueprint is the high-integrity framework - from data standards and vendor vetting protocols to administrative automation - that should exist but doesn't. Your role is crucial: by sharing your specific logistical failures and successes, you provide the essential, real-world data that allows the community to stress-test and finalize this professional-grade solution, turning your personal agony into systemic change.
+    </p>
   </div>
 </details>
 
@@ -906,7 +915,8 @@ const handleLoginClick = () => {
     </div>
   </summary>
   <div className="px-5 pb-5 text-gray-700">
-    <p>The community is strictly reserved for executive professionals—individuals operating in high-pressure, high-responsibility roles (e.g., senior managers, directors, VPs, entrepreneurs). This tight focus ensures that every member understands the stakes (career stability, time constraints) and can contribute strategic insights rather than just general complaints. Our integrity relies on a membership of peers who value discretion and professional execution above all else.</p>
+    <p>The community is strictly reserved for executive professionals - individuals operating in high-pressure, high-responsibility roles in knowledge work.  This tight focus ensures that every member understands the stakes (career stability, time constraints) and can contribute strategic insights rather than just general complaints. Our integrity relies on a membership of peers who value discretion and professional execution above all else.
+</p>
   </div>
 </details>
 
@@ -924,7 +934,8 @@ const handleLoginClick = () => {
     </div>
   </summary>
   <div className="px-5 pb-5 text-gray-700">
-    <p>Confidentiality is paramount. The Poetiq Community operates under explicit rules regarding privacy and disclosure. While you are encouraged to share the administrative failure (e.g., "I spent 4 hours on a caregiver asessment form"), you are never required to share specific personal or financial identifiers. Our system is designed to extract actionable unfiltered intelligence (the failure point) while preserving the anonymity and sensitive details of your personal life.</p>
+    <p>Confidentiality is paramount. The Poetiq Community operates under explicit rules regarding privacy and disclosure. While you are encouraged to share the administrative failure (e.g., "I spent 4 hours on a caregiver assessment form"), you are never required to share specific personal or financial identifiers. Our system is designed to extract actionable unfiltered intelligence (the failure point) while preserving the anonymity and sensitive details of your personal life.
+    </p>
   </div>
 </details>
 
@@ -942,7 +953,8 @@ const handleLoginClick = () => {
     </div>
   </summary>
   <div className="px-5 pb-5 text-gray-700">
-    <p>Our founders' primary qualification is shared experience and three decades of combined executive-level competence. The solution is not driven by clinical expertise, but by logistical mastery. Jeff and Olu faced the exact crisis you face and applied their corporate strategy to solve their personal care chaos. They lead the mission, but the ultimate authority and expertise reside within the collective professional intelligence of the executive members.</p>
+    <p>Our founders' primary qualification is shared experience and decades of combined executive-level competence. The solution is not driven by clinical expertise, but by logistical mastery. Jeff and Olu faced the exact crisis you face and applied their corporate strategy to solve their personal care chaos. They lead the mission, but the ultimate authority and expertise reside within the collective professional intelligence of the executive members.
+    </p>
   </div>
 </details>
 
@@ -960,7 +972,7 @@ const handleLoginClick = () => {
     </div>
   </summary>
   <div className="px-5 pb-5 text-gray-700">
-    <p>Membership requires a modest subscription fee, structured to ensure the community remains high-signal and dedicated. The Return on Investment (ROI) is measured in two ways:Time Reclaimed: The hours saved by accessing the collective blueprint and avoiding painful, low-signal searches.Compromise Avoided: The value of making high-quality, informed decisions that protect your parent's dignity and your own professional standing—an invaluable asset.</p>
+    <p>Membership requires a modest subscription fee, structured to ensure the community remains high-signal and dedicated. The Return on Investment (ROI) is measured in two ways:Time Reclaimed: The hours saved by accessing the collective blueprint and avoiding painful, low-signal searches.Compromise Avoided: The value of making high-quality, informed decisions that protect your parent's dignity and your own professional standing an invaluable asset.</p>
   </div>
 </details>
 
@@ -1033,14 +1045,14 @@ const handleLoginClick = () => {
       {/* Company Info */}
       <div className="space-y-4 space-x-1">
 
-        <div className="inline-flex bg-red-500 rounded-full p-0.5">
-            <HeartPulse className="h-5 w-5 fill-white stroke-red-500" />
-        </div>
-            <span className="text-xl  font-bold text-red-500 sm:text-xl">poetiq</span>
-
-          <p className="text-sm text-gray-600">
-            The best community for career professionals struggling with eldercare!
-          </p>
+              <div className="inline-flex bg-red-500 rounded-full p-0.5">
+                <HeartPulse className="h-5 w-5 fill-white stroke-red-500" />
+              </div>
+        <span className="text-xl  font-bold text-red-500 sm:text-xl">poetiq</span>
+        
+        <p className="text-sm text-gray-600">
+          The best community for career professionals struggling with eldercare!
+        </p>
         {/* Social links */}
       </div>
 
