@@ -16,7 +16,7 @@ const storyPoints: StoryPoint[] = [
   {
     id: 1,
     title: "How we Started",
-    description: "We began not as a company, but as fellow founders in other companies advising on weekly check-ins.We were friends, but we shared the same private challenge - Watching the immense toll of elder care falling on our families.",
+    description: "We began not as a company, but as fellow founders in other companies advising on weekly check-ins.We were friends, but we shared the same private challenge - Watching the immense toll of eldercare falling on our families.",
 
     
 
@@ -57,7 +57,7 @@ const storyPoints: StoryPoint[] = [
   {
     id: 7,
     title: "Our Promise to You",
-    description: <>We’re building a community of exceptional professionals who care deeply about the current state of elder care and strive to navigate it while thriving, not just surviving. Not just for their parents but for generations to come. We're building this community because we need it. <br/><br/> Let's build it together! ❤️🧡💛</>,
+    description: <>We’re building a community of exceptional professionals who care deeply about the current state of eldercare and strive to navigate it while thriving, not just surviving. Not just for their parents but for generations to come. We're building this community because we need it. <br/><br/> Let's build it together! ❤️🧡💛</>,
     icon: Users,
   },
 ];
