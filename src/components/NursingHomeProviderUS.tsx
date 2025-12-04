@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { Loader2, Search, X, Building2, 
         ChevronUp, ChevronDown, Calendar,
-        ArrowLeft, ArrowRight, Star, Zap, Globe, Bed,
+        ArrowLeft, ArrowRight, Star, Zap, Globe, Bed, Heart,
         MapPin, ArrowUpDown, Clock, CircleDollarSign } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import { TooltipExtended } from '/src/utils/TooltipExtended';
@@ -549,7 +549,7 @@ export function NursingHomeProviderUS({}: NursingHomeProviderUSProps) {
                     className="px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
                   >
                     <div className="flex items-center text-gray-500 space-x-1">
-                      <span className="text-gray-400"><Star className="w-3.5 h-3.5"/></span>
+                    <span className="text-gray-400"><Heart className="w-3.5 h-3.5"/></span>
                       <span>Health Rating</span>
                       {renderSortIcon('health_inspection_rating')}
                     </div>
