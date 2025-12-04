@@ -9,6 +9,9 @@ import { ThemeProvider } from './context/ThemeContext';
 import { HooksProvider } from './context/HooksContext';
 import { BlogListPage } from './components/BlogListPage'; 
 import { BlogPostPage } from './components/BlogPostPage';
+import { NursingHomeProviderUS } from './components/NursingHomeProviderUS';
+import { NursingHomeSearchPage } from './pages/NursingHomeSearchPage';
+
 
 
 
@@ -46,6 +49,7 @@ function AppRoutes() {
       <Route path="/" element={<LandingPage />} />
       <Route path="/blog" element={<BlogListPage />} />    
       <Route path="blog/:slug" element={<BlogPostPage />} /> 
+      <Route path="/nursing_home" element={<NursingHomeSearchPage />} />
       <Route
         path="/dashboard/*"
         element={

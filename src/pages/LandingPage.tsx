@@ -130,6 +130,12 @@ const handleLoginClick = () => {
 >
             Our Story
           </button> 
+
+      <Link
+          to="/nursing_home"
+          className="px-4 py-2 bg-gray-100 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">    
+          Search Nursing Homes
+        </Link> 
       
           <button
             onClick={() => {
@@ -139,17 +145,23 @@ const handleLoginClick = () => {
 >
             FAQ
           </button> 
-         
-        <Link
-          to="/nursing_home"
-          className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">    
-          
-          Nursing Home
-
-        </Link> 
       </div>
       */}
 
+        <Link
+          to="/nursing_home"
+          className="px-4 py-2 bg-gray-50 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">    
+          Nursing Home Finder
+        </Link> 
+
+          <button
+            onClick={() => {
+              window.location.href = '#FAQ';
+              }}
+              className="px-4 py-2 bg-gray-50 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
+>
+            FAQ
+          </button> 
           
           <button
            
@@ -273,41 +285,17 @@ const handleLoginClick = () => {
          {/*<span className="sm:hidden font-normal">We're a community of career professionals fixing the eldercare crisis together</span>*/}
        <span className="sm:hidden font-normal">Join a network of career professionals navigating eldercare together</span>   
         
-      {/*<span className="hidden sm:inline font-normal">We're a community of career professionals fixing the eldercare crisis today</span> */}
-      {/*<span className="hidden sm:inline font-normal">We're a private network of career professionals navigating the eldercare crisis together</span> */}
          <span className="hidden sm:inline font-normal">Join a network of career professionals navigating the overwhelming challenges of eldercare together</span> 
          </p>
               </span>
             </p>
           </h1>
           {/*end alternative header*/}
-
-
-          {/*      
-      <p className="mt-16 mb-1 text-sm sm:text-xl md:text-lg text-red-400 font-normal">
-        
-            <span>Coming Soon</span>
-        </p>
-*/}
-          
+    
   <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 items-center mx-auto w-fit"> 
     {/* Adjusted button layout for mobile */}
 
 <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-
-  {/*
-  <button
-    onClick={openNewsletterModal}
-    type="submit"
-    className="flex items-center space-x-2 w-full sm:w-auto bg-gradient-to-r from-red-500 to-red-400 text-white px-8 py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-  >
-    
-    <span className="hidden sm:inline"> Join Our Newsletter </span>
-    <span className="sm:hidden"> Join Newsletter </span>
-    <span> <MailCheck className="w-4 h-4 sm:w-5 h-5"/> </span>
-    
-  </button>
-*/}
 
   <button
     //onClick={openNewsletterModal}
@@ -708,6 +696,15 @@ const handleLoginClick = () => {
           The best community for career professionals struggling with eldercare!
         </p>
         {/* Social links */}
+      </div>
+
+            {/* Resources */}
+      <div>
+        <h3 className="font-semibold mb-4">Care Tools & Resources</h3>
+        <ul className="space-y-2 text-sm text-gray-600">
+          <li> <a href="#FAQ" className="no-underline hover:text-red-400 transition-colors">Frequently Asked Questions</a></li>
+          <li> <a href="https://poetiq.io/nursing_home" className="no-underline hover:text-red-400 transition-colors">Nursing Home Finder 🎯</a></li>
+        </ul>
       </div>
 
      

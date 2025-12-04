@@ -1,6 +1,18 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
-import { Loader2, Search, X, Building2, ChevronUp, ChevronDown, ArrowLeft, ArrowRight, Star, MapPin } from 'lucide-react';
+import { Loader2, Search, X, Building2, 
+        ChevronUp, ChevronDown, Calendar,
+        ArrowLeft, ArrowRight, Star, Zap, Globe, Bed,
+        MapPin, ArrowUpDown, Clock, CircleDollarSign } from 'lucide-react';
 import { supabase } from '../lib/supabase';
+import { TooltipExtended } from '/src/utils/TooltipExtended';
+import { TooltipHelp } from '/src/utils/TooltipHelp';
+import { NursingHomeProviderModal } from './NursingHomeProviderModal';
+
+
+// NOTE: Assuming 'supabase' client is available in the environment scope or imported via a mechanism not visible here.
+// For self-contained execution in this environment, we must mock or assume its presence.
+// Reverting to the original structure and ensuring data parsing is robust.
+//const supabase = (window as any).supabase;
 
 interface NursingHomeProvider {
   id: string;
@@ -46,6 +58,11 @@ export function NursingHomeProviderUS({}: NursingHomeProviderUSProps) {
 
   const [nationalMedianStaffTurnover, setNationalMedianStaffTurnover] = useState<number>(0);
   const [nationalMedianStaffingHours, setNationalMedianStaffingHours] = useState<number>(0);
+  
+  // Nursing Modal Report modal visibility
+  const [selectedProvider, setSelectedProvider] = useState<NursingHomeProvider | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
 
   const providersPerPage = 25;
   const finesThreshold = 100000;
@@ -87,12 +104,18 @@ export function NursingHomeProviderUS({}: NursingHomeProviderUSProps) {
   };
 
   const fetchProviders = useCallback(async () => {
+    if (!supabase) {
+      setError("Supabase client is not initialized.");
+      setIsLoading(false);
+      return;
+    }
+    
     try {
       setIsLoading(true);
       const { data, error: fetchError } = await supabase
         .from('nursing_home_provider_info')
         .select(`
-          id,
+          cms_certification_number,
           provider_name,
           provider_address,
           city_town,
@@ -120,12 +143,16 @@ export function NursingHomeProviderUS({}: NursingHomeProviderUSProps) {
       }
 
       if (data && Array.isArray(data) && data.length > 0) {
+        // --- FIX: Robustly parse string values to numbers for median calculation ---
         const staffTurnoverValues = data
-          .map(p => p.total_nursing_staff_turnover)
-          .filter(v => v !== null && v >= 0);
+          // Use 'as any' to allow indexing, even if TS types are loose on runtime data
+          .map(p => parseFloat(p.total_nursing_staff_turnover as any))
+          .filter(v => !isNaN(v) && v !== null && v >= 0);
+        
         const staffingHoursValues = data
-          .map(p => p.reported_total_nurse_staffing_hours_per_resident_per_day)
-          .filter(v => v !== null && v > 0);
+          .map(p => parseFloat(p.reported_total_nurse_staffing_hours_per_resident_per_day as any))
+          .filter(v => !isNaN(v) && v !== null && v > 0);
+        // --------------------------------------------------------------------------
 
         const medianTurnover = calculateMedian(staffTurnoverValues);
         const medianStaffingHours = calculateMedian(staffingHoursValues);
@@ -135,27 +162,29 @@ export function NursingHomeProviderUS({}: NursingHomeProviderUSProps) {
 
         const providersWithRating: NursingHomeProvider[] = data.map(record => {
           const provider = {
-            id: String(record.id),
+            id: String(record.cms_certification_number), // Use a unique identifier from DB
             provider_name: record.provider_name || '',
             provider_address: record.provider_address || '',
             city_town: record.city_town || '',
             state: record.state || '',
-            zip_code: record.zip_code || '',
+            //zip_code: parseFloat(record.zip_code as any) || 0,
+            zip_code: String(record.zip_code) || '',
             telephone_number: record.telephone_number || '',
-            number_of_certified_beds: record.number_of_certified_beds || 0,
-            average_number_of_residents_per_day: record.average_number_of_residents_per_day || 0,
+            // Ensure all necessary fields are robustly converted to numbers using parseFloat
+            number_of_certified_beds: parseFloat(record.number_of_certified_beds as any) || 0,
+            average_number_of_residents_per_day: parseFloat(record.average_number_of_residents_per_day as any) || 0,
             provider_type: record.provider_type || '',
-            overall_rating: record.overall_rating || 0,
-            health_inspection_rating: record.health_inspection_rating || 0,
-            staffing_rating: record.staffing_rating || 0,
-            reported_total_nurse_staffing_hours_per_resident_per_day: record.reported_total_nurse_staffing_hours_per_resident_per_day || 0,
-            total_nursing_staff_turnover: record.total_nursing_staff_turnover || 0,
-            registered_nurse_turnover: record.registered_nurse_turnover || 0,
-            total_amount_of_fines_in_dollars: record.total_amount_of_fines_in_dollars || 0,
+            overall_rating: parseFloat(record.overall_rating as any) || 0,
+            health_inspection_rating: parseFloat(record.health_inspection_rating as any) || 0,
+            staffing_rating: parseFloat(record.staffing_rating as any) || 0,
+            reported_total_nurse_staffing_hours_per_resident_per_day: parseFloat(record.reported_total_nurse_staffing_hours_per_resident_per_day as any) || 0,
+            total_nursing_staff_turnover: parseFloat(record.total_nursing_staff_turnover as any) || 0,
+            registered_nurse_turnover: parseFloat(record.registered_nurse_turnover as any) || 0,
+            total_amount_of_fines_in_dollars: parseFloat(record.total_amount_of_fines_in_dollars as any) || 0,
             location: record.location || '',
-            latitude: record.latitude || 0,
-            longitude: record.longitude || 0,
-          };
+            latitude: parseFloat(record.latitude as any) || 0,
+            longitude: parseFloat(record.longitude as any) || 0,
+          } as NursingHomeProvider; // Cast to ensure type compatibility
 
           return {
             ...provider,
@@ -170,7 +199,7 @@ export function NursingHomeProviderUS({}: NursingHomeProviderUSProps) {
       setError(null);
     } catch (err: any) {
       console.error('Error fetching nursing home providers:', err);
-      setError('Failed to load nursing home data. ' + err.message);
+      setError('Failed to load nursing home data. ' + (err.message || 'Check database connection.'));
       setAllProviders([]);
     } finally {
       setIsLoading(false);
@@ -186,6 +215,7 @@ export function NursingHomeProviderUS({}: NursingHomeProviderUSProps) {
     return ['All Ratings', '5 Stars', '4+ Stars', '3+ Stars', '2+ Stars', '1+ Stars'];
   }, []);
 
+  // Filter and sort providers logic
   useEffect(() => {
     let filtered = [...allProviders];
 
@@ -231,18 +261,22 @@ export function NursingHomeProviderUS({}: NursingHomeProviderUSProps) {
       });
     }
 
+    // Apply pagination
     const startIndex = (currentPage - 1) * providersPerPage;
     const endIndex = startIndex + providersPerPage;
     setDisplayedProviders(filtered.slice(startIndex, endIndex));
 
+    // Recalculate total pages and reset current page if needed
     const totalPages = Math.ceil(filtered.length / providersPerPage);
     if (currentPage > totalPages && totalPages > 0) {
       setCurrentPage(1);
     }
   }, [allProviders, searchQuery, selectedState, selectedPoetiqRating, currentPage, sortField, sortDirection]);
 
+  // Initial data fetch
   useEffect(() => {
     fetchProviders();
+    // Reset filters and page on initial load
     setSearchQuery('');
     setCurrentPage(1);
     setSelectedState('All States');
@@ -273,13 +307,6 @@ export function NursingHomeProviderUS({}: NursingHomeProviderUSProps) {
     setCurrentPage(1);
   };
 
-  const handlePageChange = (newPage: number) => {
-    const totalPages = Math.ceil(getFilteredProviders().length / providersPerPage);
-    if (newPage > 0 && newPage <= totalPages) {
-      setCurrentPage(newPage);
-    }
-  };
-
   const getFilteredProviders = () => {
     let filtered = [...allProviders];
 
@@ -306,30 +333,43 @@ export function NursingHomeProviderUS({}: NursingHomeProviderUSProps) {
     return filtered;
   };
 
+  const handlePageChange = (newPage: number) => {
+    const totalPages = Math.ceil(getFilteredProviders().length / providersPerPage);
+    if (newPage > 0 && newPage <= totalPages) {
+      setCurrentPage(newPage);
+    }
+  };
+
   const renderSortIcon = (field: SortField) => {
     if (sortField !== field) {
       return <ChevronUp className="w-3 h-3 text-gray-400" />;
     }
     return sortDirection === 'asc'
-      ? <ChevronUp className="w-3 h-3 text-blue-600" />
-      : <ChevronDown className="w-3 h-3 text-blue-600" />;
+      ? <ChevronUp className="w-3 h-3 text-red-500" />
+      : <ChevronDown className="w-3 h-3 text-red-500" />;
   };
 
   const renderStarRating = (rating: number) => {
     return (
-      <div className="flex items-center space-x-1">
+      <div className="flex text-xs items-center space-x-1">
         {[...Array(5)].map((_, index) => (
           <Star
             key={index}
-            className={`w-4 h-4 ${
+            className={`w-3.5 h-3.5 ${
               index < Math.floor(rating)
-                ? 'fill-yellow-400 text-yellow-400'
-                : 'text-gray-300'
+                //? 'fill-yellow-400 text-yellow-400'
+              ? 'fill-red-100 text-red-400 text-xs'
+                : 'text-gray-300 text-xs'
             }`}
           />
         ))}
-        <span className="ml-1 text-sm font-semibold text-gray-700">{rating.toFixed(1)}</span>
+      
+        <span className="ml-1 text-xs font-semibold text-gray-700">{rating.toFixed(1)}</span>
+      
       </div>
+    
+      
+      
     );
   };
 
@@ -340,13 +380,14 @@ export function NursingHomeProviderUS({}: NursingHomeProviderUSProps) {
     <div className="bg-white rounded-lg shadow-sm p-6 h-full flex flex-col">
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center space-x-3">
-          <div className="p-3 bg-blue-50 rounded-lg">
-            <Building2 className="h-6 w-6 text-blue-600" />
+          <div className="p-3 bg-red-50 rounded-lg">
+            <Search className="h-6 w-6 text-red-500" />
           </div>
           <div>
-            <h2 className="text-2xl font-bold text-gray-900">Nursing Home Provider Search</h2>
+            <h2 className="text-2xl font-bold text-gray-900">Quick Search</h2>
             <p className="text-sm text-gray-500 mt-1">
-              {totalFiltered.toLocaleString()} providers found
+              {/*{totalFiltered.toLocaleString()} providers found*/}
+              14,721 Nursing Homes
             </p>
           </div>
         </div>
@@ -359,7 +400,8 @@ export function NursingHomeProviderUS({}: NursingHomeProviderUSProps) {
             placeholder="Search by name, city, or location..."
             value={searchQuery}
             onChange={handleSearchChange}
-            className="w-full px-4 py-2.5 pl-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm"
+            className="w-full px-4 py-2.5 pl-10 border border-gray-300 rounded-lg 
+            focus:ring-2 focus:ring-red-500 focus:border-red-500 bg-white text-sm"
           />
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
           {searchQuery && (
@@ -376,7 +418,8 @@ export function NursingHomeProviderUS({}: NursingHomeProviderUSProps) {
           <select
             value={selectedState}
             onChange={handleStateFilter}
-            className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-sm"
+            className="w-auto md:col-span-1 px-4 py-2.5 border border-gray-300 rounded-lg 
+            focus:ring-2 focus:ring-red-500 focus:border-red-500 bg-white text-sm"
           >
             {uniqueStates.map(state => (
               <option key={state} value={state}>
@@ -386,11 +429,12 @@ export function NursingHomeProviderUS({}: NursingHomeProviderUSProps) {
           </select>
         </div>
 
+        {/*
         <div>
           <select
             value={selectedPoetiqRating}
             onChange={handlePoetiqRatingFilter}
-            className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-sm"
+            className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 bg-white text-sm"
           >
             {poetiqRatingOptions.map(option => (
               <option key={option} value={option}>
@@ -399,25 +443,47 @@ export function NursingHomeProviderUS({}: NursingHomeProviderUSProps) {
             ))}
           </select>
         </div>
+        */}
+        
       </div>
 
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mb-4">
-        <div className="flex items-center justify-between text-xs text-blue-800">
-          <div>
-            <span className="font-semibold">National Median Staff Turnover:</span> {nationalMedianStaffTurnover.toFixed(1)}%
+      {/* KPI/Median Display Row */}
+      {/*<div className="bg-red-50 border border-red-200 rounded-lg p-3 mb-4">*/}
+      <div className="mb-12">
+        <div className="flex items-center text-xs text-gray-500 space-x-2">
+          <TooltipExtended text="⚡staff stability - this indicates the national median (%) of staff changes in a nursing home">
+          <div className="flex space-x-2 items-center bg-gray-50 p-3 
+            border border-gray-200 hover:border-red-200 hover:text-red-500 hover:bg-red-50 rounded-lg group transition-colors">
+            <span className="bg-red-100 hover:bg-red-200 rounded-full p-2 group"><ArrowUpDown className="w-4 h-4"/></span>
+            <span className="font-semibold">Staff Turnover</span> 
+            <span>{(nationalMedianStaffTurnover ?? 0).toFixed(1)}%</span>
           </div>
-          <div>
-            <span className="font-semibold">National Median Staffing Hours:</span> {nationalMedianStaffingHours.toFixed(2)} hrs/resident/day
+            </TooltipExtended>
+
+          <TooltipExtended text="⚡staff attentiveness - this is the national median (%) of staff hrs spent on a patient per day">  
+          <div className="flex space-x-2 items-center bg-gray-50 p-3 
+            border border-gray-200 hover:border-red-200 hover:text-red-500 hover:bg-red-50 rounded-lg">
+            <span className="bg-red-100 hover:bg-red-200 rounded-full p-2 group"><Clock className="w-4 h-4"/></span>
+            <span className="font-semibold">Staffing Hours:</span> 
+            <span>{nationalMedianStaffingHours.toFixed(2)} hours</span>
           </div>
-          <div>
-            <span className="font-semibold">Fines Threshold:</span> ${finesThreshold.toLocaleString()}
+          </TooltipExtended>
+          
+          <TooltipExtended text="⚡financial stability - Concerns are raised when a nursing home incurs above $100,000 in fines">  
+          <div className="flex space-x-2 items-center bg-gray-50 p-3 
+            border border-gray-200 hover:border-red-200 hover:text-red-500 hover:bg-red-50 rounded-lg">
+            <span className="bg-red-100 hover:bg-red-200 rounded-full p-2 group"><CircleDollarSign className="w-4 h-4"/></span>
+            <span className="font-semibold">Fines Threshold:</span> 
+            <span>${finesThreshold.toLocaleString()}</span>
           </div>
+          </TooltipExtended>
         </div>
       </div>
 
       {isLoading ? (
         <div className="flex items-center justify-center flex-grow">
-          <Loader2 className="w-8 h-8 text-blue-500 animate-spin" />
+          <Loader2 className="w-8 h-8 text-red-500 animate-spin" />
+          <span className="ml-3 text-red-500">Loading provider data...</span>
         </div>
       ) : error ? (
         <div className="text-red-500 p-4 bg-red-50 rounded-lg">{error}</div>
@@ -427,87 +493,115 @@ export function NursingHomeProviderUS({}: NursingHomeProviderUSProps) {
             <table className="min-w-full divide-y divide-gray-200">
               <thead className="bg-gray-50 sticky top-0">
                 <tr>
+                  
                   <th
                     onClick={() => handleSort('poetiq_rating')}
-                    className="px-4 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider cursor-pointer hover:bg-gray-100"
+                    className="px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
                   >
-                    <div className="flex items-center space-x-1">
+                    
+                    <div className="flex items-center text-gray-500 space-x-1">
+                      <span className="text-gray-400"><Star className="w-3.5 h-3.5"/></span>
                       <span>Poetiq Rating</span>
+                      
                       {renderSortIcon('poetiq_rating')}
                     </div>
+                      
                   </th>
+                  
+                  
                   <th
                     onClick={() => handleSort('provider_name')}
-                    className="px-4 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider cursor-pointer hover:bg-gray-100"
+                    className="px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
                   >
-                    <div className="flex items-center space-x-1">
-                      <span>Provider Name</span>
+                    <div className="flex items-center text-gray-500 space-x-1">
+                      <span className="text-gray-400"><Building2 className="w-3.5 h-3.5"/></span>
+                      <span>Nursing Home</span>
                       {renderSortIcon('provider_name')}
                     </div>
                   </th>
                   <th
                     onClick={() => handleSort('city_town')}
-                    className="px-4 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider cursor-pointer hover:bg-gray-100"
+                    className="px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
                   >
-                    <div className="flex items-center space-x-1">
+                    <div className="flex items-center text-gray-500 space-x-1">
+                      <span className="text-gray-400"><MapPin className="w-3.5 h-3.5"/></span>
                       <span>City</span>
                       {renderSortIcon('city_town')}
                     </div>
                   </th>
                   <th
                     onClick={() => handleSort('state')}
-                    className="px-4 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider cursor-pointer hover:bg-gray-100"
+                    className="px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
                   >
-                    <div className="flex items-center space-x-1">
+                    <div className="flex items-center text-gray-500 space-x-1">
+                      <span className="text-gray-400"><Globe className="w-3.5 h-3.5"/></span>
                       <span>State</span>
                       {renderSortIcon('state')}
                     </div>
                   </th>
                   <th
                     onClick={() => handleSort('health_inspection_rating')}
-                    className="px-4 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider cursor-pointer hover:bg-gray-100"
+                    className="px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
                   >
-                    <div className="flex items-center space-x-1">
+                    <div className="flex items-center text-gray-500 space-x-1">
+                      <span className="text-gray-400"><Star className="w-3.5 h-3.5"/></span>
                       <span>Health Rating</span>
                       {renderSortIcon('health_inspection_rating')}
                     </div>
                   </th>
                   <th
                     onClick={() => handleSort('reported_total_nurse_staffing_hours_per_resident_per_day')}
-                    className="px-4 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider cursor-pointer hover:bg-gray-100"
+                    className="px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
                   >
-                    <div className="flex items-center space-x-1">
+                    <div className="flex items-center text-gray-500 space-x-1">
+                      <span className="text-gray-400"><Clock className="w-3.5 h-3.5"/></span>
                       <span>Staff Hours</span>
                       {renderSortIcon('reported_total_nurse_staffing_hours_per_resident_per_day')}
                     </div>
                   </th>
                   <th
                     onClick={() => handleSort('total_nursing_staff_turnover')}
-                    className="px-4 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider cursor-pointer hover:bg-gray-100"
+                    className="px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
                   >
-                    <div className="flex items-center space-x-1">
+                    <div className="flex items-center text-gray-500 space-x-1">
+                      <span className="text-gray-400"><ArrowUpDown className="w-3.5 h-3.5"/></span>
                       <span>Turnover %</span>
                       {renderSortIcon('total_nursing_staff_turnover')}
                     </div>
                   </th>
                   <th
                     onClick={() => handleSort('total_amount_of_fines_in_dollars')}
-                    className="px-4 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider cursor-pointer hover:bg-gray-100"
+                    className="px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
                   >
-                    <div className="flex items-center space-x-1">
+                    <div className="flex items-center text-gray-500 space-x-1">
+                      <span className="text-gray-400"><CircleDollarSign className="w-3.5 h-3.5"/></span>
                       <span>Fines</span>
                       {renderSortIcon('total_amount_of_fines_in_dollars')}
                     </div>
                   </th>
                   <th
                     onClick={() => handleSort('number_of_certified_beds')}
-                    className="px-4 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider cursor-pointer hover:bg-gray-100"
+                  className="px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
                   >
-                    <div className="flex items-center space-x-1">
+                    <div className="flex items-center text-gray-500 space-x-1">
+                      <span className="text-gray-400"><Bed className="w-3.5 h-3.5"/></span>
                       <span>Beds</span>
                       {renderSortIcon('number_of_certified_beds')}
                     </div>
                   </th>
+
+                  <th
+                    //onClick={() => handleSort('number_of_certified_beds')}
+                  className="px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
+                  >
+                    <div className="flex items-center text-gray-500 space-x-1">
+                      <span className="text-gray-400"><Calendar className="w-3.5 h-3.5"/></span>
+                      <span>Availability</span>
+                      
+                    </div>
+
+                  </th>
+                  
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
@@ -520,21 +614,28 @@ export function NursingHomeProviderUS({}: NursingHomeProviderUSProps) {
                   </tr>
                 ) : (
                   displayedProviders.map((provider) => (
-                    <tr key={provider.id} className="hover:bg-gray-50">
-                      <td className="px-4 py-4 whitespace-nowrap">
+                    <tr key={provider.id} className="hover:bg-red-50 text-xs">
+                      <td className="px-4 py-4 text-xs whitespace-nowrap">
                         {provider.poetiq_rating && renderStarRating(provider.poetiq_rating)}
+                        {/*renderStarRating(provider.poetiq_rating)*/}
                       </td>
                       <td className="px-4 py-4">
-                        <div className="text-sm font-medium text-gray-900">{provider.provider_name}</div>
-                        <div className="text-xs text-gray-500">{provider.provider_address}</div>
+                        <div className="text-xs font-medium text-gray-900"
+                           onClick={() => {
+                            setSelectedProvider(provider);
+                            setIsModalOpen(true);
+                                }}
+                          >
+                          {provider.provider_name}</div>
+                        <div className="text-xs lowercase text-gray-500">{provider.provider_address}</div>
                       </td>
-                      <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-700">
+                      <td className="px-4 py-4 whitespace-nowrap text-gray-700">
                         {provider.city_town}
                       </td>
-                      <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-700">
+                      <td className="px-4 py-4 whitespace-nowrap text-gray-700">
                         {provider.state}
                       </td>
-                      <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-700">
+                      <td className="px-4 py-4 whitespace-nowrap text-gray-700">
                         <span className={`px-2 py-1 rounded-full text-xs font-medium ${
                           provider.health_inspection_rating >= 4
                             ? 'bg-green-100 text-green-800'
@@ -545,10 +646,10 @@ export function NursingHomeProviderUS({}: NursingHomeProviderUSProps) {
                           {provider.health_inspection_rating}/5
                         </span>
                       </td>
-                      <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-700">
+                      <td className="px-4 py-4 whitespace-nowrap text-gray-700">
                         {provider.reported_total_nurse_staffing_hours_per_resident_per_day.toFixed(2)}
                       </td>
-                      <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-700">
+                      <td className="px-4 py-4 whitespace-nowrap text-gray-700">
                         <span className={`px-2 py-1 rounded-full text-xs font-medium ${
                           provider.total_nursing_staff_turnover < nationalMedianStaffTurnover
                             ? 'bg-green-100 text-green-800'
@@ -559,7 +660,7 @@ export function NursingHomeProviderUS({}: NursingHomeProviderUSProps) {
                           {provider.total_nursing_staff_turnover.toFixed(1)}%
                         </span>
                       </td>
-                      <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-700">
+                      <td className="px-4 py-4 whitespace-nowrap text-gray-700">
                         <span className={`px-2 py-1 rounded-full text-xs font-medium ${
                           provider.total_amount_of_fines_in_dollars <= finesThreshold
                             ? 'bg-green-100 text-green-800'
@@ -568,8 +669,25 @@ export function NursingHomeProviderUS({}: NursingHomeProviderUSProps) {
                           ${provider.total_amount_of_fines_in_dollars.toLocaleString()}
                         </span>
                       </td>
-                      <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-700">
+                      <td className="px-4 py-4 whitespace-nowrap text-gray-700">
                         {provider.number_of_certified_beds}
+                      </td>
+
+                      <td className="px-2 items-center">
+                      <TooltipHelp text="⚡get more insights">  
+                       <button
+                           //onClick={openCommunityModal}
+                            className="flex items-center space-x-1 px-2 py-2 bg-red-500 text-white rounded-lg hover:bg-red-500 transition-colors shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 group" 
+                            onClick={() => {
+                            setSelectedProvider(provider);
+                            setIsModalOpen(true);
+                                }}
+                         >
+                    <span>Book Call</span>
+                    <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+                          </button>
+                      </TooltipHelp>
+                        
                       </td>
                     </tr>
                   ))
@@ -608,6 +726,20 @@ export function NursingHomeProviderUS({}: NursingHomeProviderUSProps) {
           )}
         </>
       )}
+
+      {isModalOpen && selectedProvider && (
+  <NursingHomeProviderModal
+    provider={selectedProvider}
+    nationalMedianStaffTurnover={nationalMedianStaffTurnover}
+    nationalMedianStaffingHours={nationalMedianStaffingHours}
+    finesThreshold={finesThreshold}
+    onClose={() => {
+      setIsModalOpen(false);
+      setSelectedProvider(null);
+    }}
+  />
+)}
+
     </div>
   );
 }
