@@ -21,6 +21,7 @@ interface NursingHomeProvider {
   city_town: string;
   state: string;
   zip_code: string;
+  county_parish: string;
   telephone_number: string;
   number_of_certified_beds: number;
   average_number_of_residents_per_day: number;
@@ -119,6 +120,7 @@ export function NursingHomeProviderUS({}: NursingHomeProviderUSProps) {
           provider_name,
           provider_address,
           city_town,
+          county_parish,
           state,
           zip_code,
           telephone_number,
@@ -166,6 +168,7 @@ export function NursingHomeProviderUS({}: NursingHomeProviderUSProps) {
             provider_name: record.provider_name || '',
             provider_address: record.provider_address || '',
             city_town: record.city_town || '',
+            county_parish: record.county_parish || '',
             state: record.state || '',
             //zip_code: parseFloat(record.zip_code as any) || 0,
             zip_code: String(record.zip_code) || '',
@@ -235,7 +238,8 @@ export function NursingHomeProviderUS({}: NursingHomeProviderUSProps) {
         provider.city_town.toLowerCase().includes(lowerCaseQuery) ||
         provider.state.toLowerCase().includes(lowerCaseQuery) ||
         provider.provider_address.toLowerCase().includes(lowerCaseQuery) ||
-        provider.zip_code.toLowerCase().includes(lowerCaseQuery)
+        provider.zip_code.toLowerCase().includes(lowerCaseQuery) ||
+        provider.county_parish.toLowerCase().includes(lowerCaseQuery)                                 
       );
     }
 
@@ -326,7 +330,8 @@ export function NursingHomeProviderUS({}: NursingHomeProviderUSProps) {
         provider.city_town.toLowerCase().includes(lowerCaseQuery) ||
         provider.state.toLowerCase().includes(lowerCaseQuery) ||
         provider.provider_address.toLowerCase().includes(lowerCaseQuery) ||
-        provider.zip_code.toLowerCase().includes(lowerCaseQuery)
+        provider.zip_code.toLowerCase().includes(lowerCaseQuery) ||
+        provider.county_parish.toLowerCase().includes(lowerCaseQuery)
       );
     }
 
@@ -397,7 +402,7 @@ export function NursingHomeProviderUS({}: NursingHomeProviderUSProps) {
         <div className="relative">
           <input
             type="text"
-            placeholder="Search by name, city, or location..."
+            placeholder="Search by name, city, zip, county or location..."
             value={searchQuery}
             onChange={handleSearchChange}
             className="w-full px-4 py-2.5 pl-10 border border-gray-300 rounded-lg 
