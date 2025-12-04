@@ -98,7 +98,7 @@ const handleLoginClick = () => {
 
       <div id="top_page" className="min-h-screen bg-white">
         <nav className="px-4 py-3 flex items-center justify-between sm:px-6 sm:py-4">
-        <a href="https://www.sosavvy.so">
+        <a href="https://www.poetiq.io">
         <div className="flex items-center space-x-2">
 
          <div className="bg-red-500 rounded-full p-1.5 sm:p-2">
