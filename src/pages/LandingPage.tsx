@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CalendarCheck, Calendar, PenSquare, Clock, Users, PenTool, Briefcase, Plus, Minus,Menu, MailCheck,
-  Bot, CheckCircle,X, Send,Timer, Zap, ArrowRight, HeartPulse,
+  Bot, CheckCircle,X, Send,Timer, Zap, ArrowRight, HeartPulse, Rocket,
   Lightbulb, Sparkles, CircleDollarSign, Star } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { AuthModal } from '../components/AuthModal';
@@ -96,29 +96,6 @@ const handleLoginClick = () => {
   return (
       <>
 
-        {/* 
-    <Helmet>
-        
-        <title>{metaTitle}</title>
-        <meta name="description" content={metaDescription} />
-        <link rel="canonical" />
-        
-        
-        <meta property="og:title" content={metaTitle} />
-        <meta property="og:description" content={metaDescription} />
-        <meta property="og:image" content={metaImageUrl} />
-        
-        <meta property="og:url" content={canonicalUrl} /> 
-        
-        <meta property="og:type" content="article" />
-        
-        
-        <meta name="twitter:title" content={metaTitle} />
-        <meta name="twitter:description" content={metaDescription} />
-        <meta name="twitter:image" content={metaImageUrl} />
-      </Helmet>
-      */}
-
       <div id="top_page" className="min-h-screen bg-white">
         <nav className="px-4 py-3 flex items-center justify-between sm:px-6 sm:py-4">
         <a href="https://www.sosavvy.so">
@@ -133,10 +110,8 @@ const handleLoginClick = () => {
         {/*Desktop Navigation Buttons */}
         {/*  <div className="hidden flex space-x-2 space-x-4 sm:space-y-0 sm:space-x-2">*/}
 
-      
-
-          
         <div className="hidden sm:flex items-center space-x-4">
+          {/*
           <div className="items-center justify-center space-x-2">
               <button
             onClick={() => {
@@ -155,16 +130,7 @@ const handleLoginClick = () => {
 >
             Our Story
           </button> 
-            {/*
-          <button
-            onClick={() => {
-              window.location.href = '#testimonial';
-              }}
-              className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
->
-            Testimonials
-          </button> 
-          */}
+      
           <button
             onClick={() => {
               window.location.href = '#FAQ';
@@ -173,37 +139,27 @@ const handleLoginClick = () => {
 >
             FAQ
           </button> 
-            {/*
-           <button
-            onClick={() => {
-              window.location.href = '#pricing';
-              }}
-              className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
->
-            Pricing
-          </button> 
-*/}
-            {/*    
+         
         <Link
-          to="/blog"
+          to="/nursing_home"
           className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">    
           
-          Blog
+          Nursing Home
 
-        </Link>  
+        </Link> 
+      </div>
+      */}
 
-        */}
-      </div> 
           
           <button
-            //onClick={handleLoginClick}
+           
             onClick={openCommunityModal}
             className="flex items-center justify-center space-x-2 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-500 transition-colors              
             shadow-lg shadow-red-500/60       
              hover:shadow-xl hover:shadow-red-500/80 group"
           >
             {/*<Send className="w-3.5 h-3.5"/>*/}
-           <span>Join Community</span>
+           <span>Join Waitlist</span>
            <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
                
@@ -229,6 +185,7 @@ const handleLoginClick = () => {
       {isMobileMenuOpen && (
         <div className="sm:hidden fixed inset-0 bg-white z-40 flex flex-col items-center justify-center space-y-4 py-6"> 
 
+          {/*
           <button
             onClick={() => {
               window.location.href = '#Community';
@@ -247,17 +204,7 @@ const handleLoginClick = () => {
             >
             Our Story
           </button>
-          {/*
-          <button
-            onClick={() => {
-              window.location.href = '#testimonial';
-              setIsMobileMenuOpen(false);           
-              }}
-              className="w-11/12 max-w-sm px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
-            >
-            Testimonials
-          </button>
-        */}
+      
           <button
             onClick={() => {
               window.location.href = '#FAQ';
@@ -267,7 +214,7 @@ const handleLoginClick = () => {
             >
             FAQ
           </button>
-          {/*
+        
           <button
             onClick={() => {
               window.location.href = '#pricing';
@@ -288,11 +235,10 @@ const handleLoginClick = () => {
           </button>
           
           <button
-            //onClick={handleLoginClick}
             onClick={openCommunityModal}
             className="group flex items-center justify-center space-x-2 w-1/2 sm:w-auto p-4 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 transition-colors shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-4 sm:text-lg">
            
-           <span>Join Community</span>
+           <span>Join Waitlist</span>
            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
         
@@ -315,7 +261,6 @@ const handleLoginClick = () => {
     
 
            {/*start alternative header */}
-           {/*<h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-6xl leading-tight font-bold mb-2 sm:mb-3">*/}
            <h1 className="text-3xl sm:text-6xl md:text-7xl lg:text-7xl leading-tight font-bold mb-2 sm:mb-3"> 
             <p>
               <span className="inline-block bg-gradient-to-l from-red-300 via-red-400 to-red-500 text-transparent bg-clip-text mt-12">
@@ -338,20 +283,19 @@ const handleLoginClick = () => {
           {/*end alternative header*/}
 
 
-      <p className="mt-16 mb-1 text-sm sm:text-sm md:text-lg text-red-400 font-normal">
-        {/*<span className="font-normal">Join Our Newsletter 🔥</span>*/}
-            <span> Get the latest Parental Care Guide 💌</span>
+          {/*      
+      <p className="mt-16 mb-1 text-sm sm:text-xl md:text-lg text-red-400 font-normal">
+        
+            <span>Coming Soon</span>
         </p>
-
+*/}
+          
   <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 items-center mx-auto w-fit"> 
     {/* Adjusted button layout for mobile */}
 
-<div className="mt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
-  {/*<input
-    type="email"
-    placeholder="Enter your email address"
-    className="w-full sm:w-80 px-5 py-3 border border-red-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 text-gray-900"
-  />*/}
+<div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+
+  {/*
   <button
     onClick={openNewsletterModal}
     type="submit"
@@ -361,6 +305,19 @@ const handleLoginClick = () => {
     <span className="hidden sm:inline"> Join Our Newsletter </span>
     <span className="sm:hidden"> Join Newsletter </span>
     <span> <MailCheck className="w-4 h-4 sm:w-5 h-5"/> </span>
+    
+  </button>
+*/}
+
+  <button
+    //onClick={openNewsletterModal}
+    type="submit"
+    className="flex items-center space-x-2 w-full sm:w-auto bg-gray-700 text-white px-8 py-3 rounded-lg font-semibold shadow-xl hover:shadow-2xl shadow-red-200 hover:shadow-red-300 transition-all duration-300 hover:scale-105"
+  >
+    
+    <span className="hidden sm:inline"> Launching Soon </span>
+    <span className="sm:hidden"> Launching Soon </span>
+    <span> <Rocket className="w-4 h-4 sm:w-5 h-5"/> </span>
     
   </button>
     </div>
@@ -496,315 +453,10 @@ const handleLoginClick = () => {
 
           
 </div>
-        
-{/*----------------- Start The Community ----------------------- */}
-<section id="Community" className="mt-6 text-center">
-          <div className="inline-flex items-center border-8 border-red-200 space-x-2 px-3 py-2 bg-gradient-to-r from-red-500 via-red-400 to-red-300 text-white rounded-full text-lg mb-4 cursor-pointer"
-                 
-            onClick={() => {
-              window.location.href = '#top_page';
-              setIsMobileMenuOpen(false);           
-              }}
-            >
-            
-            <Sparkles className="w-4 h-4" />
-                <span>The Poetiq Community</span>
-          </div>
-  </section> 
 
-{/*----------------- Start Why Join Community ----------------------- 
-  <section className="mt-2 text-center items-center">
-
-
-
-    <div className="items-center">
-
-         <div class="flex inset-0 opacity-70 
-             [background-image:radial-gradient(circle_at_center,rgba(239,68,68,0.4)_0%,rgba(234,179,8,0.3)_35%,transparent_70%)]">
-        </div>
-      
-        <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-red-400">
-            Why join our <br className="sm:hidden"/> Community
-        </h2> 
-        <p className="text-xl sm:text-2xl text-gray-500 mb-12 max-w-3xl mx-auto">
-            
-            The poetiq Community is where career professionals go to restore strategic focus and reclaim the hours required to execute their parental duty without compromising parental dignity. <br/><br/>
-          
-          It’s a private, high-integrity network where you'll get direct access to experienced peers who share unfiltered insights on the crisis. They help each other dismantle a system designed for the 19th Century. <br/><br/>
-          
-          The poetiq Community is where to find clarity, control, and the professional blueprint for dignified parental care
-          
-          </p>
-
-      <button
-              onClick={handleLoginClick}
-             className="group flex items-center justify-center space-x-2 w-full sm:w-auto px-6 py-3 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 transition-colors shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-4 sm:text-lg mx-auto">
-      
-           <span>Join Community</span>
-           <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-          </button>        
-      
-        </div>
-    
-      </section>
-        */}
-{/*-------------------------- End Why Join Community Section -------------------------------- */}   
-
-
-{/*---------------------- Start Gradient Version for Testing --------------------------------*/}        
-
-<section className="mt-2 text-center">
-
-    {/* CONTAINER: This now acts as the bounding box for the absolute gradient. Added relative. */}
-    <div className="relative items-center py-6"> 
-
-        {/* GRADIENT LAYER: Changed back to 'absolute' so it fills the height/width of the relative parent. */}
-        <div class="absolute inset-0 opacity-20 
-             [background-image:radial-gradient(ellipse_at_center,rgba(239,68,68,0.4)_0%,rgba(234,179,8,0.3)_55%,transparent_80%)]">
-        </div>
-
-        {/* CONTENT WRAPPER: Added relative z-10 to ensure text and button are visible above the absolute gradient. */}
-        <div class="relative z-10 max-w-5xl mx-auto">
-            
-            <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-red-400">
-                Why join our <br className="sm:hidden"/> Community
-            </h2> 
-            <p className="text-xl sm:text-2xl text-gray-700 mb-12 max-w-3xl mx-auto">
-                The Poetiq Community is where career professionals go to restore strategic focus and reclaim the hours needed to provide parental care without sacrificing their careers or compromising parental dignity. <br/><br/>
-                It’s a private, high-integrity network where you'll get direct access to experienced peers who share unfiltered insights on the unique and tremendous challenges of caring for aging family members.<br/><br/> 
-              They help each other navigate a labyrinth of eldercare choices that can threaten to overwhelm us as we struggle to maintain the delicate balance between our careers and families. <br/><br/>
-                The Poetiq Community is where to find clarity, control, and the professional blueprint for dignified parental care
-            </p>
-
-            <button
-                //onClick={handleLoginClick}
-                onClick={openCommunityModal}
-                className="group flex items-center justify-center space-x-2 w-full sm:w-auto px-6 py-3 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 transition-colors shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-4 sm:text-lg mx-auto">
-                <span>Join Community</span>
-                {/* Placeholder for ArrowRight icon or similar */}
-              {/*<span className="w-5 h-5 ml-1 transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>*/}
-               <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-            </button> 
-
-        </div>
-    </div>
-</section>        
-
-{/*------------------------End Gradient version for Testing ----------------------------------*/}        
-
-
-{/*----------------- Start Two Friends Started Community ----------------------- */}
-  <section id="our_story" className="mt-16 text-center items-center">
-
-    <div className="items-center">
-        <h2 className="text-4xl sm:text-5xl font-bold text-red-400 mb-4">
-            Started by two friends 👋
-        </h2> 
-
-      <p className="text-xl sm:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto hover:text-red-500">
-          Passionate about fixing the Eldercare Crisis Together
-      </p>
-
-      <div className="w-full p-4 mb-10">
-
-       <div className="grid sm:grid-cols-4 grid-cols-2 gap-2 sm:gap-4 h-[450px] grid-rows-2 sm:mx-[20%]">
-
-        {/* Column 1: Two stacked images */}
-        <div className="hidden sm:block col-span-1 flex flex-col gap-4 h-[450px]">
-          <div className="relative rotate-[-5deg] h-1/2 overflow-hidden rounded-xl shadow-xl transform transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-red-500/60 hover:shadow-red-500/90">
-            <img
-              //src="https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/olu_profile_dark.png"
-              alt="Image 1"
-              className="w-full h-full object-cover aspect-square" // Square aspect ratio for stacked images
-            />
-            
-            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent pointer-events-none"></div>
-            
-            {/* --- TEXT OVERLAY ADDED HERE --- */}
-          <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white text-left">
-            <h3 className="text-lg sm:text-xl font-bold drop-shadow-lg">Olu </h3>
-              <p className="text-sm sm:text-base mt-1 drop-shadow-lg opacity-90">Co-Founder</p>
-             </div>
-          </div>
-          <div className="relative h-1/2 overflow-hidden">
-            <img
-              //src="https://images.pexels.com/photos/3184433/pexels-photo-3184433.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              //alt="Image 2"
-              //className="w-full h-full object-cover aspect-square" // Square aspect ratio for stacked images
-            />
-          </div>
-        </div>
-
-        {/* Column 2: One image, spanning two rows to match Column 1's height */}
-        <div className="sm:col-span-2 col-span-2 row-span-2"> 
-          <div className="relative border-2 p-4 border-red-400 hover:border-red-500 overflow-hidden rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl h-full sm:rotate-[5deg]">
-            <img
-              src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/jeff_and_olu.png"
-              alt="Image 3"
-              className="w-full h-full object-cover sm:object-[50%_60%] object-[20%_50%] rounded-xl"/>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>  
-
-
-              {/* --- TEXT OVERLAY ADDED HERE --- */}
-                    <div className="sm:hidden absolute bottom-4 left-0 right-0 p-4 sm:p-6 text-white text-center">
-                        <h3 className="text-xl sm:text-xl font-bold drop-shadow-lg">Jeff & Olu </h3>
-                        <p className="text-base sm:text-base mt-1 drop-shadow-lg opacity-90">The Founders</p>
-                    </div>
-          </div>
-        </div>
-
-        {/* Column 3: Two stacked images (to meet the total of 5 images) */}
-        <div className="hidden sm:block col-span-1 flex flex-col gap-4 h-[450px]">
-          <div className="relative h-1/2 overflow-hidden transform transition-all duration-300">
-            {/*saving this*/}
-          </div>
-          <div className="relative rotate-[7deg] h-1/2 overflow-hidden rounded-xl shadow-xl transform transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-red-500/60 hover:shadow-red-500/90">
-            <img
-              src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/jeff_profile.png"
-              alt="Image 5"
-              className="w-full h-full object-cover aspect-square"
-            />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent pointer-events-none"></div>
-                    
-                    {/* --- TEXT OVERLAY ADDED HERE --- */}
-                    <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white text-left">
-                        <h3 className="text-lg sm:text-xl font-bold drop-shadow-lg">Jeff </h3>
-                        <p className="text-sm sm:text-base mt-1 drop-shadow-lg opacity-90">Co-Founder</p>
-                    </div>
-          </div>
-        </div>
-      </div>
-    </div>
-      {/*
-      <button
-              onClick={handleLoginClick}
-              className="flex items-center justify-center space-x-2 w-full sm:w-auto px-6 py-3 bg-blue-600 text-white text-base font-semibold rounded-lg                             hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/60 hover:shadow-xl hover:shadow-blue-500/80 sm:px-8 sm:py-4 sm:text-lg                         group mx-auto"
-        >
-      
-           <span>Join Community</span>
-           <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-          </button>   
-
-       */}   
-
-    </div>
-    
-  </section>
-     
-{/*-------------------------- End Two Friends Started Community -------------------------------- */}   
-
-
-{/*----------------- Start Two Friends Started Community ----------------------- */}
-  <section className="mt-2 text-center">
-
-     <OurStoryTimeline />
-    <button
-      //onClick={handleLoginClick}
-      onClick={openCommunityModal}
-      className="flex items-center justify-center space-x-2 w-full sm:w-auto px-6 py-3 border border-red-500 bg-white text-red-500 text-base font-semibold rounded-lg hover:bg-red-500 hover:text-white transition-colors shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-4 sm:text-lg group mx-auto"
-        >
-      
-            <span>Join Community</span>
-           <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-    </button>   
-</section>
-     
-{/*-------------------------- End Two Friends Started Community -------------------------------- */} 
-
-
-        
-        
-
-{/*------------------- Start Images Added for Effect -----------------------------*/}
-
- {/* Background Images - Absolutely positioned for "scattered" effect with animations */}
-      {/* IMPORTANT: These images now have a higher z-index (z-30) to appear on top of the content div (z-20) */}
-      {/* Replace placeholder URLs with your actual image URLs (e.g., from Supabase)  */}
-
-      {/* Image 1: Top-left, floating circle 
-      <img
-        src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/user-post-images/agency_owner_img.png"
-        //alt="Abstract blue shape"
-        className="hidden sm:block absolute top-8 left-1/4 animate-float opacity-80 w-40 h-40 sm:w-40 sm:h-40 rounded-md  z-30"
-        style={{ animationDelay: '0s', animationDuration: '6s' }}
-        onError={(e) => { e.target.onerror = null; e.target.src = "https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/user-post-images/agency_owner_img.png"; }}
-      />
-      */}
-        
-      {/* Image 2: Bottom-right, floating rounded rectangle 
-      <img
-        src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/user-post-images/investor_image.png"
-        alt="Abstract pink shape"
-        className="hidden sm:block absolute bottom-16 right-1/4 animate-float opacity-80 w-32 h-32 sm:w-32 sm:h-32 rounded-xl transform rotate-12 z-30"
-        style={{ animationDelay: '2s', animationDuration: '7s' }}
-        onError={(e) => { e.target.onerror = null; e.target.src = "https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/user-post-images/investor_image.png"; }}
-      />
-      */}
-      {/* Image 3: Mid-right, smaller floating circle 
-      <img
-        src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/user-post-images/marketing_exec.png"
-        alt="Abstract green shape"
-        className="hidden sm:block absolute top-1/3 right-10 animate-float opacity-80 w-32 h-32 sm:w-32 sm:h-32 rounded-full z-30"
-        style={{ animationDelay: '4s', animationDuration: '5s' }}
-        onError={(e) => { e.target.onerror = null; e.target.src = "https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/user-post-images/marketing_exec.png"; }}
-      />
-      */}
-        {/* Image 4: Bottom-left, larger floating rectangle 
-        <img
-        src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/user-post-images/the_startup_founder.png"
-        alt="Abstract orange shape"
-        className="hidden sm:block absolute bottom-12 left-1/4 animate-float opacity-80 w-40 h-40 sm:w-40 sm:h-40 rounded-xl transform -rotate-6 z-30"
-        style={{ animationDelay: '1s', animationDuration: '8s' }}
-        onError={(e) => { e.target.onerror = null; e.target.src = "https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/user-post-images/the_startup_founder.png"; }}
-      />
-      */}
-      {/* Image 5: Mid-left, medium floating circle 
-      <img
-        src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/user-post-images/accountant_image.png"
-        alt="Abstract red shape"
-        className="hidden sm:block absolute top-1/2 left-10 transform -translate-y-1/2 animate-float opacity-80 w-28 h-28 sm:w-36 sm:h-36 rounded-full z-30"
-        style={{ animationDelay: '3s', animationDuration: '6.5s' }}
-        onError={(e) => { e.target.onerror = null; e.target.src = "https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/user-post-images/accountant_image.png"; }}
-      />
-      */}
-      {/* Image 6: Top-right, smaller floating shape (rounded-lg rotated 45deg for a diamond look) 
-      <img
-        src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/user-post-images/law_practice_owner.png"
-        alt="Abstract purple shape"
-        className="hidden sm:block absolute top-16 right-1/4 animate-float opacity-80 w-40 h-40 sm:w-40 sm:h-40 rounded-lg transform rotate-15 z-30"
-        style={{ animationDelay: '5s', animationDuration: '5.5s' }}
-        onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/80x80/eef2ff/4338ca?text=Shape6"; }}
-      />
-      */}
-
-      {/* Custom CSS for float animation */}
-      <style>{`
-        @keyframes float {
-          0% {
-            transform: translateY(0px) rotate(0deg);
-          }
-          50% {
-            transform: translateY(-15px) rotate(5deg); /* Move up and slightly rotate */
-          }
-          100% {
-            transform: translateY(0px) rotate(0deg);
-          }
-        }
-        .animate-float {
-          animation-name: float;
-          animation-iteration-count: infinite; /* Keeps repeating indefinitely */
-          animation-timing-function: ease-in-out; /* Smooth start and end */
-          animation-direction: alternate; /* Plays forward then backward for a smooth loop */
-        }
-      `}</style>
- 
-{/*-------------------- End images Added for effect -----------------------------*/}
-        
-        
  {/*------------------------------start of the FAQ Section -------------------------------------*/}    
 
-<section id="FAQ" className="mt-24 text-center">
+<section id="FAQ" className="mt-8 text-center">
   <div className="inline-flex items-center border-8 border-red-200 space-x-2 px-3 py-2 bg-gradient-to-r from-red-500 via-red-400 to-red-300 text-white rounded-full text-lg mb-6 cursor-pointer"
          
             onClick={() => {
@@ -940,7 +592,7 @@ const handleLoginClick = () => {
   </div>
 </details>
 
-     {/* FAQ Item 6 */}
+     {/* FAQ Item 6 
      <details className="group bg-white rounded-lg shadow-sm border border-gray-200 hover:border hover:border-red-500 overflow-hidden">
   <summary className="flex items-center justify-between p-5 cursor-pointer font-semibold text-lg text-gray-800  hover:bg-gray-50 transition-colors hover:text-red-500">
     Are the founders, Jeff and Olu, qualified to lead a solution of this magnitude?
@@ -958,6 +610,7 @@ const handleLoginClick = () => {
     </p>
   </div>
 </details>
+    */}
 
      {/* FAQ Item 7 */}
     <details className="group bg-white rounded-lg shadow-sm border border-gray-200 hover:border hover:border-red-500 overflow-hidden">
@@ -999,12 +652,13 @@ const handleLoginClick = () => {
 </section>
 
 
-  {/*------------------------------- end of the FAQ Section --------------------------------------*/}       
+  {/*------------------------------- end of the FAQ Section --------------------------------------*/}          
+         
 
 
   {/* ------------------------------ Start Final Call to Action Section --------------------------*/}    
 
-<section className="mt-24 py-16 bg-gradient-to-t from-red-500 via-red-100 to-white text-gray-900 text-center rounded-xl">
+<section className="mt-16 py-16 bg-gradient-to-t from-red-500 via-red-100 to-white text-gray-900 text-center rounded-xl">
   <div className="max-w-4xl mx-auto px-6">
     <h2 className="text-2xl text-red-400 sm:text-4xl md:text-6xl font-bold leading-tight mb-8">
       You don't have to navigate parental care alone
@@ -1024,7 +678,7 @@ const handleLoginClick = () => {
              hover:shadow-xl hover:shadow-red-500/80 group" // Adjusted mobile button size/text for consistency
           >
             {/*<Send className="w-3.5 h-3.5"/>*/}
-           <span>Join Community</span>
+           <span>Join Waitlist</span>
            <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
 
@@ -1033,8 +687,7 @@ const handleLoginClick = () => {
    
   </div>
 </section>
-
-
+          
 
   {/*---------------------------------End Final Call to Action Section-----------------------------*/}      
 
@@ -1057,36 +710,7 @@ const handleLoginClick = () => {
         {/* Social links */}
       </div>
 
-      {/* Product Links
-      <div>
-        <h3 className="font-semibold mb-4">Product</h3>
-        <ul className="space-y-2 text-sm text-gray-600">
-          <li> <a href="#key_features" className="no-underline hover:text-blue-400 transition-colors">Features</a></li>
-          <li> <a href="#pricing" className="no-underline hover:text-blue-400 transition-colors">Pricing</a></li>
-          <li> <a href="#testimonial" className="no-underline hover:text-blue-400 transition-colors">Testimonials</a></li>
-          <li> <a href="https://sosavvy.so/linkedin-for-accountants" className="no-underline hover:text-blue-400 transition-colors">LinkedIn for Accountants</a></li>
-          <li> <a href="https://sosavvy.so/linkedin/linkedin-for-coaches" className="no-underline hover:text-blue-400 transition-colors">LinkedIn for Coaches</a></li>
-          <li> <a href="https://sosavvy.so/linkedin/linkedin-for-recruiters" className="no-underline hover:text-blue-400 transition-colors">LinkedIn for Tech Recruiters</a></li>
-        </ul>
-      </div>
-       */}
-
-      {/* Resources 
-      <div>
-        <h3 className="font-semibold mb-4">Resources</h3>
-        <ul className="space-y-2 text-sm text-gray-600">
-          <li> <a href="#FAQ" className="no-underline hover:text-blue-400 transition-colors">Frequently Asked Questions</a></li>
-          <li> <a href="https://sosavvy.so/blog/the-sosavvy-playbook-linkedin-content-without-the-grind" className="no-underline hover:text-blue-400 transition-colors">LinkedIn Content Strategy Playboook</a></li>
-          <li> <a href="https://sosavvy.so/blog/linkedin-hooks-for-viral-posts" className="no-underline hover:text-blue-400 transition-colors">10 Best LinkedIn Hooks for Viral Posts</a></li>
-          <li> <a href="https://sosavvy.so/blog/7-ai-prompts-to-boost-linkedin-event-attendance" className="no-underline hover:text-blue-400 transition-colors">7 Prompts to Boost Your LinkedIn Events</a></li>
-          <li> <a href="https://sosavvy.so/blog/3-rules-for-posting-consistently-on-linkedin-with-ai-scheduling" className="no-underline hover:text-blue-400 transition-colors">How to Post Consistently on LinkedIn</a></li>
-          <li> <a href="https://sosavvy.so/blog/best-linkedin-content-strategy-for-small-business-owners" className="no-underline hover:text-blue-400 transition-colors">LinkedIn Content Strategy for Small Business</a></li>
-          <li> <a href="https://sosavvy.so/blog/linkedin-posting-strategy-for-tech-recruiters-get-ceos-booking-calls-on-autopilot" className="no-underline hover:text-blue-400 transition-colors">Best LinkedIn Strategy for Recruiters</a></li>
-          <li> <a href="https://sosavvy.so/blog/5-linkedin-posts-for-tax-accountants-and-cpas-to-grow-client-inquiries" className="no-underline hover:text-blue-400 transition-colors">LinkedIn Guide for CPAs & Accountants</a></li>
-          <li> <a href="https://sosavvy.so/blog/get-more-demos-7-best-prompts-for-linkedin-ctas" className="no-underline hover:text-blue-400 transition-colors">Top LinkedIn Prompts to Book Demos</a></li>
-        </ul>
-      </div>
-*/}
+     
       {/* Legal */}
       <div>
         <h3 className="font-semibold mb-4">Legal</h3>
@@ -1108,21 +732,8 @@ const handleLoginClick = () => {
       <p className="order-2 sm:order-1">&copy; 2025 poetiq.io All rights reserved.</p> {/* Order for mobile */}
         <div className="flex space-x-6 order-1 sm:order-2"> 
           {/* Order for mobile */}
-          {/*
-          <span>Made with ❤️ for career professionals struggling to manage their aging parents and build a career</span>
-            <a href="https://www.linkedin.com/in/oluadedeji" className="text-blue-500 hover:text-blue-600">Olu
-          </a>
-          
-          <a href="https://www.linkedin.com/in/jeffreymbaumgarten/" className="text-blue-500 hover:text-blue-600"> Jeff 
-          </a>
-*/}
           <p class="text-sm text-gray-700 text-center leading-relaxed">
     Community for executive professionals striving to build a career while caring for aging parents. 
-    Connect with 
-    <a href="https://www.linkedin.com/in/oluadedeji" class="text-red-500 hover:text-red-600 font-medium transition-colors"> <u>Olu</u> </a>
-    and 
-    <a href="https://www.linkedin.com/in/jeffreymbaumgarten/" class="text-red-500 hover:text-red-600 font-medium transition-colors"> <u>Jeff</u> </a>
-    on LinkedIn.
 </p>
         </div>
       </div>
