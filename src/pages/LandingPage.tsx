@@ -148,6 +148,7 @@ const handleLoginClick = () => {
       </div>
       */}
 
+{/* Enable later for easy access to the care tools pages
         <Link
           to="/nursing_home"
           className="px-4 py-2 bg-gray-50 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">    
@@ -162,6 +163,8 @@ const handleLoginClick = () => {
 >
             FAQ
           </button> 
+
+            */}   
           
           <button
            
@@ -703,7 +706,7 @@ const handleLoginClick = () => {
         <h3 className="font-semibold mb-4">Care Tools & Resources</h3>
         <ul className="space-y-2 text-sm text-gray-600">
           <li> <a href="#FAQ" className="no-underline hover:text-red-400 transition-colors">Frequently Asked Questions</a></li>
-          <li> <a href="https://poetiq.io/nursing_home" className="no-underline hover:text-red-400 transition-colors">Nursing Home Finder 🎯</a></li>
+          {/*<li> <a href="https://poetiq.io/nursing_home" className="no-underline hover:text-red-400 transition-colors">Nursing Home Finder 🎯</a></li>*/}
         </ul>
       </div>
 
