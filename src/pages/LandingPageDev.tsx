@@ -104,7 +104,7 @@ const handleLoginClick = () => {
         <div className="hidden sm:flex items-center space-x-4">
           <div className="items-center justify-center space-x-2">
                <Link
-                  to="/nursing_home"
+                  to="dev/nursing_home"
                     className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">    
                     Nursing Home Finder
                 </Link> 
