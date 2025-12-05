@@ -51,7 +51,7 @@ function AppRoutes() {
       <Route path="/blog" element={<BlogListPage />} />    
       <Route path="blog/:slug" element={<BlogPostPage />} /> 
       <Route path="/dev" element={<LandingPageDev />} />
-      <Route path="/nursing_home" element={<NursingHomeSearchPage />} />
+      <Route path="dev/nursing_home" element={<NursingHomeSearchPage />} />
       
       <Route
         path="/dashboard/*"

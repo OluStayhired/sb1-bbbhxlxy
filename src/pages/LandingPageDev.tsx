@@ -103,11 +103,18 @@ const handleLoginClick = () => {
         {/*Desktop Navigation Buttons */}          
         <div className="hidden sm:flex items-center space-x-4">
           <div className="items-center justify-center space-x-2">
+
+            {/*
                <Link
                   to="dev/nursing_home"
                     className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">    
                     Nursing Home Finder
                 </Link> 
+  */}
+                <a href="dev/nursing_home" className="no-underline px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"> 
+                Nursing Home Finder
+                </a>
+
               <button
               onClick={() => {
               window.location.href = '#Community';
