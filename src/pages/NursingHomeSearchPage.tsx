@@ -93,7 +93,7 @@ const handleLoginClick = () => {
 
       <div id="top_page" className="min-h-screen bg-white">
         <nav className="px-4 py-3 flex items-center justify-between sm:px-6 sm:py-4">
-        <a href="https://www.poetiq.io">
+        <a href="/">
         <div className="flex items-center space-x-2">
 
          <div className="bg-red-500 rounded-full p-1.5 sm:p-2">
@@ -106,42 +106,7 @@ const handleLoginClick = () => {
         {/*  <div className="hidden flex space-x-2 space-x-4 sm:space-y-0 sm:space-x-2">*/}
 
         <div className="hidden sm:flex items-center space-x-4">
-          {/*
-          <div className="items-center justify-center space-x-2">
-              <button
-            onClick={() => {
-              window.location.href = '#Community';
-              }}
-              className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
->
-            Community
-          </button> 
-
-             <button
-            onClick={() => {
-              window.location.href = '#our_story';
-              }}
-              className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
->
-            Our Story
-          </button> 
-      
-          <button
-            onClick={() => {
-              window.location.href = '#FAQ';
-              }}
-              className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
->
-            FAQ
-          </button> 
-         
-        <Link
-          to="/nursing_home"
-          className="px-4 py-2 bg-gray-100 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">    
-          Search Nursing Homes
-        </Link> 
-      </div>
-      */}
+          
 
       
           
@@ -255,17 +220,6 @@ const handleLoginClick = () => {
   <section className="mt-2 border-t border-gray-200">
 
      <NursingHomeProviderUS />
-    {/*  
-    <button
-      //onClick={handleLoginClick}
-      onClick={openCommunityModal}
-      className="flex items-center justify-center space-x-2 w-full sm:w-auto px-6 py-3 border border-red-500 bg-white text-red-500 text-base font-semibold rounded-lg hover:bg-red-500 hover:text-white transition-colors shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-4 sm:text-lg group mx-auto"
-        >
-      
-            <span>Join Community</span>
-           <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-    </button>  
-    */}
     
 </section>
      
@@ -287,8 +241,6 @@ const handleLoginClick = () => {
         {/* Buttons */}
       <div className="flex flex-col sm:mr-10  sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 mb-16"> 
           <button
-            //onClick={handleLoginClick}
-            //onClick={openWaitlistModal}
             onClick={openCommunityModal}
             className="flex items-center justify-center space-x-2 w-full sm:w-auto px-6 py-3 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors text-base font-semibold sm:px-4 sm:py-3 sm:text-base
                          shadow-lg shadow-red-500/60       
@@ -308,11 +260,11 @@ const handleLoginClick = () => {
 
   {/*---------------------------------End Final Call to Action Section-----------------------------*/}      
 
-        {/* Start Footer - Full Foot Breakdown */}
+{/*----------------------Start Footer - Full Foot Breakdown ------------------------------ */}
 
 <footer className="mt-24 border-t border-gray-300 text-left">
   <div className="max-w-7xl mx-auto px-4 py-12">
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"> {/* Responsive grid */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4"> {/* Responsive grid */}
       {/* Company Info */}
       <div className="space-y-4 space-x-1">
 
@@ -327,21 +279,39 @@ const handleLoginClick = () => {
         {/* Social links */}
       </div>
 
-     
+      {/* Product Links*/}
+      <div className="col-span-1">
+        <h3 className="font-semibold mb-4">About Poetiq</h3>
+        <ul className="space-y-2 text-sm text-gray-600">
+          <li> <a href="#Community" className="no-underline hover:text-red-400 transition-colors">Community</a></li>
+          <li> <a href="#FAQ" className="no-underline hover:text-red-400 transition-colors">Frequently Asked Questions</a></li>
+          <li> <a href="#" className="no-underline hover:text-red-400 transition-colors">Roadmap (Coming Soon)</a></li>
+        </ul>
+      </div>
+      
+
+  {/* Care Tools & Resources */}
+      <div className="col-span-1">
+        <h3 className="font-semibold mb-4">Care Tools & Resources</h3>
+        <ul className="space-y-2 text-sm text-gray-600">
+          <li> <a href="/nursing_home" className="no-underline hover:text-red-400 transition-colors">Nursing Home Finder 🎯</a></li>
+          <li> <a href="#" onclick="return false;" className="no-underline hover:text-red-400 transition-colors">Caregivers Near Me 📌 </a></li>    
+          <li> <a href="#" className="no-underline hover:text-red-400 transition-colors">Blogs (coming soon) ✍️</a></li>
+        </ul>
+      </div>
+      
       {/* Legal */}
-      <div>
+      <div className="col-span-1">
         <h3 className="font-semibold mb-4">Legal</h3>
         <ul className="space-y-2 text-sm text-gray-600">
-          <li>
-            <a href="/privacy.html" className="flex items-center gap-3 hover:text-red-500 transition-colors">Privacy Policy</a>      
-          </li>
-          <li>
-              <a href="/terms.html" className="flex items-center gap-3 hover:text-red-500 transition-colors">Terms of Service</a>
-          </li>
-              <a href="/cookie.html" className="flex items-center gap-3 hover:text-red-500 transition-colors">Cookie Policy</a>
+          <li> <a href="/privacy.html" className="flex items-center gap-3 hover:text-red-500 transition-colors">Privacy Policy</a></li>
+          <li><a href="/terms.html" className="flex items-center gap-3 hover:text-red-500 transition-colors">Terms of Service</a></li>
+          <li><a href="/cookie.html" className="flex items-center gap-3 hover:text-red-500 transition-colors">Cookie Policy</a></li>
         </ul>
       </div>
     </div>
+
+   {/*-------------------------------------- End Footer -------------------------------------------*/} 
 
     {/* Bottom bar */}
     <div className="mt-12 pt-8 border-t border-gray-200">

@@ -549,7 +549,7 @@ export function NursingHomeProviderUS({}: NursingHomeProviderUSProps) {
                     className="px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
                   >
                     <div className="flex items-center text-gray-500 space-x-1">
-                    <span className="text-gray-400"><Heart className="w-3.5 h-3.5"/></span>
+                      <span className="text-gray-400"><Heart className="w-3.5 h-3.5"/></span>
                       <span>Health Rating</span>
                       {renderSortIcon('health_inspection_rating')}
                     </div>
@@ -619,20 +619,29 @@ export function NursingHomeProviderUS({}: NursingHomeProviderUSProps) {
                   </tr>
                 ) : (
                   displayedProviders.map((provider) => (
-                    <tr key={provider.id} className="hover:bg-red-50 text-xs">
-                      <td className="px-4 py-4 text-xs whitespace-nowrap">
-                        {provider.poetiq_rating && renderStarRating(provider.poetiq_rating)}
-                        {/*renderStarRating(provider.poetiq_rating)*/}
-                      </td>
-                      <td className="px-4 py-4">
-                        <div className="text-xs font-medium text-gray-900"
-                           onClick={() => {
+                    <tr key={provider.id} className="hover:bg-red-50 text-xs cursor:pointer">
+                      <td className="px-4 py-4 text-xs whitespace-nowrap cursor:pointer" >
+                        <button
+                         onClick={() => {
                             setSelectedProvider(provider);
                             setIsModalOpen(true);
                                 }}
-                          >
+                         >
+                        {provider.poetiq_rating && renderStarRating(provider.poetiq_rating)}
+                          </button>
+                      </td>
+                      <td className="px-4 py-4">
+                        <button
+                         onClick={() => {
+                            setSelectedProvider(provider);
+                            setIsModalOpen(true);
+                                }}
+                         >
+                        <div className="text-xs font-medium text-gray-900">
                           {provider.provider_name}</div>
                         <div className="text-xs lowercase text-gray-500">{provider.provider_address}</div>
+                        </button>
+                        
                       </td>
                       <td className="px-4 py-4 whitespace-nowrap text-gray-700">
                         {provider.city_town}
@@ -695,6 +704,7 @@ export function NursingHomeProviderUS({}: NursingHomeProviderUSProps) {
                         
                       </td>
                     </tr>
+                 
                   ))
                 )}
               </tbody>
