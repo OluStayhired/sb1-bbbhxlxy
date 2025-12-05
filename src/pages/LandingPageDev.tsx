@@ -997,7 +997,7 @@ const handleLoginClick = () => {
       </div>
       
 
-  {/* Care Tools & Resources */}
+  {/* Care Tools & Resources **/}
       <div className="col-span-1">
         <h3 className="font-semibold mb-4">Care Tools & Resources</h3>
         <ul className="space-y-2 text-sm text-gray-600">
