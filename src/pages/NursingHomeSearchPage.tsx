@@ -93,7 +93,7 @@ const handleLoginClick = () => {
 
       <div id="top_page" className="min-h-screen bg-white">
         <nav className="px-4 py-3 flex items-center justify-between sm:px-6 sm:py-4">
-        <a href="/">
+        <a href="/dev">
         <div className="flex items-center space-x-2">
 
          <div className="bg-red-500 rounded-full p-1.5 sm:p-2">
@@ -283,8 +283,8 @@ const handleLoginClick = () => {
       <div className="col-span-1">
         <h3 className="font-semibold mb-4">About Poetiq</h3>
         <ul className="space-y-2 text-sm text-gray-600">
-          <li> <a href="#Community" className="no-underline hover:text-red-400 transition-colors">Community</a></li>
-          <li> <a href="#FAQ" className="no-underline hover:text-red-400 transition-colors">Frequently Asked Questions</a></li>
+          <li> <a href="/dev#Community" className="no-underline hover:text-red-400 transition-colors">Community</a></li>
+          <li> <a href="/dev#FAQ" className="no-underline hover:text-red-400 transition-colors">Frequently Asked Questions</a></li>
           <li> <a href="#" className="no-underline hover:text-red-400 transition-colors">Roadmap (Coming Soon)</a></li>
         </ul>
       </div>
@@ -294,8 +294,8 @@ const handleLoginClick = () => {
       <div className="col-span-1">
         <h3 className="font-semibold mb-4">Care Tools & Resources</h3>
         <ul className="space-y-2 text-sm text-gray-600">
-          <li> <a href="/nursing_home" className="no-underline hover:text-red-400 transition-colors">Nursing Home Finder 🎯</a></li>
-          <li> <a href="#" onclick="return false;" className="no-underline hover:text-red-400 transition-colors">Caregivers Near Me 📌 </a></li>    
+          <li> <a href="dev/nursing_home" className="no-underline hover:text-red-400 transition-colors">Nursing Home Finder 🎯</a></li>
+          <li> <a href="#" onClick="return false;" className="no-underline hover:text-red-400 transition-colors">Caregivers Near Me 📌 </a></li>    
           <li> <a href="#" className="no-underline hover:text-red-400 transition-colors">Blogs (coming soon) ✍️</a></li>
         </ul>
       </div>
