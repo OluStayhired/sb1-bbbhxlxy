@@ -22,7 +22,7 @@ function PrivateRoute({ children }: { children: React.ReactNode }) {
   const location = useLocation();
 
   // Show loading state while checking auth
-  //if (isLoading) {
+  //if (isLoading)  {
     //return <div>Loading...</div>;
   //}
 
