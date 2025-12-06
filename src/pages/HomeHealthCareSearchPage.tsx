@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CalendarCheck, Calendar, PenSquare, Clock, Users, PenTool, Briefcase, Plus, Minus,Menu, MailCheck,
-  Bot, CheckCircle,X, Send,Timer, Zap, ArrowRight, HeartPulse, Rocket, Search, Heart,
+  Bot, CheckCircle,X, Send,Timer, Zap, ArrowRight, HeartPulse, Rocket, Search, Heart, PLusCircle,
   Lightbulb, Sparkles, CircleDollarSign, Star } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { AuthModal } from '../components/AuthModal';
@@ -221,6 +221,26 @@ const handleLoginClick = () => {
   <section className="mt-2 border-t border-gray-200">
     
     <HomeHealthcareAgency />
+
+    {/* Buttons */}
+    <div className="flex flex-col sm:mr-10 items-center sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
+
+<TooltipExtended text="⚡Data Access - Get Access to all the data and analysis when you join The Poetiq Community 💛">
+  <button
+    onClick={openCommunityModal}
+    className="flex items-center justify-center space-x-2 w-full sm:w-auto px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors text-base font-semibold sm:px-4 sm:py-3 sm:text-base
+                 shadow-lg shadow-gray-500/60       
+     hover:shadow-xl hover:shadow-gray-500/80 group" // Adjusted mobile button size/text for consistency
+  >
+    
+  <PlusCircle className="w-4 h-4 transition-transform duration-300" />
+   <span>See More Data</span>
+   
+  </button>
+  </TooltipExtended>
+
+
+</div>
     
 </section>
      
