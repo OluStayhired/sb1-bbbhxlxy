@@ -4,7 +4,7 @@ import {
   Loader2, Search, X, Building2, 
   ChevronUp, ChevronDown, Calendar,
   ArrowLeft, ArrowRight, Star, Globe, 
-  MapPin, ArrowUpDown, Clock, 
+  MapPin, ArrowUpDown, Clock, PlusCircle,
   Heart, Activity, Briefcase, Filter,
   CheckCircle, UserCheck, Stethoscope
 } from 'lucide-react';
