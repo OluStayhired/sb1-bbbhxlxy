@@ -810,7 +810,7 @@ const [isModalOpen, setIsModalOpen] = useState(false);
                   </tr>
                 ) : (
                   displayedAgencies.map((agency) => (
-                    <tr key={agency.id} className="hover:bg-red-50 text-xs cursor:pointer"
+                    <tr key={agency.id} className="hover:bg-red-50 text-xs cursor-pointer"
                           onClick={() => {
                           setSelectedAgency(agency);
                           setIsModalOpen(true);

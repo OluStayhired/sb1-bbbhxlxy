@@ -619,29 +619,24 @@ export function NursingHomeProviderUS({}: NursingHomeProviderUSProps) {
                   </tr>
                 ) : (
                   displayedProviders.map((provider) => (
-                    <tr key={provider.id} className="hover:bg-red-50 text-xs cursor:pointer">
-                      <td className="px-4 py-4 text-xs whitespace-nowrap cursor:pointer" >
-                        <button
-                         onClick={() => {
-                            setSelectedProvider(provider);
-                            setIsModalOpen(true);
-                                }}
-                         >
+                    <tr key={provider.id} className="hover:bg-red-50 text-xs cursor-pointer"
+                    onClick={() => {
+                      setSelectedProvider(provider);
+                      setIsModalOpen(true);
+                          }}
+                    
+                    >
+                      <td className="px-4 py-4 text-xs whitespace-nowrap" >
+            
                         {provider.poetiq_rating && renderStarRating(provider.poetiq_rating)}
-                          </button>
+          
                       </td>
                       <td className="px-4 py-4">
-                        <button
-                         onClick={() => {
-                            setSelectedProvider(provider);
-                            setIsModalOpen(true);
-                                }}
-                         >
+              
                         <div className="text-xs text-left font-medium text-gray-900">
                           {provider.provider_name}</div>
                         <div className="text-xs text-left lowercase text-gray-500">{provider.provider_address}</div>
-                        </button>
-                        
+                         
                       </td>
                       <td className="px-4 py-4 whitespace-nowrap text-gray-700">
                         {provider.city_town}
