@@ -111,7 +111,7 @@ const handleLoginClick = () => {
                     Nursing Home Finder
                 </Link> 
   */}
-                <a href="dev/nursing_home" className="no-underline px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"> 
+                <a href="dev/nursing-home" className="no-underline px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"> 
                 Nursing Home Finder
                 </a>
 
@@ -1008,7 +1008,7 @@ const handleLoginClick = () => {
       <div className="col-span-1">
         <h3 className="font-semibold mb-4">Care Tools & Resources</h3>
         <ul className="space-y-2 text-sm text-gray-600">
-          <li> <a href="dev/nursing_home" className="no-underline hover:text-red-400 transition-colors">Nursing Home Finder 🎯</a></li>
+          <li> <a href="dev/nursing-home" className="no-underline hover:text-red-400 transition-colors">Nursing Home Finder 🎯</a></li>
           <li> <a href="#" onClick="return false;" className="no-underline hover:text-red-400 transition-colors">Caregivers Near Me 📌 </a></li>    
           <li> <a href="#" className="no-underline hover:text-red-400 transition-colors">Blogs (coming soon) ✍️</a></li>
         </ul>
