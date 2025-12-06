@@ -19,9 +19,10 @@ import { CommunityModal } from '../components/CommunityModal.tsx';
 import { Link } from 'react-router-dom';
 //import { Helmet } from 'react-helmet-async'; // CRITICAL: For dynamic meta tags
 import { OurStoryTimeline } from '../components/OurStoryTimeline';
-import { NursingHomeProviderUS } from '../components/NursingHomeProviderUS.tsx';
+//import { NursingHomeProviderUS } from '../components/NursingHomeProviderUS.tsx';
+import { HomeHealthcareAgency } from '../components/HomeHealthcareAgency.tsx';
 
-export function NursingHomeSearchPage() {
+export function HomeHealthCareSearchPage() {
   const navigate = useNavigate();
   //const { isAuthenticated } = useAuth();
   const { signIn } = useAuth();
@@ -169,17 +170,17 @@ const handleLoginClick = () => {
         <div className="text-center px-4 sm:px-6 md:px-8 lg:px-12 py-2 rounded-lg">
 
     <h1 className="mt-24 text-3xl sm:text-5xl font-bold text-gray-900 mb-4">
-            Book 
+            Discover
     {/*<span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Unstoppable Brands</span>*/}
             <span>
-             <span className="bg-gradient-to-l from-red-300 via-red-400 to-red-500  bg-clip-text text-transparent"> Nursing <br className="sm:hidden"/> Homes </span> 
-              Faster🔥
+             <span className="bg-gradient-to-l from-red-300 via-red-400 to-red-500  bg-clip-text text-transparent"> Caregivers <br className="sm:hidden"/> {/*Agencies*/}</span> 
+              Near You 📌
               </span>
              <p className="block text-sm font-normal sm:text-xl sm:font-normal text-gray-600 leading-tight mt-1 sm:mt-3">
 
                {/*<span className="sm:hidden font-normal">Join a network of career professionals navigating eldercare together</span>  */}
-            <span className="sm:hidden font-normal">Search 14,700 homes . Get detailed reports . Book Consultation </span>   
-          <span className="hidden sm:inline font-normal">Search 14,700 nursing homes. Get summary reports and book a consultation today</span> 
+            <span className="sm:hidden font-normal">Search 12,500 caregiving agencies . Get detailed reports . Book Consultation </span>   
+          <span className="hidden sm:inline font-normal">Search 12,500 caregiving agencies. Get summary reports and book a consultation today</span> 
          </p>
             
           </h1>
@@ -218,8 +219,8 @@ const handleLoginClick = () => {
 
 {/*----------------- Start Nursing Home Provider ----------------------- */}
   <section className="mt-2 border-t border-gray-200">
-
-     <NursingHomeProviderUS />
+    
+    <HomeHealthcareAgency />
     
 </section>
      
@@ -234,7 +235,7 @@ const handleLoginClick = () => {
       You don't have to navigate parental care alone
     </h2>
     <p className="text-gray-700 font-semibold text-md sm:text-2xl md:text-3xl font-light text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed">
-      Let’s find a home for your loved one today 💪
+      Let’s find a caregiver for your loved one today 💛
       
     </p> 
 
@@ -396,4 +397,4 @@ function FeatureCard({ icon, title, description }: { icon: React.ReactNode; titl
   );
 }
 
-export default NursingHomeSearchPage;
+export default HomeHealthCareSearchPage;

@@ -11,6 +11,7 @@ import { BlogListPage } from './components/BlogListPage';
 import { BlogPostPage } from './components/BlogPostPage';
 import { NursingHomeProviderUS } from './components/NursingHomeProviderUS';
 import { NursingHomeSearchPage } from './pages/NursingHomeSearchPage';
+import { HomeHealthCareSearchPage } from './pages/HomeHealthCareSearchPage';
 import LandingPageDev from './pages/LandingPageDev';
 
 
@@ -52,6 +53,7 @@ function AppRoutes() {
       <Route path="blog/:slug" element={<BlogPostPage />} /> 
       <Route path="/dev" element={<LandingPageDev />} />
       <Route path="dev/nursing-home" element={<NursingHomeSearchPage />} />
+      <Route path="dev/home-health-care" element={<HomeHealthCareSearchPage />} />
       
       <Route
         path="/dashboard/*"
