@@ -142,7 +142,7 @@ const handleLoginClick = () => {
               }}
               className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
 >
-            FAQ
+            FAQ ❓
           </button> 
            
      
