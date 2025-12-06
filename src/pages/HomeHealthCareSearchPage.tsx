@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CalendarCheck, Calendar, PenSquare, Clock, Users, PenTool, Briefcase, Plus, Minus,Menu, MailCheck,
-  Bot, CheckCircle,X, Send,Timer, Zap, ArrowRight, HeartPulse, Rocket, Search, Heart, PLusCircle,
+  Bot, CheckCircle,X, Send,Timer, Zap, ArrowRight, HeartPulse, Rocket, Search, Heart, PlusCircle,
   Lightbulb, Sparkles, CircleDollarSign, Star } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { AuthModal } from '../components/AuthModal';
