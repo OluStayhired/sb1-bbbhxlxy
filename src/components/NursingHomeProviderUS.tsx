@@ -637,9 +637,9 @@ export function NursingHomeProviderUS({}: NursingHomeProviderUSProps) {
                             setIsModalOpen(true);
                                 }}
                          >
-                        <div className="text-xs font-medium text-gray-900">
+                        <div className="text-xs text-left font-medium text-gray-900">
                           {provider.provider_name}</div>
-                        <div className="text-xs lowercase text-gray-500">{provider.provider_address}</div>
+                        <div className="text-xs text-left lowercase text-gray-500">{provider.provider_address}</div>
                         </button>
                         
                       </td>

@@ -125,7 +125,7 @@ const handleLoginClick = () => {
               window.location.href = '#Community';
               }}
               className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">
-                  Community
+                  Community 💛
               </button> 
 
              <button
@@ -133,7 +133,7 @@ const handleLoginClick = () => {
                 window.location.href = '#our_story';
               }}
                 className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">
-              Our Story
+              Our Story 👋
             </button> 
        
           <button
