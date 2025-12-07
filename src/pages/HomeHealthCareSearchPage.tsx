@@ -107,8 +107,13 @@ const handleLoginClick = () => {
         {/*  <div className="hidden flex space-x-2 space-x-4 sm:space-y-0 sm:space-x-2">*/}
 
         <div className="hidden sm:flex items-center space-x-4">
-          
+        <a href="dev/home-health-care" className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">    
+                    Caregivers Near Me 📌
+                </a> 
 
+                <a href="dev/nursing-home" className="no-underline px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"> 
+                Nursing Home Finder 🎯
+                </a>
       
           
           <button
