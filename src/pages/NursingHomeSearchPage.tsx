@@ -107,11 +107,11 @@ const handleLoginClick = () => {
 
         <div className="hidden sm:flex items-center space-x-4">
 
-              <a href="/home-health-care" className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">    
+              <a href="https://poetiq.io/dev/home-health-care" className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">    
                     Caregivers Near Me 📌
                 </a> 
 
-                <a href="/nursing-home" className="no-underline px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"> 
+                <a href="https://poetiq.io/dev/nursing-home" className="no-underline px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"> 
                 Nursing Home Finder 🎯
                 </a>
 
