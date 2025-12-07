@@ -463,10 +463,10 @@ export function HomeHealthcareAgencyModal({
                     <p className={`text-sm ${walking.textColor} mb-2 font-medium`}>
                       {walking.concern}
                     </p>
-                    <p className={`text-xs ${walking.textColor} opacity-90 leading-relaxed mb-2`}>
+                    <p className={`text-xs ${walking.textColor}  leading-relaxed mb-2`}>
                       <span className="font-semibold">Patient Impact:</span> {walking.impact}
                     </p>
-                    <p className={`text-xs ${walking.textColor} opacity-90 leading-relaxed`}>
+                    <p className={`text-xs ${walking.textColor}  leading-relaxed`}>
                       <span className="font-semibold">Family Impact:</span> {walking.familyNote}
                     </p>
                   </div>
@@ -492,10 +492,10 @@ export function HomeHealthcareAgencyModal({
                     <p className={`text-sm ${bedMobility.textColor} mb-2 font-medium`}>
                       {bedMobility.concern}
                     </p>
-                    <p className={`text-xs ${bedMobility.textColor} opacity-90 leading-relaxed mb-2`}>
+                    <p className={`text-xs ${bedMobility.textColor}  leading-relaxed mb-2`}>
                       <span className="font-semibold">Patient Impact:</span> {bedMobility.impact}
                     </p>
-                    <p className={`text-xs ${bedMobility.textColor} opacity-90 leading-relaxed`}>
+                    <p className={`text-xs ${bedMobility.textColor}  leading-relaxed`}>
                       <span className="font-semibold">Family Impact:</span> {bedMobility.familyNote}
                     </p>
                   </div>
@@ -521,10 +521,10 @@ export function HomeHealthcareAgencyModal({
                     <p className={`text-sm ${bathing.textColor} mb-2 font-medium`}>
                       {bathing.concern}
                     </p>
-                    <p className={`text-xs ${bathing.textColor} opacity-90 leading-relaxed mb-2`}>
+                    <p className={`text-xs ${bathing.textColor}  leading-relaxed mb-2`}>
                       <span className="font-semibold">Patient Impact:</span> {bathing.impact}
                     </p>
-                    <p className={`text-xs ${bathing.textColor} opacity-90 leading-relaxed`}>
+                    <p className={`text-xs ${bathing.textColor}  leading-relaxed`}>
                       <span className="font-semibold">Family Impact:</span> {bathing.familyNote}
                     </p>
                   </div>
@@ -550,10 +550,10 @@ export function HomeHealthcareAgencyModal({
                     <p className={`text-sm ${breathing.textColor} mb-2 font-medium`}>
                       {breathing.concern}
                     </p>
-                    <p className={`text-xs ${breathing.textColor} opacity-90 leading-relaxed mb-2`}>
+                    <p className={`text-xs ${breathing.textColor}  leading-relaxed mb-2`}>
                       <span className="font-semibold">Patient Impact:</span> {breathing.impact}
                     </p>
-                    <p className={`text-xs ${breathing.textColor} opacity-90 leading-relaxed`}>
+                    <p className={`text-xs ${breathing.textColor}  leading-relaxed`}>
                       <span className="font-semibold">Family Impact:</span> {breathing.familyNote}
                     </p>
                   </div>

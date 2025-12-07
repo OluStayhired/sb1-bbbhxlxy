@@ -445,7 +445,7 @@ export function NursingHomeProviderModal({
                     <p className={`text-sm ${financial.textColor} mb-2 font-medium`}>
                       {financial.concern}
                     </p>
-                    <p className={`text-xs ${financial.textColor} opacity-90 leading-relaxed`}>
+                    <p className={`text-xs ${financial.textColor}  leading-relaxed`}>
                       {financial.impact}
                     </p>
                   </div>
@@ -471,7 +471,7 @@ export function NursingHomeProviderModal({
                     <p className={`text-sm ${staffStability.textColor} mb-2 font-medium`}>
                       {staffStability.concern}
                     </p>
-                    <p className={`text-xs ${staffStability.textColor} opacity-90 leading-relaxed`}>
+                    <p className={`text-xs ${staffStability.textColor}  leading-relaxed`}>
                       {staffStability.impact}
                     </p>
                   </div>
@@ -497,7 +497,7 @@ export function NursingHomeProviderModal({
                     <p className={`text-sm ${staffAttentiveness.textColor} mb-2 font-medium`}>
                       {staffAttentiveness.concern}
                     </p>
-                    <p className={`text-xs ${staffAttentiveness.textColor} opacity-90 leading-relaxed`}>
+                    <p className={`text-xs ${staffAttentiveness.textColor}  leading-relaxed`}>
                       {staffAttentiveness.impact}
                     </p>
                   </div>
@@ -523,7 +523,7 @@ export function NursingHomeProviderModal({
                     <p className={`text-sm ${healthInspection.textColor} mb-2 font-medium`}>
                       {healthInspection.concern}
                     </p>
-                    <p className={`text-xs ${healthInspection.textColor} opacity-90 leading-relaxed`}>
+                    <p className={`text-xs ${healthInspection.textColor}  leading-relaxed`}>
                       {healthInspection.impact}
                     </p>
                   </div>
