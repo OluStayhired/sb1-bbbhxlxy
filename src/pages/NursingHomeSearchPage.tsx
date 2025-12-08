@@ -108,11 +108,11 @@ const handleLoginClick = () => {
         <div className="hidden sm:flex items-center space-x-4">
 
               <a href="https://poetiq.io/dev/home-health-care" className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">    
-                    Caregivers Near Me 📌
+                    Caregivers near me 📌
                 </a> 
 
                 <a href="https://poetiq.io/dev/nursing-home" className="no-underline px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"> 
-                Nursing Home Finder 🎯
+                Nursing home finder 🎯
                 </a>
 
          
@@ -178,8 +178,8 @@ const handleLoginClick = () => {
             Book 
     {/*<span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Unstoppable Brands</span>*/}
             <span>
-             <span className="bg-gradient-to-l from-red-300 via-red-400 to-red-500  bg-clip-text text-transparent"> Nursing <br className="sm:hidden"/> Homes </span> 
-              Faster🔥
+             <span className="bg-gradient-to-l from-red-300 via-red-400 to-red-500  bg-clip-text text-transparent"> nursing <br className="sm:hidden"/> homes </span> 
+              faster🔥
               </span>
              <p className="block text-sm font-normal sm:text-xl sm:font-normal text-gray-600 leading-tight mt-1 sm:mt-3">
 
