@@ -118,14 +118,14 @@ const handleLoginClick = () => {
                         <div className="py-1">
                           {/* Caregivers Near Me */}
                             <Link
-                                to="dev/home-health-care"
+                                to="/home-health-care"
                                 className="block px-4 py-2 text-sm text-gray-700 font-medium hover:bg-blue-50 hover:text-red-500 transition-colors"
                               >
                                 Caregivers Near Me 📌
                             </Link>
                             {/* Nursing Home Finder */}
                               <Link
-                                  to="dev/nursing-home"
+                                  to="/nursing-home"
                                   className="block px-4 py-2 text-sm text-gray-700 font-medium hover:bg-blue-50 hover:text-red-500 transition-colors"
                                 >
                                   Nursing Home Finder 🎯
