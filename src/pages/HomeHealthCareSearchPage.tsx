@@ -107,8 +107,8 @@ const handleLoginClick = () => {
         {/*  <div className="hidden flex space-x-2 space-x-4 sm:space-y-0 sm:space-x-2">*/}
 
         <div className="hidden sm:flex items-center space-x-4">
-        <a href="https://poetiq.io/dev/home-health-care" className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">    
-                    Caregivers Near Me 📌
+        <a href="https://poetiq.io/dev/dementia-assessment" className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">    
+                    Dementia Screening 🧠
                 </a> 
 
                 <a href="https://poetiq.io/dev/nursing-home" className="no-underline px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"> 
@@ -322,6 +322,7 @@ const handleLoginClick = () => {
         <ul className="space-y-2 text-sm text-gray-600">
           <li> <a href="https://poetiq.io/dev/nursing-home" className="no-underline hover:text-red-400 transition-colors">Nursing Home Finder 🎯</a></li>
           <li> <a href="https://poetiq.io/dev/home-health-care" className="no-underline hover:text-red-400 transition-colors">Caregivers Near Me 📌 </a></li>    
+          <li> <a href="https://poetiq.io/dev/dementia-assessment" className="no-underline hover:text-red-400 transition-colors">Dementia Screening Tool 🧠</a></li>
           <li> <a href="#" className="no-underline hover:text-red-400 transition-colors">Blogs (coming soon) ✍️</a></li>
         </ul>
       </div>

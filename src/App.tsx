@@ -9,9 +9,9 @@ import { ThemeProvider } from './context/ThemeContext';
 import { HooksProvider } from './context/HooksContext';
 import { BlogListPage } from './components/BlogListPage'; 
 import { BlogPostPage } from './components/BlogPostPage';
-import { NursingHomeProviderUS } from './components/NursingHomeProviderUS';
 import { NursingHomeSearchPage } from './pages/NursingHomeSearchPage';
 import { HomeHealthCareSearchPage } from './pages/HomeHealthCareSearchPage';
+import { DementiaAssessmentPage } from './pages/DementiaAssessmentPage';
 import LandingPageDev from './pages/LandingPageDev';
 
 
@@ -54,6 +54,7 @@ function AppRoutes() {
       <Route path="/dev" element={<LandingPageDev />} />
       <Route path="dev/nursing-home" element={<NursingHomeSearchPage />} />
       <Route path="dev/home-health-care" element={<HomeHealthCareSearchPage />} />
+      <Route path="dev/dementia-assessment" element={<DementiaAssessmentPage />} />
       
       <Route
         path="/dashboard/*"

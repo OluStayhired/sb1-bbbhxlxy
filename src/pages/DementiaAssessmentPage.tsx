@@ -19,9 +19,11 @@ import { CommunityModal } from '../components/CommunityModal.tsx';
 import { Link } from 'react-router-dom';
 //import { Helmet } from 'react-helmet-async'; // CRITICAL: For dynamic meta tags
 import { OurStoryTimeline } from '../components/OurStoryTimeline';
-import { NursingHomeProviderUS } from '../components/NursingHomeProviderUS.tsx';
+//import { NursingHomeProviderUS } from '../components/NursingHomeProviderUS.tsx';
+//import { HomeHealthcareAgency } from '../components/HomeHealthcareAgency.tsx';
+import { DementiaAssessment } from '../components/DementiaAssessment';
 
-export function NursingHomeSearchPage() {
+export function DementiaAssessmentPage() {
   const navigate = useNavigate();
   //const { isAuthenticated } = useAuth();
   const { signIn } = useAuth();
@@ -106,15 +108,20 @@ const handleLoginClick = () => {
         {/*  <div className="hidden flex space-x-2 space-x-4 sm:space-y-0 sm:space-x-2">*/}
 
         <div className="hidden sm:flex items-center space-x-4">
-              <a href="https://poetiq.io/dev/dementia-assessment" className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">    
-                    Dementia Screening 🧠
-                </a> 
+        <Link
+                  to="https://poetiq.io/dev/nursing-home"
+                    className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">    
+                    Nursing Home Finder 🎯
+                </Link> 
 
-              <a href="https://poetiq.io/dev/home-health-care" className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">    
+                <Link
+                  to="https://poetiq.io/dev/home-health-care"
+                    className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">    
                     Caregivers Near Me 📌
-                </a> 
+                </Link>           
 
-         
+      
+          
           <button
            
             onClick={openCommunityModal}
@@ -174,17 +181,17 @@ const handleLoginClick = () => {
         <div className="text-center px-4 sm:px-6 md:px-8 lg:px-12 py-2 rounded-lg">
 
     <h1 className="mt-24 text-3xl sm:text-5xl font-bold text-gray-900 mb-4">
-            Book 
+            Early<br className="sm:hidden"/>
     {/*<span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Unstoppable Brands</span>*/}
             <span>
-             <span className="bg-gradient-to-l from-red-300 via-red-400 to-red-500  bg-clip-text text-transparent"> nursing <br className="sm:hidden"/> homes </span> 
-              faster🔥
+             <span className="bg-gradient-to-l from-red-400 via-red-400 to-red-500  bg-clip-text text-transparent"> Dementia <br className="sm:hidden"/> {/*Agencies*/}</span> 
+              Screening Tool 🧠
               </span>
              <p className="block text-sm font-normal sm:text-xl sm:font-normal text-gray-600 leading-tight mt-1 sm:mt-3">
 
                {/*<span className="sm:hidden font-normal">Join a network of career professionals navigating eldercare together</span>  */}
-            <span className="sm:hidden font-normal">Search 14,700 homes . Get detailed reports . Book Consultation </span>   
-          <span className="hidden sm:inline font-normal">Search 14,700 nursing homes. Get summary reports and book a consultation today</span> 
+            <span className="sm:hidden font-normal">A validated caregiver questionnaire to identify cognitive changes</span>   
+          <span className="hidden sm:inline font-normal">A validated caregiver questionnaire to identify cognitive changes</span> 
          </p>
             
           </h1>
@@ -223,27 +230,29 @@ const handleLoginClick = () => {
 
 {/*----------------- Start Nursing Home Provider ----------------------- */}
   <section className="mt-2 border-t border-gray-200">
-
-     <NursingHomeProviderUS />
-     {/* Buttons */}
-     <div className="flex flex-col sm:mr-10 items-center sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
-
-<TooltipExtended text="⚡Access over 14,700 agencies when you join The Community 💛">
-  <button
-    onClick={openCommunityModal}
-    className="flex items-center justify-center space-x-2 w-full sm:w-auto px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors text-base font-semibold sm:px-4 sm:py-3 sm:text-base
-                 shadow-lg shadow-gray-500/60       
-     hover:shadow-xl hover:shadow-gray-500/80 group" // Adjusted mobile button size/text for consistency
-  >
     
-  <PlusCircle className="w-4 h-4 transition-transform duration-300" />
-   <span>See More Data</span>
-   
-  </button>
-  </TooltipExtended>
+    <DementiaAssessment />
 
+    {/* Buttons */}
+      <div className="flex flex-col sm:mr-10 items-center sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
 
-</div>
+        {/*
+        <TooltipExtended text="⚡Access over 12,500 agencies when you join The Community 💛">
+          <button
+            onClick={openCommunityModal}
+            className="flex items-center justify-center space-x-2 w-full sm:w-auto px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors text-base font-semibold sm:px-4 sm:py-3 sm:text-base
+                         shadow-lg shadow-gray-500/60       
+             hover:shadow-xl hover:shadow-gray-500/80 group" // Adjusted mobile button size/text for consistency
+          >
+            
+          <PlusCircle className="w-4 h-4 transition-transform duration-300" />
+           <span>See More Data</span>
+           
+          </button>
+          </TooltipExtended>
+        */}
+
+        </div>
     
 </section>
      
@@ -258,8 +267,7 @@ const handleLoginClick = () => {
       You don't have to navigate parental care alone
     </h2>
     <p className="text-gray-700 font-semibold text-md sm:text-2xl md:text-3xl font-light text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed">
-      Let’s find a home for your loved one today 💪
-      
+      Proactively identify cognitive changes & take action 👊    
     </p> 
 
         {/* Buttons */}
@@ -421,4 +429,4 @@ function FeatureCard({ icon, title, description }: { icon: React.ReactNode; titl
   );
 }
 
-export default NursingHomeSearchPage;
+export default DementiaAssessmentPage;

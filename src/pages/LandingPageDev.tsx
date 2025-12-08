@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CalendarCheck, Calendar, PenSquare, Clock, Users, PenTool, Briefcase, Plus, Minus,Menu, MailCheck,
-  Bot, CheckCircle,X, Send,Timer, Zap, ArrowRight, HeartPulse,
+  Bot, CheckCircle,X, Send,Timer, Zap, ArrowRight, HeartPulse, Brain, Target, MapPin,
   Lightbulb, Sparkles, CircleDollarSign, Star } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { AuthModal } from '../components/AuthModal';
@@ -118,16 +118,28 @@ const handleLoginClick = () => {
                         <div className="py-1">
                           {/* Caregivers Near Me */}
                             <a href="https://poetiq.io/dev/home-health-care"
-                                className="block px-4 py-2 text-sm text-gray-700 font-medium hover:bg-red-50 hover:text-red-500 transition-colors"
+                                className="flex items-center space-x-2 px-4 py-2 hover:bg-gray-50 hover:text-red-500 rounded-lg"
                               >
-                                Caregivers Near Me 📌
+                                <MapPin className="w-5 h-5" />
+                                <span>Caregivers Near Me</span>
+                    
                             </a>
                             {/* Nursing Home Finder */}
                               <a
                                   href="https://poetiq.io/dev/nursing-home"
-                                  className="block px-4 py-2 text-sm text-gray-700 font-medium hover:bg-red-50 hover:text-red-500 transition-colors"
+                                  className="flex items-center space-x-2 px-4 py-2 hover:bg-gray-50 hover:text-red-500 rounded-lg"
                                 >
-                                  Nursing Home Finder 🎯
+                                  <Target className="w-5 h-5" />
+                                  <span>Nursing Home Finder</span>
+                              </a>
+
+                              {/* Dementia Assessment Tool */}
+                              <a
+                                  href="https://poetiq.io/dev/dementia-assessment"
+                                  className="flex items-center space-x-2 px-4 py-2 hover:bg-gray-50 hover:text-red-500 rounded-lg"
+                                >
+                                  <Brain className="w-5 h-5" />
+                                  <span>Dementia Assessment</span>
                               </a>
                           </div>
                         </div>
@@ -1030,6 +1042,7 @@ const handleLoginClick = () => {
         <ul className="space-y-2 text-sm text-gray-600">
           <li> <a href="dev/nursing-home" className="no-underline hover:text-red-400 transition-colors">Nursing Home Finder 🎯</a></li>
           <li> <a href="dev/home-health-care" className="no-underline hover:text-red-400 transition-colors">Caregivers Near Me 📌 </a></li>       
+          <li> <a href="dev/dementia-assessment" className="no-underline hover:text-red-400 transition-colors">Dementia Screening Tool 🧠 </a></li>       
           <li> <a href="#" className="no-underline hover:text-red-400 transition-colors">Blogs (coming soon) ✍️</a></li>
         </ul>
       </div>
