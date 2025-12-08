@@ -100,26 +100,42 @@ const handleLoginClick = () => {
           <span className="text-2xl  font-bold text-red-500 sm:text-2xl">poetiq</span>
         </div>
         </a>
-        {/*Desktop Navigation Buttons */}          
-        <div className="hidden sm:flex items-center space-x-4">
-          <div className="items-center justify-center space-x-2">
+         {/*Desktop Navigation Buttons */}          
+         <div className="hidden sm:flex items-center space-x-4">
+          <div className="items-center flex justify-center space-x-2">
 
-            {/*
-               <Link
-                  to="dev/nursing_home"
-                    className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">    
-                    Nursing Home Finder
-                </Link> 
-  */}
+              {/* START: Eldercare Tools Dropdown Menu */}
+              <div className="relative group">
+                {/* Menu Header - Eldercare Tools */}
+                <button className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">
+                  Eldercare Tools 🩺
+                  </button>
 
-                <a href="dev/home-health-care" className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">    
-                    Caregivers Near Me 📌
-                </a> 
+                    {/* Dropdown Content - Hidden by default, shown on group hover */}
+                    <div
+                          className="absolute left-1/2 -translate-x-1/2 top-full mt-0.5 w-56 rounded-lg shadow-xl bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block z-50 transition-opacity duration-150 ease-out"
+      >
+                        <div className="py-1">
+                          {/* Caregivers Near Me */}
+                            <Link
+                                to="dev/home-health-care"
+                                className="block px-4 py-2 text-sm text-gray-700 font-medium hover:bg-blue-50 hover:text-red-500 transition-colors"
+                              >
+                                Caregivers Near Me 📌
+                            </Link>
+                            {/* Nursing Home Finder */}
+                              <Link
+                                  to="dev/nursing-home"
+                                  className="block px-4 py-2 text-sm text-gray-700 font-medium hover:bg-blue-50 hover:text-red-500 transition-colors"
+                                >
+                                  Nursing Home Finder 🎯
+                              </Link>
+                          </div>
+                        </div>
+                      </div>
+                      {/* END: Eldercare Tools Dropdown Menu */}
 
-                <a href="dev/nursing-home" className="no-underline px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"> 
-                Nursing Home Finder 🎯
-                </a>
-
+            {/*Remaining Menu Buttons */}
               <button
               onClick={() => {
               window.location.href = '#Community';
