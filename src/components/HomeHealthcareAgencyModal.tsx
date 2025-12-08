@@ -140,7 +140,7 @@ export function HomeHealthcareAgencyModal({
         status: 'Fair',
         icon: TrendingDown,
         bgColor: 'bg-amber-50',
-        bgColorIcon: 'bg-eamber-100', 
+        bgColorIcon: 'bg-amber-100', 
         borderColor: 'border-amber-100',
         iconColor: 'text-amber-500',
         textColor: 'text-amber-900',
