@@ -230,7 +230,7 @@ const handleLoginClick = () => {
     {/* Buttons */}
     <div className="flex flex-col sm:mr-10 items-center sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
 
-<TooltipExtended text="⚡Data Access - Get Access to all the data and analysis when you join The Poetiq Community 💛">
+<TooltipExtended text="⚡Access over 12,500 agencies when you join The Community 💛">
   <button
     onClick={openCommunityModal}
     className="flex items-center justify-center space-x-2 w-full sm:w-auto px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors text-base font-semibold sm:px-4 sm:py-3 sm:text-base
