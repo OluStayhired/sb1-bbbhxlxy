@@ -477,27 +477,27 @@ const [isModalOpen, setIsModalOpen] = useState(false);
         </button>
 
         <div className="flex flex-wrap mt-2 gap-1">
-          <TooltipHelp text="Nursing Care">
+          <TooltipHelp text="⚡Nursing Care">
             <span className="px-2 py-0.5 bg-blue-100 text-blue-700 rounded text-xs">NC</span>
            </TooltipHelp> 
 
-          <TooltipHelp text="Physical Therapy">
+          <TooltipHelp text="⚡Physical Therapy">
             <span className="px-2 py-0.5 bg-green-100 text-green-700 rounded text-xs">PT</span>
           </TooltipHelp>
 
-          <TooltipHelp text="Occupational Therapy">
+          <TooltipHelp text="⚡Occupational Therapy">
             <span className="px-2 py-0.5 bg-purple-100 text-purple-700 rounded text-xs">OT</span>
           </TooltipHelp>
 
-          <TooltipHelp text="Speech Pathology">
+          <TooltipHelp text="⚡Speech Pathology">
             <span className="px-2 py-0.5 bg-pink-100 text-pink-700 rounded text-xs">SP</span>
           </TooltipHelp>
 
-          <TooltipHelp text="Medical Social Services">
+          <TooltipHelp text="⚡Medical Social Services">
             <span className="px-2 py-0.5 bg-amber-100 text-amber-700 rounded text-xs">MS</span>
           </TooltipHelp>
 
-          <TooltipHelp text="Home Health Aide">
+          <TooltipHelp text="⚡Home Health Aide">
             <span className="px-2 py-0.5 bg-teal-100 text-teal-700 rounded text-xs">HHA</span>
           </TooltipHelp> 
         </div>
