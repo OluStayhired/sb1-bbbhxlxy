@@ -117,19 +117,18 @@ const handleLoginClick = () => {
       >
                         <div className="py-1">
                           {/* Caregivers Near Me */}
-                            <Link
-                                to="/home-health-care"
+                            <a href="https://poetiq.io/dev/home-health-care"
                                 className="block px-4 py-2 text-sm text-gray-700 font-medium hover:bg-blue-50 hover:text-red-500 transition-colors"
                               >
                                 Caregivers Near Me 📌
-                            </Link>
+                            </a>
                             {/* Nursing Home Finder */}
-                              <Link
-                                  to="/nursing-home"
+                              <a
+                                  href="https://poetiq.io/dev/nursing-home"
                                   className="block px-4 py-2 text-sm text-gray-700 font-medium hover:bg-blue-50 hover:text-red-500 transition-colors"
                                 >
                                   Nursing Home Finder 🎯
-                              </Link>
+                              </a>
                           </div>
                         </div>
                       </div>
