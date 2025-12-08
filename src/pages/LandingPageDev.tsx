@@ -113,7 +113,7 @@ const handleLoginClick = () => {
 
                     {/* Dropdown Content - Hidden by default, shown on group hover */}
                     <div
-                          className="absolute left-1/2 -translate-x-1/2 top-full mt-0.5 w-56 rounded-lg shadow-xl bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block z-50 transition-opacity duration-150 ease-out"
+                          className="absolute left-1/2 -translate-x-1/2 top-full mt-[-0.5] w-56 rounded-lg shadow-xl bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block z-50 transition-opacity duration-150 ease-out"
       >
                         <div className="py-1">
                           {/* Caregivers Near Me */}
