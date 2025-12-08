@@ -112,6 +112,7 @@ export function HomeHealthcareAgencyModal({
         status: 'Excellent',
         icon: CheckCircle,
         bgColor: 'bg-emerald-50',
+        bgColorIcon: 'bg-emerald-100', 
         borderColor: 'border-emerald-100',
         iconColor: 'text-emerald-500',
         textColor: 'text-emerald-900',
@@ -125,6 +126,7 @@ export function HomeHealthcareAgencyModal({
         status: 'Good',
         icon: CheckCircle,
         bgColor: 'bg-blue-50',
+        bgColorIcon: 'bg-blue-100', 
         borderColor: 'border-blue-100',
         iconColor: 'text-blue-500',
         textColor: 'text-blue-900',
@@ -138,6 +140,7 @@ export function HomeHealthcareAgencyModal({
         status: 'Fair',
         icon: TrendingDown,
         bgColor: 'bg-amber-50',
+        bgColorIcon: 'bg-eamber-100', 
         borderColor: 'border-amber-100',
         iconColor: 'text-amber-500',
         textColor: 'text-amber-900',
@@ -151,6 +154,7 @@ export function HomeHealthcareAgencyModal({
         status: 'Poor',
         icon: AlertTriangle,
         bgColor: 'bg-rose-50',
+        bgColorIcon: 'bg-rose-100', 
         borderColor: 'border-rose-100',
         iconColor: 'text-rose-500',
         textColor: 'text-rose-900',
@@ -170,6 +174,7 @@ export function HomeHealthcareAgencyModal({
         status: 'Excellent',
         icon: CheckCircle,
         bgColor: 'bg-emerald-50',
+        bgColorIcon: 'bg-emerald-100', 
         borderColor: 'border-emerald-100',
         iconColor: 'text-emerald-500',
         textColor: 'text-emerald-900',
@@ -183,6 +188,7 @@ export function HomeHealthcareAgencyModal({
         status: 'Good',
         icon: CheckCircle,
         bgColor: 'bg-blue-50',
+        bgColorIcon: 'bg-blue-100', 
         borderColor: 'border-blue-100',
         iconColor: 'text-blue-500',
         textColor: 'text-blue-900',
@@ -196,6 +202,7 @@ export function HomeHealthcareAgencyModal({
         status: 'Fair',
         icon: TrendingDown,
         bgColor: 'bg-amber-50',
+        bgColorIcon: 'bg-amber-100', 
         borderColor: 'border-amber-100',
         iconColor: 'text-amber-500',
         textColor: 'text-amber-900',
@@ -209,6 +216,7 @@ export function HomeHealthcareAgencyModal({
         status: 'Poor',
         icon: AlertTriangle,
         bgColor: 'bg-rose-50',
+        bgColorIcon: 'bg-rose-100', 
         borderColor: 'border-rose-100',
         iconColor: 'text-rose-500',
         textColor: 'text-rose-900',
@@ -228,6 +236,7 @@ export function HomeHealthcareAgencyModal({
         status: 'Excellent',
         icon: CheckCircle,
         bgColor: 'bg-emerald-50',
+        bgColorIcon: 'bg-emerald-100', 
         borderColor: 'border-emerald-100',
         iconColor: 'text-emerald-500',
         textColor: 'text-emerald-900',
@@ -241,6 +250,7 @@ export function HomeHealthcareAgencyModal({
         status: 'Good',
         icon: CheckCircle,
         bgColor: 'bg-blue-50',
+        bgColorIcon: 'bg-blue-100', 
         borderColor: 'border-blue-100',
         iconColor: 'text-blue-500',
         textColor: 'text-blue-900',
@@ -254,6 +264,7 @@ export function HomeHealthcareAgencyModal({
         status: 'Fair',
         icon: TrendingDown,
         bgColor: 'bg-amber-50',
+        bgColorIcon: 'bg-amber-100', 
         borderColor: 'border-amber-100',
         iconColor: 'text-amber-500',
         textColor: 'text-amber-900',
@@ -267,6 +278,7 @@ export function HomeHealthcareAgencyModal({
         status: 'Poor',
         icon: AlertTriangle,
         bgColor: 'bg-rose-50',
+        bgColorIcon: 'bg-rose-100', 
         borderColor: 'border-rose-100',
         iconColor: 'text-rose-500',
         textColor: 'text-rose-900',
@@ -286,6 +298,7 @@ export function HomeHealthcareAgencyModal({
         status: 'Excellent',
         icon: CheckCircle,
         bgColor: 'bg-emerald-50',
+        bgColorIcon: 'bg-emerald-100', 
         borderColor: 'border-emerald-100',
         iconColor: 'text-emerald-500',
         textColor: 'text-emerald-900',
@@ -299,6 +312,7 @@ export function HomeHealthcareAgencyModal({
         status: 'Good',
         icon: CheckCircle,
         bgColor: 'bg-blue-50',
+        bgColorIcon: 'bg-blue-100', 
         borderColor: 'border-blue-100',
         iconColor: 'text-blue-500',
         textColor: 'text-blue-900',
@@ -312,6 +326,7 @@ export function HomeHealthcareAgencyModal({
         status: 'Fair',
         icon: TrendingDown,
         bgColor: 'bg-amber-50',
+        bgColorIcon: 'bg-amber-100', 
         borderColor: 'border-amber-100',
         iconColor: 'text-amber-500',
         textColor: 'text-amber-900',
@@ -325,6 +340,7 @@ export function HomeHealthcareAgencyModal({
         status: 'Poor',
         icon: AlertTriangle,
         bgColor: 'bg-rose-50',
+        bgColorIcon: 'bg-rose-100', 
         borderColor: 'border-rose-100',
         iconColor: 'text-rose-500',
         textColor: 'text-rose-900',
@@ -447,7 +463,8 @@ export function HomeHealthcareAgencyModal({
               {/* Walking/Mobility */}
               <div className={`${walking.bgColor} rounded-lg p-5 border ${walking.borderColor}`}>
                 <div className="flex items-start space-x-4">
-                  <div className={`p-3 ${walking.bgColor} rounded-lg`}>
+                  {/*<div className={`p-3 ${walking.bgColor} rounded-lg`}>*/}
+                 <div className={`p-3 ${walking.bgColorIcon} rounded-full`}> 
                     <walking.icon className={`w-6 h-6 ${walking.iconColor}`} />
                   </div>
                   <div className="flex-1">
@@ -460,13 +477,14 @@ export function HomeHealthcareAgencyModal({
                         {walking.status}
                       </span>
                     </div>
+                    
                     <p className={`text-sm ${walking.textColor} mb-2 font-medium`}>
                       {walking.concern}
                     </p>
-                    <p className={`text-xs ${walking.textColor}  leading-relaxed mb-2`}>
-                      <span className="font-semibold">Patient Impact:</span> {walking.impact}
+                    <p className={`text-xs ${walking.textColor} leading-relaxed mb-2`}>
+                      <span className={`font-semibold`}>Patient Impact: </span>{walking.impact}
                     </p>
-                    <p className={`text-xs ${walking.textColor}  leading-relaxed`}>
+                    <p className={`text-xs ${walking.textColor} leading-relaxed`}>
                       <span className="font-semibold">Family Impact:</span> {walking.familyNote}
                     </p>
                   </div>
@@ -476,7 +494,7 @@ export function HomeHealthcareAgencyModal({
               {/* Bed Mobility */}
               <div className={`${bedMobility.bgColor} rounded-lg p-5 border ${bedMobility.borderColor}`}>
                 <div className="flex items-start space-x-4">
-                  <div className={`p-3 ${bedMobility.bgColor} rounded-lg`}>
+                  <div className={`p-3 ${bedMobility.bgColorIcon} rounded-full`}>
                     <bedMobility.icon className={`w-6 h-6 ${bedMobility.iconColor}`} />
                   </div>
                   <div className="flex-1">
@@ -492,10 +510,10 @@ export function HomeHealthcareAgencyModal({
                     <p className={`text-sm ${bedMobility.textColor} mb-2 font-medium`}>
                       {bedMobility.concern}
                     </p>
-                    <p className={`text-xs ${bedMobility.textColor}  leading-relaxed mb-2`}>
+                    <p className={`text-xs ${bedMobility.textColor} leading-relaxed mb-2`}>
                       <span className="font-semibold">Patient Impact:</span> {bedMobility.impact}
                     </p>
-                    <p className={`text-xs ${bedMobility.textColor}  leading-relaxed`}>
+                    <p className={`text-xs ${bedMobility.textColor} leading-relaxed`}>
                       <span className="font-semibold">Family Impact:</span> {bedMobility.familyNote}
                     </p>
                   </div>
@@ -505,7 +523,7 @@ export function HomeHealthcareAgencyModal({
               {/* Bathing */}
               <div className={`${bathing.bgColor} rounded-lg p-5 border ${bathing.borderColor}`}>
                 <div className="flex items-start space-x-4">
-                  <div className={`p-3 ${bathing.bgColor} rounded-lg`}>
+                  <div className={`p-3 ${bathing.bgColorIcon} rounded-full`}>
                     <bathing.icon className={`w-6 h-6 ${bathing.iconColor}`} />
                   </div>
                   <div className="flex-1">
@@ -521,10 +539,10 @@ export function HomeHealthcareAgencyModal({
                     <p className={`text-sm ${bathing.textColor} mb-2 font-medium`}>
                       {bathing.concern}
                     </p>
-                    <p className={`text-xs ${bathing.textColor}  leading-relaxed mb-2`}>
+                    <p className={`text-xs ${bathing.textColor} leading-relaxed mb-2`}>
                       <span className="font-semibold">Patient Impact:</span> {bathing.impact}
                     </p>
-                    <p className={`text-xs ${bathing.textColor}  leading-relaxed`}>
+                    <p className={`text-xs ${bathing.textColor} leading-relaxed`}>
                       <span className="font-semibold">Family Impact:</span> {bathing.familyNote}
                     </p>
                   </div>
@@ -534,7 +552,7 @@ export function HomeHealthcareAgencyModal({
               {/* Breathing */}
               <div className={`${breathing.bgColor} rounded-lg p-5 border ${breathing.borderColor}`}>
                 <div className="flex items-start space-x-4">
-                  <div className={`p-3 ${breathing.bgColor} rounded-lg`}>
+                  <div className={`p-3 ${breathing.bgColorIcon} rounded-full`}>
                     <breathing.icon className={`w-6 h-6 ${breathing.iconColor}`} />
                   </div>
                   <div className="flex-1">
@@ -550,10 +568,10 @@ export function HomeHealthcareAgencyModal({
                     <p className={`text-sm ${breathing.textColor} mb-2 font-medium`}>
                       {breathing.concern}
                     </p>
-                    <p className={`text-xs ${breathing.textColor}  leading-relaxed mb-2`}>
+                    <p className={`text-xs ${breathing.textColor} leading-relaxed mb-2`}>
                       <span className="font-semibold">Patient Impact:</span> {breathing.impact}
                     </p>
-                    <p className={`text-xs ${breathing.textColor}  leading-relaxed`}>
+                    <p className={`text-xs ${breathing.textColor} leading-relaxed`}>
                       <span className="font-semibold">Family Impact:</span> {breathing.familyNote}
                     </p>
                   </div>

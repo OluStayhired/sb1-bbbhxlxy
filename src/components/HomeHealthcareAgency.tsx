@@ -467,7 +467,7 @@ const [isModalOpen, setIsModalOpen] = useState(false);
       <div className="mb-6">
         <button
           onClick={() => setShowAdvancedFilters(!showAdvancedFilters)}
-          className="flex items-center space-x-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors text-sm font-medium text-gray-700"
+          className="flex items-center space-x-2 px-4 py-2 bg-gray-800 hover:bg-gray-900 rounded-lg transition-colors text-sm font-medium text-white"
         >
           <Filter className="w-4 h-4" />
           <span>Advanced Filters</span>
