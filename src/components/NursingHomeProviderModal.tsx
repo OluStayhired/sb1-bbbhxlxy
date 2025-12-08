@@ -106,13 +106,14 @@ export function NursingHomeProviderModal({
 
   const status = getOverallStatus();
 
-  // Financial Stability Analysis
-  const getFinancialAnalysis = () => {
+   // Financial Stability Analysis
+   const getFinancialAnalysis = () => {
     if (provider.total_amount_of_fines_in_dollars === 0) {
       return {
         status: 'Excellent',
         icon: CheckCircle,
         bgColor: 'bg-emerald-50',
+        bgColorIcon: 'bg-emerald-100', 
         borderColor: 'border-emerald-100',
         iconColor: 'text-emerald-500',
         textColor: 'text-emerald-900',
@@ -125,6 +126,7 @@ export function NursingHomeProviderModal({
         status: 'Stable',
         icon: CheckCircle,
         bgColor: 'bg-blue-50',
+        bgColorIcon: 'bg-blue-100', 
         borderColor: 'border-blue-100',
         iconColor: 'text-blue-500',
         textColor: 'text-blue-900',
@@ -137,6 +139,7 @@ export function NursingHomeProviderModal({
         status: 'Concerning',
         icon: AlertTriangle,
         bgColor: 'bg-amber-50',
+        bgColorIcon: 'bg-amber-100', 
         borderColor: 'border-amber-100',
         iconColor: 'text-amber-500',
         textColor: 'text-amber-900',
@@ -149,6 +152,7 @@ export function NursingHomeProviderModal({
         status: 'Critical',
         icon: AlertTriangle,
         bgColor: 'bg-rose-50',
+        bgColorIcon: 'bg-rose-100', 
         borderColor: 'border-rose-100',
         iconColor: 'text-rose-500',
         textColor: 'text-rose-900',
@@ -166,6 +170,7 @@ export function NursingHomeProviderModal({
         status: 'Excellent',
         icon: CheckCircle,
         bgColor: 'bg-emerald-50',
+        bgColorIcon: 'bg-emerald-100', 
         borderColor: 'border-emerald-100',
         iconColor: 'text-emerald-500',
         textColor: 'text-emerald-900',
@@ -178,6 +183,7 @@ export function NursingHomeProviderModal({
         status: 'Good',
         icon: CheckCircle,
         bgColor: 'bg-blue-50',
+        bgColorIcon: 'bg-blue-100', 
         borderColor: 'border-blue-100',
         iconColor: 'text-blue-500',
         textColor: 'text-blue-900',
@@ -190,6 +196,7 @@ export function NursingHomeProviderModal({
         status: 'Concerning',
         icon: TrendingUp,
         bgColor: 'bg-amber-50',
+        bgColorIcon: 'bg-amber-100', 
         borderColor: 'border-amber-100',
         iconColor: 'text-amber-500',
         textColor: 'text-amber-900',
@@ -202,6 +209,7 @@ export function NursingHomeProviderModal({
         status: 'Critical',
         icon: AlertTriangle,
         bgColor: 'bg-rose-50',
+        bgColorIcon: 'bg-rose-100', 
         borderColor: 'border-rose-100',
         iconColor: 'text-rose-500',
         textColor: 'text-rose-900',
@@ -219,6 +227,7 @@ export function NursingHomeProviderModal({
         status: 'Excellent',
         icon: CheckCircle,
         bgColor: 'bg-emerald-50',
+        bgColorIcon: 'bg-emerald-100', 
         borderColor: 'border-emerald-100',
         iconColor: 'text-emerald-500',
         textColor: 'text-emerald-900',
@@ -231,6 +240,7 @@ export function NursingHomeProviderModal({
         status: 'Good',
         icon: CheckCircle,
         bgColor: 'bg-blue-50',
+        bgColorIcon: 'bg-blue-100', 
         borderColor: 'border-blue-100',
         iconColor: 'text-blue-500',
         textColor: 'text-blue-900',
@@ -243,6 +253,7 @@ export function NursingHomeProviderModal({
         status: 'Fair',
         icon: TrendingDown,
         bgColor: 'bg-amber-50',
+        bgColorIcon: 'bg-amber-100', 
         borderColor: 'border-amber-100',
         iconColor: 'text-amber-500',
         textColor: 'text-amber-900',
@@ -255,6 +266,7 @@ export function NursingHomeProviderModal({
         status: 'Critical',
         icon: AlertTriangle,
         bgColor: 'bg-rose-50',
+        bgColorIcon: 'bg-rose-100', 
         borderColor: 'border-rose-100',
         iconColor: 'text-rose-500',
         textColor: 'text-rose-900',
@@ -272,6 +284,7 @@ export function NursingHomeProviderModal({
         status: 'Excellent',
         icon: CheckCircle,
         bgColor: 'bg-emerald-50',
+        bgColorIcon: 'bg-emerald-100', 
         borderColor: 'border-emerald-100',
         iconColor: 'text-emerald-500',
         textColor: 'text-emerald-900',
@@ -284,6 +297,7 @@ export function NursingHomeProviderModal({
         status: 'Good',
         icon: CheckCircle,
         bgColor: 'bg-blue-50',
+        bgColorIcon: 'bg-blue-100', 
         borderColor: 'border-blue-100',
         iconColor: 'text-blue-500',
         textColor: 'text-blue-900',
@@ -296,6 +310,7 @@ export function NursingHomeProviderModal({
         status: 'Fair',
         icon: AlertTriangle,
         bgColor: 'bg-amber-50',
+        bgColorIcon: 'bg-amber-100', 
         borderColor: 'border-amber-100',
         iconColor: 'text-amber-500',
         textColor: 'text-amber-900',
@@ -308,6 +323,7 @@ export function NursingHomeProviderModal({
         status: 'Critical',
         icon: AlertTriangle,
         bgColor: 'bg-rose-50',
+        bgColorIcon: 'bg-rose-100', 
         borderColor: 'border-rose-100',
         iconColor: 'text-rose-500',
         textColor: 'text-rose-900',
@@ -418,8 +434,8 @@ export function NursingHomeProviderModal({
             </div>
           </div>
 
-          {/* Key Performance Areas */}
-          <div>
+            {/* Key Performance Areas */}
+            <div>
             <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center space-x-2">
               <Heart className="w-5 h-5 text-rose-500" />
               <span>Quality Analysis</span>
@@ -429,7 +445,7 @@ export function NursingHomeProviderModal({
               {/* Financial Stability */}
               <div className={`${financial.bgColor} rounded-lg p-5 border ${financial.borderColor}`}>
                 <div className="flex items-start space-x-4">
-                  <div className={`p-3 ${financial.bgColor} rounded-lg`}>
+                  <div className={`p-3 ${financial.bgColorIcon} rounded-full`}>
                     <financial.icon className={`w-6 h-6 ${financial.iconColor}`} />
                   </div>
                   <div className="flex-1">
@@ -445,7 +461,7 @@ export function NursingHomeProviderModal({
                     <p className={`text-sm ${financial.textColor} mb-2 font-medium`}>
                       {financial.concern}
                     </p>
-                    <p className={`text-xs ${financial.textColor}  leading-relaxed`}>
+                    <p className={`text-xs ${financial.textColor} leading-relaxed`}>
                       {financial.impact}
                     </p>
                   </div>
@@ -455,7 +471,7 @@ export function NursingHomeProviderModal({
               {/* Staff Stability */}
               <div className={`${staffStability.bgColor} rounded-lg p-5 border ${staffStability.borderColor}`}>
                 <div className="flex items-start space-x-4">
-                  <div className={`p-3 ${staffStability.bgColor} rounded-lg`}>
+                  <div className={`p-3 ${staffStability.bgColorIcon} rounded-full`}>
                     <staffStability.icon className={`w-6 h-6 ${staffStability.iconColor}`} />
                   </div>
                   <div className="flex-1">
@@ -471,7 +487,7 @@ export function NursingHomeProviderModal({
                     <p className={`text-sm ${staffStability.textColor} mb-2 font-medium`}>
                       {staffStability.concern}
                     </p>
-                    <p className={`text-xs ${staffStability.textColor}  leading-relaxed`}>
+                    <p className={`text-xs ${staffStability.textColor} leading-relaxed`}>
                       {staffStability.impact}
                     </p>
                   </div>
@@ -481,7 +497,7 @@ export function NursingHomeProviderModal({
               {/* Staff Attentiveness */}
               <div className={`${staffAttentiveness.bgColor} rounded-lg p-5 border ${staffAttentiveness.borderColor}`}>
                 <div className="flex items-start space-x-4">
-                  <div className={`p-3 ${staffAttentiveness.bgColor} rounded-lg`}>
+                  <div className={`p-3 ${staffAttentiveness.bgColorIcon} rounded-full`}>
                     <staffAttentiveness.icon className={`w-6 h-6 ${staffAttentiveness.iconColor}`} />
                   </div>
                   <div className="flex-1">
@@ -507,7 +523,7 @@ export function NursingHomeProviderModal({
               {/* Health Inspection */}
               <div className={`${healthInspection.bgColor} rounded-lg p-5 border ${healthInspection.borderColor}`}>
                 <div className="flex items-start space-x-4">
-                  <div className={`p-3 ${healthInspection.bgColor} rounded-lg`}>
+                  <div className={`p-3 ${healthInspection.bgColorIcon} rounded-full`}>
                     <healthInspection.icon className={`w-6 h-6 ${healthInspection.iconColor}`} />
                   </div>
                   <div className="flex-1">
