@@ -118,27 +118,27 @@ const handleLoginClick = () => {
                         <div className="py-1">
                           {/* Caregivers Near Me */}
                             <a href="https://poetiq.io/dev/home-health-care"
-                                className="flex items-center space-x-2 px-4 py-2 hover:bg-gray-50 hover:text-red-500 rounded-lg"
+                                className="flex text-sm items-center space-x-2 px-4 py-2 hover:bg-gray-50 hover:text-red-500 rounded-lg"
                               >
-                                <MapPin className="w-5 h-5" />
+                                <MapPin className="w-3.5 h-3.5" />
                                 <span>Caregivers Near Me</span>
                     
                             </a>
                             {/* Nursing Home Finder */}
                               <a
                                   href="https://poetiq.io/dev/nursing-home"
-                                  className="flex items-center space-x-2 px-4 py-2 hover:bg-gray-50 hover:text-red-500 rounded-lg"
+                                  className="flex text-sm items-center space-x-2 px-4 py-2 hover:bg-gray-50 hover:text-red-500 rounded-lg"
                                 >
-                                  <Target className="w-5 h-5" />
+                                  <Target className="w-3.5 h-3.5" />
                                   <span>Nursing Home Finder</span>
                               </a>
 
                               {/* Dementia Assessment Tool */}
                               <a
                                   href="https://poetiq.io/dev/dementia-assessment"
-                                  className="flex items-center space-x-2 px-4 py-2 hover:bg-gray-50 hover:text-red-500 rounded-lg"
+                                  className="flex text-sm items-center space-x-2 px-4 py-2 hover:bg-gray-50 hover:text-red-500 rounded-lg"
                                 >
-                                  <Brain className="w-5 h-5" />
+                                  <Brain className="w-3.5 h-3.5" />
                                   <span>Dementia Assessment</span>
                               </a>
                           </div>
