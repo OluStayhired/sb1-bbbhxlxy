@@ -108,7 +108,7 @@ const handleLoginClick = () => {
               <div className="relative group">
                 {/* Menu Header - Eldercare Tools */}
                 <button className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">
-                  Eldercare Tools 🩺
+                  Caregiving Tools 🩺
                   </button>
 
                     {/* Dropdown Content - Hidden by default, shown on group hover */}
