@@ -12,6 +12,7 @@ import { BlogPostPage } from './components/BlogPostPage';
 import { NursingHomeSearchPage } from './pages/NursingHomeSearchPage';
 import { HomeHealthCareSearchPage } from './pages/HomeHealthCareSearchPage';
 import { DementiaAssessmentPage } from './pages/DementiaAssessmentPage';
+import { DementiaReportView } from './pages/DementiaReportView';
 import LandingPageDev from './pages/LandingPageDev';
 
 
@@ -55,7 +56,8 @@ function AppRoutes() {
       <Route path="dev/nursing-home" element={<NursingHomeSearchPage />} />
       <Route path="dev/home-health-care" element={<HomeHealthCareSearchPage />} />
       <Route path="dev/dementia-assessment" element={<DementiaAssessmentPage />} />
-      
+      <Route path="/report/:slug" element={<DementiaReportView />} />
+    
       <Route
         path="/dashboard/*"
         element={

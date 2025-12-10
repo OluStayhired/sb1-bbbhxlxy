@@ -12,8 +12,16 @@ import {
   Calendar,
   FileText,
   Heart,
-  Brain
+  Brain,
+  Copy,
+  Loader2,
+  Share2
 } from 'lucide-react';
+import { supabase } from '../lib/supabase';
+import { generateReportHTML } from '../utils/reportGenerator';
+import { generateUniqueSlug } from '../utils/slugGenerator';
+import { useAuth } from '../context/AuthContext';
+
 
 interface AssessmentResult {
   level: 'low' | 'mild' | 'moderate' | 'high';
@@ -48,18 +56,108 @@ export function DementiaAssessmentModal({
 }: DementiaAssessmentModalProps) {
   const [email, setEmail] = useState('');
   const [emailSent, setEmailSent] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
+  const [reportSaved, setReportSaved] = useState(false);
+  const [reportSlug, setReportSlug] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [linkCopied, setLinkCopied] = useState(false);
+  const { user } = useAuth();
 
-  const handleSendReport = () => {
+  //const handleSendReport = () => {
     // Placeholder for send functionality (not implemented per requirements)
-    if (email) {
-      setEmailSent(true);
+    //if (email) {
+     // setEmailSent(true);
+      //setTimeout(() => {
+       // setEmailSent(false);
+        //setEmail('');
+      //}, 3000);
+    //}
+  //};
+
+  const handleSendReport = async () => {
+    // Validate patient name
+    if (!patientName || patientName.trim() === '') {
+      setError('Please provide a patient name before saving the report.');
+      return;
+    }
+
+    try {
+      setIsSaving(true);
+      setError(null);
+
+      // Generate current date
+      const currentDate = new Date().toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+
+      // Generate HTML content
+      const htmlContent = generateReportHTML(
+        result,
+        score,
+        totalQuestions,
+        patientName,
+        relationshipToPatient,
+        currentDate
+      );
+
+      // Generate unique slug
+      const slug = generateUniqueSlug();
+
+      // Prepare data for insert
+      const reportData = {
+        patient_name: patientName.trim(),
+        slug: slug,
+        content: htmlContent,
+        relationship: relationshipToPatient || null,
+        user_id: user?.id || null,
+        email_sent: false,
+        email_address: email 
+      };
+
+      // Insert into Bolt Database
+      const { data, error: insertError } = await supabase
+        .from('dementia_report')
+        .insert([reportData])
+        .select()
+        .single();
+
+      if (insertError) {
+        throw insertError;
+      }
+
+      
+     
+
+      // Success
+      setReportSlug(slug);
+      setReportSaved(true);
+       setEmailSent(true);
+      
+      
+    } catch (err: any) {
+      console.error('Error saving report:', err);
+      setError(err.message || 'Failed to save report. Please try again.');
+    } finally {
+      //
       setTimeout(() => {
         setEmailSent(false);
+        setIsSaving(false);
         setEmail('');
-      }, 3000);
+      }, 3000);    
     }
   };
 
+const copyLinkToClipboard = () => {
+    if (reportSlug) {
+      const reportUrl = `${window.location.origin}/report/${reportSlug}`;
+      navigator.clipboard.writeText(reportUrl);
+      setLinkCopied(true);
+      setTimeout(() => setLinkCopied(false), 2000);
+    }
+  };
+  
   const currentDate = new Date().toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'long',
@@ -243,16 +341,16 @@ export function DementiaAssessmentModal({
               />
               <button
                 onClick={handleSendReport}
-                disabled={!email || emailSent}
+                disabled={isSaving || !email || emailSent || !patientName}
                 className={`px-6 py-2.5 rounded-lg font-semibold transition-all flex items-center space-x-2 ${
-                  emailSent
+                  isSaving
                     ? 'bg-emerald-500 text-white'
                     : email
                     ? 'bg-blue-600 text-white hover:bg-blue-700'
                     : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                 }`}
               >
-                {emailSent ? (
+                {isSaving ? (
                   <>
                     <CheckCircle2 className="w-4 h-4" />
                     <span>Sent</span>
