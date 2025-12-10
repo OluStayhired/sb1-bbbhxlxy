@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
-import { Loader2, AlertTriangle, ArrowLeft, ExternalLink } from 'lucide-react';
+import { Loader2, AlertTriangle, ArrowLeft, ExternalLink, HeartPulse } from 'lucide-react';
 
 export function DementiaReportView() {
   const { slug } = useParams<{ slug: string }>();
@@ -82,17 +82,31 @@ export function DementiaReportView() {
     <div className="min-h-screen bg-gray-50">
       {/* Navigation Bar */}
       <nav className="bg-white border-b border-gray-200 px-4 py-3">
+
+      {/* Start added false header */}
+
+      <div className="flex items-center space-x-2">
+
+         <div className="bg-red-500 rounded-full p-1.5 sm:p-2">
+            <HeartPulse className="h-7 w-7 fill-white stroke-red-500 sm:h-9 sm:w-9" />
+          </div>
+          <span className="text-2xl  font-bold text-red-500 sm:text-2xl">poetiq</span>
+        </div>
+        
+        {/* End added false header */}
+
+
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <button
-            onClick={() => navigate('/')}
+            onClick={() => navigate('/dev')}
             className="flex items-center space-x-2 text-gray-600 hover:text-gray-900 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             <span className="font-medium">Back to Home</span>
           </button>
           <a
-            href="/dementia-assessment"
-            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold flex items-center space-x-2"
+            href="https://poetiq.io/dev/dementia-assessment"
+            className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-600 transition-colors font-semibold flex items-center space-x-2"
           >
             <ExternalLink className="w-4 h-4" />
             <span>Take Your Own Assessment</span>
