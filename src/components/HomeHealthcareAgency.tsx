@@ -4,7 +4,7 @@ import {
   Loader2, Search, X, Building2, 
   ChevronUp, ChevronDown, Calendar,
   ArrowLeft, ArrowRight, Star, Globe, 
-  MapPin, ArrowUpDown, Clock, PlusCircle,
+  MapPin, ArrowUpDown, Clock, 
   Heart, Activity, Briefcase, Filter,
   CheckCircle, UserCheck, Stethoscope
 } from 'lucide-react';
@@ -12,6 +12,8 @@ import { supabase } from '../lib/supabase';
 import { TooltipExtended } from '/src/utils/TooltipExtended';
 import { TooltipHelp } from '/src/utils/TooltipHelp';
 import { HomeHealthcareAgencyModal } from './HomeHealthcareAgencyModal';
+import { HomeHealthcareAgencySidePanel } from './HomeHealthcareAgencySidePanel';
+
 
 
 interface HomeHealthAgency {
@@ -72,6 +74,10 @@ const [isModalOpen, setIsModalOpen] = useState(false);
   const [nationalMedianInOutBed, setNationalMedianInOutBed] = useState<number>(0);
   const [nationalMedianBathing, setNationalMedianBathing] = useState<number>(0);
   const [nationalMedianBreathing, setNationalMedianBreathing] = useState<number>(0);
+
+  // Add state for side panel
+const [selectedAgencyForPanel, setSelectedAgencyForPanel] = useState<HomeHealthAgency | null>(null);
+const [isPanelOpen, setIsPanelOpen] = useState(false);
 
   const agenciesPerPage = 25;
 
@@ -811,10 +817,17 @@ const [isModalOpen, setIsModalOpen] = useState(false);
                 ) : (
                   displayedAgencies.map((agency) => (
                     <tr key={agency.id} className="hover:bg-red-50 text-xs cursor-pointer"
-                          onClick={() => {
-                          setSelectedAgency(agency);
-                          setIsModalOpen(true);
-                          }}
+                          //onClick={() => {
+                          //setSelectedAgency(agency);
+                          //setIsModalOpen(true);
+                          //}}
+
+                      // In the table row onClick
+                      onClick={() => {
+                      setSelectedAgencyForPanel(agency);
+                      setIsPanelOpen(true);
+                        }}
+
                       >
                       <td className="px-4 py-4 text-xs whitespace-nowrap">
                         {renderStarRating(agency.quality_of_patient_care_star_rating)}
@@ -885,11 +898,11 @@ const [isModalOpen, setIsModalOpen] = useState(false);
                        <button
                            //onClick={openCommunityModal}
                             className="flex items-center space-x-1 px-2 py-2 bg-red-500 text-white rounded-lg hover:bg-red-500 transition-colors shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 group" 
-                          onClick={(e) => {
-                          e.stopPropagation();
-                          setSelectedAgency(agency);
-                          setIsModalOpen(true);
-                            }}
+                          //onClick={(e) => {
+                          //e.stopPropagation();
+                          //setSelectedAgency(agency);
+                          //setIsModalOpen(true);
+                            //}}
                          >
                     <span>Book Call</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -949,6 +962,24 @@ const [isModalOpen, setIsModalOpen] = useState(false);
           }}
         />
       )}
+
+      {/* Add before the closing </div> of the main component */}
+{selectedAgencyForPanel && (
+  <HomeHealthcareAgencySidePanel
+    agency={selectedAgencyForPanel}
+    nationalMedianWalkingMoving={nationalMedianWalkingMoving}
+    nationalMedianInOutBed={nationalMedianInOutBed}
+    nationalMedianBathing={nationalMedianBathing}
+    nationalMedianBreathing={nationalMedianBreathing}
+    isOpen={isPanelOpen}
+    onClose={() => {
+      setIsPanelOpen(false);
+      // Delay clearing the agency to allow animation to complete
+      setTimeout(() => setSelectedAgencyForPanel(null), 300);
+    }}
+  />
+)}
+
              
     </div>
   );
