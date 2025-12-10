@@ -295,7 +295,7 @@ export function DementiaAssessment() {
             <Brain className="w-8 h-8 text-red-600" />
           </div>
           <div className="flex-1">
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">Dementia Screening Assessment</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-2">Get Started</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
               This questionnaire is designed to help caregivers and family members identify potential early signs 
               of dementia or cognitive changes in their loved ones. Based on validated screening tools (AD8 and 
