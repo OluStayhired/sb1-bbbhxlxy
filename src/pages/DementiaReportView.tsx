@@ -96,7 +96,7 @@ export function DementiaReportView() {
         {/* End added false header */}
 
 
-        <div className="max-w-7xl mx-auto flex items-center">
+        <div className="max-w-7xl mx-auto flex items-center justify-center">
           {/*
           <button
             onClick={() => navigate('/dev')}
