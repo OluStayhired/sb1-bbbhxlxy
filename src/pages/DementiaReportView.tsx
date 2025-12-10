@@ -97,6 +97,7 @@ export function DementiaReportView() {
 
 
         <div className="max-w-7xl mx-auto flex items-center justify-between">
+          {/*
           <button
             onClick={() => navigate('/dev')}
             className="flex items-center space-x-2 text-gray-600 hover:text-gray-900 transition-colors"
@@ -104,9 +105,12 @@ export function DementiaReportView() {
             <ArrowLeft className="w-4 h-4" />
             <span className="font-medium">Back to Home</span>
           </button>
+           */}
+
           <a
             href="https://poetiq.io/dev/dementia-assessment"
-            className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-600 transition-colors font-semibold flex items-center space-x-2"
+            //className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors font-semibold flex items-center space-x-2"
+            className="group flex items-center justify-center space-x-2 w-1/2 sm:w-auto p-4 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 transition-colors shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-4 sm:text-lg"
           >
             <ExternalLink className="w-4 h-4" />
             <span>Take Your Own Assessment</span>
