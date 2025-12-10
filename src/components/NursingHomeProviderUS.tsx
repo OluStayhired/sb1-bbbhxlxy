@@ -7,6 +7,10 @@ import { supabase } from '../lib/supabase';
 import { TooltipExtended } from '/src/utils/TooltipExtended';
 import { TooltipHelp } from '/src/utils/TooltipHelp';
 import { NursingHomeProviderModal } from './NursingHomeProviderModal';
+import { NursingHomeSidePanel } from './NursingHomeSidePanel';
+
+
+
 
 
 // NOTE: Assuming 'supabase' client is available in the environment scope or imported via a mechanism not visible here.
@@ -64,6 +68,9 @@ export function NursingHomeProviderUS({}: NursingHomeProviderUSProps) {
   const [selectedProvider, setSelectedProvider] = useState<NursingHomeProvider | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // Add state for side panel
+const [selectedProviderForPanel, setSelectedProviderForPanel] = useState<NursingHomeProvider | null>(null);
+const [isPanelOpen, setIsPanelOpen] = useState(false);
 
   const providersPerPage = 25;
   const finesThreshold = 100000;
@@ -620,23 +627,29 @@ export function NursingHomeProviderUS({}: NursingHomeProviderUSProps) {
                 ) : (
                   displayedProviders.map((provider) => (
                     <tr key={provider.id} className="hover:bg-red-50 text-xs cursor-pointer"
-                    onClick={() => {
-                      setSelectedProvider(provider);
-                      setIsModalOpen(true);
-                          }}
-                    
-                    >
+                      //remove modal onclick from table   
+                      //onClick={() => {
+                        //    setSelectedProvider(provider);
+                          //  setIsModalOpen(true);
+                            //    }}               
+
+                      //Added side panel onclick to table row. 
+                      onClick={() => {
+                      setSelectedProviderForPanel(provider);
+                      setIsPanelOpen(true);
+                        }}
+                      >
                       <td className="px-4 py-4 text-xs whitespace-nowrap" >
-            
+                      
                         {provider.poetiq_rating && renderStarRating(provider.poetiq_rating)}
-          
+                        
                       </td>
                       <td className="px-4 py-4">
-              
+                        
                         <div className="text-xs text-left font-medium text-gray-900">
                           {provider.provider_name}</div>
                         <div className="text-xs text-left lowercase text-gray-500">{provider.provider_address}</div>
-                         
+                        
                       </td>
                       <td className="px-4 py-4 whitespace-nowrap text-gray-700">
                         {provider.city_town}
@@ -687,10 +700,10 @@ export function NursingHomeProviderUS({}: NursingHomeProviderUSProps) {
                        <button
                            //onClick={openCommunityModal}
                             className="flex items-center space-x-1 px-2 py-2 bg-red-500 text-white rounded-lg hover:bg-red-500 transition-colors shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 group" 
-                            onClick={() => {
-                            setSelectedProvider(provider);
-                            setIsModalOpen(true);
-                                }}
+                            //onClick={() => {
+                            //setSelectedProvider(provider);
+                            //setIsModalOpen(true);
+                              //  }}
                          >
                     <span>Book Call</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -749,6 +762,23 @@ export function NursingHomeProviderUS({}: NursingHomeProviderUSProps) {
     }}
   />
 )}
+
+{/* Add before the closing </div> of the main component */}
+{selectedProviderForPanel && (
+  <NursingHomeSidePanel
+    provider={selectedProviderForPanel}
+    nationalMedianStaffTurnover={nationalMedianStaffTurnover}
+    nationalMedianStaffingHours={nationalMedianStaffingHours}
+    finesThreshold={finesThreshold}
+    isOpen={isPanelOpen}
+    onClose={() => {
+      setIsPanelOpen(false);
+      // Delay clearing the provider to allow animation to complete
+      setTimeout(() => setSelectedProviderForPanel(null), 300);
+    }}
+  />
+)}
+      
 
     </div>
   );
