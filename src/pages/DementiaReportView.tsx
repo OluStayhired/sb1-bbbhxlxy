@@ -83,6 +83,8 @@ export function DementiaReportView() {
       {/* Navigation Bar */}
       <nav className="bg-white border-b border-gray-200 px-4 py-3">
 
+      <a href="https://www.poetiq.io/dev">
+
       {/* Start added false header */}
 
       <div className="flex items-center space-x-2">
@@ -92,6 +94,7 @@ export function DementiaReportView() {
           </div>
           <span className="text-2xl  font-bold text-red-500 sm:text-2xl">poetiq</span>
         </div>
+        </a>
         
         {/* End added false header */}
 
