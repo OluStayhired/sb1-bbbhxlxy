@@ -208,6 +208,48 @@ const handleLoginClick = () => {
       {isMobileMenuOpen && (
         <div className="sm:hidden fixed inset-0 bg-white z-40 flex flex-col items-center justify-center space-y-4 py-6"> 
 
+           {/* START: Eldercare Tools Dropdown Menu */}
+           <div className="relative group">
+                {/* Menu Header - Eldercare Tools */}
+                <button className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">
+                  Caregiving Tools 🩺
+                  </button>
+
+                    {/* Dropdown Content - Hidden by default, shown on group hover */}
+                    <div
+                          className="absolute left-1/2 -translate-x-1/2 top-full mt-[-0.5] w-56 rounded-lg shadow-xl bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block z-50 transition-opacity duration-150 ease-out"
+      >
+                        <div className="py-1">
+                          {/* Caregivers Near Me */}
+                            <a href="https://poetiq.io/dev/home-health-care"
+                                className="flex text-sm items-center space-x-2 px-4 py-2 hover:bg-gray-50 hover:text-red-500 rounded-lg"
+                              >
+                                <MapPin className="w-3.5 h-3.5" />
+                                <span>Caregivers Near Me</span>
+                    
+                            </a>
+                            {/* Nursing Home Finder */}
+                              <a
+                                  href="https://poetiq.io/dev/nursing-home"
+                                  className="flex text-sm items-center space-x-2 px-4 py-2 hover:bg-gray-50 hover:text-red-500 rounded-lg"
+                                >
+                                  <Search className="w-3.5 h-3.5" />
+                                  <span>Nursing Home Finder</span>
+                              </a>
+
+                              {/* Dementia Assessment Tool */}
+                              <a
+                                  href="https://poetiq.io/dev/dementia-assessment"
+                                  className="flex text-sm items-center space-x-2 px-4 py-2 hover:bg-gray-50 hover:text-red-500 rounded-lg"
+                                >
+                                  <CheckCircle className="w-3.5 h-3.5" />
+                                  <span>Dementia Assessment</span>
+                              </a>
+                          </div>
+                        </div>
+                      </div>
+                      {/* END: Eldercare Tools Dropdown Menu */}
+
           <button
             onClick={() => {
               window.location.href = '#Community';
@@ -215,7 +257,7 @@ const handleLoginClick = () => {
               }}
               className="w-11/12 max-w-sm px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
             >
-            Community
+            Community 💛
           </button>
           <button
             onClick={() => {
@@ -224,19 +266,9 @@ const handleLoginClick = () => {
               }}
               className="w-11/12 max-w-sm px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
             >
-            Our Story
+            Our Story 👋
           </button>
-          {/*
-          <button
-            onClick={() => {
-              window.location.href = '#testimonial';
-              setIsMobileMenuOpen(false);           
-              }}
-              className="w-11/12 max-w-sm px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
-            >
-            Testimonials
-          </button>
-        */}
+
           <button
             onClick={() => {
               window.location.href = '#FAQ';
@@ -244,7 +276,7 @@ const handleLoginClick = () => {
               }}
               className="w-11/12 max-w-sm px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
             >
-            FAQ
+            FAQ ❓
           </button>
           {/*
           <button
