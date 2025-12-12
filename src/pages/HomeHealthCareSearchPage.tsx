@@ -320,9 +320,9 @@ const handleLoginClick = () => {
       <div className="col-span-1">
         <h3 className="font-semibold mb-4">Care Tools & Resources</h3>
         <ul className="space-y-2 text-sm text-gray-600">
-          <li> <a href="https://poetiq.io/dev/nursing-home" className="no-underline hover:text-red-400 transition-colors">Nursing Home Finder 🎯</a></li>
+          <li> <a href="https://poetiq.io/dev/nursing-home" className="no-underline hover:text-red-400 transition-colors">Nursing Home Finder 👩‍⚕️</a></li>
           <li> <a href="https://poetiq.io/dev/home-health-care" className="no-underline hover:text-red-400 transition-colors">Caregivers Near Me 📌 </a></li>    
-          <li> <a href="https://poetiq.io/dev/dementia-assessment" className="no-underline hover:text-red-400 transition-colors">Dementia Screening Tool 🧠</a></li>
+          <li> <a href="https://poetiq.io/dev/dementia-assessment" className="no-underline hover:text-red-400 transition-colors">Dementia Screening Test ✅</a></li>
           <li> <a href="#" className="no-underline hover:text-red-400 transition-colors">Blogs (coming soon) ✍️</a></li>
         </ul>
       </div>
