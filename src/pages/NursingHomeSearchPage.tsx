@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CalendarCheck, Calendar, PenSquare, Clock, Users, PenTool, Briefcase, Plus, Minus,Menu, MailCheck,
   Bot, CheckCircle,X, Send,Timer, Zap, ArrowRight, HeartPulse, Rocket, Search, Heart, PlusCircle,
-  Lightbulb, Sparkles, CircleDollarSign, Star } from 'lucide-react';
+  Lightbulb, Sparkles, CircleDollarSign, Star, Target } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { AuthModal } from '../components/AuthModal';
 import BlueskyLogo from '../images/bluesky-logo.svg';
@@ -178,7 +178,7 @@ const handleLoginClick = () => {
     {/*<span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Unstoppable Brands</span>*/}
             <span>
              <span className="bg-gradient-to-l from-red-300 via-red-400 to-red-500  bg-clip-text text-transparent"> nursing <br className="sm:hidden"/> homes </span> 
-              faster🎯
+              faster <span className="ml-2 inline-flex items-center"><Target className="bg-red-50 p-2 rounded-full text-red-500 w-6 h-6 sm:w-8 sm:h-8"/></span>
               </span>
              <p className="block text-sm font-normal sm:text-xl sm:font-normal text-gray-600 leading-tight mt-1 sm:mt-3">
 
