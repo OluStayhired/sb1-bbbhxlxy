@@ -462,9 +462,10 @@ const [isPanelOpen, setIsPanelOpen] = useState(false);
       {/* KPI/Median Display Row */}
       {/*<div className="bg-red-50 border border-red-200 rounded-lg p-3 mb-4">*/}
       <div className="mb-12">
-        <div className="flex items-center text-xs text-gray-500 space-x-2">
+        {/*<div className="flex items-center text-xs text-gray-500 space-x-2">*/}
+        <div className="grid grid-cols-1 space-y-1 sm:inline flex items-center text-xs text-gray-500 sm:space-x-2">
           <TooltipExtended text="⚡staff stability - this indicates the national median (%) of staff changes in a nursing home">
-          <div className="flex space-x-2 items-center bg-gray-50 p-3 
+          <div className="flex w-full space-x-2 items-center bg-gray-50 p-3 
             border border-gray-200 hover:border-red-200 hover:text-red-500 hover:bg-red-50 rounded-lg group transition-colors">
             <span className="bg-red-100 hover:bg-red-200 rounded-full p-2 group"><ArrowUpDown className="w-4 h-4"/></span>
             <span className="font-semibold">Staff Turnover</span> 
@@ -473,7 +474,7 @@ const [isPanelOpen, setIsPanelOpen] = useState(false);
             </TooltipExtended>
 
           <TooltipExtended text="⚡staff attentiveness - this is the national median (%) of staff hrs spent on a patient per day">  
-          <div className="flex space-x-2 items-center bg-gray-50 p-3 
+          <div className="flex w-full space-x-2 items-center bg-gray-50 p-3 
             border border-gray-200 hover:border-red-200 hover:text-red-500 hover:bg-red-50 rounded-lg">
             <span className="bg-red-100 hover:bg-red-200 rounded-full p-2 group"><Clock className="w-4 h-4"/></span>
             <span className="font-semibold">Staffing Hours:</span> 
@@ -482,7 +483,7 @@ const [isPanelOpen, setIsPanelOpen] = useState(false);
           </TooltipExtended>
           
           <TooltipExtended text="⚡financial stability - Concerns are raised when a nursing home incurs above $100,000 in fines">  
-          <div className="flex space-x-2 items-center bg-gray-50 p-3 
+          <div className="flex w-full space-x-2 items-center bg-gray-50 p-3 
             border border-gray-200 hover:border-red-200 hover:text-red-500 hover:bg-red-50 rounded-lg">
             <span className="bg-red-100 hover:bg-red-200 rounded-full p-2 group"><CircleDollarSign className="w-4 h-4"/></span>
             <span className="font-semibold">Fines Threshold:</span> 
@@ -533,7 +534,7 @@ const [isPanelOpen, setIsPanelOpen] = useState(false);
                   </th>
                   <th
                     onClick={() => handleSort('city_town')}
-                    className="px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
+                    className="hidden sm:table-cell px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
                   >
                     <div className="flex items-center text-gray-500 space-x-1">
                       <span className="text-gray-400"><MapPin className="w-3.5 h-3.5"/></span>
@@ -543,7 +544,7 @@ const [isPanelOpen, setIsPanelOpen] = useState(false);
                   </th>
                   <th
                     onClick={() => handleSort('state')}
-                    className="px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
+                    className="hidden sm:table-cell px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
                   >
                     <div className="flex items-center text-gray-500 space-x-1">
                       <span className="text-gray-400"><Globe className="w-3.5 h-3.5"/></span>
@@ -553,7 +554,7 @@ const [isPanelOpen, setIsPanelOpen] = useState(false);
                   </th>
                   <th
                     onClick={() => handleSort('health_inspection_rating')}
-                    className="px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
+                    className="hidden sm:table-cell px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
                   >
                     <div className="flex items-center text-gray-500 space-x-1">
                       <span className="text-gray-400"><Heart className="w-3.5 h-3.5"/></span>
@@ -563,7 +564,7 @@ const [isPanelOpen, setIsPanelOpen] = useState(false);
                   </th>
                   <th
                     onClick={() => handleSort('reported_total_nurse_staffing_hours_per_resident_per_day')}
-                    className="px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
+                    className="hidden sm:table-cell px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
                   >
                     <div className="flex items-center text-gray-500 space-x-1">
                       <span className="text-gray-400"><Clock className="w-3.5 h-3.5"/></span>
@@ -573,7 +574,7 @@ const [isPanelOpen, setIsPanelOpen] = useState(false);
                   </th>
                   <th
                     onClick={() => handleSort('total_nursing_staff_turnover')}
-                    className="px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
+                    className="hidden sm:table-cell px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
                   >
                     <div className="flex items-center text-gray-500 space-x-1">
                       <span className="text-gray-400"><ArrowUpDown className="w-3.5 h-3.5"/></span>
@@ -583,7 +584,7 @@ const [isPanelOpen, setIsPanelOpen] = useState(false);
                   </th>
                   <th
                     onClick={() => handleSort('total_amount_of_fines_in_dollars')}
-                    className="px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
+                    className="hidden sm:table-cell px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
                   >
                     <div className="flex items-center text-gray-500 space-x-1">
                       <span className="text-gray-400"><CircleDollarSign className="w-3.5 h-3.5"/></span>
@@ -593,7 +594,7 @@ const [isPanelOpen, setIsPanelOpen] = useState(false);
                   </th>
                   <th
                     onClick={() => handleSort('number_of_certified_beds')}
-                  className="px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
+                  className="hidden sm:table-cell px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
                   >
                     <div className="flex items-center text-gray-500 space-x-1">
                       <span className="text-gray-400"><Bed className="w-3.5 h-3.5"/></span>
@@ -604,7 +605,7 @@ const [isPanelOpen, setIsPanelOpen] = useState(false);
 
                   <th
                     //onClick={() => handleSort('number_of_certified_beds')}
-                  className="px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
+                  className="hidden sm:table-cell px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
                   >
                     <div className="flex items-center text-gray-500 space-x-1">
                       <span className="text-gray-400"><Calendar className="w-3.5 h-3.5"/></span>
@@ -651,13 +652,13 @@ const [isPanelOpen, setIsPanelOpen] = useState(false);
                         <div className="text-xs text-left lowercase text-gray-500">{provider.provider_address}</div>
                         
                       </td>
-                      <td className="px-4 py-4 whitespace-nowrap text-gray-700">
+                      <td className="hidden sm:table-cell px-4 py-4 whitespace-nowrap text-gray-700">
                         {provider.city_town}
                       </td>
-                      <td className="px-4 py-4 whitespace-nowrap text-gray-700">
+                      <td className="hidden sm:table-cell px-4 py-4 whitespace-nowrap text-gray-700">
                         {provider.state}
                       </td>
-                      <td className="px-4 py-4 whitespace-nowrap text-gray-700">
+                      <td className="hidden sm:table-cell px-4 py-4 whitespace-nowrap text-gray-700">
                         <span className={`px-2 py-1 rounded-full text-xs font-medium ${
                           provider.health_inspection_rating >= 4
                             ? 'bg-green-100 text-green-800'
@@ -668,10 +669,10 @@ const [isPanelOpen, setIsPanelOpen] = useState(false);
                           {provider.health_inspection_rating}/5
                         </span>
                       </td>
-                      <td className="px-4 py-4 whitespace-nowrap text-gray-700">
+                      <td className="hidden sm:table-cell px-4 py-4 whitespace-nowrap text-gray-700">
                         {provider.reported_total_nurse_staffing_hours_per_resident_per_day.toFixed(2)}
                       </td>
-                      <td className="px-4 py-4 whitespace-nowrap text-gray-700">
+                      <td className="hidden sm:table-cell px-4 py-4 whitespace-nowrap text-gray-700">
                         <span className={`px-2 py-1 rounded-full text-xs font-medium ${
                           provider.total_nursing_staff_turnover < nationalMedianStaffTurnover
                             ? 'bg-green-100 text-green-800'
@@ -682,7 +683,7 @@ const [isPanelOpen, setIsPanelOpen] = useState(false);
                           {provider.total_nursing_staff_turnover.toFixed(1)}%
                         </span>
                       </td>
-                      <td className="px-4 py-4 whitespace-nowrap text-gray-700">
+                      <td className="hidden sm:table-cell px-4 py-4 whitespace-nowrap text-gray-700">
                         <span className={`px-2 py-1 rounded-full text-xs font-medium ${
                           provider.total_amount_of_fines_in_dollars <= finesThreshold
                             ? 'bg-green-100 text-green-800'
@@ -691,11 +692,11 @@ const [isPanelOpen, setIsPanelOpen] = useState(false);
                           ${provider.total_amount_of_fines_in_dollars.toLocaleString()}
                         </span>
                       </td>
-                      <td className="px-4 py-4 whitespace-nowrap text-gray-700">
+                      <td className="hidden sm:table-cell px-4 py-4 whitespace-nowrap text-gray-700">
                         {provider.number_of_certified_beds}
                       </td>
 
-                      <td className="px-2 items-center">
+                      <td className="hidden sm:table-cell px-2 items-center">
                       <TooltipHelp text="⚡get more insights">  
                        <button
                            //onClick={openCommunityModal}
@@ -733,7 +734,7 @@ const [isPanelOpen, setIsPanelOpen] = useState(false);
                 <span className="text-sm text-gray-700">
                   Page <span className="font-semibold">{currentPage}</span> of <span className="font-semibold">{totalPages}</span>
                 </span>
-                <span className="text-sm text-gray-500">
+                <span className="hidden sm:inline text-sm text-gray-500">
                   ({((currentPage - 1) * providersPerPage) + 1}-{Math.min(currentPage * providersPerPage, totalFiltered)} of {totalFiltered})
                 </span>
               </div>
