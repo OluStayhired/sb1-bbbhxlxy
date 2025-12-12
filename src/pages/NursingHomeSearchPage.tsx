@@ -178,7 +178,7 @@ const handleLoginClick = () => {
     {/*<span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Unstoppable Brands</span>*/}
             <span>
              <span className="bg-gradient-to-l from-red-300 via-red-400 to-red-500  bg-clip-text text-transparent"> nursing <br className="sm:hidden"/> homes </span> 
-              faster <span className="ml-2 inline-flex items-center"><Target className="bg-red-50 p-2 rounded-full text-red-500 w-6 h-6 sm:w-8 sm:h-8"/></span>
+              faster 👩‍⚕️
               </span>
              <p className="block text-sm font-normal sm:text-xl sm:font-normal text-gray-600 leading-tight mt-1 sm:mt-3">
 
