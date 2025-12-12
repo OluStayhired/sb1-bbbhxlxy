@@ -627,9 +627,10 @@ const [isPanelOpen, setIsPanelOpen] = useState(false);
 
       {/* National Medians Display */}
       <div className="mb-12">
-        <div className="flex items-center text-xs text-gray-500 space-x-2 flex-wrap gap-2">
+        {/*}div className="flex items-center text-xs text-gray-500 space-x-2 flex-wrap gap-2">*/}
+        <div className="grid grid-cols-1 space-y-1 sm:inline flex items-center text-xs text-gray-500 sm:space-x-2">
           <TooltipExtended text="⚡national median quality rating for patient care">
-            <div className="flex space-x-2 items-center bg-gray-50 p-3 
+            <div className="flex w-full space-x-2 items-center bg-gray-50 p-3 
               border border-gray-200 hover:border-red-200 hover:text-red-500 hover:bg-red-50 rounded-lg group transition-colors">
               <span className="bg-red-100 hover:bg-red-200 rounded-full p-2 group">
                 <Star className="w-4 h-4"/>
@@ -640,7 +641,7 @@ const [isPanelOpen, setIsPanelOpen] = useState(false);
           </TooltipExtended>
 
           <TooltipExtended text="⚡national median percentage for patients showing improvement in walking/moving">
-            <div className="flex space-x-2 items-center bg-gray-50 p-3 
+            <div className="flex w-full space-x-2 items-center bg-gray-50 p-3 
               border border-gray-200 hover:border-red-200 hover:text-red-500 hover:bg-red-50 rounded-lg group transition-colors">
               <span className="bg-red-100 hover:bg-red-200 rounded-full p-2 group">
                 <Activity className="w-4 h-4"/>
@@ -651,7 +652,7 @@ const [isPanelOpen, setIsPanelOpen] = useState(false);
           </TooltipExtended>
 
           <TooltipExtended text="⚡national median percentage for patients improving in getting in/out of bed">
-            <div className="flex space-x-2 items-center bg-gray-50 p-3 
+            <div className="flex w-full space-x-2 items-center bg-gray-50 p-3 
               border border-gray-200 hover:border-red-200 hover:text-red-500 hover:bg-red-50 rounded-lg group transition-colors">
               <span className="bg-red-100 hover:bg-red-200 rounded-full p-2 group">
                 <UserCheck className="w-4 h-4"/>
@@ -662,7 +663,7 @@ const [isPanelOpen, setIsPanelOpen] = useState(false);
           </TooltipExtended>
 
           <TooltipExtended text="⚡national median percentage for patients improving bathing ability">
-            <div className="flex space-x-2 items-center bg-gray-50 p-3 
+            <div className="flex w-full space-x-2 items-center bg-gray-50 p-3 
               border border-gray-200 hover:border-red-200 hover:text-red-500 hover:bg-red-50 rounded-lg group transition-colors">
               <span className="bg-red-100 hover:bg-red-200 rounded-full p-2 group">
                 <Heart className="w-4 h-4"/>
@@ -673,7 +674,7 @@ const [isPanelOpen, setIsPanelOpen] = useState(false);
           </TooltipExtended>
 
           <TooltipExtended text="⚡national median percentage for patients with improved breathing">
-            <div className="flex space-x-2 items-center bg-gray-50 p-3 
+            <div className="flex w-full space-x-2 items-center bg-gray-50 p-3 
               border border-gray-200 hover:border-red-200 hover:text-red-500 hover:bg-red-50 rounded-lg group transition-colors">
               <span className="bg-red-100 hover:bg-red-200 rounded-full p-2 group">
                 <Stethoscope className="w-4 h-4"/>
@@ -931,7 +932,7 @@ const [isPanelOpen, setIsPanelOpen] = useState(false);
                 <span className="text-sm text-gray-700">
                   Page <span className="font-semibold">{currentPage}</span> of <span className="font-semibold">{totalPages}</span>
                 </span>
-                <span className="text-sm text-gray-500">
+                <span className="hidden sm:inline text-sm text-gray-500">
                   ({((currentPage - 1) * agenciesPerPage) + 1}-{Math.min(currentPage * agenciesPerPage, totalFiltered)} of {totalFiltered})
                 </span>
               </div>
