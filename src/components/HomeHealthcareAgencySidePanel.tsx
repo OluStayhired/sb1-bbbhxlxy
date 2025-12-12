@@ -637,7 +637,7 @@ export function HomeHealthcareAgencySidePanel({
                 <div className="space-y-3">
                   <div>
                     <h4 className="font-bold text-gray-900 mb-1 text-sm">Need expert guidance?</h4>
-                    <p className="text-xs text-gray-600">Schedule a consultation to discuss home care options.</p>
+                    <p className="text-xs text-gray-600">Schedule a consultation to discuss home care options and get a full report.</p>
                   </div>
                   <Link 
                     to="https://meetings.hubspot.com/olu-adedeji"

@@ -553,7 +553,7 @@ export function NursingHomeProviderModal({
             <div className="flex items-center justify-between">
               <div>
                 <h4 className="font-bold text-gray-900 mb-1">Ready to learn more?</h4>
-                <p className="text-sm text-gray-600">Schedule a call to discuss care options for your loved one ❤️💛🧡.</p>
+                <p className="text-sm text-gray-600">Schedule a call to discuss care options and get a full report.</p>
               </div>
               <Link 
                 to="https://meetings.hubspot.com/olu-adedeji"
