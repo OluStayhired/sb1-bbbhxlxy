@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CalendarCheck, Calendar, PenSquare, Clock, Users, PenTool, Briefcase, Plus, Minus,Menu, MailCheck,
   Bot, CheckCircle,X, Send,Timer, Zap, ArrowRight, HeartPulse, Brain, Target, MapPin,
-  Lightbulb, Sparkles, CircleDollarSign, Star } from 'lucide-react';
+  Lightbulb, Sparkles, CircleDollarSign, Star, Search } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { AuthModal } from '../components/AuthModal';
 import BlueskyLogo from '../images/bluesky-logo.svg';
@@ -129,7 +129,7 @@ const handleLoginClick = () => {
                                   href="https://poetiq.io/dev/nursing-home"
                                   className="flex text-sm items-center space-x-2 px-4 py-2 hover:bg-gray-50 hover:text-red-500 rounded-lg"
                                 >
-                                  <Target className="w-3.5 h-3.5" />
+                                  <Search className="w-3.5 h-3.5" />
                                   <span>Nursing Home Finder</span>
                               </a>
 
