@@ -138,7 +138,7 @@ const handleLoginClick = () => {
                                   href="https://poetiq.io/dev/dementia-assessment"
                                   className="flex text-sm items-center space-x-2 px-4 py-2 hover:bg-gray-50 hover:text-red-500 rounded-lg"
                                 >
-                                  <Brain className="w-3.5 h-3.5" />
+                                  <CheckCircle className="w-3.5 h-3.5" />
                                   <span>Dementia Assessment</span>
                               </a>
                           </div>
