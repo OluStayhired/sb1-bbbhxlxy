@@ -722,7 +722,7 @@ const [isPanelOpen, setIsPanelOpen] = useState(false);
 
                   <th
                     onClick={() => handleSort('city_town')}
-                    className="px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
+                    className="hidden sm:table-cell px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
                   >
                     <div className="flex items-center text-gray-500 space-x-1">
                       <span className="text-gray-400"><MapPin className="w-3.5 h-3.5"/></span>
@@ -733,7 +733,7 @@ const [isPanelOpen, setIsPanelOpen] = useState(false);
 
                   <th
                     onClick={() => handleSort('state')}
-                    className="px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
+                    className="hidden sm:table-cell px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
                   >
                     <div className="flex items-center text-gray-500 space-x-1">
                       <span className="text-gray-400"><Globe className="w-3.5 h-3.5"/></span>
@@ -744,7 +744,7 @@ const [isPanelOpen, setIsPanelOpen] = useState(false);
 
                   <th
                     onClick={() => handleSort('better_walking_moving')}
-                    className="px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
+                    className="hidden sm:table-cell px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
                   >
                     <div className="flex items-center text-gray-500 space-x-1">
                       <span className="text-gray-400"><Activity className="w-3.5 h-3.5"/></span>
@@ -755,7 +755,7 @@ const [isPanelOpen, setIsPanelOpen] = useState(false);
 
                   <th
                     onClick={() => handleSort('better_in_and_out_of_bed')}
-                    className="px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
+                    className="hidden sm:table-cell px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
                   >
                     <div className="flex items-center text-gray-500 space-x-1">
                       <span className="text-gray-400"><UserCheck className="w-3.5 h-3.5"/></span>
@@ -766,7 +766,7 @@ const [isPanelOpen, setIsPanelOpen] = useState(false);
 
                   <th
                     onClick={() => handleSort('better_at_bathing')}
-                    className="px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
+                    className="hidden sm:table-cell px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
                   >
                     <div className="flex items-center text-gray-500 space-x-1">
                       <span className="text-gray-400"><Heart className="w-3.5 h-3.5"/></span>
@@ -777,7 +777,7 @@ const [isPanelOpen, setIsPanelOpen] = useState(false);
 
                   <th
                     onClick={() => handleSort('breathing_improved')}
-                    className="px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
+                    className="hidden sm:table-cell px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
                   >
                     <div className="flex items-center text-gray-500 space-x-1">
                       <span className="text-gray-400"><Stethoscope className="w-3.5 h-3.5"/></span>
@@ -786,7 +786,7 @@ const [isPanelOpen, setIsPanelOpen] = useState(false);
                     </div>
                   </th>
 
-                  <th className="px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider">
+                  <th className="hidden sm:table-cell px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider">
                     <div className="flex items-center text-gray-500 space-x-1">
                       <span className="text-gray-400"><Briefcase className="w-3.5 h-3.5"/></span>
                       <span>Services</span>
@@ -795,7 +795,7 @@ const [isPanelOpen, setIsPanelOpen] = useState(false);
 
                    <th
                     //onClick={() => handleSort('number_of_certified_beds')}
-                  className="px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
+                  className="hidden sm:table-cell px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
                   >
                     <div className="flex items-center text-gray-500 space-x-1">
                       <span className="text-gray-400"><Calendar className="w-3.5 h-3.5"/></span>
@@ -836,41 +836,41 @@ const [isPanelOpen, setIsPanelOpen] = useState(false);
                         <div className="text-xs font-medium text-gray-900">{agency.provider_name}</div>
                         <div className="text-xs lowercase text-gray-500">{agency.address}</div>
                       </td>
-                      <td className="px-4 py-4 whitespace-nowrap text-gray-700">
+                      <td className="hidden sm:table-cell px-4 py-4 whitespace-nowrap text-gray-700">
                         {agency.city_town}
                       </td>
-                      <td className="px-4 py-4 whitespace-nowrap text-gray-700">
+                      <td className="hidden sm:table-cell px-4 py-4 whitespace-nowrap text-gray-700">
                         {agency.state}
                       </td>
-                      <td className="px-4 py-4 whitespace-nowrap text-gray-700">
+                      <td className="hidden sm:table-cell px-4 py-4 whitespace-nowrap text-gray-700">
                         <span className={`px-2 py-1 rounded-full text-xs font-medium ${
                           getPerformanceColor(agency.better_walking_moving, nationalMedianWalkingMoving)
                         }`}>
                           {agency.better_walking_moving.toFixed(0)}%
                         </span>
                       </td>
-                      <td className="px-4 py-4 whitespace-nowrap text-gray-700">
+                      <td className="hidden sm:table-cell px-4 py-4 whitespace-nowrap text-gray-700">
                         <span className={`px-2 py-1 rounded-full text-xs font-medium ${
                           getPerformanceColor(agency.better_in_and_out_of_bed, nationalMedianInOutBed)
                         }`}>
                           {agency.better_in_and_out_of_bed.toFixed(0)}%
                         </span>
                       </td>
-                      <td className="px-4 py-4 whitespace-nowrap text-gray-700">
+                      <td className="hidden sm:table-cell px-4 py-4 whitespace-nowrap text-gray-700">
                         <span className={`px-2 py-1 rounded-full text-xs font-medium ${
                           getPerformanceColor(agency.better_at_bathing, nationalMedianBathing)
                         }`}>
                           {agency.better_at_bathing.toFixed(0)}%
                         </span>
                       </td>
-                      <td className="px-4 py-4 whitespace-nowrap text-gray-700">
+                      <td className="hidden sm:table-cell px-4 py-4 whitespace-nowrap text-gray-700">
                         <span className={`px-2 py-1 rounded-full text-xs font-medium ${
                           getPerformanceColor(agency.breathing_improved, nationalMedianBreathing)
                         }`}>
                           {agency.breathing_improved.toFixed(0)}%
                         </span>
                       </td>
-                      <td className="px-4 py-4">
+                      <td className="hidden sm:table-cell px-4 py-4">
                         <div className="flex flex-wrap gap-1">
                           {agency.nursing_care_services === 'YES' && (
                             <span className="px-2 py-0.5 bg-blue-100 text-blue-700 rounded text-xs">NC</span>
@@ -893,7 +893,7 @@ const [isPanelOpen, setIsPanelOpen] = useState(false);
                         </div>
                       </td>
 
-                        <td className="px-2 items-center">
+                        <td className="hidden sm:table-cell px-2 items-center">
                       <TooltipHelp text="⚡get more insights">  
                        <button
                            //onClick={openCommunityModal}
