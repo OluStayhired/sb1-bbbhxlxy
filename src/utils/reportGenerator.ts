@@ -78,7 +78,8 @@ export function generateReportHTML(
     .header-icon {
       width: 48px;
       height: 48px;
-      background: #fee2e2;
+      {/*background: #fee2e2;*/}
+      background: #f0fDf4;
       border-radius: 8px;
       display: flex;
       align-items: center;
@@ -359,7 +360,8 @@ export function generateReportHTML(
   <div class="container">
     <div class="header">
       <div class="header-content">
-        <div class="header-icon">🧠</div>
+        {/*<div class="header-icon">🧠</div>*/}
+        <div class="header-icon">✅</div>
         <div>
           <h1 class="header-title">Assessment Report</h1>
           <p class="header-date">📅 ${currentDate}</p>
