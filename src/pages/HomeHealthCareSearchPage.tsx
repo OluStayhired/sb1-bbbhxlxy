@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CalendarCheck, Calendar, PenSquare, Clock, Users, PenTool, Briefcase, Plus, Minus,Menu, MailCheck,
   Bot, CheckCircle,X, Send,Timer, Zap, ArrowRight, HeartPulse, Rocket, Search, Heart, PlusCircle,
-  Lightbulb, Sparkles, CircleDollarSign, Star } from 'lucide-react';
+  Lightbulb, Sparkles, CircleDollarSign, Star, MapPin } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { AuthModal } from '../components/AuthModal';
 import BlueskyLogo from '../images/bluesky-logo.svg';
@@ -107,6 +107,7 @@ const handleLoginClick = () => {
         {/*  <div className="hidden flex space-x-2 space-x-4 sm:space-y-0 sm:space-x-2">*/}
 
         <div className="hidden sm:flex items-center space-x-4">
+          {/*
         <a href="https://poetiq.io/dev/dementia-assessment" className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">    
                     Dementia Screening 🧠
                 </a> 
@@ -114,7 +115,49 @@ const handleLoginClick = () => {
                 <a href="https://poetiq.io/dev/nursing-home" className="no-underline px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"> 
                 Nursing Home Finder 🎯
                 </a>
-      
+  */}
+
+  {/* START: Eldercare Tools Dropdown Menu */}
+  <div className="relative group">
+                {/* Menu Header - Eldercare Tools */}
+                <button className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">
+                  Caregiving Tools 🩺
+                  </button>
+
+                    {/* Dropdown Content - Hidden by default, shown on group hover */}
+                    <div
+                          className="absolute left-1/2 -translate-x-1/2 top-full mt-[-0.5] w-56 rounded-lg shadow-xl bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block z-50 transition-opacity duration-150 ease-out"
+      >
+                        <div className="py-1">
+                          {/* Caregivers Near Me */}
+                            <a href="https://poetiq.io/dev/home-health-care"
+                                className="flex text-sm items-center space-x-2 px-4 py-2 hover:bg-gray-50 hover:text-red-500 rounded-lg"
+                              >
+                                <MapPin className="w-3.5 h-3.5" />
+                                <span>Caregivers Near Me</span>
+                    
+                            </a>
+                            {/* Nursing Home Finder */}
+                              <a
+                                  href="https://poetiq.io/dev/nursing-home"
+                                  className="flex text-sm items-center space-x-2 px-4 py-2 hover:bg-gray-50 hover:text-red-500 rounded-lg"
+                                >
+                                  <Search className="w-3.5 h-3.5" />
+                                  <span>Nursing Home Finder</span>
+                              </a>
+
+                              {/* Dementia Assessment Tool */}
+                              <a
+                                  href="https://poetiq.io/dev/dementia-assessment"
+                                  className="flex text-sm items-center space-x-2 px-4 py-2 hover:bg-gray-50 hover:text-red-500 rounded-lg"
+                                >
+                                  <CheckCircle className="w-3.5 h-3.5" />
+                                  <span>Dementia Assessment</span>
+                              </a>
+                          </div>
+                        </div>
+                      </div>
+                      {/* END: Eldercare Tools Dropdown Menu */}
           
           <button
            
