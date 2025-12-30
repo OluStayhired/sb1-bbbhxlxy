@@ -270,7 +270,9 @@ const handleLoginClick = () => {
 
           {/*<span className="hidden sm:inline text-xs sm:text-lg p-3 font-semibold bg-red-100 rounded-full text-red-500 border-8 border-red-50">A Private Community Rebuilding ElderCare Together</span>*/}
 
-        <span className="hidden sm:inline text-xs sm:text-lg p-3 font-semibold bg-red-100 rounded-full text-red-500 border-8 border-red-50">Community of Professionals Supporting Aging Parents</span>
+        {/*<span className="hidden sm:inline text-xs sm:text-lg p-3 font-semibold bg-red-100 rounded-full text-red-500 border-8 border-red-50">Community of Professionals Supporting Aging Parents</span>*/}
+        <span className="hidden sm:inline text-xs sm:text-lg p-3 font-semibold bg-red-100 rounded-full text-red-500 border-8 border-red-50">Frictionless Care for Your Aging Parents</span>
+        
           
            {/*start alternative header */}
     
@@ -294,6 +296,21 @@ const handleLoginClick = () => {
             </p>
           </h1>
           {/*end alternative header*/}
+
+{/*---------------- Start Adding the main hero image ------------------*/}          
+
+{/* Hero Image */}
+<div className="hidden sm:inline mt-12 mb-8 w-full max-w-6xl mx-auto px-4">
+  <img
+    src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/poetiq-community-hero.png"
+    alt="Poetiq Community"
+    className="w-full h-auto rounded-2xl shadow-2xl object-cover"
+    //className="w-full h-auto object-cover"
+  />
+</div>
+
+
+{/*---------------- End Adding the main hero image ----------------*/}          
     
   <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 items-center mx-auto w-fit"> 
     {/* Adjusted button layout for mobile */}
