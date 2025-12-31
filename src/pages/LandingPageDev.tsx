@@ -362,7 +362,7 @@ const handleLoginClick = () => {
 
       <p className="mt-16 mb-1 text-sm sm:text-sm md:text-lg text-red-400 font-normal">
         {/*<span className="font-normal">Join Our Newsletter 🔥</span>*/}
-            <span> Get the latest Parental Care Guide 💌</span>
+            <span> Get the latest Eldercare Guide 💌</span>
         </p>
         
 
