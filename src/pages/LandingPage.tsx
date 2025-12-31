@@ -335,8 +335,9 @@ const handleLoginClick = () => {
   <h2 className="text-2xl text-red-400 sm:text-4xl md:text-5xl font-bold leading-tight mt-16 mb-4">
     Community for Career Professionals 👩‍💻
   </h2>
-  <p className="text-xl sm:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto hover:text-red-500">
-   Empowering the modern workforce to make better caregiving decisions.
+  {/*<p className="text-xl sm:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto hover:text-red-500">*/}
+  <p className="text-xl sm:text-2xl text-gray-600 mb-12 mx-auto hover:text-red-500">  
+   We empower the modern workforce to make better caregiving decisions.
   </p>  
 
 {/*Image for Mobile Devices*/}
