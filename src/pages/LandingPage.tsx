@@ -332,6 +332,13 @@ const handleLoginClick = () => {
     </div>
   </div>
 
+  <h2 className="text-2xl text-red-400 sm:text-4xl md:text-5xl font-bold leading-tight mt-16 mb-4">
+    Community for Career Professionals 👩‍💻
+  </h2>
+  <p className="text-xl sm:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto hover:text-red-500">
+   Empowering the modern workforce to make better caregiving decisions.
+  </p>  
+
 {/*Image for Mobile Devices*/}
 <div className="sm:hidden w-full p-4 mt-8">
   <div className="grid grid-cols-1 h-[450px]">
@@ -344,8 +351,8 @@ const handleLoginClick = () => {
               className="w-full h-full object-cover object-[30%_50%]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
-                <h3 class="text-xl font-bold drop-shadow-lg">Book Emergency <br/> Caregivers</h3>
+            <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
+                <h3 className="text-xl font-bold drop-shadow-lg">Book Emergency <br/> Caregivers</h3>
             </div>
           </div>
         </div>

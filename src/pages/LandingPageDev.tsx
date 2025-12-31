@@ -364,6 +364,7 @@ const handleLoginClick = () => {
         {/*<span className="font-normal">Join Our Newsletter 🔥</span>*/}
             <span> Get the latest Parental Care Guide 💌</span>
         </p>
+        
 
   <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 items-center mx-auto w-fit"> 
     {/* Adjusted button layout for mobile */}
@@ -383,6 +384,13 @@ const handleLoginClick = () => {
   </button>
     </div>
   </div>
+
+  <h2 className="text-2xl text-red-400 sm:text-4xl md:text-5xl font-bold leading-tight mt-16 mb-4">
+    Community for Career Professionals 👩‍💻
+  </h2>
+  <p className="text-xl sm:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto hover:text-red-500">
+   Empowering the modern workforce to make better caregiving decisions.
+  </p>  
 
 {/*Image for Mobile Devices*/}
 <div className="sm:hidden w-full p-4 mt-8">
