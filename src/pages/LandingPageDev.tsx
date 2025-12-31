@@ -489,7 +489,8 @@ const handleLoginClick = () => {
           </div>
           <div className="relative h-full border hover:p-2 hover:border-red-500 overflow-hidden rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl group">
             <img
-              src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/mother_daughter_blue.png"
+              //src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/mother_daughter_blue.png"
+              src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/magnifying-glass.png"
               alt="Brainstorming session"
               className="w-full h-full rounded-xl object-cover aspect-square"
             />
