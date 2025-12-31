@@ -457,7 +457,7 @@ const handleLoginClick = () => {
               className="w-full h-full rounded-xl object-cover object-[30%_50%]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
-            <div clasName="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
+            <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
                 <h3 className="text-xl font-bold drop-shadow-lg">Find Home Caregivers</h3>
             </div>
           </div>

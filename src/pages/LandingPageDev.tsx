@@ -441,10 +441,9 @@ const handleLoginClick = () => {
             />
           </div>
           */}
-
-          
+ 
           {/*------ end first left image -------*/}
-          </div>
+         
           <div className="relative h-full overflow-hidden rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl border hover:p-2 hover:border-red-500 group">
             <img
               src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/mother_son.png"
@@ -558,10 +557,8 @@ const handleLoginClick = () => {
           {/*------ end last bottom right image -------*/}
         </div>
       </div>
-    </div>  
-
-          
-</div>
+    </div>          
+ </div>
         
 {/*----------------- Start The Community ----------------------- */}
 <section id="Community" className="mt-6 text-center">
