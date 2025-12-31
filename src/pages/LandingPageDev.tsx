@@ -349,7 +349,8 @@ const handleLoginClick = () => {
 {/* Hero Image */}
 <div className="hidden sm:inline mt-12 mb-8 w-full max-w-6xl mx-auto px-4">
   <img
-    src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/poetiq-community-hero.png"
+    //src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/poetiq-community-hero.png"
+    src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/poetiq-hero-big-image.png"
     alt="Poetiq Community"
     className="w-full h-auto rounded-2xl shadow-2xl object-cover"
     //className="w-full h-auto object-cover"
