@@ -405,8 +405,8 @@ const handleLoginClick = () => {
               className="w-full h-full object-cover object-[30%_50%]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
-                <h3 class="text-xl font-bold drop-shadow-lg">Book Emergency <br/> Caregivers</h3>
+            <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
+                <h3 className="text-xl font-bold drop-shadow-lg">Book Emergency <br/> Caregivers</h3>
             </div>
           </div>
         </div>
@@ -420,10 +420,30 @@ const handleLoginClick = () => {
           
         {/* Column 1: Two stacked images */}
         <div className="col-span-1 flex flex-col gap-4 h-[650px]">
+           {/*------ start first top left image -------*/}
+           <div className="relative h-full border hover:p-2 hover:border-red-500 overflow-hidden rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl group">
+            
+            <img
+              src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/ltci-checker.png"
+              alt="Creative workspace"
+              className="w-full h-full rounded-xl object-cover aspect-square"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
+            <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
+                <h3 className="text-xl font-bold drop-shadow-lg">Verify Insurance <br/> Eligibility</h3>
+            </div>
+          </div>
+
+          {/*
           <div className="relative h-full overflow-hidden rounded-xl">
             <img
               //keeping for future use
             />
+          </div>
+          */}
+
+          
+          {/*------ end first left image -------*/}
           </div>
           <div className="relative h-full overflow-hidden rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl border hover:p-2 hover:border-red-500 group">
             <img
@@ -432,8 +452,8 @@ const handleLoginClick = () => {
               className="w-full h-full rounded-xl object-cover aspect-square" // Square aspect ratio for stacked images
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
-                <h3 class="text-xl font-bold drop-shadow-lg">Get Early <br/> Financial Planning</h3>
+            <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
+                <h3 className="text-xl font-bold drop-shadow-lg">Get Early <br/> Financial Planning</h3>
             </div>
           </div>
         </div>
@@ -447,8 +467,8 @@ const handleLoginClick = () => {
               className="w-full h-full rounded-xl object-cover object-[40%_70%]" // 'h-full' ensures the image fills the row-span-2 container
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
-                <h3 class="text-xl font-bold drop-shadow-lg">Book Emergency Respite Care</h3>
+            <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
+                <h3 className="text-xl font-bold drop-shadow-lg">Book Emergency Respite Care</h3>
             </div>
           </div>
            
@@ -464,8 +484,8 @@ const handleLoginClick = () => {
               className="w-full h-full rounded-xl object-cover aspect-square"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
-                <h3 class="text-xl font-bold drop-shadow-lg">Manage <br/> Parental Stress</h3>
+            <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
+                <h3 className="text-xl font-bold drop-shadow-lg">Manage <br/> Parental Stress</h3>
             </div>
           </div>
           <div className="relative h-full border hover:p-2 hover:border-red-500 overflow-hidden rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl group">
@@ -475,8 +495,8 @@ const handleLoginClick = () => {
               className="w-full h-full rounded-xl object-cover aspect-square"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
-              <div class="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
-                <h3 class="text-xl font-bold drop-shadow-lg">Get Dementia Assessment</h3>
+              <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
+                <h3 className="text-xl font-bold drop-shadow-lg">Get Dementia Assessment</h3>
             </div>
           </div>
         </div>
@@ -491,8 +511,8 @@ const handleLoginClick = () => {
               className="w-full h-full rounded-xl object-cover object-[30%_50%]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
-                <h3 class="text-xl font-bold drop-shadow-lg">Find Home Caregivers</h3>
+            <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
+                <h3 className="text-xl font-bold drop-shadow-lg">Find Home Caregivers</h3>
             </div>
           </div>
         </div>
@@ -507,16 +527,35 @@ const handleLoginClick = () => {
               className="w-full h-full rounded-xl object-cover aspect-square"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
-                <h3 class="text-xl font-bold drop-shadow-lg">Start <br/> Living Well</h3>
+            <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
+                <h3 className="text-xl font-bold drop-shadow-lg">Start <br/> Living Well</h3>
             </div>
           </div>
           
+          {/*------ start last bottom top right image -------*/}
+          <div className="relative h-full border hover:p-2 hover:border-red-500 overflow-hidden rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl group">
+            
+            <img
+              src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/push-wheelchair.png"
+              alt="Creative workspace"
+              className="w-full h-full rounded-xl object-cover aspect-square"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
+            <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
+                <h3 className="text-xl font-bold drop-shadow-lg">Compare Residential <br/> Care Homes</h3>
+            </div>
+          </div>
+
+          {/*
           <div className="relative h-full overflow-hidden rounded-xl">
             <img
-              //saving for later
+              //keeping for future use
             />
           </div>
+          */}
+
+          
+          {/*------ end last bottom right image -------*/}
         </div>
       </div>
     </div>  
