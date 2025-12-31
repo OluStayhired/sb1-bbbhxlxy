@@ -559,7 +559,10 @@ const handleLoginClick = () => {
           {/*------ end last bottom right image -------*/}
         </div>
       </div>
-    </div>          
+    </div>    
+          <p className="text-center text-gray-700 font-bold text-xl sm:text-2xl text-gray-600 mx-auto">  
+             Trusted by <b className="text-red-400">150+</b> Senior Executives Supporting Elderly Parents
+          </p>       
  </div>
         
 {/*----------------- Start The Community ----------------------- */}
