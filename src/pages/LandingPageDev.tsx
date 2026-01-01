@@ -362,7 +362,7 @@ const handleLoginClick = () => {
 
       <p className="mt-16 mb-1 text-sm sm:text-sm md:text-lg text-red-400 font-normal">
         {/*<span className="font-normal">Join Our Newsletter 🔥</span>*/}
-            <span> Get the latest Eldercare Guide 💌</span>
+            <span> Get the latest Parental Care Guide 💌</span>
         </p>
         
 
@@ -431,6 +431,13 @@ const handleLoginClick = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
             <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
+            <button
+            //onClick={openCommunityModal}
+            className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
+           
+           <span className="text-sm font-normal">Ask PoetiqAI</span>
+           <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </button>
                 <h3 className="text-xl font-bold drop-shadow-lg">Verify Insurance <br/> Eligibility</h3>
             </div>
           </div>
@@ -453,6 +460,13 @@ const handleLoginClick = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
             <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
+            <button
+            //onClick={openCommunityModal}
+            className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
+           
+           <span className="text-sm font-normal">Ask PoetiqAI</span>
+           <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </button>
                 <h3 className="text-xl font-bold drop-shadow-lg">Get Early <br/> Financial Planning</h3>
             </div>
           </div>
@@ -468,6 +482,13 @@ const handleLoginClick = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
             <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
+            <button
+            //onClick={openCommunityModal}
+            className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
+           
+           <span className="text-sm font-normal">Ask PoetiqAI</span>
+           <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </button>
                 <h3 className="text-xl font-bold drop-shadow-lg">Book Emergency Respite Care</h3>
             </div>
           </div>
@@ -485,6 +506,13 @@ const handleLoginClick = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
             <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
+            <button
+            //onClick={openCommunityModal}
+            className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
+           
+           <span className="text-sm font-normal">Ask PoetiqAI</span>
+           <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </button>
                 <h3 className="text-xl font-bold drop-shadow-lg">Manage <br/> Parental Stress</h3>
             </div>
           </div>
@@ -497,6 +525,13 @@ const handleLoginClick = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
               <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
+              <button
+            //onClick={openCommunityModal}
+            className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
+           
+           <span className="text-sm font-normal">Ask PoetiqAI</span>
+           <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </button>
                 <h3 className="text-xl font-bold drop-shadow-lg">Get Dementia Assessment</h3>
             </div>
           </div>
@@ -513,6 +548,13 @@ const handleLoginClick = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
             <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
+            <button
+            //onClick={openCommunityModal}
+            className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
+           
+           <span className="text-sm font-normal">Ask PoetiqAI</span>
+           <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </button>
                 <h3 className="text-xl font-bold drop-shadow-lg">Find Home Caregivers</h3>
             </div>
           </div>
@@ -529,6 +571,13 @@ const handleLoginClick = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
             <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
+            <button
+            //onClick={openCommunityModal}
+            className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
+           
+           <span className="text-sm font-normal">Ask PoetiqAI</span>
+           <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </button>
                 <h3 className="text-xl font-bold drop-shadow-lg">Start <br/> Living Well</h3>
             </div>
           </div>
@@ -543,6 +592,13 @@ const handleLoginClick = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
             <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
+            <button
+            //onClick={openCommunityModal}
+            className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
+           
+           <span className="text-sm font-normal">Ask PoetiqAI</span>
+           <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </button>
                 <h3 className="text-xl font-bold drop-shadow-lg">Compare Residential <br/> Care Homes</h3>
             </div>
           </div>
