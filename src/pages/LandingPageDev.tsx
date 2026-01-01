@@ -450,7 +450,7 @@ const handleLoginClick = () => {
           </div>
           */}
  
-          {/*------ end first left image -------*/}
+          {/*------ end first left image-------*/}
          
           <div className="relative h-full overflow-hidden rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl border hover:p-2 hover:border-red-500 group">
             <img
