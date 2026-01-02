@@ -202,15 +202,15 @@ export function EligibilityModal({ isOpen, onClose }: EligibilityModalProps) {
               </div>
 
               {/* Description */}
-              <div className="bg-white rounded-lg p-4 shadow-sm border border-red-100">
-                <p className="text-sm text-gray-700 leading-relaxed">
+              <div className="bg-white rounded-lg p-4 shadow-sm border border-red-100 duration-500 hover:border-red-200 hover:shadow-md">
+                <p className="text-sm text-gray-700 leading-relaxed hover:text-red-500 duration-500">
                   Hey there I'm Ellie! I know how hard it is to navigate long term care insurance. 
                   I'm here to help you figure out your options, answer your questions and guide you through the eligibility process with clarity.
                 </p>
               </div>
 
               {/* What I Can Help With */}
-              <div className="bg-white rounded-lg p-4 shadow-sm border border-red-100">
+              <div className="bg-white rounded-lg p-4 shadow-sm border border-red-100 duration-500 hover:border-red-200 hover:shadow-md">
                 <h4 className="font-semibold text-gray-900 mb-3 flex items-center space-x-2">
                   <Brain className="w-4 h-4 text-red-500" />
                   <span>What I Can Help With:</span>
@@ -218,23 +218,23 @@ export function EligibilityModal({ isOpen, onClose }: EligibilityModalProps) {
                 <ul className="space-y-2 text-sm text-gray-700">
                   <li className="flex items-start space-x-2">
                     <span className="text-red-500 mt-0.5">•</span>
-                    <span>Understanding LTCI eligibility criteria</span>
+                    <span className="hover:text-red-500 duration-500">Understanding LTCI eligibility criteria</span>
                   </li>
                   <li className="flex items-start space-x-2">
                     <span className="text-red-500 mt-0.5">•</span>
-                    <span>Navigating pre-existing condition questions</span>
+                    <span className="hover:text-red-500 duration-500">Navigating pre-existing condition questions</span>
                   </li>
                   <li className="flex items-start space-x-2">
                     <span className="text-red-500 mt-0.5">•</span>
-                    <span>Reviewing health underwriting requirements</span>
+                    <span className="hover:text-red-500 duration-500">Reviewing health underwriting requirements</span>
                   </li>
                   <li className="flex items-start space-x-2">
                     <span className="text-red-500 mt-0.5">•</span>
-                    <span>Explaining age and timing considerations</span>
+                    <span className="hover:text-red-500 duration-500">Explaining age and timing considerations</span>
                   </li>
                   <li className="flex items-start space-x-2">
                     <span className="text-red-500 mt-0.5">•</span>
-                    <span>Discussing alternative coverage options</span>
+                    <span className="hover:text-red-500 duration-500">Discussing alternative coverage options</span>
                   </li>
                 </ul>
               </div>
