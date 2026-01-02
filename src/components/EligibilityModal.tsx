@@ -203,7 +203,7 @@ export function EligibilityModal({ isOpen, onClose }: EligibilityModalProps) {
 
               {/* Description */}
               <div className="bg-white rounded-lg p-4 shadow-sm border border-red-100 duration-500 hover:border-red-200 hover:shadow-md">
-                <p className="text-sm text-gray-700 leading-relaxed hover:text-red-500 duration-500">
+                <p className="text-sm text-gray-700 leading-relaxed hover:text-red-600 duration-500">
                   Hey there I'm Ellie! I know how hard it is to navigate long term care insurance. 
                   I'm here to help you figure out your options, answer your questions and guide you through the eligibility process with clarity.
                 </p>
@@ -222,11 +222,11 @@ export function EligibilityModal({ isOpen, onClose }: EligibilityModalProps) {
                   </li>
                   <li className="flex items-start space-x-2">
                     <span className="text-red-500 mt-0.5">•</span>
-                    <span className="hover:text-red-500 duration-500">Navigating pre-existing condition questions</span>
+                    <span className="hover:text-red-500 duration-500">Answering pre-existing condition questions</span>
                   </li>
                   <li className="flex items-start space-x-2">
                     <span className="text-red-500 mt-0.5">•</span>
-                    <span className="hover:text-red-500 duration-500">Reviewing health underwriting requirements</span>
+                    <span className="hover:text-red-500 duration-500">Reviewing health underwriting issues</span>
                   </li>
                   <li className="flex items-start space-x-2">
                     <span className="text-red-500 mt-0.5">•</span>
@@ -258,6 +258,29 @@ export function EligibilityModal({ isOpen, onClose }: EligibilityModalProps) {
                   key={message.id}
                   className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
                 >
+
+                    {/* Avatar for Ellie (assistant messages only) */}
+                    {message.role === 'assistant' && (
+                      <div className="flex-shrink-0 mr-3">
+                        <div className="w-8 h-8 rounded-full overflow-hidden border-2 border-red-200 shadow-sm">
+                          <img
+                              src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/ltci-care-assistant.png"
+                              alt="Ellie"
+                              className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </div>
+                    )}
+    
+                    <div className="flex flex-col">
+                      {/* Name label for Ellie */}
+                      {message.role === 'assistant' && (
+                      <span className="text-xs font-semibold text-red-600 mb-1 ml-1">
+                        Ellie
+                      </span>
+                      )}
+      
+              {/* Message bubble */}
                   <div
                     className={`max-w-[75%] rounded-lg p-4 ${
                       message.role === 'user'
@@ -278,6 +301,7 @@ export function EligibilityModal({ isOpen, onClose }: EligibilityModalProps) {
                     </p>
                   </div>
                 </div>
+            </div>
               ))}
 
               {/* Typing Indicator */}
