@@ -373,7 +373,7 @@ const handleLoginClick = () => {
 
       <p className="mt-16 mb-1 text-sm sm:text-sm md:text-lg text-red-400 font-normal">
         {/*<span className="font-normal">Join Our Newsletter 🔥</span>*/}
-            <span> Get the latest Parental Care Guide 💌</span>
+            <span> Get the latest Eldercare Guide 💌</span>
         </p>
         
 
@@ -710,7 +710,7 @@ const handleLoginClick = () => {
             The Poetiq Community is where career professionals go to find the best eldercare solution and reclaim the hours spent supporting their aging parents without compromising their careers or their parents dignity <br/><br/>
                 It’s a private, high-integrity network where you'll get direct access to experienced peers who share unfiltered insights on the unique and tremendous challenges of caring for aging family members.<br/><br/> 
               They help each other navigate a labyrinth of eldercare choices that can threaten to overwhelm us as we struggle to maintain the delicate balance between our careers and families. <br/><br/>
-                The Poetiq Community is where to find clarity, control, and the professional blueprint for dignified parental care
+                The Poetiq Community is where to find clarity, control, and the professional blueprint for dignified eldercare.
             </p>
 
             <button
@@ -1016,7 +1016,7 @@ const handleLoginClick = () => {
     </div>
   </summary>
   <div className="px-5 pb-5 text-gray-700">
-    <p>We are pioneering the professional blueprint for dignified parental care. This blueprint is the high-integrity framework - from data standards and vendor vetting protocols to administrative automation - that should exist but doesn't. Your role is crucial: by sharing your specific logistical failures and successes, you provide the essential, real-world data that allows the community to stress-test and finalize this professional-grade solution, turning your personal agony into systemic change.
+    <p>We are pioneering the professional blueprint for dignified eldercare services. This blueprint is the high-integrity framework - from data standards and vendor vetting protocols to administrative automation - that should exist but doesn't. Your role is crucial: by sharing your specific logistical failures and successes, you provide the essential, real-world data that allows the community to stress-test and finalize this professional-grade solution, turning your personal agony into systemic change.
     </p>
   </div>
 </details>
@@ -1144,7 +1144,7 @@ const handleLoginClick = () => {
 <section className="mt-24 py-16 bg-gradient-to-t from-red-500 via-red-100 to-white text-gray-900 text-center rounded-xl">
   <div className="max-w-4xl mx-auto px-6">
     <h2 className="text-2xl text-red-400 sm:text-4xl md:text-6xl font-bold leading-tight mb-8">
-      You don't have to navigate parental care alone
+      You don't have to navigate Eldercare alone
     </h2>
     <p className="text-gray-700 font-semibold text-md sm:text-2xl md:text-3xl font-light text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed">
       Let’s find uncompromising clarity together 💪
