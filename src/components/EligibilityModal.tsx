@@ -264,18 +264,22 @@ export function EligibilityModal({ isOpen, onClose }: EligibilityModalProps) {
                   className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
                 >
 
-                    {/* Avatar for Ellie (assistant messages only) */}
-                    {message.role === 'assistant' && (
-                      <div className="flex-shrink-0 mr-3">
-                        <div className="w-8 h-8 rounded-full overflow-hidden border-2 border-red-200 shadow-sm">
+                {/* Avatar for Ellie (assistant messages only) */}
+                  {message.role === 'assistant' && (
+                    <div className="flex-shrink-0 mr-3">
+                      <div className="relative w-8 h-8">
+                        <div className="w-full h-full rounded-full overflow-hidden border-2 border-red-200 shadow-sm">
                           <img
-                              src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/ltci-care-assistant.png"
-                              alt="Ellie"
-                              className="w-full h-full object-cover"
+                            src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/ltci-care-assistant.png"
+                            alt="Ellie"
+                            className="w-full h-full object-cover"
                           />
                         </div>
-                      </div>
-                    )}
+                      {/* Online status indicator */}
+                      <div className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 rounded-full border-2 border-white"></div>
+                    </div>                         
+                  </div>                                         
+                  )}
     
                     <div className="flex flex-col">
                       {/* Name label for Ellie */}
