@@ -447,7 +447,7 @@ const handleLoginClick = () => {
             onClick={openEligibilityModal}
             className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
            
-           <span className="text-sm font-normal">Ask Poetiq</span>
+           <span className="text-sm font-normal">Ask Ellie</span>
            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
                 <h3 className="text-xl font-bold drop-shadow-lg">Verify Insurance <br/> Eligibility</h3>
@@ -695,12 +695,12 @@ const handleLoginClick = () => {
     <div className="relative items-center py-6"> 
 
         {/* GRADIENT LAYER: Changed back to 'absolute' so it fills the height/width of the relative parent. */}
-        <div class="absolute inset-0 opacity-20 
+        <div className="absolute inset-0 opacity-20 
              [background-image:radial-gradient(ellipse_at_center,rgba(239,68,68,0.4)_0%,rgba(234,179,8,0.3)_55%,transparent_80%)]">
         </div>
 
         {/* CONTENT WRAPPER: Added relative z-10 to ensure text and button are visible above the absolute gradient. */}
-        <div class="relative z-10 max-w-5xl mx-auto">
+        <div className="relative z-10 max-w-5xl mx-auto">
             
             <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-red-400">
                 Why join our <br className="sm:hidden"/> Community
