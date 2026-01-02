@@ -19,6 +19,8 @@ import { CommunityModal } from '../components/CommunityModal.tsx';
 import { Link } from 'react-router-dom';
 import { OurStoryTimeline } from '../components/OurStoryTimeline';
 
+import { EligibilityModal } from '../components/EligibilityModal.tsx';
+
 function LandingPageDev() {
   const navigate = useNavigate();
   //const { isAuthenticated } = useAuth();
@@ -33,6 +35,7 @@ function LandingPageDev() {
   const [isCommunityModalOpen, setIsCommunityModalOpen] = useState(false);
   const [isCommunitySuccessModalOpen, setIsCommunitySuccessModalOpen] = useState(false);
 
+  const [isEligibilityModalOpen, setIsEligibilityModalOpen] = useState(false);
 
 const handleLoginClick = () => {
     // This navigates to an external URL, not an internal route
@@ -66,6 +69,14 @@ const handleLoginClick = () => {
 
     const closeCommunityModal = () => {
     setIsCommunityModalOpen(false);
+  };
+
+  const openEligibilityModal = () => {
+    setIsEligibilityModalOpen(true);
+  };
+  
+      const closeEligibilityModal = () => {
+    setIsEligibilityModalOpen(false);
   };
   
   const handleGoogleLogin = async () => {
@@ -433,6 +444,7 @@ const handleLoginClick = () => {
             <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
             <button
             //onClick={openCommunityModal}
+            onClick={openEligibilityModal}
             className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
            
            <span className="text-sm font-normal">Ask Poetiq</span>
@@ -1258,6 +1270,11 @@ const handleLoginClick = () => {
     <CommunityModal
         isOpen={isCommunityModalOpen}
         onClose={closeCommunityModal}
+      />
+      
+      <EligibilityModal
+        isOpen={isEligibilityModalOpen}
+        onClose={closeEligibilityModal}
       />
         
 {isWaitlistSuccessModalOpen ? (
