@@ -435,7 +435,7 @@ const handleLoginClick = () => {
             //onClick={openCommunityModal}
             className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
            
-           <span className="text-sm font-normal">Ask PoetiqAI</span>
+           <span className="text-sm font-normal">Ask Poetiq</span>
            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
                 <h3 className="text-xl font-bold drop-shadow-lg">Verify Insurance <br/> Eligibility</h3>
@@ -464,7 +464,7 @@ const handleLoginClick = () => {
             //onClick={openCommunityModal}
             className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
            
-           <span className="text-sm font-normal">Ask PoetiqAI</span>
+           <span className="text-sm font-normal">Ask Poetiq</span>
            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
                 <h3 className="text-xl font-bold drop-shadow-lg">Get Early <br/> Financial Planning</h3>
@@ -486,7 +486,7 @@ const handleLoginClick = () => {
             //onClick={openCommunityModal}
             className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
            
-           <span className="text-sm font-normal">Ask PoetiqAI</span>
+           <span className="text-sm font-normal">Ask Poetiq</span>
            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
                 <h3 className="text-xl font-bold drop-shadow-lg">Book Emergency Respite Care</h3>
@@ -510,7 +510,7 @@ const handleLoginClick = () => {
             //onClick={openCommunityModal}
             className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
            
-           <span className="text-sm font-normal">Ask PoetiqAI</span>
+           <span className="text-sm font-normal">Ask Poetiq</span>
            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
                 <h3 className="text-xl font-bold drop-shadow-lg">Manage <br/> Parental Stress</h3>
@@ -529,7 +529,7 @@ const handleLoginClick = () => {
             //onClick={openCommunityModal}
             className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
            
-           <span className="text-sm font-normal">Ask PoetiqAI</span>
+           <span className="text-sm font-normal">Ask Poetiq</span>
            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
                 <h3 className="text-xl font-bold drop-shadow-lg">Get Dementia Assessment</h3>
@@ -552,7 +552,7 @@ const handleLoginClick = () => {
             //onClick={openCommunityModal}
             className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
            
-           <span className="text-sm font-normal">Ask PoetiqAI</span>
+           <span className="text-sm font-normal">Ask Poetiq</span>
            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
                 <h3 className="text-xl font-bold drop-shadow-lg">Find Home Caregivers</h3>
@@ -575,7 +575,7 @@ const handleLoginClick = () => {
             //onClick={openCommunityModal}
             className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
            
-           <span className="text-sm font-normal">Ask PoetiqAI</span>
+           <span className="text-sm font-normal">Ask Poetiq</span>
            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
                 <h3 className="text-xl font-bold drop-shadow-lg">Start <br/> Living Well</h3>
@@ -596,7 +596,7 @@ const handleLoginClick = () => {
             //onClick={openCommunityModal}
             className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
            
-           <span className="text-sm font-normal">Ask PoetiqAI</span>
+           <span className="text-sm font-normal">Ask Poetiq</span>
            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
                 <h3 className="text-xl font-bold drop-shadow-lg">Compare Residential <br/> Care Homes</h3>
