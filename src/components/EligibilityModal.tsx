@@ -46,7 +46,8 @@ export function EligibilityModal({ isOpen, onClose }: EligibilityModalProps) {
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const prewrittenQuestions = [
-    "What are the basic eligibility requirements for long term care insurance?",
+    //"What are the basic eligibility requirements for long term care insurance?",
+    "Tell me the basic eligibility requirements for LTC insurance?",
     "How do pre-existing conditions affect LTCI eligibility?"
   ];
 
@@ -288,7 +289,7 @@ export function EligibilityModal({ isOpen, onClose }: EligibilityModalProps) {
                       : 'bg-gray-100 text-gray-900 border border-gray-200 hover:shadow-md hover:border-red-200 duration-500'
                     }`}
                   >
-                    <p className="text-sm leading-relaxed">{message.content}</p>
+                    <p className="text-xs leading-relaxed">{message.content}</p>
                     <p
                       className={`text-xs mt-2 ${
                         message.role === 'user' ? 'text-red-100' : 'text-gray-500'
