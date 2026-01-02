@@ -185,7 +185,7 @@ export function EligibilityModal({ isOpen, onClose }: EligibilityModalProps) {
             <div className="space-y-6">
               {/* Avatar and Name */}
               <div className="text-center">
-                <div className="mx-auto w-24 h-24 bg-gradient-to-br from-red-400 to-red-500 rounded-full flex items-center justify-center mb-4 shadow-lg border-4 border-white">
+                <div className="relative mx-auto w-24 h-24 bg-gradient-to-br from-red-400 to-red-500 rounded-full flex items-center justify-center mb-4 shadow-lg border-4 border-white">
                   <img
              
               //src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/olu_profile_dark.png"
@@ -193,6 +193,10 @@ export function EligibilityModal({ isOpen, onClose }: EligibilityModalProps) {
               alt="Image 1"
               className="relative rounded-full w-full h-full aspect-square" // Square aspect ratio for stacked images
             />
+
+            {/* Online status indicator */}
+            <div className="absolute bottom-0 right-2 w-3.5 h-3.5 bg-green-500 rounded-full border-2 border-white"></div>
+
                   {/*<User className="w-12 h-12 text-white" />*/}
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900">Ellie</h3>
