@@ -61,30 +61,8 @@ export function EligibilityModal({ isOpen, onClose }: EligibilityModalProps) {
 
   if (!isOpen) return null;
 
-  // Add this function to handle content generation
-  {/*
-const handleGenerateResponse = async () => {
-   if (!content.trim()) return; 
   
-  try {
-    setIsGeneratingResponse(true);
-    
-    // Get the theme and topic from the selected calendar content
-    const improvedContent = await getLongTermCareSupport(content, 800);
-
-    if (!improvedContent.error) {
-       setContent(improvedContent.text);
-    } else {
-      console.error('Error answering question:', improvedContent.error);
-      // Optionally show an error message to the user
-    }
-  } catch (err) {
-    console.error('Error generating response:', err);
-  } finally {
-    setIsGeneratingResponse(false);
-  }
-};  
-*/}
+ 
   // Simulate typing effect
   const simulateTyping = async (text: string) => {
     setIsTyping(true);
@@ -103,6 +81,7 @@ const handleGenerateResponse = async () => {
     setIsTyping(false);
   };
 
+  // Add this function to handle content generation
   // Handle sending a message
   // Handle sending a message with Gemini integration
 const handleSendMessage = async (content: string) => {
@@ -122,7 +101,8 @@ const handleSendMessage = async (content: string) => {
 
   try {
     // Call Gemini API to generate response
-    const geminiResponse = await getLongTermCareSupport(content, '800');
+    //const geminiResponse = await getLongTermCareSupport(content, '800');
+    const geminiResponse = await getLongTermCareSupport(content);
     
     if (!geminiResponse.error && geminiResponse.text) {
       // Add AI response to messages
@@ -159,40 +139,6 @@ const handleSendMessage = async (content: string) => {
     setIsTyping(false);
   }
 };
-
-  {/*
-  const handleSendMessage = async (content: string) => {
-    if (!content.trim()) return;
-
-    // Add user message
-    const userMessage: Message = {
-      id: Date.now().toString(),
-      role: 'user',
-      content: content,
-      timestamp: new Date()
-    };
-    
-    setMessages(prev => [...prev, userMessage]);
-    setInputValue('');
-
-    // Simulate AI response (in production, this would call your LLM API)
-    const responses: { [key: string]: string } = {
-      "basic": "Long Term Care Insurance eligibility typically requires: (1) Being between ages 40-84, (2) No current need for assistance with daily activities, (3) No severe cognitive impairment, (4) Ability to pass health underwriting. Most carriers review your medical history for the past 5-10 years.",
-      "pre-existing": "Pre-existing conditions can significantly impact LTCI eligibility. Conditions like Parkinson's, MS, recent strokes, or dementia typically result in denial. However, well-managed chronic conditions like diabetes or high blood pressure may be approved with proper medical records. Each insurer has different underwriting guidelines.",
-      "default": "That's a great question about long term care insurance. Based on current LTCI standards, eligibility depends on your age, health status, and ability to perform activities of daily living independently. Would you like me to elaborate on any specific aspect of eligibility?"
-    };
-
-    let response = responses.default;
-    if (content.toLowerCase().includes('basic') || content.toLowerCase().includes('requirement')) {
-      response = responses.basic;
-    } else if (content.toLowerCase().includes('pre-existing') || content.toLowerCase().includes('condition')) {
-      response = responses["pre-existing"];
-    }
-
-    await simulateTyping(response);
-  };
-*/}
-
   
   // Handle file upload
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
