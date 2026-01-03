@@ -15,6 +15,7 @@ import {
   Shield
 } from 'lucide-react';
 import { supabase } from '../lib/supabase';
+import { getLongTermCareSupport } from '../lib/geminiLongTermCareSupport';
 
 interface EligibilityModalProps {
   isOpen: boolean;
@@ -33,7 +34,8 @@ export function EligibilityModal({ isOpen, onClose }: EligibilityModalProps) {
     {
       id: '1',
       role: 'assistant',
-      content: "Hi I'm Ellie, here to help you with long term care insurance. What questions do you have about LTCI eligibility?",
+      //content: "Hi I'm Ellie, here to help you with long term care insurance. What questions do you have about LTCI eligibility?",
+      content: "Hi I'm Ellie, happy to answer your questions about long term care insurance.",
       timestamp: new Date()
     }
   ]);
@@ -44,6 +46,7 @@ export function EligibilityModal({ isOpen, onClose }: EligibilityModalProps) {
   const [isSending, setIsSending] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const [isGeneratingResponse, setIsGeneratingResponse] = useState(false);
 
   const prewrittenQuestions = [
     //"What are the basic eligibility requirements for long term care insurance?",
@@ -58,6 +61,30 @@ export function EligibilityModal({ isOpen, onClose }: EligibilityModalProps) {
 
   if (!isOpen) return null;
 
+  // Add this function to handle content generation
+  {/*
+const handleGenerateResponse = async () => {
+   if (!content.trim()) return; 
+  
+  try {
+    setIsGeneratingResponse(true);
+    
+    // Get the theme and topic from the selected calendar content
+    const improvedContent = await getLongTermCareSupport(content, 800);
+
+    if (!improvedContent.error) {
+       setContent(improvedContent.text);
+    } else {
+      console.error('Error answering question:', improvedContent.error);
+      // Optionally show an error message to the user
+    }
+  } catch (err) {
+    console.error('Error generating response:', err);
+  } finally {
+    setIsGeneratingResponse(false);
+  }
+};  
+*/}
   // Simulate typing effect
   const simulateTyping = async (text: string) => {
     setIsTyping(true);
@@ -77,6 +104,63 @@ export function EligibilityModal({ isOpen, onClose }: EligibilityModalProps) {
   };
 
   // Handle sending a message
+  // Handle sending a message with Gemini integration
+const handleSendMessage = async (content: string) => {
+  if (!content.trim()) return;
+
+  // Add user message
+  const userMessage: Message = {
+    id: Date.now().toString(),
+    role: 'user',
+    content: content,
+    timestamp: new Date()
+  };
+  
+  setMessages(prev => [...prev, userMessage]);
+  setInputValue('');
+  setIsTyping(true);
+
+  try {
+    // Call Gemini API to generate response
+    const geminiResponse = await getLongTermCareSupport(content, '800');
+    
+    if (!geminiResponse.error && geminiResponse.text) {
+      // Add AI response to messages
+      const assistantMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        role: 'assistant',
+        content: geminiResponse.text,
+        timestamp: new Date()
+      };
+      
+      setMessages(prev => [...prev, assistantMessage]);
+    } else {
+      // Handle error by showing a fallback message
+      console.error('Error from Gemini:', geminiResponse.error);
+      const errorMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        role: 'assistant',
+        content: "I'm having trouble processing that right now. Could you please try rephrasing your question about long term care insurance?",
+        timestamp: new Date()
+      };
+      setMessages(prev => [...prev, errorMessage]);
+    }
+  } catch (error) {
+    console.error('Error calling Gemini:', error);
+    // Show error message to user
+    const errorMessage: Message = {
+      id: (Date.now() + 1).toString(),
+      role: 'assistant',
+      content: "I'm experiencing technical difficulties. Please try again in a moment.",
+      timestamp: new Date()
+    };
+    setMessages(prev => [...prev, errorMessage]);
+  } finally {
+    setIsTyping(false);
+  }
+};
+
+  {/*
   const handleSendMessage = async (content: string) => {
     if (!content.trim()) return;
 
@@ -107,7 +191,9 @@ export function EligibilityModal({ isOpen, onClose }: EligibilityModalProps) {
 
     await simulateTyping(response);
   };
+*/}
 
+  
   // Handle file upload
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -187,16 +273,13 @@ export function EligibilityModal({ isOpen, onClose }: EligibilityModalProps) {
               <div className="text-center">
                 <div className="relative mx-auto w-24 h-24 bg-gradient-to-br from-red-400 to-red-500 rounded-full flex items-center justify-center mb-4 shadow-lg border-4 border-white">
                   <img
-             
-              //src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/olu_profile_dark.png"
               src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/ltci-care-assistant.png"
               alt="Image 1"
               className="relative rounded-full w-full h-full aspect-square" // Square aspect ratio for stacked images
             />
-
-            {/* Online status indicator */}
-            <div className="absolute bottom-0 right-2 w-3.5 h-3.5 bg-green-500 rounded-full border-2 border-white"></div>
-
+                  {/* Online status indicator */}
+                  <div className="absolute bottom-0 right-2 w-3.5 h-3.5 bg-green-500 rounded-full border-2 border-white"></div>
+                  
                   {/*<User className="w-12 h-12 text-white" />*/}
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900">Ellie</h3>
@@ -209,8 +292,11 @@ export function EligibilityModal({ isOpen, onClose }: EligibilityModalProps) {
               {/* Description */}
               <div className="bg-white rounded-lg p-4 shadow-sm border border-red-100 duration-500 hover:border-red-200 hover:shadow-md">
                 <p className="text-sm text-gray-700 leading-relaxed hover:text-red-600 duration-500">
+                  {/*
                   Hey there I'm Ellie! I know how hard it is to navigate long term care insurance. 
                   I'm here to help you figure out your options, answer your questions and guide you through the eligibility process with clarity.
+                  */}
+                  My name is Ellie, I know a lot about long term care insurance and I'm here to help you figure out your options. Let me guide you through the LTCI elgibility process. 
                 </p>
               </div>
 
@@ -263,8 +349,7 @@ export function EligibilityModal({ isOpen, onClose }: EligibilityModalProps) {
                   key={message.id}
                   className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
                 >
-
-                {/* Avatar for Ellie (assistant messages only) */}
+                  {/* Avatar for Ellie (assistant messages only) */}
                   {message.role === 'assistant' && (
                     <div className="flex-shrink-0 mr-3">
                       <div className="relative w-8 h-8">
@@ -280,7 +365,7 @@ export function EligibilityModal({ isOpen, onClose }: EligibilityModalProps) {
                     </div>                         
                   </div>                                         
                   )}
-    
+
                     <div className="flex flex-col">
                       {/* Name label for Ellie */}
                       {message.role === 'assistant' && (
@@ -293,8 +378,8 @@ export function EligibilityModal({ isOpen, onClose }: EligibilityModalProps) {
                   <div
                     className={`max-w-[75%] rounded-lg p-4 ${
                       message.role === 'user'
-                      ? 'bg-red-500 text-white hover:shadow-md hover:shadow-red-200 duration-500'
-                      : 'bg-gray-100 text-gray-900 border border-gray-200 hover:shadow-md hover:border-red-200 duration-500'
+                        ? 'bg-red-500 text-white hover:shadow-md hover:shadow-red-200 duration-500'
+                        : 'bg-gray-100 text-gray-900 border border-gray-200 hover:shadow-md hover:border-red-200 duration-500'
                     }`}
                   >
                     <p className="text-xs leading-relaxed">{message.content}</p>
