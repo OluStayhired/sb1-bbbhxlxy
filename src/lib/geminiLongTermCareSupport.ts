@@ -1,7 +1,7 @@
 // src/lib/gemini.ts
 import { GoogleGenerativeAI, GenerateContentResult } from '@google/generative-ai';
 
-// --- REMOVE THE API KEY HERE ---
+// --- REMOVE THE API KEY HERE ----
 // const apiKey = import.meta.env.VITE_GEMINI_API_KEY; // This line should be removed or commented out
 
 // This variable will now *always* be used for secure calls
