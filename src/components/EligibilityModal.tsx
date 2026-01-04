@@ -12,8 +12,10 @@ import {
   ArrowUpRight,
   Loader2,
   Brain,
-  Shield
+  Shield,
+  CircleAlert
 } from 'lucide-react';
+import { z } from 'zod';
 import { supabase } from '../lib/supabase';
 import { getLongTermCareSupport } from '../lib/geminiLongTermCareSupport';
 
@@ -29,6 +31,10 @@ interface Message {
   timestamp: Date;
 }
 
+const newsletterSchema = z.object({
+  email: z.string().email('Invalid email address'),
+});
+
 export function EligibilityModal({ isOpen, onClose }: EligibilityModalProps) {
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -42,8 +48,10 @@ export function EligibilityModal({ isOpen, onClose }: EligibilityModalProps) {
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const [email, setEmail] = useState('');
+  const [welcomeMail, setWelcomeMail] = useState(false);
   const [emailSent, setEmailSent] = useState(false);
   const [isSending, setIsSending] = useState(false);
+  const [error, setError] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   //const [isGeneratingResponse, setIsGeneratingResponse] = useState(false);
@@ -162,22 +170,50 @@ const handleSendMessage = async (content: string) => {
     if (!email.trim()) return;
 
     setIsSending(true);
+   
 
     try {
+      // Validate input using Zod
+      newsletterSchema.parse({ email });
+       setWelcomeMail(true);
+      
       // Save conversation summary to database
-      const conversationSummary = messages
-        .map(m => `${m.role === 'user' ? 'You' : 'Ellie'}: ${m.content}`)
-        .join('\n\n');
+      //const conversationSummary = messages
+       // .map(m => `${m.role === 'user' ? 'You' : 'Ellie'}: ${m.content}`)
+        //.join('\n\n');
 
-      const { error } = await supabase
-        .from('ltci_conversations')
-        .insert({
-          email: email,
-          conversation: conversationSummary,
-          created_at: new Date().toISOString()
-        });
+       // Insert data into Supabase
+      const { error: supabaseError } = await supabase.from('newsletter_list').insert({
+        email: email,
+        welcome_email: welcomeMail,
+        project_name: 'poetiq community',
+      });
 
-      if (error) throw error;
+      //const { error } = await supabase
+        //.from('ltci_conversations')
+        //.insert({
+          //email: email,
+          //conversation: conversationSummary,
+          //created_at: new Date().toISOString()
+        //});
+
+      //if (supabaseError) throw error;
+      
+       // --- CRITICAL ERROR HANDLING SECTION ---
+      if (supabaseError) {
+        // Check for the specific PostgreSQL unique constraint violation error code
+        if (supabaseError.code === '23505') {
+          setError("You're already subscribed to our newsletter!"); // User-friendly message
+        } else {
+          // For other Supabase errors, log the technical error for debugging
+          console.error("Supabase Error:", supabaseError);
+          // And provide a more general user-friendly error message
+          setError(`Failed to join newsletter: ${supabaseError.message || 'An unexpected database error occurred.'}`);
+        }
+        // IMPORTANT: Exit the function here after handling a Supabase error
+        return;
+      }
+      // --- END CRITICAL ERROR HANDLING SECTION ---
 
       setEmailSent(true);
       setTimeout(() => {
@@ -185,7 +221,7 @@ const handleSendMessage = async (content: string) => {
         setEmail('');
       }, 3000);
     } catch (error) {
-      console.error('Error saving conversation:', error);
+      console.error('Error subscribing to newsletter:', error);
     } finally {
       setIsSending(false);
     }
@@ -427,8 +463,14 @@ const handleSendMessage = async (content: string) => {
                   <input
                     type="email"
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Get conversation summary via email"
+                    //onChange={(e) => setEmail(e.target.value)}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                      setError('');
+                    }}
+
+                    //placeholder="Get conversation summary via email"
+                    placeholder="Get actionable long-term-care tips via email"
                     className="flex-1 px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none"
                   />
                   <button
@@ -445,12 +487,12 @@ const handleSendMessage = async (content: string) => {
                     {emailSent ? (
                       <>
                         <CheckCircle2 className="w-4 h-4" />
-                        <span>Sent!</span>
+                        <span>Subscribed!</span>
                       </>
                     ) : (
                       <>
                         <Send className="w-4 h-4" />
-                        <span>Send</span>
+                        <span>Subscribe</span>
                       </>
                     )}
                   </button>
@@ -458,7 +500,14 @@ const handleSendMessage = async (content: string) => {
                 {emailSent && (
                   <p className="text-xs text-green-600 mt-2 flex items-center space-x-1">
                     <CheckCircle2 className="w-3 h-3" />
-                    <span>Summary sent to {email}</span>
+                    <span>Email sent to {email}</span>
+                  </p>
+                )}
+
+                {error && (
+                  <p className="text-xs text-red-600 mt-2 flex items-center space-x-1">
+                    <CircleAlert className="w-3 h-3" />
+                    <span>{error}</span>
                   </p>
                 )}
               </div>
