@@ -17,17 +17,19 @@ if (!GEMINI_PROXY_EDGE_FUNCTION_URL) {
 // Initialize GoogleGenerativeAI with an empty string or null for apiKey,
 // as it will only be used if GEMINI_PROXY_EDGE_FUNCTION_URL is NOT present.
 // In your secure setup, it will always be present, so this 'genAI' instance
+// Pass an empty string or null, as the key won't be used here
 // will effectively become a fallback or unused path.
-const genAI = new GoogleGenerativeAI('', { // Pass an empty string or null, as the key won't be used here
-  apiVersion: 'v1beta' // Add explicit API version
-});
+// Add explicit API version
+const genAI = new GoogleGenerativeAI('',{ apiVersion:'v1beta' });
+
+//const genAI = new GoogleGenerativeAI('', {apiVersion: 'v1beta' });
 
 // Create a reusable model instance with correct model name
 // This 'model' instance will only be used if the GEMINI_PROXY_EDGE_FUNCTION_URL is NOT available,
 // which, in your secure setup, should ideally never happen.
 //const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
 
-const model = genAI.getGenerativeModel({ model: 'gemini-3-flash-preview' });
+const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
 
 function sleep(ms: number) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -118,7 +120,6 @@ export async function generateContent(prompt: string): Promise<GeminiResponse> {
 const toneOptions = [
   'action-oriented',
   'authoritative',
-  'bold',
   'concise'
   // Add more as desired
 ];
@@ -160,7 +161,10 @@ export async function getLongTermCareSupport(
     await rateLimiter.checkAndWait();
 
     const selectedTone = getRandomTone(); // Ensure this function correctly returns a valid tone string
-    const prompt = `You are a world-class Long Term Care Insurance Eligbility Expert. You have a deep knowledge of the eldercare industry. You specifically  specialize in answering questions about eldercare insurance eligibility. You have read all the medicaid and medicare literature about the major challenges most people face when trying to determine if their loved ones are eligible for Long Term Care insurance cover. As well as understanding the step-by-step  process required to meet the requirements for LTCI eligibility, you have a deep experience of the best practices and the initial steps families must focus on to ensure they have the correct insurance cover for long term care. 
+    const prompt = `You are a world-class Long Term Care Insurance Eligbility Expert. 
+    You have a deep knowledge of the eldercare industry. You specifically  specialize in answering questions about eldercare insurance eligibility. 
+    You have read all the medicaid and medicare literature about the major challenges most people face when trying to determine if their loved ones are eligible for Long Term Care insurance cover. 
+    As well as understanding the step-by-step  process required to meet the requirements for LTCI eligibility, you have a deep experience of the best practices and the initial steps families must focus on to ensure they have the correct insurance cover for long term care. 
 
 **IMPORTANT: The information in the section below is for your internal processing and understanding only. Do NOT include any part of this in your final output.** 
 
@@ -168,14 +172,15 @@ Your task is to write highly accurate responses to the questions in ${content}
 
 Instructions:
 
-**Beyond surface-level analysis and responses, deeply dissect** the question provided in ${content} and Create not just a fitting response, but the **most qualified sounding** answer that subtly guides the reader towards a specific Goal to help them address this issue around Long Term Care Insurance.
+**Beyond surface-level analysis and responses, deeply dissect** the question provided in ${content} and create an accurate and fitting response, with the **most qualified sounding** answer to help them address there specific issue around Long Term Care Insurance.
 
 Maintain an **${selectedTone}** tone throughout your response.
 
-1. Start with a human sounding first sentence.
+1. Be direct and answer the question in ${content} with academic authority and clarity.
+2. Ban Generic Answers and Focus on Highly Professional Industry specific answers.
 2. Use "I" or "me" or "you" to show natural human writing.
-3. Weave a narrative that **authentically captures and articulates the answer being shared with the family member based on the question in ${content}**, making them feel truly understood. 
-4. Craft language that is not just simple, but **resonates as genuinely human and relatable**, avoiding too much industry jargon and communicate at a 'university graduate' comprehension level. The goal is to answer the question with conversational authority, not academic complexity.
+3. Authentically capture and articulate the precise answer based on the question in ${content}** while making the reader feel truly understood. 
+4. Craft language that is not just simple, but **resonates as genuinely human and relatable**, avoiding too much industry jargon and communicate at a 'university graduate' comprehension level. 
 5. Follow proven frameworks (AIDA, PAS, Hook-Point-Action, Before After Bridges etc.), **interpreting them with strategic nuance for social context.**
 6. **Use short, punchy sentence fragments to mimic human thought patterns.**
 7. **Conclude with a leading question about the next logical step for the reader.**
@@ -188,13 +193,12 @@ Follow the [Rules] below:
 [Rules]:
 
 - **Write in a clear, straightforward manner that a university graduate could easily understand.**
-- Ban Generic Content
+- Ban Generic Answers
 - Ban Colons
 - Ban Semicolons 
 - Ban hashtags
 - Ban bullet points.
 - Ban exclamation marks. 
-- Ban Questions
 - Ban Call to Action Questions
 - Ban Call to Action Statements
 - Ban overly-stylized or figurative language
