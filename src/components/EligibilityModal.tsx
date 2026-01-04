@@ -101,8 +101,8 @@ const handleSendMessage = async (content: string) => {
 
   try {
     // Call Gemini API to generate response
-    //const geminiResponse = await getLongTermCareSupport(content, '800');
-    const geminiResponse = await getLongTermCareSupport(content);
+    const geminiResponse = await getLongTermCareSupport(content, '800');
+    //const geminiResponse = await getLongTermCareSupport(content);
     
     if (!geminiResponse.error && geminiResponse.text) {
       // Add AI response to messages

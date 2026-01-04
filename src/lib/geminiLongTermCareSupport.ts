@@ -118,8 +118,6 @@ export async function generateContent(prompt: string): Promise<GeminiResponse> {
 }
 
 const toneOptions = [
-  'action-oriented',
-  'authoritative',
   'concise'
   // Add more as desired
 ];
@@ -143,7 +141,7 @@ const getRandomTone = (excludeTones: string[] = []) => {
 export async function getLongTermCareSupport(
   
     content: string,  
-    //char_length: string,
+    char_length: string,
     maxRetries: number = 5,
     initialDelayMs: number = 1000
   
@@ -174,16 +172,16 @@ Instructions:
 
 **Beyond surface-level analysis and responses, deeply dissect** the question provided in ${content} and create an accurate and fitting response, with the **most qualified sounding** answer to help them address there specific issue around Long Term Care Insurance.
 
-Maintain an **${selectedTone}** tone throughout your response.
+Maintain a **${selectedTone}** tone throughout your response.
 
-1. Be direct and answer the question in ${content} with academic authority and clarity.
+1. Be direct and answer the question in ${content} within the first 3 sentences.
 2. Ban Generic Answers and Focus on Highly Professional Industry specific answers.
 2. Use "I" or "me" or "you" to show natural human writing.
 3. Authentically capture and articulate the precise answer based on the question in ${content}** while making the reader feel truly understood. 
 4. Craft language that is not just simple, but **resonates as genuinely human and relatable**, avoiding too much industry jargon and communicate at a 'university graduate' comprehension level. 
 5. Follow proven frameworks (AIDA, PAS, Hook-Point-Action, Before After Bridges etc.), **interpreting them with strategic nuance for social context.**
 6. **Use short, punchy sentence fragments to mimic human thought patterns.**
-7. **Conclude with a leading question about the next logical step for the reader.**
+7. Keep to ${char_length} Characters in total.
 
 
 Write like a human. No fluff. No cringe. Make it hit.
@@ -193,6 +191,7 @@ Follow the [Rules] below:
 [Rules]:
 
 - **Write in a clear, straightforward manner that a university graduate could easily understand.**
+- Keep to ${char_length} Characters in total.
 - Ban Generic Answers
 - Ban Colons
 - Ban Semicolons 
