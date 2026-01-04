@@ -35,6 +35,19 @@ function sleep(ms: number) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+// Function to escape special characters that might cause premature truncation
+// This is used to ensure the text content is correctly handled by intermediate network layers.
+function escapeSpecialCharacters(text: string): string {
+  if (!text) return '';
+  // Escapes common JSON-breaking characters and control codes
+  return text
+    .replace(/\\/g, '\\\\') // Escape backslashes first
+    .replace(/\n/g, ' ') // Replace newlines with a space
+    .replace(/\r/g, '') // Remove carriage returns
+    .replace(/"/g, '\\"')  // Escape double quotes
+    .replace(/\u0000-\u001f/g, (char) => ''); // Remove all other control characters
+}
+
 // Rest of the file remains the same...
 
 export interface GeminiResponse {
@@ -87,7 +100,7 @@ export async function generateContent(prompt: string): Promise<GeminiResponse> {
       },
       body: JSON.stringify({
         prompt,
-        model: 'gemini-3-flash-preview', // Pass the model name to the Edge Function if it's dynamic
+        model: 'gemini-2.0-flash-preview', // Pass the model name to the Edge Function if it's dynamic
         // Optional: Add a cache key for the Edge Function to use
         cacheKey: prompt.substring(0, 50) // Use first 50 chars as cache key
       }),
@@ -104,8 +117,12 @@ export async function generateContent(prompt: string): Promise<GeminiResponse> {
 
     // Parse the response from the Edge Function
     const data = await response.json();
+
+    // Apply character escaping to prevent unexpected truncation
+    const escapedText = escapeSpecialCharacters(data.text || ''); 
+    
     return {
-      text: data.text || '',
+      text: escapedText || '',
       safetyRatings: data.safetyRatings
     };
   } catch (error) {

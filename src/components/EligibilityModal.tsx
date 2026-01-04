@@ -46,7 +46,7 @@ export function EligibilityModal({ isOpen, onClose }: EligibilityModalProps) {
   const [isSending, setIsSending] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const [isGeneratingResponse, setIsGeneratingResponse] = useState(false);
+  //const [isGeneratingResponse, setIsGeneratingResponse] = useState(false);
 
   const prewrittenQuestions = [
     //"What are the basic eligibility requirements for long term care insurance?",
