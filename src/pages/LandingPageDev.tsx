@@ -851,6 +851,115 @@ const handleLoginClick = () => {
    </div>
  </section>
  {/*------------------- End the Struggle ---------------------*/}     
+
+
+ {/*----------------- Start The Reset Support ----------------------- */}
+<section id="TheReset" className="mt-32 text-center">
+  
+  <h2 className="text-2xl text-red-400 sm:text-4xl md:text-5xl font-bold leading-tight mt-4 mb-4">
+     What a Strategic Reset looks like
+   </h2>
+   <p className="text-xl sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
+   Real results from senior leaders who reclaimed their careers.
+   </p>  
+ 
+    {/* Testimonials Grid - 3 Columns */}
+   <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+     
+     {/* Testimonial Card 1: David Simmons */}
+     <div className="group bg-white border-2 border-red-100 hover:border-red-400 rounded-xl p-6 shadow-lg hover:shadow-2xl hover:shadow-red-500/30 transition-all duration-300 hover:-translate-y-2 text-left">
+       {/* Avatar and Identity Section */}
+       <div className="flex items-center mb-6">
+         <img
+           src="https://i.pravatar.cc/150?img=12"
+           alt="David Simmons"
+           className="w-14 h-14 rounded-full border-2 border-red-200 group-hover:border-red-400 transition-colors object-cover"
+         />
+         <div className="ml-4">
+           <h3 className="text-lg font-bold text-gray-800 group-hover:text-red-500 transition-colors">
+             David Simmons
+           </h3>
+           <p className="text-sm text-gray-600 font-medium">
+             Managing Director, Global FinTech
+           </p>
+         </div>
+       </div>
+       
+       {/* Testimonial Quote */}
+       <div className="relative">
+         <svg className="absolute -top-2 -left-1 w-8 h-8 text-red-200 opacity-50" fill="currentColor" viewBox="0 0 32 32">
+           <path d="M10 8c-3.3 0-6 2.7-6 6v10h10V14H8c0-1.1.9-2 2-2h2V8h-2zm14 0c-3.3 0-6 2.7-6 6v10h10V14h-6c0-1.1.9-2 2-2h2V8h-2z"/>
+         </svg>
+         <p className="text-gray-700 text-sm leading-relaxed pl-6 italic">
+           "I was essentially running two full-time companies my actual firm and my parents' care team. The context switching was eroding my performance and my health. This service didn't just 'help' with the logistics; it gave me back my executive bandwidth. I'm back to leading my team with 100% focus, knowing the 'home front' is handled by experts who move at my speed."
+         </p>
+       </div>
+     </div>
+ 
+     {/* Testimonial Card 2: Judy Walters */}
+     <div className="group bg-white border-2 border-red-100 hover:border-red-400 rounded-xl p-6 shadow-lg hover:shadow-2xl hover:shadow-red-500/30 transition-all duration-300 hover:-translate-y-2 text-left">
+       {/* Avatar and Identity Section */}
+       <div className="flex items-center mb-6">
+         <img
+           src="https://i.pravatar.cc/150?img=47"
+           alt="Judy Walters"
+           className="w-14 h-14 rounded-full border-2 border-red-200 group-hover:border-red-400 transition-colors object-cover"
+         />
+         <div className="ml-4">
+           <h3 className="text-lg font-bold text-gray-800 group-hover:text-red-500 transition-colors">
+             Judy Walters
+           </h3>
+           <p className="text-sm text-gray-600 font-medium">
+             EVP of Operations
+           </p>
+         </div>
+       </div>
+       
+       {/* Testimonial Quote */}
+       <div className="relative">
+         <svg className="absolute -top-2 -left-1 w-8 h-8 text-red-200 opacity-50" fill="currentColor" viewBox="0 0 32 32">
+           <path d="M10 8c-3.3 0-6 2.7-6 6v10h10V14H8c0-1.1.9-2 2-2h2V8h-2zm14 0c-3.3 0-6 2.7-6 6v10h10V14h-6c0-1.1.9-2 2-2h2V8h-2z"/>
+         </svg>
+         <p className="text-gray-700 text-sm leading-relaxed pl-6 italic">
+           "Before I found this 'reset,' I was one phone call away from a burnout-induced leave of absence. I was managing $12k monthly care invoices and navigating insurance red tape at 11 PM. Now, I have a strategic partner who manages the friction. For the first time in three years, I can actually take a business trip without the constant dread of an emergency I can't handle from 3,000 miles away."
+         </p>
+       </div>
+     </div>
+ 
+     {/* Testimonial Card 3: Debbie Richardson */}
+     <div className="group bg-white border-2 border-red-100 hover:border-red-400 rounded-xl p-6 shadow-lg hover:shadow-2xl hover:shadow-red-500/30 transition-all duration-300 hover:-translate-y-2 text-left">
+       {/* Avatar and Identity Section */}
+       <div className="flex items-center mb-6">
+         <img
+           src="https://i.pravatar.cc/150?img=45"
+           alt="Debbie Richardson"
+           className="w-14 h-14 rounded-full border-2 border-red-200 group-hover:border-red-400 transition-colors object-cover"
+         />
+         <div className="ml-4">
+           <h3 className="text-lg font-bold text-gray-800 group-hover:text-red-500 transition-colors">
+             Debbie Richardson
+           </h3>
+           <p className="text-sm text-gray-600 font-medium">
+             Chief Marketing Officer
+           </p>
+         </div>
+       </div>
+       
+       {/* Testimonial Quote */}
+       <div className="relative">
+         <svg className="absolute -top-2 -left-1 w-8 h-8 text-red-200 opacity-50" fill="currentColor" viewBox="0 0 32 32">
+           <path d="M10 8c-3.3 0-6 2.7-6 6v10h10V14H8c0-1.1.9-2 2-2h2V8h-2zm14 0c-3.3 0-6 2.7-6 6v10h10V14h-6c0-1.1.9-2 2-2h2V8h-2z"/>
+         </svg>
+         <p className="text-gray-700 text-sm leading-relaxed pl-6 italic">
+           "The hardest part wasn't the money; it was the fact that I had stopped being a daughter and had become a full-time project manager. My relationship with my siblings was strained and my career was sidelined. This service acted as the 'COO' of my parents' care, allowing me to step back into my role as an executive and more importantly, as a daughter. It saved my career and my family dynamic."
+         </p>
+       </div>
+     </div>
+ 
+   </div>
+ </section>
+ 
+ {/*----------------- End The Reset Support ----------------------- */}    
   
         
 {/*----------------- Start The Community ----------------------- */}
