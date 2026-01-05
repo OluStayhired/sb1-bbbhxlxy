@@ -330,7 +330,7 @@ const handleLoginClick = () => {
 
 
         {/*<span className="hidden sm:inline text-xs sm:text-lg p-3 font-semibold bg-red-100 rounded-full text-red-500 border-8 border-red-50">Community of Professionals Supporting Aging Parents</span>*/}
-        <span className="hidden sm:inline text-xs sm:text-lg p-3 font-semibold bg-red-100 rounded-full text-red-500 border-8 border-red-50">Frictionless Care for Your Aging Parents</span>
+        <span className="hidden sm:inline text-xs sm:text-lg p-3 font-semibold bg-red-100 hover:bg-red-200 hover:text-red-600 rounded-full text-red-500 border-8 border-red-50 duration-500">frictionless care for your aging parents </span>
           
            {/*start alternative header */}
     
