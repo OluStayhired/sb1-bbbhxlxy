@@ -340,15 +340,18 @@ const handleLoginClick = () => {
             <p>
               <span className="inline-block bg-gradient-to-l from-red-300 via-red-400 to-red-500 text-transparent bg-clip-text mt-12">
               
-                {/*Strive for Better <br className="sm:hidden" />  Care in Later Life <br className="sm:hidden" /> */}
-                Strive for Balance <br className="sm:hidden" /> in Eldercare <br className="sm:hidden" /> 
+                {/*Strive for Balance <br className="sm:hidden" /> in Eldercare <br className="sm:hidden" /> */}
+                eldercare support <br className="sm:hidden" /> without <br className="hidden sm:block"/> career <br className="sm:hidden" /> sacrifices 
                 {/* This is the key change! */}
                 
        <p className="block text-sm font-normal sm:text-xl sm:font-normal text-gray-600 leading-tight mt-1 sm:mt-3">
          
-       <span className="sm:hidden font-normal">Join a network of career professionals navigating eldercare together</span>   
+       <span className="sm:hidden font-normal">A network of career professionals <br/> fixing eldercare together</span>     
         
-         <span className="hidden sm:inline font-normal">Join a network of career professionals navigating the overwhelming challenges of eldercare together</span> 
+                  {/*<span className="hidden sm:inline font-normal">We're a community of career professionals solving the overwhelming challenges of eldercare together</span>*/} 
+
+                  <span className="hidden sm:inline font-normal">We're a closed community of experienced career professionals solving the overwhelming <br/> challenges of eldercare, using battle-tested systems that generate predictable results.
+                  </span> 
          </p>
               </span>
             </p>
