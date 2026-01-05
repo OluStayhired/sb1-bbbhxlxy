@@ -637,9 +637,65 @@ const handleLoginClick = () => {
         </div>
       </div>
     </div>    
-          <p className="text-center text-gray-700 font-bold text-xl sm:text-2xl text-gray-600 mx-auto">  
+    <p className="hidden sm:inline text-center text-gray-700 font-bold text-xl sm:text-2xl text-gray-600 mx-auto">  
              Trusted by <b className="text-red-400">150+</b> Senior Executives Supporting Elderly Parents
-          </p>       
+          </p>  
+
+          <p className="sm:hidden text-center text-gray-700 font-bold text-xl sm:text-2xl text-gray-600 mx-auto">  
+             Trusted by <b className="text-red-400">150+</b> Career <br/> Execs Supporting <br/>Elderly Parents
+          </p> 
+
+          {/*--------------- start Social Proof Section ---------------- */}
+          <div className="justify-center relative flex items-center gap-6 mt-4">
+            {/* Overlapping Avatars */}
+            <div className="flex -space-x-3">
+              <img
+                  src="https://i.pravatar.cc/150?img=1"
+                  alt="User 1"
+                  className="w-10 h-10 rounded-full border-2 border-white object-cover"
+                />
+              <img
+                  src="https://i.pravatar.cc/150?img=2"
+                  alt="User 2"
+                  className="w-10 h-10 rounded-full border-2 border-white object-cover"
+              />
+              <img
+                  src="https://i.pravatar.cc/150?img=3"
+                  alt="User 3"
+                  className="w-10 h-10 rounded-full border-2 border-white object-cover"
+              />
+              <img
+                  src="https://i.pravatar.cc/150?img=4"
+                  alt="User 4"
+                  className="w-10 h-10 rounded-full border-2 border-white object-cover"
+              />
+              <img
+                  src="https://i.pravatar.cc/150?img=5"
+                  alt="User 5"
+                  className="w-10 h-10 rounded-full border-2 border-white object-cover"
+              />
+              <img
+                  src="https://i.pravatar.cc/150?img=6"
+                  alt="User 6"
+                  className="w-10 h-10 rounded-full border-2 border-white object-cover"
+              />
+          </div>
+
+            {/* Stars and Text */}
+                <div className="flex flex-col gap-1">
+                  <div className="flex gap-0.5">
+                    <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                    <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                    <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                    <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                    <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                  </div>
+                    <p className="text-sm font-medium text-gray-700">1,200 hrs saved</p>
+                </div>
+            </div>
+
+
+          {/*----- end social proof section here -------------*/}   
  </div>
         
 {/*----------------- Start The Community ----------------------- */}
