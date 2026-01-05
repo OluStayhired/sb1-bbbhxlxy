@@ -352,7 +352,7 @@ const handleLoginClick = () => {
 
                   <span className="hidden sm:inline font-normal">
                     We're a closed community of career professionals solving caregiving challenges 
-                    <br/> with battle-tested systems that will save you 12 hours every week.
+                    <br/> with battle-tested systems that will save you 12 hours every week! 😲
                   </span> 
          </p>
               </span>
