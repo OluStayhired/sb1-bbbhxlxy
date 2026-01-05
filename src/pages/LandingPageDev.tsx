@@ -350,7 +350,9 @@ const handleLoginClick = () => {
         
                   {/*<span className="hidden sm:inline font-normal">We're a community of career professionals solving the overwhelming challenges of eldercare together</span>*/} 
 
-                  <span className="hidden sm:inline font-normal">We're a closed community of experienced career professionals solving the overwhelming <br/> challenges of eldercare, using battle-tested systems that generate predictable results.
+                  <span className="hidden sm:inline font-normal">
+                    We're a closed community of career professionals solving caregiving challenges 
+                    <br/> with battle-tested systems that generate predictable results.
                   </span> 
          </p>
               </span>
