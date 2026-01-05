@@ -401,6 +401,9 @@ const handleLoginClick = () => {
     </div>
   </div>
 
+{/*----------------- Start Caregiving Support ----------------------- */}
+<section id="CaregivingSupport" className="text-center">
+
   <h2 className="text-2xl text-red-400 sm:text-4xl md:text-5xl font-bold leading-tight mt-16 mb-4">
     {/*Community for Career Professionals 👩‍💻*/}
        Caregiving Support for Busy Execs 
@@ -408,7 +411,7 @@ const handleLoginClick = () => {
   {/*<p className="text-xl sm:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto hover:text-red-500">*/}
   <p className="text-xl sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
        {/*We empower the modern workforce to make better caregiving decisions.*/}
-       Get instant eldercare support without wasting hours on phone calls.
+       Get instant community support without wasting hours on calls.
   </p>  
 
 {/*Image for Mobile Devices*/}
@@ -695,7 +698,11 @@ const handleLoginClick = () => {
             </div>
 
 
-          {/*----- end social proof section here -------------*/}   
+          {/*----- end social proof section here -------------*/}
+
+  </section>      
+{/*----------------- End Caregiving Support ----------------------- */} 
+    
  </div>
         
 {/*----------------- Start The Community ----------------------- */}
