@@ -406,7 +406,7 @@ const handleLoginClick = () => {
        Caregiving Support for Busy Execs 
   </h2>
   {/*<p className="text-xl sm:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto hover:text-red-500">*/}
-  <p className="text-xl sm:text-2xl text-gray-600 mb-12 mx-auto hover:text-red-500">  
+  <p className="text-xl sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
        {/*We empower the modern workforce to make better caregiving decisions.*/}
        Get instant eldercare support without spending hours on phone calls.
   </p>  
