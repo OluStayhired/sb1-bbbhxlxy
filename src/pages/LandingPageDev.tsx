@@ -846,7 +846,7 @@ const handleLoginClick = () => {
   
         
 {/*----------------- Start The Community ----------------------- */}
-<section id="Community" className="mt-6 text-center">
+<section id="Community" className="mt-32 text-center">
           <div className="inline-flex items-center border-8 border-red-200 space-x-2 px-3 py-2 bg-gradient-to-r from-red-500 via-red-400 to-red-300 text-white rounded-full text-lg mb-4 cursor-pointer"
                  
             onClick={() => {
