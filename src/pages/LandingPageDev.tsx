@@ -704,6 +704,146 @@ const handleLoginClick = () => {
 {/*----------------- End Caregiving Support ----------------------- */} 
     
  </div>
+
+ {/*----------------- Start The Struggle Support ----------------------- */}
+<section id="TheStruggle" className="text-center">
+  
+  <h2 className="text-2xl text-red-400 sm:text-4xl md:text-5xl font-bold leading-tight mt-4 mb-4">
+     Care shouldn't cost you your Career
+   </h2>
+   <p className="text-xl sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
+     {/*We empower the modern workforce to make better caregiving decisions.*/}
+     {/*Get instant community support without wasting hours on calls.*/}  
+   If you recognize yourself in these 6 scenarios, you need a reset.
+   </p>  
+ 
+   {/* 3x2 Grid of Cards */}
+   <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+     
+     {/* Card 1: Feeling Mentally Broken */}
+     <div className="group bg-white border-2 border-red-100 hover:border-red-400 rounded-xl p-6 shadow-lg hover:shadow-2xl hover:shadow-red-500/30 transition-all duration-300 hover:-translate-y-2">
+       <div className="flex items-center justify-center w-14 h-14 bg-red-50 rounded-full mb-4 group-hover:bg-red-100 transition-colors">
+         <Brain className="w-7 h-7 text-red-500 group-hover:scale-110 transition-transform" />
+       </div>
+       <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-red-500 transition-colors">
+         Feeling Mentally Broken
+       </h3>
+       <p className="text-gray-600 text-sm leading-relaxed mb-6">
+         You project authority in meetings but you're silently breaking. You context switch between strategic work and eldercare firefighting, pushing your mental capacity to the breaking point.
+       </p>
+       <button
+         onClick={openCommunityModal}
+         className="w-full py-3 px-4 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-red-500/50 flex items-center justify-center space-x-2 group/btn"
+       >
+         <span>Restore your Focus</span>
+         <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
+       </button>
+     </div>
+ 
+     {/* Card 2: Managing Inefficient Systems */}
+     <div className="group bg-white border-2 border-red-100 hover:border-red-400 rounded-xl p-6 shadow-lg hover:shadow-2xl hover:shadow-red-500/30 transition-all duration-300 hover:-translate-y-2">
+       <div className="flex items-center justify-center w-14 h-14 bg-red-50 rounded-full mb-4 group-hover:bg-red-100 transition-colors">
+         <Target className="w-7 h-7 text-red-500 group-hover:scale-110 transition-transform" />
+       </div>
+       <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-red-500 transition-colors">
+         Managing Inefficient Systems
+       </h3>
+       <p className="text-gray-600 text-sm leading-relaxed mb-6">
+         At work, you optimize and delegate. In caregiving, you're trapped in a maze of broken bureaucracy, chasing insurance claims and care agencies that don't share your sense of urgency or standards.
+       </p>
+       <button
+         onClick={openCommunityModal}
+         className="w-full py-3 px-4 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-red-500/50 flex items-center justify-center space-x-2 group/btn"
+       >
+         <span>Fix the Logistics</span>
+         <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
+       </button>
+     </div>
+ 
+     {/* Card 3: Consumed by $10k/mo Bills */}
+     <div className="group bg-white border-2 border-red-100 hover:border-red-400 rounded-xl p-6 shadow-lg hover:shadow-2xl hover:shadow-red-500/30 transition-all duration-300 hover:-translate-y-2">
+       <div className="flex items-center justify-center w-14 h-14 bg-red-50 rounded-full mb-4 group-hover:bg-red-100 transition-colors">
+         <CircleDollarSign className="w-7 h-7 text-red-500 group-hover:scale-110 transition-transform" />
+       </div>
+       <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-red-500 transition-colors">
+         Consumed by $10k/mo Bills
+       </h3>
+       <p className="text-gray-600 text-sm leading-relaxed mb-6">
+         You watch your parents' hard-earned legacy and your own financial peace of mind evaporate into monthly care costs. Every agency invoice feels like a countdown you simply can't stop.
+       </p>
+       <button
+         onClick={openCommunityModal}
+         className="w-full py-3 px-4 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-red-500/50 flex items-center justify-center space-x-2 group/btn"
+       >
+         <span>Protect your Legacy</span>
+         <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
+       </button>
+     </div>
+ 
+     {/* Card 4: Skipping Career Opportunities */}
+     <div className="group bg-white border-2 border-red-100 hover:border-red-400 rounded-xl p-6 shadow-lg hover:shadow-2xl hover:shadow-red-500/30 transition-all duration-300 hover:-translate-y-2">
+       <div className="flex items-center justify-center w-14 h-14 bg-red-50 rounded-full mb-4 group-hover:bg-red-100 transition-colors">
+         <Briefcase className="w-7 h-7 text-red-500 group-hover:scale-110 transition-transform" />
+       </div>
+       <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-red-500 transition-colors">
+         Skipping Career Opportunities
+       </h3>
+       <p className="text-gray-600 text-sm leading-relaxed mb-6">
+         You've started saying "no" to the travel, the dinners, and the promotions that would have defined your legacy. Your career is stalling because you simply can't be in two places at once.
+       </p>
+       <button
+         onClick={openCommunityModal}
+         className="w-full py-3 px-4 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-red-500/50 flex items-center justify-center space-x-2 group/btn"
+       >
+         <span>Reclaim your Career</span>
+         <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
+       </button>
+     </div>
+ 
+     {/* Card 5: Broken by Family Responsibilities */}
+     <div className="group bg-white border-2 border-red-100 hover:border-red-400 rounded-xl p-6 shadow-lg hover:shadow-2xl hover:shadow-red-500/30 transition-all duration-300 hover:-translate-y-2">
+       <div className="flex items-center justify-center w-14 h-14 bg-red-50 rounded-full mb-4 group-hover:bg-red-100 transition-colors">
+         <Users className="w-7 h-7 text-red-500 group-hover:scale-110 transition-transform" />
+       </div>
+       <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-red-500 transition-colors">
+         Broken by Family Responsibilities
+       </h3>
+       <p className="text-gray-600 text-sm leading-relaxed mb-6">
+         It's not just the parent, it's the sibling infighting, the lack of support, and the weight of being the "responsible one." You're the pillar everyone leans on, but you have no one to lean on yourself.
+       </p>
+       <button
+         onClick={openCommunityModal}
+         className="w-full py-3 px-4 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-red-500/50 flex items-center justify-center space-x-2 group/btn"
+       >
+         <span>Share the Burden</span>
+         <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
+       </button>
+     </div>
+ 
+     {/* Card 6: Being Permanently On-Call */}
+     <div className="group bg-white border-2 border-red-100 hover:border-red-400 rounded-xl p-6 shadow-lg hover:shadow-2xl hover:shadow-red-500/30 transition-all duration-300 hover:-translate-y-2">
+       <div className="flex items-center justify-center w-14 h-14 bg-red-50 rounded-full mb-4 group-hover:bg-red-100 transition-colors">
+         <Timer className="w-7 h-7 text-red-500 group-hover:scale-110 transition-transform" />
+       </div>
+       <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-red-500 transition-colors">
+         Being Permanently On-Call
+       </h3>
+       <p className="text-gray-600 text-sm leading-relaxed mb-6">
+         You live in a state of high-alert 24/7. Every late-night phone ring or unexpected text is a potential catastrophe, leaving you in a cycle of chronic stress that means you now wake up at 3 a.m. every day.
+       </p>
+       <button
+         onClick={openCommunityModal}
+         className="w-full py-3 px-4 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-red-500/50 flex items-center justify-center space-x-2 group/btn"
+       >
+         <span>Find your Peace</span>
+         <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
+       </button>
+     </div>
+ 
+   </div>
+ </section>
+ {/*------------------- End the Struggle ---------------------*/}     
+  
         
 {/*----------------- Start The Community ----------------------- */}
 <section id="Community" className="mt-6 text-center">
