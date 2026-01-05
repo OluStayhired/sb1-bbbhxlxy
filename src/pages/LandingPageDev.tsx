@@ -434,10 +434,13 @@ const handleLoginClick = () => {
 <div className="hidden sm:block w-full p-4 mt-8">
 
       {/* Main grid container with 5 columns */}
-      <div className="grid grid-cols-5 gap-4 h-[650px] grid-rows-2">
+       {/*<div className="grid grid-cols-5 gap-4 h-[650px] grid-rows-2">*/}
+
+        {/*simple and easy way to reduce the entire grid by 20%*/}
+        <div className="grid grid-cols-5 gap-3 h-[520px] grid-rows-2">
           
         {/* Column 1: Two stacked images */}
-        <div className="col-span-1 flex flex-col gap-4 h-[650px]">
+        <div className="col-span-1 flex flex-col gap-4 h-[520px]">
            {/*------ start first top left image -------*/}
            <div className="relative h-full border hover:p-2 hover:border-red-500 overflow-hidden rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl group">
             
@@ -514,7 +517,7 @@ const handleLoginClick = () => {
         </div>
 
         {/* Column 3: Two stacked images */}
-        <div className="col-span-1 flex flex-col gap-4 h-[650px]">
+        <div className="col-span-1 flex flex-col gap-4 h-[520px]">
           <div className="relative h-full border hover:p-2 hover:border-red-500 overflow-hidden rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl group">
             
             <img
@@ -579,7 +582,7 @@ const handleLoginClick = () => {
         </div>
 
         {/* Column 5: Two stacked images */}
-        <div className="col-span-1 flex flex-col gap-4 h-[650px]">
+        <div className="col-span-1 flex flex-col gap-4 h-[520px]">
           <div className="relative h-full border hover:p-2 hover:border-red-500 overflow-hidden rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl group">
             <img
               //src="https://images.pexels.com/photos/3184296/pexels-photo-3184296.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
