@@ -425,314 +425,10 @@ const handleLoginClick = () => {
   </div>
 
 {/*----------------- Start Caregiving Support ----------------------- */}
-<section id="CaregivingSupport" className="text-center">
 
-  <h2 className="text-2xl text-red-400 sm:text-4xl md:text-5xl font-bold leading-tight mt-16 mb-4">
-    {/*Community for Career Professionals 👩‍💻*/}
-       Caregiving Support for Busy Execs 
-  </h2>
-  {/*<p className="text-xl sm:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto hover:text-red-500">*/}
-  <p className="text-xl sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
-       {/*We empower the modern workforce to make better caregiving decisions.*/}
-       Get instant community support without wasting hours on calls.
-  </p>  
-
-{/*Image for Mobile Devices*/}
-<div className="sm:hidden w-full p-4 mt-8">
-  <div className="grid grid-cols-1 h-[450px]">
-     {/* Column 4: One image, spanning two rows */}
-        <div className="col-span-1">
-          <div className="relative overflow-hidden rounded-xl shadow-xl transform transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-red-500/60 hover:shadow-red-500/80 h-full group">
-            <img
-              src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/mother_patient.png"
-              alt="Caregivers"
-              className="w-full h-full object-cover object-[30%_50%]"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
-            <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
-                <h3 className="text-xl font-bold drop-shadow-lg">Book Emergency <br/> Caregivers</h3>
-            </div>
-          </div>
-        </div>
-    </div>
-  </div>
-          
-<div className="hidden sm:block w-full p-4 mt-8">
-
-      {/* Main grid container with 5 columns */}
-       {/*<div className="grid grid-cols-5 gap-4 h-[650px] grid-rows-2">*/}
-
-        {/*simple and easy way to reduce the entire grid by 20%*/}
-        <div className="grid grid-cols-5 gap-3 h-[520px] grid-rows-2">
-          
-        {/* Column 1: Two stacked images */}
-        <div className="col-span-1 flex flex-col gap-4 h-[520px]">
-           {/*------ start first top left image -------*/}
-           <div className="relative h-full border hover:p-2 hover:border-red-500 overflow-hidden rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl group">
-            
-            <img
-              src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/ltci-checker.png"
-              alt="Creative workspace"
-              className="w-full h-full rounded-xl object-cover aspect-square"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
-            <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
-            <button
-            //onClick={openCommunityModal}
-            onClick={openEligibilityModal}
-            className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
-           
-           <span className="text-sm font-normal">Get Support</span>
-           <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </button>
-                <h3 className="text-xl font-bold drop-shadow-lg">Verify Insurance <br/> Eligibility</h3>
-            </div>
-          </div>
-
-          {/*
-          <div className="relative h-full overflow-hidden rounded-xl">
-            <img
-              //keeping for future use
-            />
-          </div>
-          */}
- 
-          {/*------ end first left image-------*/}
-         
-          <div className="relative h-full overflow-hidden rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl border hover:p-2 hover:border-red-500 group">
-            <img
-              src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/mother_son.png"
-              alt="Person working"
-              className="w-full h-full rounded-xl object-cover aspect-square" // Square aspect ratio for stacked images
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
-            <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
-            <button
-            //onClick={openCommunityModal}
-            className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
-           
-           <span className="text-sm font-normal">Get Support</span>
-           <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </button>
-                <h3 className="text-xl font-bold drop-shadow-lg">Get Early <br/> Financial Planning</h3>
-            </div>
-          </div>
-        </div>
-        
-        {/* Column 2: One image, spanning two rows */}
-        <div className="col-span-1 row-span-2"> {/* 'row-span-2' makes this grid item span two rows */}
-          <div className="relative overflow-hidden rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl h-full border hover:p-2 hover:border-red-500 group">
-            <img
-              src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/daughter_father.png"
-              alt="Meeting in progress"
-              className="w-full h-full rounded-xl object-cover object-[40%_70%]" // 'h-full' ensures the image fills the row-span-2 container
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
-            <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
-            <button
-            //onClick={openCommunityModal}
-            className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
-           
-           <span className="text-sm font-normal">Get Support</span>
-           <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </button>
-                <h3 className="text-xl font-bold drop-shadow-lg">Book Emergency Respite Care</h3>
-            </div>
-          </div>
-           
-        </div>
-
-        {/* Column 3: Two stacked images */}
-        <div className="col-span-1 flex flex-col gap-4 h-[520px]">
-          <div className="relative h-full border hover:p-2 hover:border-red-500 overflow-hidden rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl group">
-            
-            <img
-              src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/mother_daughter.png"
-              alt="Creative workspace"
-              className="w-full h-full rounded-xl object-cover aspect-square"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
-            <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
-            <button
-            //onClick={openCommunityModal}
-            className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
-           
-           <span className="text-sm font-normal">Get Support</span>
-           <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </button>
-                <h3 className="text-xl font-bold drop-shadow-lg">Manage <br/> Parental Stress</h3>
-            </div>
-          </div>
-          <div className="relative h-full border hover:p-2 hover:border-red-500 overflow-hidden rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl group">
-            <img
-              //src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/mother_daughter_blue.png"
-              src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/magnifying-glass.png"
-              alt="Brainstorming session"
-              className="w-full h-full rounded-xl object-cover aspect-square"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
-              <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
-              <button
-            //onClick={openCommunityModal}
-            className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
-           
-           <span className="text-sm font-normal">Get Support</span>
-           <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </button>
-                <h3 className="text-xl font-bold drop-shadow-lg">Get Dementia Assessment</h3>
-            </div>
-          </div>
-        </div>
-
-        {/* Column 4: One image, spanning two rows */}
-        <div className="col-span-1 row-span-2">
-          <div className="relative border hover:p-2 hover:border-red-500 overflow-hidden rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl h-full group">
-            <img
-              //src="https://images.pexels.com/photos/3184192/pexels-photo-3184192.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/mother_patient.png"
-              alt="Laptop on desk"
-              className="w-full h-full rounded-xl object-cover object-[30%_50%]"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
-            <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
-            <button
-            //onClick={openCommunityModal}
-            className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
-           
-           <span className="text-sm font-normal">Get Support</span>
-           <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </button>
-                <h3 className="text-xl font-bold drop-shadow-lg">Find Home Caregivers</h3>
-            </div>
-          </div>
-        </div>
-
-        {/* Column 5: Two stacked images */}
-        <div className="col-span-1 flex flex-col gap-4 h-[520px]">
-          <div className="relative h-full border hover:p-2 hover:border-red-500 overflow-hidden rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl group">
-            <img
-              //src="https://images.pexels.com/photos/3184296/pexels-photo-3184296.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/black_mother_daughter.png"
-              alt="People discussing"
-              className="w-full h-full rounded-xl object-cover aspect-square"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
-            <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
-            <button
-            //onClick={openCommunityModal}
-            className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
-           
-           <span className="text-sm font-normal">Get Support</span>
-           <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </button>
-                <h3 className="text-xl font-bold drop-shadow-lg">Start <br/> Living Well</h3>
-            </div>
-          </div>
-          
-          {/*------ start last bottom top right image -------*/}
-          <div className="relative h-full border hover:p-2 hover:border-red-500 overflow-hidden rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl group">
-            
-            <img
-              src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/push-wheelchair.png"
-              alt="Creative workspace"
-              className="w-full h-full rounded-xl object-cover aspect-square"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
-            <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
-            <button
-            //onClick={openCommunityModal}
-            className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
-           
-           <span className="text-sm font-normal">Get Support</span>
-           <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </button>
-                <h3 className="text-xl font-bold drop-shadow-lg">Compare Residential <br/> Care Homes</h3>
-            </div>
-          </div>
-
-          {/*
-          <div className="relative h-full overflow-hidden rounded-xl">
-            <img
-              //keeping for future use
-            />
-          </div>
-          */}
-
-          
-          {/*------ end last bottom right image -------*/}
-        </div>
-      </div>
-    </div>    
-    <p className="hidden sm:inline text-center text-gray-700 font-bold text-xl sm:text-2xl text-gray-600 mx-auto">  
-             Trusted by <b className="text-red-400">150+</b> Senior Executives Supporting Elderly Parents
-          </p>  
-
-          <p className="sm:hidden text-center text-gray-700 font-bold text-xl sm:text-2xl text-gray-600 mx-auto">  
-             Trusted by <b className="text-red-400">150+</b> Career <br/> Execs Supporting <br/>Elderly Parents
-          </p> 
-
-          {/*--------------- start Social Proof Section ---------------- */}
-          <div className="justify-center relative flex items-center gap-6 mt-4">
-            {/* Overlapping Avatars */}
-            <div className="flex -space-x-3">
-              <img
-                  src="https://i.pravatar.cc/150?img=1"
-                  alt="User 1"
-                  className="w-10 h-10 rounded-full border-2 border-white object-cover"
-                />
-              <img
-                  src="https://i.pravatar.cc/150?img=2"
-                  alt="User 2"
-                  className="w-10 h-10 rounded-full border-2 border-white object-cover"
-              />
-              <img
-                  src="https://i.pravatar.cc/150?img=3"
-                  alt="User 3"
-                  className="w-10 h-10 rounded-full border-2 border-white object-cover"
-              />
-              <img
-                  src="https://i.pravatar.cc/150?img=4"
-                  alt="User 4"
-                  className="w-10 h-10 rounded-full border-2 border-white object-cover"
-              />
-              <img
-                  src="https://i.pravatar.cc/150?img=5"
-                  alt="User 5"
-                  className="w-10 h-10 rounded-full border-2 border-white object-cover"
-              />
-              <img
-                  src="https://i.pravatar.cc/150?img=6"
-                  alt="User 6"
-                  className="w-10 h-10 rounded-full border-2 border-white object-cover"
-              />
-          </div>
-
-            {/* Stars and Text */}
-                <div className="flex flex-col gap-1">
-                  <div className="flex gap-0.5">
-                    <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                    <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                    <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                    <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                    <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                  </div>
-                    <p className="text-sm font-medium text-gray-700">1,200 hrs saved</p>
-                </div>
-            </div>
-
-
-          {/*----- end social proof section here -------------*/}
-
-          <button
-                onClick={openCommunityModal}
-                className="group mt-8 flex items-center justify-center space-x-2 w-full sm:w-auto px-6 py-3 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 transition-colors shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-4 sm:text-lg mx-auto">
-                <span>Join Community</span>
-                {/* Placeholder for ArrowRight icon or similar */}
-               <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-            </button> 
-
-  </section>      
-{/*----------------- End Caregiving Support ----------------------- */} 
+{/*--------- removed and moved ---------*/}
+    
+{/*----------------- End Caregiving Support ----------------------- */}  
     
  </div>
 
@@ -983,6 +679,318 @@ const handleLoginClick = () => {
  </section>
  
  {/*----------------- End The Reset Support ----------------------- */}    
+
+ {/*----------------- Start Caregiving Support ----------------------- */}
+<section id="CaregivingSupport" className="text-center mt-32">
+  
+  <h2 className="text-2xl text-red-400 sm:text-4xl md:text-5xl font-bold leading-tight mb-4">
+    {/*Community for Career Professionals 👩‍💻*/}
+     Caregiving Support for Busy Execs 
+   </h2>
+   {/*<p className="text-xl sm:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto hover:text-red-500">*/}
+   <p className="text-xl sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
+     {/*We empower the modern workforce to make better caregiving decisions.*/}
+    Get instant community support without wasting hours on calls.
+   </p>          
+ 
+ {/*Image for Mobile Devices*/}
+ <div className="sm:hidden w-full p-4 mt-8">
+   <div className="grid grid-cols-1 h-[450px]">
+      {/* Column 4: One image, spanning two rows */}
+         <div className="col-span-1">
+           <div className="relative overflow-hidden rounded-xl shadow-xl transform transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-red-500/60 hover:shadow-red-500/80 h-full group">
+             <img
+               src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/mother_patient.png"
+               alt="Caregivers"
+               className="w-full h-full object-cover object-[30%_50%]"
+             />
+             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
+             <div class="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
+                 <h3 class="text-xl font-bold drop-shadow-lg">Book Emergency <br/> Caregivers</h3>
+             </div>
+           </div>
+         </div>
+     </div>
+   </div>
+           
+ <div className="hidden sm:block w-full p-4 mt-8">
+ 
+   {/* Main grid container with 5 columns */}
+   {/*<div className="grid grid-cols-5 gap-4 h-[650px] grid-rows-2">*/}
+ 
+   {/*simple and easy way to reduce the entire grid by 20%*/}
+   <div className="grid grid-cols-5 gap-3 h-[520px] grid-rows-2">
+           
+         {/*---- Column 1: Two stacked images---*/}
+         <div className="col-span-1 flex flex-col gap-4 h-[520px]">
+           {/*------ start first top left image -------*/}
+           <div className="relative h-full border hover:p-2 hover:border-red-500 overflow-hidden rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl group">
+             
+             <img
+               src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/ltci-checker.png"
+               alt="Creative workspace"
+               className="w-full h-full rounded-xl object-cover aspect-square"
+             />
+             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
+             <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
+               {/*<button className="absolute bottom-10 left-0 right-0 p-1 text-white text-center rounded-md text-white bg-red-500 transition-opacity duration-300 opacity-0 group-hover:opacity-100">Get Started</button>*/}
+ 
+           <button
+             onClick={openEligibilityModal}
+             className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
+            
+            <span className="text-sm font-normal">Get Support</span>
+            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+           </button>
+                 <h3 class="text-xl font-bold drop-shadow-lg">Verify Insurance <br/> Eligibility</h3>
+             </div>
+           </div>
+ 
+           {/*
+           <div className="relative h-full overflow-hidden rounded-xl">
+             <img
+               //keeping for future use
+             />
+           </div>
+           */}
+ 
+           
+           {/*------ end first left image -------*/}
+           <div className="relative h-full overflow-hidden rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl border hover:p-2 hover:border-red-500 group">
+             <img
+               src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/mother_son.png"
+               alt="Person working"
+               className="w-full h-full rounded-xl object-cover aspect-square" // Square aspect ratio for stacked images
+             />
+             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
+             <div class="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
+               <button
+             //onClick={openCommunityModal}
+             className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
+            
+            <span className="text-sm font-normal">Get Support</span>
+            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+           </button>
+                 <h3 class="text-xl font-bold drop-shadow-lg">Get Early <br/> Financial Plan</h3>
+             </div>
+           </div>
+         </div>
+         
+         {/* Column 2: One image, spanning two rows */}
+         <div className="col-span-1 row-span-2 h-full"> {/* 'row-span-2' makes this grid item span two rows */}
+           <div className="relative overflow-hidden rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl h-full border hover:p-2 hover:border-red-500 group">
+             <img
+               src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/daughter_father.png"
+               alt="Meeting in progress"
+               className="w-full h-full rounded-xl object-cover object-[40%_70%]" // 'h-full' ensures the image fills the row-span-2 container
+             />
+             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
+             <div class="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
+               <button
+             //onClick={openCommunityModal}
+             className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
+            
+            <span className="text-sm font-normal">Get Support</span>
+            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+           </button>
+                 <h3 class="text-xl font-bold drop-shadow-lg">Book Emergency Respite Care</h3>
+             </div>
+           </div>
+            
+         </div>
+ 
+         {/* Column 3: Two stacked images */}
+         <div className="col-span-1 flex flex-col gap-3 h-[520px]">
+           <div className="relative h-full border hover:p-2 hover:border-red-500 overflow-hidden rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl group">
+             
+             <img
+               src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/mother_daughter.png"
+               alt="Creative workspace"
+               className="w-full h-full rounded-xl object-cover aspect-square"
+             />
+             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
+             <div class="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
+               <button
+             //onClick={openCommunityModal}
+             className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
+            
+            <span className="text-sm font-normal">Get Support</span>
+            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+           </button>
+                 <h3 class="text-xl font-bold drop-shadow-lg">Manage <br/> Parental Stress</h3>
+             </div>
+           </div>
+           <div className="relative h-full border hover:p-2 hover:border-red-500 overflow-hidden rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl group">
+             <img
+               //src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/mother_daughter_blue.png"
+               src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/magnifying-glass.png"
+               alt="Brainstorming session"
+               className="w-full h-full rounded-xl object-cover aspect-square"
+             />
+             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
+               <div class="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
+                 <button
+             //onClick={openCommunityModal}
+             className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
+            
+            <span className="text-sm font-normal">Get Support</span>
+            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+           </button>
+                 <h3 class="text-xl font-bold drop-shadow-lg">Get Dementia Assessment</h3>
+             </div>
+           </div>
+         </div>
+ 
+         {/* Column 4: One image, spanning two rows */}
+         <div className="col-span-1 row-span-2">
+           <div className="relative border hover:p-2 hover:border-red-500 overflow-hidden rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl h-full group">
+             <img
+               //src="https://images.pexels.com/photos/3184192/pexels-photo-3184192.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+               src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/mother_patient.png"
+               alt="Laptop on desk"
+               className="w-full h-full rounded-xl object-cover object-[30%_50%]"
+             />
+             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
+             <div class="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
+               <button
+             //onClick={openCommunityModal}
+             className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
+            
+            <span className="text-sm font-normal">Get Support</span>
+            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+           </button>
+                 <h3 class="text-xl font-bold drop-shadow-lg">Find Home Caregivers</h3>
+             </div>
+           </div>
+         </div>
+ 
+         {/* Column 5: Two stacked images */}
+         <div className="col-span-1 flex flex-col gap-4 h-[520px]">
+           <div className="relative h-full border hover:p-2 hover:border-red-500 overflow-hidden rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl group">
+             <img
+               //src="https://images.pexels.com/photos/3184296/pexels-photo-3184296.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+               src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/black_mother_daughter.png"
+               alt="People discussing"
+               className="w-full h-full rounded-xl object-cover aspect-square"
+             />
+             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
+             <div class="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
+               <button
+             //onClick={openCommunityModal}
+             className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
+            
+            <span className="text-sm font-normal">Get Support</span>
+            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+           </button>
+                 <h3 class="text-xl font-bold drop-shadow-lg">Start <br/> Living Well</h3>
+             </div>
+           </div>
+           
+      {/*------ start last bottom top right image -------*/}
+           <div className="relative h-full border hover:p-2 hover:border-red-500 overflow-hidden rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl group">
+             
+             <img
+               src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/push-wheelchair.png"
+               alt="Creative workspace"
+               className="w-full h-full rounded-xl object-cover aspect-square"
+             />
+             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
+             <div class="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
+               <button
+             //onClick={openCommunityModal}
+             className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
+            
+            <span className="text-sm font-normal">Get Support</span>
+            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+           </button>
+                 <h3 class="text-xl font-bold drop-shadow-lg">Compare Residential <br/> Care Homes</h3>
+             </div>
+           </div>
+ 
+           {/*
+           <div className="relative h-full overflow-hidden rounded-xl">
+             <img
+               //keeping for future use
+             />
+           </div>
+           */}
+ 
+           
+           {/*------ end last bottom right image -------*/}
+         </div>
+       </div>
+     </div>  
+           
+           <p className="hidden sm:inline text-center text-gray-700 font-bold text-xl sm:text-2xl text-gray-600 mx-auto">  
+              Trusted by <b className="text-red-400">150+</b> Senior Executives Supporting Elderly Parents
+           </p>  
+ 
+           <p className="sm:hidden text-center text-gray-700 font-bold text-xl sm:text-2xl text-gray-600 mx-auto">  
+              Trusted by <b className="text-red-400">150+</b> Career <br/> Execs Supporting <br/>Elderly Parents
+           </p> 
+ 
+           {/*--------------- start Social Proof Section ---------------- */}
+           <div className="justify-center relative flex items-center gap-6 mt-4">
+             {/* Overlapping Avatars */}
+             <div className="flex -space-x-3">
+               <img
+                   src="https://i.pravatar.cc/150?img=1"
+                   alt="User 1"
+                   className="w-10 h-10 rounded-full border-2 border-white object-cover"
+                 />
+               <img
+                   src="https://i.pravatar.cc/150?img=2"
+                   alt="User 2"
+                   className="w-10 h-10 rounded-full border-2 border-white object-cover"
+               />
+               <img
+                   src="https://i.pravatar.cc/150?img=3"
+                   alt="User 3"
+                   className="w-10 h-10 rounded-full border-2 border-white object-cover"
+               />
+               <img
+                   src="https://i.pravatar.cc/150?img=4"
+                   alt="User 4"
+                   className="w-10 h-10 rounded-full border-2 border-white object-cover"
+               />
+               <img
+                   src="https://i.pravatar.cc/150?img=5"
+                   alt="User 5"
+                   className="w-10 h-10 rounded-full border-2 border-white object-cover"
+               />
+               <img
+                   src="https://i.pravatar.cc/150?img=6"
+                   alt="User 6"
+                   className="w-10 h-10 rounded-full border-2 border-white object-cover"
+               />
+           </div>
+ 
+             {/* Stars and Text */}
+                 <div className="flex flex-col gap-1">
+                   <div className="flex gap-0.5">
+                     <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                     <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                     <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                     <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                     <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                   </div>
+                     <p className="text-sm font-medium text-gray-700">1,200 hrs saved</p>
+                 </div>
+             </div>
+ 
+ 
+           {/*----- end social proof section here -------------*/}
+ 
+               <button
+                 onClick={openCommunityModal}
+                 className="group mt-8 flex items-center justify-center space-x-2 w-full sm:w-auto px-6 py-3 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 transition-colors shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-4 sm:text-lg mx-auto">
+                 <span>Become a Member</span>
+                 {/* Placeholder for ArrowRight icon or similar */}
+                <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+             </button> 
+ 
+ </section>      
+ {/*----------------- End Caregiving Support ----------------------- */}  
   
         
 {/*----------------- Start The Community ----------------------- */}
@@ -999,45 +1007,6 @@ const handleLoginClick = () => {
                 <span>The Poetiq Community</span>
           </div>
   </section> 
-
-{/*----------------- Start Why Join Community ----------------------- 
-  <section className="mt-2 text-center items-center">
-
-
-
-    <div className="items-center">
-
-         <div class="flex inset-0 opacity-70 
-             [background-image:radial-gradient(circle_at_center,rgba(239,68,68,0.4)_0%,rgba(234,179,8,0.3)_35%,transparent_70%)]">
-        </div>
-      
-        <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-red-400">
-            Why join our <br className="sm:hidden"/> Community
-        </h2> 
-        <p className="text-xl sm:text-2xl text-gray-500 mb-12 max-w-3xl mx-auto">
-            
-            The poetiq Community is where career professionals go to restore strategic focus and reclaim the hours required to execute their parental duty without compromising parental dignity. <br/><br/>
-          
-          It’s a private, high-integrity network where you'll get direct access to experienced peers who share unfiltered insights on the crisis. They help each other dismantle a system designed for the 19th Century. <br/><br/>
-          
-          The poetiq Community is where to find clarity, control, and the professional blueprint for dignified parental care
-          
-          </p>
-
-      <button
-              onClick={handleLoginClick}
-             className="group flex items-center justify-center space-x-2 w-full sm:w-auto px-6 py-3 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 transition-colors shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-4 sm:text-lg mx-auto">
-      
-           <span>Join Community</span>
-           <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-          </button>        
-      
-        </div>
-    
-      </section>
-        */}
-{/*-------------------------- End Why Join Community Section -------------------------------- */}   
-
 
 {/*---------------------- Start Gradient Version for Testing --------------------------------*/}        
 
