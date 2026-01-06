@@ -376,6 +376,29 @@ const handleLoginClick = () => {
 
 {/*---------------- End Adding the main hero image ----------------*/}
 
+{/*----------- starting adding main hero image (mobile)-----------*/}          
+
+{/*Image for Mobile Devices*/}
+<div className="sm:hidden w-full p-4 mt-8">
+  <div className="grid grid-cols-1 h-[450px]">
+     {/* Column 4: One image, spanning two rows */}
+        <div className="col-span-1">
+          <div className="relative overflow-hidden rounded-xl shadow-xl transform transition-all duration-300 hover:scale-105  h-full group">
+            <img
+              //src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/poetiq-hero-small.png"
+              src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/poetiq_hero_small_v1.png"
+              alt="Caregivers"
+              className="w-full h-full object-cover"
+            />
+            {/*<div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>*/}
+            
+          </div>
+        </div>
+    </div>
+  </div>
+
+{/*------------ end adding main hero image (mobile) --------------*/}   
+
       <p className="mt-16 mb-1 text-sm sm:text-sm md:text-lg text-red-400 font-normal">
         {/*<span className="font-normal">Join Our Newsletter 🔥</span>*/}
             <span> Get the latest Eldercare Guide 💌</span>
