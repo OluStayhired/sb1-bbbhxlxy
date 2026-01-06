@@ -981,13 +981,13 @@ const handleLoginClick = () => {
  
            {/*----- end social proof section here -------------*/}
  
-               <button
-                 onClick={openCommunityModal}
-                 className="group mt-8 flex items-center justify-center space-x-2 w-full sm:w-auto px-6 py-3 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 transition-colors shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-4 sm:text-lg mx-auto">
-                 <span>Become a Member</span>
-                 {/* Placeholder for ArrowRight icon or similar */}
-                <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-             </button> 
+           <button
+                onClick={openCommunityModal}
+                className="mt-8 flex items-center justify-center space-x-2 w-full sm:w-auto px-6 py-3 border border-red-500 bg-white text-red-500 text-base font-semibold rounded-lg hover:bg-red-500 hover:text-white transition-colors shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-4 sm:text-lg group mx-auto">
+                <span>Become a Member</span>
+                {/* Placeholder for ArrowRight icon or similar */}
+               <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+            </button> 
  
  </section>      
  {/*----------------- End Caregiving Support ----------------------- */}  
