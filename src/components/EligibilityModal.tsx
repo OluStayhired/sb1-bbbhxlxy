@@ -6,17 +6,19 @@ import {
   Upload, 
   Mail, 
   CheckCircle2, 
-  User, 
+  User,
   Sparkles,
   FileText,
   ArrowUpRight,
   Loader2,
   Brain,
   Shield
+  //CircleAlert
 } from 'lucide-react';
 import { z } from 'zod';
 import { supabase } from '../lib/supabase';
 import { getLongTermCareSupport } from '../lib/geminiLongTermCareSupport';
+import { TooltipExtended } from '/src/utils/TooltipExtended';
 
 interface EligibilityModalProps {
   isOpen: boolean;
@@ -51,6 +53,11 @@ export function EligibilityModal({ isOpen, onClose }: EligibilityModalProps) {
   const [emailSent, setEmailSent] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [error, setError] = useState('');
+  const [currentQuestions, setCurrentQuestions] = useState<string[]>([
+  "Tell me the basic eligibility requirements for LTC insurance?",
+  "How do pre-existing conditions affect LTCI eligibility?"
+]);
+
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   //const [isGeneratingResponse, setIsGeneratingResponse] = useState(false);
@@ -87,6 +94,87 @@ export function EligibilityModal({ isOpen, onClose }: EligibilityModalProps) {
     setMessages(prev => [...prev, newMessage]);
     setIsTyping(false);
   };
+
+  // Handle topic selection from the left panel
+const handleMedicaidTopic = async (topic: string) => {
+  // Define topic configurations
+  const topicConfig: Record<string, { message: string; questions: string[] }> = {
+    "Starting a Long Term Care Application": {
+      message: "Applying for long-term elder care in the U.S. involves filling out numerous, often complex, forms for programs like Medicaid or VA benefits, requiring extensive documentation of personal, financial (bank statements, income, assets, insurance), and medical information to prove eligibility for facility care or home-based support. The process can be lengthy, so having documents like proof of identity, income, and assets ready is crucial.",
+      questions: [
+        "What documents do I need?",
+        "Tell me how to start my application?",
+        "How do I access VA Long Term Care?"
+      ]
+    },
+    "Understanding LTCI eligibility criteria": {
+       message: "Eligibility for long-term care (LTC) insurance is primarily determined by your age and current health status, which are assessed through a rigorous underwriting process. You must generally apply while you are still healthy enough to not need care in the near future. To qualify for coverage, insurance companies conduct a thorough review of your medical history, which may include health questionnaires, a review of medical records, and potentially a medical exam.",
+       questions: [
+         "What are the key factors for eligibility?", 
+         "Once I have a policy what's next?",
+         "What if my application gets rejected?"
+       
+       ]
+     },
+    "Navigating pre-existing condition questions": {
+      message: "Long-term care (LTC) insurance, pre-existing conditions are a major hurdle, often leading to denial or exclusions, as insurers assess immediate risk of needing care, with conditions like dementia, Parkinson's, advanced diabetes, or recent major surgery being red flags; however, managing conditions well, shopping around for insurers with different risk appetites, and considering disease-specific plans can improve chances, but generally, good health at application is key.",
+      questions: [
+        "What do insurers look for?",
+        "How do insurers handle pre-existing conditions?",
+        "What to do if I have a condition?"       
+      ]
+    },
+    "Reviewing health underwriting issues": {
+      message: <> Generally, reviewing health underwriting issues requires understanding the legal framework, particularly the Affordable Care Act (ACA), and the specific underwriting methods used by different types of plans. <br/><br/>
+        <b>The Regulatory Context: Affordable Care Act (ACA)</b><br/>
+For qualified individual and group health plans that comply with the ACA, medical underwriting based on pre-existing conditions is largely banned.<br/><br/>
+        
+<b>Guaranteed Coverage:</b> Insurers generally cannot deny coverage or charge higher premiums due to a person's current or past health status (pre-existing conditions).<br/><br/>
+<b>Limited Rating Factors:</b> Premiums for these plans can only be based on a few factors: age, geography, family size, and tobacco use.<br/><br/>
+        
+<b>No Pre-existing Condition Exclusions:</b> The ACA prohibits waiting periods or exclusions for pre-existing conditions in compliant plans. 
+      </>
+    ,
+      questions: [
+        "Which plans are subject to underwritting?",
+        "What to do if my plan allows underwritting?"
+      ]
+    },
+    // Add more topics here as needed in the future
+    // "Understanding LTCI eligibility criteria": {
+    //   message: "Your message here",
+    //   questions: ["Question 1", "Question 2"]
+    // }
+  };
+
+  // Get the configuration for the selected topic
+  const config = topicConfig[topic];
+  
+  if (config) {
+    // Show typing indicator
+    setIsTyping(true);
+    
+    // Simulate AI processing time
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    
+    // Add assistant message with the topic-specific content
+    const assistantMessage: Message = {
+      id: Date.now().toString(),
+      role: 'assistant',
+      content: config.message,
+      timestamp: new Date()
+    };
+    
+    setMessages(prev => [...prev, assistantMessage]);
+    
+    // Update the prewritten questions
+    setCurrentQuestions(config.questions);
+
+    // Hide typing indicator
+    setIsTyping(false);
+  }
+};
+
 
   // Add this function to handle content generation
   // Handle sending a message
@@ -235,8 +323,10 @@ const handleSendMessage = async (content: string) => {
             <div className="p-2 bg-red-50 rounded-lg">
               <Shield className="w-6 h-6 text-red-500" />
             </div>
-            <h2 className="text-2xl font-bold text-gray-900">Long Term Care Eligibility</h2>
+            <h2 className="text-2xl font-bold text-gray-900">Medicaid Insurance Assistant</h2>
+            
           </div>
+          
           <button
             onClick={onClose}
             className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
@@ -244,7 +334,7 @@ const handleSendMessage = async (content: string) => {
             <X className="w-5 h-5 text-gray-500" />
           </button>
         </div>
-
+        
         {/* Main Content - Split Layout */}
         <div className="flex-1 flex overflow-hidden">
           {/* Left Side - Ellie's Profile */}
@@ -266,7 +356,7 @@ const handleSendMessage = async (content: string) => {
                 <h3 className="text-2xl font-bold text-gray-900">Ellie</h3>
                 <p className="text-sm font-semibold text-red-600 flex items-center justify-center space-x-1 mt-1">
                   <Sparkles className="w-4 h-4" />
-                  <span>Long Term Care Assistant</span>
+                  <span>Long Term Care Specialist</span>
                 </p>
               </div>
 
@@ -277,7 +367,7 @@ const handleSendMessage = async (content: string) => {
                   Hey there I'm Ellie! I know how hard it is to navigate long term care insurance. 
                   I'm here to help you figure out your options, answer your questions and guide you through the eligibility process with clarity.
                   */}
-                  My name is Ellie, I'm a long term care insurance expert. Here to guide you through the LTCI elgibility process.
+                  My name is Ellie, I'm a long term care insurance expert. I'll guide you through the LTCI and Medicaid elgibility process. 
                 </p>
               </div>
 
@@ -285,28 +375,66 @@ const handleSendMessage = async (content: string) => {
               <div className="bg-white rounded-lg p-4 shadow-sm border border-red-100 duration-500 hover:border-red-200 hover:shadow-md">
                 <h4 className="font-semibold text-gray-900 mb-3 flex items-center space-x-2">
                   <Brain className="w-4 h-4 text-red-500" />
-                  <span>What I Can Help With:</span>
+                  <span>What I Can Help With 👇</span>
                 </h4>
                 <ul className="space-y-2 text-sm text-gray-700">
                   <li className="flex items-start space-x-2">
                     <span className="text-red-500 mt-0.5">•</span>
-                    <span className="hover:text-red-500 duration-500">Understanding LTCI eligibility criteria</span>
+                    
+                    {/*<span className="hover:text-red-500 duration-500">Starting a Long Term Care Application</span>*/}
+
+                    <span 
+                        className="hover:text-red-500 duration-500 cursor-pointer"
+                        onClick={() => handleMedicaidTopic("Starting a Long Term Care Application")}
+                    >
+                        Starting a Long Term Care Application
+                    </span>
+
+                  </li>
+                  
+                  <li className="flex items-start space-x-2">
+                    <span className="text-red-500 mt-0.5">•</span>
+                    {/*<span className="hover:text-red-500 duration-500">Understanding LTCI eligibility criteria</span>*/}
+                    <span 
+                        className="hover:text-red-500 duration-500 cursor-pointer"
+                        onClick={() => handleMedicaidTopic("Understanding LTCI eligibility criteria")}
+                    >
+                        Understanding LTCI eligibility criteria
+                    </span>
+                    
                   </li>
                   <li className="flex items-start space-x-2">
                     <span className="text-red-500 mt-0.5">•</span>
-                    <span className="hover:text-red-500 duration-500">Answering pre-existing condition questions</span>
+                    {/*<span className="hover:text-red-500 duration-500">Navigating pre-existing condition questions</span>*/}
+                    <span 
+                        className="hover:text-red-500 duration-500 cursor-pointer"
+                        onClick={() => handleMedicaidTopic("Navigating pre-existing condition questions")}
+                    >
+                        Navigating pre-existing conditions
+                    </span>
                   </li>
                   <li className="flex items-start space-x-2">
                     <span className="text-red-500 mt-0.5">•</span>
-                    <span className="hover:text-red-500 duration-500">Reviewing health underwriting issues</span>
+                    {/*<span className="hover:text-red-500 duration-500">Reviewing health underwriting issues</span>*/}
+                    
+                    <span 
+                        className="hover:text-red-500 duration-500 cursor-pointer"
+                        onClick={() => handleMedicaidTopic("Reviewing health underwriting issues")}
+                    >
+                        Reviewing health underwriting issues
+                    </span>
                   </li>
                   <li className="flex items-start space-x-2">
                     <span className="text-red-500 mt-0.5">•</span>
+                    <TooltipExtended text="❤️ Join the Poetiq Community for Full Eldercare Support. Gain full access to the community. Get connected to Medicaid and Elder Law Experts in our network">
                     <span className="hover:text-red-500 duration-500">Explaining age and timing considerations</span>
+                    </TooltipExtended>  
                   </li>
                   <li className="flex items-start space-x-2">
                     <span className="text-red-500 mt-0.5">•</span>
+                    <TooltipExtended text="❤️ For access to alternative coverage options join Poetiq. Gain full access to the community. Get connected to Medicaid and Elder Law Experts in our network">
                     <span className="hover:text-red-500 duration-500">Discussing alternative coverage options</span>
+                    </TooltipExtended> 
                   </li>
                 </ul>
               </div>
@@ -393,7 +521,8 @@ const handleSendMessage = async (content: string) => {
               <div ref={messagesEndRef} />
             </div>
 
-            {/* Pre-written Questions */}
+            {/* Start old Pre-written Questions */}
+            {/*
             <div className="px-6 pb-2">
               <div className="flex flex-wrap gap-2">
                 {prewrittenQuestions.map((question, index) => (
@@ -407,6 +536,27 @@ const handleSendMessage = async (content: string) => {
                 ))}
               </div>
             </div>
+            */}
+            {/*  End old Pre-written Questions */}
+
+            {/*--------------- Pre-written Questions -------------*/}
+            
+              <div className="px-6 pb-2">
+                <div className="flex flex-wrap gap-2">
+                    {currentQuestions.map((question, index) => (
+                      <button
+                        key={index}
+                        onClick={() => handleSendMessage(question)}
+                        className="text-xs px-3 py-2 bg-white border border-red-200 text-red-600 rounded-full hover:bg-red-50 hover:border-red-300 transition-all duration-200 shadow-sm hover:shadow-md"
+                    >
+                      {question}
+                </button>
+                ))}
+            </div>
+          </div>
+        
+            {/*----------------  End New Pre-written Questions --------------*/}
+
 
             {/* Input Area */}
             <div className="border-t border-gray-200 p-6">
