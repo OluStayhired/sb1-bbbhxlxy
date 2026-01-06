@@ -473,7 +473,7 @@ const handleLoginClick = () => {
          <Target className="w-7 h-7 text-red-500 group-hover:scale-110 transition-transform" />
        </div>
        <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-red-500 transition-colors">
-         Managing Inefficient Systems
+         Navigating Inefficient Systems
        </h3>
        <p className="text-gray-600 text-sm leading-relaxed mb-6">
          At work, you optimize and delegate. In caregiving, you're trapped in a maze of broken bureaucracy, chasing insurance claims and care agencies that don't share your sense of urgency or standards.
