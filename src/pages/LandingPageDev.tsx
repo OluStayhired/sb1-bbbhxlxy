@@ -714,7 +714,7 @@ const handleLoginClick = () => {
              />
              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
              <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
-                 <h3 className="text-xl font-bold drop-shadow-lg">Book Emergency <br/> Caregivers</h3>
+                 <h3 className="text-xl font-bold drop-shadow-lg">Medicaid Insurance Assistant</h3>
              </div>
            </div>
          </div>
@@ -750,7 +750,7 @@ const handleLoginClick = () => {
             <span className="text-sm font-normal">Get Support</span>
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
            </button>
-                 <h3 className="text-xl font-bold drop-shadow-lg">Verify Insurance <br/> Eligibility</h3>
+                 <h3 className="text-xl font-bold drop-shadow-lg">Medicaid Insurance Assistant</h3>
              </div>
            </div>
  
@@ -779,7 +779,7 @@ const handleLoginClick = () => {
             <span className="text-sm font-normal">Get Support</span>
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
            </button>
-                 <h3 className="text-xl font-bold drop-shadow-lg">Get Early <br/> Financial Plan</h3>
+                 <h3 className="text-xl font-bold drop-shadow-lg">Strategic Financial Planner</h3>
              </div>
            </div>
          </div>
@@ -801,7 +801,7 @@ const handleLoginClick = () => {
             <span className="text-sm font-normal">Get Support</span>
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
            </button>
-                 <h3 className="text-xl font-bold drop-shadow-lg">Book Emergency Respite Care</h3>
+                 <h3 className="text-xl font-bold drop-shadow-lg">Rapid Respite Placement</h3>
              </div>
            </div>
             
@@ -825,7 +825,7 @@ const handleLoginClick = () => {
             <span className="text-sm font-normal">Get Support</span>
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
            </button>
-                 <h3 className="text-xl font-bold drop-shadow-lg">Manage <br/> Parental Stress</h3>
+                 <h3 className="text-xl font-bold drop-shadow-lg">Caregiving Stress Advisor</h3>
              </div>
            </div>
            <div className="relative h-full border hover:p-2 hover:border-red-500 overflow-hidden rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl group">
@@ -844,7 +844,7 @@ const handleLoginClick = () => {
             <span className="text-sm font-normal">Get Support</span>
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
            </button>
-                 <h3 className="text-xl font-bold drop-shadow-lg">Get Dementia Assessment</h3>
+                 <h3 className="text-xl font-bold drop-shadow-lg">Cognitive Health Assessment</h3>
              </div>
            </div>
          </div>
@@ -867,7 +867,7 @@ const handleLoginClick = () => {
             <span className="text-sm font-normal">Get Support</span>
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
            </button>
-                 <h3 className="text-xl font-bold drop-shadow-lg">Find Home Caregivers</h3>
+                 <h3 className="text-xl font-bold drop-shadow-lg">In-Home Care Intelligence</h3>
              </div>
            </div>
          </div>
@@ -890,7 +890,7 @@ const handleLoginClick = () => {
             <span className="text-sm font-normal">Get Support</span>
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
            </button>
-                 <h3 className="text-xl font-bold drop-shadow-lg">Start <br/> Living Well</h3>
+                 <h3 className="text-xl font-bold drop-shadow-lg">Vetted Elder Law Network</h3>
              </div>
            </div>
            
@@ -911,7 +911,7 @@ const handleLoginClick = () => {
             <span className="text-sm font-normal">Get Support</span>
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
            </button>
-                 <h3 className="text-xl font-bold drop-shadow-lg">Compare Residential <br/> Care Homes</h3>
+                 <h3 className="text-xl font-bold drop-shadow-lg">Residential Care Benchmarking</h3>
              </div>
            </div>
  
