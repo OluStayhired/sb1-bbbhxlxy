@@ -19,6 +19,7 @@ import { z } from 'zod';
 import { supabase } from '../lib/supabase';
 import { getLongTermCareSupport } from '../lib/geminiLongTermCareSupport';
 import { TooltipExtended } from '/src/utils/TooltipExtended';
+import { TooltipHelp } from '/src/utils/TooltipHelp';
 
 interface EligibilityModalProps {
   isOpen: boolean;
@@ -382,58 +383,64 @@ const handleSendMessage = async (content: string) => {
                     <span className="text-red-500 mt-0.5">•</span>
                     
                     {/*<span className="hover:text-red-500 duration-500">Starting a Long Term Care Application</span>*/}
-
+                    <TooltipHelp text="⚡Click for more info">
                     <span 
                         className="hover:text-red-500 duration-500 cursor-pointer"
                         onClick={() => handleMedicaidTopic("Starting a Long Term Care Application")}
                     >
                         Starting a Long Term Care Application
                     </span>
+                    </TooltipHelp>
 
                   </li>
                   
                   <li className="flex items-start space-x-2">
                     <span className="text-red-500 mt-0.5">•</span>
                     {/*<span className="hover:text-red-500 duration-500">Understanding LTCI eligibility criteria</span>*/}
+                    <TooltipHelp text="⚡Click for more info">
                     <span 
                         className="hover:text-red-500 duration-500 cursor-pointer"
                         onClick={() => handleMedicaidTopic("Understanding LTCI eligibility criteria")}
                     >
                         Understanding LTCI eligibility criteria
                     </span>
+                    </TooltipHelp>
                     
                   </li>
                   <li className="flex items-start space-x-2">
                     <span className="text-red-500 mt-0.5">•</span>
                     {/*<span className="hover:text-red-500 duration-500">Navigating pre-existing condition questions</span>*/}
+                    <TooltipHelp text="⚡Click for more info">
                     <span 
                         className="hover:text-red-500 duration-500 cursor-pointer"
                         onClick={() => handleMedicaidTopic("Navigating pre-existing condition questions")}
                     >
                         Navigating pre-existing conditions
                     </span>
+                    </TooltipHelp>
                   </li>
                   <li className="flex items-start space-x-2">
                     <span className="text-red-500 mt-0.5">•</span>
                     {/*<span className="hover:text-red-500 duration-500">Reviewing health underwriting issues</span>*/}
-                    
+                    <TooltipHelp text="⚡Click for more info">
                     <span 
                         className="hover:text-red-500 duration-500 cursor-pointer"
                         onClick={() => handleMedicaidTopic("Reviewing health underwriting issues")}
                     >
                         Reviewing health underwriting issues
                     </span>
+                      </TooltipHelp>
                   </li>
                   <li className="flex items-start space-x-2">
                     <span className="text-red-500 mt-0.5">•</span>
-                    <TooltipExtended text="❤️ Join the Poetiq Community for Full Eldercare Support. Gain full access to the community. Get connected to Medicaid and Elder Law Experts in our network">
-                    <span className="hover:text-red-500 duration-500">Explaining age and timing considerations</span>
+                    <TooltipExtended text="⚡ Join the Poetiq Community for Full Eldercare Support. Gain full access to the community. Get connected to Medicaid and Elder Law Experts in our network">
+                    <span className="text-gray-300 hover:text-red-500 duration-500">Explaining age and timing considerations</span>
                     </TooltipExtended>  
                   </li>
                   <li className="flex items-start space-x-2">
                     <span className="text-red-500 mt-0.5">•</span>
-                    <TooltipExtended text="❤️ For access to alternative coverage options join Poetiq. Gain full access to the community. Get connected to Medicaid and Elder Law Experts in our network">
-                    <span className="hover:text-red-500 duration-500">Discussing alternative coverage options</span>
+                    <TooltipExtended text="⚡ For access to alternative coverage options join Poetiq. Gain full access to the community. Get connected to Medicaid and Elder Law Experts in our network">
+                    <span className="text-gray-300 hover:text-red-500 duration-500">Discussing alternative coverage options</span>
                     </TooltipExtended> 
                   </li>
                 </ul>
