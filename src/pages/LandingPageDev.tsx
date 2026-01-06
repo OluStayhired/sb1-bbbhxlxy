@@ -683,15 +683,23 @@ const handleLoginClick = () => {
  {/*----------------- Start Caregiving Support ----------------------- */}
 <section id="CaregivingSupport" className="text-center mt-32">
   
-  <h2 className="text-2xl text-red-400 sm:text-4xl md:text-5xl font-bold leading-tight mb-4">
-    {/*Community for Career Professionals 👩‍💻*/}
-     Caregiving Support for Busy Execs 
-   </h2>
-   {/*<p className="text-xl sm:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto hover:text-red-500">*/}
-   <p className="text-xl sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
-     {/*We empower the modern workforce to make better caregiving decisions.*/}
-    Get instant community support without wasting hours on calls.
-   </p>          
+<h2 className="text-2xl text-red-400 sm:text-4xl md:text-5xl font-bold leading-tight mb-4">
+   {/*Community for Career Professionals 👩‍💻*/}
+   {/*Caregiving Support for Busy Execs*/}
+    Move from Research to Action
+  </h2>
+  <p className="sm:hidden text-xl sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
+    {/*We empower the modern workforce to make better caregiving decisions.*/}
+    {/*Get instant community support without wasting hours on calls.*/}
+   Stop starting from zero. Unlock a care infrastructure of vetted experts and tools powered by the collective intelligence of our executive community.
+  </p>          
+
+  <p className="hidden sm:inline text-xl sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
+    {/*We empower the modern workforce to make better caregiving decisions.*/}
+    {/*Get instant community support without wasting hours on calls.*/}
+   Stop starting from zero. Unlock a care infrastructure of vetted experts and <br/>
+    tools powered by the collective intelligence of our executive community.
+  </p>  
  
  {/*Image for Mobile Devices*/}
  <div className="sm:hidden w-full p-4 mt-8">
@@ -705,8 +713,8 @@ const handleLoginClick = () => {
                className="w-full h-full object-cover object-[30%_50%]"
              />
              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
-             <div class="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
-                 <h3 class="text-xl font-bold drop-shadow-lg">Book Emergency <br/> Caregivers</h3>
+             <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
+                 <h3 className="text-xl font-bold drop-shadow-lg">Book Emergency <br/> Caregivers</h3>
              </div>
            </div>
          </div>
@@ -742,7 +750,7 @@ const handleLoginClick = () => {
             <span className="text-sm font-normal">Get Support</span>
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
            </button>
-                 <h3 class="text-xl font-bold drop-shadow-lg">Verify Insurance <br/> Eligibility</h3>
+                 <h3 className="text-xl font-bold drop-shadow-lg">Verify Insurance <br/> Eligibility</h3>
              </div>
            </div>
  
@@ -763,7 +771,7 @@ const handleLoginClick = () => {
                className="w-full h-full rounded-xl object-cover aspect-square" // Square aspect ratio for stacked images
              />
              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
-             <div class="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
+             <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
                <button
              //onClick={openCommunityModal}
              className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
@@ -771,7 +779,7 @@ const handleLoginClick = () => {
             <span className="text-sm font-normal">Get Support</span>
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
            </button>
-                 <h3 class="text-xl font-bold drop-shadow-lg">Get Early <br/> Financial Plan</h3>
+                 <h3 className="text-xl font-bold drop-shadow-lg">Get Early <br/> Financial Plan</h3>
              </div>
            </div>
          </div>
@@ -785,7 +793,7 @@ const handleLoginClick = () => {
                className="w-full h-full rounded-xl object-cover object-[40%_70%]" // 'h-full' ensures the image fills the row-span-2 container
              />
              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
-             <div class="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
+             <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
                <button
              //onClick={openCommunityModal}
              className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
@@ -793,7 +801,7 @@ const handleLoginClick = () => {
             <span className="text-sm font-normal">Get Support</span>
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
            </button>
-                 <h3 class="text-xl font-bold drop-shadow-lg">Book Emergency Respite Care</h3>
+                 <h3 className="text-xl font-bold drop-shadow-lg">Book Emergency Respite Care</h3>
              </div>
            </div>
             
@@ -809,7 +817,7 @@ const handleLoginClick = () => {
                className="w-full h-full rounded-xl object-cover aspect-square"
              />
              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
-             <div class="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
+             <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
                <button
              //onClick={openCommunityModal}
              className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
@@ -817,7 +825,7 @@ const handleLoginClick = () => {
             <span className="text-sm font-normal">Get Support</span>
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
            </button>
-                 <h3 class="text-xl font-bold drop-shadow-lg">Manage <br/> Parental Stress</h3>
+                 <h3 className="text-xl font-bold drop-shadow-lg">Manage <br/> Parental Stress</h3>
              </div>
            </div>
            <div className="relative h-full border hover:p-2 hover:border-red-500 overflow-hidden rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl group">
@@ -828,7 +836,7 @@ const handleLoginClick = () => {
                className="w-full h-full rounded-xl object-cover aspect-square"
              />
              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
-               <div class="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
+               <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
                  <button
              //onClick={openCommunityModal}
              className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
@@ -836,7 +844,7 @@ const handleLoginClick = () => {
             <span className="text-sm font-normal">Get Support</span>
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
            </button>
-                 <h3 class="text-xl font-bold drop-shadow-lg">Get Dementia Assessment</h3>
+                 <h3 className="text-xl font-bold drop-shadow-lg">Get Dementia Assessment</h3>
              </div>
            </div>
          </div>
@@ -851,7 +859,7 @@ const handleLoginClick = () => {
                className="w-full h-full rounded-xl object-cover object-[30%_50%]"
              />
              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
-             <div class="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
+             <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
                <button
              //onClick={openCommunityModal}
              className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
@@ -859,7 +867,7 @@ const handleLoginClick = () => {
             <span className="text-sm font-normal">Get Support</span>
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
            </button>
-                 <h3 class="text-xl font-bold drop-shadow-lg">Find Home Caregivers</h3>
+                 <h3 className="text-xl font-bold drop-shadow-lg">Find Home Caregivers</h3>
              </div>
            </div>
          </div>
@@ -874,7 +882,7 @@ const handleLoginClick = () => {
                className="w-full h-full rounded-xl object-cover aspect-square"
              />
              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
-             <div class="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
+             <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
                <button
              //onClick={openCommunityModal}
              className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
@@ -882,7 +890,7 @@ const handleLoginClick = () => {
             <span className="text-sm font-normal">Get Support</span>
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
            </button>
-                 <h3 class="text-xl font-bold drop-shadow-lg">Start <br/> Living Well</h3>
+                 <h3 className="text-xl font-bold drop-shadow-lg">Start <br/> Living Well</h3>
              </div>
            </div>
            
@@ -895,7 +903,7 @@ const handleLoginClick = () => {
                className="w-full h-full rounded-xl object-cover aspect-square"
              />
              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
-             <div class="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
+             <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
                <button
              //onClick={openCommunityModal}
              className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
@@ -903,7 +911,7 @@ const handleLoginClick = () => {
             <span className="text-sm font-normal">Get Support</span>
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
            </button>
-                 <h3 class="text-xl font-bold drop-shadow-lg">Compare Residential <br/> Care Homes</h3>
+                 <h3 className="text-xl font-bold drop-shadow-lg">Compare Residential <br/> Care Homes</h3>
              </div>
            </div>
  
@@ -1556,12 +1564,12 @@ const handleLoginClick = () => {
 
           
 
-          <p class="text-sm text-gray-700 text-center leading-relaxed">
+          <p className="text-sm text-gray-700 text-center leading-relaxed">
     Community for executive professionals striving to build a career while caring for aging parents. 
     Connect with 
-    <a href="https://www.linkedin.com/in/oluadedeji" class="text-red-500 hover:text-red-600 font-medium transition-colors"> <u>Olu</u> </a>
+    <a href="https://www.linkedin.com/in/oluadedeji" className="text-red-500 hover:text-red-600 font-medium transition-colors"> <u>Olu</u> </a>
     and 
-    <a href="https://www.linkedin.com/in/jeffreymbaumgarten/" class="text-red-500 hover:text-red-600 font-medium transition-colors"> <u>Jeff</u> </a>
+    <a href="https://www.linkedin.com/in/jeffreymbaumgarten/" className="text-red-500 hover:text-red-600 font-medium transition-colors"> <u>Jeff</u> </a>
     on LinkedIn.
 </p>
         </div>
