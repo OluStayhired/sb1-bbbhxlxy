@@ -697,8 +697,8 @@ const handleLoginClick = () => {
   <p className="hidden sm:inline text-xl sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
     {/*We empower the modern workforce to make better caregiving decisions.*/}
     {/*Get instant community support without wasting hours on calls.*/}
-   Stop starting from zero. Unlock a care infrastructure of vetted experts and <br/>
-    tools powered by the collective intelligence of our executive community.
+   Stop starting from zero. Unlock a care infrastructure of vetted experts and tools <br/>
+    powered by the collective intelligence of our executive community.
   </p>  
  
  {/*Image for Mobile Devices*/}
