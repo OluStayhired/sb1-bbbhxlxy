@@ -6,7 +6,7 @@ import {
   Upload, 
   Mail, 
   CheckCircle2, 
-  User,
+  User, 
   Sparkles,
   FileText,
   ArrowUpRight,
