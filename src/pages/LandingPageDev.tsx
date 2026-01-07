@@ -20,6 +20,8 @@ import { Link } from 'react-router-dom';
 import { OurStoryTimeline } from '../components/OurStoryTimeline';
 import { EligibilityModal } from '../components/EligibilityModal.tsx';
 import { MentallyBroken } from '../components/MentallyBroken.tsx';
+import { NavigateSystems } from '../components/NavigateSystems.tsx';
+import { ConsumedByBills } from '../components/ConsumedByBills.tsx';
 
 function LandingPageDev() {
   const navigate = useNavigate();
@@ -35,7 +37,12 @@ function LandingPageDev() {
   const [isCommunityModalOpen, setIsCommunityModalOpen] = useState(false);
   const [isCommunitySuccessModalOpen, setIsCommunitySuccessModalOpen] = useState(false);
   const [isEligibilityModalOpen, setIsEligibilityModalOpen] = useState(false);
+
+  //constants for the grid buttons
   const [isMentallyBrokenModalOpen, setIsMentallyBrokenModalOpen] = useState(false);
+  const [isNavigateSystemsModalOpen, setIsNavigateSystemsModalOpen] = useState(false);
+  const [isConsumedByBillsModalOpen, setIsConsumedByBillsModalOpen] = useState(false);
+
 
 const handleLoginClick = () => {
     // This navigates to an external URL, not an internal route
@@ -89,6 +96,32 @@ const handleLoginClick = () => {
   
   const handleMentallyBrokenToCommunity = () => {
     setIsMentallyBrokenModalOpen(false);
+    setIsCommunityModalOpen(true);
+  };
+
+  const openNavigateSystemsModal = () => {
+    setIsNavigateSystemsModalOpen(true);
+  };
+  
+  const closeNavigateSystemsModal = () => {
+    setIsNavigateSystemsModalOpen(false);
+  };
+  
+  const handleNavigateSystemsToCommunity = () => {
+    setIsNavigateSystemsModalOpen(false);
+    setIsCommunityModalOpen(true);
+  };
+  
+  const openConsumedByBillsModal = () => {
+    setIsConsumedByBillsModalOpen(true);
+  };
+  
+  const closeConsumedByBillsModal = () => {
+    setIsConsumedByBillsModalOpen(false);
+  };
+  
+  const handleConsumedByBillsToCommunity = () => {
+    setIsConsumedByBillsModalOpen(false);
     setIsCommunityModalOpen(true);
   };
   
@@ -502,7 +535,8 @@ const handleLoginClick = () => {
          At work, you optimize and delegate. In caregiving, you're trapped in a maze of broken bureaucracy, chasing insurance claims and care agencies that don't share your sense of urgency or standards.
        </p>
        <button
-         onClick={openCommunityModal}
+          onClick={openNavigateSystemsModal}
+         //onClick={openCommunityModal}
          className="w-full py-3 px-4 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-red-500/50 flex items-center justify-center space-x-2 group/btn"
        >
          <span>Fix the Logistics</span>
@@ -522,7 +556,8 @@ const handleLoginClick = () => {
          You watch your parents' hard-earned legacy and your own financial peace of mind evaporate into monthly care costs. Every agency invoice feels like a countdown you simply can't stop.
        </p>
        <button
-         onClick={openCommunityModal}
+         //onClick={openCommunityModal}
+         onClick={openConsumedByBillsModal}
          className="w-full py-3 px-4 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-red-500/50 flex items-center justify-center space-x-2 group/btn"
        >
          <span>Protect your Legacy</span>
@@ -1641,6 +1676,18 @@ const handleLoginClick = () => {
         onClose={closeMentallyBrokenModal}
         onOpenCommunity={handleMentallyBrokenToCommunity}
       />
+
+<NavigateSystems
+  isOpen={isNavigateSystemsModalOpen}
+  onClose={closeNavigateSystemsModal}
+  onOpenCommunity={handleNavigateSystemsToCommunity}
+/>
+
+    <ConsumedByBills
+  isOpen={isConsumedByBillsModalOpen}
+  onClose={closeConsumedByBillsModal}
+  onOpenCommunity={handleConsumedByBillsToCommunity}
+/>
         
 {isWaitlistSuccessModalOpen ? (
   <div className="fixed top-4 right-4 bg-white rounded-lg shadow-lg border border-green-100 p-4 flex items-center space-x-3 animate-fade-in z-[9999]">
