@@ -24,6 +24,8 @@ import { NavigateSystems } from '../components/NavigateSystems.tsx';
 import { ConsumedByBills } from '../components/ConsumedByBills.tsx';
 import { CareerOpps } from '../components/CareerOpps';
 import { BrokenByFamily } from '../components/BrokenByFamily';
+import { OnCallStress } from '../components/OnCallStress';
+
 
 
 function LandingPageDev() {
@@ -47,6 +49,8 @@ function LandingPageDev() {
   const [isConsumedByBillsModalOpen, setIsConsumedByBillsModalOpen] = useState(false);
   const [isCareerOppsModalOpen, setIsCareerOppsModalOpen] = useState(false);
   const [isBrokenByFamilyModalOpen, setIsBrokenByFamilyModalOpen] = useState(false);
+  const [isOnCallStressModalOpen, setIsOnCallStressModalOpen] = useState(false);
+
 
 
 
@@ -157,6 +161,18 @@ const handleLoginClick = () => {
     setIsCommunityModalOpen(true);
   };
   
+  const openOnCallStressModal = () => {
+    setIsOnCallStressModalOpen(true);
+  };
+  
+  const closeOnCallStressModal = () => {
+    setIsOnCallStressModalOpen(false);
+  };
+  
+  const handleOnCallStressToCommunity = () => {
+    setIsOnCallStressModalOpen(false);
+    setIsCommunityModalOpen(true);
+  };
   
   
   const handleGoogleLogin = async () => {
@@ -653,7 +669,8 @@ const handleLoginClick = () => {
          You live in a constant state of high-alert. Every late-night call or unexpected text is a potential day-off at work, leaving you in a cycle of chronic stress that means you now wake up at 3 a.m. every day.
        </p>
        <button
-         onClick={openCommunityModal}
+         //onClick={openCommunityModal}
+         onClick={openOnCallStressModal}
          className="w-full py-3 px-4 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-red-500/50 flex items-center justify-center space-x-2 group/btn"
        >
          <span>Find your Peace</span>
@@ -1734,6 +1751,12 @@ const handleLoginClick = () => {
   isOpen={isBrokenByFamilyModalOpen}
   onClose={closeBrokenByFamilyModal}
   onOpenCommunity={handleBrokenByFamilyToCommunity}
+/>
+
+<OnCallStress
+  isOpen={isOnCallStressModalOpen}
+  onClose={closeOnCallStressModal}
+  onOpenCommunity={handleOnCallStressToCommunity}
 />
 
 
