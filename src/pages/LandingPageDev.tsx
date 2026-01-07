@@ -441,7 +441,7 @@ const handleLoginClick = () => {
    <p className="text-xl sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
      {/*We empower the modern workforce to make better caregiving decisions.*/}
      {/*Get instant community support without wasting hours on calls.*/}  
-   If you recognize yourself in these 6 scenarios, you need a reset.
+   If you recognize yourself in any of these 6 scenarios, you need a reset.
    </p>  
  
    {/* 3x2 Grid of Cards */}
@@ -456,7 +456,7 @@ const handleLoginClick = () => {
          Feeling Mentally Broken
        </h3>
        <p className="text-gray-600 text-sm leading-relaxed mb-6">
-         You project authority in meetings but you're silently breaking. You context switch between strategic work and eldercare firefighting, pushing your mental capacity to the breaking point.
+         You project authority in meetings but you're silently breaking. You context switch between strategic work and eldercare firefighting, pushing your mental capacity to breaking point.
        </p>
        <button
          onClick={openCommunityModal}
@@ -516,7 +516,7 @@ const handleLoginClick = () => {
          Skipping Career Opportunities
        </h3>
        <p className="text-gray-600 text-sm leading-relaxed mb-6">
-         You've started saying "no" to the travel, the dinners, and the promotions that would have defined your legacy. Your career is stalling because you simply can't be in two places at once.
+         You've started saying "no" to the travel, the dinners, and the golf days that would have opened doors for you. Your career is stalling because you simply can't be in two places at once.
        </p>
        <button
          onClick={openCommunityModal}
@@ -556,7 +556,7 @@ const handleLoginClick = () => {
          Being Permanently On-Call
        </h3>
        <p className="text-gray-600 text-sm leading-relaxed mb-6">
-         You live in a state of high-alert 24/7. Every late-night phone ring or unexpected text is a potential catastrophe, leaving you in a cycle of chronic stress that means you now wake up at 3 a.m. every day.
+         You live in a constant state of high-alert. Every late-night call or unexpected text is a potential day-off at work, leaving you in a cycle of chronic stress that means you now wake up at 3 a.m. every day.
        </p>
        <button
          onClick={openCommunityModal}
@@ -698,13 +698,13 @@ const handleLoginClick = () => {
   <p className="sm:hidden text-xl sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
     {/*We empower the modern workforce to make better caregiving decisions.*/}
     {/*Get instant community support without wasting hours on calls.*/}
-   Stop starting from zero. Unlock a care infrastructure of vetted experts and tools powered by the collective intelligence of our executive community.
+   Don't start from zero. Unlock a care infrastructure of vetted experts and tools powered by the collective intelligence of our executive community.
   </p>          
 
   <p className="hidden sm:inline text-xl sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
     {/*We empower the modern workforce to make better caregiving decisions.*/}
     {/*Get instant community support without wasting hours on calls.*/}
-   Stop starting from zero. Unlock a care infrastructure of vetted experts and tools <br/>
+   Don't start from zero. Unlock a care infrastructure of vetted experts and tools <br/>
     powered by the collective intelligence of our executive community.
   </p>  
  
