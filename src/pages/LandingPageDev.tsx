@@ -212,47 +212,87 @@ const handleLoginClick = () => {
          <div className="hidden sm:flex items-center space-x-4">
           <div className="items-center flex justify-center space-x-2">
 
-              {/* START: Eldercare Tools Dropdown Menu */}
+             {/*---------------------------- Start the new Mega-Width Dropdown Menu --------------------------*/}
+
+            {/* START: Eldercare Tools Dropdown Menu */}
               <div className="relative group">
                 {/* Menu Header - Eldercare Tools */}
-                <button className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">
-                  Caregiving Tools 🩺
-                  </button>
+                  <button className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">
+                    Caregiving Tools 🩺
+                </button>
 
-                    {/* Dropdown Content - Hidden by default, shown on group hover */}
-                    <div
-                          className="absolute left-1/2 -translate-x-1/2 top-full mt-[-0.5] w-56 rounded-lg shadow-xl bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block z-50 transition-opacity duration-150 ease-out"
-      >
-                        <div className="py-1">
-                          {/* Caregivers Near Me */}
-                            <a href="https://poetiq.io/dev/home-health-care"
-                                className="flex text-sm items-center space-x-2 px-4 py-2 hover:bg-gray-50 hover:text-red-500 rounded-lg"
-                              >
-                                <MapPin className="w-3.5 h-3.5" />
-                                <span>Caregivers Near Me</span>
-                    
-                            </a>
-                            {/* Nursing Home Finder */}
-                              <a
-                                  href="https://poetiq.io/dev/nursing-home"
-                                  className="flex text-sm items-center space-x-2 px-4 py-2 hover:bg-gray-50 hover:text-red-500 rounded-lg"
-                                >
-                                  <Search className="w-3.5 h-3.5" />
-                                  <span>Nursing Home Finder</span>
-                              </a>
+                {/* Mega Menu Dropdown - Full Width 3 Column */}
+                  <div className="absolute left-1/2 -translate-x-1/2 top-full mt-[-0.5] w-screen max-w-5xl rounded-2xl shadow-2xl bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block z-50 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out transform group-hover:translate-y-0 translate-y-2">
+                    {/* Grid Container */}
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-8">
+      
+                        {/* Card 1: Caregiver Agency Finder */}
+                        <a href="https://poetiq.io/dev/home-health-care"
+                            className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
+                          >
+                              {/* Icon Container */}
+                              <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
+                              <MapPin className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
+                              </div>
 
-                              {/* Dementia Assessment Tool */}
-                              <a
-                                  href="https://poetiq.io/dev/dementia-assessment"
-                                  className="flex text-sm items-center space-x-2 px-4 py-2 hover:bg-gray-50 hover:text-red-500 rounded-lg"
-                                >
-                                  <CheckCircle className="w-3.5 h-3.5" />
-                                  <span>Dementia Assessment</span>
-                              </a>
-                          </div>
-                        </div>
+                              {/* Title */}
+                              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
+                                  Caregiver Agency Finder
+                              </h3>
+        
+                              {/* Description */}
+                                <p className="text-sm text-gray-600 leading-relaxed">
+                                Simple tool to help you find rated caregiver agencies close to you. Search 12,500 caregiving agencies. Get summary reports and book a call.
+                                </p>
+                          </a>
+
+                        {/* Card 2: Nursing Home Finder */}
+                        <a href="https://poetiq.io/dev/nursing-home"
+                            className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
+                        >
+                                {/* Icon Container */}
+                                <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
+                                  <Search className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
+                                </div>
+        
+                              {/* Title */}
+                              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
+                                Nursing Home Finder
+                              </h3>
+        
+                              {/* Description */}
+                              <p className="text-sm text-gray-600 leading-relaxed">
+                                Discover highly-rated nursing homes and assisted living facilities in your area. Compare ratings, amenities, and care quality to make informed decisions.
+                              </p>
+                        </a>
+
+                        {/* Card 3: Dementia Assessment Test */}
+                        <a
+                          href="https://poetiq.io/dev/dementia-assessment"
+                          className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
+                        >
+                            {/* Icon Container */}
+                            <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
+                              <CheckCircle className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
+                            </div>
+        
+                            {/* Title */}
+                            <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
+                              Dementia Assessment Test
+                            </h3>
+        
+                            {/* Description */}
+                            <p className="text-sm text-gray-600 leading-relaxed">
+                              Take a comprehensive cognitive assessment to evaluate memory and thinking skills. Get insights and recommendations for next steps in care planning.
+                            </p>
+                        </a>
+
                       </div>
-                      {/* END: Eldercare Tools Dropdown Menu */}
+                    </div>
+                  </div>
+              {/* END: Eldercare Tools Dropdown Menu */}
+
+     {/*--------------------------- End the new Mega-Width Dropdown Menu -----------------------------*/}     
 
         {/*Remaining Menu Buttons */}
           <button
