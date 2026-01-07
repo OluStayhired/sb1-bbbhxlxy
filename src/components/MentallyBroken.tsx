@@ -44,7 +44,7 @@ export function MentallyBroken({ isOpen, onClose, onOpenCommunity }: MentallyBro
         <div className="text-center mb-6">
           <h2 className="text-3xl font-bold text-gray-800 mb-2">
             Delegate the Crisis{' '}<br/>
-            <span className="text-red-500 text-xl">Reclaim your Focus.</span>
+            <span className="text-red-500 text-xl">Rescue your Career.</span>
           </h2>
         </div>
 
