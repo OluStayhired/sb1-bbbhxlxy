@@ -20,6 +20,7 @@ import { supabase } from '../lib/supabase';
 import { getLongTermCareSupport } from '../lib/geminiLongTermCareSupport';
 import { TooltipExtended } from '/src/utils/TooltipExtended';
 import { TooltipHelp } from '/src/utils/TooltipHelp';
+import { TypingEffect } from './TypingEffect'
 
 interface EligibilityModalProps {
   isOpen: boolean;
@@ -495,10 +496,27 @@ const handleSendMessage = async (content: string) => {
                     className={`max-w-[75%] rounded-lg p-4 ${
                       message.role === 'user'
                         ? 'bg-red-500 text-white hover:shadow-md hover:shadow-red-200 duration-500'
-                        : 'bg-gray-100 text-gray-900 border border-gray-200 hover:shadow-md hover:border-red-200 duration-500'
+                        : 'bg-gray-100 text-gray-900 border border-gray-200 hover:shadow-md hover:border-red-200 duration-500 w-full min-w-[400px]'
                     }`}
                   >
-                    <p className="text-xs leading-relaxed">{message.content}</p>
+                    {/*<p className="text-xs leading-relaxed">{message.content}</p>*/}
+                    
+                    {/*
+                    speed={10} - Very fast typing
+                    speed={20} - Fast typing (recommended)
+                    speed={30} - Medium typing
+                    speed={50} - Slower typing (default)
+                    */}
+                    
+                    <p className="text-xs leading-relaxed">
+                        {message.role === 'assistant' ? (
+                          <TypingEffect text={message.content} speed={20} />
+                        ) : (
+                          message.content
+                        )}
+                    </p>
+
+                    
                     <p
                       className={`text-xs mt-2 ${
                         message.role === 'user' ? 'text-red-100' : 'text-gray-500'
