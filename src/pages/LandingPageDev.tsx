@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CalendarCheck, Calendar, PenSquare, Clock, Users, PenTool, Briefcase, Plus, Minus,Menu, MailCheck,
   Bot, CheckCircle,X, Send,Timer, Zap, ArrowRight, HeartPulse, Brain, Target, MapPin,
-  Lightbulb, Sparkles, CircleDollarSign, Star, Search } from 'lucide-react';
+  Lightbulb, Sparkles, CircleDollarSign, Star, Search, Check } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { AuthModal } from '../components/AuthModal';
 import BlueskyLogo from '../images/bluesky-logo.svg';
@@ -18,8 +18,8 @@ import { NewsletterModal } from '../components/NewsletterModal.tsx';
 import { CommunityModal } from '../components/CommunityModal.tsx';
 import { Link } from 'react-router-dom';
 import { OurStoryTimeline } from '../components/OurStoryTimeline';
-
 import { EligibilityModal } from '../components/EligibilityModal.tsx';
+import { MentallyBroken } from '../components/MentallyBroken.tsx';
 
 function LandingPageDev() {
   const navigate = useNavigate();
@@ -34,8 +34,8 @@ function LandingPageDev() {
   const [isNewsletterSuccessModalOpen, setIsNewsletterSuccessModalOpen] = useState(false);
   const [isCommunityModalOpen, setIsCommunityModalOpen] = useState(false);
   const [isCommunitySuccessModalOpen, setIsCommunitySuccessModalOpen] = useState(false);
-
   const [isEligibilityModalOpen, setIsEligibilityModalOpen] = useState(false);
+  const [isMentallyBrokenModalOpen, setIsMentallyBrokenModalOpen] = useState(false);
 
 const handleLoginClick = () => {
     // This navigates to an external URL, not an internal route
@@ -77,6 +77,19 @@ const handleLoginClick = () => {
   
       const closeEligibilityModal = () => {
     setIsEligibilityModalOpen(false);
+  };
+
+  const openMentallyBrokenModal = () => {
+    setIsMentallyBrokenModalOpen(true);
+  };
+  
+  const closeMentallyBrokenModal = () => {
+    setIsMentallyBrokenModalOpen(false);
+  };
+  
+  const handleMentallyBrokenToCommunity = () => {
+    setIsMentallyBrokenModalOpen(false);
+    setIsCommunityModalOpen(true);
   };
   
   const handleGoogleLogin = async () => {
@@ -468,7 +481,8 @@ const handleLoginClick = () => {
          You project authority in meetings but you're silently breaking. You context switch between strategic work and eldercare firefighting, pushing your mental capacity to breaking point.
        </p>
        <button
-         onClick={openCommunityModal}
+         //onClick={openCommunityModal}
+         onClick={openMentallyBrokenModal}
          className="w-full py-3 px-4 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-red-500/50 flex items-center justify-center space-x-2 group/btn"
        >
          <span>Restore your Focus</span>
@@ -1620,6 +1634,12 @@ const handleLoginClick = () => {
       <EligibilityModal
         isOpen={isEligibilityModalOpen}
         onClose={closeEligibilityModal}
+      />
+
+<MentallyBroken
+        isOpen={isMentallyBrokenModalOpen}
+        onClose={closeMentallyBrokenModal}
+        onOpenCommunity={handleMentallyBrokenToCommunity}
       />
         
 {isWaitlistSuccessModalOpen ? (
