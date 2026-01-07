@@ -22,6 +22,8 @@ import { EligibilityModal } from '../components/EligibilityModal.tsx';
 import { MentallyBroken } from '../components/MentallyBroken.tsx';
 import { NavigateSystems } from '../components/NavigateSystems.tsx';
 import { ConsumedByBills } from '../components/ConsumedByBills.tsx';
+import { CareerOpps } from '../components/CareerOpps';
+
 
 function LandingPageDev() {
   const navigate = useNavigate();
@@ -42,6 +44,8 @@ function LandingPageDev() {
   const [isMentallyBrokenModalOpen, setIsMentallyBrokenModalOpen] = useState(false);
   const [isNavigateSystemsModalOpen, setIsNavigateSystemsModalOpen] = useState(false);
   const [isConsumedByBillsModalOpen, setIsConsumedByBillsModalOpen] = useState(false);
+  const [isCareerOppsModalOpen, setIsCareerOppsModalOpen] = useState(false);
+
 
 
 const handleLoginClick = () => {
@@ -124,6 +128,20 @@ const handleLoginClick = () => {
     setIsConsumedByBillsModalOpen(false);
     setIsCommunityModalOpen(true);
   };
+
+  const openCareerOppsModal = () => {
+    setIsCareerOppsModalOpen(true);
+  };
+  
+  const closeCareerOppsModal = () => {
+    setIsCareerOppsModalOpen(false);
+  };
+  
+  const handleCareerOppsToCommunity = () => {
+    setIsCareerOppsModalOpen(false);
+    setIsCommunityModalOpen(true);
+  };
+  
   
   const handleGoogleLogin = async () => {
   try {
@@ -577,7 +595,8 @@ const handleLoginClick = () => {
          You've started saying "no" to the travel, the dinners, and the golf days that would have opened doors for you. Your career is stalling because you simply can't be in two places at once.
        </p>
        <button
-         onClick={openCommunityModal}
+         //onClick={openCommunityModal}
+         onClick={openCareerOppsModal}
          className="w-full py-3 px-4 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-red-500/50 flex items-center justify-center space-x-2 group/btn"
        >
          <span>Reclaim your Career</span>
@@ -1688,6 +1707,13 @@ const handleLoginClick = () => {
   onClose={closeConsumedByBillsModal}
   onOpenCommunity={handleConsumedByBillsToCommunity}
 />
+
+<CareerOpps
+  isOpen={isCareerOppsModalOpen}
+  onClose={closeCareerOppsModal}
+  onOpenCommunity={handleCareerOppsToCommunity}
+/>
+
         
 {isWaitlistSuccessModalOpen ? (
   <div className="fixed top-4 right-4 bg-white rounded-lg shadow-lg border border-green-100 p-4 flex items-center space-x-3 animate-fade-in z-[9999]">
