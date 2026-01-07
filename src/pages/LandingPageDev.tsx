@@ -23,6 +23,7 @@ import { MentallyBroken } from '../components/MentallyBroken.tsx';
 import { NavigateSystems } from '../components/NavigateSystems.tsx';
 import { ConsumedByBills } from '../components/ConsumedByBills.tsx';
 import { CareerOpps } from '../components/CareerOpps';
+import { BrokenByFamily } from '../components/BrokenByFamily';
 
 
 function LandingPageDev() {
@@ -45,6 +46,7 @@ function LandingPageDev() {
   const [isNavigateSystemsModalOpen, setIsNavigateSystemsModalOpen] = useState(false);
   const [isConsumedByBillsModalOpen, setIsConsumedByBillsModalOpen] = useState(false);
   const [isCareerOppsModalOpen, setIsCareerOppsModalOpen] = useState(false);
+  const [isBrokenByFamilyModalOpen, setIsBrokenByFamilyModalOpen] = useState(false);
 
 
 
@@ -141,6 +143,20 @@ const handleLoginClick = () => {
     setIsCareerOppsModalOpen(false);
     setIsCommunityModalOpen(true);
   };
+
+  const openBrokenByFamilyModal = () => {
+    setIsBrokenByFamilyModalOpen(true);
+  };
+  
+  const closeBrokenByFamilyModal = () => {
+    setIsBrokenByFamilyModalOpen(false);
+  };
+  
+  const handleBrokenByFamilyToCommunity = () => {
+    setIsBrokenByFamilyModalOpen(false);
+    setIsCommunityModalOpen(true);
+  };
+  
   
   
   const handleGoogleLogin = async () => {
@@ -616,7 +632,8 @@ const handleLoginClick = () => {
          It's not just the parent, it's the sibling infighting, the lack of support, and the weight of being the "responsible one." You're the pillar everyone leans on, but you have no one to lean on yourself.
        </p>
        <button
-         onClick={openCommunityModal}
+         //onClick={openCommunityModal}
+         onClick={openBrokenByFamilyModal}
          className="w-full py-3 px-4 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-red-500/50 flex items-center justify-center space-x-2 group/btn"
        >
          <span>Share the Burden</span>
@@ -1713,6 +1730,12 @@ const handleLoginClick = () => {
   onClose={closeCareerOppsModal}
   onOpenCommunity={handleCareerOppsToCommunity}
 />
+<BrokenByFamily
+  isOpen={isBrokenByFamilyModalOpen}
+  onClose={closeBrokenByFamilyModal}
+  onOpenCommunity={handleBrokenByFamilyToCommunity}
+/>
+
 
         
 {isWaitlistSuccessModalOpen ? (
