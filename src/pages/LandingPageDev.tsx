@@ -326,7 +326,9 @@ const handleLoginClick = () => {
         
         <div className="text-center px-4 sm:px-6 md:px-8 lg:px-12 py-2 sm:py-6 md:py-20 lg:py-24 rounded-lg">
           
-        <span className="sm:hidden text-xs sm:text-lg p-3 font-semibold bg-red-100 rounded-full text-red-500 border-8 border-red-50">A Community Fixing ElderCare</span>
+        <span className="sm:hidden text-xs sm:text-lg p-3 font-semibold bg-red-100 rounded-full text-red-500 border-8 border-red-50">
+        frictionless care for mom & dad    
+        </span>
 
 
         {/*<span className="hidden sm:inline text-xs sm:text-lg p-3 font-semibold bg-red-100 rounded-full text-red-500 border-8 border-red-50">Community of Professionals Supporting Aging Parents</span>*/}
@@ -346,7 +348,9 @@ const handleLoginClick = () => {
                 
        <p className="block text-sm font-normal sm:text-xl sm:font-normal text-gray-600 leading-tight mt-1 sm:mt-3">
          
-       <span className="sm:hidden font-normal">A network of career professionals <br/> fixing eldercare together</span>     
+      {/* <span className="sm:hidden font-normal">A network of career professionals <br/> fixing eldercare together</span>  */}
+
+      <span className="sm:hidden font-normal">A closed community of career professionals solving caregiving challenges with battle-tested systems that save you $10k a month! 😲</span>    
         
                   {/*<span className="hidden sm:inline font-normal">We're a community of career professionals solving the overwhelming challenges of eldercare together</span>*/} 
 
@@ -383,7 +387,7 @@ const handleLoginClick = () => {
   <div className="grid grid-cols-1 h-[450px]">
      {/* Column 4: One image, spanning two rows */}
         <div className="col-span-1">
-          <div className="relative overflow-hidden rounded-xl shadow-xl transform transition-all duration-300 hover:scale-105  h-full group">
+          <div className="relative overflow-hidden rounded-xl transform transition-all duration-300 hover:scale-105  h-full group">
             <img
               //src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/poetiq-hero-small.png"
               src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/poetiq_hero_small_v1.png"
@@ -435,9 +439,14 @@ const handleLoginClick = () => {
  {/*----------------- Start The Struggle Support ----------------------- */}
 <section id="TheStruggle" className="text-center">
   
-  <h2 className="text-2xl text-red-400 sm:text-4xl md:text-5xl font-bold leading-tight mt-4 mb-4">
-     Care shouldn't cost you your Career
-   </h2>
+  <h2 className="hidden sm:block text-2xl text-red-400 sm:text-4xl md:text-5xl font-bold leading-tight mt-4 mb-4">
+    Care shouldn't cost you your Career
+  </h2>
+
+  <h2 className="sm:hidden text-2xl text-red-400 sm:text-4xl md:text-5xl font-bold leading-tight mt-8 mb-4">
+    Care shouldn't cost you <br/> your Career
+  </h2>
+
    <p className="text-xl sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
      {/*We empower the modern workforce to make better caregiving decisions.*/}
      {/*Get instant community support without wasting hours on calls.*/}  
@@ -936,13 +945,13 @@ const handleLoginClick = () => {
        </div>
      </div>  
            
-           <p className="hidden sm:inline text-center text-gray-700 font-bold text-xl sm:text-2xl text-gray-600 mx-auto">  
-              Trusted by <b className="text-red-400">150+</b> Senior Executives Supporting Elderly Parents
-           </p>  
- 
-           <p className="sm:hidden text-center text-gray-700 font-bold text-xl sm:text-2xl text-gray-600 mx-auto">  
-              Trusted by <b className="text-red-400">150+</b> Career <br/> Execs Supporting <br/>Elderly Parents
-           </p> 
+          <p className="hidden sm:block text-center text-gray-700 font-bold text-xl sm:text-2xl text-gray-600 mx-auto">  
+             Trusted by <b className="text-red-400">150+</b> Senior Executives Supporting Elderly Parents
+          </p>  
+
+          <p className="sm:hidden text-center text-gray-700 font-semibold text-xl sm:text-2xl text-gray-600 mx-auto">  
+             Trusted by <b className="text-red-400">150+</b> Career <br/> Execs Supporting <br/>Elderly Parents
+          </p> 
  
            {/*--------------- start Social Proof Section ---------------- */}
            <div className="justify-center relative flex items-center gap-6 mt-4">
