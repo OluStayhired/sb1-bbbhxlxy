@@ -237,7 +237,7 @@ const handleLoginClick = () => {
 
                               {/* Title */}
                               <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-                                  Caregiver Agency Finder
+                                  Caregivers Near Me
                               </h3>
         
                               {/* Description */}
@@ -283,7 +283,7 @@ const handleLoginClick = () => {
         
                             {/* Description */}
                             <p className="text-sm text-gray-600 leading-relaxed">
-                              Take a comprehensive cognitive assessment to evaluate memory and thinking skills. Get insights and recommendations for next steps in care planning.
+                              Take a comprehensive cognitive test to evaluate memory and thinking skills. Get insights and recommendations for next steps in care planning.
                             </p>
                         </a>
 
