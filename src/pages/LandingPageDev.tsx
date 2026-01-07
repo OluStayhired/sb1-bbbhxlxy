@@ -13,6 +13,7 @@ import LinkedInSolidLogoWhite from '../images/linkedin-solid-logo-white.svg';
 import XLogo from '../images/x-logo.svg';
 import googleLogo from '../images/google-logo-48.svg';
 import { TooltipExtended } from '/src/utils/TooltipExtended';
+import { TooltipHelp } from 'src/utils/TooltipHelp';
 import { WaitlistModal } from '../components/WaitlistModal.tsx';
 import { NewsletterModal } from '../components/NewsletterModal.tsx';
 import { CommunityModal } from '../components/CommunityModal.tsx';
@@ -860,7 +861,8 @@ const handleLoginClick = () => {
              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
              <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
                {/*<button className="absolute bottom-10 left-0 right-0 p-1 text-white text-center rounded-md text-white bg-red-500 transition-opacity duration-300 opacity-0 group-hover:opacity-100">Get Started</button>*/}
- 
+        
+        <TooltipHelp text="👋 Try it Now!">
            <button
              onClick={openEligibilityModal}
              className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
@@ -868,6 +870,8 @@ const handleLoginClick = () => {
             <span className="text-sm font-normal">Get Started</span>
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
            </button>
+        </TooltipHelp>
+
                  <h3 className="text-xl font-bold drop-shadow-lg">Medicaid Insurance Assistant</h3>
              </div>
            </div>
@@ -890,13 +894,15 @@ const handleLoginClick = () => {
              />
              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
              <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
-               <button
+        <TooltipHelp text="🤫 Coming Soon!">   
+            <button
              //onClick={openCommunityModal}
              className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
             
             <span className="text-sm font-normal">Get Started</span>
-            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />       
            </button>
+        </TooltipHelp>
                  <h3 className="text-xl font-bold drop-shadow-lg">Strategic Financial Planner</h3>
              </div>
            </div>
@@ -912,13 +918,15 @@ const handleLoginClick = () => {
              />
              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
              <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
-               <button
+        <TooltipHelp text="🤫 Coming Soon!">
+            <button
              //onClick={openCommunityModal}
              className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
             
             <span className="text-sm font-normal">Get Started</span>
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
            </button>
+        </TooltipHelp>
                  <h3 className="text-xl font-bold drop-shadow-lg">Rapid Respite Placement</h3>
              </div>
            </div>
@@ -936,13 +944,16 @@ const handleLoginClick = () => {
              />
              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
              <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
-               <button
+            
+        <TooltipHelp text="🤫 Coming Soon!">
+            <button
              //onClick={openCommunityModal}
              className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
             
             <span className="text-sm font-normal">Get Started</span>
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
            </button>
+        </TooltipHelp>
                  <h3 className="text-xl font-bold drop-shadow-lg">Caregiving Stress Advisor</h3>
              </div>
            </div>
@@ -955,13 +966,17 @@ const handleLoginClick = () => {
              />
              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
                <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
-                 <button
+            
+          <TooltipHelp text="🤫 Coming Soon!">
+            <button
              //onClick={openCommunityModal}
              className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
             
             <span className="text-sm font-normal">Get Started</span>
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
            </button>
+          </TooltipHelp>
+
                  <h3 className="text-xl font-bold drop-shadow-lg">Cognitive Health Assessment</h3>
              </div>
            </div>
@@ -978,13 +993,17 @@ const handleLoginClick = () => {
              />
              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
              <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
-               <button
+            
+          <TooltipHelp text="🤫 Coming Soon!">
+            <button
              //onClick={openCommunityModal}
              className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
             
             <span className="text-sm font-normal">Get Started</span>
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
            </button>
+        </TooltipHelp>
+
                  <h3 className="text-xl font-bold drop-shadow-lg">In-Home Care Intelligence</h3>
              </div>
            </div>
@@ -1001,13 +1020,17 @@ const handleLoginClick = () => {
              />
              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
              <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
-               <button
+        
+        <TooltipHelp text="🤫 Coming Soon!">
+           <button
              //onClick={openCommunityModal}
              className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
             
             <span className="text-sm font-normal">Get Started</span>
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
            </button>
+        </TooltipHelp>
+
                  <h3 className="text-xl font-bold drop-shadow-lg">Vetted Elder Law Network</h3>
              </div>
            </div>
@@ -1022,13 +1045,17 @@ const handleLoginClick = () => {
              />
              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
              <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
-               <button
+            
+         <TooltipHelp text="🤫 Coming Soon!">
+            <button
              //onClick={openCommunityModal}
              className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
             
             <span className="text-sm font-normal">Get Started</span>
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
            </button>
+          </TooltipHelp>
+          
                  <h3 className="text-xl font-bold drop-shadow-lg">Residential Care Benchmarking</h3>
              </div>
            </div>

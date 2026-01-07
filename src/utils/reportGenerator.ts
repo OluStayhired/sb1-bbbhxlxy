@@ -360,7 +360,6 @@ export function generateReportHTML(
   <div class="container">
     <div class="header">
       <div class="header-content">
-        {/*<div class="header-icon">🧠</div>*/}
         <div class="header-icon">✅</div>
         <div>
           <h1 class="header-title">Assessment Report</h1>
