@@ -208,7 +208,7 @@ const handleLoginClick = () => {
           <span className="text-2xl  font-bold text-red-500 sm:text-2xl">poetiq</span>
         </div>
         </a>
-         {/*Desktop Navigation Buttons */}          
+      {/*----------- Start Desktop Navigation Buttons ------------------*/}           
          <div className="hidden sm:flex items-center space-x-4">
           <div className="items-center flex justify-center space-x-2">
 
@@ -254,13 +254,22 @@ const handleLoginClick = () => {
                       </div>
                       {/* END: Eldercare Tools Dropdown Menu */}
 
-            {/*Remaining Menu Buttons */}
+        {/*Remaining Menu Buttons */}
+          <button
+            onClick={() => {
+              window.location.href = '#OperationalSupport';
+              setIsMobileMenuOpen(false);           
+              }}
+              className="w-auto max-w-sm px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
+            >
+            Executive Services ⚙️
+          </button>
               <button
               onClick={() => {
               window.location.href = '#Community';
               }}
               className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">
-                  Community 💛
+                  Community 🧡
               </button> 
 
              <button
@@ -295,6 +304,7 @@ const handleLoginClick = () => {
           </button>
                
         </div>
+      {/*---------------- End Desktop Navigation Menu --------------*/}   
         
      {/* Mobile Menu Button (Hamburger) (Visible on mobile, hidden on sm and up) */}
       <div className="sm:hidden">
@@ -311,7 +321,8 @@ const handleLoginClick = () => {
         </button>
       </div>
 
- {/* Mobile Menu Overlay */}
+ {/* -------------  Start Mobile Menu Overlay ----------------- */}
+
       {/* This part of the code is generally correct for the overlay. */}
       {isMobileMenuOpen && (
         <div className="sm:hidden fixed inset-0 bg-white z-40 flex flex-col items-center justify-center space-y-4 py-6"> 
@@ -356,7 +367,8 @@ const handleLoginClick = () => {
                           </div>
                         </div>
                       </div>
-                      {/* END: Eldercare Tools Dropdown Menu */}
+                  {/* END: Eldercare Tools Dropdown Menu */}
+                  
 
           <button
             onClick={() => {
@@ -365,7 +377,7 @@ const handleLoginClick = () => {
               }}
               className="w-11/12 max-w-sm px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
             >
-            Community 💛
+            Community 🧡
           </button>
           <button
             onClick={() => {
@@ -375,6 +387,16 @@ const handleLoginClick = () => {
               className="w-11/12 max-w-sm px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
             >
             Our Story 👋
+          </button>
+
+          <button
+            onClick={() => {
+              window.location.href = '#OperationalSupport';
+              setIsMobileMenuOpen(false);           
+              }}
+              className="w-11/12 max-w-sm px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
+            >
+            Executive Services ⚙️
           </button>
 
           <button
@@ -800,7 +822,7 @@ const handleLoginClick = () => {
  {/*----------------- End The Reset Support ----------------------- */}    
 
  {/*----------------- Start Caregiving Support ----------------------- */}
-<section id="CaregivingSupport" className="text-center mt-32">
+<section id="OperationalSupport" className="text-center mt-32">
   
 <h2 className="text-2xl text-red-400 sm:text-4xl md:text-5xl font-bold leading-tight mb-4">
    {/*Community for Career Professionals 👩‍💻*/}
@@ -810,13 +832,13 @@ const handleLoginClick = () => {
   <p className="sm:hidden text-xl sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
     {/*We empower the modern workforce to make better caregiving decisions.*/}
     {/*Get instant community support without wasting hours on calls.*/}
-   Don't start from zero. Unlock a care infrastructure of vetted experts and tools powered by the collective intelligence of our executive community.
+   Don't start from zero. Unlock a care infrastructure of vetted services and tools powered by the collective intelligence of our executive community.
   </p>          
 
   <p className="hidden sm:inline text-xl sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
     {/*We empower the modern workforce to make better caregiving decisions.*/}
     {/*Get instant community support without wasting hours on calls.*/}
-   Don't start from zero. Unlock a care infrastructure of vetted experts and tools <br/>
+   Don't start from zero. Unlock a care infrastructure of vetted services and tools <br/>
     powered by the collective intelligence of our executive community.
   </p>  
  
