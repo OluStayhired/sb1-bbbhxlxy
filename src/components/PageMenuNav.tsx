@@ -52,7 +52,7 @@ export function PageMenuNav({ onOpenCommunityModal }: PageMenuNavProps) {
                 
                 {/* Card 1: Caregiver Agency Finder */}
                 <Link
-                  to="/home-health-care"
+                  to="/dev/home-health-care"
                   className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
                 >
                   {/* Icon Container */}
@@ -73,7 +73,7 @@ export function PageMenuNav({ onOpenCommunityModal }: PageMenuNavProps) {
 
                 {/* Card 2: Nursing Home Finder */}
                 <Link
-                  to="/nursing-home"
+                  to="/dev/nursing-home"
                   className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
                 >
                   {/* Icon Container */}
@@ -94,7 +94,7 @@ export function PageMenuNav({ onOpenCommunityModal }: PageMenuNavProps) {
 
                 {/* Card 3: Dementia Assessment Test */}
                 <Link
-                  to="/dementia-assessment"
+                  to="/dev/dementia-assessment"
                   className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
                 >
                   {/* Icon Container */}
@@ -132,7 +132,7 @@ export function PageMenuNav({ onOpenCommunityModal }: PageMenuNavProps) {
                 
                 {/* Card 1: Logistics Engine */}
                 <a
-                  href="#OperationalSupport"
+                  href="/dev/#OperationalSupport"
                   className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
                 >
                   {/* Icon Container */}
@@ -174,7 +174,7 @@ export function PageMenuNav({ onOpenCommunityModal }: PageMenuNavProps) {
 
                 {/* Card 3: Career Protection */}
                 <a
-                  href="#OperationalSupport"
+                  href="/dev/#OperationalSupport"
                   className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
                 >
                   {/* Icon Container */}
@@ -195,7 +195,7 @@ export function PageMenuNav({ onOpenCommunityModal }: PageMenuNavProps) {
 
                 {/* Card 4: Family Advocacy */}
                 <a
-                  href="#OperationalSupport"
+                  href="/dev/#OperationalSupport"
                   className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
                 >
                   {/* Icon Container */}
@@ -216,7 +216,7 @@ export function PageMenuNav({ onOpenCommunityModal }: PageMenuNavProps) {
 
                 {/* Card 5: Clinical Insight */}
                 <a
-                  href="#OperationalSupport"
+                  href="/dev/#OperationalSupport"
                   className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
                 >
                   {/* Icon Container */}
@@ -237,7 +237,7 @@ export function PageMenuNav({ onOpenCommunityModal }: PageMenuNavProps) {
 
                 {/* Card 6: Tactical Response */}
                 <a
-                  href="#OperationalSupport"
+                  href="/dev/#OperationalSupport"
                   className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
                 >
                   {/* Icon Container */}
