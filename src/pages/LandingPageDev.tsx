@@ -1032,13 +1032,13 @@ const handleLoginClick = () => {
   <p className="sm:hidden text-xl sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
     {/*We empower the modern workforce to make better caregiving decisions.*/}
     {/*Get instant community support without wasting hours on calls.*/}
-   Don't start from zero. Unlock a care infrastructure of vetted services and tools powered by the collective intelligence of our executive community.
+   Don't start from zero. Unlock a care ecosystem of vetted services and tools powered by the collective intelligence of our executive community.
   </p>          
 
   <p className="hidden sm:inline text-xl sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
     {/*We empower the modern workforce to make better caregiving decisions.*/}
     {/*Get instant community support without wasting hours on calls.*/}
-   Don't start from zero. Unlock a care infrastructure of vetted services and tools <br/>
+   Don't start from zero. Unlock a care ecosystem of vetted services and tools <br/>
     powered by the collective intelligence of our executive community.
   </p>  
  
