@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CalendarCheck, Calendar, PenSquare, Clock, Users, PenTool, Briefcase, Plus, Minus,Menu, MailCheck,
   Bot, CheckCircle,X, Send,Timer, Zap, ArrowRight, HeartPulse, Brain, Target, MapPin,
-  Lightbulb, Sparkles, CircleDollarSign, Star, Search, Check, Activity, FileText, Shield  } from 'lucide-react';
+  Lightbulb, Sparkles, CircleDollarSign, Star, Search, Check, Activity, FileText, Shield, TrendingUp  } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { AuthModal } from '../components/AuthModal';
 import BlueskyLogo from '../images/bluesky-logo.svg';
@@ -657,11 +657,18 @@ const handleLoginClick = () => {
       <span className="sm:hidden font-normal">A closed community of career professionals solving caregiving challenges with battle-tested systems to reclaim your time.😊</span> 
         
                   {/*<span className="hidden sm:inline font-normal">We're a community of career professionals solving the overwhelming challenges of eldercare together</span>*/} 
-
+                  {/*
                   <span className="hidden sm:inline font-normal">
                   <span className="hidden sm:inline font-normal">We're a closed community of career professionals solving caregiving challenges 
-                  <br/> with battle-tested systems to reclaim your time and protect your professional reputation.😎</span> 
+                  <br/> with battle-tested systems to reclaim your time and protect your professional capacity.😎</span> 
                   </span> 
+                  */}
+
+          <span className="hidden sm:inline font-normal">
+              We're a closed community of career professionals solving caregiving challenges <br/> 
+              with battle-tested systems to reclaim your time and restore your professional capacity.
+              <TrendingUp className="inline w-5 h-5 text-green-500 ml-1 align-middle" />
+        </span>
          </p>
               </span>
             </p>
