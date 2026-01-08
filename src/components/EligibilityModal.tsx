@@ -30,9 +30,10 @@ interface EligibilityModalProps {
 interface Message {
   id: string;
   role: 'user' | 'assistant';
-  content: string;
+  content: string | React.ReactNode;
   timestamp: Date;
 }
+
 
 const newsletterSchema = z.object({
   email: z.string().email('Invalid email address'),
@@ -100,7 +101,7 @@ export function EligibilityModal({ isOpen, onClose }: EligibilityModalProps) {
   // Handle topic selection from the left panel
 const handleMedicaidTopic = async (topic: string) => {
   // Define topic configurations
-  const topicConfig: Record<string, { message: string; questions: string[] }> = {
+  const topicConfig: Record<string, { message: string | React.ReactNode; questions: string[] }> = {
     "Starting a Long Term Care Application": {
       message: "Applying for long-term elder care in the U.S. involves filling out numerous, often complex, forms for programs like Medicaid or VA benefits, requiring extensive documentation of personal, financial (bank statements, income, assets, insurance), and medical information to prove eligibility for facility care or home-based support. The process can be lengthy, so having documents like proof of identity, income, and assets ready is crucial.",
       questions: [
@@ -127,21 +128,34 @@ const handleMedicaidTopic = async (topic: string) => {
       ]
     },
     "Reviewing health underwriting issues": {
-      message: <> Generally, reviewing health underwriting issues requires understanding the legal framework, particularly the Affordable Care Act (ACA), and the specific underwriting methods used by different types of plans. <br/><br/>
-        <b>The Regulatory Context: Affordable Care Act (ACA)</b><br/>
-For qualified individual and group health plans that comply with the ACA, medical underwriting based on pre-existing conditions is largely banned.<br/><br/>
-        
-<b>Guaranteed Coverage:</b> Insurers generally cannot deny coverage or charge higher premiums due to a person's current or past health status (pre-existing conditions).<br/><br/>
-<b>Limited Rating Factors:</b> Premiums for these plans can only be based on a few factors: age, geography, family size, and tobacco use.<br/><br/>
-        
-<b>No Pre-existing Condition Exclusions:</b> The ACA prohibits waiting periods or exclusions for pre-existing conditions in compliant plans. 
-      </>
-    ,
-      questions: [
-        "Which plans are subject to underwritting?",
-        "What to do if my plan allows underwritting?"
-      ]
-    },
+  message: ( 
+    <>
+      Generally, reviewing health underwriting issues requires understanding the legal framework, particularly the Affordable Care Act (ACA), and the specific underwriting methods used by different types of plans.
+      <br />
+      <br />
+      <b>The Regulatory Context: Affordable Care Act (ACA)</b>
+      <br />
+      For qualified individual and group health plans that comply with the ACA, medical underwriting based on pre-existing conditions is largely banned.
+      <br />
+      <br />
+      <b>Guaranteed Coverage:</b> Insurers generally cannot deny coverage or charge higher premiums due to a person's current or past health status (pre-existing conditions).
+      <br />
+      <br />
+      <b>Limited Rating Factors:</b> Premiums for these plans can only be based on a few factors: age, geography, family size, and tobacco use.
+      <br />
+      <br />
+      <b>No Pre-existing Condition Exclusions:</b> The ACA prohibits waiting periods or exclusions for pre-existing conditions in compliant plans.
+    </>
+  ),
+  questions: [
+    "Which plans are subject to underwritting?",
+    "What to do if my plan allows underwritting?"
+  ]
+}
+
+
+
+
     // Add more topics here as needed in the future
     // "Understanding LTCI eligibility criteria": {
     //   message: "Your message here",
@@ -430,7 +444,7 @@ const handleSendMessage = async (content: string) => {
                     >
                         Reviewing health underwriting issues
                     </span>
-                      </TooltipHelp>
+                    </TooltipHelp>
                   </li>
                   <li className="flex items-start space-x-2">
                     <span className="text-red-500 mt-0.5">•</span>
@@ -507,7 +521,8 @@ const handleSendMessage = async (content: string) => {
                     speed={30} - Medium typing
                     speed={50} - Slower typing (default)
                     */}
-                    
+
+                    {/*
                     <p className="text-xs leading-relaxed">
                         {message.role === 'assistant' ? (
                           <TypingEffect text={message.content} speed={20} />
@@ -515,6 +530,19 @@ const handleSendMessage = async (content: string) => {
                           message.content
                         )}
                     </p>
+                    */}
+
+                    <p className="text-xs leading-relaxed">
+                      {message.role === 'assistant' ? (
+                        typeof message.content === 'string' ? (
+                          <TypingEffect text={message.content} speed={20} />
+                          ) : (
+                          message.content
+                        )
+                          ) : (
+                          message.content
+                        )}
+                      </p>
 
                     
                     <p
