@@ -654,13 +654,13 @@ const handleLoginClick = () => {
          
       {/* <span className="sm:hidden font-normal">A network of career professionals <br/> fixing eldercare together</span>  */}
 
-      <span className="sm:hidden font-normal">A closed community of career professionals solving caregiving challenges with battle-tested systems that save you $10k a month! 😲</span>    
+      <span className="sm:hidden font-normal">A closed community of career professionals solving caregiving challenges with battle-tested systems to reclaim your time.😊</span> 
         
                   {/*<span className="hidden sm:inline font-normal">We're a community of career professionals solving the overwhelming challenges of eldercare together</span>*/} 
 
                   <span className="hidden sm:inline font-normal">
-                    We're a closed community of career professionals solving caregiving challenges 
-                    <br/> with battle-tested systems that save you $10,000 a month! 😲
+                  <span className="hidden sm:inline font-normal">We're a closed community of career professionals solving caregiving challenges 
+                  <br/> with battle-tested systems to reclaim your time and protect your professional reputation.😎</span> 
                   </span> 
          </p>
               </span>
