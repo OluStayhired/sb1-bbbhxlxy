@@ -894,9 +894,14 @@ const handleLoginClick = () => {
  {/*----------------- Start The Reset Support ----------------------- */}
 <section id="TheReset" className="mt-32 text-center">
   
-  <h2 className="text-2xl text-red-400 sm:text-4xl md:text-5xl font-bold leading-tight mt-4 mb-4">
-     What a Strategic Reset looks like
-   </h2>
+<h2 className="hidden sm:block text-2xl text-red-400 sm:text-4xl md:text-5xl font-bold leading-tight mt-4 mb-4">
+    What a Strategic Reset looks like
+  </h2>
+
+  <h2 className="sm:hidden text-2xl text-red-400 sm:text-4xl md:text-5xl font-bold leading-tight mt-4 mb-4">
+    What a Strategic Reset <br/> looks like
+  </h2>
+
    <p className="text-xl sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
    Real results from senior leaders who reclaimed their careers.
    </p>  
@@ -1009,11 +1014,14 @@ const handleLoginClick = () => {
  {/*----------------- Start Caregiving Support ----------------------- */}
 <section id="OperationalSupport" className="text-center mt-32">
   
-<h2 className="text-2xl text-red-400 sm:text-4xl md:text-5xl font-bold leading-tight mb-4">
-   {/*Community for Career Professionals 👩‍💻*/}
-   {/*Caregiving Support for Busy Execs*/}
+  <h2 className="hidden sm:block text-2xl text-red-400 sm:text-4xl md:text-5xl font-bold leading-tight mt-4 mb-4">
     Move from Research to Action
   </h2>
+
+  <h2 className="sm:hidden text-2xl text-red-400 sm:text-4xl md:text-5xl font-bold leading-tight mt-4 mb-4">
+    Move from Research <br/> to Action
+  </h2>
+  
   <p className="sm:hidden text-xl sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
     {/*We empower the modern workforce to make better caregiving decisions.*/}
     {/*Get instant community support without wasting hours on calls.*/}
