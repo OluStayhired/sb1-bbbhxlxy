@@ -52,89 +52,8 @@ export function PageMenuNav({ onOpenCommunityModal }: PageMenuNavProps) {
             <div className="absolute left-1/2 -translate-x-1/2 top-full mt-[-0.5] w-screen max-w-5xl rounded-2xl shadow-2xl bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block z-50 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out transform group-hover:translate-y-0 translate-y-2">
               {/* Grid Container */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-8">
-                
-                {/* Card 1: Caregiver Agency Finder */}
+                {/* Card 1: Readiness Audit*/}
                 <Link
-                  to="/dev/home-health-care"
-                  className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
-                >
-                  {/* Icon Container */}
-                  <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
-                    <MapPin className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
-                  </div>
-                  
-                  {/* Title */}
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-                    Caregivers Near Me
-                  </h3>
-                  
-                  {/* Description */}
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    Simple tool to help you find rated caregiver agencies close to you. Search 12,500 caregiving agencies. Get summary reports and book a call.
-                  </p>
-                </Link>
-
-                {/* Card 2: Nursing Home Finder */}
-                <Link
-                  to="/dev/nursing-home"
-                  className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
-                >
-                  {/* Icon Container */}
-                  <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
-                    <Search className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
-                  </div>
-                  
-                  {/* Title */}
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-                    Nursing Home Finder
-                  </h3>
-                  
-                  {/* Description */}
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    Discover highly-rated nursing homes and assisted living facilities in your area. Compare ratings, amenities, and care quality to make informed decisions.
-                  </p>
-                </Link>
-
-                {/* Card 3: Dementia Assessment Test */}
-                <Link
-                  to="/dev/dementia-assessment"
-                  className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
-                >
-                  {/* Icon Container */}
-                  <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
-                    <CheckCircle className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
-                  </div>
-                  
-                  {/* Title */}
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-                    Dementia Assessment Test
-                  </h3>
-                  
-                  {/* Description */}
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    Take a comprehensive cognitive test to evaluate memory and thinking skills. Get insights and recommendations for next steps in care planning.
-                  </p>
-                </Link>
-
-              </div>
-            </div>
-          </div>
-          {/* END: Care Tools Dropdown Menu */}
-
-          {/* START: Executive Services Dropdown Menu */}
-          <div className="relative group">
-            {/* Menu Header - Executive Services */}
-            <button className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">
-              Executive Services ⚙️
-            </button>
-
-            {/* Mega Menu Dropdown - Full Width 3 Column Grid */}
-            <div className="absolute left-1/2 -translate-x-1/2 top-full mt-[-0.5] w-screen max-w-6xl rounded-2xl shadow-2xl bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block z-50 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out transform group-hover:translate-y-0 translate-y-2">
-              {/* Grid Container - 6 items in 2 rows */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-8">
-
-                   {/* Card 1: Readiness Audit*/}
-                   <Link
                           to="/dev/home-health-care"
                           className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-teal-50 hover:to-green-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-teal-200"
                           >
@@ -196,6 +115,86 @@ export function PageMenuNav({ onOpenCommunityModal }: PageMenuNavProps) {
                    Get human-led advice and professionally re-worded emails and messages that allow you to manage family disagreements empathetically without the emotional drain. 
                   </p>
                 </Link>
+                
+                {/* Card 4: Caregiver Agency Finder */}
+                <Link
+                  to="/dev/home-health-care"
+                  className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
+                >
+                  {/* Icon Container */}
+                  <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
+                    <MapPin className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
+                  </div>
+                  
+                  {/* Title */}
+                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
+                    Caregivers Near Me
+                  </h3>
+                  
+                  {/* Description */}
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Simple tool to help you find rated caregiver agencies close to you. Search 12,500 caregiving agencies. Get summary reports and book a call.
+                  </p>
+                </Link>
+
+                {/* Card 5: Nursing Home Finder */}
+                <Link
+                  to="/dev/nursing-home"
+                  className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
+                >
+                  {/* Icon Container */}
+                  <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
+                    <Search className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
+                  </div>
+                  
+                  {/* Title */}
+                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
+                    Nursing Home Finder
+                  </h3>
+                  
+                  {/* Description */}
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Discover highly-rated nursing homes and assisted living facilities in your area. Compare ratings, amenities, and care quality to make informed decisions.
+                  </p>
+                </Link>
+
+                {/* Card 6: Dementia Assessment Test */}
+                <Link
+                  to="/dev/dementia-assessment"
+                  className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
+                >
+                  {/* Icon Container */}
+                  <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
+                    <CheckCircle className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
+                  </div>
+                  
+                  {/* Title */}
+                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
+                    Dementia Assessment Test
+                  </h3>
+                  
+                  {/* Description */}
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Take a comprehensive cognitive test to evaluate memory and thinking skills. Get insights and recommendations for next steps in care planning.
+                  </p>
+                </Link>
+
+              </div>
+            </div>
+          </div>
+          {/* END: Care Tools Dropdown Menu */}
+
+          {/* START: Executive Services Dropdown Menu */}
+          <div className="relative group">
+            {/* Menu Header - Executive Services */}
+            <button className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">
+              Executive Services ⚙️
+            </button>
+
+            {/* Mega Menu Dropdown - Full Width 3 Column Grid */}
+            <div className="absolute left-1/2 -translate-x-1/2 top-full mt-[-0.5] w-screen max-w-6xl rounded-2xl shadow-2xl bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block z-50 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out transform group-hover:translate-y-0 translate-y-2">
+              {/* Grid Container - 6 items in 2 rows */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-8">
                 
                 {/* Card 1: Logistics Engine */}
                 <a
