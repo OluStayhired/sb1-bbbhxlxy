@@ -56,10 +56,28 @@ export function EligibilityFreeTool() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  // Auto-scroll to bottom when new messages arrive
+   // Auto-scroll to bottom when new messages arrive
+  {/*
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
+  */}
+
+   // Auto-scroll to bottom when new messages arrive - ONLY affects chat container
+  
+useEffect(() => {
+  if (messagesEndRef.current) {
+    const chatContainer = messagesEndRef.current.parentElement;
+    if (chatContainer) {
+      const targetScroll = chatContainer.scrollHeight - chatContainer.clientHeight;
+      chatContainer.scrollTo({
+        top: targetScroll,
+        //top: chatContainer.scrollHeight,
+        behavior: 'smooth'
+      });
+    }
+  }
+}, [messages]);
 
   // Simulate typing effect
   const simulateTyping = async (text: string) => {
