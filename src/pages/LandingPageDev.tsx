@@ -249,7 +249,7 @@ const handleLoginClick = () => {
 
                   {/* Card 2: Medicaid Co-Pilot */}
                   <Link
-                      to="/dev/home-health-care"
+                      to="/dev/medicaid-co-pilot"
                       className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
                     >
                     {/* Icon Container */}
