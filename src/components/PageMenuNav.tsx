@@ -38,11 +38,11 @@ export function PageMenuNav({ onOpenCommunityModal }: PageMenuNavProps) {
       <div className="hidden sm:flex items-center space-x-4">
         <div className="items-center flex justify-center space-x-2">
           
-          {/* START: Caregiving Tools Dropdown Menu */}
+          {/* START: Care Tools Dropdown Menu */}
           <div className="relative group">
-            {/* Menu Header - Caregiving Tools */}
+            {/* Menu Header - Care Tools */}
             <button className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">
-              Caregiving Tools 🩺
+              Care Tools 🩺
             </button>
 
             {/* Mega Menu Dropdown - Full Width 3 Column */}
@@ -116,7 +116,7 @@ export function PageMenuNav({ onOpenCommunityModal }: PageMenuNavProps) {
               </div>
             </div>
           </div>
-          {/* END: Caregiving Tools Dropdown Menu */}
+          {/* END: Care Tools Dropdown Menu */}
 
           {/* START: Executive Services Dropdown Menu */}
           <div className="relative group">
@@ -319,11 +319,11 @@ export function PageMenuNav({ onOpenCommunityModal }: PageMenuNavProps) {
       {isMobileMenuOpen && (
         <div className="sm:hidden fixed inset-0 bg-white z-40 flex flex-col items-center justify-center space-y-4 py-6">
 
-          {/* START: Caregiving Tools Dropdown Menu */}
+          {/* START: Care Tools Dropdown Menu */}
           <div className="relative group">
-            {/* Menu Header - Caregiving Tools */}
+            {/* Menu Header - Care Tools */}
             <button className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">
-              Caregiving Tools 🩺
+              Care Tools 🩺
             </button>
 
             {/* Dropdown Content - Hidden by default, shown on group hover */}
@@ -356,7 +356,7 @@ export function PageMenuNav({ onOpenCommunityModal }: PageMenuNavProps) {
               </div>
             </div>
           </div>
-          {/* END: Caregiving Tools Dropdown Menu */}
+          {/* END: Care Tools Dropdown Menu */}
 
           <button
             onClick={() => {
