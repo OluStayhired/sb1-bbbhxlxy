@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CalendarCheck, Calendar, PenSquare, Clock, Users, PenTool, Briefcase, Plus, Minus,Menu, MailCheck,
   Bot, CheckCircle,X, Send,Timer, Zap, ArrowRight, HeartPulse, Brain, Target, MapPin,
-  Lightbulb, Sparkles, CircleDollarSign, Star, Search, Check, Activity, FileText, Shield, TrendingUp  } from 'lucide-react';
+  Lightbulb, Sparkles, CircleDollarSign, Star, Search, Check, Activity, FileText, Shield, ShieldAlert, TrendingUp, User, CheckCircle2  } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { AuthModal } from '../components/AuthModal';
 import BlueskyLogo from '../images/bluesky-logo.svg';
@@ -225,8 +225,71 @@ const handleLoginClick = () => {
                   <div className="absolute left-1/2 -translate-x-1/2 top-full mt-[-0.5] w-screen max-w-5xl rounded-2xl shadow-2xl bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block z-50 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out transform group-hover:translate-y-0 translate-y-2">
                     {/* Grid Container */}
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-8">
+                       {/* Card 1: Readiness Audit*/}
+      <Link
+        to="/dev/home-health-care"
+        className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-teal-50 hover:to-green-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-teal-200"
+      >
+        {/* Icon Container */}
+        <div className="flex items-center justify-center w-14 h-14 bg-teal-100 rounded-full mb-4 group-hover/card:bg-teal-200 transition-colors duration-300">
+          <ShieldAlert className="w-7 h-7 text-teal-600 group-hover/card:scale-110 transition-transform duration-300" />
+        </div>
+        
+        {/* Title */}
+        <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-teal-600 transition-colors duration-300">
+          Readiness Audit
+        <CheckCircle2 className="w-5 h-5 fill-teal-500 justify-center align-top text-white ml-1 inline"/>
+        </h3>
+        
+        {/* Description */}
+        <p className="text-sm text-gray-600 leading-relaxed">
+          Identify hidden gaps in your parents' legal and financial infrastructure before a crisis hits. Get a prioritized checklist of missing POAs, estate vulnerabilities, and clinical must-haves.
+        </p>
+      </Link>
+
+              {/* Card 2: Medicaid Co-Pilot */}
+      <Link
+        to="/dev/home-health-care"
+        className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
+      >
+        {/* Icon Container */}
+        <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
+          <HeartPulse className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
+        </div>
+        
+        {/* Title */}
+        <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
+          Medicaid Co-Pilot
+        </h3>
+        
+        {/* Description */}
+        <p className="text-sm text-gray-600 leading-relaxed">
+          Navigate the complex maze of Medicaid and Long-Term Care Insurance with a collaborative partner. We join you to determine eligibility, protect family assets, and oversee the grueling application process.
+        </p>
+      </Link>
+
+       {/* Card 3: Conflict Coach */}
+      <Link
+        to="/dev/home-health-care"
+        className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
+      >
+        {/* Icon Container */}
+        <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
+          <User className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
+        </div>
+        
+        {/* Title */}
+        <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
+          Conflict Coach
+        </h3>
+        
+        {/* Description */}
+        <p className="text-sm text-gray-600 leading-relaxed">
+          Get human-led advice and professionally re-worded emails and messages that allow you to manage family disagreements empathetically without the emotional drain. 
+        </p>
+      </Link>
       
-                        {/* Card 1: Caregiver Agency Finder */}
+                        {/* Card 4: Caregiver Agency Finder */}
                         <a href="https://poetiq.io/dev/home-health-care"
                             className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
                           >
@@ -246,7 +309,7 @@ const handleLoginClick = () => {
                                 </p>
                           </a>
 
-                        {/* Card 2: Nursing Home Finder */}
+                        {/* Card 5: Nursing Home Finder */}
                         <a href="https://poetiq.io/dev/nursing-home"
                             className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
                         >
@@ -266,7 +329,7 @@ const handleLoginClick = () => {
                               </p>
                         </a>
 
-                        {/* Card 3: Dementia Assessment Test */}
+                        {/* Card 6: Dementia Assessment Test */}
                         <a
                           href="https://poetiq.io/dev/dementia-assessment"
                           className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
