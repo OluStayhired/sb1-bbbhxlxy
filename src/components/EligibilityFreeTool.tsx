@@ -296,11 +296,12 @@ useEffect(() => {
   };
 
   return (
-    <div className="w-full max-w-7xl mx-auto my-8 px-4">
+    <div className="w-full max-w-7xl mx-auto my-8 px-4 rounded-xl border-gray-200">
       {/*<div className="bg-white rounded-xl shadow-2xl w-full h-[85vh] flex flex-col relative">*/}
       <div className="bg-white border border-gray-200 rounded-xl w-full h-[85vh] flex flex-col relative">
+
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4 rounded-xl border-b border-gray-200">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200">
           <div className="flex items-center space-x-3">
             <div className="p-2 bg-red-50 rounded-lg">
               <Shield className="w-6 h-6 text-red-500" />
@@ -312,7 +313,7 @@ useEffect(() => {
         {/* Main Content - Split Layout */}
         <div className="flex-1 flex overflow-hidden">
           {/* Left Side - Ellie's Profile */}
-          <div className="w-1/3 bg-gradient-to-br from-red-50 to-rose-50 p-6 border-r border-gray-200 overflow-y-auto">
+          <div className="w-1/3 bg-gradient-to-br from-red-50 to-rose-50 p-6 border-r border-l rounded-bl-xl overflow-y-auto">
             <div className="space-y-6">
               {/* Avatar and Name */}
               <div className="text-center">

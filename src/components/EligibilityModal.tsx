@@ -354,7 +354,7 @@ const handleSendMessage = async (content: string) => {
         {/* Main Content - Split Layout */}
         <div className="flex-1 flex overflow-hidden">
           {/* Left Side - Ellie's Profile */}
-          <div className="w-1/3 bg-gradient-to-br from-red-50 to-rose-50 p-6 border-r border-gray-200 overflow-y-auto">
+          <div className="w-1/3 bg-gradient-to-br from-red-50 to-rose-50 p-6 border-r rounded-bl-xl border-gray-200 overflow-y-auto">
             <div className="space-y-6">
               {/* Avatar and Name */}
               <div className="text-center">
