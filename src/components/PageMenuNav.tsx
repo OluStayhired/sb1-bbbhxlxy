@@ -263,7 +263,7 @@ export function PageMenuNav({ onOpenCommunityModal }: PageMenuNavProps) {
 
           <button
             onClick={() => {
-              window.location.href = '#Community';
+              window.location.href = '/dev#Community';
             }}
             className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
           >
@@ -272,7 +272,7 @@ export function PageMenuNav({ onOpenCommunityModal }: PageMenuNavProps) {
 
           <button
             onClick={() => {
-              window.location.href = '#our_story';
+              window.location.href = '/dev#our_story';
             }}
             className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
           >
@@ -281,7 +281,7 @@ export function PageMenuNav({ onOpenCommunityModal }: PageMenuNavProps) {
 
           <button
             onClick={() => {
-              window.location.href = '#FAQ';
+              window.location.href = '/dev#FAQ';
             }}
             className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
           >
