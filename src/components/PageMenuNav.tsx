@@ -184,11 +184,11 @@ export function PageMenuNav({ onOpenCommunityModal }: PageMenuNavProps) {
           </div>
           {/* END: Care Tools Dropdown Menu */}
 
-          {/* START: Executive Services Dropdown Menu */}
+          {/* START: Care Services Dropdown Menu */}
           <div className="relative group">
-            {/* Menu Header - Executive Services */}
+            {/* Menu Header - Care Services */}
             <button className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">
-              Executive Services ⚙️
+              Care Services ⚙️
             </button>
 
             {/* Mega Menu Dropdown - Full Width 3 Column Grid */}
@@ -325,7 +325,7 @@ export function PageMenuNav({ onOpenCommunityModal }: PageMenuNavProps) {
               </div>
             </div>
           </div>
-          {/* END: Executive Services Dropdown Menu */}
+          {/* END: Care Services Dropdown Menu */}
 
           <button
             onClick={() => {
@@ -451,7 +451,7 @@ export function PageMenuNav({ onOpenCommunityModal }: PageMenuNavProps) {
             }}
             className="w-11/12 max-w-sm px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
           >
-            Executive Services ⚙️
+            Care Services ⚙️
           </button>
 
           <button
