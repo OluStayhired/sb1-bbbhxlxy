@@ -1245,7 +1245,8 @@ const handleLoginClick = () => {
             
         <TooltipHelp text="👋 Try it Now!">
             <button
-             onClick={openEligibilityModal}
+            //onClick={openEligibilityModal}
+            onClick={openStressCoachModal}
              className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
             
             <span className="text-sm font-normal">Get Started</span>
