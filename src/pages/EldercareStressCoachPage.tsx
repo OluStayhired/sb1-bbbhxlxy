@@ -52,10 +52,10 @@ export function EldercareStressCoachPage() {
           {/* Hero Section */}
           <div className="text-center px-4 sm:px-6 md:px-8 lg:px-12 py-2 rounded-lg">
             <h1 className="mt-24 text-3xl sm:text-5xl font-bold text-gray-900 mb-4">
-              Navigate 
+              Manage 
               <span className="space-x-1">
                 <span className="bg-gradient-to-l from-red-300 via-red-400 to-red-500 bg-clip-text text-transparent"> Caregiving <br className="sm:hidden"/> Conflicts </span> 
-                with clarity
+                with empathy
               </span>
               <p className="block text-sm font-normal sm:text-xl sm:font-normal text-gray-600 leading-tight mt-1 sm:mt-3">
                 <span className="sm:hidden font-normal">Resolve family tensions . Expert coaching . Free AI support</span>   
