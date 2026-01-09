@@ -510,7 +510,7 @@ const handleSendMessage = async (content: string) => {
                     className={`max-w-[75%] rounded-lg p-4 ${
                       message.role === 'user'
                         ? 'bg-red-500 text-white hover:shadow-md hover:shadow-red-200 duration-500'
-                        : 'bg-gray-100 text-gray-900 border border-gray-200 hover:shadow-md hover:border-red-200 duration-500 w-full min-w-[400px]'
+                        : 'bg-gray-100 text-gray-900 border border-gray-200 hover:shadow-md hover:border-red-200 duration-500 w-full min-w-[520px]'
                     }`}
                   >
                     {/*<p className="text-xs leading-relaxed">{message.content}</p>*/}
