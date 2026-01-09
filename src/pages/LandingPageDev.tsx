@@ -2050,6 +2050,12 @@ const handleLoginClick = () => {
         onClose={closeEligibilityModal}
       />
 
+<StressCoachModal
+        isOpen={isStressCoachModalOpen}
+        onClose={closeStressCoachModal}
+      />      
+
+
 <MentallyBroken
         isOpen={isMentallyBrokenModalOpen}
         onClose={closeMentallyBrokenModal}
