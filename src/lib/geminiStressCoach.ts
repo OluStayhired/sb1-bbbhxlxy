@@ -29,7 +29,7 @@ const genAI = new GoogleGenerativeAI('',{ apiVersion:'v1beta' });
 // which, in your secure setup, should ideally never happen.
 //const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
 
-const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
+const model = genAI.getGenerativeModel({ model: 'gemini-3.0-flash-preview' });
 
 function sleep(ms: number) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -37,7 +37,6 @@ function sleep(ms: number) {
 
 // Function to escape special characters that might cause premature truncation
 // This is used to ensure the text content is correctly handled by intermediate network layers.
-
 function escapeSpecialCharacters(text: string): string {
   if (!text) return '';
   // Escapes common JSON-breaking characters and control codes while PRESERVING newlines
@@ -49,7 +48,8 @@ function escapeSpecialCharacters(text: string): string {
     .replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g, ''); // Remove control characters EXCEPT \n (which is \u000A)
 }
 
-{/*function escapeSpecialCharacters(text: string): string {
+{/*
+function escapeSpecialCharacters(text: string): string {
   if (!text) return '';
   // Escapes common JSON-breaking characters and control codes
   return text
@@ -113,9 +113,14 @@ export async function generateContent(prompt: string): Promise<GeminiResponse> {
       },
       body: JSON.stringify({
         prompt,
-        model: 'gemini-2.0-flash', // Pass the model name to the Edge Function if it's dynamic
+        model: 'gemini-3-flash-preview', // Pass the model name to the Edge Function if it's dynamic
         // Optional: Add a cache key for the Edge Function to use
-        cacheKey: prompt.substring(0, 50) // Use first 50 chars as cache key
+        cacheKey: prompt.substring(0, 50), // Use first 50 chars as cache key
+        
+        generationConfig: {
+        maxOutputTokens: 8192, // Setting a very high limit to ensure full text generation
+        temperature: 0.7,
+        }
       }),
     });
 
@@ -148,7 +153,7 @@ export async function generateContent(prompt: string): Promise<GeminiResponse> {
 }
 
 const toneOptions = [
-  'concise'
+  'empathetic'
   // Add more as desired
 ];
 
@@ -166,9 +171,9 @@ const getRandomTone = (excludeTones: string[] = []) => {
 
 
 
-// ------- Start Long Term Care Support (getLongTermCareSupport) -------//
+// ------- Start Long Term Care Support (getStressCoach) -------//
 
-export async function getLongTermCareSupport(
+export async function getStressCoach(
   
     content: string,  
     char_length: string,
@@ -189,26 +194,57 @@ export async function getLongTermCareSupport(
     await rateLimiter.checkAndWait();
 
     const selectedTone = getRandomTone(); // Ensure this function correctly returns a valid tone string
-    const prompt = `You are a world-class Long Term Care Insurance Eligbility Expert. 
-    You have a deep knowledge of the eldercare industry. You specifically  specialize in answering questions about eldercare insurance eligibility. 
-    You have read all the medicaid and medicare literature about the major challenges most people face when trying to determine if their loved ones are eligible for Long Term Care insurance cover. 
-    As well as understanding the step-by-step  process required to meet the requirements for LTCI eligibility, you have a deep experience of the best practices and the initial steps families must focus on to ensure they have the correct insurance cover for long term care. 
+    const prompt = `You are a world class family conflict advisor, you have many years of experience resolving and avoiding conflicts brought about by caregiving stresses which could be anything from financial stresses, sibling infighting disproportionate family responsibilities and so much more within the eldercare and caregiving logistics, clinical and social care space. 
+
+You have a deep knowledge of specifically helping time poor cash rich career executives who provide support to their parent's full time caregivers who could be their siblings or the other parent.
+
+You also have an intimate understanding of the eldercare journey, from crisis events to in-home care through to residential and/or assisted living homes, skilled nursing facilities (respite or long term) right through to palliative care and eventually to a hospice. You are truly familiar with the conflicts that arise within families and you know exactly how to solve them. 
+
+Your job through your experience is to review the situations in [situations] and infer based on the most relevant one or form your own experience then guide the career professionals going through family conflict by identifying potential emotional triggers and psychological challenges related to the eldercare journey that is causing family disagreements. 
+
+** You must interact like a human ENSURE that you DO NOT list the specfici situation in [situations] **
+
+provide a well thought out approach to solving the problems and causes of the disagreements by families going through the stressful eldercare journey. Take into consideration scenarios in [scenarios] below, but include additional scenarios based on your deeper experience. 
+
+
+[scenarios]:
+- spouse is the unpaid caregiver supported by other family members including career execs
+- child is the unpaid caregiver supported by other siblings including career professional
+- senior is in a residential care home supported by family members
+- senior is at a skilled nursing facility supported by family members
+
+[situations]:
+1. Understanding What Causes Conflict:
+In my decades of advising high-achieving executives and their families, I’ve observed that conflict rarely stems from a lack of love. Instead, it arises from the friction between two different worlds: the high-pressure, results-oriented world of the career executive and the emotionally draining, 24/7 reality of the primary caregiver. 
+
+2. Offering Advice without Causing Offence
+This is the most common flashpoint especially where one of your parents or sibling is the main caregiver. Career professionals often enter the situation with a "fix-it" mindset, offering unsolicited advice on efficiency or clinical choices. The unpaid caregiver (spouse or sibling) feels patronized and undervalued, leading to the resentment: "Don't tell me how to run the house when you're only here for two hours a month" 
+
+3. Navigating Financial Resentment
+ The executive often thinks, "I am paying for the private nurses and the facility; I am doing my part." Meanwhile, the sibling providing the daily care thinks, "Money doesn't change diapers or handle the midnight falls." Disagreements arise over whether financial contributions "equalize" the physical labor.
+
+4. Avoiding the Betrayal Narrative
+ A classic conflict between a spouse caregiver and their children. The spouse may want to keep their partner at home at all costs to honor a vow, while the career-driven children see the clinical risks and push for a facility. This creates a "betrayal" narrative between the parent and child.
+
+5. Managing Communication Breakdowns
+The primary caregiver often stops sharing details because "it's too much to explain." The executive feels "left out of the loop." Eventually, the executive stops asking, and the caregiver feels "abandoned." Communication breaks down into silos of silence and sudden explosions. 
+
 
 **IMPORTANT: The information in the section below is for your internal processing and understanding only. Do NOT include any part of this in your final output.** 
 
-Your task is to write highly accurate responses.
+Your task is to guide me through resolving a conflict.
 
 Instructions:
 
-**Beyond surface-level analysis and responses, deeply dissect** the question and create an accurate and fitting response, with the **most qualified sounding** answer to help them address there specific issue around Long Term Care Insurance.
+**Beyond surface-level analysis and responses, deeply dissect** the question and create an accurate and fitting response, with the **most empathetically sounding** answer to help them address there specific issue around caregiving family disagreements.
 
 Maintain a **${selectedTone}** tone throughout your response.
 
 1. Be direct and answer the question within the first 3 sentences.
-2. Ban Generic Answers and Focus on Highly Professional Industry specific answers.
+2. Ban Generic Answers.
 2. Use "I" or "me" or "you" to show natural human writing.
 3. Authentically capture and articulate the precise answer based on the question** while making the reader feel truly understood. 
-4. Craft language that is not just simple, but **resonates as genuinely human and relatable**, avoiding too much industry jargon and communicate at a 'university graduate' comprehension level. 
+4. Craft language that is not just simple, but **resonates as genuinely human and relatable**, avoiding industry jargon. 
 5. Follow proven frameworks (AIDA, PAS, Hook-Point-Action, Before After Bridges etc.), **interpreting them with strategic nuance for social context.**
 6. **Use short, punchy sentence fragments to mimic human thought patterns.**
 7. Keep to ${char_length} Characters in total.
@@ -228,7 +264,6 @@ Follow the [Rules] below:
 - Ban Semicolons 
 - Ban Questions
 - Ban hashtags
-- Ban bullet points.
 - Ban exclamation marks. 
 - Ban Call to Action Questions
 - Ban Call to Action Statements
@@ -305,4 +340,4 @@ User Question: ${content}
   throw new Error("Max retries exhausted for first answer generation (wait 5 mins and try again).");
 }
 
-// ------ End Long Term Care Support (getLongTermCareSupport) --------//
+// ------ End Long Term Care Support (getStressCoach) --------//
