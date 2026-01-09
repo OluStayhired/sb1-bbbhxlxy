@@ -15,6 +15,7 @@ import { DementiaAssessmentPage } from './pages/DementiaAssessmentPage';
 import { DementiaReportView } from './pages/DementiaReportView';
 import LandingPageDev from './pages/LandingPageDev';
 import { MedicaidCoPilotPage } from './pages/MedicaidCoPilotPage';
+import { EldercareStressCoachPage } from './pages/EldercareStressCoachPage';
 
 
 
@@ -55,6 +56,7 @@ function AppRoutes() {
       <Route path="blog/:slug" element={<BlogPostPage />} /> 
       <Route path="/dev" element={<LandingPageDev />} />
       <Route path="dev/medicaid-co-pilot" element={<MedicaidCoPilotPage />} />
+      <Route path="/eldercare-stress-management" element={<EldercareStressCoachPage />} />
       <Route path="dev/nursing-home" element={<NursingHomeSearchPage />} />
       <Route path="dev/home-health-care" element={<HomeHealthCareSearchPage />} />
       <Route path="dev/dementia-assessment" element={<DementiaAssessmentPage />} />

@@ -283,7 +283,7 @@ const handleLoginClick = () => {
 
                 {/* Card 3: Conflict Coach */}
                 <Link
-                  to="/dev/home-health-care"
+                  to="/dev/eldercare-stress-management"
                   className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
                 >
                   {/* Icon Container */}
