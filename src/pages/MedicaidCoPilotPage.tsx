@@ -50,7 +50,7 @@ export function MedicaidCoPilotPage() {
             <h1 className="mt-24 text-3xl sm:text-5xl font-bold text-gray-900 mb-4">
               Navigate 
               <span className="space-x-1">
-                <span className="bg-gradient-to-l from-red-300 via-red-400 to-red-500 bg-clip-text text-transparent"> Medicaid <br className="sm:hidden"/> Insurance </span> 
+                <span className="bg-gradient-to-l from-red-300 via-red-400 to-red-500 bg-clip-text text-transparent"> Medicaid <br className="sm:hidden"/> Applications </span> 
                 with confidence
               </span>
               <p className="block text-sm font-normal sm:text-xl sm:font-normal text-gray-600 leading-tight mt-1 sm:mt-3">
@@ -121,10 +121,10 @@ export function MedicaidCoPilotPage() {
             <div className="text-center mb-8">
               <div className="inline-flex items-center space-x-2 px-4 py-2 bg-red-50 rounded-full mb-4">
                 <Sparkles className="w-4 h-4 text-red-500" />
-                <span className="text-sm font-semibold text-red-600">Free AI Assistant</span>
+                <span className="text-sm font-semibold text-red-600">Free Medicaid Support</span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
-                Meet Your Medicaid Co-Pilot
+                Meet Your Medicaid Assistant
               </h2>
               <p className="text-gray-600 text-lg max-w-2xl mx-auto">
                 Negotiate long-term care insurance with expert guidance

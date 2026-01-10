@@ -383,7 +383,7 @@ const handleSendMessage = async (content: string) => {
                   Hey there I'm Ellie! I know how hard it is to navigate long term care insurance. 
                   I'm here to help you figure out your options, answer your questions and guide you through the eligibility process with clarity.
                   */}
-                  My name is Ellie, I'm a long term care insurance expert. I'll guide you through the LTCI and Medicaid elgibility process. 
+                  I help career professionals with long term care insurance applications and Medicaid elgibility checks. 
                 </p>
               </div>
 
