@@ -336,7 +336,7 @@ useEffect(() => {
               {/* Description */}
               <div className="bg-white rounded-lg p-4 shadow-sm border border-red-100 duration-500 hover:border-red-200 hover:shadow-md">
                 <p className="text-sm text-gray-700 leading-relaxed hover:text-red-600 duration-500">
-                  My name is Ellie, I'm a long term care insurance expert. I'll guide you through the LTCI and Medicaid elgibility process. 
+                  I'm help career professionals through long term care insurance applications and Medicaid elgibility processes. 
                 </p>
               </div>
 
