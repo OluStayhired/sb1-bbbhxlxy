@@ -172,7 +172,44 @@ The primary caregiver often stops sharing details because <i>"it's too much to e
     //   questions: ["Question 1", "Question 2"]
     // }
   };
+  //Get the configuration for the selected topic
+  const config = topicConfig[topic];
+    
+    if (config) {
+      // First, add user message showing the topic they clicked
+      const userTopicMessage: Message = {
+        id: Date.now().toString(),
+        role: 'user',
+        content: topic,
+        timestamp: new Date()
+      };
+      
+      setMessages(prev => [...prev, userTopicMessage]);
+      
+      // Show typing indicator
+      setIsTyping(true);
+      
+      // Simulate AI processing time
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      // Add assistant message with the topic-specific content
+      const assistantMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        role: 'assistant',
+        content: config.message,
+        timestamp: new Date()
+      };
+      
+      setMessages(prev => [...prev, assistantMessage]);
+      
+      // Update the prewritten questions
+      setCurrentQuestions(config.questions);
 
+      // Hide typing indicator
+      setIsTyping(false);
+    }
+
+  {/*
   // Get the configuration for the selected topic
   const config = topicConfig[topic];
   
@@ -199,6 +236,7 @@ The primary caregiver often stops sharing details because <i>"it's too much to e
     // Hide typing indicator
     setIsTyping(false);
   }
+*/}
 };
 
 
