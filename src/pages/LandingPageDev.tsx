@@ -238,7 +238,7 @@ const handleLoginClick = () => {
                   <div className="absolute left-1/2 -translate-x-1/2 top-full mt-[-0.5] w-screen max-w-5xl rounded-2xl shadow-2xl bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block z-50 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out transform group-hover:translate-y-0 translate-y-2">
                     {/* Grid Container */}
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-8">
-                       {/* Card 1: Readiness Audit*/}
+                       {/* Card 1: Eldercare Checklist*/}
                         <Link
                           to="/dev/home-health-care"
                           className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-teal-50 hover:to-green-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-teal-200"
@@ -250,7 +250,7 @@ const handleLoginClick = () => {
         
                       {/* Title */}
                        <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-teal-600 transition-colors duration-300">
-                        Quick Readiness Audit
+                        Eldercare Checklist
                         <CheckCircle2 className="w-5 h-5 fill-teal-500 justify-center align-top text-white ml-1 inline"/>
                       </h3>
 
@@ -272,7 +272,7 @@ const handleLoginClick = () => {
         
                     {/* Title */}
                     <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-                      Medicaid Co-Pilot
+                      Medicaid Assistant
                     </h3>
         
                  {/* Description */}
@@ -293,7 +293,7 @@ const handleLoginClick = () => {
         
                   {/* Title */}
                   <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-                   Caregiving Stress Coach
+                   Conflict Advisor
                   </h3>
         
                   {/* Description */}
@@ -1131,7 +1131,7 @@ const handleLoginClick = () => {
              />
              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
              <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
-                 <h3 className="text-xl font-bold drop-shadow-lg">Medicaid Insurance Assistant</h3>
+                 <h3 className="text-xl font-bold drop-shadow-lg">Medicaid Assistant</h3>
              </div>
            </div>
          </div>
@@ -1170,7 +1170,7 @@ const handleLoginClick = () => {
            </button>
         </TooltipHelp>
 
-                 <h3 className="text-xl font-bold drop-shadow-lg">Medicaid Insurance Assistant</h3>
+                 <h3 className="text-xl font-bold drop-shadow-lg">Medicaid Assistant</h3>
              </div>
            </div>
  
@@ -1253,7 +1253,7 @@ const handleLoginClick = () => {
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
            </button>
         </TooltipHelp>
-                 <h3 className="text-xl font-bold drop-shadow-lg">Caregiving Stress Coach</h3>
+                 <h3 className="text-xl font-bold drop-shadow-lg">Conflict Advisor</h3>
              </div>
            </div>
            <div className="relative h-full border hover:p-2 hover:border-red-500 overflow-hidden rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl group">

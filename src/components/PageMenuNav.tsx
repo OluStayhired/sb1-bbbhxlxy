@@ -64,7 +64,7 @@ export function PageMenuNav({ onOpenCommunityModal }: PageMenuNavProps) {
         
                       {/* Title */}
                        <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-teal-600 transition-colors duration-300">
-                        Quick Readiness Audit
+                        Eldercare Checklist
                         <CheckCircle2 className="w-5 h-5 fill-teal-500 justify-center align-top text-white ml-1 inline"/>
                       </h3>
 
@@ -86,7 +86,7 @@ export function PageMenuNav({ onOpenCommunityModal }: PageMenuNavProps) {
         
                     {/* Title */}
                     <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-                      Medicaid Co-Pilot
+                      Medicaid Assistant
                     </h3>
         
                  {/* Description */}
@@ -107,7 +107,7 @@ export function PageMenuNav({ onOpenCommunityModal }: PageMenuNavProps) {
         
                   {/* Title */}
                   <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-                   Caregiving Stress Coach
+                   Conflict Advisor
                   </h3>
         
                   {/* Description */}
