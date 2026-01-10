@@ -50,11 +50,11 @@ export function MedicaidCoPilotPage() {
             <h1 className="mt-24 text-3xl sm:text-5xl font-bold text-gray-900 mb-4">
               Navigate 
               <span className="space-x-1">
-                <span className="bg-gradient-to-l from-red-300 via-red-400 to-red-500 bg-clip-text text-transparent"> Medicaid <br className="sm:hidden"/> Applications </span> 
+                <span className="bg-gradient-to-l from-red-300 via-red-400 to-red-500 bg-clip-text text-transparent"> Medicaid <br className="sm:hidden"/> Eligibility </span> 
                 with confidence
               </span>
               <p className="block text-sm font-normal sm:text-xl sm:font-normal text-gray-600 leading-tight mt-1 sm:mt-3">
-                <span className="sm:hidden font-normal">Get eligibility answers . Expert guidance . Free AI assistant</span>   
+                <span className="sm:hidden font-normal">Get eligibility answers . Expert guidance . Free Medicaid assistant</span>   
                 <span className="hidden sm:inline font-normal">Get instant eligibility answers, expert guidance, and free AI-powered support</span> 
               </p>
             </h1>
@@ -88,7 +88,7 @@ export function MedicaidCoPilotPage() {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-red-600 transition-colors duration-300">
-                      AI-Powered Guidance
+                      Live Medicaid Support
                     </h3>
                     <p className="text-sm text-gray-600 leading-relaxed">
                       Chat with Ellie, our specialized long-term care insurance expert available 24/7
