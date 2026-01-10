@@ -124,7 +124,7 @@ export function MedicaidCoPilotPage() {
                 <span className="text-sm font-semibold text-red-600">Free Medicaid Support</span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
-                Meet Your Medicaid Assistant
+                Meet Your Medicaid Guide
               </h2>
               <p className="text-gray-600 text-lg max-w-2xl mx-auto">
                 Negotiate long-term care insurance with expert guidance
