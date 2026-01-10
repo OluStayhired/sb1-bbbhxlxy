@@ -54,7 +54,7 @@ export function EldercareStressCoachPage() {
             <h1 className="mt-24 text-3xl sm:text-5xl font-bold text-gray-900 mb-4">
               Manage 
               <span className="space-x-1">
-                <span className="bg-gradient-to-l from-red-300 via-red-400 to-red-500 bg-clip-text text-transparent"> Caregiving <br className="sm:hidden"/> Conflicts </span> 
+                <span className="bg-gradient-to-l from-red-300 via-red-400 to-red-500 bg-clip-text text-transparent"> Family <br className="sm:hidden"/> Conflicts </span> 
                 with empathy
               </span>
               <p className="block text-sm font-normal sm:text-xl sm:font-normal text-gray-600 leading-tight mt-1 sm:mt-3">
@@ -92,10 +92,10 @@ export function EldercareStressCoachPage() {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-red-600 transition-colors duration-300">
-                      AI Stress Coach
+                      Live Conflict Advisor
                     </h3>
                     <p className="text-sm text-gray-600 leading-relaxed">
-                      Chat with Sophia, our specialized caregiving stress advisor available 24/7
+                      Chat with Sophia, our specialized family conflict advisor available 24/7
                     </p>
                   </div>
                 </div>
@@ -125,10 +125,10 @@ export function EldercareStressCoachPage() {
             <div className="text-center mb-8">
               <div className="inline-flex items-center space-x-2 px-4 py-2 bg-red-50 rounded-full mb-4">
                 <Sparkles className="w-4 h-4 text-red-500" />
-                <span className="text-sm font-semibold text-red-600">Free AI Stress Coach</span>
+                <span className="text-sm font-semibold text-red-600">Free AI Conflict Advisor</span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
-                Meet Your Caregiving Stress Advisor
+                Meet Your Family Conflict Advisor
               </h2>
               <p className="text-gray-600 text-lg max-w-2xl mx-auto">
                 Navigate family conflicts with compassionate, expert-backed guidance
@@ -217,10 +217,10 @@ export function EldercareStressCoachPage() {
           <section className="mt-24 bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 md:p-12 border border-gray-100">
             <div className="text-center mb-12">
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-                Why Choose Our Stress Coach?
+                Why Choose Our Conflict Advisor?
               </h2>
               <p className="text-gray-600 text-lg">
-                Everything you need to navigate caregiving conflicts with confidence
+                Everything you need to navigate caregiving disagreements s with confidence
               </p>
             </div>
 
