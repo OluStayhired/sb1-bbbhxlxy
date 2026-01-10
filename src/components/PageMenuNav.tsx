@@ -16,7 +16,8 @@ import {
   Zap,
   CheckCircle2,
   User,
-  ShieldAlert
+  ShieldAlert,
+  Headset
 } from 'lucide-react';
 
 interface PageMenuNavProps {
@@ -203,12 +204,12 @@ export function PageMenuNav({ onOpenCommunityModal }: PageMenuNavProps) {
                 >
                   {/* Icon Container */}
                   <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
-                    <FileText className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
+                    <Headset className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
                   </div>
                   
                   {/* Title */}
                   <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-                    Logistics Engine
+                    Virtual Executive Assistants
                   </h3>
                   
                   {/* Description */}

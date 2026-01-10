@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CalendarCheck, Calendar, PenSquare, Clock, Users, PenTool, Briefcase, Plus, Minus,Menu, MailCheck,
   Bot, CheckCircle,X, Send,Timer, Zap, ArrowRight, HeartPulse, Brain, Target, MapPin,
-  Lightbulb, Sparkles, CircleDollarSign, Star, Search, Check, Activity, FileText, Shield, ShieldAlert, TrendingUp, User, CheckCircle2  } from 'lucide-react';
+  Lightbulb, Sparkles, CircleDollarSign, Star, Search, Check, Activity, FileText, Shield, ShieldAlert, TrendingUp, User, CheckCircle2, Headset  } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { AuthModal } from '../components/AuthModal';
 import BlueskyLogo from '../images/bluesky-logo.svg';
@@ -389,12 +389,12 @@ const handleLoginClick = () => {
             >
               {/* Icon Container */}
             <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
-              <FileText className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
+              <Headset className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
             </div>
         
               {/* Title */}
               <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-                Logistics Engine
+                Virtual Executive Assistants
               </h3>
         
               {/* Description */}
