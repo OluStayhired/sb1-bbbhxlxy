@@ -759,7 +759,7 @@ const handleSendMessage = async (content: string) => {
                     }}
 
                     //placeholder="Get conversation summary via email"
-                    placeholder="Get actionable long-term-care tips via email"
+                    placeholder="Get conflict resolution tips via email"
                     className="flex-1 px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none"
                   />
                 <TooltipHelp className="font-normal" text="⚡Subscribe to Newsletter">
