@@ -578,8 +578,9 @@ export function StressCoachFreeTool() {
 
             {/* Input Area */}
             <div className="border-t border-gray-200 p-6">
-              <div className="flex items-center space-x-3 mb-4">
+              
               {/*
+              <div className="flex items-center space-x-3 mb-4">
                 <input
                   type="text"
                   value={inputValue}
