@@ -125,7 +125,7 @@ export function EldercareStressCoachPage() {
             <div className="text-center mb-8">
               <div className="inline-flex items-center space-x-2 px-4 py-2 bg-red-50 rounded-full mb-4">
                 <Sparkles className="w-4 h-4 text-red-500" />
-                <span className="text-sm font-semibold text-red-600">Free AI Conflict Advisor</span>
+                <span className="text-sm font-semibold text-red-600">Free Conflict Advisor</span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
                 Meet Your Family Conflict Advisor
