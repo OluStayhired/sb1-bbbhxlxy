@@ -394,7 +394,7 @@ const handleLoginClick = () => {
         
               {/* Title */}
               <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-                Virtual Executive Assistants
+                Virtual Eldercare Assistants
               </h3>
         
               {/* Description */}
