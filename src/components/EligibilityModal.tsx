@@ -650,8 +650,10 @@ const handleSendMessage = async (content: string) => {
 
             {/* Input Area */}
             <div className="border-t border-gray-200 p-6">
-              <div className="flex items-center space-x-3 mb-4">
+              {/*
+              <div className="flex items-center text-sm space-x-3 mb-4">
                 <input
+                  rows={4}
                   type="text"
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
@@ -661,8 +663,24 @@ const handleSendMessage = async (content: string) => {
                       handleSendMessage(inputValue);
                     }
                   }}
-                  placeholder="Ask me anything about LTCI eligibility..."
+                  placeholder="Ask me anything about Medicaid eligibility..."
                   className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none"
+                />
+                */}
+
+              <div className="flex items-end text-sm space-x-3 mb-4">
+                <textarea
+                  rows={4}
+                  value={inputValue}
+                  onChange={(e) => setInputValue(e.target.value)}
+                  onKeyPress={(e) => {
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                      e.preventDefault();
+                      handleSendMessage(inputValue);
+                    }
+                  }}
+                  placeholder="Ask me anything about Medicaid eligibility..."
+                  className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none resize-none min-h-[100px] max-h-[160px]"
                 />
                 
                 {/* Upload Button */}
