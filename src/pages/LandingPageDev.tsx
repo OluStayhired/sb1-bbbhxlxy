@@ -441,7 +441,7 @@ const handleLoginClick = () => {
         
               {/* Description */}
                 <p className="text-sm text-gray-600 leading-relaxed">
-                    Maintain your professional presence while ensuring mom and dad are safe. Never miss a strategic travel opportunity or boardroom event with our on-demand emergency caregiver network.
+                Maintain your professional presence while ensuring mom and dad are safe. Never miss a travel opportunity or work event with our on-demand emergency caregiver network.
                 </p>
               </a>
 
