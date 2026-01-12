@@ -1485,7 +1485,7 @@ const handleLoginClick = () => {
             </h2> 
             <p className="text-xl sm:text-2xl text-gray-700 mb-12 max-w-3xl mx-auto">
               {/*The Poetiq Community is where career professionals go to restore strategic focus and reclaim the hours needed to provide parental care without sacrificing their careers or compromising parental dignity. */}
-            The Poetiq Community is where career professionals go to find the best eldercare solution and reclaim the hours spent supporting their aging parents without compromising their careers or their parents dignity <br/><br/>
+            Poetiq Community is where career professionals come to find the best eldercare solution and reclaim the hours spent supporting their aging parents without compromising their careers or their parents dignity <br/><br/>
                 It’s a private, high-integrity network where you'll get direct access to experienced peers who share unfiltered insights on the unique and tremendous challenges of caring for aging family members.<br/><br/> 
               We help each other navigate a labyrinth of eldercare choices that can threaten to overwhelm us as we struggle to maintain the delicate balance between our careers and families. <br/><br/>
                 The Poetiq Community is where to find clarity, control, and the professional blueprint for dignified eldercare.
