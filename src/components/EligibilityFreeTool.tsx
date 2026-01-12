@@ -435,7 +435,7 @@ useEffect(() => {
                   
                   <li className="flex items-start space-x-2">
                     <span className="text-red-500 mt-0.5">•</span>
-                    <TooltipExtended text="⚡ Join the Poetiq Community for Full Eldercare Support. Gain full access to the community. Get connected to Medicaid and Elder Law Experts in our network">
+                    <TooltipExtended text="⚡ For a deeper dive into age and timing considerations regarding Medicaid insurance eligibility, join Poetiq. Get connected to Elder Law Experts in our network">
                       <span className="text-gray-300 hover:text-red-500 duration-500">Explaining age and timing considerations</span>
                     </TooltipExtended>  
                   </li>
