@@ -17,7 +17,10 @@ import {
   CheckCircle2,
   User,
   ShieldAlert,
-  Headset
+  Headset,
+  Dumbbell,
+  UserSearch,
+  DatabaseZap
 } from 'lucide-react';
 
 interface PageMenuNavProps {
@@ -185,148 +188,148 @@ export function PageMenuNav({ onOpenCommunityModal }: PageMenuNavProps) {
           </div>
           {/* END: Care Tools Dropdown Menu */}
 
-          {/* START: Care Services Dropdown Menu */}
-          <div className="relative group">
-            {/* Menu Header - Care Services */}
-            <button className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">
-              Care Services ⚙️
-            </button>
+        {/* ----------------------- START: Executive Services Dropdown Menu -----------------------*/}
+<div className="relative group">
+  {/* Menu Header - Executive Services */}
+  <button className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">
+    Care Services ⚙️
+  </button>
 
-            {/* Mega Menu Dropdown - Full Width 3 Column Grid */}
-            <div className="absolute left-1/2 -translate-x-1/2 top-full mt-[-0.5] w-screen max-w-6xl rounded-2xl shadow-2xl bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block z-50 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out transform group-hover:translate-y-0 translate-y-2">
-              {/* Grid Container - 6 items in 2 rows */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-8">
-                
-                {/* Card 1: Logistics Engine */}
-                <a
-                  href="/dev/#OperationalSupport"
-                  className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
-                >
-                  {/* Icon Container */}
-                  <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
-                    <Headset className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
-                  </div>
-                  
-                  {/* Title */}
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-                    Virtual Eldercare Assistants
-                  </h3>
-                  
-                  {/* Description */}
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    Outsource the administrative maze of broken bureaucracy and insurance claims. Our AI-Human hybrid system handles the "chaser" emails and phone marathons that stall your workday.
-                  </p>
-                </a>
+  {/* Mega Menu Dropdown - Full Width 3 Column Grid */}
+  <div className="absolute left-1/2 -translate-x-1/2 top-full mt-[-0.5] w-screen max-w-6xl rounded-2xl shadow-2xl bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block z-50 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out transform group-hover:translate-y-0 translate-y-2">
+    {/* Grid Container - 6 items in 2 rows */}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-8">
+      
+      {/* Card 1: Logistics Engine */}
+      <a
+        href="#OperationalSupport"
+        className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
+      >
+        {/* Icon Container */}
+        <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
+          <Headset className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
+        </div>
+        
+        {/* Title */}
+        <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
+          Virtual Eldercare Assistants
+        </h3>
+        
+        {/* Description */}
+        <p className="text-sm text-gray-600 leading-relaxed">
+          Outsource "chaser" emails and phone marathons that stall your workday. Avoid the broken bureaucracy and insurance claims. Let us do the heavy lifting while you focus on work.  
+        </p>
+      </a>
 
-                {/* Card 2: Financial Defense */}
-                <a
-                  href="/dev/#OperationalSupport"
-                  className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
-                >
-                  {/* Icon Container */}
-                  <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
-                    <Shield className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
-                  </div>
-                  
-                  {/* Title */}
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-                    Financial Defense
-                  </h3>
-                  
-                  {/* Description */}
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    Stop hemorrhaging cash and protect your parents' hard-earned legacy. Access proprietary spend-down models and elite legal audits to stop predatory facility contracts.
-                  </p>
-                </a>
+      {/* Card 2: Financial Defense */}
+      <a
+        href="#OperationalSupport"
+        className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
+      >
+        {/* Icon Container */}
+        <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
+          <Shield className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
+        </div>
+        
+        {/* Title */}
+        <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
+          Financial & Legal Defense
+        </h3>
+        
+        {/* Description */}
+        <p className="text-sm text-gray-600 leading-relaxed">
+          Access proprietary spend-down models and elite legal audits to protect your family from predatory care-home facility contracts. Your wages are not for paying eldercare bills.
+        </p>
+      </a>
 
-                {/* Card 3: Career Protection */}
-                <a
-                  href="/dev/#OperationalSupport"
-                  className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
-                >
-                  {/* Icon Container */}
-                  <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
-                    <Briefcase className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
-                  </div>
-                  
-                  {/* Title */}
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-                    Career Protection
-                  </h3>
-                  
-                  {/* Description */}
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                  Maintain your professional presence while ensuring mom and dad are safe. Never miss a travel opportunity or work event with our on-demand emergency caregiver network.
-                  </p>
-                </a>
+      {/* Card 3: Career Protection */}
+      <a
+        href="#OperationalSupport"
+        className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
+      >
+        {/* Icon Container */}
+        <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
+          <UserSearch className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
+        </div>
+        
+        {/* Title */}
+        <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
+          Emergency Caregiving Services
+        </h3>
+        
+        {/* Description */}
+        <p className="text-sm text-gray-600 leading-relaxed">
+          Never miss a work event or travel opportunity with our emergency caregiver search service. Maintain your professional presence while ensuring mom and dad are safe.
+        </p>
+      </a>
 
-                {/* Card 4: Family Advocacy */}
-                <a
-                  href="/dev/#OperationalSupport"
-                  className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
-                >
-                  {/* Icon Container */}
-                  <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
-                    <Users className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
-                  </div>
-                  
-                  {/* Title */}
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-                    Family Advocacy
-                  </h3>
-                  
-                  {/* Description */}
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    A safe space to vent and resolve high-stakes sibling friction. Join a confidential circle of peers and clinical coaches to share the mental load of being the "responsible one."
-                  </p>
-                </a>
+      {/* Card 4: Family Advocacy */}
+      <a
+        href="#OperationalSupport"
+        className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
+      >
+        {/* Icon Container */}
+        <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
+          <Dumbbell className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
+        </div>
+        
+        {/* Title */}
+        <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
+          Mental Health Gym
+        </h3>
+        
+        {/* Description */}
+        <p className="text-sm text-gray-600 leading-relaxed">
+          Join a confidential circle of peers and clinical coaches to share the mental stress of balancing work with eldercare support. A safe space to vent, discuss and resolve family conflicts. 
+        </p>
+      </a>
 
-                {/* Card 5: Clinical Insight */}
-                <a
-                  href="/dev/#OperationalSupport"
-                  className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
-                >
-                  {/* Icon Container */}
-                  <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
-                    <Activity className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
-                  </div>
-                  
-                  {/* Title */}
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-                    Clinical Insight
-                  </h3>
-                  
-                  {/* Description */}
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    Replace medical guesswork with executive-grade data and audits. Leverage cognitive health assessments and provider benchmarking to make decisions with absolute confidence.
-                  </p>
-                </a>
+      {/* Card 5: Clinical Insight */}
+      <a
+        href="#OperationalSupport"
+        className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
+      >
+        {/* Icon Container */}
+        <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
+          <DatabaseZap className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
+        </div>
+        
+        {/* Title */}
+        <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
+          Eldercare Data Vault
+        </h3>
+        
+        {/* Description */}
+        <p className="text-sm text-gray-600 leading-relaxed">
+          Replace fragmented unsecure personal data stores with structured searchable high-grade data vaults. Instantly connect personal, public and community insights for better decisions.  
+        </p>
+      </a>
 
-                {/* Card 6: Tactical Response */}
-                <a
-                  href="/dev/#OperationalSupport"
-                  className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
-                >
-                  {/* Icon Container */}
-                  <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
-                    <Zap className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
-                  </div>
-                  
-                  {/* Title */}
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-                    Tactical Response
-                  </h3>
-                  
-                  {/* Description */}
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    Real-time support for the unplanned logistics that keep you on high-alert. Activate standby assistance for hospital transport and pharmacy runs so you can finally sleep better tonight.
-                  </p>
-                </a>
+      {/* Card 6: Tactical Response */}
+      <a
+        href="#OperationalSupport"
+        className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
+      >
+        {/* Icon Container */}
+        <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
+          <Zap className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
+        </div>
+        
+        {/* Title */}
+        <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
+          Tactical Response Services
+        </h3>
+        
+        {/* Description */}
+        <p className="text-sm text-gray-600 leading-relaxed">
+          Real-time support for the unplanned errands that keep you on high-alert. Activate standby assistance for hospital transport and pharmacy runs so you can finish that sales presentation.
+        </p>
+      </a>
 
-              </div>
-            </div>
-          </div>
-          {/* END: Care Services Dropdown Menu */}
+    </div>
+  </div>
+</div>
+{/* ---------------------END Executive Services Dropdown Menu --------------------*/}
 
           <button
             onClick={() => {
