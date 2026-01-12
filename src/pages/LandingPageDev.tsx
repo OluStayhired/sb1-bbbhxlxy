@@ -1202,7 +1202,8 @@ const handleLoginClick = () => {
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />       
            </button>
         </TooltipHelp>
-                 <h3 className="text-xl font-bold drop-shadow-lg">Strategic Financial Planner</h3>
+                 {/*<h3 className="text-xl font-bold drop-shadow-lg">Strategic Financial Planner</h3>*/}
+                 <h3 className="text-xl font-bold drop-shadow-lg">Eldercare <br/> Financial Calculator</h3>
              </div>
            </div>
          </div>
@@ -1226,7 +1227,8 @@ const handleLoginClick = () => {
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
            </button>
         </TooltipHelp>
-                 <h3 className="text-xl font-bold drop-shadow-lg">Rapid Respite Placement</h3>
+                 {/*<h3 className="text-xl font-bold drop-shadow-lg">Rapid Respite Placement</h3>*/}
+                 <h3 className="text-xl font-bold drop-shadow-lg">Emergency Caregiving Services</h3>
              </div>
            </div>
             
@@ -1277,7 +1279,8 @@ const handleLoginClick = () => {
            </button>
           </TooltipHelp>
 
-                 <h3 className="text-xl font-bold drop-shadow-lg">Cognitive Health Assessment</h3>
+                 {/*<h3 className="text-xl font-bold drop-shadow-lg">Cognitive Health Assessment</h3>*/}
+                 <h3 className="text-xl font-bold drop-shadow-lg">Searchable Elder <br/> Data Vault</h3>
              </div>
            </div>
          </div>
@@ -1356,7 +1359,8 @@ const handleLoginClick = () => {
            </button>
           </TooltipHelp>
           
-                 <h3 className="text-xl font-bold drop-shadow-lg">Residential Care Benchmarking</h3>
+                 {/*<h3 className="text-xl font-bold drop-shadow-lg">Residential Care Benchmarking</h3>*/}
+                 <h3 className="text-xl font-bold drop-shadow-lg">Tactical Response Services</h3>
              </div>
            </div>
  
