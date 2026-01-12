@@ -337,7 +337,7 @@ export function StressCoachFreeTool() {
 
   return (
     <div className="w-full max-w-7xl mx-auto my-8 px-4 rounded-xl border-gray-200">
-      <div className="bg-white border border-gray-200 rounded-xl w-full h-[85vh] flex flex-col relative">
+      <div className="bg-white border border-gray-200 rounded-xl w-full h-[100vh] flex flex-col relative">
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200">
           <div className="flex items-center space-x-3">
