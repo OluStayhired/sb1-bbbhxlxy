@@ -1280,7 +1280,7 @@ const handleLoginClick = () => {
           </TooltipHelp>
 
                  {/*<h3 className="text-xl font-bold drop-shadow-lg">Cognitive Health Assessment</h3>*/}
-                 <h3 className="text-xl font-bold drop-shadow-lg">Searchable Elder <br/> Data Vault</h3>
+                 <h3 className="text-xl font-bold drop-shadow-lg">Searchable <br/> Data Vault</h3>
              </div>
            </div>
          </div>
