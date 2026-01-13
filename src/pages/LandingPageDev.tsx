@@ -479,7 +479,7 @@ const handleLoginClick = () => {
         
         {/* Title */}
         <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-          Eldercare Data Vault
+          Eldercare Vault
         </h3>
         
         {/* Description */}
@@ -1203,7 +1203,7 @@ const handleLoginClick = () => {
            </button>
         </TooltipHelp>
                  {/*<h3 className="text-xl font-bold drop-shadow-lg">Strategic Financial Planner</h3>*/}
-                 <h3 className="text-xl font-bold drop-shadow-lg">Eldercare <br/> Financial Calculator</h3>
+                 <h3 className="text-xl font-bold drop-shadow-lg">Financial Calculator</h3>
              </div>
            </div>
          </div>
@@ -1228,7 +1228,7 @@ const handleLoginClick = () => {
            </button>
         </TooltipHelp>
                  {/*<h3 className="text-xl font-bold drop-shadow-lg">Rapid Respite Placement</h3>*/}
-                 <h3 className="text-xl font-bold drop-shadow-lg">Emergency Caregiving Services</h3>
+                 <h3 className="text-xl font-bold drop-shadow-lg">Emergency Services</h3>
              </div>
            </div>
             
@@ -1334,7 +1334,7 @@ const handleLoginClick = () => {
            </button>
         </TooltipHelp>
 
-                 <h3 className="text-xl font-bold drop-shadow-lg">Vetted Elder Law Network</h3>
+                 <h3 className="text-xl font-bold drop-shadow-lg">Eldercare Attorneys</h3>
              </div>
            </div>
            
@@ -1360,7 +1360,7 @@ const handleLoginClick = () => {
           </TooltipHelp>
           
                  {/*<h3 className="text-xl font-bold drop-shadow-lg">Residential Care Benchmarking</h3>*/}
-                 <h3 className="text-xl font-bold drop-shadow-lg">Tactical Response Services</h3>
+                 <h3 className="text-xl font-bold drop-shadow-lg">Tactical Response</h3>
              </div>
            </div>
  
