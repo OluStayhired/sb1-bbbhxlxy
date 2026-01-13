@@ -51,7 +51,7 @@ export function CareerOpps({ isOpen, onClose, onOpenCommunity }: CareerOppsProps
         {/* Body Content */}
         <div className="mb-8 space-y-4">
           <p className="text-gray-700 text-base leading-relaxed">
-            Your career shouldn't stall because a caregiver didn't show up. Our platform provides <span className="font-semibold text-red-500">vetted, rated agencies and emergency sitters</span> ready to step in when opportunity calls.
+            Your career shouldn't stall because a caregiver didn't show up. Our platform finds <span className="font-semibold text-red-500">vetted, rated agencies and emergency sitters</span> ready to step in when opportunity calls.
           </p>
 
           {/* Alert box with pivot message */}
