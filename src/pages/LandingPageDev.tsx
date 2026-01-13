@@ -437,7 +437,7 @@ const handleLoginClick = () => {
         
         {/* Title */}
         <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-          Emergency Caregiving Services
+          Emergency Caregiving
         </h3>
         
         {/* Description */}
@@ -500,7 +500,7 @@ const handleLoginClick = () => {
         
         {/* Title */}
         <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-          Tactical Response Services
+          Tactical Response
         </h3>
         
         {/* Description */}
@@ -1280,7 +1280,7 @@ const handleLoginClick = () => {
           </TooltipHelp>
 
                  {/*<h3 className="text-xl font-bold drop-shadow-lg">Cognitive Health Assessment</h3>*/}
-                 <h3 className="text-xl font-bold drop-shadow-lg">Searchable <br/> Data Vault</h3>
+                 <h3 className="text-xl font-bold drop-shadow-lg">Eldercare Vault</h3>
              </div>
            </div>
          </div>
