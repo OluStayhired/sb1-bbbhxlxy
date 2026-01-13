@@ -254,7 +254,7 @@ export function PageMenuNav({ onOpenCommunityModal }: PageMenuNavProps) {
         
         {/* Title */}
         <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-          Emergency Caregiving Services
+          Emergency Caregiving
         </h3>
         
         {/* Description */}
@@ -296,7 +296,7 @@ export function PageMenuNav({ onOpenCommunityModal }: PageMenuNavProps) {
         
         {/* Title */}
         <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-          Eldercare Data Vault
+          Eldercare Vault
         </h3>
         
         {/* Description */}
@@ -317,7 +317,7 @@ export function PageMenuNav({ onOpenCommunityModal }: PageMenuNavProps) {
         
         {/* Title */}
         <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-          Tactical Response Services
+          Tactical Response
         </h3>
         
         {/* Description */}
