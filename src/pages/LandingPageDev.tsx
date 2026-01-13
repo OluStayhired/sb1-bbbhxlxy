@@ -29,7 +29,8 @@ import { CareerOpps } from '../components/CareerOpps';
 import { BrokenByFamily } from '../components/BrokenByFamily';
 import { OnCallStress } from '../components/OnCallStress';
 
-
+// Add to imports at the top
+import { OnboardingQuestionsModal } from '../components/OnboardingQuestionsModal';
 
 function LandingPageDev() {
   const navigate = useNavigate();
@@ -48,6 +49,9 @@ function LandingPageDev() {
   //constants for AI Assistants
   const [isEligibilityModalOpen, setIsEligibilityModalOpen] = useState(false);
   const [isStressCoachModalOpen, setIsStressCoachModalOpen] = useState(false);
+
+    // Add state near line 28 with other modal states
+    const [isOnboardingModalOpen, setIsOnboardingModalOpen] = useState(false);
 
   //constants for the grid buttons
   const [isMentallyBrokenModalOpen, setIsMentallyBrokenModalOpen] = useState(false);
@@ -189,6 +193,14 @@ const handleLoginClick = () => {
     setIsCommunityModalOpen(true);
   };
   
+  // Add modal open/close functions near line 54
+const openOnboardingModal = () => {
+  setIsOnboardingModalOpen(true);
+};
+
+const closeOnboardingModal = () => {
+  setIsOnboardingModalOpen(false);
+};  
   
   const handleGoogleLogin = async () => {
   try {
@@ -239,27 +251,50 @@ const handleLoginClick = () => {
                   <div className="absolute left-1/2 -translate-x-1/2 top-full mt-[-0.5] w-screen max-w-5xl rounded-2xl shadow-2xl bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block z-50 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out transform group-hover:translate-y-0 translate-y-2">
                     {/* Grid Container */}
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-8">
-                       {/* Card 1: Eldercare Checklist*/}
-                        <Link
-                          to="/dev/home-health-care"
-                          className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-teal-50 hover:to-green-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-teal-200"
-                          >
-                        {/* Icon Container */}
-                        <div className="flex items-center justify-center w-14 h-14 bg-teal-100 rounded-full mb-4 group-hover/card:bg-teal-200 transition-colors duration-300">
-                        <ShieldAlert className="w-7 h-7 text-teal-600 group-hover/card:scale-110 transition-transform duration-300" />
-                    </div>
+                        {/* Card 1: Readiness Audit*/}
+      <button
+        onClick={openOnboardingModal}
+        className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-teal-50 hover:to-green-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-teal-200"
+      >
+        {/* Icon Container */}
+        <div className="flex items-center justify-center w-14 h-14 bg-teal-100 rounded-full mb-4 group-hover/card:bg-teal-200 transition-colors duration-300">
+          <ShieldAlert className="w-7 h-7 text-teal-600 group-hover/card:scale-110 transition-transform duration-300" />
+        </div>
         
-                      {/* Title */}
-                       <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-teal-600 transition-colors duration-300">
-                        Eldercare Checklist
-                        <CheckCircle2 className="w-5 h-5 fill-teal-500 justify-center align-top text-white ml-1 inline"/>
-                      </h3>
+        {/* Title */}
+        <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-teal-600 transition-colors duration-300">
+          Eldercare Checklist
+        <CheckCircle2 className="w-5 h-5 fill-teal-500 justify-center align-top text-white ml-1 inline"/>
+        </h3>
+        
+        {/* Description */}
+        <p className="text-sm text-gray-600 leading-relaxed">
+          Identify hidden gaps in your parents' legal and financial infrastructure before a crisis hits. Get a prioritized checklist of missing POAs, estate vulnerabilities, and clinical must-haves.
+        </p>
+      </button>
 
-                      {/* Description */}
-                      <p className="text-sm text-gray-600 leading-relaxed">
-                        Identify hidden gaps in your parents' legal and financial infrastructure before a crisis hits. Get a prioritized checklist of missing POAs, estate vulnerabilities, and clinical must-haves.
-                      </p>
-                  </Link>
+      {/* Card 1: Readiness Audit*/}
+      {/*
+      <Link
+        to="/home-health-care"
+        className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-teal-50 hover:to-green-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-teal-200"
+      >
+        
+        <div className="flex items-center justify-center w-14 h-14 bg-teal-100 rounded-full mb-4 group-hover/card:bg-teal-200 transition-colors duration-300">
+          <ShieldAlert className="w-7 h-7 text-teal-600 group-hover/card:scale-110 transition-transform duration-300" />
+        </div>
+        
+        <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-teal-600 transition-colors duration-300">
+          Eldercare Checklist
+        <CheckCircle2 className="w-5 h-5 fill-teal-500 justify-center align-top text-white ml-1 inline"/>
+        </h3>
+        
+        
+        <p className="text-sm text-gray-600 leading-relaxed">
+          Identify hidden gaps in your parents' legal and financial infrastructure before a crisis hits. Get a prioritized checklist of missing POAs, estate vulnerabilities, and clinical must-haves.
+        </p>
+      </Link>
+      */}
 
                   {/* Card 2: Medicaid Co-Pilot */}
                   <Link
@@ -2054,6 +2089,11 @@ const handleLoginClick = () => {
         isOpen={isEligibilityModalOpen}
         onClose={closeEligibilityModal}
       />
+
+<OnboardingQuestionsModal 
+      isOpen={isOnboardingModalOpen}
+      onClose={closeOnboardingModal}
+    />
 
 <StressCoachModal
         isOpen={isStressCoachModalOpen}
