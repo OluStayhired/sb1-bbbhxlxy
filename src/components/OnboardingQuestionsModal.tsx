@@ -237,10 +237,11 @@ export function OnboardingQuestionsModal({ isOpen, onClose }: OnboardingQuestion
                   <CheckCircle2 className="w-8 h-8 fill-teal-500 justify-center align-top text-white"/>
                 </div>
                 <h2 className="text-3xl font-bold text-gray-900 mb-3">
-                  Welcome to Your Eldercare Checklist
+                  The <span className="text-red-500">Eldercare Gap</span> Analyzer
                 </h2>
                 <p className="text-gray-600 text-lg">
-                  Let's personalize your experience and build your custom dashboard
+                  {/*Let's personalize your experience and build your custom dashboard*/}               
+                  Fix gaps in your parents' legal & financial affairs
                 </p>
               </div>
 
@@ -473,14 +474,15 @@ export function OnboardingQuestionsModal({ isOpen, onClose }: OnboardingQuestion
           {currentStep === totalSteps - 1 && (
             <div className="space-y-6 animate-fadeIn">
               <div className="text-center mb-8">
-                <div className="mx-auto w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mb-4">
-                  <CheckCircle2 className="w-12 h-12 text-green-500" />
+                <div className="mx-auto w-16 h-16 bg-teal-50 rounded-full flex items-center justify-center mb-4">
+                  <CheckCircle2 className="w-12 h-12 text-teal-500" />
                 </div>
                 <h2 className="text-3xl font-bold text-gray-900 mb-3">
                   You're All Set, {firstName}!
                 </h2>
                 <p className="text-gray-600 text-lg">
-                  Your personalized eldercare dashboard is ready to be built
+                  {/*Your personalized eldercare dashboard is ready to be built*/}
+                  Let's build your personalized eldercare dashboard
                 </p>
               </div>
 
@@ -533,7 +535,7 @@ export function OnboardingQuestionsModal({ isOpen, onClose }: OnboardingQuestion
 
               <div className="bg-red-50 border border-red-100 rounded-lg p-4">
                 <p className="text-sm text-gray-700">
-                  <span className="font-semibold text-red-600">Next Step:</span> We'll create a personalized dashboard with resources, guidance, and support tailored to your specific eldercare journey.
+                  <span className="font-semibold text-red-600">Next Step:</span> We'll create a personalized dashboard that identifies the gaps and shares resources, guidance, and support to help you close the gaps.
                 </p>
               </div>
             </div>
