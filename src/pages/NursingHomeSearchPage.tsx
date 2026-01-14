@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CalendarCheck, Calendar, PenSquare, Clock, Users, PenTool, Briefcase, Plus, Minus,Menu, MailCheck,
   Bot, CheckCircle,X, Send,Timer, Zap, ArrowRight, HeartPulse, Rocket, Search, Heart, PlusCircle,
-  Lightbulb, Sparkles, CircleDollarSign, Star, Target, MapPin } from 'lucide-react';
+  Lightbulb, Sparkles, CircleDollarSign, Star, Target, MapPin, Check } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { AuthModal } from '../components/AuthModal';
 import BlueskyLogo from '../images/bluesky-logo.svg';
@@ -22,6 +22,9 @@ import { OurStoryTimeline } from '../components/OurStoryTimeline';
 import { NursingHomeProviderUS } from '../components/NursingHomeProviderUS.tsx';
 import { PageMenuNav } from '../components/PageMenuNav';
 import { PageFooter } from '../components/PageFooter';
+import { OnboardingQuestionsModal } from '../components/OnboardingQuestionsModal';
+
+
 
 
 
@@ -38,6 +41,9 @@ export function NursingHomeSearchPage() {
   const [isNewsletterSuccessModalOpen, setIsNewsletterSuccessModalOpen] = useState(false);
   const [isCommunityModalOpen, setIsCommunityModalOpen] = useState(false);
   const [isCommunitySuccessModalOpen, setIsCommunitySuccessModalOpen] = useState(false);
+  const [isOnboardingModalOpen, setIsOnboardingModalOpen] = useState(false);
+
+  
 
 
 const handleLoginClick = () => {
@@ -73,6 +79,17 @@ const handleLoginClick = () => {
     const closeCommunityModal = () => {
     setIsCommunityModalOpen(false);
   };
+
+  const openOnboardingModal = () => {
+    setIsOnboardingModalOpen(true);
+  };
+  
+  const closeOnboardingModal = () => {
+    setIsOnboardingModalOpen(false);
+  };
+  
+          
+  
   
   const handleGoogleLogin = async () => {
   try {
@@ -97,7 +114,10 @@ const handleLoginClick = () => {
 
       <div id="top_page" className="min-h-screen bg-white">
         {/*--- Replaced Menu Code with Menu Component ---- */}
-        <PageMenuNav onOpenCommunityModal={openCommunityModal} />
+        <PageMenuNav 
+            onOpenCommunityModal={openCommunityModal} 
+            onOpenOnboardingModal={openOnboardingModal}
+            />
       <main className="max-w-7xl mx-auto px-6 pb-32">
         <div className="text-center px-4 sm:px-6 md:px-8 lg:px-12 py-2 rounded-lg">
 
@@ -238,6 +258,14 @@ const handleLoginClick = () => {
         isOpen={isCommunityModalOpen}
         onClose={closeCommunityModal}
       />
+
+
+          {/* Onboarding Questions Modal */}
+          <OnboardingQuestionsModal
+            isOpen={isOnboardingModalOpen}
+            onClose={closeOnboardingModal}
+            />
+  
         
 {isWaitlistSuccessModalOpen ? (
   <div className="fixed top-4 right-4 bg-white rounded-lg shadow-lg border border-green-100 p-4 flex items-center space-x-3 animate-fade-in z-[9999]">

@@ -30,10 +30,17 @@ import { PageFooter } from '../components/PageFooter';
 import { StressCoachFreeTool } from '../components/StressCoachFreeTool';
 import { CommunityModal } from '../components/CommunityModal';
 import { TooltipExtended } from '/src/utils/TooltipExtended';
+import { OnboardingQuestionsModal } from '../components/OnboardingQuestionsModal';
+
+
 
 export function EldercareStressCoachPage() {
   const navigate = useNavigate();
   const [isCommunityModalOpen, setIsCommunityModalOpen] = useState(false);
+
+  const [isOnboardingModalOpen, setIsOnboardingModalOpen] = useState(false);
+
+  
 
   const openCommunityModal = () => {
     setIsCommunityModalOpen(true);
@@ -43,10 +50,22 @@ export function EldercareStressCoachPage() {
     setIsCommunityModalOpen(false);
   };
 
+  const openOnboardingModal = () => {
+    setIsOnboardingModalOpen(true);
+  };
+  
+  const closeOnboardingModal = () => {
+    setIsOnboardingModalOpen(false);
+  };
+  
+         
   return (
     <>
       <div id="top_page" className="min-h-screen bg-white">
-        <PageMenuNav onOpenCommunityModal={openCommunityModal} />
+      <PageMenuNav 
+            onOpenCommunityModal={openCommunityModal} 
+            onOpenOnboardingModal={openOnboardingModal}
+            />
 
         <main className="max-w-7xl mx-auto px-6 pb-32">
           {/* Hero Section */}
@@ -351,6 +370,13 @@ export function EldercareStressCoachPage() {
           isOpen={isCommunityModalOpen}
           onClose={closeCommunityModal}
         />
+
+           {/* Onboarding Questions Modal */}
+           <OnboardingQuestionsModal
+            isOpen={isOnboardingModalOpen}
+            onClose={closeOnboardingModal}
+            />
+
       </div>
     </>
   );
