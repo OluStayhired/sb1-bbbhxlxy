@@ -467,12 +467,15 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
         <div className="bg-gradient-to-r from-red-500 via-red-600 to-red-700 px-8 py-6 text-white relative overflow-hidden">
           <div className="absolute inset-0 bg-black opacity-5"></div>
           <div className="relative z-10">
-            <div className="flex items-start justify-between mb-2">
+            <div className="flex items-start justify-between mb-4">
               <div className="mb-2">
                 <h1 className="text-3xl font-bold">Eldercare Gap Analysis</h1>
+                {/*
                 <p className="text-red-100 text-lg">
                   {responseData.firstname}'s {responseData.relation} - {phaseData.phase_name}
                 </p>
+              */}
+
               </div>
               {/*
               <div className={`px-6 py-3 rounded-lg border-2 ${executiveInsight?.borderColor} ${executiveInsight?.bgColor} backdrop-blur-sm`}>
@@ -1071,6 +1074,15 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
                           <p className="text-xs text-green-700 font-medium">
                             <ShieldCheck className="w-5 h-5 text-white fill-green-600 inline mr-1" />
                              Store document safely with Poetiq
+                          </p>
+                        </div>
+                      )}
+
+                      {status === 'partial' && (
+                        <div className="mt-3 pt-3 border-t border-yellow-200">
+                          <p className="text-xs text-yellow-600 font-medium">
+                            <Zap className="w-3 h-3 inline mr-1" />
+                            Unlock Poetiq to complete this task
                           </p>
                         </div>
                       )}
