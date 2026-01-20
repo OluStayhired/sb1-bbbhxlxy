@@ -26,6 +26,7 @@ import { supabase } from '../lib/supabase';
 interface OnboardingQuestionsModalProps {
   isOpen: boolean;
   onClose: () => void;
+  onDashboardOpen?: () => void; 
 }
 
 interface Question {
@@ -49,7 +50,16 @@ interface PhaseContext {
   cost_funding: string;
 }
 
-export function OnboardingQuestionsModal({ isOpen, onClose }: OnboardingQuestionsModalProps) {
+interface CognitiveDragData {
+  base_cognitive_drag: number;
+  time_friction_drag: number;
+  legal_exposure_drag: number;
+  conflict_drag: number;
+  total_drag: number;
+}
+
+
+export function OnboardingQuestionsModal({ isOpen, onClose, onDashboardOpen }: OnboardingQuestionsModalProps) {
   const [currentStep, setCurrentStep] = useState(0);
   const [firstName, setFirstName] = useState('');
   const [elderRelation, setElderRelation] = useState('');
@@ -60,6 +70,162 @@ export function OnboardingQuestionsModal({ isOpen, onClose }: OnboardingQuestion
   const [phaseContexts, setPhaseContexts] = useState<PhaseContext[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  
+
+
+  // Generate or retrieve session ID from browser
+const getOrCreateSessionId = (): string => {
+  let sessionId = sessionStorage.getItem('eldercare_session_id');
+  
+  if (!sessionId) {
+    // Create a unique session ID using timestamp and random string
+    sessionId = `session_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+    sessionStorage.setItem('eldercare_session_id', sessionId);
+  }
+  
+  return sessionId;
+};
+
+// Calculate eldercare phase based on location (Q2) and dependency (Q3)
+const calculatePhase = (location: string, dependency: string): number => {
+  // Priority 1: End of Life
+  if (location.toLowerCase().includes('hospice')) {
+    return 5;
+  }
+  
+  // Priority 2: Institutional Management
+  if (location.toLowerCase().includes('nursing') || 
+      location.toLowerCase().includes('memory care')) {
+    return 4;
+  }
+  
+  // Priority 3: Acute Crisis
+  if (location.toLowerCase().includes('hospital') || 
+      location.toLowerCase().includes('rehab')) {
+    return 2;
+  }
+  
+  // Priority 4: Home-Based Intensity
+  if (location.toLowerCase().includes('home')) {
+    // Check dependency level for home-based care
+    const dependencyLower = dependency.toLowerCase();
+    
+    if (dependencyLower.includes('significant') || 
+        dependencyLower.includes('total') ||
+        dependencyLower.includes('complete')) {
+      return 3; // Intensive Home Care
+    } else {
+      return 1; // Early Planning
+    }
+  }
+  
+  // Default fallback to Early Planning
+  return 1;
+};
+
+// Calculate cognitive drag based on phase and Q4, Q5, Q6 answers
+const calculateCognitiveDrag = async (
+  calculatedPhase: number,
+  q4Answer: string,  // Question 4: Time/Schedule question
+  q5Answer: string,  // Question 5: Legal/Documents question
+  q6Answer: string   // Question 6: Family/Conflict question
+): Promise<CognitiveDragData | null> => {
+  try {
+    // Step 1: Get base_cognitive_drag from eldercare_phase table based on phase
+    const { data: phaseData, error: phaseError } = await supabase
+      .from('eldercare_phase')
+      .select('base_cognitive_drag')
+      .eq('id', calculatedPhase)
+      .single();
+
+    if (phaseError || !phaseData) {
+      console.error('Error fetching phase data:', phaseError);
+      return null;
+    }
+
+    const base_cognitive_drag = phaseData.base_cognitive_drag || 0;
+
+    // Step 2: Get cognitive drag values for each answer from eldercare_onboard_choices
+    // Fetch all choices with their cognitive drag values
+    const { data: choicesData, error: choicesError } = await supabase
+      .from('eldercare_onboard_choices')
+      .select('eldercare_question, question_choices, choice_cognitive_drag');
+
+    if (choicesError || !choicesData) {
+      console.error('Error fetching choices data:', choicesError);
+      return null;
+    }
+
+    // Step 3: Find the cognitive drag values for each answer
+    let time_friction_drag = 0;
+    let legal_exposure_drag = 0;
+    let conflict_drag = 0;
+
+    // Get question texts for Q4, Q5, Q6
+    const { data: questionsData } = await supabase
+      .from('eldercare_onboard_questions')
+      .select('question_id, onboard_question')
+      .in('question_id', [4, 5, 6]);
+
+    if (questionsData) {
+      const q4Text = questionsData.find(q => q.question_id === 4)?.onboard_question;
+      const q5Text = questionsData.find(q => q.question_id === 5)?.onboard_question;
+      const q6Text = questionsData.find(q => q.question_id === 6)?.onboard_question;
+
+      // Find drag values for Q4 answer (time friction)
+      if (q4Text && q4Answer) {
+        const q4Choice = choicesData.find(
+          c => c.eldercare_question === q4Text && c.question_choices === q4Answer
+        );
+        time_friction_drag = q4Choice?.choice_cognitive_drag || 0;
+      }
+
+      // Find drag values for Q5 answer (legal exposure)
+      if (q5Text && q5Answer) {
+        const q5Choice = choicesData.find(
+          c => c.eldercare_question === q5Text && c.question_choices === q5Answer
+        );
+        legal_exposure_drag = q5Choice?.choice_cognitive_drag || 0;
+      }
+
+      // Find drag values for Q6 answer (family conflict)
+      if (q6Text && q6Answer) {
+        const q6Choice = choicesData.find(
+          c => c.eldercare_question === q6Text && c.question_choices === q6Answer
+        );
+        conflict_drag = q6Choice?.choice_cognitive_drag || 0;
+      }
+    }
+
+    // Step 4: Calculate total drag using the formula
+    const total_drag = base_cognitive_drag + time_friction_drag + legal_exposure_drag + conflict_drag;
+
+    console.log('Cognitive Drag Calculation:', {
+      base_cognitive_drag,
+      time_friction_drag,
+      legal_exposure_drag,
+      conflict_drag,
+      total_drag
+    });
+
+    return {
+      base_cognitive_drag,
+      time_friction_drag,
+      legal_exposure_drag,
+      conflict_drag,
+      total_drag
+    };
+
+  } catch (err) {
+    console.error('Error calculating cognitive drag:', err);
+    return null;
+  }
+};
+  
+  
+
+  const [sessionId] = useState<string>(getOrCreateSessionId());
+
 
   // Fetch onboarding data from supabase
   useEffect(() => {
@@ -140,7 +306,8 @@ export function OnboardingQuestionsModal({ isOpen, onClose }: OnboardingQuestion
     }
     return null;
   };
-
+/* --------- Start old HandleNext Function --------- */
+  {/*
   const handleNext = () => {
     // Validation for each step
     if (currentStep === 0 && !firstName.trim()) {
@@ -171,6 +338,195 @@ export function OnboardingQuestionsModal({ isOpen, onClose }: OnboardingQuestion
       setCurrentStep(currentStep + 1);
     }
   };
+*/}
+  /* ---- End Old HandleNext Function -----*/
+
+  /* ---- Start HandleNext Function that Saves Answers -----*/
+  {/*
+  const handleSaveNext = async () => {
+  // Validation for each step
+  if (currentStep === 0 && !firstName.trim()) {
+    setError('Please enter your first name');
+    return;
+  }
+  if (currentStep === 1 && !elderRelation) {
+    setError('Please select your relationship');
+    return;
+  }
+  if (currentStep === 2 && !country) {
+    setError('Please select your country');
+    return;
+  }
+  
+  // Validate question answers
+  if (currentStep >= 3 && currentStep < 3 + questions.length) {
+    const questionIndex = currentStep - 3;
+    const question = questions[questionIndex];
+    if (!answers[question.question_id]) {
+      setError('Please select an answer');
+      return;
+    }
+  }
+
+  // Save data to supabase
+  try {
+    const dataToSave = {
+      session_id: sessionId,
+      firstname: firstName || null,
+      relation: elderRelation || null,
+      country: country || null,
+      raw_answers: answers,
+      created_at: new Date().toISOString()
+    };
+
+    // Upsert: Insert new record or update existing one based on session_id
+    const { data, error: saveError } = await supabase
+      .from('eldercare_onboard_responses')
+      .upsert(dataToSave, { 
+        onConflict: 'session_id',
+        ignoreDuplicates: false 
+      })
+      .select();
+
+    if (saveError) {
+      console.error('Error saving onboarding data:', saveError);
+      setError('Failed to save your progress. Please try again.');
+      return;
+    }
+
+    console.log('Data saved successfully:', data);
+    
+  } catch (err) {
+    console.error('Unexpected error saving data:', err);
+    setError('An unexpected error occurred. Please try again.');
+    return;
+  }
+
+  // Proceed to next step after successful save
+  setError('');
+  if (currentStep < totalSteps - 1) {
+    setCurrentStep(currentStep + 1);
+  }
+};
+
+*/}
+ /* ---- End HandleNext Function that Saves Answers -----*/
+
+   /* ---- Start HandleNext Function that Calculates Phase and Cognitive Drag -----*/
+  const handleSaveNext = async () => {
+  // Validation for each step
+  if (currentStep === 0 && !firstName.trim()) {
+    setError('Please enter your first name');
+    return;
+  }
+  if (currentStep === 1 && !elderRelation) {
+    setError('Please select your relationship');
+    return;
+  }
+  if (currentStep === 2 && !country) {
+    setError('Please select your country');
+    return;
+  }
+  
+  // Validate question answers
+  if (currentStep >= 3 && currentStep < 3 + questions.length) {
+    const questionIndex = currentStep - 3;
+    const question = questions[questionIndex];
+    if (!answers[question.question_id]) {
+      setError('Please select an answer');
+      return;
+    }
+  }
+
+  // Save data to supabase
+  try {
+    // Step 1: Calculate phase if both Q2 and Q3 are answered
+    let calculatedPhase: number | null = null;
+    
+    const locationAnswer = answers[2]; // Question ID 2 - Location
+    const dependencyAnswer = answers[3]; // Question ID 3 - Dependency/ADL
+    
+    if (locationAnswer && dependencyAnswer) {
+      calculatedPhase = calculatePhase(locationAnswer, dependencyAnswer);
+      console.log('Phase calculated:', {
+        location: locationAnswer,
+        dependency: dependencyAnswer,
+        phase: calculatedPhase
+      });
+    }
+
+    // Step 2: Calculate cognitive drag if phase is calculated and Q4, Q5, Q6 are answered
+    let dragScore: number | null = null;
+    
+    const q4Answer = answers[4]; // Question ID 4 - Time/Schedule
+    const q5Answer = answers[5]; // Question ID 5 - Legal/Documents
+    const q6Answer = answers[6]; // Question ID 6 - Family/Conflict
+    
+    if (calculatedPhase !== null && q4Answer && q5Answer && q6Answer) {
+      const dragData = await calculateCognitiveDrag(
+        calculatedPhase,
+        q4Answer,
+        q5Answer,
+        q6Answer
+      );
+      
+      if (dragData) {
+        dragScore = dragData.total_drag;
+        console.log('Drag score calculated:', {
+          phase: calculatedPhase,
+          q4Answer,
+          q5Answer,
+          q6Answer,
+          dragScore
+        });
+      }
+    }
+
+    // Step 3: Prepare data to save
+    const dataToSave = {
+      session_id: sessionId,
+      firstname: firstName || null,
+      relation: elderRelation || null,
+      country: country || null,
+      raw_answers: answers,
+      calculated_phase: calculatedPhase,
+      drag_score: dragScore,
+      created_at: new Date().toISOString()
+    };
+
+    // Step 4: Upsert data to database
+    const { data, error: saveError } = await supabase
+      .from('eldercare_onboard_responses')
+      .upsert(dataToSave, { 
+        onConflict: 'session_id',
+        ignoreDuplicates: false 
+      })
+      .select();
+
+    if (saveError) {
+      console.error('Error saving onboarding data:', saveError);
+      setError('Failed to save your progress. Please try again.');
+      return;
+    }
+
+    console.log('Data saved successfully:', data);
+    
+  } catch (err) {
+    console.error('Unexpected error saving data:', err);
+    setError('An unexpected error occurred. Please try again.');
+    return;
+  }
+
+  // Proceed to next step after successful save
+  setError('');
+  if (currentStep < totalSteps - 1) {
+    setCurrentStep(currentStep + 1);
+  }
+};
+
+
+
+  /*------- End HandleSaveNext Function that Calculates Phase and Cognitive Drag ---- */
 
   const handleBack = () => {
     setError('');
@@ -567,6 +923,15 @@ export function OnboardingQuestionsModal({ isOpen, onClose }: OnboardingQuestion
 
             {currentStep === totalSteps - 1 ? (
               <button
+                  onClick={async () => {
+                  await handleSaveNext();
+                  // Add any final completion logic here
+                  onClose();
+                     // Open the dashboard modal if callback provided
+                  if (onDashboardOpen) {
+                        onDashboardOpen();
+                    }
+                  }}
                 className="flex items-center px-8 py-3 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-lg font-semibold hover:from-red-600 hover:to-red-700 transition-all duration-200 shadow-md hover:shadow-lg"
               >
                 Build Dashboard
@@ -574,7 +939,8 @@ export function OnboardingQuestionsModal({ isOpen, onClose }: OnboardingQuestion
               </button>
             ) : (
               <button
-                onClick={handleNext}
+                //onClick={handleNext}
+                onClick={handleSaveNext}
                 className="flex items-center px-8 py-3 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-lg font-semibold hover:from-red-600 hover:to-red-700 transition-all duration-200 shadow-md hover:shadow-lg"
               >
                 Next
@@ -587,3 +953,4 @@ export function OnboardingQuestionsModal({ isOpen, onClose }: OnboardingQuestion
     </div>
   );
 }
+

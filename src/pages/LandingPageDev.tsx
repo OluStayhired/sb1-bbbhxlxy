@@ -32,6 +32,8 @@ import { OnCallStress } from '../components/OnCallStress';
 // Add to imports at the top
 import { OnboardingQuestionsModal } from '../components/OnboardingQuestionsModal';
 
+import { EldercareGapDashboardModal } from '../components/EldercareGapDashboardModal';  // ADD THIS LINE
+
 function LandingPageDev() {
   const navigate = useNavigate();
   //const { isAuthenticated } = useAuth();
@@ -52,6 +54,7 @@ function LandingPageDev() {
 
     // Add state near line 28 with other modal states
     const [isOnboardingModalOpen, setIsOnboardingModalOpen] = useState(false);
+    const [isDashboardModalOpen, setIsDashboardModalOpen] = useState(false);  // ADD THIS LINE
 
   //constants for the grid buttons
   const [isMentallyBrokenModalOpen, setIsMentallyBrokenModalOpen] = useState(false);
@@ -193,7 +196,8 @@ const handleLoginClick = () => {
     setIsCommunityModalOpen(true);
   };
   
-  // Add modal open/close functions near line 54
+
+// Add modal open/close functions near line 54
 const openOnboardingModal = () => {
   setIsOnboardingModalOpen(true);
 };
@@ -201,6 +205,19 @@ const openOnboardingModal = () => {
 const closeOnboardingModal = () => {
   setIsOnboardingModalOpen(false);
 };  
+
+const openDashboardModal = () => {
+  setIsDashboardModalOpen(true);
+};
+
+const closeDashboardModal = () => {
+  setIsDashboardModalOpen(false);
+};  
+
+  // GET SESSION ID FROM SESSION STORAGE
+  const getSessionId = (): string => {
+    return sessionStorage.getItem('eldercare_session_id') || '';
+  };
   
   const handleGoogleLogin = async () => {
   try {
@@ -2093,7 +2110,14 @@ const closeOnboardingModal = () => {
 <OnboardingQuestionsModal 
       isOpen={isOnboardingModalOpen}
       onClose={closeOnboardingModal}
+      onDashboardOpen={openDashboardModal} 
     />
+
+    <EldercareGapDashboardModal
+  isOpen={isDashboardModalOpen}
+  onClose={closeDashboardModal}
+  sessionId={getSessionId()}
+/>  
 
 <StressCoachModal
         isOpen={isStressCoachModalOpen}
