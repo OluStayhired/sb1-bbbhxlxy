@@ -31,6 +31,7 @@ import {
 } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import { TooltipHelp } from '/src/utils/TooltipHelp';
+import { TooltipExtended } from '/src/utils/TooltipExtended';
 
 // Added Community Modal and Waitlist Modal
 import { CommunityModal } from '../components/CommunityModal.tsx';
@@ -81,7 +82,6 @@ interface ExecutiveInsight {
   message: string;
   color: string;
   bgColor: string;
-  bgIconColor: string;
   borderColor: string;
 }
 
@@ -134,17 +134,19 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
         color: 'text-green-700',
         bgColor: 'bg-green-50',
         bgIconColor: 'bg-green-100',
-        borderColor: 'border-green-200'
+        borderColor: 'border-green-200',
+        borderHoverColor: 'hover:border-green-400'
       };
     } else if (percentage <= 60) {
       return {
         level: 'yellow',
-        status: 'At Capacity',
+        status: 'Max Capacity',
         message: 'Risk of career interference. Delegate low-level tasks.',
         color: 'text-yellow-700',
         bgColor: 'bg-yellow-50',
         bgIconColor: 'bg-yellow-100',
-        borderColor: 'border-yellow-300'
+        borderColor: 'border-yellow-300',
+        borderHoverColor: 'hover:border-yellow-400'
       };
     } else if (percentage <= 85) {
       return {
@@ -154,7 +156,8 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
         color: 'text-orange-700',
         bgColor: 'bg-orange-50',
         bgIconColor: 'bg-orange-100',
-        borderColor: 'border-orange-300'
+        borderColor: 'border-orange-300',
+        borderHoverColor: 'hover:border-orange-400'
       };
     } else {
       return {
@@ -164,7 +167,8 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
         color: 'text-red-700',
         bgColor: 'bg-red-50',
         bgIconColor: 'bg-red-100',
-        borderColor: 'border-red-300'
+        borderColor: 'border-red-300',
+        borderHoverColor: 'hover:border-red-400'
       };
     }
   };
@@ -228,7 +232,6 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
   // Calculate financial burn rate (example logic - adjust based on your data)
   const calculateFinancialBurnRate = () => {
     if (!responseData || !phaseData) return null;
-
     
     const answer = responseData.raw_answers[7]?.toLowerCase() || '';
     const isSelfFunded = answer.includes('self');
@@ -329,7 +332,6 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
   } => {
     //const lowerAnswer = answer?.toLowerCase() || '';
 
-
     const lowerAnswer = responseData.raw_answers[5]?.toLowerCase() || '';
     
     // Red Alert: Not yet signed
@@ -346,6 +348,7 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
         bgColor: 'bg-red-50',
         bgIconColor: 'bg-red-200',
         borderColor: 'border-red-500',
+        borderHoverColor: 'hover:border-red-600',
         message: 'Legal Power of Attorney not in place. Immediate action required.'
       };
     }
@@ -364,6 +367,7 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
         bgColor: 'bg-yellow-50',
         bgIconColor: 'bg-yellow-100',
         borderColor: 'border-yellow-300',
+        borderHoverColor: 'hover:border-yellow-500',
         message: 'Document exists but location unknown. Retrieve and secure immediately.'
       };
     }
@@ -377,6 +381,7 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
       bgColor: 'bg-green-50',
       bgIconColor: 'bg-green-200',
       borderColor: 'border-green-500',
+      borderHoverColor: 'hover:border-green-600',
       message: 'Legal Power of Attorney signed and accessible.'
     };
   };
@@ -446,9 +451,9 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
                 <p className="text-red-100 text-lg">
                   {responseData.firstname}'s {responseData.relation} - {phaseData.phase_name}
                 </p>
-              */}
-
+                */}
               </div>
+             
             </div>
             
             <div className={`p-4 rounded-lg border ${executiveInsight?.borderColor} ${executiveInsight?.bgColor} backdrop-blur-sm`}>
@@ -470,10 +475,11 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
             
             {/* Hero Metric: Cognitive Drag Gauge */}
             <div 
-            onClick={openCommunityModal}
-            className="lg:col-span-1 bg-white rounded-xl shadow-lg 
-            border border-gray-200 p-6 relative overflow-hidden
-            transition-all duration-700 cursor-pointer transform hover:-translate-y-2 hover:shadow-2xl">
+              onClick={openCommunityModal}
+              className="lg:col-span-1 bg-white rounded-xl shadow-lg 
+              border border-gray-200 p-6 relative overflow-hidden
+              transition-all duration-700 cursor-pointer transform hover:-translate-y-2 hover:shadow-2xl
+              ">
               <div className="absolute top-0 right-0 w-32 h-32 bg-red-50 rounded-full -mr-16 -mt-16 opacity-50"></div>
               <div className="relative z-10">
                 <div className="flex items-center justify-between mb-4">
@@ -499,8 +505,7 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
                       cy="80"
                       r="70"
                       fill="none"
-                      //stroke={dragPercentage > 85 ? '#ef4444' : dragPercentage > 60 ? '#f97316' : dragPercentage > 30 ? '#eab308' : '#10b981'}
-                      //stroke={dragPercentage > 85 ? '#ef4444' : dragPercentage > 60 ? '#f97316' : dragPercentage > 30 ? '#eab308' : '#48bb78'}
+           
                       stroke={dragPercentage > 85 ? '#ef4444' : dragPercentage > 60 ? '#ff3030' : dragPercentage > 30 ? '#ffd323' : '#58e091'}
                       strokeWidth="12"
                       strokeDasharray={`${(dragPercentage / 100) * 439.6} 439.6`}
@@ -517,7 +522,7 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
                 </div>
                 
                 <div className="text-center">
-                  <p className="text-lg font-bold text-red-600 mb-1">
+                  <p className="text-lg font-bold text-gray-600 mb-1">
                     Bandwidth Deficit: -{dragPercentage}%
                   </p>
                   <p className="text-xs text-gray-500">
@@ -525,35 +530,35 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
                   </p>
                 </div>
               </div>
-                  {/*<div className="mt-3 p-3 bg-orange-50 rounded-lg border border-orange-100">*/}
-                      <div className={`flex-col mt-11 p-3 rounded-lg border ${executiveInsight?.borderColor} ${executiveInsight?.bgColor}`}>
+                 
+                      <div className={`flex-col mt-11 p-3 rounded-lg border ${executiveInsight?.borderColor} ${executiveInsight?.bgColor} ${executiveInsight?.borderHoverColor}`}>
 
                       <div className="flex items-center space-x-2">
                         <div className={`p-2 ${executiveInsight?.bgIconColor} rounded-lg`}>
                           <Lightbulb className={`w-4 h-4  ${executiveInsight?.color}`} />
                         </div>
                      <div>
+                       <TooltipExtended text ={`⚡${executiveInsight?.message}`}>
                         <h3 className={`text-xs ${executiveInsight?.color}`}> 
                           Overall status is <b>{executiveInsight?.status}</b>
                         </h3>
+                         </TooltipExtended>  
                      </div>
-                 </div>
-                      {/*
-                        <p className={`text-xs ${executiveInsight?.color}`}>
-                          <Lightbulb className="w-4 h-4 inline mr-1" />
-                          Eldercare status is currently <b>{executiveInsight?.status}</b></p>
-                      */}
+                 </div> 
+                         
+                
                         
-                    </div>
-                    
+                </div>
+                     
             </div>
 
             {/* Financial Burn Rate */}
             <div 
-            onClick={openCommunityModal}
-            className="lg:col-span-1 bg-white rounded-xl shadow-lg 
-            border border-gray-200 p-6 relative overflow-hidden
-            transition-all duration-700 cursor-pointer transform hover:-translate-y-2 hover:shadow-2xl">
+              onClick={openCommunityModal}
+              className="lg:col-span-1 bg-white rounded-xl shadow-lg 
+              border border-gray-200 p-6 relative overflow-hidden
+              transition-all duration-700 cursor-pointer transform hover:-translate-y-2 hover:shadow-2xl
+              ">
               <div className="absolute top-0 right-0 w-32 h-32 bg-orange-50 rounded-full -mr-16 -mt-16 opacity-50"></div>
               <div className="relative z-10">
                 <div className="flex items-center justify-between mb-4">
@@ -588,16 +593,18 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
                       <span className="font-bold text-orange-600">{financialData.projectedMonths} months</span>
                     </div>
                     
-                    <div className="flex-col mt-24 p-3 bg-yellow-50 rounded-lg border border-yellow-300">
+                    <div className="flex-col mt-24 p-3 bg-yellow-50 rounded-lg border border-yellow-300 hover:border-yellow-500">
                       
                       <div className="flex items-center space-x-2">
                         <div className={`p-2 bg-yellow-100 rounded-lg`}>
                           <CircleDollarSign className="w-4 h-4 font-normal text-yellow-700" />
                         </div>
                      <div>
+                       <TooltipExtended text="⚡Purchase Long Term Care Insurance. Activate LPOA!">
                         <h3 className="text-xs text-yellow-700 flex items-center"> 
                           Estate preservation strategies required!
                         </h3>
+                       </TooltipExtended> 
                      </div>
                  </div>
               </div>            
@@ -611,15 +618,17 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
           <p className="text-xs text-gray-500 mt-1">Lower financial exposure</p>
         </div> 
 
-        <div className="flex-col mt-10 p-3 bg-green-50 rounded-lg border border-green-200">
+        <div className="flex-col mt-10 p-3 bg-green-50 rounded-lg border border-green-200 hover:border-green-400">
           <div className="flex items-center space-x-2">
             <div className={`p-2 bg-green-100 rounded-lg`}>
               <CircleDollarSign className="w-4 h-4 font-normal text-green-700" />
             </div>
             <div>
+              <TooltipExtended text="⚡Avoid penalties. Notify insurance companies of changes">
               <h3 className="text-xs text-green-700 flex items-center"> 
                 Keep health insurance status regularly updated!
               </h3>
+                </TooltipExtended>
             </div>
           </div>
         </div>
@@ -632,15 +641,17 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
           <p className="text-xs text-gray-500 mt-1">Clarification needed</p>
         </div> 
 
-        <div className="flex-col mt-10 p-3 bg-red-50 rounded-lg border border-red-200">
+        <div className="flex-col mt-10 p-3 bg-red-50 rounded-lg border border-red-200 hover:border-red-400">
           <div className="flex items-center space-x-2">
             <div className={`p-2 bg-red-100 rounded-lg`}>
               <CircleDollarSign className="w-4 h-4 font-normal text-red-700" />
             </div>
             <div>
+            <TooltipExtended text="⚡Financial Assistance | UK is Under £23,250 | US is Under $2,000">
               <h3 className="text-xs text-red-700 flex items-center"> 
                 Determine funding source to assess financial risk!
               </h3>
+            </TooltipExtended>
             </div>
           </div>
         </div>
@@ -655,10 +666,11 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
 
             {/* Phase Journey Timeline */}
             <div 
-            onClick={openCommunityModal}
-            className="lg:col-span-1 bg-white rounded-xl shadow-lg 
-            border border-gray-200 p-6 relative overflow-hidden
-            transition-all duration-700 cursor-pointer transform hover:-translate-y-2 hover:shadow-2xl">
+              onClick={openCommunityModal}
+              className="lg:col-span-1 bg-white rounded-xl shadow-lg 
+              border border-gray-200 p-6 relative overflow-hidden
+              transition-all duration-700 cursor-pointer transform hover:-translate-y-2 hover:shadow-2xl
+              ">
               <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-full -mr-16 -mt-16 opacity-50"></div>
               <div className="relative z-10">
                 <div className="flex items-center justify-between mb-4">
@@ -729,7 +741,34 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
   </div>
 </div>
 
-                <div className="mt-20 p-3 bg-blue-50 rounded-lg border border-blue-200">
+                {/*                
+                <div className="space-y-2 mb-4">
+                  {[1, 2, 3, 4, 5].map((phase) => (
+                    <div key={phase} className="flex items-center">
+                      <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold ${
+                        phase < responseData.calculated_phase 
+                          ? 'bg-gray-200 text-gray-400'
+                          : phase === responseData.calculated_phase
+                          ? 'bg-red-500 text-white ring-4 ring-red-100 shadow-lg'
+                          : 'bg-gray-100 text-gray-400 border-2 border-gray-200'
+                      }`}>
+                        {phase}
+                      </div>
+                      <div className={`ml-3 flex-1 text-xs ${
+                        phase === responseData.calculated_phase ? 'font-semibold text-gray-900' : 'text-gray-500'
+                      }`}>
+                        Phase {phase}
+                        {phase === responseData.calculated_phase && (
+                          <span className="ml-2 px-2 py-0.5 bg-red-100 text-red-700 rounded-full text-xs font-bold">
+                            ACTIVE
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              */}  
+                <div className="mt-20 p-3 bg-blue-50 rounded-lg border border-blue-200 hover:border-blue-300">
 
                   {/*
                   <p className="text-xs text-blue-700">
@@ -743,9 +782,11 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
                           <Ambulance className="w-4 h-4 font-normal text-blue-700" />
                         </div>
                      <div>
+                       <TooltipExtended text={`⚡${phaseData?.docs_needed}`}>
                         <h3 className="text-xs text-blue-700 flex items-center"> 
                           Next Stage : {phaseData?.likely_next_stage}
                         </h3>
+                       </TooltipExtended>  
                      </div>
                  </div>
                   
@@ -825,13 +866,12 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
                       <div className="flex items-center">
                         <ShieldCheck className="w-5 h-5 text-green-700 mr-3" />
                         <p className="text-sm font-semibold text-gray-700">
-                          Store document safely with Poetiq!
+                          Store legal document safely with Poetiq!
                         </p>
                       </div>
                       <ChevronRight className="w-5 h-5 text-green-700" />
                     </button>
                   )}
-                  
                 </div>
               </div>
             );
@@ -1030,7 +1070,7 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
                         <div className="mt-3 pt-3 border-t border-red-200">
                           <p className="text-xs text-red-600 font-medium">
                             <Zap className="w-3 h-3 inline mr-1" />
-                            Unlock Poetiq to resolve instantly
+                            Unlock Poetiq to resolve now
                           </p>
                         </div>
                       )}
@@ -1044,7 +1084,7 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
                         </div>
                       )}
 
-                      {status === 'partial' && (
+                       {status === 'partial' && (
                         <div className="mt-3 pt-3 border-t border-yellow-200">
                           <p className="text-xs text-yellow-600 font-medium">
                             <Zap className="w-3 h-3 inline mr-1" />
@@ -1052,6 +1092,7 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
                           </p>
                         </div>
                       )}
+                      
                     </div>
                   );
                 })}
