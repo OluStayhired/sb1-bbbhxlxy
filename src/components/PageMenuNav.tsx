@@ -76,7 +76,7 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
 
                       {/* Description */}
                       <p className="text-sm text-gray-600 leading-relaxed">
-                        Identify hidden gaps in your parents' legal and financial infrastructure before a crisis hits. Get a prioritized checklist of missing POAs, estate vulnerabilities, and clinical must-haves.
+                      Identify legal and financial gaps in your parents' healthcare before a crisis hits. 
                       </p>
                   </button>
 
@@ -97,7 +97,7 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
         
                  {/* Description */}
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    Navigate the complex maze of Medicaid and Long-Term Care Insurance with a collaborative partner. We join you to determine eligibility, protect family assets, and oversee your application.
+                  Navigate complex Long-Term Care Insurance eligibility issues in real-time. 
                   </p>
                 </Link>
 
@@ -118,7 +118,7 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
         
                   {/* Description */}
                   <p className="text-sm text-gray-600 leading-relaxed">
-                   Get human-led advice and professionally re-worded emails and messages that allow you to manage family disagreements empathetically without the emotional drain. 
+                  Manage family disagreements empathetically without emotional drain. 
                   </p>
                 </Link>
                 
@@ -139,7 +139,7 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
                   
                   {/* Description */}
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    Simple tool to help you find rated caregiver agencies close to you. Search 12,500 caregiving agencies. Get summary reports and book a call.
+                  Discover rated caregiving agencies close to you. Search 12,500 providers.
                   </p>
                 </Link>
 
@@ -160,7 +160,7 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
                   
                   {/* Description */}
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    Discover highly-rated nursing homes and assisted living facilities in your area. Compare ratings, amenities, and care quality to make informed decisions.
+                  Find highly-rated nursing homes and assisted living facilities in your area.
                   </p>
                 </Link>
 
@@ -181,7 +181,7 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
                   
                   {/* Description */}
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    Take a comprehensive cognitive test to evaluate memory and thinking skills. Get insights and recommendations for next steps in care planning.
+                  Take a comprehensive cognitive test to evaluate memory and thinking skills.
                   </p>
                 </Link>
 
