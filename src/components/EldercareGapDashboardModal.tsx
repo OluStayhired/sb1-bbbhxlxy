@@ -229,9 +229,6 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
   const calculateFinancialBurnRate = () => {
     if (!responseData || !phaseData) return null;
 
-    //const isSelfFunded = responseData.raw_answers[7]?.toLowerCase().includes('self');
-    //const isGovtInsurance = responseData.raw_answers[7]?.toLowerCase().includes('insurance'|'government');
-    //const isNotSure = responseData.raw_answers[7]?.toLowerCase().includes('not sure');
     
     const answer = responseData.raw_answers[7]?.toLowerCase() || '';
     const isSelfFunded = answer.includes('self');
@@ -277,28 +274,6 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
     };
   };
 
-  {/*
-  const getChecklistStatus = (item: ChecklistItem): 'missing' | 'partial' | 'complete' => {
-    // Logic to determine checklist status based on answers
-    // This is a simplified version - adjust based on your data
-    const relevantAnswers = responseData?.raw_answers || {};
-    
-    // Example logic
-    if (item.checklist_type === 'legal') {
-      const legalAnswer = relevantAnswers[5]; // Q5 is legal/documents
-      if (legalAnswer?.toLowerCase().includes('nothing') || legalAnswer?.toLowerCase().includes('missing')) {
-        return 'missing';
-      } else if (legalAnswer?.toLowerCase().includes('partial') || legalAnswer?.toLowerCase().includes('some')) {
-        return 'partial';
-      } else {
-        return 'complete';
-      }
-    }
-    
-    // Default logic for other types
-    return 'partial';
-  };
-*/}
 
 //------------------ getChecklistStatus -----------------//
   const getChecklistStatus = (item: ChecklistItem): 'missing' | 'partial' | 'complete' => {
@@ -356,10 +331,6 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
 
 
     const lowerAnswer = responseData.raw_answers[5]?.toLowerCase() || '';
-    //const isSelfFunded = answer.includes('self');
-    //const isGovtInsurance = answer.includes('insurance') || answer.includes('government');
-    //const isNotSure = answer.includes('not sure');
-    //const country = responseData.country;  
     
     // Red Alert: Not yet signed
     if (lowerAnswer.includes('not yet') || 
@@ -478,12 +449,6 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
               */}
 
               </div>
-              {/*
-              <div className={`px-6 py-3 rounded-lg border-2 ${executiveInsight?.borderColor} ${executiveInsight?.bgColor} backdrop-blur-sm`}>
-                <p className="text-xs font-semibold uppercase tracking-wider text-gray-600 mb-1">Status</p>
-                <p className={`text-xl font-bold ${executiveInsight?.color}`}>{executiveInsight?.status}</p>
-              </div>
-              */}
             </div>
             
             <div className={`p-4 rounded-lg border ${executiveInsight?.borderColor} ${executiveInsight?.bgColor} backdrop-blur-sm`}>
@@ -504,7 +469,9 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
             
             {/* Hero Metric: Cognitive Drag Gauge */}
-            <div className="lg:col-span-1 bg-white rounded-xl shadow-lg 
+            <div 
+            onClick={openCommunityModal}
+            className="lg:col-span-1 bg-white rounded-xl shadow-lg 
             border border-gray-200 p-6 relative overflow-hidden
             transition-all duration-700 cursor-pointer transform hover:-translate-y-2 hover:shadow-2xl">
               <div className="absolute top-0 right-0 w-32 h-32 bg-red-50 rounded-full -mr-16 -mt-16 opacity-50"></div>
@@ -582,7 +549,9 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
             </div>
 
             {/* Financial Burn Rate */}
-            <div className="lg:col-span-1 bg-white rounded-xl shadow-lg 
+            <div 
+            onClick={openCommunityModal}
+            className="lg:col-span-1 bg-white rounded-xl shadow-lg 
             border border-gray-200 p-6 relative overflow-hidden
             transition-all duration-700 cursor-pointer transform hover:-translate-y-2 hover:shadow-2xl">
               <div className="absolute top-0 right-0 w-32 h-32 bg-orange-50 rounded-full -mr-16 -mt-16 opacity-50"></div>
@@ -685,7 +654,9 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
 </div>
 
             {/* Phase Journey Timeline */}
-            <div className="lg:col-span-1 bg-white rounded-xl shadow-lg 
+            <div 
+            onClick={openCommunityModal}
+            className="lg:col-span-1 bg-white rounded-xl shadow-lg 
             border border-gray-200 p-6 relative overflow-hidden
             transition-all duration-700 cursor-pointer transform hover:-translate-y-2 hover:shadow-2xl">
               <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-full -mr-16 -mt-16 opacity-50"></div>
