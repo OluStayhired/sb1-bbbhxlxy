@@ -25,7 +25,7 @@ import { PageMenuNav } from '../components/PageMenuNav';
 import { PageFooter } from '../components/PageFooter';
 import { OnboardingQuestionsModal } from '../components/OnboardingQuestionsModal';
 
-
+import { EldercareGapDashboardModal } from '../components/EldercareGapDashboardModal';  // ADD THIS LINE
 
 
 export function HomeHealthCareSearchPage() {
@@ -42,7 +42,7 @@ export function HomeHealthCareSearchPage() {
   const [isCommunityModalOpen, setIsCommunityModalOpen] = useState(false);
   const [isCommunitySuccessModalOpen, setIsCommunitySuccessModalOpen] = useState(false);
   const [isOnboardingModalOpen, setIsOnboardingModalOpen] = useState(false);
-
+  const [isDashboardModalOpen, setIsDashboardModalOpen] = useState(false);  // ADD THIS LINE
   
 
 
@@ -88,6 +88,18 @@ const handleLoginClick = () => {
     setIsOnboardingModalOpen(false);
   };
   
+  const openDashboardModal = () => {
+    setIsDashboardModalOpen(true);
+  };
+  
+  const closeDashboardModal = () => {
+    setIsDashboardModalOpen(false);
+  };  
+  
+      // GET SESSION ID FROM SESSION STORAGE
+  const getSessionId = (): string => {
+    return sessionStorage.getItem('eldercare_session_id') || '';
+  };       
         
   
   
@@ -159,8 +171,8 @@ const handleLoginClick = () => {
               className="w-full h-full object-cover object-[30%_50%]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
-                <h3 class="text-xl font-bold drop-shadow-lg">Book Emergency <br/> Caregivers</h3>
+            <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
+                <h3 className="text-xl font-bold drop-shadow-lg">Book Emergency <br/> Caregivers</h3>
             </div>
           </div>
         </div>
@@ -264,11 +276,19 @@ const handleLoginClick = () => {
         
       
   
-      {/* Onboarding Questions Modal */}
-          <OnboardingQuestionsModal
-            isOpen={isOnboardingModalOpen}
-            onClose={closeOnboardingModal}
-            />
+       {/* Onboarding Questions Modal */}
+       <OnboardingQuestionsModal
+          isOpen={isOnboardingModalOpen}
+          onClose={closeOnboardingModal}
+          onDashboardOpen={openDashboardModal} 
+          />
+
+            <EldercareGapDashboardModal
+  isOpen={isDashboardModalOpen}
+  onClose={closeDashboardModal}
+  sessionId={getSessionId()}
+/> 
+  
 
 {isWaitlistSuccessModalOpen ? (
   <div className="fixed top-4 right-4 bg-white rounded-lg shadow-lg border border-green-100 p-4 flex items-center space-x-3 animate-fade-in z-[9999]">
