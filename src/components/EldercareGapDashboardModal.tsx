@@ -729,33 +729,6 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
   </div>
 </div>
 
-                {/*                
-                <div className="space-y-2 mb-4">
-                  {[1, 2, 3, 4, 5].map((phase) => (
-                    <div key={phase} className="flex items-center">
-                      <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold ${
-                        phase < responseData.calculated_phase 
-                          ? 'bg-gray-200 text-gray-400'
-                          : phase === responseData.calculated_phase
-                          ? 'bg-red-500 text-white ring-4 ring-red-100 shadow-lg'
-                          : 'bg-gray-100 text-gray-400 border-2 border-gray-200'
-                      }`}>
-                        {phase}
-                      </div>
-                      <div className={`ml-3 flex-1 text-xs ${
-                        phase === responseData.calculated_phase ? 'font-semibold text-gray-900' : 'text-gray-500'
-                      }`}>
-                        Phase {phase}
-                        {phase === responseData.calculated_phase && (
-                          <span className="ml-2 px-2 py-0.5 bg-red-100 text-red-700 rounded-full text-xs font-bold">
-                            ACTIVE
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              */}  
                 <div className="mt-20 p-3 bg-blue-50 rounded-lg border border-blue-200">
 
                   {/*
@@ -844,6 +817,21 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
                       <ChevronRight className="w-5 h-5 text-gray-400" />
                     </button>
                   )}
+
+                  {poaStatus.level == 'green' && (
+                    <button 
+                      onClick={openCommunityModal}
+                      className="mt-4 w-full flex items-center justify-between p-4 bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md">
+                      <div className="flex items-center">
+                        <ShieldCheck className="w-5 h-5 text-green-700 mr-3" />
+                        <p className="text-sm font-semibold text-gray-700">
+                          Store document safely with Poetiq!
+                        </p>
+                      </div>
+                      <ChevronRight className="w-5 h-5 text-green-700" />
+                    </button>
+                  )}
+                  
                 </div>
               </div>
             );
