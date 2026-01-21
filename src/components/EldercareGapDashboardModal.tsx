@@ -129,7 +129,7 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
     if (percentage <= 30) {
       return {
         level: 'green',
-        status: 'Operational',
+        status: "Your current situation is Operational",
         message: 'Standard management load. Maintain vigilance.',
         color: 'text-green-700',
         bgColor: 'bg-green-50',
@@ -140,7 +140,7 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
     } else if (percentage <= 60) {
       return {
         level: 'yellow',
-        status: 'Max Capacity',
+        status: "You're dangerously close to Max Capacity",
         message: 'Risk of career interference. Delegate low-level tasks.',
         color: 'text-yellow-700',
         bgColor: 'bg-yellow-50',
@@ -151,18 +151,18 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
     } else if (percentage <= 85) {
       return {
         level: 'orange',
-        status: 'High Friction',
+        status: "You're now in a state of High Friction!",
         message: 'Burnout Imminent. Systemize family comms immediately.',
-        color: 'text-orange-700',
-        bgColor: 'bg-orange-50',
-        bgIconColor: 'bg-orange-100',
-        borderColor: 'border-orange-300',
-        borderHoverColor: 'hover:border-orange-400'
+        color: 'text-red-700',
+        bgColor: 'bg-red-50',
+        bgIconColor: 'bg-red-100',
+        borderColor: 'border-red-300',
+        borderHoverColor: 'hover:border-red-400'
       };
     } else {
       return {
         level: 'red',
-        status: 'System Failure',
+        status: 'You are experiencing a System Failure!',
         message: 'Immediate tactical offloading required to protect career.',
         color: 'text-red-700',
         bgColor: 'bg-red-50',
@@ -540,16 +540,13 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
                      <div>
                        <TooltipExtended text ={`⚡${executiveInsight?.message}`}>
                         <h3 className={`text-xs ${executiveInsight?.color}`}> 
-                          Overall status is <b>{executiveInsight?.status}</b>
+                          {/*Your overall situation is <b>{executiveInsight?.status}</b>*/}
+                          {executiveInsight?.status}
                         </h3>
                          </TooltipExtended>  
                      </div>
-                 </div> 
-                         
-                
-                        
-                </div>
-                     
+                 </div>                                                                
+                </div>                     
             </div>
 
             {/* Financial Burn Rate */}
