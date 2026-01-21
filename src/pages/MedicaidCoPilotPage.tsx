@@ -28,12 +28,15 @@ import { CommunityModal } from '../components/CommunityModal';
 import { TooltipExtended } from '/src/utils/TooltipExtended';
 
 import { OnboardingQuestionsModal } from '../components/OnboardingQuestionsModal';
+import { EldercareGapDashboardModal } from '../components/EldercareGapDashboardModal';  // ADD THIS LINE
 
 export function MedicaidCoPilotPage() {
   const navigate = useNavigate();
   const [isCommunityModalOpen, setIsCommunityModalOpen] = useState(false);
 
   const [isOnboardingModalOpen, setIsOnboardingModalOpen] = useState(false);
+
+  const [isDashboardModalOpen, setIsDashboardModalOpen] = useState(false);  // ADD THIS LINE
 
   const openCommunityModal = () => {
     setIsCommunityModalOpen(true);
@@ -49,6 +52,19 @@ export function MedicaidCoPilotPage() {
   
   const closeOnboardingModal = () => {
     setIsOnboardingModalOpen(false);
+  };
+
+  const openDashboardModal = () => {
+    setIsDashboardModalOpen(true);
+  };
+  
+  const closeDashboardModal = () => {
+    setIsDashboardModalOpen(false);
+  };  
+  
+      // GET SESSION ID FROM SESSION STORAGE
+  const getSessionId = (): string => {
+    return sessionStorage.getItem('eldercare_session_id') || '';
   };
 
   return (
@@ -364,11 +380,18 @@ export function MedicaidCoPilotPage() {
           onClose={closeCommunityModal}
         />
 
-        {/* Onboarding Questions Modal */}
-                <OnboardingQuestionsModal
+           {/* Onboarding Questions Modal */}
+      <OnboardingQuestionsModal
           isOpen={isOnboardingModalOpen}
           onClose={closeOnboardingModal}
+          onDashboardOpen={openDashboardModal} 
           />
+
+            <EldercareGapDashboardModal
+  isOpen={isDashboardModalOpen}
+  onClose={closeDashboardModal}
+  sessionId={getSessionId()}
+/> 
       </div>
     </>
   );

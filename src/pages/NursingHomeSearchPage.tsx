@@ -24,7 +24,7 @@ import { PageMenuNav } from '../components/PageMenuNav';
 import { PageFooter } from '../components/PageFooter';
 import { OnboardingQuestionsModal } from '../components/OnboardingQuestionsModal';
 
-
+import { EldercareGapDashboardModal } from '../components/EldercareGapDashboardModal';  // ADD THIS LINE
 
 
 
@@ -42,7 +42,7 @@ export function NursingHomeSearchPage() {
   const [isCommunityModalOpen, setIsCommunityModalOpen] = useState(false);
   const [isCommunitySuccessModalOpen, setIsCommunitySuccessModalOpen] = useState(false);
   const [isOnboardingModalOpen, setIsOnboardingModalOpen] = useState(false);
-
+  const [isDashboardModalOpen, setIsDashboardModalOpen] = useState(false);  // ADD THIS LINE
   
 
 
@@ -88,7 +88,18 @@ const handleLoginClick = () => {
     setIsOnboardingModalOpen(false);
   };
   
-          
+  const openDashboardModal = () => {
+    setIsDashboardModalOpen(true);
+  };
+  
+  const closeDashboardModal = () => {
+    setIsDashboardModalOpen(false);
+  };  
+  
+      // GET SESSION ID FROM SESSION STORAGE
+  const getSessionId = (): string => {
+    return sessionStorage.getItem('eldercare_session_id') || '';
+  };       
   
   
   const handleGoogleLogin = async () => {
@@ -260,11 +271,18 @@ const handleLoginClick = () => {
       />
 
 
-          {/* Onboarding Questions Modal */}
-          <OnboardingQuestionsModal
-            isOpen={isOnboardingModalOpen}
-            onClose={closeOnboardingModal}
-            />
+      {/* Onboarding Questions Modal */}
+      <OnboardingQuestionsModal
+          isOpen={isOnboardingModalOpen}
+          onClose={closeOnboardingModal}
+          onDashboardOpen={openDashboardModal} 
+          />
+
+            <EldercareGapDashboardModal
+  isOpen={isDashboardModalOpen}
+  onClose={closeDashboardModal}
+  sessionId={getSessionId()}
+/> 
   
         
 {isWaitlistSuccessModalOpen ? (
