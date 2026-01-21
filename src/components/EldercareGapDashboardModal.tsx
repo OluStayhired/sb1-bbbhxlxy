@@ -81,6 +81,7 @@ interface ExecutiveInsight {
   message: string;
   color: string;
   bgColor: string;
+  bgIconColor: string;
   borderColor: string;
 }
 
@@ -503,7 +504,9 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
             
             {/* Hero Metric: Cognitive Drag Gauge */}
-            <div className="lg:col-span-1 bg-white rounded-xl shadow-lg border border-gray-200 p-6 relative overflow-hidden">
+            <div className="lg:col-span-1 bg-white rounded-xl shadow-lg 
+            border border-gray-200 p-6 relative overflow-hidden
+            transition-all duration-700 cursor-pointer transform hover:-translate-y-2 hover:shadow-2xl">
               <div className="absolute top-0 right-0 w-32 h-32 bg-red-50 rounded-full -mr-16 -mt-16 opacity-50"></div>
               <div className="relative z-10">
                 <div className="flex items-center justify-between mb-4">
@@ -579,7 +582,9 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
             </div>
 
             {/* Financial Burn Rate */}
-            <div className="lg:col-span-1 bg-white rounded-xl shadow-lg border border-gray-200 p-6 relative overflow-hidden">
+            <div className="lg:col-span-1 bg-white rounded-xl shadow-lg 
+            border border-gray-200 p-6 relative overflow-hidden
+            transition-all duration-700 cursor-pointer transform hover:-translate-y-2 hover:shadow-2xl">
               <div className="absolute top-0 right-0 w-32 h-32 bg-orange-50 rounded-full -mr-16 -mt-16 opacity-50"></div>
               <div className="relative z-10">
                 <div className="flex items-center justify-between mb-4">
@@ -680,7 +685,9 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
 </div>
 
             {/* Phase Journey Timeline */}
-            <div className="lg:col-span-1 bg-white rounded-xl shadow-lg border border-gray-200 p-6 relative overflow-hidden">
+            <div className="lg:col-span-1 bg-white rounded-xl shadow-lg 
+            border border-gray-200 p-6 relative overflow-hidden
+            transition-all duration-700 cursor-pointer transform hover:-translate-y-2 hover:shadow-2xl">
               <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-full -mr-16 -mt-16 opacity-50"></div>
               <div className="relative z-10">
                 <div className="flex items-center justify-between mb-4">
