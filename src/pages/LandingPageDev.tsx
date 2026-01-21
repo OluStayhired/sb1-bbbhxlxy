@@ -269,9 +269,9 @@ const closeDashboardModal = () => {
                     {/* Grid Container */}
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-8">
                         {/* Card 1: Readiness Audit*/}
-      <button
+      <div
         onClick={openOnboardingModal}
-        className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-teal-50 hover:to-green-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-teal-200"
+        className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-teal-50 hover:to-green-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-teal-200 cursor-pointer"
       >
         {/* Icon Container */}
         <div className="flex items-center justify-center w-14 h-14 bg-teal-100 rounded-full mb-4 group-hover/card:bg-teal-200 transition-colors duration-300">
@@ -288,7 +288,7 @@ const closeDashboardModal = () => {
         <p className="text-sm text-gray-600 leading-relaxed">
           Identify hidden gaps in your parents' legal and financial infrastructure before a crisis hits. Get a prioritized checklist of missing POAs, estate vulnerabilities, and clinical must-haves.
         </p>
-      </button>
+      </div>
 
       {/* Card 1: Readiness Audit*/}
       {/*
