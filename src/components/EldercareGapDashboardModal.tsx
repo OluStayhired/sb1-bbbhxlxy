@@ -85,6 +85,14 @@ interface ExecutiveInsight {
   borderColor: string;
 }
 
+interface FundedStatus {
+  textcolor: string;
+  bgColor: string;
+  bgIconColor: string;
+  borderColor: string;
+  borderHoverColor: string;
+}    
+
 export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: EldercareGapDashboardModalProps) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -92,6 +100,7 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
   const [phaseData, setPhaseData] = useState<PhaseData | null>(null);
   const [checklistItems, setChecklistItems] = useState<ChecklistItem[]>([]);
   const [executiveInsight, setExecutiveInsight] = useState<ExecutiveInsight | null>(null);
+  const [fundedstatus, setFundedStatus] = useState<FundedStatus | null>(null);
 
 
   const [isCommunityModalOpen, setIsCommunityModalOpen] = useState(false);
@@ -129,7 +138,7 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
     if (percentage <= 30) {
       return {
         level: 'green',
-        status: "Your current situation is Operational",
+        status: "Your current situation is Stable and Operational",
         message: 'Standard management load. Maintain vigilance.',
         color: 'text-green-700',
         bgColor: 'bg-green-50',
@@ -386,9 +395,80 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
     };
   };
 
-
-
   //---------------- End getLegalPOAStatus ------------//
+
+  //----------------- Start getTimeBasedGreeting -----------//
+const getTimeBasedGreeting = (): string => {
+  const hour = new Date().getHours();
+  
+  if (hour >= 5 && hour < 12) {
+    return 'Good Morning';
+  } else if (hour >= 12 && hour < 17) {
+    return 'Good Afternoon';
+  } else if (hour >= 17 && hour < 22) {
+    return 'Good Evening';
+  } else {
+    return 'Good Night';
+  }
+};
+
+
+  //----------------- End getTimeBasedGreeting -------------//
+  
+  //--------------- start getFundedStatus -----------//
+
+const getFundedStatus = (answer: string): { 
+    textcolor: string;
+    bgColor: string;
+    bgIconColor: string;
+    borderColor: string;
+    borderHoverColor: string;
+  } => {
+    //const lowerAnswer = answer?.toLowerCase() || '';
+
+    const lowerAnswer = responseData.raw_answers[7]?.toLowerCase() || '';
+
+   if (!responseData || !phaseData) return null;
+    
+    // Red Alert: Not yet signed
+    if (lowerAnswer.includes('self')) {
+       return {
+                      textcolor: 'text-yellow-700',
+                      bgColor: 'bg-yellow-50',
+                      bgIconColor: 'bg-yellow-200',
+                      borderColor: 'border-yellow-500',
+                      borderHoverColor: 'hover:border-yellow-600'                  
+                    };   
+    }
+    
+    // Amber: Exists but have to find it
+    if (lowerAnswer.includes('insurance') || lowerAnswer.includes('government')) {
+      return {
+                      textcolor: 'text-green-700',
+                      bgColor: 'bg-green-50',
+                      bgIconColor: 'bg-green-200',
+                      borderColor: 'border-green-500',
+                      borderHoverColor: 'hover:border-green-600'
+                    };   
+    }
+    
+    // Green: Signed and available
+  if (lowerAnswer.includes('not sure')) {
+    return {
+                      textcolor: 'text-red-700',
+                      bgColor: 'bg-red-50',
+                      bgIconColor: 'bg-red-200',
+                      borderColor: 'border-red-500',
+                      borderHoverColor: 'hover:border-red-600',
+                    };   
+  }
+};
+
+  //-------------- end getFundedStatus --------------//
+
+  const fundedStatusColors = responseData?.raw_answers[7] ? getFundedStatus(responseData.raw_answers[7]) : null;
+
+  
 
   if (!isOpen) return null;
 
@@ -442,11 +522,14 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
 
         {/* Header Section */}
         <div className="bg-gradient-to-r from-red-500 via-red-600 to-red-700 px-8 py-6 text-white relative overflow-hidden">
+
           <div className="absolute inset-0 bg-black opacity-5"></div>
           <div className="relative z-10">
             <div className="flex items-start justify-between mb-4">
               <div className="mb-2">
-                <h1 className="text-3xl font-bold">Eldercare Gap Analysis</h1>
+                <h1 className="text-3xl text-white font-bold">                
+                  👋 {getTimeBasedGreeting()} {responseData.firstname} . . .             
+                </h1>
                 {/*
                 <p className="text-red-100 text-lg">
                   {responseData.firstname}'s {responseData.relation} - {phaseData.phase_name}
@@ -480,11 +563,11 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
               border border-gray-200 p-6 relative overflow-hidden
               transition-all duration-700 cursor-pointer transform hover:-translate-y-2 hover:shadow-2xl
               ">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-red-50 rounded-full -mr-16 -mt-16 opacity-50"></div>
+              <div className={`absolute top-0 right-0 w-32 h-32 ${executiveInsight?.bgIconColor} rounded-full -mr-16 -mt-16 opacity-50`}></div>
               <div className="relative z-10">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider">Cognitive Load</h3>
-                  <Brain className="w-5 h-5 text-red-500" />
+                  <Brain className={`w-5 h-5 ${executiveInsight?.color}`} />
                 </div>
                 
                 {/* Dual Ring Gauge */}
@@ -556,11 +639,13 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
               border border-gray-200 p-6 relative overflow-hidden
               transition-all duration-700 cursor-pointer transform hover:-translate-y-2 hover:shadow-2xl
               ">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-orange-50 rounded-full -mr-16 -mt-16 opacity-50"></div>
+
+          <div className={`absolute top-0 right-0 w-32 h-32 ${fundedStatusColors?.bgColor || 'bg-gray-50'} rounded-full -mr-16 -mt-16 opacity-50className=`}></div>
+              
               <div className="relative z-10">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider">Capital at Risk</h3>
-                  <CircleDollarSign className="w-5 h-5 text-orange-500" />
+                  <CircleDollarSign className={`"w-5 h-5 ${fundedStatusColors?.textcolor}`} />
                 </div>
                 
                 {financialData && financialData.isSelfFunded ? (
