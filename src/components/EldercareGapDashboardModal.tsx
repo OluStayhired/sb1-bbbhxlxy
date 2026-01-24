@@ -27,7 +27,12 @@ import {
   ShieldCheck,
   ArrowBigRightDash,
   Ambulance,
-  HeartPulse
+  HeartPulse,
+  CloudSun,
+  Sun,
+  Sunset,
+  Moon
+
 } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import { TooltipHelp } from '/src/utils/TooltipHelp';
@@ -150,7 +155,7 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
       return {
         level: 'yellow',
         status: "You're dangerously close to Max Capacity",
-        message: 'Risk of career interference. Delegate low-level tasks.',
+        message: 'Your career is now at Risk. Delegate Now!',
         color: 'text-yellow-700',
         bgColor: 'bg-yellow-50',
         bgIconColor: 'bg-yellow-100',
@@ -161,7 +166,7 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
       return {
         level: 'orange',
         status: "You're now in a state of High Friction!",
-        message: 'Burnout Imminent. Systemize family comms immediately.',
+        message: 'Burnout is Imminent. Seek help Now!',
         color: 'text-red-700',
         bgColor: 'bg-red-50',
         bgIconColor: 'bg-red-100',
@@ -402,11 +407,12 @@ const getTimeBasedGreeting = (): string => {
   const hour = new Date().getHours();
   
   if (hour >= 5 && hour < 12) {
-    return 'Good Morning';
+    return '⛅ Good Morning';
   } else if (hour >= 12 && hour < 17) {
+    
     return 'Good Afternoon';
   } else if (hour >= 17 && hour < 22) {
-    return 'Good Evening';
+    return '🌇 Good Evening';
   } else {
     return 'Good Night';
   }
@@ -507,6 +513,7 @@ const getFundedStatus = (answer: string): {
 
   const financialData = calculateFinancialBurnRate();
   const dragPercentage = responseData.drag_score || 0;
+  const timeofDay = getTimeBasedGreeting();
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4 z-50 backdrop-blur-sm">
@@ -526,15 +533,38 @@ const getFundedStatus = (answer: string): {
           <div className="absolute inset-0 bg-black opacity-5"></div>
           <div className="relative z-10">
             <div className="flex items-start justify-between mb-4">
-              <div className="mb-2">
-                <h1 className="text-3xl text-white font-bold">                
-                  👋 {getTimeBasedGreeting()} {responseData.firstname} . . .             
+              <div className="flex mb-2">
+  
+               {timeofDay === 'Good Morning' && (
+                <span>
+                    <Sun className="w-8 h-8 mr-2 text-white"/>
+                </span>
+                  )}
+                {timeofDay === 'Good Afternoon' && (
+                <span>
+                    <CloudSun className="w-8 h-8 mr-2 text-white"/>
+                </span>
+                  )}
+                {timeofDay === 'Good Evening' && (
+                <span>
+                    <Sunset className="w-8 h-8 mr-2 text-white"/>
+                </span>
+                  )}
+                {timeofDay === 'Good Night' && (
+                <span>
+                  <Moon className="w-8 h-8 mr-2 text-white"/>
+                </span>
+                    )}
+
+                <h1 className="text-3xl text-white font-bold">   
+                  {getTimeBasedGreeting()} {responseData.firstname} . . .             
                 </h1>
                 {/*
                 <p className="text-red-100 text-lg">
                   {responseData.firstname}'s {responseData.relation} - {phaseData.phase_name}
                 </p>
                 */}
+                
               </div>
              
             </div>
@@ -552,6 +582,24 @@ const getFundedStatus = (answer: string): {
 
         {/* Scrollable Content Area */}
         <div className="flex-1 overflow-y-auto px-8 py-6">
+
+          
+          {/*<div className={`flex-col mt-4 p-3 mb-4 rounded-lg border ${executiveInsight?.borderColor} ${executiveInsight?.bgColor} ${executiveInsight?.borderHoverColor}`}>*/}
+
+            <div className={`flex-col mt-4 p-3 mb-4 rounded-lg`}>
+                    <div className="flex items-center space-x-2">
+                        <div className={`p-2 ${executiveInsight?.bgIconColor} rounded-lg`}>
+                          <ShieldCheck className={`w-8 h-8  ${executiveInsight?.color}`} />
+                        </div>
+                         <div>
+                              <h3 className={`text-2xl font-bold ${executiveInsight?.color}`}> 
+                                {/*{executiveInsight?.status}*/}
+                                Readiness Dashboard
+                              </h3>
+                               <p className={`text-xs  ${executiveInsight?.color}`}>{executiveInsight?.status}</p>
+                         </div>
+                     </div>                                                                      
+          </div>
           
           {/* Top Metrics Row */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
@@ -614,17 +662,17 @@ const getFundedStatus = (answer: string): {
                 </div>
               </div>
                  
-                      <div className={`flex-col mt-11 p-3 rounded-lg border ${executiveInsight?.borderColor} ${executiveInsight?.bgColor} ${executiveInsight?.borderHoverColor}`}>
+              <div className={`flex-col mt-11 p-3 rounded-lg border ${executiveInsight?.borderColor} ${executiveInsight?.bgColor} ${executiveInsight?.borderHoverColor}`}>
 
                       <div className="flex items-center space-x-2">
                         <div className={`p-2 ${executiveInsight?.bgIconColor} rounded-lg`}>
                           <Lightbulb className={`w-4 h-4  ${executiveInsight?.color}`} />
                         </div>
                      <div>
-                       <TooltipExtended text ={`⚡${executiveInsight?.message}`}>
+                       <TooltipExtended text ={`⚡${executiveInsight?.status}`}>
                         <h3 className={`text-xs ${executiveInsight?.color}`}> 
                           {/*Your overall situation is <b>{executiveInsight?.status}</b>*/}
-                          {executiveInsight?.status}
+                          {executiveInsight?.message}
                         </h3>
                          </TooltipExtended>  
                      </div>
