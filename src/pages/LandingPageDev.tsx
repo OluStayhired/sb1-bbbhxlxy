@@ -420,7 +420,7 @@ const getSessionId = (): string => {
   </button>
 
   {/* Mega Menu Dropdown - Full Width 3 Column Grid */}
-  <div className="absolute left-1/2 -translate-x-1/2 top-full mt-[-0.5] w-screen max-w-6xl rounded-2xl shadow-2xl bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block z-50 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out transform group-hover:translate-y-0 translate-y-2">
+  <div className="absolute right-0 top-full mt-[-0.5] w-screen max-w-6xl rounded-2xl shadow-2xl bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block z-50 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out transform group-hover:translate-y-0 translate-y-2">
     {/* Grid Container - 6 items in 2 rows */}
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-8">
       
