@@ -771,10 +771,10 @@ const getSessionId = (): string => {
                 
        <p className="block text-sm font-normal sm:text-xl sm:font-normal text-gray-600 leading-tight mt-1 sm:mt-3">
          
-             <span className="sm:hidden font-normal">Fix legal and financial gaps for mom and dad before another health crisis.</span> 
+             <span className="sm:hidden font-normal">Fix legal and financial gaps for mom and dad before a major health crisis hits.</span> 
 
           <span className="hidden text-2xl sm:inline font-normal">
-          Fix legal and financial gaps for mom and dad before another health crisis.
+          Fix legal and financial gaps for mom and dad before a major health crisis hits.
           
           </span>
          
