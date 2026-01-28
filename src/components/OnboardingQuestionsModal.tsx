@@ -588,12 +588,12 @@ const calculateCognitiveDrag = async (
           {currentStep === 0 && (
             <div className="space-y-6 animate-fadeIn">
               <div className="text-center mb-8">
-                <div className="mx-auto w-16 h-16 bg-teal-50 rounded-full flex items-center justify-center mb-4">
+                <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
                   {/*<Sparkles className="w-8 h-8 text-red-500" />*/}
-                  <CheckCircle2 className="w-8 h-8 fill-teal-500 justify-center align-top text-white"/>
+                  <CheckCircle2 className="w-8 h-8 fill-green-500 justify-center align-top text-white"/>
                 </div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-3">
-                  The <span className="text-red-500">Eldercare Gap</span> Analyzer
+                <h2 className="text-3xl font-bold text-gray-700 mb-3">
+                  The <span className="text-red-400">Eldercare Gap</span> Checker
                 </h2>
                 <p className="text-gray-600 text-lg">
                   {/*Let's personalize your experience and build your custom dashboard*/}               
@@ -830,8 +830,8 @@ const calculateCognitiveDrag = async (
           {currentStep === totalSteps - 1 && (
             <div className="space-y-6 animate-fadeIn">
               <div className="text-center mb-8">
-                <div className="mx-auto w-16 h-16 bg-teal-50 rounded-full flex items-center justify-center mb-4">
-                  <CheckCircle2 className="w-12 h-12 text-teal-500" />
+                <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                  <CheckCircle2 className="w-12 h-12 fill-green-500 text-white" />
                 </div>
                 <h2 className="text-3xl font-bold text-gray-900 mb-3">
                   You're All Set, {firstName}!
@@ -934,7 +934,7 @@ const calculateCognitiveDrag = async (
                   }}
                 className="flex items-center px-8 py-3 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-lg font-semibold hover:from-red-600 hover:to-red-700 transition-all duration-200 shadow-md hover:shadow-lg"
               >
-                Build Dashboard
+                View Gaps
                 <ArrowRight className="w-5 h-5 ml-2" />
               </button>
             ) : (
@@ -953,4 +953,3 @@ const calculateCognitiveDrag = async (
     </div>
   );
 }
-
