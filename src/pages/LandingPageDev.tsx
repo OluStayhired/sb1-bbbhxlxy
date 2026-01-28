@@ -268,7 +268,7 @@ const getSessionId = (): string => {
 <div className="relative group">
   {/* Menu Header - Eldercare Tools */}
   <button className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">
-    Care Tools 🩺
+  Free Care Tools 🧡
   </button>
 
   {/* Mega Menu Dropdown - Full Width 3 Column */}
@@ -288,7 +288,7 @@ const getSessionId = (): string => {
         
         {/* Title */}
         <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-teal-600 transition-colors duration-300">
-          Eldercare Gap Analyzer
+          Eldercare Gap Finder
         <CheckCircle2 className="w-5 h-5 fill-teal-500 justify-center align-top text-white ml-1 inline"/>
         </h3>
         
@@ -416,7 +416,7 @@ const getSessionId = (): string => {
 <div className="relative group">
   {/* Menu Header - Executive Services */}
   <button className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">
-    Care Services ⚙️
+  Paid Care Services 💚
   </button>
 
   {/* Mega Menu Dropdown - Full Width 3 Column Grid */}
@@ -555,7 +555,7 @@ const getSessionId = (): string => {
 </div>
 {/* ---------------------END Executive Services Dropdown Menu --------------------*/}
 
-            
+            {/*
               <button
               onClick={() => {
               window.location.href = '#Community';
@@ -571,7 +571,7 @@ const getSessionId = (): string => {
             className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">
               Our Story 👋
             </button> 
-       
+       */}
           <button
             onClick={() => {
               window.location.href = '#FAQ';
@@ -623,7 +623,7 @@ const getSessionId = (): string => {
               <div className="relative group">
                 {/* Menu Header - Eldercare Tools */}
                 <button className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">
-                  Care Tools 🩺
+                Free Care Tools 🧡
                   </button>
 
                     {/* Dropdown Content - Hidden by default, shown on group hover */}
@@ -660,7 +660,7 @@ const getSessionId = (): string => {
                       </div>
                       {/* END: Eldercare Tools Dropdown Menu */}
          
-          
+          {/*
           <button
             onClick={() => {
               window.location.href = '#Community';
@@ -680,7 +680,7 @@ const getSessionId = (): string => {
             >
             Our Story 👋
           </button>
-
+            */}
           <button
             onClick={() => {
               window.location.href = '#OperationalSupport';
@@ -688,7 +688,7 @@ const getSessionId = (): string => {
               }}
               className="w-11/12 max-w-sm px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
             >
-            Care Services ⚙️
+            Paid Care Services 💚
           </button>
           {/*
           <button
