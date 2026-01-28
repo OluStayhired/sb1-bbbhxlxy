@@ -593,7 +593,7 @@ const calculateCognitiveDrag = async (
                   <CheckCircle2 className="w-8 h-8 fill-green-500 justify-center align-top text-white"/>
                 </div>
                 <h2 className="text-3xl font-bold text-gray-700 mb-3">
-                  The <span className="text-red-400">Eldercare Gap</span> Checker
+                  <span className="text-red-400">Eldercare Gap</span> Finder
                 </h2>
                 <p className="text-gray-600 text-lg">
                   {/*Let's personalize your experience and build your custom dashboard*/}               
