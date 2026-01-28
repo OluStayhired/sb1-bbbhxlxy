@@ -132,8 +132,7 @@ const handleJoinCommunity = async (e: React.FormEvent) => {
             </div>
             <h2 className="text-3xl font-bold text-green-600 mb-4">Congratulations!</h2>
             <p className="text-base text-gray-600 mb-8">
-              {/*You've successfully registered to join our Slack Community. Expect an email Soon!🚀*/}
-              You've successfully registered to join Poetiq.<br/> Expect an email Soon!🚀
+              You've successfully registered to join our Slack Community. Expect an email Soon!🚀
             </p>
             <button
               onClick={resetFormAndModal} // Use new reset function for close button
@@ -150,20 +149,19 @@ const handleJoinCommunity = async (e: React.FormEvent) => {
           {/* Header */}
         <div className="text-center mb-6">
           <div className="mx-auto w-12 h-12 bg-red-50 rounded-full flex items-center justify-center mb-4">
-            <UserPlus className="w-8 h-8 text-red-500" />
+            <Users className="w-8 h-8 text-red-500" />
           </div>
-          <h2 className="text-3xl font-bold text-gray-700 mb-2">
-            Welcome to <span className="text-red-500">Poetiq</span>
+          <h2 className="text-2xl font-bold text-gray-700 mb-2">
+            Join Our Community👋
           </h2>
           <p className="text-gray-600 text-sm text-red-500">
-            {/*Get insights from other career professionals!*/}
-            Start fixing caregiving gaps for mom and dad!
+            Get insights from other career professionals!
           </p>
         </div>    
 
         <form onSubmit={handleJoinCommunity} className="space-y-4 text-center">
 
-          <div>
+        <div>
             <label htmlFor="email" className="block text-left px-1 text-sm font-medium text-gray-700">
               Email
             </label>
@@ -175,7 +173,7 @@ const handleJoinCommunity = async (e: React.FormEvent) => {
               disabled={loading}
               placeholder="email address"
               className="text-left text-xs px-2 mt-1 py-2 block w-full rounded-md border border-red-100 hover:border-red-200 placeholder-text-sm outline-none focus:border-red-500 focus:ring-0 focus:ring-red-500"
-              //required
+              required
             />
           </div>
 
@@ -210,6 +208,38 @@ const handleJoinCommunity = async (e: React.FormEvent) => {
               required
             />
           </div>
+
+          {/*       
+          <div>
+            <label className="items-center flex space-x-2 text-left px-1 block text-sm font-medium text-gray-700 mb-2">
+              Pick Your Discount
+              <TooltipExtended text="⚡30% off 1yr Plan
+                ⚡20% off 6mth Plan
+                ⚡10% off 2mth Plan"  className="whitespace-pre-line">
+             <Info className="w-3.5 h-3.5 text-gray-400 ml-2"/> 
+              </TooltipExtended>
+            </label>
+            <div className="flex gap-4 px-1">
+              {['10% off', '20% off', '30% off'].map((option) => (
+                <div key={option} className="flex items-center">
+                  <input
+                    type="radio"
+                    id={option}
+                    name="discount"
+                    value={option}
+                    checked={discount === option}
+                    onChange={(e) => setDiscount(e.target.value)}
+                    disabled={loading}
+                    className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300"
+                  />
+                  <label htmlFor={option} className="ml-2 text-sm text-gray-700">
+                    {option}
+                  </label>
+                </div>
+              ))}
+            </div>
+          </div>
+*/}
           
           {error && (
             <p className="text-red-600 text-sm">{error}</p>
@@ -220,7 +250,7 @@ const handleJoinCommunity = async (e: React.FormEvent) => {
             disabled={loading}
             className="group mt-8 w-full py-2 px-4 sm:w-1/2 border border-transparent rounded-md text-sm font-medium text-white bg-gradient-to-r from-red-500 to-red-400 text-white hover:bg-red-600 transition-colors shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 disabled:opacity-50"
           >
-            {loading ? 'Joining...' : 'Join Waitlist'}
+            {loading ? 'Joining...' : 'Join Community'}
           </button>
 
           </div>
