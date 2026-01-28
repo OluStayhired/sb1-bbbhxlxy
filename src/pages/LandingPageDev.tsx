@@ -1435,7 +1435,7 @@ end of old hero image */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
             <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
 
-          <TooltipHelp text="🤫 Coming Soon!">
+          <TooltipHelp text="🤫 Coming Next!">
               <button
             onClick={openCommunityModal}
             className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
@@ -1459,14 +1459,16 @@ end of old hero image */}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
             <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
-          <TooltipHelp text="🤫 Coming Soon!">
-              <button
-            onClick={openCommunityModal}
+          <TooltipHelp text="👋 Try it Now!">
+          <Link 
+            to="/dev/home-health-care"
+             onClick={() => window.scrollTo({ top: 0, behavior: 'instant' })}
+            //onClick={openCommunityModal}
             className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
            
            <span className="text-sm font-normal">Get Started</span>
            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </button>
+          </Link>
           </TooltipHelp>   
                 <h3 className="text-xl font-bold drop-shadow-lg">Search Caregivers</h3>
             </div>
@@ -1505,14 +1507,16 @@ end of old hero image */}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
               <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
-        <TooltipHelp text="🤫 Coming Soon!">
-           <button
-            onClick={openCommunityModal}
+        <TooltipHelp text="👋 Try it Now!">
+        <Link 
+            to="/dev/dementia-assessment"
+             onClick={() => window.scrollTo({ top: 0, behavior: 'instant' })}
+            //onClick={openCommunityModal}
             className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
            
            <span className="text-sm font-normal">Get Started</span>
            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </button>
+          </Link>
         </TooltipHelp>
                 <h3 className="text-xl font-bold drop-shadow-lg">Screen for Dementia</h3>
             </div>
@@ -1576,18 +1580,20 @@ end of old hero image */}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
             <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
-          <TooltipHelp text="🤫 Coming Soon!">
-              <button
-                onClick={openCommunityModal}
+            <TooltipHelp text="👋 Try it Now!">
+              <Link 
+                to="/dev/nursing-home"
+                 onClick={() => window.scrollTo({ top: 0, behavior: 'instant' })}
+                //onClick={openCommunityModal}
                 className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
            
            <span className="text-sm font-normal">Get Started</span>
            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </button>
+          </Link>
           </TooltipHelp>
           
               {/*<h3 className="text-xl font-bold drop-shadow-lg">Residential Care Benchmarking</h3>*/}
-              <h3 className="text-xl font-bold drop-shadow-lg">Book Care Homes</h3>
+              <h3 className="text-xl font-bold drop-shadow-lg">Find Care Homes</h3>
             </div>
           </div>
 
