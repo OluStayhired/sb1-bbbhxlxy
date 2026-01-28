@@ -225,7 +225,7 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
 
       {/* Card 2: Financial Defense */}
       <a
-        href="#OperationalSupport"
+        href="/dev/#OperationalSupport"
         className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
       >
         {/* Icon Container */}
@@ -246,7 +246,7 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
 
       {/* Card 3: Career Protection */}
       <a
-        href="#OperationalSupport"
+        href="/dev/#OperationalSupport"
         className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
       >
         {/* Icon Container */}
@@ -267,7 +267,7 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
 
       {/* Card 4: Family Advocacy */}
       <a
-        href="#OperationalSupport"
+        href="/dev/#OperationalSupport"
         className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
       >
         {/* Icon Container */}
@@ -288,7 +288,7 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
 
       {/* Card 5: Clinical Insight */}
       <a
-        href="#OperationalSupport"
+        href="/dev/#OperationalSupport"
         className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
       >
         {/* Icon Container */}
@@ -309,7 +309,7 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
 
       {/* Card 6: Tactical Response */}
       <a
-        href="#OperationalSupport"
+        href="/dev/#OperationalSupport"
         className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
       >
         {/* Icon Container */}
