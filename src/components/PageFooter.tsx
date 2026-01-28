@@ -14,7 +14,8 @@ export function PageFooter() {
             <span className="text-xl font-bold text-red-500 sm:text-xl">poetiq</span>
             
             <p className="text-sm text-gray-600">
-              The best community for career professionals struggling with eldercare!
+              {/*The best community for career professionals struggling with eldercare!*/}
+              The all-in-one platform for managing mom and dad's eldercare affairs!
             </p>
             {/* Social links */}
           </div>
@@ -97,15 +98,17 @@ export function PageFooter() {
             <p className="order-2 sm:order-1">&copy; 2025 poetiq.io All rights reserved.</p>
             <div className="flex space-x-6 order-1 sm:order-2">
               <p className="text-sm text-gray-700 text-center leading-relaxed">
-                Community for executive professionals striving to build a career while caring for aging parents.
+              We make it insanely easy for family caregivers to fix legal and financial gaps for mom and dad.
                 Connect with
                 <a href="https://www.linkedin.com/in/oluadedeji" className="text-red-500 hover:text-red-600 font-medium transition-colors">
                   {' '}<u>Olu</u>{' '}
                 </a>
+                {/*
                 and
                 <a href="https://www.linkedin.com/in/jeffreymbaumgarten/" className="text-red-500 hover:text-red-600 font-medium transition-colors">
                   {' '}<u>Jeff</u>{' '}
                 </a>
+              */}
                 on LinkedIn.
               </p>
             </div>

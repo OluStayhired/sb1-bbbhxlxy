@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CalendarCheck, Calendar, PenSquare, Clock, Users, PenTool, Briefcase, Plus, Minus,Menu, MailCheck,
   Bot, CheckCircle,X, Send,Timer, Zap, ArrowRight, HeartPulse, Brain, MapPin, Target,
-  Lightbulb, Sparkles, CircleDollarSign, Star, Search, Activity, FileText, Shield, TrendingUp, ShieldAlert, User, CheckCircle2, Headset, Dumbbell, UserSearch, DatabaseZap } from 'lucide-react';
+  Lightbulb, Sparkles, Check, CircleDollarSign, Star, Search, Activity, FileText, Shield, TrendingUp, ShieldAlert, User, CheckCircle2, Headset, Dumbbell, UserSearch, DatabaseZap } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { AuthModal } from '../components/AuthModal';
 import BlueskyLogo from '../images/bluesky-logo.svg';
@@ -1940,7 +1940,8 @@ end of old hero image */}
         <span className="text-xl  font-bold text-red-500 sm:text-xl">poetiq</span>
         
         <p className="text-sm text-gray-600">
-          The best platform for unpaid family caregivers struggling with eldercare!
+          {/*The best platform for unpaid family caregivers struggling with eldercare!*/}
+          The all-in-one platform for managing mom and dad's eldercare affairs!
         </p>
         {/* Social links */}
       </div>
