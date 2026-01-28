@@ -775,7 +775,7 @@ const getSessionId = (): string => {
 
           <span className="hidden text-2xl sm:inline font-normal">
 
-          Get legal and financial affairs in order for mom and dad before a health crisis hits.
+          Fix legal and financial affairs for mom and dad before a major health crisis hits.
             
           </span>
          
