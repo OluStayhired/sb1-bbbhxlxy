@@ -923,7 +923,7 @@ const getSessionId = (): string => {
            <ArrowRight className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1" />
           </button>
         </TooltipHelp>
-                <h3 className="text-3xl font-bold drop-shadow-lg">The stress-free way to protect <br/> mom and dad's legacy 🎉</h3>
+                <h3 className="text-3xl font-bold drop-shadow-lg">The stress-free way to protect <br/> mom and dad's legacy 🧡</h3>
             </div>
 
 
