@@ -767,7 +767,7 @@ const getSessionId = (): string => {
               
                 {/* This is the key change! */}
 
-                Eldercare Protection <br className="sm:hidden" /> Planner <br className="hidden sm:block"/>
+                Eldercare Protection <br className="sm:hidden" /> Assistant <br className="hidden sm:block"/>
                 
        <p className="block text-sm font-normal sm:text-xl sm:font-normal text-gray-600 leading-tight mt-1 sm:mt-3">
          
@@ -784,7 +784,9 @@ const getSessionId = (): string => {
             </p>
 
             <p className="flex hidden text-red-400 sm:inline mt-4 sm:text-2xl md:text-2xl text-gray-600 sm:font-bold mb-8 sm:mb-10">
-              Simple 👌 Organized ⏰ Stress-Free ⚡
+              {/*Simple 👌 Organized ⏰ Stress-Free ⚡*/}
+
+              Simple ✅ Organized ✅ Stress-Free ✅
               
               {/*Simple<span><CheckCircle2 className="w-5 h-5 fill-teal-500 justify-center text-white inline"/></span>Organized<span><CheckCircle2 className="w-5 h-5 fill-teal-500 justify-center text-white inline"/></span>Stress-Free<span><CheckCircle2 className="w-5 h-5 fill-teal-500 justify-center text-white inline"/></span>
               */}
