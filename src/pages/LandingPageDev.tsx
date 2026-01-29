@@ -750,10 +750,10 @@ const getSessionId = (): string => {
         <div className="text-center px-4 sm:px-6 md:px-8 lg:px-12 py-12 sm:py-16 md:py-20 lg:py-24 rounded-lg">
    
         <span className="sm:hidden text-xs sm:text-lg p-3 font-semibold bg-red-100 rounded-full text-red-500 border-8 border-red-50">    
-          Perfect For Career Professionals
+          Built For Busy Career Professionals
         </span>
 
-      <span className="hidden sm:inline text-xs sm:text-lg p-3 font-semibold bg-red-100 hover:bg-red-200 hover:text-red-600 rounded-full text-red-500 border-8 border-red-50 duration-500">Perfect For Career Professionals</span>
+      <span className="hidden sm:inline text-xs sm:text-lg p-3 font-semibold bg-red-100 hover:bg-red-200 hover:text-red-600 rounded-full text-red-500 border-8 border-red-50 duration-500">Built For Busy Career Professionals</span>
 
                
           
@@ -763,11 +763,11 @@ const getSessionId = (): string => {
            {/*start alternative header */}
            <h1 className="text-3xl sm:text-6xl md:text-7xl lg:text-7xl leading-tight font-bold mb-2 sm:mb-3"> 
             <p>
-              <span className="inline-block bg-gradient-to-l from-red-300 via-red-400 to-red-500 text-transparent bg-clip-text mt-6">
+              <span className="inline-block sm:text-6xl bg-gradient-to-l from-red-300 via-red-400 to-red-500 text-transparent bg-clip-text mt-6">
               
                 {/* This is the key change! */}
 
-                Eldercare Protection <br className="sm:hidden" /> Assistant <br className="hidden sm:block"/>
+                The eldercare protection <br className="sm:hidden" /> assistant <br className="hidden sm:block"/>
                 
        <p className="block text-sm font-normal sm:text-xl sm:font-normal text-gray-600 leading-tight mt-1 sm:mt-3">
          
@@ -786,7 +786,7 @@ const getSessionId = (): string => {
             <p className="flex hidden text-red-400 sm:inline mt-4 sm:text-2xl md:text-2xl text-gray-600 sm:font-bold mb-8 sm:mb-10">
               {/*Simple 👌 Organized ⏰ Stress-Free ⚡*/}
 
-              Simple ✅ Organized ✅ Stress-Free ✅
+              {/*Simple ✅ Organized ✅ Stress-Free ✅*/}
               
               {/*Simple<span><CheckCircle2 className="w-5 h-5 fill-teal-500 justify-center text-white inline"/></span>Organized<span><CheckCircle2 className="w-5 h-5 fill-teal-500 justify-center text-white inline"/></span>Stress-Free<span><CheckCircle2 className="w-5 h-5 fill-teal-500 justify-center text-white inline"/></span>
               */}
