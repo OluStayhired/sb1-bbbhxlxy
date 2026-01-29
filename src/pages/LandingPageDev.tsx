@@ -750,10 +750,10 @@ const getSessionId = (): string => {
         <div className="text-center px-4 sm:px-6 md:px-8 lg:px-12 py-12 sm:py-16 md:py-20 lg:py-24 rounded-lg">
    
         <span className="sm:hidden text-xs sm:text-lg p-3 font-semibold bg-red-100 rounded-full text-red-500 border-8 border-red-50">    
-          Eldercare Planning For Career Professionals
+          Perfect For Career Professionals
         </span>
 
-      <span className="hidden sm:inline text-xs sm:text-lg p-3 font-semibold bg-red-100 hover:bg-red-200 hover:text-red-600 rounded-full text-red-500 border-8 border-red-50 duration-500">Eldercare Planning For Career Professionals</span>
+      <span className="hidden sm:inline text-xs sm:text-lg p-3 font-semibold bg-red-100 hover:bg-red-200 hover:text-red-600 rounded-full text-red-500 border-8 border-red-50 duration-500">Perfect For Career Professionals</span>
 
                
           
