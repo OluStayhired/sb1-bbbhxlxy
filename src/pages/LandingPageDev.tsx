@@ -1079,12 +1079,12 @@ end of old hero image */}
   
  <h2 className="hidden sm:block text-2xl text-red-400 sm:text-4xl md:text-5xl font-bold leading-tight mt-4 mb-4">
    {/*Care shouldn't cost you your Career*/}
-    Sacrificing your career to care for mom?
+    Juggling a career while caring for mom?
   </h2>
 
   <h2 className="sm:hidden text-2xl text-red-400 sm:text-4xl md:text-5xl font-bold leading-tight mt-8 mb-4">
     {/*Care shouldn't cost you <br/> your Career*/}
-    Sacrificing your career <br/> to care for mom?
+    Juggling a career <br/> while caring for mom?
   </h2>
   
   <p className="text-xl sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
@@ -1122,7 +1122,7 @@ end of old hero image */}
         <Target className="w-7 h-7 text-red-500 group-hover:scale-110 transition-transform" />
       </div>
       <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-red-500 transition-colors">
-        Navigating Inefficient Systems
+        Frustrated with Inefficient Systems
       </h3>
       <p className="text-gray-600 text-sm leading-relaxed mb-6">
         At work, you optimize and delegate. In caregiving, you're trapped in a maze of broken bureaucracy, chasing insurance claims and care agencies that don't share your sense of urgency or standards.
@@ -1164,7 +1164,7 @@ end of old hero image */}
         <Briefcase className="w-7 h-7 text-red-500 group-hover:scale-110 transition-transform" />
       </div>
       <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-red-500 transition-colors">
-        Skipping Career Opportunities
+        Missed Career Opportunities
       </h3>
       <p className="text-gray-600 text-sm leading-relaxed mb-6">
         You've started saying "no" to the travel, the dinners, and the golf days that would have opened doors for you. Your career is stalling because you simply can't be in two places at once.
@@ -1185,7 +1185,7 @@ end of old hero image */}
         <Users className="w-7 h-7 text-red-500 group-hover:scale-110 transition-transform" />
       </div>
       <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-red-500 transition-colors">
-        Broken by Family Responsibilities
+        Tired of Family Responsibilities
       </h3>
       <p className="text-gray-600 text-sm leading-relaxed mb-6">
         It's not just the parent, it's the sibling infighting, the lack of support, and the weight of being the "responsible one." You're the pillar everyone leans on, but you have no one to lean on yourself.
