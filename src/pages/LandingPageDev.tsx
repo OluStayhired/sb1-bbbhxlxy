@@ -909,6 +909,26 @@ const getSessionId = (): string => {
     alt="Poetiq Community"
     className="w-full h-auto rounded-2xl object-cover"
   />
+
+   {/*----------- start the styling for the image here --------------------*/}
+
+ <div className="absolute bg-gray-900 inset-0 opacity-0 duration-500 transition-colors transition-opacity group-hover:opacity-45 pointer-events-none"></div>
+    <div className="absolute top-60 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-0 group-hover:opacity-100">
+        <TooltipHelp className="text-lg" text="🧡 Try it Now!">
+          <button
+            onClick={openDashboardModal}
+            className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
+           
+           <span className="text-2xl font-normal">Fix Eldercare Gaps</span>
+           <ArrowRight className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1" />
+          </button>
+        </TooltipHelp>
+                <h3 className="text-3xl font-bold drop-shadow-lg">The stress-free way to protect <br/> mom and dad's legacy 🎉</h3>
+            </div>
+
+
+
+  {/*------------- end the styling for the image here ---------------------*/}
   
   
 </div>   
