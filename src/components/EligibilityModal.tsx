@@ -1016,7 +1016,7 @@ const handleSendMessage = async (content: string) => {
 
                 {error && (
                   <p className="text-xs text-red-600 mt-2 flex items-center space-x-1">
-                    <X className="w-3 h-3" />
+                    <X className="w-3 h-3"/>
                     <span>{error}</span>
                   </p>
                 )}
