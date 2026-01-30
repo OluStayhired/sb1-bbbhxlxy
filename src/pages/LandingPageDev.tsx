@@ -1383,12 +1383,16 @@ end of old hero image */}
    Let's move from chaos <br/> to systems
   </h2>
   <p className="sm:hidden text-xl sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
-   Unlock a care planning ecosystem of vetted services and tools built for career professionals 
+   {/*Unlock a care planning ecosystem of vetted services and tools built for career professionals */}
+   Unlock an ecosystem of care services and tools built for busy career professionals.
   </p>          
 
   <p className="hidden sm:inline text-xl sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
-   Don't start from zero. Unlock a care ecosystem of vetted services and tools <br/>
-    built for busy family caregivers struggling to care for mom and dad
+   {/* Don't start from zero. Unlock a care ecosystem of vetted services and tools <br/>
+  built for busy family caregivers struggling to care for mom and dad*/}
+
+      Unlock an ecosystem of care services & tools for busy professionals struggling <br/>
+     to balance their hectic careers and caregiving responsibilities.
   </p>   
 
 {/*Image for Mobile Devices*/}
