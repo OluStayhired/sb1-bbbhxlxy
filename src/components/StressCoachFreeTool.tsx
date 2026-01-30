@@ -12,7 +12,8 @@ import {
   Loader2,
   Brain,
   Shield,
-  X
+  X,
+  AlertCircle,
 } from 'lucide-react';
 import { z } from 'zod';
 import { supabase } from '../lib/supabase';
@@ -48,6 +49,14 @@ export function StressCoachFreeTool() {
   const [emailSent, setEmailSent] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [error, setError] = useState('');
+
+
+    // New state variables for the declarations
+  const [sessionId, setSessionId] = useState<string>('');
+  const [showQuotaAlert, setShowQuotaAlert] = useState(false);
+  const [quotaMessage, setQuotaMessage] = useState('');
+  const [quotaEmail, setQuotaEmail] = useState('');
+  
   const [currentQuestions, setCurrentQuestions] = useState<string[]>([
     "Do family conflicts ever actually go away?",
     "So what's my role if my approach causes conflict?"
@@ -69,6 +78,19 @@ export function StressCoachFreeTool() {
       }
     }
   }, [messages]);
+
+  // Generate or retrieve session_id on component mount
+useEffect(() => {
+  let storedSessionId = localStorage.getItem('conflict_session_id');
+  
+  if (!storedSessionId) {
+    // Generate a new session ID (timestamp + random string)
+    storedSessionId = `session_${Date.now()}_${Math.random().toString(36).substring(7)}`;
+    localStorage.setItem('conflict_session_id', storedSessionId);
+  }
+  
+  setSessionId(storedSessionId);
+}, []);
 
   // Simulate typing effect
   const simulateTyping = async (text: string) => {
@@ -152,7 +174,6 @@ export function StressCoachFreeTool() {
   }
     };
 
-    // Get the configuration for the selected topic
     const config = topicConfig[topic];
     
     if (config) {
@@ -188,39 +209,114 @@ export function StressCoachFreeTool() {
       // Hide typing indicator
       setIsTyping(false);
     }
-    
-    {/*
-    //Get the configuration for the selected topic
-
-    const config = topicConfig[topic];
-    
-    if (config) {
-      // Show typing indicator
-      setIsTyping(true);
-      
-      // Simulate AI processing time
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      // Add assistant message with the topic-specific content
-      const assistantMessage: Message = {
-        id: Date.now().toString(),
-        role: 'assistant',
-        content: config.message,
-        timestamp: new Date()
-      };
-      
-      setMessages(prev => [...prev, assistantMessage]);
-      
-      // Update the prewritten questions
-      setCurrentQuestions(config.questions);
-
-      // Hide typing indicator
-      setIsTyping(false);
-    }
-  */}
   };
 
+  //----------- Start Helper Functions for Processing ------------//
+
+// Check if user has reached daily quota
+const checkDailyQuota = async (sessionId: string): Promise<boolean> => {
+  try {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const todayISO = today.toISOString();
+
+    const { data, error } = await supabase
+      .from('eldercare_conflict_responses')
+      .select('id')
+      .eq('session_id', sessionId)
+      .gte('created_at', todayISO);
+
+    if (error) {
+      console.error('Error checking quota:', error);
+      return false;
+    }
+
+    return (data?.length || 0) >= 5;
+  } catch (error) {
+    console.error('Error in checkDailyQuota:', error);
+    return false;
+  }
+};
+
+// Insert question and answer into database
+const insertQuestionAnswer = async (
+  sessionId: string,
+  question: string,
+  answer: string
+): Promise<boolean> => {
+  try {
+    const { error } = await supabase
+      .from('eldercare_conflict_responses')
+      .insert({
+        session_id: sessionId,
+        questions: question,
+        answers: answer,
+        created_at: new Date().toISOString()
+      });
+
+    if (error) {
+      console.error('Error inserting data:', error);
+      return false;
+    }
+
+    return true;
+  } catch (error) {
+    console.error('Error in insertQuestionAnswer:', error);
+    return false;
+  }
+};
+//------------ End Helper Functions for Processing -------------//  
+
+
+
+//------------- Start Update Session Email After --------------//
+
+// Update all session records with user email
+const updateSessionEmail = async (
+  sessionId: string,
+  userEmail: string
+): Promise<boolean> => {
+  try {
+    if (!userEmail.trim()) {
+      // If no email provided, just close the popup
+      return true;
+    }
+
+    const { error } = await supabase
+      .from('eldercare_conflict_responses')
+      .update({ user_email: userEmail })
+      .eq('session_id', sessionId);
+
+    if (error) {
+      console.error('Error updating session email:', error);
+      return false;
+    }
+
+    return true;
+  } catch (error) {
+    console.error('Error in updateSessionEmail:', error);
+    return false;
+  }
+};
+//------------- End Update Session Email After --------------//
+
+
+// Handle closing quota alert and saving email
+const handleCloseQuotaAlert = async () => {
+  if (quotaEmail.trim()) {
+    await updateSessionEmail(sessionId, quotaEmail);
+  }
+  
+  setShowQuotaAlert(false);
+  setQuotaEmail(''); // Reset email input
+};
+
+
+  //------------ Start Handle Send Message Function  -------------// 
+
   // Handle sending a message with Gemini integration
+
+  {/*
   const handleSendMessage = async (content: string) => {
     if (!content.trim()) return;
 
@@ -275,6 +371,9 @@ export function StressCoachFreeTool() {
       setIsTyping(false);
     }
   };
+  */}
+  
+//--------- End Old HandleSendMessage Without Data Capture ----------------//
   
   // Handle file upload
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -291,6 +390,79 @@ export function StressCoachFreeTool() {
       simulateTyping("Thank you for uploading your document. I'm reviewing it now. Based on the information provided, I can help you understand your situation better. What specific questions do you have about the document?");
     }
   };
+
+  //-- ---------- Start New Handle Send Message --------------------- //  
+
+const handleSendMessage = async (content: string) => {
+  if (!content.trim()) return;
+
+  // Check daily quota before proceeding
+  const hasReachedQuota = await checkDailyQuota(sessionId);
+  
+  if (hasReachedQuota) {
+    setQuotaMessage('You have reached the maximum of 5 questions per day. Please try again tomorrow.');
+    setShowQuotaAlert(true);
+    return;
+  }
+
+  // Add user message
+  const userMessage: Message = {
+    id: Date.now().toString(),
+    role: 'user',
+    content: content,
+    timestamp: new Date()
+  };
+  
+  setMessages(prev => [...prev, userMessage]);
+  setInputValue('');
+  setIsTyping(true);
+
+  try {
+    // Call Gemini API to generate response
+    const geminiResponse = await getStressCoach(content, 1500);
+    
+    if (!geminiResponse.error && geminiResponse.text) {
+      // Add AI response to messages
+      const assistantMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        role: 'assistant',
+        content: geminiResponse.text,
+        timestamp: new Date()
+      };
+      
+      setMessages(prev => [...prev, assistantMessage]);
+
+      // Insert question and answer into database
+      await insertQuestionAnswer(sessionId, content, geminiResponse.text);
+      
+    } else {
+      // Handle error by showing a fallback message
+      console.error('Error from Gemini:', geminiResponse.error);
+      const errorMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        role: 'assistant',
+        content: "I'm having trouble processing that right now. Could you please try rephrasing your question about long term care insurance?",
+        timestamp: new Date()
+      };
+      setMessages(prev => [...prev, errorMessage]);
+    }
+  } catch (error) {
+    console.error('Error calling Gemini:', error);
+    // Show error message to user
+    const errorMessage: Message = {
+      id: (Date.now() + 1).toString(),
+      role: 'assistant',
+      content: "I'm experiencing technical difficulties. Please try again in a moment.",
+      timestamp: new Date()
+    };
+    setMessages(prev => [...prev, errorMessage]);
+  } finally {
+    setIsTyping(false);
+  }
+};
+
+
+//------------ End Handle Send Message Function  -------------// 
 
   // Handle email submission
   const handleEmailSubmit = async (e: React.FormEvent) => {
@@ -338,6 +510,55 @@ export function StressCoachFreeTool() {
   return (
     <div className="w-full max-w-7xl mx-auto my-8 px-4 rounded-xl border-gray-200">
       <div className="bg-white border border-gray-200 rounded-xl w-full h-[100vh] flex flex-col relative">
+
+{/* ----------------  Quota Limit Alert Popup ----------------------- */}
+{showQuotaAlert && (
+  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 rounded-xl">
+    <div className="bg-white rounded-lg shadow-2xl p-6 max-w-md mx-4">
+      <div className="flex items-start space-x-4">
+        <div className="flex-shrink-0">
+          <AlertCircle className="w-8 h-8 text-red-500" />
+        </div>
+        <div className="flex-1">
+          <h3 className="text-lg font-bold text-gray-900 mb-2">Daily Limit Reached</h3>
+          <p className="text-sm text-gray-700 mb-4">
+            {quotaMessage}
+          </p>
+          
+          {/* Email Input Section */}
+          <div className="mb-4">
+            <label htmlFor="quota-email" className="block text-sm font-medium text-gray-700 mb-2">
+              Enter your email to receive this conversation (optional)
+            </label>
+            <input
+              id="quota-email"
+              type="email"
+              value={quotaEmail}
+              onChange={(e) => setQuotaEmail(e.target.value)}
+              placeholder="your.email@example.com"
+              className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none"
+            />
+          </div>
+
+          <button
+            onClick={handleCloseQuotaAlert}
+            className="w-full px-4 py-2 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 transition-colors"
+          >
+            {quotaEmail.trim() ? 'Save & Close' : 'Got it'}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
+
+{/*--------------------- End Quota Limit Alert Pop Up ---------------------*/} 
+
+
+
+
+
+        
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200">
           <div className="flex items-center space-x-3">
@@ -367,7 +588,7 @@ export function StressCoachFreeTool() {
                 <h3 className="text-2xl font-bold text-gray-900">Sophia</h3>
                 <p className="text-sm font-semibold text-red-600 flex items-center justify-center space-x-1 mt-1">
                   <Sparkles className="w-4 h-4" />
-                  <span>Eldercare Conflict Advisor</span>
+                  <span>Eldercare Stress Advisor</span>
                 </p>
               </div>
 
@@ -578,7 +799,6 @@ export function StressCoachFreeTool() {
 
             {/* Input Area */}
             <div className="border-t border-gray-200 p-6">
-              
               {/*
               <div className="flex items-center space-x-3 mb-4">
                 <input
@@ -594,10 +814,8 @@ export function StressCoachFreeTool() {
                   placeholder="Ask me anything about caregiving conflicts..."
                   className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none"
                 />
-
-                */}
-
-              <div className="flex items-end text-sm space-x-3 mb-4">
+              */}
+             <div className="flex items-end text-sm space-x-3 mb-4">
                 <textarea
                   rows={4}
                   value={inputValue}
