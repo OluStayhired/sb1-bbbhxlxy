@@ -1889,12 +1889,13 @@ end of old hero image */}
   <div className="max-w-4xl mx-auto px-6">
     <h2 className="text-2xl text-red-400 sm:text-4xl md:text-6xl font-bold leading-tight mb-8">
       {/*You don't have to navigate parental care alone*/}
-      The easiest way to fix care gaps for mom and dad
+      {/*The easiest way to fix care gaps for mom and dad*/}
+      Avoid costly bills...<br/> Protect your parent's legacy
       
     </h2>
     <p className="text-gray-700 font-semibold text-md sm:text-2xl md:text-3xl font-light text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed">
       {/*Let’s find uncompromising clarity together 💪*/}
-      Built for family caregivers with demanding careers 💪
+      Perfect for family caregivers with demanding careers 💪
     </p>
 
           {/*--------------- start Social Proof Section ---------------- */}
