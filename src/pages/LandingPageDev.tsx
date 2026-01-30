@@ -783,8 +783,8 @@ const getSessionId = (): string => {
           {/*Fix legal and financial gaps for mom and dad before a major health crisis hits.*/}
           {/*Avoid costly healthcare bills. Fix legal & financial gaps for mom and dad with Poetiq.*/}
 
-          Avoid costly healthcare bills 💰 Fix legal & financial gaps for mom and dad <br/> 
-            without spending your lunch breaks on endless calls to care experts!
+          Avoid costly healthcare bills. Fix legal & financial gaps for mom and dad <br/> 
+            without spending lunch breaks on calls to health insurance experts!
           
           </span>
          
