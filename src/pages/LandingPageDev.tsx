@@ -771,10 +771,14 @@ const getSessionId = (): string => {
                 
        <p className="block text-sm font-normal sm:text-xl sm:font-normal text-gray-600 leading-tight mt-1 sm:mt-3">
          
-             <span className="sm:hidden font-normal">Fix legal and financial gaps for mom and dad before a major health crisis hits.</span> 
+             <span className="sm:hidden font-normal">
+              {/*Fix legal and financial gaps for mom and dad before a major health crisis hits.*/}
+              Avoid costly healthcare bills. Fix legal & financial gaps for mom and dad with Poetiq.
+              </span> 
 
           <span className="hidden text-2xl sm:inline font-normal">
-          Fix legal and financial gaps for mom and dad before a major health crisis hits.
+          {/*Fix legal and financial gaps for mom and dad before a major health crisis hits.*/}
+          Avoid costly healthcare bills. Fix legal & financial gaps for mom and dad with Poetiq.
           
           </span>
          
@@ -1250,11 +1254,13 @@ end of old hero image */}
 <section id="TheReset" className="mt-32 text-center">
   
  <h2 className="hidden sm:block text-2xl text-red-400 sm:text-4xl md:text-5xl font-bold leading-tight mt-4 mb-4">
-    What a Strategic Reset looks like
+  {/*What a Strategic Reset looks like*/}
+   These amazing people found a way!
   </h2>
 
   <h2 className="sm:hidden text-2xl text-red-400 sm:text-4xl md:text-5xl font-bold leading-tight mt-4 mb-4">
-    What a Strategic Reset <br/> looks like
+    {/*What a Strategic Reset <br/> looks like*/}
+    These amazing people <br/> found a way!
   </h2>
   
   <p className="text-xl sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
@@ -1370,11 +1376,11 @@ end of old hero image */}
 <section id="OperationalSupport" className="text-center mt-32">
   
   <h2 className="hidden sm:block text-2xl text-red-400 sm:text-4xl md:text-5xl font-bold leading-tight mt-4 mb-4">
-    Move from Chaos to Systems
+    Let's move from chaos to systems
   </h2>
 
   <h2 className="sm:hidden text-2xl text-red-400 sm:text-4xl md:text-5xl font-bold leading-tight mt-4 mb-4">
-    Move from Chaos <br/> to Systems
+   Let's move from chaos <br/> to systems
   </h2>
   <p className="sm:hidden text-xl sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
    Unlock a care planning ecosystem of vetted services and tools built for career professionals 
