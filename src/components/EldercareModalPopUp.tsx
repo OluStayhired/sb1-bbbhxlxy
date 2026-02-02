@@ -78,7 +78,7 @@ export function EldercareModalPopUp({ isOpen, onClose, onStartOnboarding }: Elde
             {/* Body Message - Clear and Readable */}
             <div className="bg-gray-800/50 rounded-xl p-4 border border-gray-700">
               <p className="text-sm text-gray-200 leading-relaxed">
-                A single document error could invalidate your parents' insurance. Find the breaches in their financial fortress before the "Look-Back" period kicks in.
+                A single document error could invalidate your parents' insurance. Find the gaps in their financial estate before the "Look-Back" period kicks in.
               </p>
             </div>
           </div>
