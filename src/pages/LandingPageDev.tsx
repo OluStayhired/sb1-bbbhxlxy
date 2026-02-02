@@ -2077,11 +2077,6 @@ end of old hero image */}
         onClose={closeCommunityModal}
       />
      
-    <OnboardingQuestionsModal 
-      isOpen={isOnboardingModalOpen}
-      onClose={closeOnboardingModal}
-      onDashboardOpen={openDashboardModal} 
-    />
 
     <EldercareGapDashboardModal
   isOpen={isDashboardModalOpen}
@@ -2138,8 +2133,17 @@ end of old hero image */}
 <EldercareModalPopUp 
   isOpen={isEldercareModalOpen}
   onClose={() => setIsEldercareModalOpen(false)}
-/>  
+  onStartOnboarding={() => {
+    setIsEldercareModalOpen(false);
+    setIsOnboardingModalOpen(true);
+  }}
+/>        
 
+    <OnboardingQuestionsModal 
+      isOpen={isOnboardingModalOpen}
+      onClose={closeOnboardingModal}
+      onDashboardOpen={openDashboardModal} 
+    />        
 
 {isWaitlistSuccessModalOpen ? (
   <div className="fixed top-4 right-4 bg-white rounded-lg shadow-lg border border-green-100 p-4 flex items-center space-x-3 animate-fade-in z-[9999]">
