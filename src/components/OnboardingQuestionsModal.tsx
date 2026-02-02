@@ -22,6 +22,7 @@ import {
   MapPin
 } from 'lucide-react';
 import { supabase } from '../lib/supabase';
+import { z } from 'zod';
 
 interface OnboardingQuestionsModalProps {
   isOpen: boolean;
@@ -58,10 +59,16 @@ interface CognitiveDragData {
   total_drag: number;
 }
 
+const onboardingSchema = z.object({
+  email: z.string().email('Invalid email address'),
+});
+
+
 
 export function OnboardingQuestionsModal({ isOpen, onClose, onDashboardOpen }: OnboardingQuestionsModalProps) {
   const [currentStep, setCurrentStep] = useState(0);
   const [firstName, setFirstName] = useState('');
+  const [email, setEmail] = useState('');
   const [elderRelation, setElderRelation] = useState('');
   const [country, setCountry] = useState('US');
   const [questions, setQuestions] = useState<Question[]>([]);
@@ -485,6 +492,7 @@ const calculateCognitiveDrag = async (
     // Step 3: Prepare data to save
     const dataToSave = {
       session_id: sessionId,
+      user_email: email,
       firstname: firstName || null,
       relation: elderRelation || null,
       country: country || null,
@@ -593,7 +601,7 @@ const calculateCognitiveDrag = async (
                   <CheckCircle2 className="w-8 h-8 fill-green-500 justify-center align-top text-white"/>
                 </div>
                 <h2 className="text-3xl font-bold text-gray-700 mb-3">
-                  <span className="text-red-400">Eldercare Gap</span> Finder
+                  The <span className="text-red-400">Eldercare Gap</span> Checker
                 </h2>
                 <p className="text-gray-600 text-lg">
                   {/*Let's personalize your experience and build your custom dashboard*/}               
@@ -615,6 +623,22 @@ const calculateCognitiveDrag = async (
                   autoFocus
                 />
               </div>
+
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                  Tell us where to send the report.
+                </label>
+                <input
+                  type="text"
+                  id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your Email"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none text-lg transition-all"
+                  autoFocus
+                />
+              </div>
+              
             </div>
           )}
 
