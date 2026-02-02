@@ -33,6 +33,8 @@ import { OnboardingQuestionsModal } from '../components/OnboardingQuestionsModal
 
 import { EldercareGapDashboardModal } from '../components/EldercareGapDashboardModal';  // ADD THIS LINE
 
+import { EldercareModalPopUp } from '../components/EldercareModalPopUp';
+
 
 
 
@@ -71,6 +73,7 @@ function LandingPageDev() {
   const [isOnCallStressModalOpen, setIsOnCallStressModalOpen] = useState(false);
 
 
+  const [isEldercareModalOpen, setIsEldercareModalOpen] = useState(true);
 
 
 const handleLoginClick = () => {
@@ -2131,6 +2134,11 @@ end of old hero image */}
   onClose={closeOnCallStressModal}
   onOpenCommunity={handleOnCallStressToCommunity}
 />
+
+<EldercareModalPopUp 
+  isOpen={isEldercareModalOpen}
+  onClose={() => setIsEldercareModalOpen(false)}
+/>  
 
 
 {isWaitlistSuccessModalOpen ? (
