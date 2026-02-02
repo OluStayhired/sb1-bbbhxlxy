@@ -767,7 +767,9 @@ const getSessionId = (): string => {
               
                 {/* This is the key change! */}
 
-                The eldercare protection <br className="sm:hidden" /> assistant <br className="hidden sm:block"/>
+               {/*The eldercare protection <br className="sm:hidden" /> assistant <br className="hidden sm:block"/>*/}
+
+                The long-term care <br className="sm:hidden" /> companion<br className="hidden sm:block"/>
                 
        <p className="block text-sm font-normal sm:text-xl sm:font-normal text-gray-600 leading-tight mt-1 sm:mt-3">
          
@@ -775,7 +777,8 @@ const getSessionId = (): string => {
               {/*Fix legal and financial gaps for mom and dad before a major health crisis hits.*/}
               {/*Avoid costly healthcare bills. Fix legal & financial gaps for mom and dad with Poetiq.*/}
 
-              Fix legal, financial and caregiving gaps for mom and dad without wasting lunch breaks on calls!
+              {/*Fix legal, financial and caregiving gaps for mom and dad without wasting lunch breaks on calls!*/}
+              Get legal, financial and caregiving help for mom and dad without spending hours on phone calls!
 
               </span> 
 
@@ -783,8 +786,11 @@ const getSessionId = (): string => {
           {/*Fix legal and financial gaps for mom and dad before a major health crisis hits.*/}
           {/*Avoid costly healthcare bills. Fix legal & financial gaps for mom and dad with Poetiq.*/}
 
-          Fix legal, financial and caregiving gaps for mom and dad without<br/> 
-            wasting lunch breaks on calls or taking days off work!
+          {/*Fix mom and dad's legal and financial gaps without<br/> 
+            wasting lunch breaks on calls or taking days off work!*/}
+
+            Get legal, financial and caregiving help for mom and dad <br/>
+            without spending your lunch break on calls!
           
           </span>
          
