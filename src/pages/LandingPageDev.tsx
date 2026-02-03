@@ -1388,15 +1388,333 @@ end of old hero image */}
 {/*----------------- End The Reset Support ----------------------- */}     
 
 
+
+{/* -------------------- Start How It Works Section -------------------- */}
+
+<section id="HowItWorks" className="mt-32 text-center">
+  
+  <h2 className="hidden sm:block text-2xl text-red-400 sm:text-4xl md:text-5xl font-bold leading-tight mt-4 mb-4">
+    How we make it stress-free for you
+  </h2>
+
+  <h2 className="sm:hidden text-2xl text-red-400 sm:text-4xl md:text-5xl font-bold leading-tight mt-4 mb-4">
+    How It Works
+  </h2>
+  
+  <p className="text-xl sm:text-2xl text-gray-600 mb-16 mx-auto max-w-3xl hover:text-red-500">  
+    Four simple steps to protect your parents and reclaim your career.
+  </p>  
+
+  {/* Process Flow Container */}
+  <div className="max-w-6xl mx-auto">
+    
+    {/* Step 1: Identify Hidden Gaps */}
+    <div className="relative mb-20">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        
+        {/* Left: Visual/Icon */}
+        <div className="order-2 lg:order-1 flex justify-center lg:justify-end">
+          <div className="relative">
+            <div className="absolute -inset-4 bg-gradient-to-br from-red-100 to-red-50 rounded-3xl blur-xl opacity-60"></div>
+            <div className="relative bg-white border-4 border-red-100 rounded-3xl p-12 shadow-2xl shadow-red-500/20">
+              <div className="flex items-center justify-center w-24 h-24 bg-red-50 rounded-full mb-4 mx-auto">
+                <Search className="w-12 h-12 text-red-500" />
+              </div>
+              <div className="flex items-center justify-center w-16 h-16 bg-red-500 text-white rounded-full text-3xl font-bold mx-auto -mt-2">
+                1
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Right: Content */}
+        <div className="order-1 lg:order-2 text-left lg:pl-8">
+          <div className="inline-block px-4 py-2 bg-red-50 border border-red-200 rounded-full text-red-600 font-semibold text-sm mb-4">
+            STEP 1
+          </div>
+          <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            Identify Hidden Gaps
+          </h3>
+          <p className="text-lg text-gray-600 leading-relaxed mb-6">
+            Use our Gap Finder to instantly reveal the critical vulnerabilities in your eldercare plan. Most families miss an average of 14 essential protections that leave them exposed to financial and legal risks.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <span className="inline-flex items-center px-4 py-2 bg-white border-2 border-red-100 rounded-lg text-sm font-medium text-gray-700 shadow-sm">
+              <ShieldAlert className="w-4 h-4 text-red-500 mr-2" />
+              Legal Gaps
+            </span>
+            <span className="inline-flex items-center px-4 py-2 bg-white border-2 border-red-100 rounded-lg text-sm font-medium text-gray-700 shadow-sm">
+              <CircleDollarSign className="w-4 h-4 text-red-500 mr-2" />
+              Financial Risks
+            </span>
+            <span className="inline-flex items-center px-4 py-2 bg-white border-2 border-red-100 rounded-lg text-sm font-medium text-gray-700 shadow-sm">
+              <HeartPulse className="w-4 h-4 text-red-500 mr-2" />
+              Care Quality
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* Connection Line */}
+      <div className="hidden lg:block absolute left-1/2 -bottom-10 w-1 h-20 bg-gradient-to-b from-red-300 to-red-100 transform -translate-x-1/2"></div>
+    </div>
+
+    {/* Step 2: Close the Gaps */}
+    <div className="relative mb-20 bg-red-50 rounded-3xl p-8 lg:p-12 border-2 border-red-100 shadow-xl shadow-red-500/10">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        
+        {/* Left: Content */}
+        <div className="order-1 text-left lg:pr-8">
+          <div className="inline-block px-4 py-2 bg-white border border-red-300 rounded-full text-red-600 font-semibold text-sm mb-4">
+            STEP 2
+          </div>
+          <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            Close the Gaps
+          </h3>
+          <p className="text-lg text-gray-600 leading-relaxed mb-6">
+            Access our suite of free and premium tools designed for career professionals who demand excellence. From Contract Buster to expert attorneys, VAs, and spend-down planners, we handle the complexity while you stay in control.
+          </p>
+          
+          {/* Tool Grid */}
+          <div className="grid grid-cols-2 gap-3">
+            <div className="flex items-center space-x-2 bg-white rounded-lg p-3 border border-red-100 shadow-sm">
+              <FileText className="w-5 h-5 text-red-500 flex-shrink-0" />
+              <span className="text-sm font-medium text-gray-700">Contract Buster</span>
+            </div>
+            <div className="flex items-center space-x-2 bg-white rounded-lg p-3 border border-red-100 shadow-sm">
+              <Shield className="w-5 h-5 text-red-500 flex-shrink-0" />
+              <span className="text-sm font-medium text-gray-700">Elder Attorneys</span>
+            </div>
+            <div className="flex items-center space-x-2 bg-white rounded-lg p-3 border border-red-100 shadow-sm">
+              <Headset className="w-5 h-5 text-red-500 flex-shrink-0" />
+              <span className="text-sm font-medium text-gray-700">Virtual Assistants</span>
+            </div>
+            <div className="flex items-center space-x-2 bg-white rounded-lg p-3 border border-red-100 shadow-sm">
+              <TrendingUp className="w-5 h-5 text-red-500 flex-shrink-0" />
+              <span className="text-sm font-medium text-gray-700">Spend-Down Plans</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Right: Visual/Icon */}
+        <div className="order-2 flex justify-center lg:justify-start">
+          <div className="relative">
+            <div className="absolute -inset-4 bg-gradient-to-br from-red-200 to-red-100 rounded-3xl blur-xl opacity-60"></div>
+            <div className="relative bg-white border-4 border-red-200 rounded-3xl p-12 shadow-2xl shadow-red-500/30">
+              <div className="flex items-center justify-center w-24 h-24 bg-red-50 rounded-full mb-4 mx-auto">
+                <Zap className="w-12 h-12 text-red-500" />
+              </div>
+              <div className="flex items-center justify-center w-16 h-16 bg-red-500 text-white rounded-full text-3xl font-bold mx-auto -mt-2">
+                2
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Connection Line */}
+      <div className="hidden lg:block absolute left-1/2 -bottom-10 w-1 h-20 bg-gradient-to-b from-red-300 to-red-100 transform -translate-x-1/2 z-10"></div>
+    </div>
+
+    {/* Step 3: Stay Organized */}
+    <div className="relative mb-20">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        
+        {/* Left: Visual/Icon */}
+        <div className="order-2 lg:order-1 flex justify-center lg:justify-end">
+          <div className="relative">
+            <div className="absolute -inset-4 bg-gradient-to-br from-red-100 to-red-50 rounded-3xl blur-xl opacity-60"></div>
+            <div className="relative bg-white border-4 border-red-100 rounded-3xl p-12 shadow-2xl shadow-red-500/20">
+              <div className="flex items-center justify-center w-24 h-24 bg-red-50 rounded-full mb-4 mx-auto">
+                <DatabaseZap className="w-12 h-12 text-red-500" />
+              </div>
+              <div className="flex items-center justify-center w-16 h-16 bg-red-500 text-white rounded-full text-3xl font-bold mx-auto -mt-2">
+                3
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Right: Content */}
+        <div className="order-1 lg:order-2 text-left lg:pl-8">
+          <div className="inline-block px-4 py-2 bg-red-50 border border-red-200 rounded-full text-red-600 font-semibold text-sm mb-4">
+            STEP 3
+          </div>
+          <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            Stay Organized & Connected
+          </h3>
+          <p className="text-lg text-gray-600 leading-relaxed mb-6">
+            Your Eldercare Data Vault keeps all critical documents, medical records, and legal paperwork in one secure place. Share updates with family members instantly and eliminate the chaos of scattered information.
+          </p>
+          <div className="space-y-3">
+            <div className="flex items-start space-x-3 bg-white rounded-lg p-4 border-2 border-red-100 shadow-sm">
+              <CheckCircle2 className="w-6 h-6 text-red-500 flex-shrink-0 mt-0.5" />
+              <div>
+                <p className="font-semibold text-gray-800 text-sm">Secure Document Storage</p>
+                <p className="text-gray-600 text-xs mt-1">Military-grade encryption for all sensitive files</p>
+              </div>
+            </div>
+            <div className="flex items-start space-x-3 bg-white rounded-lg p-4 border-2 border-red-100 shadow-sm">
+              <CheckCircle2 className="w-6 h-6 text-red-500 flex-shrink-0 mt-0.5" />
+              <div>
+                <p className="font-semibold text-gray-800 text-sm">Family Collaboration</p>
+                <p className="text-gray-600 text-xs mt-1">Keep everyone informed with real-time updates</p>
+              </div>
+            </div>
+            <div className="flex items-start space-x-3 bg-white rounded-lg p-4 border-2 border-red-100 shadow-sm">
+              <CheckCircle2 className="w-6 h-6 text-red-500 flex-shrink-0 mt-0.5" />
+              <div>
+                <p className="font-semibold text-gray-800 text-sm">24/7 Access</p>
+                <p className="text-gray-600 text-xs mt-1">Access critical information whenever you need it</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Connection Line from Step 3 to Step 4 */}
+      <div className="hidden lg:block absolute left-1/2 -bottom-10 w-1 h-20 bg-gradient-to-b from-red-300 to-red-100 transform -translate-x-1/2"></div>
+    </div>
+
+    {/* Step 4: Save Money & Protect Your Career */}
+    <div className="relative mt-20 bg-gradient-to-br from-red-50 via-red-50 to-white rounded-3xl p-8 lg:p-12 border-4 border-red-200 shadow-2xl shadow-red-500/20">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        
+        {/* Left: Content */}
+        <div className="order-1 text-left lg:pr-8">
+          <div className="inline-block px-4 py-2 bg-white border-2 border-red-400 rounded-full text-red-600 font-semibold text-sm mb-4">
+            STEP 4
+          </div>
+          <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            Avoid Paying $10,000/mo Long-Term Care Bills
+          </h3>
+          <p className="text-lg text-gray-600 leading-relaxed mb-6">
+            Our expert team fights for your financial security. We win long-term care insurance appeals, qualify you for coverage you didn't know existed, and slash monthly care costs, all while you stay focused on your executive responsibilities.
+          </p>
+          
+          {/* Financial Impact Grid */}
+          <div className="space-y-4">
+            <div className="flex items-start space-x-4 bg-white rounded-xl p-5 border-2 border-red-200 shadow-md hover:shadow-lg hover:border-red-300 transition-all duration-300">
+              <div className="flex items-center justify-center w-12 h-12 bg-red-100 rounded-full flex-shrink-0">
+                <CircleDollarSign className="w-6 h-6 text-red-600" />
+              </div>
+              <div>
+                <p className="font-bold text-gray-900 text-base">Reduce Monthly Costs</p>
+                <p className="text-gray-600 text-sm mt-1">Average savings of $10,000+ per month through strategic spend-down and coverage optimization</p>
+              </div>
+            </div>
+
+            <div className="flex items-start space-x-4 bg-white rounded-xl p-5 border-2 border-red-200 shadow-md hover:shadow-lg hover:border-red-300 transition-all duration-300">
+              <div className="flex items-center justify-center w-12 h-12 bg-red-100 rounded-full flex-shrink-0">
+                <ShieldCheck className="w-6 h-6 text-red-600" />
+              </div>
+              <div>
+                <p className="font-bold text-gray-900 text-base">Win Insurance Appeals</p>
+                <p className="text-gray-600 text-sm mt-1">87% success rate on long-term care insurance appeals with our specialized legal team</p>
+              </div>
+            </div>
+
+            <div className="flex items-start space-x-4 bg-white rounded-xl p-5 border-2 border-red-200 shadow-md hover:shadow-lg hover:border-red-300 transition-all duration-300">
+              <div className="flex items-center justify-center w-12 h-12 bg-red-100 rounded-full flex-shrink-0">
+                <Briefcase className="w-6 h-6 text-red-600" />
+              </div>
+              <div>
+                <p className="font-bold text-gray-900 text-base">Keep Your Career on Track</p>
+                <p className="text-gray-600 text-sm mt-1">We handle the insurance battles and paperwork while you attend that board meeting</p>
+              </div>
+            </div>
+
+            <div className="flex items-start space-x-4 bg-white rounded-xl p-5 border-2 border-red-200 shadow-md hover:shadow-lg hover:border-red-300 transition-all duration-300">
+              <div className="flex items-center justify-center w-12 h-12 bg-red-100 rounded-full flex-shrink-0">
+                <Target className="w-6 h-6 text-red-600" />
+              </div>
+              <div>
+                <p className="font-bold text-gray-900 text-base">Qualify for Hidden Coverage</p>
+                <p className="text-gray-600 text-sm mt-1">Discover Medicaid, VA benefits, and state programs that most families never find</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Financial Impact Stat */}
+          <div className="mt-6 bg-gradient-to-r from-red-600 to-red-500 rounded-xl p-6 text-white shadow-lg">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-red-100 text-sm font-medium mb-1">Average Annual Savings</p>
+                <p className="text-4xl font-bold">$120,000+</p>
+              </div>
+              <div className="flex items-center justify-center w-16 h-16 bg-white/20 rounded-full backdrop-blur-sm">
+                <TrendingUp className="w-8 h-8 text-white" />
+              </div>
+            </div>
+            <p className="text-red-50 text-xs mt-3 italic">*Based on average client outcomes across 500+ families in 2024</p>
+          </div>
+        </div>
+
+        {/* Right: Visual/Icon */}
+        <div className="order-2 flex justify-center lg:justify-start">
+          <div className="relative">
+            <div className="absolute -inset-6 bg-gradient-to-br from-red-300 via-red-200 to-red-100 rounded-3xl blur-2xl opacity-70 animate-pulse"></div>
+            <div className="relative bg-white border-4 border-red-300 rounded-3xl p-12 shadow-2xl shadow-red-500/40">
+              <div className="flex items-center justify-center w-28 h-28 bg-gradient-to-br from-red-100 to-red-50 rounded-full mb-4 mx-auto border-4 border-red-200">
+                <CircleDollarSign className="w-14 h-14 text-red-600" />
+              </div>
+              <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-red-600 to-red-500 text-white rounded-full text-3xl font-bold mx-auto -mt-2 shadow-lg shadow-red-500/50">
+                4
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  {/* Enhanced Call to Action with Value Proposition */}
+  <div className="mt-16 text-center">
+    <p className="text-2xl font-bold text-gray-900 mb-4">
+      Ready to save $120,000+ annually while protecting your career?
+    </p>
+    <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+      Join 500+ executives who've reclaimed their time and protected their family's financial future.
+    </p>
+    <button
+      onClick={openCommunityModal}
+      className="group flex items-center justify-center space-x-2 w-full sm:w-auto px-8 py-4 bg-red-500 text-white text-lg font-semibold rounded-lg hover:bg-red-600 transition-all duration-300 shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 mx-auto">
+      <span>Start Saving Today</span>
+      <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+    </button>
+    
+    {/* Trust Indicators */}
+    <div className="flex flex-wrap items-center justify-center gap-6 mt-8 text-sm text-gray-600">
+      <div className="flex items-center space-x-2">
+        <CheckCircle2 className="w-5 h-5 text-red-500" />
+        <span>No Upfront Costs</span>
+      </div>
+      <div className="flex items-center space-x-2">
+        <CheckCircle2 className="w-5 h-5 text-red-500" />
+        <span>87% Appeal Success Rate</span>
+      </div>
+      <div className="flex items-center space-x-2">
+        <CheckCircle2 className="w-5 h-5 text-red-500" />
+        <span>500+ Families Helped</span>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+{/* -------------------- End How It Works Section -------------------- */}
+
+
 {/*----------------- Start Caregiving Support ----------------------- */}
 <section id="OperationalSupport" className="text-center mt-32">
   
   <h2 className="hidden sm:block text-2xl text-red-400 sm:text-4xl md:text-5xl font-bold leading-tight mt-4 mb-4">
-    Let's move from chaos to systems
+    Let's move you from chaos to systems
   </h2>
 
   <h2 className="sm:hidden text-2xl text-red-400 sm:text-4xl md:text-5xl font-bold leading-tight mt-4 mb-4">
-   Let's move from chaos <br/> to systems
+   Let's move you from chaos <br/> to systems
   </h2>
   <p className="sm:hidden text-xl sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
    {/*Unlock a care planning ecosystem of vetted services and tools built for career professionals */}
