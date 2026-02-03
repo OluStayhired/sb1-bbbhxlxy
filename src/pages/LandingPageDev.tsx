@@ -1585,11 +1585,12 @@ end of old hero image */}
                   onClick={openCommunityModal}
                   className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
            
-           <span className="text-sm font-normal">Get Started</span>
-           <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+              <span className="text-sm font-normal">Get Started</span>
+              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
+          
         </TooltipHelp>
-                <h3 className="text-xl font-bold drop-shadow-lg">Secure Health Vault</h3>
+                <h3 className="text-xl font-bold drop-shadow-lg">Store Health Data</h3>
             </div>
           </div>
         </div>
