@@ -17,6 +17,7 @@ import {
   CheckCircle2,
   User,
   ShieldAlert,
+  ShieldCheck,
   Headset,
   Dumbbell,
   UserSearch,
@@ -65,7 +66,7 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
                           >
                         {/* Icon Container */}
                         <div className="flex items-center justify-center w-14 h-14 bg-teal-100 rounded-full mb-4 group-hover/card:bg-teal-200 transition-colors duration-300">
-                        <ShieldAlert className="w-7 h-7 text-teal-600 group-hover/card:scale-110 transition-transform duration-300" />
+                        <ShieldCheck className="w-7 h-7 text-teal-600 group-hover/card:scale-110 transition-transform duration-300" />
                     </div>
         
                       {/* Title */}

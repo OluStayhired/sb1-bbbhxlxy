@@ -19,7 +19,8 @@ import {
   Sparkles, 
   HeartPulse,
   HandHeart,
-  MapPin
+  MapPin,
+  ShieldCheck
 } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import { z } from 'zod';
@@ -598,7 +599,7 @@ const calculateCognitiveDrag = async (
               <div className="text-center mb-8">
                 <div className="mx-auto w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-4">
                   {/*<Sparkles className="w-8 h-8 text-red-500" />*/}
-                  <CheckCircle2 className="w-8 h-8 fill-red-400 justify-center align-top text-white"/>
+                  <ShieldCheck className="w-10 h-10 fill-red-400 justify-center align-top text-red-50"/>
                 </div>
                 <h2 className="text-3xl font-bold text-gray-700 mb-3">
                 The <span className="text-red-400">Eldercare Gap</span> Finder
