@@ -1,6 +1,6 @@
 // src/components/EldercareModalPopUp.tsx
 import React, { useState, useEffect } from 'react';
-import { X, AlertTriangle, TrendingUp, Shield } from 'lucide-react';
+import { X, AlertTriangle, TrendingUp, Shield, ShieldCheck } from 'lucide-react';
 
 interface EldercareModalPopUpProps {
   isOpen: boolean;
@@ -53,7 +53,7 @@ export function EldercareModalPopUp({ isOpen, onClose, onStartOnboarding }: Elde
           <div className="flex justify-center mb-4">
             <div className="relative">
               <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center shadow-lg shadow-red-500/30 rotate-3 transition-transform hover:rotate-6">
-                <Shield className="w-8 h-8 text-white" />
+                <ShieldCheck className="w-8 h-8 text-white" />
               </div>
               <div className="absolute -top-1 -right-1 w-5 h-5 bg-red-400 rounded-full animate-ping opacity-20"></div>
               <div className="absolute -top-1 -right-1 w-5 h-5 bg-red-400 rounded-full flex items-center justify-center">
