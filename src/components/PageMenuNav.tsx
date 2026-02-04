@@ -63,7 +63,7 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
               {/* Grid Container */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-8">
                 {/* Card 1: Readiness Audit*/}
-                <button
+                <div
                           onClick={onOpenOnboardingModal}
                           className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-teal-50 hover:to-green-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-teal-200"
                           >
@@ -82,7 +82,7 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
                       <p className="text-sm text-gray-600 leading-relaxed">
                       Identify legal and financial gaps in your parents' healthcare before a crisis hits. 
                       </p>
-                  </button>
+                  </div>
 
                   {/* Card 2: Medicaid Co-Pilot */}
                   <Link
