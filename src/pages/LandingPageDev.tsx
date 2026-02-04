@@ -943,7 +943,7 @@ const getSessionId = (): string => {
             onClick={openOnboardingModal}
             className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
            
-           <span className="text-2xl font-normal">Get Long-Term Care Protection</span>
+           <span className="text-2xl font-semibold">Get Long-Term Care Protection</span>
            <ArrowRight className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1" />
           </button>
         </TooltipHelp>
@@ -1723,7 +1723,8 @@ end of old hero image */}
   <p className="sm:hidden text-xl sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
    {/*Unlock a care planning ecosystem of vetted services and tools built for career professionals */}
    {/*Unlock an ecosystem of care services and tools built for busy career professionals.*/}
-   Unlock the care services and tools to fix the financial gaps and reclaim your time
+   {/*Unlock the care services and tools to fix the financial gaps and reclaim your time*/}
+   Unlock our care services & tools to fix the gaps and avoid unexpected hospital bills!
   </p>          
 
   <p className="hidden sm:inline text-xl sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
@@ -1733,7 +1734,8 @@ end of old hero image */}
       Unlock an ecosystem of care services & tools for busy professionals struggling <br/>
      to balance their hectic careers and caregiving responsibilities.
 */}
-Unlock the care services and tools to fix the financial gaps and reclaim your time
+{/*Unlock the care services and tools to fix the financial gaps and reclaim your time*/}
+Unlock our care services & tools to fix the gaps and avoid unexpected hospital bills!
   </p>   
 
 {/*Image for Mobile Devices*/}

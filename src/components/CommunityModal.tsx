@@ -157,7 +157,8 @@ const handleJoinCommunity = async (e: React.FormEvent) => {
           </h2>
           <p className="text-gray-600 text-sm text-red-500">
             {/*Get insights from other career professionals!*/}
-            Start fixing caregiving gaps for mom and dad!
+            {/*Start fixing caregiving gaps for mom and dad!*/}
+            Let's fix long-term care gaps for mom and dad!
           </p>
         </div>    
 
