@@ -782,7 +782,9 @@ const getSessionId = (): string => {
               {/*Avoid costly healthcare bills. Fix legal & financial gaps for mom and dad with Poetiq.*/}
 
               {/*Fix legal, financial and caregiving gaps for mom and dad without wasting lunch breaks on calls!*/}
-              Get legal, financial and caregiving help for mom and dad without spending hours on phone calls!
+              {/*Get legal, financial and caregiving help for mom and dad without spending hours on phone calls!*/}
+
+              We protect mom and dad's legacy so that you can stay focused at work.
 
               </span> 
 
@@ -793,8 +795,10 @@ const getSessionId = (): string => {
           {/*Fix mom and dad's legal and financial gaps without<br/> 
             wasting lunch breaks on calls or taking days off work!*/}
 
-            Get legal, financial and caregiving help for mom and dad <br/>
-            without spending your lunch break on calls!
+            {/*Get legal, financial and caregiving help for mom and dad <br/>
+            without spending your lunch break on calls!*/}
+
+            We protect mom and dad's legacy so that you can stay focused at work.
           
           </span>
          
@@ -1402,7 +1406,7 @@ end of old hero image */}
   </h2>
   
   <p className="text-xl sm:text-2xl text-gray-600 mb-16 mx-auto max-w-3xl hover:text-red-500">  
-    Four simple steps to protect your parents and reclaim your career.
+  We fix the gaps in mom and dad's eldercare plans so you don't have to.
   </p>  
 
   {/* Process Flow Container */}
@@ -1718,15 +1722,18 @@ end of old hero image */}
   </h2>
   <p className="sm:hidden text-xl sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
    {/*Unlock a care planning ecosystem of vetted services and tools built for career professionals */}
-   Unlock an ecosystem of care services and tools built for busy career professionals.
+   {/*Unlock an ecosystem of care services and tools built for busy career professionals.*/}
+   Unlock the care services and tools to fix the financial gaps and reclaim your time 
   </p>          
 
   <p className="hidden sm:inline text-xl sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
    {/* Don't start from zero. Unlock a care ecosystem of vetted services and tools <br/>
   built for busy family caregivers struggling to care for mom and dad*/}
-
+  {/*
       Unlock an ecosystem of care services & tools for busy professionals struggling <br/>
      to balance their hectic careers and caregiving responsibilities.
+*/}
+Unlock the care services and tools to fix the financial gaps and reclaim your time 
   </p>   
 
 {/*Image for Mobile Devices*/}
