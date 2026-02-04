@@ -76,26 +76,32 @@ export function MedicaidCoPilotPage() {
         
         />
 
-        <main className="max-w-7xl mx-auto px-6 pb-32">
+<main className="max-w-7xl mx-auto px-6 pb-32">
           {/* Hero Section */}
           <div className="text-center px-4 sm:px-6 md:px-8 lg:px-12 py-2 rounded-lg">
             <h1 className="mt-24 text-3xl sm:text-5xl font-bold text-gray-900 mb-4">
-              Navigate 
+              {/*Navigate*/}
+              Negotiate
               <span className="space-x-1">
-                <span className="bg-gradient-to-l from-red-300 via-red-400 to-red-500 bg-clip-text text-transparent"> Medicaid <br className="sm:hidden"/> Eligibility </span> 
-                with confidence
+                {/*<span className="bg-gradient-to-l from-red-300 via-red-400 to-red-500 bg-clip-text text-transparent"> Medicaid <br className="sm:hidden"/> Eligibility </span> */}
+
+                <span className="bg-gradient-to-l from-red-300 via-red-400 to-red-500 bg-clip-text text-transparent"> Long-Term <br className="sm:hidden"/> Care Insurance </span> 
+                Faster
               </span>
               <p className="block text-sm font-normal sm:text-xl sm:font-normal text-gray-600 leading-tight mt-1 sm:mt-3">
-                <span className="sm:hidden font-normal">Get eligibility answers . Expert guidance . Free Medicaid assistant</span>   
-                <span className="hidden sm:inline font-normal">Get instant eligibility answers, expert guidance, and free AI-powered support</span> 
+                <span className="sm:hidden font-normal">Get eligibility answers . Expert guidance . Free AI assistant</span>   
+                <span className="hidden sm:inline font-normal">Get instant eligibility answers, state specific guidance, and free AI-powered support</span> 
               </p>
             </h1>
           </div>
 
           {/* Feature Highlights - Above the Tool */}
+          {/*
           <section className="mt-16 mb-12">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
+            */}
               {/* Feature 1 */}
+              {/*
               <div className="group bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-red-200 cursor-pointer">
                 <div className="flex items-start space-x-4">
                   <div className="p-3 bg-red-50 rounded-lg group-hover:bg-red-100 transition-colors duration-300">
@@ -111,8 +117,9 @@ export function MedicaidCoPilotPage() {
                   </div>
                 </div>
               </div>
-
+            */}
               {/* Feature 2 */}
+              {/*
               <div className="group bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-red-200 cursor-pointer">
                 <div className="flex items-start space-x-4">
                   <div className="p-3 bg-red-50 rounded-lg group-hover:bg-red-100 transition-colors duration-300">
@@ -128,8 +135,10 @@ export function MedicaidCoPilotPage() {
                   </div>
                 </div>
               </div>
-
+            */}
               {/* Feature 3 */}
+
+              {/*
               <div className="group bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-red-200 cursor-pointer">
                 <div className="flex items-start space-x-4">
                   <div className="p-3 bg-red-50 rounded-lg group-hover:bg-red-100 transition-colors duration-300">
@@ -147,22 +156,28 @@ export function MedicaidCoPilotPage() {
               </div>
             </div>
           </section>
-
+      */}
           {/* Main Tool Section - EligibilityFreeTool Integration */}
-          <section className="mt-8 border-t border-gray-200 pt-12">
+          {/*<section className="mt-8 border-t border-red-200 pt-12">*/}
+          <section className="mt-4 pt-4">
+            
+            {/*
             <div className="text-center mb-8">
               <div className="inline-flex items-center space-x-2 px-4 py-2 bg-red-50 rounded-full mb-4">
                 <Sparkles className="w-4 h-4 text-red-500" />
-                <span className="text-sm font-semibold text-red-600">Free Medicaid Support</span>
+                <span className="text-sm font-semibold text-red-600">Free Care Assistant</span>
               </div>
+              {/*
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
                 Meet Your Medicaid Guide
               </h2>
               <p className="text-gray-600 text-lg max-w-2xl mx-auto">
                 Negotiate long-term care insurance with expert guidance
               </p>
+              
             </div>
-
+            */}
+              
             {/* Embedded EligibilityFreeTool */}
             <EligibilityFreeTool />
           </section>
