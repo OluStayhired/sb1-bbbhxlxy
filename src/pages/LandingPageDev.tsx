@@ -2477,6 +2477,7 @@ Unlock our care services & tools to fix the gaps and avoid unexpected hospital b
     setIsEldercareModalOpen(false);
     setIsOnboardingModalOpen(true);
   }}
+  />   
 */}
 
   <EldercareModalPopUpSmall 
@@ -2487,7 +2488,7 @@ Unlock our care services & tools to fix the gaps and avoid unexpected hospital b
     setIsOnboardingModalOpen(true);
   }}
 />          
-/>        
+     
 
     <OnboardingQuestionsModal 
       isOpen={isOnboardingModalOpen}
