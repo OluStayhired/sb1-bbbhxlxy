@@ -506,9 +506,9 @@ const handleSendMessage = async (content: string) => {
   };
 
   return (
-    <div className="w-full max-w-7xl mx-auto my-8 px-4 rounded-xl border-gray-200">
+    <div className="w-full max-w-7xl mx-auto py-8 px-4 rounded-xl border-gray-200">
       
-      <div className="bg-white border border-gray-200 rounded-xl w-full h-[100vh] flex flex-col relative">
+      <div className="bg-white border border-gray-200 rounded-xl w-full h-[125vh] flex flex-col relative">
 
         {/* ----------------  Quota Limit Alert Popup ----------------------- */}
 {showQuotaAlert && (
@@ -559,7 +559,8 @@ const handleSendMessage = async (content: string) => {
             <div className="p-2 bg-red-50 rounded-lg">
               <Shield className="w-6 h-6 text-red-500" />
             </div>
-            <h2 className="text-2xl font-bold text-gray-900">Live Medicaid Assistant</h2>
+            {/*<h2 className="text-2xl font-bold text-gray-900">Live Medicaid Assistant</h2>*/}
+            <h2 className="text-2xl font-bold text-gray-900">Live Long-Term Care Specialist</h2>
           </div>
         </div>
         
