@@ -34,6 +34,7 @@ import { OnboardingQuestionsModal } from '../components/OnboardingQuestionsModal
 import { EldercareGapDashboardModal } from '../components/EldercareGapDashboardModal';  // ADD THIS LINE
 
 import { EldercareModalPopUp } from '../components/EldercareModalPopUp';
+import { EldercareModalPopUpSmall } from '../components/EldercareModalPopUpSmall';
 
 
 
@@ -74,6 +75,7 @@ function LandingPageDev() {
 
 
   const [isEldercareModalOpen, setIsEldercareModalOpen] = useState(true);
+  const [isEldercareSmallModalOpen, setIsEldercareSmallModalOpen] = useState(true);
 
 
 const handleLoginClick = () => {
@@ -2467,6 +2469,7 @@ Unlock our care services & tools to fix the gaps and avoid unexpected hospital b
   onOpenCommunity={handleOnCallStressToCommunity}
 />
 
+{/*
 <EldercareModalPopUp 
   isOpen={isEldercareModalOpen}
   onClose={() => setIsEldercareModalOpen(false)}
@@ -2474,6 +2477,16 @@ Unlock our care services & tools to fix the gaps and avoid unexpected hospital b
     setIsEldercareModalOpen(false);
     setIsOnboardingModalOpen(true);
   }}
+*/}
+
+  <EldercareModalPopUpSmall 
+  isOpen={isEldercareSmallModalOpen}
+  onClose={() => setIsEldercareSmallModalOpen(false)}
+  onStartOnboarding={() => {
+    setIsEldercareSmallModalOpen(false);
+    setIsOnboardingModalOpen(true);
+  }}
+/>          
 />        
 
     <OnboardingQuestionsModal 
