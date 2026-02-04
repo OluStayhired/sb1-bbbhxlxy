@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CalendarCheck, Calendar, PenSquare, Clock, Users, PenTool, Briefcase, Plus, Minus,Menu, MailCheck,
-  Bot, CheckCircle,X, Send,Timer, Zap, ArrowRight, HeartPulse, Brain, MapPin, Target,
+  Bot, CheckCircle,X, Send,Timer, Zap, ArrowRight, HeartPulse, Brain, MapPin, Target, Scale,
   Lightbulb, Sparkles, Check, CircleDollarSign, Star, Search, Activity, FileText, Shield, ShieldCheck, TrendingUp, ShieldAlert, User, CheckCircle2, Headset, Dumbbell, UserSearch, DatabaseZap } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { AuthModal } from '../components/AuthModal';
@@ -439,12 +439,13 @@ const getSessionId = (): string => {
         
         {/* Title */}
         <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-          Virtual Eldercare Assistants
+          Healthcare Virtual Assistants
         </h3>
         
         {/* Description */}
         <p className="text-sm text-gray-600 leading-relaxed">
-          Outsource "chaser" emails and phone marathons that stall your workday. Avoid the broken bureaucracy and insurance claims. Let us do the heavy lifting while you focus on work.  
+          {/*Outsource "chaser" emails and phone marathons that stall your workday. Avoid the broken bureaucracy and insurance claims. Let us do the heavy lifting while you focus on work.  */}
+          Outsource the 'chaser' emails, insurance calls, and medical reports that stall your workday.
         </p>
       </a>
 
@@ -455,17 +456,19 @@ const getSessionId = (): string => {
       >
         {/* Icon Container */}
         <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
-          <Shield className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
+          <CircleDollarSign className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
         </div>
         
         {/* Title */}
         <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-          Financial & Legal Defense
+          {/*Financial & Legal Defense*/}
+          Spend-Down Calculator
         </h3>
         
         {/* Description */}
         <p className="text-sm text-gray-600 leading-relaxed">
-          Access proprietary spend-down models and elite legal audits to protect your family from predatory care-home facility contracts. Your wages are not for paying eldercare bills.
+          {/*Access proprietary spend-down models and elite legal audits to protect your family from predatory care-home facility contracts. Your wages are not for paying eldercare bills.*/}
+          Track asset and income thresholds to trigger financial support so you’re never out-of-pocket.
         </p>
       </a>
 
@@ -476,17 +479,19 @@ const getSessionId = (): string => {
       >
         {/* Icon Container */}
         <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
-          <UserSearch className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
+          <Scale className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
         </div>
         
         {/* Title */}
         <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-          Emergency Care
+          {/*Emergency Care*/}
+          Care Home Contract Analyzer
         </h3>
         
         {/* Description */}
         <p className="text-sm text-gray-600 leading-relaxed">
-          Never miss a work event or travel opportunity with our emergency caregiver search service. Maintain your professional presence while ensuring mom and dad are safe.
+          {/*Never miss a work event or travel opportunity with our emergency caregiver search service. Maintain your professional presence while ensuring mom and dad are safe.*/}
+          Detect predatory contracts that inflate your monthly care bills soon after admission.
         </p>
       </a>
 
@@ -497,17 +502,18 @@ const getSessionId = (): string => {
       >
         {/* Icon Container */}
         <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
-          <Dumbbell className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
+          <Brain className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
         </div>
         
         {/* Title */}
         <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-          Mental Health Gym
+          Mental Health Support
         </h3>
         
         {/* Description */}
         <p className="text-sm text-gray-600 leading-relaxed">
-          Join a confidential circle of peers and clinical coaches to share the mental stress of balancing work with eldercare support. A safe space to vent, discuss and resolve family conflicts. 
+          {/*Join a confidential circle of peers and clinical coaches to share the mental stress of balancing work with eldercare support. A safe space to vent, discuss and resolve family conflicts. */}
+          Join clinical coaches to share the mental stress of balancing work with eldercare support.
         </p>
       </a>
 
@@ -523,12 +529,13 @@ const getSessionId = (): string => {
         
         {/* Title */}
         <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-          Eldercare Vault
+          Eldercare Data Vault
         </h3>
         
         {/* Description */}
         <p className="text-sm text-gray-600 leading-relaxed">
-          Replace fragmented unsecure personal data stores with structured searchable high-grade data vaults. Instantly connect personal, public and community insights for better decisions.  
+          {/*Replace fragmented unsecure personal data stores with structured searchable high-grade data vaults. Instantly connect personal, public and community insights for better decisions.  */}
+          Replace fragmented unsecure personal data stores with structured searchable data vaults. 
         </p>
       </a>
 
@@ -544,12 +551,13 @@ const getSessionId = (): string => {
         
         {/* Title */}
         <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-          Tactical Response Services
+          Claims Recovery Engine
         </h3>
         
         {/* Description */}
         <p className="text-sm text-gray-600 leading-relaxed">
-          Real-time support for the unplanned errands that keep you on high-alert. Activate standby assistance for hospital transport and pharmacy runs so you can finish that sales presentation.
+          {/*Real-time support for the unplanned errands that keep you on high-alert. Activate standby assistance for hospital transport and pharmacy runs so you can finish that sales presentation.*/}
+          Scan denial letters, identify look-back and gifting errors, automate your insurance appeal.
         </p>
       </a>
 
