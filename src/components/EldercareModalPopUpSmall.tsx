@@ -73,7 +73,7 @@ export function EldercareModalPopUpSmall({ isOpen, onClose, onStartOnboarding }:
             {/* Headline - Prominent */}
             <div className="mb-4 pb-4 border-b border-gray-800">
               <p className="text-lg font-bold text-red-400 leading-tight">
-                Avoid $10k/month eldercare bills
+              Avoid $10,000/month care bills!
               </p>
             </div>
 

@@ -316,7 +316,7 @@ const getSessionId = (): string => {
         
         {/* Title */}
         <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-          Medicaid Assistant
+          Long-Term Care Assistant
         </h3>
         
         {/* Description */}
@@ -1761,7 +1761,7 @@ Unlock our care services & tools to fix the gaps and avoid unexpected hospital b
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
             <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
-                <h3 className="text-xl font-bold drop-shadow-lg">Medicaid Assistant</h3>
+                <h3 className="text-xl font-bold drop-shadow-lg">Long-Term Care Assistant</h3>
             </div>
           </div>
         </div>
@@ -1796,7 +1796,7 @@ Unlock our care services & tools to fix the gaps and avoid unexpected hospital b
            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
     </TooltipHelp>       
-                <h3 className="text-xl font-bold drop-shadow-lg">Medicaid Assistant</h3>
+                <h3 className="text-xl font-bold drop-shadow-lg">Long-Term Care Assistant</h3>
             </div>
           </div>
 
