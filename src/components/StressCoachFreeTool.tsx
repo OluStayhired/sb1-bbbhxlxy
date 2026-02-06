@@ -509,7 +509,7 @@ const handleSendMessage = async (content: string) => {
 
   return (
     <div className="w-full max-w-7xl mx-auto my-8 px-4 rounded-xl border-gray-200">
-      <div className="bg-white border border-gray-200 rounded-xl w-full h-[100vh] flex flex-col relative">
+      <div className="bg-white border border-gray-200 rounded-xl w-full h-[125vh] flex flex-col relative">
 
 {/* ----------------  Quota Limit Alert Popup ----------------------- */}
 {showQuotaAlert && (

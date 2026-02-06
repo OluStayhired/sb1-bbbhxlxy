@@ -162,7 +162,7 @@ export function EldercareStressCoachPage() {
         */}
 
           {/* Main Tool Section - StressCoachFreeTool Integration */}
-          <section className="mt-4 border-t border-gray-200 pt-4">
+          <section className="mt-4 border-gray-200 pt-4">
 
             {/*
             <div className="text-center mb-8">
