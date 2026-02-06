@@ -83,8 +83,6 @@ export function MedicaidCoPilotPage() {
               {/*Navigate*/}
               Get
               <span className="space-x-1">
-                {/*<span className="bg-gradient-to-l from-red-300 via-red-400 to-red-500 bg-clip-text text-transparent"> Medicaid <br className="sm:hidden"/> Eligibility </span> */}
-
                 <span className="bg-gradient-to-l from-red-300 via-red-400 to-red-500 bg-clip-text text-transparent"> Long-Term <br className="sm:hidden"/> Care Insurance </span> 
                 Support
               </span>
