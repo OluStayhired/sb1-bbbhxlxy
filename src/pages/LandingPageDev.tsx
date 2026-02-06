@@ -794,7 +794,8 @@ const getSessionId = (): string => {
               {/*Fix legal, financial and caregiving gaps for mom and dad without wasting lunch breaks on calls!*/}
               {/*Get legal, financial and caregiving help for mom and dad without spending hours on phone calls!*/}
 
-              We protect mom and dad's legacy so that you can stay focused at work.
+              {/*We protect mom and dad's legacy so that you can stay focused at work.*/}
+              Secure mom & dad's eldercare coverage <br/>without drowning in $10k/mo bills.
 
               </span> 
 
@@ -808,7 +809,8 @@ const getSessionId = (): string => {
             {/*Get legal, financial and caregiving help for mom and dad <br/>
             without spending your lunch break on calls!*/}
 
-            We protect mom and dad's legacy so that you can stay focused at work.
+            {/*We protect mom and dad's legacy so that you can stay focused at work.*/}
+            Secure mom & dad's eldercare coverage without drowning in $10k/mo bills.
           
           </span>
          
