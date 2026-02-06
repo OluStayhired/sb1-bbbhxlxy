@@ -258,7 +258,7 @@ export function MedicaidCoPilotPage() {
           <section className="mt-24 bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 md:p-12 border border-gray-100">
             <div className="text-center mb-12">
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-                Why Choose Our Medicaid Guide?
+                Why Choose Our Care Guide?
               </h2>
               <p className="text-gray-600 text-lg">
                 Everything you need to navigate long-term care insurance
