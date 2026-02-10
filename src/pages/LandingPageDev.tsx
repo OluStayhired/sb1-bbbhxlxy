@@ -768,7 +768,7 @@ const getSessionId = (): string => {
           Built For Busy Career Professionals
         </span>
 
-      <span className="hidden sm:inline text-xs sm:text-lg p-3 font-semibold bg-red-100 hover:bg-red-200 hover:text-red-600 rounded-full text-red-500 border-8 border-red-50 duration-500">Built For Busy Career Professionals</span>
+      <span className="hidden sm:inline text-xs sm:text-lg p-3 font-semibold bg-red-100 hover:bg-red-200 hover:text-red-600 rounded-full text-red-500 border-8 border-red-50 hover:border-red-100 duration-500">Built For Busy Career Professionals</span>
 
                
           
