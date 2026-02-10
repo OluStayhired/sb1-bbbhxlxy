@@ -651,8 +651,9 @@ const handleSendMessage = async (content: string) => {
               <div className="text-center">
                 <div className="relative mx-auto w-24 h-24 bg-gradient-to-br from-red-400 to-red-500 rounded-full flex items-center justify-center mb-4 shadow-lg border-4 border-white">
                   <img
-                    //src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/ltci-care-assistant.png"
-                  src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/caregiving_stress_coach.png"
+                   //src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/ltci-care-assistant.png"
+                  //src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/caregiving_stress_coach.png"
+                  src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/sophia_ai_coach.png"
               alt="Image 1"
               className="relative rounded-full w-full h-full aspect-square" // Square aspect ratio for stacked images
             />
@@ -797,7 +798,8 @@ const handleSendMessage = async (content: string) => {
                         <div className="w-full h-full rounded-full overflow-hidden border-2 border-red-200 shadow-sm">
                           <img
                             //src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/ltci-care-assistant.png"
-                            src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/caregiving_stress_coach.png"
+                            //src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/caregiving_stress_coach.png"
+                            src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/sophia_ai_coach.png"
                             alt="Sophia"
                             className="w-full h-full object-cover"
                           />
