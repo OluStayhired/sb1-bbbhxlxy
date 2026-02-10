@@ -693,7 +693,7 @@ const handleSendMessage = async (content: string) => {
                           <img
                             //src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/ltci-care-assistant.png"
                             src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/ellie_ai_square.png"
-                            alt="Ellie"
+                             alt="Ellie"
                             className="w-full h-full object-cover"
                           />
                         </div>
