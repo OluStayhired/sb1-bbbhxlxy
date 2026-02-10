@@ -573,7 +573,8 @@ const handleSendMessage = async (content: string) => {
               <div className="text-center">
                 <div className="relative mx-auto w-24 h-24 bg-gradient-to-br from-red-400 to-red-500 rounded-full flex items-center justify-center mb-4 shadow-lg border-4 border-white">
                   <img
-                    src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/ltci-care-assistant.png"
+                    //src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/ltci-care-assistant.png"
+                    src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/ellie_ai_square.png"
                     alt="Ellie"
                     className="relative rounded-full w-full h-full aspect-square"
                   />
@@ -690,7 +691,8 @@ const handleSendMessage = async (content: string) => {
                       <div className="relative w-8 h-8">
                         <div className="w-full h-full rounded-full overflow-hidden border-2 border-red-200 shadow-sm">
                           <img
-                            src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/ltci-care-assistant.png"
+                            //src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/ltci-care-assistant.png"
+                            src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/ellie_ai_square.png"
                             alt="Ellie"
                             className="w-full h-full object-cover"
                           />
