@@ -339,7 +339,7 @@ const getSessionId = (): string => {
         
         {/* Title */}
         <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-          Conflict Advisor
+          Family Conflict Advisor
         </h3>
         
         {/* Description */}
@@ -1889,7 +1889,7 @@ Unlock our care services & tools to fix the gaps and avoid unexpected hospital b
            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
         </TooltipHelp>    
-                <h3 className="text-xl font-bold drop-shadow-lg">Conflict Advisor</h3>
+                <h3 className="text-xl font-bold drop-shadow-lg">Family Conflict Advisor</h3>
             </div>
           </div>
           <div className="relative h-full border hover:p-2 hover:border-red-500 overflow-hidden rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl group">

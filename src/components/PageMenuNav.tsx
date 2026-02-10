@@ -117,7 +117,7 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
         
                   {/* Title */}
                   <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-                   Conflict Advisor
+                   Family Conflict Advisor
                   </h3>
         
                   {/* Description */}
