@@ -252,7 +252,9 @@ const getSessionId = (): string => {
   return (
       <>
 
-      <div id="top_page" className="min-h-screen bg-white">
+      <div id="top_page" className="min-h-screen bg-white
+      bg-gradient-to-bl from-red-50 via-bg-red-50 via-white via-white to-white -inset-4
+      ">
         <nav className="px-4 py-3 flex items-center justify-between sm:px-6 sm:py-4">
         <a href="/dev">
         <div className="flex items-center space-x-2">
@@ -938,7 +940,12 @@ const getSessionId = (): string => {
 
 <div className="hidden sm:inline mt-12 mb-8 w-full max-w-6xl mx-auto px-4">
 
-<div className="relative h-full overflow-hidden rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl border hover:p-2 hover:border-red-500 hover:shadow-red-500/60 group">
+{/*<div className="relative h-full overflow-hidden rounded-xl 
+shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl border 
+hover:p-2 hover:border-red-500 hover:shadow-red-500/60 group">*/}
+
+<div className="relative h-full overflow-hidden rounded-2xl shadow-xl transform transition-all duration-300 hover:scale-105 
+shadow-red-300/60 hover:shadow-3xl border-4 border-red-200 hover:p-2 hover:border-red-500 hover:shadow-red-500/60 group">
   
   <img   
     src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/poetiq_hero_v2.png"
@@ -955,7 +962,7 @@ const getSessionId = (): string => {
             onClick={openOnboardingModal}
             className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
            
-           <span className="text-2xl font-semibold">Get Long-Term Care Protection</span>
+           <span className="text-2xl font-semibold">Get Long-Term Care Coverage</span>
            <ArrowRight className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1" />
           </button>
         </TooltipHelp>
