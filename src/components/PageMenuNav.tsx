@@ -198,7 +198,7 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
 <div className="relative group">
   {/* Menu Header - Executive Services */}
   <button className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">
-  Paid Care Services 💚
+  Premium Services 💚
   </button>
 
   {/* Mega Menu Dropdown - Full Width 3 Column Grid */}
@@ -473,7 +473,7 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
             }}
             className="w-11/12 max-w-sm px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
           >
-           Paid Care Services 💚
+           Premium Services 💚
           </button>
 
           <button
