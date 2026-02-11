@@ -1165,7 +1165,7 @@ end of old hero image */}
         <Brain className="w-7 h-7 text-red-500 group-hover:scale-110 transition-transform" />
       </div>
       <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-red-500 transition-colors">
-        Feeling Mentally Broken
+        Fighting Mental Fatigue
       </h3>
       <p className="text-gray-600 text-sm leading-relaxed mb-6">
         You project authority in meetings but you're silently breaking. You context switch between strategic work and eldercare firefighting, pushing your mental capacity to breaking point.
