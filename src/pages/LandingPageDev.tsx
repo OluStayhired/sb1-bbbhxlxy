@@ -1211,7 +1211,8 @@ end of old hero image */}
         Consumed by monthly Care Bills
       </h3>
       <p className="text-gray-600 text-sm leading-relaxed mb-6">
-        You watch your parents' hard-earned legacy and your own financial peace of mind evaporate into monthly care costs. Every agency invoice feels like a countdown you simply can't stop.
+        {/*You watch your parents' hard-earned legacy and your own financial peace of mind evaporate into monthly care costs. Every agency invoice feels like a countdown you simply can't stop.*/}
+        You watch your mom's entire life savings and your own financial reserves evaporate into $10,000 a month care costs. Every agency invoice feels like a countdown you simply can't stop. 
       </p>
       <button
         //onClick={openCommunityModal}
