@@ -269,6 +269,26 @@ const getSessionId = (): string => {
         <div className="hidden sm:flex items-center space-x-4">
           <div className="items-center flex justify-center space-x-2">
 
+          <button
+            onClick={() => {
+              window.location.href = '#HowItWorks';
+              setIsMobileMenuOpen(false);
+            }}
+            className="max-w-sm px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
+          >
+            How it Works ❤️
+          </button>
+
+          <button
+            onClick={() => {
+              window.location.href = '#OperationalSupport';
+              setIsMobileMenuOpen(false);
+            }}
+            className="max-w-sm px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
+          >
+            Quick Tools 💛
+          </button>
+
     {/*---------------------------- Start the new Mega-Width Dropdown Menu --------------------------*/}
 
             {/* START: Eldercare Tools Dropdown Menu */}
