@@ -91,7 +91,14 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
                     >
                     {/* Icon Container */}
                     <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
-                      <HeartPulse className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
+                      {/*<HeartPulse className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />*/}
+                      <img
+                          src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/ellie_ai_square.png"
+                          alt="Image 1"
+                          className="relative rounded-full w-full h-full border-4 border-red-100 aspect-square group-hover/card:scale-110 transition-transform duration-300" 
+                  // Square aspect ratio for stacked images
+                    />
+        
                     </div>
         
                     {/* Title */}
@@ -101,7 +108,8 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
         
                  {/* Description */}
                   <p className="text-sm text-gray-600 leading-relaxed">
-                  Navigate complex Long-Term Care Insurance eligibility issues in real-time. 
+                  {/*Navigate complex Long-Term Care Insurance eligibility issues in real-time. */}
+                  Navigate state specific long-term care insurance eligibility issues with <b>Ellie</b>.
                   </p>
                 </Link>
 
@@ -112,7 +120,13 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
                 >
                   {/* Icon Container */}
                    <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
-                    <User className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
+                    {/*<User className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />*/}
+                    <img
+                        src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/sophia_ai_coach.png"
+                        alt="Image 1"
+                        className="relative rounded-full w-full h-full border-4 border-red-100 aspect-square group-hover/card:scale-110 transition-transform duration-300" 
+                  // Square aspect ratio for stacked images
+            />
                   </div>
         
                   {/* Title */}
@@ -122,7 +136,8 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
         
                   {/* Description */}
                   <p className="text-sm text-gray-600 leading-relaxed">
-                  Manage family disagreements empathetically without emotional drain. 
+                  {/*Manage family disagreements empathetically without emotional drain.*/}
+                  Resolve family disagreements empathetically with <b>Sophia</b>'s support.
                   </p>
                 </Link>
                 
