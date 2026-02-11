@@ -357,7 +357,8 @@ const getSessionId = (): string => {
         
         {/* Description */}
         <p className="text-sm text-gray-600 leading-relaxed">
-          Manage family disagreements empathetically without emotional drain. 
+          {/*Manage family disagreements empathetically without emotional drain.*/} 
+          Resolve family disagreements empathetically with <b>Sophia</b>'s support.
         </p>
       </Link>
       
