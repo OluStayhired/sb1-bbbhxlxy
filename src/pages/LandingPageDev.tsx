@@ -1168,7 +1168,8 @@ end of old hero image */}
         Fighting Mental Fatigue
       </h3>
       <p className="text-gray-600 text-sm leading-relaxed mb-6">
-        You project authority in meetings but you're silently breaking. You context switch between strategic work and eldercare firefighting, pushing your mental capacity to breaking point.
+        {/*You project authority in meetings but you're silently breaking. You context switch between strategic work and eldercare firefighting, pushing your mental capacity to breaking point.*/}
+        You appear super focused at work but you're silently breaking. You context switch between work related tasks and eldercare firefighting, pushing your mental capacity to breaking point.
       </p>
       <button
         onClick={openMentallyBrokenModal}
@@ -1188,7 +1189,8 @@ end of old hero image */}
         Frustrated with Inefficient Systems
       </h3>
       <p className="text-gray-600 text-sm leading-relaxed mb-6">
-        At work, you optimize and delegate. In caregiving, you're trapped in a maze of broken bureaucracy, chasing insurance claims and care agencies that don't share your sense of urgency or standards.
+        {/*At work, you optimize and delegate. In caregiving, you're trapped in a maze of broken bureaucracy, chasing insurance claims and care agencies that don't share your sense of urgency or standards.*/}
+        At work, you optimize and delegate. Taking care of mom, you're trapped in a frustrating maze of broken bureaucracy. You chase insurance claims and care agencies that don't share your urgency. 
       </p>
       <button
         //onClick={openCommunityModal}
@@ -1206,7 +1208,7 @@ end of old hero image */}
         <CircleDollarSign className="w-7 h-7 text-red-500 group-hover:scale-110 transition-transform" />
       </div>
       <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-red-500 transition-colors">
-        Consumed by $10k/mo Bills
+        Consumed by monthly Care Bills
       </h3>
       <p className="text-gray-600 text-sm leading-relaxed mb-6">
         You watch your parents' hard-earned legacy and your own financial peace of mind evaporate into monthly care costs. Every agency invoice feels like a countdown you simply can't stop.
