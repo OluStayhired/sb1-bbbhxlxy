@@ -813,7 +813,7 @@ const getSessionId = (): string => {
            <h1 className="text-3xl sm:text-6xl md:text-7xl lg:text-7xl leading-tight font-bold mb-2 sm:mb-3"> 
             <p>
               {/*<span className="inline-block sm:text-6xl bg-gradient-to-l from-red-300 via-red-400 to-red-500 text-transparent bg-clip-text mt-6">*/}
-              <span className="inline-block sm:text-6xl bg-gradient-to-l from-gray-400 via-gray-500 to-gray-600 text-transparent bg-clip-text mt-6"></span>
+              <span className="inline-block sm:text-6xl bg-gradient-to-l from-gray-400 via-gray-500 to-gray-600 text-transparent bg-clip-text mt-6">
               
                 {/* This is the key change! */}
 
