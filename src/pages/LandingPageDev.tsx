@@ -1754,7 +1754,7 @@ end of old hero image */}
     <button
       onClick={openCommunityModal}
       className="group flex items-center justify-center space-x-2 w-full sm:w-auto px-8 py-4 bg-red-500 text-white text-lg font-semibold rounded-lg hover:bg-red-600 transition-all duration-300 shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 mx-auto">
-      <span>Start Saving Today</span>
+      <span>Join Our Waitlist Today!</span>
       <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
     </button>
     
