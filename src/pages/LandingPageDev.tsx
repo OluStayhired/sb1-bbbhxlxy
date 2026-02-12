@@ -640,7 +640,7 @@ const getSessionId = (): string => {
             shadow-lg shadow-red-500/60       
              hover:shadow-xl hover:shadow-red-500/80 group"
           >
-           <span>Get Started</span>
+           <span>Join Waitlist</span>
            <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
                
@@ -972,8 +972,10 @@ const getSessionId = (): string => {
     type="submit"
     className="flex items-center space-x-2 w-full sm:w-auto bg-gradient-to-r from-red-500 to-red-600 text-white px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-10 shadow-red-500/60 hover:shadow-red-500/80 group"
   >    
-    <span className="hidden sm:inline"> Get Started for Free </span>
-    <span className="sm:hidden items-center"> Get Started for Free </span>
+    {/*<span className="hidden sm:inline"> Get Started for Free </span>*/}
+    <span className="hidden sm:inline"> Join Waitlist </span>
+    {/*<span className="sm:hidden items-center"> Get Started for Free </span>*/}
+    <span className="sm:hidden items-center"> Join Waitlist </span>
     <span><ArrowRight className="w-4 h-4 sm:w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" /></span>  
   </button>
 </div> 
@@ -1005,11 +1007,14 @@ shadow-red-300/60 hover:shadow-3xl border-4 border-red-200 hover:p-2 hover:borde
             onClick={openOnboardingModal}
             className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
            
-           <span className="text-2xl font-semibold">Get Long-Term Care Coverage</span>
+           <span className="text-2xl font-semibold">Try Gap Finder!</span>
            <ArrowRight className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1" />
           </button>
         </TooltipHelp>
-                <h3 className="text-3xl font-bold drop-shadow-lg">The stress-free way to protect <br/> mom and dad's legacy 🧡</h3>
+                {/*<h3 className="text-3xl font-bold drop-shadow-lg">The stress-free way to protect <br/> mom and dad's legacy 🧡</h3>*/}
+                <h3 className="text-3xl font-bold drop-shadow-lg">Identify legal & financial gaps<br/> you need to fix now 
+                  <ShieldCheck className="w-8 h-8 fill-red-500 justify-center align-middle text-white ml-1 inline"/>
+                  </h3> 
             </div>
 
 
