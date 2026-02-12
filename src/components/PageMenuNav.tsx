@@ -414,7 +414,7 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
           onClick={onOpenCommunityModal}
           className="flex items-center justify-center space-x-2 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-500 transition-colors shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 group"
         >
-          <span>Join Community</span>
+          <span>Join Waitlist</span>
           <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
         </button>
 
@@ -533,7 +533,7 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
             onClick={onOpenCommunityModal}
             className="group flex items-center justify-center space-x-2 w-1/2 sm:w-auto p-4 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 transition-colors shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-4 sm:text-lg"
           >
-            <span>Join Community</span>
+            <span>Join Waitlist</span>
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
 

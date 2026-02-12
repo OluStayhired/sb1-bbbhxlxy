@@ -351,7 +351,7 @@ export function MedicaidCoPilotPage() {
                     onClick={openCommunityModal}
                     className="flex items-center justify-center space-x-2 w-full sm:w-auto px-8 py-4 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-all text-lg font-semibold shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 group"
                   >
-                    <span>Join Our Community</span>
+                    <span>Join Our Waitlist</span>
                     <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
                   </button>
                 </TooltipExtended>
