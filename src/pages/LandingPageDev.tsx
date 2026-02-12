@@ -823,7 +823,7 @@ const getSessionId = (): string => {
                 The long-term <br className="sm:hidden" />care navigator<br className="hidden sm:block"/>
                 
                 
-       <p className="block text-sm font-normal sm:text-xl sm:font-normal text-gray-600 leading-tight mt-1 sm:mt-3">
+       <p className="block text-sm font-normal sm:text-xl sm:font-normal text-gray-600 leading-tight mt-1 sm:mt-6">
          
              <span className="sm:hidden font-normal">
               {/*Fix legal and financial gaps for mom and dad before a major health crisis hits.*/}
@@ -851,8 +851,11 @@ const getSessionId = (): string => {
             {/*We protect mom and dad's legacy so that you can stay focused at work.*/}
             {/*Secure mom & dad's eldercare coverage without drowning in $10k/mo bills.*/}
 
-            Solve legal, financial, and care logistics for Mom and Dad in one place.<br/>
-            We handle the admin to give you peace of mind at work.
+            {/*Solve legal, financial, and care logistics for Mom and Dad in one place.<br/>
+            We handle the admin to give you peace of mind at work.*/}
+
+            Solve legal, financial, and care logistics for mom & dad in one place.<br/>
+            We handle the admin and emails to give you peace of mind at work.
           
           </span>
          
