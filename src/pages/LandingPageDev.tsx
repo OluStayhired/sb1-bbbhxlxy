@@ -850,7 +850,7 @@ const getSessionId = (): string => {
             {/*We protect mom and dad's legacy so that you can stay focused at work.*/}
             {/*Secure mom & dad's eldercare coverage without drowning in $10k/mo bills.*/}
 
-            Manage legal, financial & care logistics <br/>for Mom and Dad in one place.
+            Manage legal, financial & care logistics for Mom and Dad in one place.
           
           </span>
          
