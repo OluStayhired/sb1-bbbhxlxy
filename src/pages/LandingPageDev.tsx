@@ -819,7 +819,8 @@ const getSessionId = (): string => {
 
                {/*The eldercare protection <br className="sm:hidden" /> assistant <br className="hidden sm:block"/>*/}
 
-                The long-term care <br className="sm:hidden" /> navigator<br className="hidden sm:block"/>
+                {/*The long-term care <br className="sm:hidden" /> navigator<br className="hidden sm:block"/>*/}
+                The long-term <br className="sm:hidden" />care navigator<br className="hidden sm:block"/>
                 
                 
        <p className="block text-sm font-normal sm:text-xl sm:font-normal text-gray-600 leading-tight mt-1 sm:mt-3">
@@ -850,7 +851,8 @@ const getSessionId = (): string => {
             {/*We protect mom and dad's legacy so that you can stay focused at work.*/}
             {/*Secure mom & dad's eldercare coverage without drowning in $10k/mo bills.*/}
 
-            Manage legal, financial & care logistics for Mom and Dad in one place.
+            Solve legal, financial, and care logistics for Mom and Dad in one place.<br/>
+            We handle the admin to give you peace of mind at work.
           
           </span>
          
