@@ -264,7 +264,7 @@ export function EldercareStressCoachPage() {
                 Why Choose Our Conflict Advisor?
               </h2>
               <p className="text-gray-600 text-lg">
-                Everything you need to navigate caregiving disagreements s with confidence
+                Everything you need to solve eldercare family conflicts with empathy. 
               </p>
             </div>
 
