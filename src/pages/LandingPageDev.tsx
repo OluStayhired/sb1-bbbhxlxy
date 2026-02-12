@@ -812,7 +812,8 @@ const getSessionId = (): string => {
            {/*start alternative header */}
            <h1 className="text-3xl sm:text-6xl md:text-7xl lg:text-7xl leading-tight font-bold mb-2 sm:mb-3"> 
             <p>
-              <span className="inline-block sm:text-6xl bg-gradient-to-l from-red-300 via-red-400 to-red-500 text-transparent bg-clip-text mt-6">
+              {/*<span className="inline-block sm:text-6xl bg-gradient-to-l from-red-300 via-red-400 to-red-500 text-transparent bg-clip-text mt-6">*/}
+              <span className="inline-block sm:text-6xl bg-gradient-to-l from-gray-400 via-gray-500 to-gray-600 text-transparent bg-clip-text mt-6"></span>
               
                 {/* This is the key change! */}
 
@@ -831,7 +832,8 @@ const getSessionId = (): string => {
               {/*Get legal, financial and caregiving help for mom and dad without spending hours on phone calls!*/}
 
               {/*We protect mom and dad's legacy so that you can stay focused at work.*/}
-              Secure mom & dad's eldercare coverage <br/>without drowning in $10k/mo bills.
+              {/*Secure mom & dad's eldercare coverage <br/>without drowning in $10k/mo bills.*/}
+              Manage legal, financial & care logistics <br/>for Mom and Dad in one place.
 
               </span> 
 
@@ -846,7 +848,9 @@ const getSessionId = (): string => {
             without spending your lunch break on calls!*/}
 
             {/*We protect mom and dad's legacy so that you can stay focused at work.*/}
-            Secure mom & dad's eldercare coverage without drowning in $10k/mo bills.
+            {/*Secure mom & dad's eldercare coverage without drowning in $10k/mo bills.*/}
+
+            Manage legal, financial & care logistics <br/>for Mom and Dad in one place.
           
           </span>
          
