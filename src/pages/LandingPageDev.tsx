@@ -783,7 +783,7 @@ const getSessionId = (): string => {
             onClick={openCommunityModal}
             className="group flex items-center justify-center space-x-2 w-1/2 sm:w-auto p-4 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 transition-colors shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-4 sm:text-lg">
            
-           <span>Get Started</span>
+           <span>Join Waitlist</span>
            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
         
@@ -1454,7 +1454,7 @@ end of old hero image */}
   <button
     onClick={openCommunityModal}
     className="mt-8 items-center group flex items-center justify-center space-x-2 w-full sm:w-auto px-6 py-3 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 transition-colors shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-4 sm:text-lg mx-auto">
-    <span>Get Started</span>
+    <span>Join Waitlist</span>
       <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
    </button> 
 </section>
@@ -1884,7 +1884,7 @@ Unlock our care services & tools to fix the gaps and avoid unexpected hospital b
             onClick={openCommunityModal}
             className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
            
-           <span className="text-sm font-normal">Get Started</span>
+           <span className="text-sm font-normal">Join Waitlist</span>
            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
       </TooltipHelp>   
@@ -1982,7 +1982,7 @@ Unlock our care services & tools to fix the gaps and avoid unexpected hospital b
                   onClick={openCommunityModal}
                   className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
            
-              <span className="text-sm font-normal">Get Started</span>
+              <span className="text-sm font-normal">Join Waitlist</span>
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
           
@@ -2007,7 +2007,7 @@ Unlock our care services & tools to fix the gaps and avoid unexpected hospital b
             onClick={openCommunityModal}
             className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
            
-           <span className="text-sm font-normal">Get Started</span>
+           <span className="text-sm font-normal">Join Waitlist</span>
            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
         </TooltipHelp>
@@ -2059,7 +2059,7 @@ Unlock our care services & tools to fix the gaps and avoid unexpected hospital b
               <button
                 onClick={openCommunityModal}
                 className="mt-8 flex items-center justify-center space-x-2 w-full sm:w-auto px-6 py-3 border border-red-500 bg-white text-red-500 text-base font-semibold rounded-lg hover:bg-red-500 hover:text-white transition-colors shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-4 sm:text-lg group mx-auto">
-                <span>Get Started</span>
+                <span>Join Waitlist</span>
                 {/* Placeholder for ArrowRight icon or similar */}
                <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
             </button> 
@@ -2366,7 +2366,7 @@ Unlock our care services & tools to fix the gaps and avoid unexpected hospital b
              hover:shadow-xl hover:shadow-red-500/80 group" // Adjusted mobile button size/text for consistency
           >
             {/*<Send className="w-3.5 h-3.5"/>*/}
-           <span>Get Started</span>
+           <span>Join Waitlist</span>
            <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
 
