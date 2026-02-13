@@ -1468,15 +1468,18 @@ end of old hero image */}
 <section id="HowItWorks" className="mt-32 text-center">
   
   <h2 className="hidden sm:block text-2xl text-red-400 sm:text-4xl md:text-5xl font-bold leading-tight mt-4 mb-4">
-    How we make it stress-free for you
+    {/*How we make it stress-free for you*/}
+    How we handle the logistics for you
   </h2>
 
   <h2 className="sm:hidden text-2xl text-red-400 sm:text-4xl md:text-5xl font-bold leading-tight mt-4 mb-4">
-    How It Works
+    {/*How It Works*/}
+    How we handle the logistics
   </h2>
   
   <p className="text-xl sm:text-2xl text-gray-600 mb-16 mx-auto max-w-3xl hover:text-red-500">  
-  We fix the gaps in mom and dad's eldercare plans so you don't have to.
+  {/*We fix the gaps in mom and dad's eldercare plans so you don't have to.*/}
+  We find the hidden gaps, build a plan and take over all the admin.
   </p>  
 
   {/* Process Flow Container */}
@@ -1510,7 +1513,8 @@ end of old hero image */}
             Identify Hidden Gaps
           </h3>
           <p className="text-lg text-gray-600 leading-relaxed mb-6">
-            Use our Gap Finder to instantly reveal the critical vulnerabilities in your eldercare plan. Most families miss an average of 14 essential protections that leave them exposed to financial and legal risks.
+            {/*Use our Gap Finder to instantly reveal the critical vulnerabilities in your eldercare plan. Most families miss an average of 14 essential protections that leave them exposed to financial and legal risks.*/}
+            Use our Gap Finder to instantly reveal the critical blind spots in your parent's long-term care setup. Most families miss at least 14 essential protections, leaving them exposed to massive out-of-pocket legal and financial liabilities.
           </p>
           <div className="flex flex-wrap gap-3">
             <span className="inline-flex items-center px-4 py-2 bg-white border-2 border-red-100 rounded-lg text-sm font-medium text-gray-700 shadow-sm">
@@ -1543,17 +1547,18 @@ end of old hero image */}
             STEP 2
           </div>
           <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Close the Gaps
+          Build your Strategy
           </h3>
           <p className="text-lg text-gray-600 leading-relaxed mb-6">
-            Access our suite of free and premium tools designed for career professionals who demand excellence. From Contract Buster to expert attorneys, VAs, and spend-down planners, we handle the complexity while you stay in control.
+            {/*Access our suite of free and premium tools designed for career professionals who demand excellence. From Contract Buster to expert attorneys, VAs, and spend-down planners, we handle the complexity while you stay in control.*/}
+            Use our suite of specialized tools and services to repair the gaps in your parent’s setup. From nursing home contract analysis to spend-down calculations and expert legal referrals, we handle the complexity while you stay in control.
           </p>
           
           {/* Tool Grid */}
           <div className="grid grid-cols-2 gap-3">
             <div className="flex items-center space-x-2 bg-white rounded-lg p-3 border border-red-100 shadow-sm">
               <FileText className="w-5 h-5 text-red-500 flex-shrink-0" />
-              <span className="text-sm font-medium text-gray-700">Contract Buster</span>
+              <span className="text-sm font-medium text-gray-700">Contract Analyzer</span>
             </div>
             <div className="flex items-center space-x-2 bg-white rounded-lg p-3 border border-red-100 shadow-sm">
               <Shield className="w-5 h-5 text-red-500 flex-shrink-0" />
@@ -1615,7 +1620,8 @@ end of old hero image */}
             STEP 3
           </div>
           <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Stay Organized & Connected
+            {/*Stay Organized & Connected*/}
+            Centralize your Assets
           </h3>
           <p className="text-lg text-gray-600 leading-relaxed mb-6">
             Your Eldercare Data Vault keeps all critical documents, medical records, and legal paperwork in one secure place. Share updates with family members instantly and eliminate the chaos of scattered information.
@@ -1625,14 +1631,14 @@ end of old hero image */}
               <CheckCircle2 className="w-6 h-6 text-red-500 flex-shrink-0 mt-0.5" />
               <div>
                 <p className="font-semibold text-gray-800 text-sm">Secure Document Storage</p>
-                <p className="text-gray-600 text-xs mt-1">Military-grade encryption for all sensitive files</p>
+                <p className="text-gray-600 text-xs mt-1">Encrypted storage for all sensitive family assets.</p>
               </div>
             </div>
             <div className="flex items-start space-x-3 bg-white rounded-lg p-4 border-2 border-red-100 shadow-sm">
               <CheckCircle2 className="w-6 h-6 text-red-500 flex-shrink-0 mt-0.5" />
               <div>
                 <p className="font-semibold text-gray-800 text-sm">Family Collaboration</p>
-                <p className="text-gray-600 text-xs mt-1">Keep everyone informed with real-time updates</p>
+                <p className="text-gray-600 text-xs mt-1">Keep family members informed with real-time updates</p>
               </div>
             </div>
             <div className="flex items-start space-x-3 bg-white rounded-lg p-4 border-2 border-red-100 shadow-sm">
@@ -1660,10 +1666,10 @@ end of old hero image */}
             STEP 4
           </div>
           <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Avoid Paying $10,000/mo Long-Term Care Bills
+              Maximize your Savings
           </h3>
           <p className="text-lg text-gray-600 leading-relaxed mb-6">
-            Our expert team fights for your financial security. We win long-term care insurance appeals, qualify you for coverage you didn't know existed, and slash monthly care costs, all while you stay focused on your executive responsibilities.
+              Stop losing $10,000/month to long-term care bills. Our team fights to win insurance appeals and unlock hidden coverage so you can protect your family's assets and your own professional bandwidth.
           </p>
           
           {/* Financial Impact Grid */}
@@ -1673,8 +1679,11 @@ end of old hero image */}
                 <CircleDollarSign className="w-6 h-6 text-red-600" />
               </div>
               <div>
-                <p className="font-bold text-gray-900 text-base">Reduce Monthly Costs</p>
-                <p className="text-gray-600 text-sm mt-1">Average savings of $10,000+ per month through strategic spend-down and coverage optimization</p>
+                <p className="font-bold text-gray-900 text-base">Slash Monthly Costs</p>
+                <p className="text-gray-600 text-sm mt-1">
+                  {/*Average savings of $10,000+ per month through strategic spend-down and coverage optimization*/}
+                  Save $10,000+ per month through strategic coverage optimization and spend-down planning.
+                  </p>
               </div>
             </div>
 
@@ -1684,7 +1693,10 @@ end of old hero image */}
               </div>
               <div>
                 <p className="font-bold text-gray-900 text-base">Win Insurance Appeals</p>
-                <p className="text-gray-600 text-sm mt-1">87% success rate on long-term care insurance appeals with our specialized legal team</p>
+                <p className="text-gray-600 text-sm mt-1">
+                  {/*87% success rate on long-term care insurance appeals with our specialized legal team*/}
+                  Overturn denied claims with our legal partners, and secure the benefits your parents are owed.
+                  </p>
               </div>
             </div>
 
@@ -1693,8 +1705,8 @@ end of old hero image */}
                 <Briefcase className="w-6 h-6 text-red-600" />
               </div>
               <div>
-                <p className="font-bold text-gray-900 text-base">Keep Your Career on Track</p>
-                <p className="text-gray-600 text-sm mt-1">We handle the insurance battles and paperwork while you attend that board meeting</p>
+                <p className="font-bold text-gray-900 text-base">Protect Your Professional Focus</p>
+                <p className="text-gray-600 text-sm mt-1">Focus on your professional responsibilities while we handle the back-and-forth with insurance claims.</p>
               </div>
             </div>
 
@@ -1703,8 +1715,11 @@ end of old hero image */}
                 <Target className="w-6 h-6 text-red-600" />
               </div>
               <div>
-                <p className="font-bold text-gray-900 text-base">Qualify for Hidden Coverage</p>
-                <p className="text-gray-600 text-sm mt-1">Discover Medicaid, VA benefits, and state programs that most families never find</p>
+                <p className="font-bold text-gray-900 text-base">Unlock Hidden Funding</p>
+                <p className="text-gray-600 text-sm mt-1">
+                  {/*Discover Medicaid, VA benefits, and state programs that most families never find*/}
+                  Identify Medicaid, VA benefits, and state-specific programs to protect your parent's estate from unnecessary depletion.
+                  </p>
               </div>
             </div>
           </div>
@@ -1746,10 +1761,12 @@ end of old hero image */}
   {/* Enhanced Call to Action with Value Proposition */}
   <div className="mt-16 text-center">
     <p className="text-2xl font-bold text-gray-900 mb-4">
-      Ready to save $120,000+ annually while protecting your career?
+      {/*Ready to save $120,000+ annually while protecting your career?*/}
+      Ready to save $120,000/year without the chasing and follow-ups?
     </p>
     <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-      Join 500+ executives who've reclaimed their time and protected their family's financial future.
+      {/*Join 500+ executives who've reclaimed their time and protected their family's financial future.*/}
+      Join 500+ executives reclaiming their time and protecting their financial future.
     </p>
     <button
       onClick={openCommunityModal}
