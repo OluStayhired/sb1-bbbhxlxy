@@ -630,7 +630,7 @@ const handleSendMessage = async (content: string) => {
             <div className="p-2 bg-red-50 rounded-lg">
               <User className="w-6 h-6 text-red-500" />
             </div>
-            <h2 className="text-2xl font-bold text-gray-900">Family Conflict Advisor</h2>
+            <h2 className="text-2xl font-bold text-gray-900">Ask Sophia</h2>
             
           </div>
           
@@ -665,7 +665,7 @@ const handleSendMessage = async (content: string) => {
                 <h3 className="text-2xl font-bold text-gray-900">Sophia</h3>
                 <p className="text-sm font-semibold text-red-600 flex items-center justify-center space-x-1 mt-1">
                   <Sparkles className="w-4 h-4" />
-                  <span>Eldercare Stress Advisor</span>
+                  <span>Family Conflict Advisor</span>
                 </p>
               </div>
 

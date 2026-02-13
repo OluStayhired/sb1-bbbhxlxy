@@ -628,7 +628,7 @@ const handleSendMessage = async (content: string) => {
             <div className="p-2 bg-red-50 rounded-lg">
               <Shield className="w-6 h-6 text-red-500" />
             </div>
-            <h2 className="text-2xl font-bold text-gray-900">Live Medicaid Assistant</h2>
+            <h2 className="text-2xl font-bold text-gray-900">Ask Ellie</h2>
             
           </div>
           
