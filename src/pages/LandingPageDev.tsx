@@ -2315,12 +2315,16 @@ Unlock our care services & tools to fix the gaps and avoid unexpected hospital b
     <h2 className="text-2xl text-red-400 sm:text-4xl md:text-6xl font-bold leading-tight mb-8">
       {/*You don't have to navigate parental care alone*/}
       {/*The easiest way to fix care gaps for mom and dad*/}
-      Avoid costly bills...<br/> Protect your parent's legacy
+      {/*Avoid costly bills...<br/> Protect your parent's legacy*/}
+      Professional oversight<br/> for every detail
       
     </h2>
     <p className="text-gray-700 font-semibold text-md sm:text-2xl md:text-3xl font-light text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed">
       {/*Let’s find uncompromising clarity together 💪*/}
-      Perfect for family caregivers with demanding careers 💪
+      {/*Perfect for family caregivers with demanding careers 💪*/}
+      Protect your parent's assets without <br/> 
+      sacrificing their long-term care
+      <ShieldCheck className="w-8 h-8 fill-red-500 justify-center align-middle text-white ml-1 inline"/>
     </p>
 
           {/*--------------- start Social Proof Section ---------------- */}
