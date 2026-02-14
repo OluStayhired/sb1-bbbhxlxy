@@ -967,7 +967,7 @@ const handleSendMessage = async (content: string) => {
               </div>
 
               {/* Email Summary Section */}
-              <div className="hidden sm:flex bg-gradient-to-r from-red-50 to-rose-50 rounded-lg p-4 border border-red-100">
+              <div className="hidden sm:block bg-gradient-to-r from-red-50 to-rose-50 rounded-lg p-4 border border-red-100">
                 <form onSubmit={handleEmailSubmit} className="flex items-center space-x-3">
                   <Mail className="w-5 h-5 text-red-500 flex-shrink-0" />
                   <input
