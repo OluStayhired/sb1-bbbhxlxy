@@ -1825,25 +1825,79 @@ end of old hero image */}
 Unlock our care services & tools to fix the gaps and avoid unexpected hospital bills!
   </p>   
 
-{/*Image for Mobile Devices*/}
-<div className="sm:hidden w-full p-4 mt-8">
-  <div className="grid grid-cols-1 h-[450px]">
-     {/* Column 4: One image, spanning two rows */}
-        <div className="col-span-1">
-          <div className="relative overflow-hidden rounded-xl shadow-xl transform transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-red-500/60 hover:shadow-red-500/80 h-full group">
-            <img
-              src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/mother_patient.png"
-              alt="Caregivers"
-              className="w-full h-full object-cover object-[30%_50%]"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
-            <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
-                <h3 className="text-xl font-bold drop-shadow-lg">Long-Term Care Assistant</h3>
-            </div>
-          </div>
+ {/*Image for Mobile Devices - UX Optimized*/}
+ <div className="sm:hidden w-full px-4 mt-8">
+  <div className="relative h-[500px] overflow-hidden border-2 border-red-200 rounded-2xl shadow-2xl">
+    
+    {/* Background Image */}
+    <img
+      src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/mother_patient.png"
+      alt="Caregivers"
+      className="absolute inset-0 w-full h-full object-cover object-[30%_50%]"
+    />
+    
+    {/* Improved Gradient Overlay - Better readability */}
+    <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/90"></div>
+    
+    {/* Hero Section - Ellie Avatar Centered */}
+    <div className="absolute inset-0 flex flex-col items-center justify-center pt-12">
+      <div className="relative">
+        {/* Pulse Animation Ring */}
+        <div className="absolute inset-0 rounded-full bg-red-400 opacity-20 animate-ping"></div>
+        
+        {/* Ellie Avatar - Hero Element */}
+        <div className="relative w-32 h-32 rounded-full bg-white p-1.5 shadow-2xl transform transition-transform duration-500 hover:scale-110">
+          <img
+            src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/ellie_ai_square.png"
+            alt="Ellie AI Assistant"
+            className="w-full h-full rounded-full object-cover border-4 border-red-100" 
+          />
         </div>
+        
+        {/* Active Indicator Badge */}
+        <div className="absolute bottom-2 right-2 w-6 h-6 bg-green-500 border-4 border-white rounded-full shadow-lg">
+          <span className="absolute inset-0 rounded-full bg-green-400 animate-ping opacity-75"></span>
+        </div>
+      </div>
+      
+      {/* Spacing for visual breathing room */}
+      <div className="h-8"></div>
+      
+      {/* Text Content with Better Hierarchy */}
+      <div className="text-center px-6 space-y-2 pb-6">
+        <h2 className="text-3xl font-bold text-white drop-shadow-2xl tracking-tight">
+          Meet Ellie
+        </h2>
+        <p className="text-lg text-white/95 font-medium drop-shadow-lg">
+          Your Long-Term Care Assistant
+        </p>
+        <p className="text-sm text-white/80 drop-shadow-md pt-1 max-w-xs mx-auto pb-2">
+          {/* Get instant answers about care options, costs, and planning*/}
+        </p>
+      </div>
+    </div>
+    
+    {/* Call-to-Action Section - Bottom */}
+    <div className="absolute bottom-0 left-0 right-0 p-6 pb-8">
+      <TooltipHelp text="Start a conversation with Ellie">
+        <button
+          onClick={openEligibilityModal}
+          className="group w-full flex items-center justify-center space-x-3 bg-red-500 text-white font-semibold rounded-xl hover:bg-red-600 active:bg-red-700 transition-all duration-300 shadow-xl shadow-red-500/50 hover:shadow-2xl hover:shadow-red-500/60 p-4 transform hover:-translate-y-0.5">
+          
+          <span className="text-lg">Ask Ellie a Question</span>
+          <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2" />
+        </button>
+      </TooltipHelp>
+      
+      {/* Trust Indicator */}
+      <p className="text-center text-white/70 text-xs mt-3 drop-shadow">
+        Free • Instant • Confidential
+      </p>
     </div>
   </div>
+</div>
+
+  {/* ------------------------------------- End the Mobile devices section ------------------------------- */}
           
 <div className="hidden sm:block w-full p-4 mt-8">
 
