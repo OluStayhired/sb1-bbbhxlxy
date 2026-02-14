@@ -68,7 +68,7 @@ export function EligibilityModal({ isOpen, onClose }: EligibilityModalProps) {
 
   
   const [currentQuestions, setCurrentQuestions] = useState<string[]>([
-  "Tell me the basic eligibility requirements for LTC insurance?",
+  "Tell me basic eligibility requirements for LTC insurance?",
   "How do pre-existing conditions affect LTCI eligibility?"
 ]);
 
@@ -78,7 +78,7 @@ export function EligibilityModal({ isOpen, onClose }: EligibilityModalProps) {
 
   const prewrittenQuestions = [
     //"What are the basic eligibility requirements for long term care insurance?",
-    "Tell me the basic eligibility requirements for LTC insurance?",
+    "Tell me basic eligibility requirements for LTC insurance?",
     "How do pre-existing conditions affect LTCI eligibility?"
   ];
 
@@ -411,7 +411,7 @@ const handleSendMessage = async (content: string) => {
     }
   };
  
-
+//------------- Start Handle New Send Message -----------------//
 const handleSendMessage = async (content: string) => {
   if (!content.trim()) return;
 
@@ -643,7 +643,7 @@ const handleSendMessage = async (content: string) => {
         {/* Main Content - Split Layout */}
         <div className="flex-1 flex overflow-hidden">
           {/* Left Side - Ellie's Profile */}
-          <div className="w-1/3 bg-gradient-to-br from-red-50 to-rose-50 p-6 border-r rounded-bl-xl overflow-y-auto">
+          <div className="hidden sm:flex w-1/3 bg-gradient-to-br from-red-50 to-rose-50 p-6 border-r rounded-bl-xl overflow-y-auto">
             <div className="space-y-6">
               {/* Avatar and Name */}
               <div className="text-center">
@@ -764,7 +764,7 @@ const handleSendMessage = async (content: string) => {
           {/* Right Side - Chat Interface */}
           <div className="flex-1 flex flex-col">
             {/* Messages Area */}
-            <div className="flex-1 overflow-y-auto p-6 space-y-4">
+            <div className="flex-1 overflow-y-auto p-2 sm:p-6 space-y-4">
               {messages.map((message) => (
                 <div
                   key={message.id}
@@ -798,10 +798,10 @@ const handleSendMessage = async (content: string) => {
       
               {/* Message bubble */}
                   <div
-                    className={`max-w-[75%] rounded-lg p-4 ${
+                    className={`max-w-[75%] rounded-lg p-2 sm:p-4 ${
                       message.role === 'user'
                         ? 'bg-red-500 text-white hover:shadow-md hover:shadow-red-200 duration-500'
-                        : 'bg-gray-100 text-gray-900 border border-gray-200 hover:shadow-md hover:border-red-200 duration-500 w-full min-w-[520px]'
+                        : 'bg-gray-100 text-gray-900 border border-gray-200 hover:shadow-md hover:border-red-200 duration-500 h-full w-full min-w-[230px] sm:min-w-[520px]'
                     }`}
                   >
                     {/*<p className="text-xs leading-relaxed">{message.content}</p>*/}
@@ -946,7 +946,7 @@ const handleSendMessage = async (content: string) => {
                 />
                 <button
                   onClick={() => fileInputRef.current?.click()}
-                  className="p-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors group"
+                  className="hidden p-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors group"
                   title="Upload document"
                 >
                   <Upload className="w-5 h-5 text-gray-600 group-hover:text-gray-900" />
@@ -967,7 +967,7 @@ const handleSendMessage = async (content: string) => {
               </div>
 
               {/* Email Summary Section */}
-              <div className="bg-gradient-to-r from-red-50 to-rose-50 rounded-lg p-4 border border-red-100">
+              <div className="hidden sm:flex bg-gradient-to-r from-red-50 to-rose-50 rounded-lg p-4 border border-red-100">
                 <form onSubmit={handleEmailSubmit} className="flex items-center space-x-3">
                   <Mail className="w-5 h-5 text-red-500 flex-shrink-0" />
                   <input
@@ -1018,7 +1018,7 @@ const handleSendMessage = async (content: string) => {
 
                 {error && (
                   <p className="text-xs text-red-600 mt-2 flex items-center space-x-1">
-                    <X className="w-3 h-3"/>
+                    <X className="w-3 h-3" />
                     <span>{error}</span>
                   </p>
                 )}

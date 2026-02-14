@@ -1868,7 +1868,7 @@ Unlock our care services & tools to fix the gaps and avoid unexpected hospital b
         <h2 className="text-3xl font-bold text-white drop-shadow-2xl tracking-tight">
           Meet Ellie
         </h2>
-        <p className="text-lg text-white/95 font-medium drop-shadow-lg">
+        <p className="text-normal text-white/95 font-medium drop-shadow-lg">
           Your Long-Term Care Assistant
         </p>
         <p className="text-sm text-white/80 drop-shadow-md pt-1 max-w-xs mx-auto pb-2">

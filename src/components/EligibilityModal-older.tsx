@@ -12,7 +12,8 @@ import {
   ArrowUpRight,
   Loader2,
   Brain,
-  Shield
+  Shield,
+  AlertCircle
   //CircleAlert
 } from 'lucide-react';
 import { z } from 'zod';
@@ -56,6 +57,16 @@ export function EligibilityModal({ isOpen, onClose }: EligibilityModalProps) {
   const [emailSent, setEmailSent] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [error, setError] = useState('');
+
+  // New state variables for the declarations
+  const [sessionId, setSessionId] = useState<string>('');
+  const [showQuotaAlert, setShowQuotaAlert] = useState(false);
+  const [quotaMessage, setQuotaMessage] = useState('');
+  const [quotaEmail, setQuotaEmail] = useState('');
+
+
+
+  
   const [currentQuestions, setCurrentQuestions] = useState<string[]>([
   "Tell me the basic eligibility requirements for LTC insurance?",
   "How do pre-existing conditions affect LTCI eligibility?"
@@ -72,9 +83,25 @@ export function EligibilityModal({ isOpen, onClose }: EligibilityModalProps) {
   ];
 
   // Auto-scroll to bottom when new messages arrive
+  
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
+  
+// Generate or retrieve session_id on component mount
+useEffect(() => {
+  let storedSessionId = localStorage.getItem('medicaid_session_id');
+  
+  if (!storedSessionId) {
+    // Generate a new session ID (timestamp + random string)
+    storedSessionId = `session_${Date.now()}_${Math.random().toString(36).substring(7)}`;
+    localStorage.setItem('medicaid_session_id', storedSessionId);
+  }
+  
+  setSessionId(storedSessionId);
+}, []);
+
+ 
 
   if (!isOpen) return null;
 
@@ -162,8 +189,10 @@ const handleMedicaidTopic = async (topic: string) => {
     //   questions: ["Question 1", "Question 2"]
     // }
   };
-  //Get the configuration for the selected topic
-  const config = topicConfig[topic];
+
+  
+   // Get the configuration for the selected topic
+    const config = topicConfig[topic];
     
     if (config) {
       // First, add user message showing the topic they clicked
@@ -198,40 +227,115 @@ const handleMedicaidTopic = async (topic: string) => {
       // Hide typing indicator
       setIsTyping(false);
     }
-  {/*
-  // Get the configuration for the selected topic
-  const config = topicConfig[topic];
-  
-  if (config) {
-    // Show typing indicator
-    setIsTyping(true);
-    
-    // Simulate AI processing time
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    // Add assistant message with the topic-specific content
-    const assistantMessage: Message = {
-      id: Date.now().toString(),
-      role: 'assistant',
-      content: config.message,
-      timestamp: new Date()
-    };
-    
-    setMessages(prev => [...prev, assistantMessage]);
-    
-    // Update the prewritten questions
-    setCurrentQuestions(config.questions);
-
-    // Hide typing indicator
-    setIsTyping(false);
-  }
-*/}
 };
 
+//----------- Start Helper Functions for Processing ------------//
 
+// Check if user has reached daily quota
+const checkDailyQuota = async (sessionId: string): Promise<boolean> => {
+  try {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const todayISO = today.toISOString();
+
+    const { data, error } = await supabase
+      .from('eldercare_medicaid_responses')
+      .select('id')
+      .eq('session_id', sessionId)
+      .gte('created_at', todayISO);
+
+    if (error) {
+      console.error('Error checking quota:', error);
+      return false;
+    }
+
+    return (data?.length || 0) >= 5;
+  } catch (error) {
+    console.error('Error in checkDailyQuota:', error);
+    return false;
+  }
+};
+
+// Insert question and answer into database
+const insertQuestionAnswer = async (
+  sessionId: string,
+  question: string,
+  answer: string
+): Promise<boolean> => {
+  try {
+    const { error } = await supabase
+      .from('eldercare_medicaid_responses')
+      .insert({
+        session_id: sessionId,
+        questions: question,
+        answers: answer,
+        created_at: new Date().toISOString()
+      });
+
+    if (error) {
+      console.error('Error inserting data:', error);
+      return false;
+    }
+
+    return true;
+  } catch (error) {
+    console.error('Error in insertQuestionAnswer:', error);
+    return false;
+  }
+};
+//------------ End Helper Functions for Processing -------------//  
+
+
+
+//------------- Start Update Session Email After --------------//
+
+// Update all session records with user email
+const updateSessionEmail = async (
+  sessionId: string,
+  userEmail: string
+): Promise<boolean> => {
+  try {
+    if (!userEmail.trim()) {
+      // If no email provided, just close the popup
+      return true;
+    }
+
+    const { error } = await supabase
+      .from('eldercare_medicaid_responses')
+      .update({ user_email: userEmail })
+      .eq('session_id', sessionId);
+
+    if (error) {
+      console.error('Error updating session email:', error);
+      return false;
+    }
+
+    return true;
+  } catch (error) {
+    console.error('Error in updateSessionEmail:', error);
+    return false;
+  }
+};
+//------------- End Update Session Email After --------------//
+
+
+// Handle closing quota alert and saving email
+const handleCloseQuotaAlert = async () => {
+  if (quotaEmail.trim()) {
+    await updateSessionEmail(sessionId, quotaEmail);
+  }
+  
+  setShowQuotaAlert(false);
+  setQuotaEmail(''); // Reset email input
+};
+  
+  
+//------------ Start Handle Send Message Function  -------------// 
   // Add this function to handle content generation
   // Handle sending a message
   // Handle sending a message with Gemini integration
+  
+  {/*  
 const handleSendMessage = async (content: string) => {
   if (!content.trim()) return;
 
@@ -287,6 +391,9 @@ const handleSendMessage = async (content: string) => {
     setIsTyping(false);
   }
 };
+*/}
+  
+//--------- End Old HandleSendMessage Without Data Capture ----------------*/} 
   
   // Handle file upload
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -303,6 +410,78 @@ const handleSendMessage = async (content: string) => {
       simulateTyping("Thank you for uploading your document. I'm reviewing it now. Based on the information provided, I can help you understand your LTCI eligibility better. What specific questions do you have about the document?");
     }
   };
+ 
+
+const handleSendMessage = async (content: string) => {
+  if (!content.trim()) return;
+
+  // Check daily quota before proceeding
+  const hasReachedQuota = await checkDailyQuota(sessionId);
+  
+  if (hasReachedQuota) {
+    setQuotaMessage('You have reached the maximum of 5 questions per day. Please try again tomorrow.');
+    setShowQuotaAlert(true);
+    return;
+  }
+
+  // Add user message
+  const userMessage: Message = {
+    id: Date.now().toString(),
+    role: 'user',
+    content: content,
+    timestamp: new Date()
+  };
+  
+  setMessages(prev => [...prev, userMessage]);
+  setInputValue('');
+  setIsTyping(true);
+
+  try {
+    // Call Gemini API to generate response
+    const geminiResponse = await getLongTermCareSupport(content, '800');
+    
+    if (!geminiResponse.error && geminiResponse.text) {
+      // Add AI response to messages
+      const assistantMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        role: 'assistant',
+        content: geminiResponse.text,
+        timestamp: new Date()
+      };
+      
+      setMessages(prev => [...prev, assistantMessage]);
+
+      // Insert question and answer into database
+      await insertQuestionAnswer(sessionId, content, geminiResponse.text);
+      
+    } else {
+      // Handle error by showing a fallback message
+      console.error('Error from Gemini:', geminiResponse.error);
+      const errorMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        role: 'assistant',
+        content: "I'm having trouble processing that right now. Could you please try rephrasing your question about long term care insurance?",
+        timestamp: new Date()
+      };
+      setMessages(prev => [...prev, errorMessage]);
+    }
+  } catch (error) {
+    console.error('Error calling Gemini:', error);
+    // Show error message to user
+    const errorMessage: Message = {
+      id: (Date.now() + 1).toString(),
+      role: 'assistant',
+      content: "I'm experiencing technical difficulties. Please try again in a moment.",
+      timestamp: new Date()
+    };
+    setMessages(prev => [...prev, errorMessage]);
+  } finally {
+    setIsTyping(false);
+  }
+};
+
+
+//------------ End Handle Send Message Function  -------------// 
 
   // Handle email submission
   const handleEmailSubmit = async (e: React.FormEvent) => {
@@ -369,6 +548,79 @@ const handleSendMessage = async (content: string) => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+
+{/* ----------------  Quota Limit Alert Popup ----------------------- */}
+
+{/*      
+{showQuotaAlert && (
+  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 rounded-xl">
+    <div className="bg-white rounded-lg shadow-2xl p-6 max-w-md mx-4">
+      <div className="flex items-start space-x-4">
+        <div className="flex-shrink-0">
+          <AlertCircle className="w-8 h-8 text-red-500" />
+        </div>
+        <div className="flex-1">
+          <h3 className="text-lg font-bold text-gray-900 mb-2">Daily Limit Reached</h3>
+          <p className="text-sm text-gray-700 mb-4">
+            {quotaMessage}
+          </p>
+          <button
+            onClick={() => setShowQuotaAlert(false)}
+            className="w-full px-4 py-2 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 transition-colors"
+          >
+            Got it
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
+*/}
+
+{/* ----------------  Quota Limit Alert Popup ----------------------- */}
+{showQuotaAlert && (
+  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 rounded-xl">
+    <div className="bg-white rounded-lg shadow-2xl p-6 max-w-md mx-4">
+      <div className="flex items-start space-x-4">
+        <div className="flex-shrink-0">
+          <AlertCircle className="w-8 h-8 text-red-500" />
+        </div>
+        <div className="flex-1">
+          <h3 className="text-lg font-bold text-gray-900 mb-2">Daily Limit Reached</h3>
+          <p className="text-sm text-gray-700 mb-4">
+            {quotaMessage}
+          </p>
+          
+          {/* Email Input Section */}
+          <div className="mb-4">
+            <label htmlFor="quota-email" className="block text-sm font-medium text-gray-700 mb-2">
+              Enter your email to receive this conversation (optional)
+            </label>
+            <input
+              id="quota-email"
+              type="email"
+              value={quotaEmail}
+              onChange={(e) => setQuotaEmail(e.target.value)}
+              placeholder="your.email@example.com"
+              className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none"
+            />
+          </div>
+
+          <button
+            onClick={handleCloseQuotaAlert}
+            className="w-full px-4 py-2 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 transition-colors"
+          >
+            {quotaEmail.trim() ? 'Save & Close' : 'Got it'}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
+
+{/*--------------------- End Quota Limit Alert Pop Up ---------------------*/} 
+
+      
       <div className="bg-white rounded-xl shadow-2xl w-full max-w-6xl h-[85vh] flex flex-col relative">
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200">
@@ -376,7 +628,7 @@ const handleSendMessage = async (content: string) => {
             <div className="p-2 bg-red-50 rounded-lg">
               <Shield className="w-6 h-6 text-red-500" />
             </div>
-            <h2 className="text-2xl font-bold text-gray-900">Live Medicaid Assistant</h2>
+            <h2 className="text-2xl font-bold text-gray-900">Ask Ellie</h2>
             
           </div>
           
@@ -391,13 +643,14 @@ const handleSendMessage = async (content: string) => {
         {/* Main Content - Split Layout */}
         <div className="flex-1 flex overflow-hidden">
           {/* Left Side - Ellie's Profile */}
-          <div className="w-1/3 bg-gradient-to-br from-red-50 to-rose-50 p-6 border-r rounded-bl-xl border-gray-200 overflow-y-auto">
+          <div className="w-1/3 bg-gradient-to-br from-red-50 to-rose-50 p-6 border-r rounded-bl-xl overflow-y-auto">
             <div className="space-y-6">
               {/* Avatar and Name */}
               <div className="text-center">
                 <div className="relative mx-auto w-24 h-24 bg-gradient-to-br from-red-400 to-red-500 rounded-full flex items-center justify-center mb-4 shadow-lg border-4 border-white">
                   <img
-              src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/ltci-care-assistant.png"
+              //src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/ltci-care-assistant.png"
+              src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/ellie_ai_square.png"
               alt="Image 1"
               className="relative rounded-full w-full h-full aspect-square" // Square aspect ratio for stacked images
             />
@@ -523,7 +776,8 @@ const handleSendMessage = async (content: string) => {
                       <div className="relative w-8 h-8">
                         <div className="w-full h-full rounded-full overflow-hidden border-2 border-red-200 shadow-sm">
                           <img
-                            src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/ltci-care-assistant.png"
+                            //src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/ltci-care-assistant.png"
+                            src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/ellie_ai_square.png"
                             alt="Ellie"
                             className="w-full h-full object-cover"
                           />
@@ -651,9 +905,8 @@ const handleSendMessage = async (content: string) => {
             {/* Input Area */}
             <div className="border-t border-gray-200 p-6">
               {/*
-              <div className="flex items-center text-sm space-x-3 mb-4">
+              <div className="flex text-sm items-center space-x-3 mb-4">
                 <input
-                  rows={4}
                   type="text"
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
@@ -765,7 +1018,7 @@ const handleSendMessage = async (content: string) => {
 
                 {error && (
                   <p className="text-xs text-red-600 mt-2 flex items-center space-x-1">
-                    <X className="w-3 h-3" />
+                    <X className="w-3 h-3"/>
                     <span>{error}</span>
                   </p>
                 )}
