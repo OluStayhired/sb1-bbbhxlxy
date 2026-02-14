@@ -1490,7 +1490,7 @@ end of old hero image */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
         
         {/* Left: Visual/Icon */}
-        <div className="order-2 lg:order-1 flex justify-center lg:justify-end">
+        <div className="hidden sm:block order-2 lg:order-1 flex justify-center lg:justify-end">
           <div className="relative">
             <div className="absolute -inset-4 bg-gradient-to-br from-red-100 to-red-50 rounded-3xl blur-xl opacity-60"></div>
             <div className="relative bg-white border-4 border-red-100 rounded-3xl p-12 shadow-2xl shadow-red-500/20">
@@ -1576,7 +1576,7 @@ end of old hero image */}
         </div>
 
         {/* Right: Visual/Icon */}
-        <div className="order-2 flex justify-center lg:justify-start">
+        <div className="hidden sm:block order-2 flex justify-center lg:justify-start">
           <div className="relative">
             <div className="absolute -inset-4 bg-gradient-to-br from-red-200 to-red-100 rounded-3xl blur-xl opacity-60"></div>
             <div className="relative bg-white border-4 border-red-200 rounded-3xl p-12 shadow-2xl shadow-red-500/30">
@@ -1600,7 +1600,7 @@ end of old hero image */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
         
         {/* Left: Visual/Icon */}
-        <div className="order-2 lg:order-1 flex justify-center lg:justify-end">
+        <div className="hidden sm:block order-2 lg:order-1 flex justify-center lg:justify-end">
           <div className="relative">
             <div className="absolute -inset-4 bg-gradient-to-br from-red-100 to-red-50 rounded-3xl blur-xl opacity-60"></div>
             <div className="relative bg-white border-4 border-red-100 rounded-3xl p-12 shadow-2xl shadow-red-500/20">
@@ -1729,7 +1729,7 @@ end of old hero image */}
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-red-100 text-sm font-medium mb-1">Average Annual Savings</p>
-                <p className="text-4xl font-bold">$120,000+</p>
+                <p className="text-2xl sm:text-4xl font-bold">$120,000+</p>
               </div>
               <div className="flex items-center justify-center w-16 h-16 bg-white/20 rounded-full backdrop-blur-sm">
                 <TrendingUp className="w-8 h-8 text-white" />
@@ -1740,7 +1740,7 @@ end of old hero image */}
         </div>
 
         {/* Right: Visual/Icon */}
-        <div className="order-2 flex justify-center lg:justify-start">
+        <div className="hidden sm:block order-2 flex justify-center lg:justify-start">
           <div className="relative">
             <div className="absolute -inset-6 bg-gradient-to-br from-red-300 via-red-200 to-red-100 rounded-3xl blur-2xl opacity-70 animate-pulse"></div>
             <div className="relative bg-white border-4 border-red-300 rounded-3xl p-12 shadow-2xl shadow-red-500/40">
