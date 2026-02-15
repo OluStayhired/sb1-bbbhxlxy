@@ -854,7 +854,7 @@ const getSessionId = (): string => {
             {/*Solve legal, financial, and care logistics for Mom and Dad in one place.<br/>
             We handle the admin to give you peace of mind at work.*/}
 
-            Solve legal, financial, and care logistics for mom & dad in one place.<br/>
+            Manage legal, financial, and care logistics for Mom & Dad in one place.<br/>
             We handle the admin and emails to give you peace of mind at work.
           
           </span>
