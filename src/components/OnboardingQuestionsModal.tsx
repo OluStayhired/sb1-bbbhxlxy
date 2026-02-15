@@ -602,7 +602,7 @@ const calculateCognitiveDrag = async (
                   <ShieldCheck className="w-10 h-10 fill-red-400 justify-center align-top text-red-50"/>
                 </div>
                 <h2 className="text-3xl font-bold text-gray-700 mb-3">
-                The <span className="text-red-400">Eldercare Gap</span> Finder
+                The <span className="text-red-400">Gap Finder</span>
                 </h2>
                 <p className="text-gray-600 text-lg">
                   {/*Let's personalize your experience and build your custom dashboard*/}               
@@ -636,7 +636,7 @@ const calculateCognitiveDrag = async (
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your Email"
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none text-lg transition-all"
-                  autoFocus
+                  
                 />
               </div>
               
