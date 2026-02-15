@@ -1096,7 +1096,7 @@ shadow-red-300/60 hover:shadow-3xl border-4 border-red-200 hover:p-2 hover:borde
           </div>
 
             {/* Stars and Text */}
-                <div className="flex flex-col gap-1">
+                <div className="hidden sm:flex flex-col gap-1">
                   <div className="flex gap-0.5">
                     <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
                     <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
@@ -1107,6 +1107,17 @@ shadow-red-300/60 hover:shadow-3xl border-4 border-red-200 hover:p-2 hover:borde
                     <p className="text-sm font-medium text-gray-700">1,200 hrs saved</p>
                 </div>
             </div>
+
+            <div className="sm:hidden items-center flex flex-col gap-1">
+                  <div className="flex gap-0.5">
+                    <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                    <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                    <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                    <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                    <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                  </div>
+                    <p className="text-sm font-medium text-gray-700 mb-4">1,200 hrs saved</p>
+                </div>  
 
 
           {/*----- end social proof section here -------------*/}          
@@ -2418,7 +2429,7 @@ Unlock our care services & tools to fix the gaps and avoid unexpected hospital b
           </div>
 
             {/* Stars and Text */}
-                <div className="flex flex-col gap-1">
+                <div className="hidden sm:flex flex-col gap-1">
                   <div className="flex gap-0.5">
                     <Star className="w-5 h-5 stroke-white fill-yellow-500" />
                     <Star className="w-5 h-5 stroke-white fill-yellow-500" />
@@ -2429,6 +2440,17 @@ Unlock our care services & tools to fix the gaps and avoid unexpected hospital b
                     <p className="text-sm font-medium text-white">1,200 hrs saved</p>
                 </div>
             </div>
+
+            <div className="sm:hidden items-center flex flex-col gap-1">
+                  <div className="flex gap-0.5">
+                    <Star className="w-5 h-5 stroke-white fill-yellow-400 text-yellow-400" />
+                    <Star className="w-5 h-5 stroke-white fill-yellow-400 text-yellow-400" />
+                    <Star className="w-5 h-5 stroke-white fill-yellow-400 text-yellow-400" />
+                    <Star className="w-5 h-5 stroke-white fill-yellow-400 text-yellow-400" />
+                    <Star className="w-5 h-5 stroke-white fill-yellow-400 text-yellow-400" />
+                  </div>
+                    <p className="text-sm font-medium text-gray-700 mb-4">1,200 hrs saved</p>
+                </div>  
 
           {/*----- end social proof section here -------------*/}   
 
