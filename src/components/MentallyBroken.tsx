@@ -50,10 +50,16 @@ export function MentallyBroken({ isOpen, onClose, onOpenCommunity }: MentallyBro
 
         {/* Body Content */}
         <div className="mb-8 space-y-4">
-          <p className="text-gray-700 text-base leading-relaxed">
+          <p className="hidden text-gray-700 text-base leading-relaxed">
           You shouldn't be firefighting caregiver no-shows or insurance errors during critical work meetings. 
-          Poetiq is your <span className="font-semibold text-red-500">Crisis Management Expert.</span> Designed to 
+          Poetiq is your <span className="font-semibold text-red-500">Crisis Management Expert.</span> We 
           take over the logistics of unplanned events from staffing gaps to billing disputes the moment they happen.
+          </p>
+
+          <p className="sm:hidden text-gray-700 text-base leading-relaxed">
+          You shouldn't be firefighting caregiver no-shows or insurance errors during critical work meetings. 
+          Poetiq is your <span className="font-semibold text-red-500">Crisis Management Expert.</span> We 
+          take over the logistics of unplanned events the moment they happen.
           </p>
 
           {/* Alert box with pivot message */}
