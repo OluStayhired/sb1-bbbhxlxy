@@ -67,13 +67,13 @@ export function EldercareModalPopUpSmall({ isOpen, onClose, onStartOnboarding }:
           {/* Title Section */}
           <div className="text-center mb-4">
             <h2 className="text-2xl font-bold text-white mb-3 tracking-tight">
-              Eldercare Gap Finder
+              The Gap Finder
             </h2>
             
             {/* Headline - Prominent */}
             <div className="mb-4 pb-4 border-b border-gray-800">
               <p className="text-lg font-bold text-red-400 leading-tight">
-              Avoid $10,000/month care bills!
+              Avoid $10,000/month care bills
               </p>
             </div>
 

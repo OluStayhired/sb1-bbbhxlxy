@@ -1245,7 +1245,7 @@ end of old hero image */}
         <Target className="w-7 h-7 text-red-500 group-hover:scale-110 transition-transform" />
       </div>
       <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-red-500 transition-colors">
-        Frustrated with Inefficient Systems
+      Frustrated with <br className="sm:hidden"/> Inefficient Systems
       </h3>
       <p className="text-gray-600 text-sm leading-relaxed mb-6">
         {/*At work, you optimize and delegate. In caregiving, you're trapped in a maze of broken bureaucracy, chasing insurance claims and care agencies that don't share your sense of urgency or standards.*/}
@@ -1267,7 +1267,7 @@ end of old hero image */}
         <CircleDollarSign className="w-7 h-7 text-red-500 group-hover:scale-110 transition-transform" />
       </div>
       <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-red-500 transition-colors">
-        Consumed by monthly Care Bills
+      Consumed by <br className="sm:hidden"/>Monthly Care Bills
       </h3>
       <p className="text-gray-600 text-sm leading-relaxed mb-6">
         {/*You watch your parents' hard-earned legacy and your own financial peace of mind evaporate into monthly care costs. Every agency invoice feels like a countdown you simply can't stop.*/}
@@ -1284,7 +1284,7 @@ end of old hero image */}
     </div>
 
     {/* Card 4: Skipping Career Opportunities */}
-    <div className="group bg-white border-2 border-red-100 hover:border-red-400 rounded-xl p-6 shadow-lg hover:shadow-2xl hover:shadow-red-500/30 transition-all duration-300 hover:-translate-y-2">
+    <div className="hidden sm:block group bg-white border-2 border-red-100 hover:border-red-400 rounded-xl p-6 shadow-lg hover:shadow-2xl hover:shadow-red-500/30 transition-all duration-300 hover:-translate-y-2">
       <div className="flex items-center justify-center w-14 h-14 bg-red-50 rounded-full mb-4 group-hover:bg-red-100 transition-colors">
         <Briefcase className="w-7 h-7 text-red-500 group-hover:scale-110 transition-transform" />
       </div>
@@ -1305,7 +1305,7 @@ end of old hero image */}
     </div>
 
     {/* Card 5: Broken by Family Responsibilities */}
-    <div className="group bg-white border-2 border-red-100 hover:border-red-400 rounded-xl p-6 shadow-lg hover:shadow-2xl hover:shadow-red-500/30 transition-all duration-300 hover:-translate-y-2">
+    <div className="hidden sm:block group bg-white border-2 border-red-100 hover:border-red-400 rounded-xl p-6 shadow-lg hover:shadow-2xl hover:shadow-red-500/30 transition-all duration-300 hover:-translate-y-2">
       <div className="flex items-center justify-center w-14 h-14 bg-red-50 rounded-full mb-4 group-hover:bg-red-100 transition-colors">
         <Users className="w-7 h-7 text-red-500 group-hover:scale-110 transition-transform" />
       </div>
@@ -1326,7 +1326,7 @@ end of old hero image */}
     </div>
 
     {/* Card 6: Being Permanently On-Call */}
-    <div className="group bg-white border-2 border-red-100 hover:border-red-400 rounded-xl p-6 shadow-lg hover:shadow-2xl hover:shadow-red-500/30 transition-all duration-300 hover:-translate-y-2">
+    <div className="hidden sm:block group bg-white border-2 border-red-100 hover:border-red-400 rounded-xl p-6 shadow-lg hover:shadow-2xl hover:shadow-red-500/30 transition-all duration-300 hover:-translate-y-2">
       <div className="flex items-center justify-center w-14 h-14 bg-red-50 rounded-full mb-4 group-hover:bg-red-100 transition-colors">
         <Timer className="w-7 h-7 text-red-500 group-hover:scale-110 transition-transform" />
       </div>
@@ -1716,7 +1716,7 @@ end of old hero image */}
                 <Briefcase className="w-6 h-6 text-red-600" />
               </div>
               <div>
-                <p className="font-bold text-gray-900 text-base">Protect Your Professional Focus</p>
+                <p className="font-bold text-gray-900 text-base">Protect Your Career</p>
                 <p className="text-gray-600 text-sm mt-1">Focus on your professional responsibilities while we handle the back-and-forth with insurance claims.</p>
               </div>
             </div>
