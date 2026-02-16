@@ -48,12 +48,18 @@ export function NavigateSystems({ isOpen, onClose, onOpenCommunity }: NavigateSy
           </h2>
         </div>
 
-        {/* Body Content */}
-        <div className="mb-8 space-y-4">
-          <p className="text-gray-700 text-base leading-relaxed">
-            You can't fix a broken eldercare system, but you can bypass it. 
+       {/* Body Content */}
+       <div className="mb-8 space-y-4">
+          <p className="hidden sm:block text-gray-700 text-base leading-relaxed">
+            You can't fix a broken care system, but you can bypass it. 
             Our <span className="font-semibold text-red-500">AI assistant with a Human in the middle</span> handles 
-            the chaser emails and phone marathons currently stopping you from progressing in your day job.
+            the chaser emails and phone marathons currently stopping you from staying focused at work.
+          </p>
+
+          <p className="sm:hidden text-gray-700 text-base leading-relaxed">
+            You can't fix a broken care system, but you can bypass it. 
+            Our <span className="font-semibold text-red-500">AI assistant</span> handles 
+            the chaser emails and phone marathons currently stopping you from staying focused at work.
           </p>
 
           {/* Alert box with pivot message */}
