@@ -42,7 +42,7 @@ export function ConsumedByBills({ isOpen, onClose, onOpenCommunity }: ConsumedBy
 
         {/* Header */}
         <div className="text-center mb-6">
-          <h2 className="text-3xl font-bold text-gray-800 mb-2">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">
             Stop Hemorrhaging{' '}
             <span className="text-red-500">Cash.</span>
           </h2>
@@ -50,9 +50,14 @@ export function ConsumedByBills({ isOpen, onClose, onOpenCommunity }: ConsumedBy
 
         {/* Body Content */}
         <div className="mb-8 space-y-4">
-          <p className="text-gray-700 text-base leading-relaxed">
+          <p className="hidden sm:block text-gray-700 text-base leading-relaxed">
             Don't watch a lifetime of hard-earned success evaporate into <span className="font-semibold text-red-500">$10k monthly care bills</span>. 
             We've combined specialized financial modeling with an elite network of elder law attorneys to audit predatory contracts and unlock alternative funding.
+          </p>
+
+          <p className="sm:hidden text-gray-700 text-base leading-relaxed">
+            Don't watch Mom and Dad's savings evaporate into <span className="font-semibold text-red-500">$10k monthly care bills</span>. 
+            Use our specialized financial modeling and elite network of elder attorneys to audit predatory contracts and unlock alternative funding.
           </p>
 
           {/* Alert box with pivot message */}
@@ -60,7 +65,7 @@ export function ConsumedByBills({ isOpen, onClose, onOpenCommunity }: ConsumedBy
             <div className="flex items-start">
               <DollarSign className="w-5 h-5 text-red-500 mt-0.5 mr-3 flex-shrink-0" />
               <p className="text-gray-800 font-semibold text-sm">
-                Protect your parents' legacy and your own financial peace of mind with a professional-grade spend-down strategy.
+                Protect your parent's estate and your own financial peace of mind.
               </p>
             </div>
           </div>
@@ -79,7 +84,7 @@ export function ConsumedByBills({ isOpen, onClose, onOpenCommunity }: ConsumedBy
 
         {/* Optional: Subtle footer text */}
         <p className="text-center text-xs text-gray-500 mt-6">
-          Join our community to access financial planning and legal expertise
+          Join Poetiq to access financial planning and legal expertise
         </p>
       </div>
     </div>
