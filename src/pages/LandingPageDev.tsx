@@ -1038,7 +1038,8 @@ shadow-red-300/60 hover:shadow-3xl border-4 border-red-200 hover:p-2 hover:borde
         <div className="col-span-1">
           <div className="relative overflow-hidden rounded-xl transform transition-all duration-300 hover:scale-105  h-full group">
             <img
-              src = "https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/poetiq_hero_small_v2.png"
+              //src = "https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/poetiq_hero_small_v2.png"
+              src = "https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/poetiq_mobile_image_v1.png"
               alt="Caregivers"
               className="w-full h-full object-cover"
             />
@@ -1841,7 +1842,7 @@ end of old hero image */}
   </h2>
 
   <h2 className="sm:hidden text-2xl text-red-400 sm:text-4xl md:text-5xl font-bold leading-tight mt-4 mb-4">
-   Let's move you from chaos <br/> to systems
+   Let's move you from <br/> chaos to systems
   </h2>
   <p className="sm:hidden text-xl sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
    {/*Unlock a care planning ecosystem of vetted services and tools built for career professionals */}
@@ -2165,7 +2166,7 @@ Unlock our care services & tools to fix the gaps and avoid unexpected hospital b
 
               <button
                 onClick={openCommunityModal}
-                className="mt-8 flex items-center justify-center space-x-2 w-full sm:w-auto px-6 py-3 border border-red-500 bg-white text-red-500 text-base font-semibold rounded-lg hover:bg-red-500 hover:text-white transition-colors shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-4 sm:text-lg group mx-auto">
+                className="hidden sm:flex mt-8 items-center justify-center space-x-2 w-full sm:w-auto px-6 py-3 border border-red-500 bg-white text-red-500 text-base font-semibold rounded-lg hover:bg-red-500 hover:text-white transition-colors shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-4 sm:text-lg group mx-auto">
                 <span>Join Waitlist</span>
                 {/* Placeholder for ArrowRight icon or similar */}
                <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
