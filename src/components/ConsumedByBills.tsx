@@ -43,7 +43,7 @@ export function ConsumedByBills({ isOpen, onClose, onOpenCommunity }: ConsumedBy
         {/* Header */}
         <div className="text-center mb-6">
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">
-            Stop Hemorrhaging{' '}
+            Stop Burning{' '}
             <span className="text-red-500">Cash.</span>
           </h2>
         </div>
