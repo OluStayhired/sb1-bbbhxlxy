@@ -42,7 +42,7 @@ export function MentallyBroken({ isOpen, onClose, onOpenCommunity }: MentallyBro
 
         {/* Header */}
         <div className="text-center mb-6">
-          <h2 className="text-3xl font-bold text-gray-800 mb-2">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">
             Delegate the Crisis{' '}<br/>
             <span className="text-red-500 text-xl">Rescue your Career.</span>
           </h2>
@@ -80,7 +80,7 @@ export function MentallyBroken({ isOpen, onClose, onOpenCommunity }: MentallyBro
 
         {/* Optional: Subtle footer text */}
         <p className="text-center text-xs text-gray-500 mt-6">
-          Join our community to access expert crisis management support
+          Join our Poetiq to access expert crisis management support
         </p>
       </div>
     </div>
