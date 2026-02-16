@@ -57,7 +57,7 @@ export function MentallyBroken({ isOpen, onClose, onOpenCommunity }: MentallyBro
           </p>
 
           <p className="sm:hidden text-gray-700 text-base leading-relaxed">
-          You shouldn't be firefighting caregiver no-shows or insurance errors during critical work meetings. 
+          You shouldn't be firefighting caregiver no-shows during critical work meetings. 
           Poetiq is your <span className="font-semibold text-red-500">Crisis Management Expert.</span> We 
           take over the logistics of unplanned events the moment they happen.
           </p>
