@@ -1072,8 +1072,8 @@ shadow-red-300/60 hover:shadow-3xl border-4 border-red-200 hover:p-2 hover:borde
 
           
           
-          <p className="hidden sm:block text-center text-gray-700 font-bold text-xl sm:text-2xl text-gray-600 mx-auto">  
-             Trusted by <b className="text-red-400">120+ Family Caregivers</b> Actively Supporting Elderly Parents
+          <p className="hidden sm:block text-center text-gray-700 font-semibold text-xl sm:text-2xl text-gray-600 mx-auto">  
+             Trusted by <b className="text-red-400 font-bold">120+ Family Caregivers</b> Actively Supporting Elderly Parents
           </p>  
 
           <p className="sm:hidden text-xs text-center text-gray-700 font-semibold text-xl sm:text-2xl text-gray-600 mx-auto">  
