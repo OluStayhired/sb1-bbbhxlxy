@@ -1786,8 +1786,9 @@ end of old hero image */}
       <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
     </button>
     
-    {/* Trust Indicators */}
-    <div className="flex flex-wrap items-center justify-center gap-6 mt-8 text-sm text-gray-600">
+        {/*------------- Start Trust Indicators --------------*/}
+        <div className="hidden sm:flex flex-wrap items-center justify-center gap-6 mt-8 text-sm text-gray-600">
+      
       <div className="flex items-center space-x-2">
         <CheckCircle2 className="w-5 h-5 text-red-500" />
         <span>No Upfront Costs</span>
@@ -1798,10 +1799,34 @@ end of old hero image */}
       </div>
       <div className="flex items-center space-x-2">
         <CheckCircle2 className="w-5 h-5 text-red-500" />
-        <span>500+ Families Helped</span>
+        <span>120+ Families Helped</span>
       </div>
     </div>
+    
   </div>
+
+  <div className="sm:hidden space-y-3 mt-8 items-start">
+            <div className="flex items-start space-x-3 bg-white rounded-lg p-4 border border-red-400">
+              <CheckCircle2 className="w-6 h-6 text-red-500 flex-shrink-0 mt-0.5" />
+              <div className="text-left">
+                <p className="text-gray-600 text-sm mt-1">No Upfront Costs</p>
+              </div>
+            </div>
+            <div className="flex items-start space-x-3 bg-white rounded-lg p-4 border border-red-400">
+              <CheckCircle2 className="w-6 h-6 text-red-500 flex-shrink-0 mt-0.5" />
+              <div className="text-left">
+                <p className="text-gray-600 text-sm mt-1">87% Appeal Success Rate</p>
+              </div>
+            </div>
+            <div className="flex items-start space-x-3 bg-white rounded-lg p-4 border border-red-400">
+              <CheckCircle2 className="w-6 h-6 text-red-500 flex-shrink-0 mt-0.5" />
+              <div className="text-left">
+                <p className="text-gray-600 text-sm mt-1">120+ Families Helped</p>
+              </div>
+            </div>
+          </div>
+
+  {/*--------------- End the Trusted Indicators Section ---------------*/}
 
 </section>
 
