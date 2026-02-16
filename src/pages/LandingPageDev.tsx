@@ -1767,7 +1767,7 @@ end of old hero image */}
                 <TrendingUp className="w-8 h-8 text-white" />
               </div>
             </div>
-            <p className="text-red-50 text-xs mt-3 italic">*Based on average client outcomes across 500+ families in 2024</p>
+            <p className="text-red-50 text-xs mt-3 italic">*Based on average client outcomes across 120+ families in 2024</p>
           </div>
         </div>
 
@@ -1797,8 +1797,8 @@ end of old hero image */}
       Ready to save $120,000/year without the chasing and follow-ups?
     </p>
     <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-      {/*Join 500+ executives who've reclaimed their time and protected their family's financial future.*/}
-      Join 500+ executives reclaiming their time and protecting their financial future.
+      {/*Join 120+ executives who've reclaimed their time and protected their family's financial future.*/}
+      Join 120+ professionals reclaiming their time and protecting their financial future.
     </p>
     <button
       onClick={openCommunityModal}
