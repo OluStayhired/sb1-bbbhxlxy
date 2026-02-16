@@ -42,7 +42,7 @@ export function NavigateSystems({ isOpen, onClose, onOpenCommunity }: NavigateSy
 
         {/* Header */}
         <div className="text-center mb-6">
-          <h2 className="text-3xl font-bold text-gray-800 mb-2">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">
             Trade Chaos for{' '}
             <span className="text-red-500">Systems.</span>
           </h2>
