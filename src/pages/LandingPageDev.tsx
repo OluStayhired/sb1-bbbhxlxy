@@ -262,7 +262,7 @@ const getSessionId = (): string => {
         <div className="flex items-center space-x-2">
 
          <div className="bg-red-500 rounded-full p-1.5 sm:p-2">
-            <HeartPulse className="h-7 w-7 fill-white stroke-red-500 sm:h-9 sm:w-9" />
+            <Target className="h-7 w-7 fill-white stroke-red-500 sm:h-9 sm:w-9" />
           </div>
           <span className="text-2xl  font-bold text-red-500 sm:text-2xl">poetiq</span>
         </div>
@@ -882,7 +882,8 @@ Manage legal, financial, and care logistics for Mom & Dad in one place.{/*<br/>
 
          <p className="hidden sm:block mt-1 space-y-2 text-2xl font-normal">
           {/*We handle the admin and emails to give you peace of mind at work.*/}
-          We take over the admin and help you reclaim your focus at work.🎯</p>
+          We take over the admin and help you reclaim your focus at work.
+          <span><Target className="w-6 h-6 align-middle ml-1 fill-red-400 justify-center text-red-50 inline"/></span></p>
          </p>
                 
               </span>
