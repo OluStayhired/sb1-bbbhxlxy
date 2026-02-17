@@ -441,7 +441,7 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
 
           <button
             onClick={() => {
-              window.location.href = '#OperationalSupport';
+              window.location.href = '/dev#OperationalSupport';
               setIsMobileMenuOpen(false);           
               }}
               className="mx-auto px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
@@ -451,7 +451,7 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
 
           <button
             onClick={() => {
-              window.location.href = '#HowItWorks';
+              window.location.href = '/dev#HowItWorks';
               setIsMobileMenuOpen(false);           
               }}
               className="mx-auto px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
@@ -470,7 +470,7 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
               <div className="py-1">
                 {/* Caregivers Near Me */}
                 <Link
-                  to="/home-health-care"
+                  to="/dev/home-health-care"
                   className="flex text-sm items-center space-x-2 px-4 py-2 hover:bg-gray-50 hover:text-red-500 rounded-lg"
                 >
                   <MapPin className="w-3.5 h-3.5" />
@@ -478,7 +478,7 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
                 </Link>
                 {/* Nursing Home Finder */}
                 <Link
-                  to="/nursing-home"
+                  to="/dev/nursing-home"
                   className="flex text-sm items-center space-x-2 px-4 py-2 hover:bg-gray-50 hover:text-red-500 rounded-lg"
                 >
                   <Search className="w-3.5 h-3.5" />
@@ -486,7 +486,7 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
                 </Link>
 
                 <Link
-                  to="/dementia-assessment"
+                  to="/dev/dementia-assessment"
                   className="flex text-sm items-center space-x-2 px-4 py-2 hover:bg-gray-50 hover:text-red-500 rounded-lg"
                 >
                   <CheckCircle className="w-3.5 h-3.5" />
@@ -521,7 +521,7 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
 
           <button
             onClick={() => {
-              window.location.href = '#OperationalSupport';
+              window.location.href = '/dev#OperationalSupport';
               setIsMobileMenuOpen(false);
             }}
             className="mx-auto px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
@@ -531,7 +531,7 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
 
           <button
             onClick={() => {
-              window.location.href = '#FAQ';
+              window.location.href = '/dev#FAQ';
               setIsMobileMenuOpen(false);
             }}
             className="mx-auto px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
