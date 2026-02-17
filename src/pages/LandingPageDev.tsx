@@ -1693,7 +1693,7 @@ Unlock our services & tools to fix care gaps and avoid unexpected hospital bills
 {/*-------------------- End images Added for effect -----------------------------*/}
         
         
- {/*------------------------------start of the FAQ Section -------------------------------------*/}    
+  {/*------------------------------start of the FAQ Section -------------------------------------*/}    
 
 <section id="FAQ" className="mt-24 text-center">
   <div className="inline-flex items-center border-8 border-red-200 space-x-2 px-3 py-2 bg-gradient-to-r from-red-500 via-red-400 to-red-300 text-white rounded-full text-lg mb-6 cursor-pointer"
@@ -1710,14 +1710,14 @@ Unlock our services & tools to fix care gaps and avoid unexpected hospital bills
     Have Questions? 🤔
   </h2>
   <p className="text-xl sm:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto hover:text-red-500">
-   Find out how The Poetiq community supports you with eldercare. 
+   Find out how Poetiq's services will support you with eldercare. 
   </p>
 
   <div className="max-w-3xl mx-auto space-y-4 text-left">
     {/* FAQ Item 0.1 */}
 <details className="group bg-white rounded-lg shadow-sm border border-gray-200 hover:border hover:border-red-500 overflow-hidden">
   <summary className="flex items-center justify-between p-5 cursor-pointer font-semibold text-lg text-gray-800  hover:bg-gray-50 transition-colors hover:text-red-500">
-    Is the community just a general support group, or is this an executive-level council?
+    How much time will this actually save me? 
     <div className="relative w-6 h-6 rounded-full items-center p-2 justify-center"> 
       <svg className="absolute inset-0 w-6 h-6 text-red-500 group-open:hidden transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
@@ -1729,7 +1729,7 @@ Unlock our services & tools to fix care gaps and avoid unexpected hospital bills
   </summary>
   <div className="px-5 pb-5 text-gray-700">
     <p>
-      This is a private, high-integrity council, not a general support forum. We reject the noise and low-signal advice that plagues social media. We are built for action and efficiency. Our sole mandate is to pool the collective executive knowledge of our members to build definitive solutions for each member's shared, yet unique challenges. . You join to exchange unfiltered intelligence with peers who share the same time constraints and ethical standards, ensuring every interaction is high-value and directly contributes to fixing the system.
+      Our goal is to <b>reclaim 10–15 hours</b> of your week by offloading insurance phone marathons, document chasing, and administrative follow-ups.
     </p>
   </div>
 </details>
@@ -1738,7 +1738,7 @@ Unlock our services & tools to fix care gaps and avoid unexpected hospital bills
     {/* FAQ Item 1 */}
   <details className="group bg-white rounded-lg shadow-sm border border-gray-200 hover:border hover:border-red-500 overflow-hidden">
   <summary className="flex items-center justify-between p-5 cursor-pointer font-semibold text-lg text-gray-800  hover:bg-gray-50 transition-colors hover:text-red-500">
-    How does focusing on my career and efficiency help my aging parent's dignity?
+    What exactly is a Gap Finder audit? 
     <div className="relative w-6 h-6 rounded-full items-center p-2 justify-center"> 
       <svg className="absolute inset-0 w-6 h-6 text-red-500 group-open:hidden transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
@@ -1749,7 +1749,7 @@ Unlock our services & tools to fix care gaps and avoid unexpected hospital bills
     </div>
   </summary>
   <div className="px-5 pb-5 text-gray-700">
-    <p>The link is direct: Administrative chaos is the primary source of compromised care. When you are stressed, isolated, and forced to make rapid decisions due to lack of time, you compromise on quality. It can become a doom loop when the time demands then threaten the careers that provide required financial stability. By joining Poetiq, you are building the professional logistics layer that eliminates that chaos, giving you the time and clarity to make informed decisions that uphold your parent's dignity and honor your duty, without sacrificing your professional standing. 
+    <p>It’s a <b>14-point diagnostic</b> of your parent’s current legal, financial, and medical setup to identify hidden liabilities before they become expensive crises
     </p>
   </div>
 </details>
@@ -1758,7 +1758,7 @@ Unlock our services & tools to fix care gaps and avoid unexpected hospital bills
     {/* FAQ Item 2 */}
     <details className="group bg-white rounded-lg shadow-sm border border-gray-200 hover:border hover:border-red-500 overflow-hidden">
  <summary className="flex items-center justify-between p-5 cursor-pointer font-semibold text-lg text-gray-800  hover:bg-gray-50 transition-colors hover:text-red-500">
-   What is the "definitive solution" we are pioneering, and what is my role in building it?
+   Can you help if my parents already have an attorney? 
     <div className="relative w-6 h-6 rounded-full items-center p-2 justify-center"> 
       <svg className="absolute inset-0 w-6 h-6 text-red-500 group-open:hidden transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
@@ -1769,7 +1769,7 @@ Unlock our services & tools to fix care gaps and avoid unexpected hospital bills
     </div>
   </summary>
   <div className="px-5 pb-5 text-gray-700">
-    <p>We are pioneering the professional blueprint for dignified parental care. This blueprint is the high-integrity framework - from data standards and vendor vetting protocols to administrative automation - that should exist but doesn't. Your role is crucial: by sharing your specific logistical failures and successes, you provide the essential, real-world data that allows the community to stress-test and finalize this professional-grade solution, turning your personal agony into systemic change.
+    <p>Yes. We don’t replace your advisors, we act as the <b>project manager</b> who ensures their legal and financial plans are actually executed and optimized for long-term care.
     </p>
   </div>
 </details>
@@ -1777,7 +1777,7 @@ Unlock our services & tools to fix care gaps and avoid unexpected hospital bills
     {/* FAQ Item 3 */}
      <details className="group bg-white rounded-lg shadow-sm border border-gray-200 hover:border hover:border-red-500 overflow-hidden">
   <summary className="flex items-center justify-between p-5 cursor-pointer font-semibold text-lg text-gray-800  hover:bg-gray-50 transition-colors hover:text-red-500">
-   How much time will membership demand from my already impossible schedule?
+   Do you provide the actual care (nursing, etc.)?
     <div className="relative w-6 h-6 rounded-full items-center p-2 justify-center"> 
       <svg className="absolute inset-0 w-6 h-6 text-red-500 group-open:hidden transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
@@ -1788,14 +1788,14 @@ Unlock our services & tools to fix care gaps and avoid unexpected hospital bills
     </div>
   </summary>
   <div className="px-5 pb-5 text-gray-700">
-    <p>We are acutely aware that your time is your most valuable resource. The community is structured for asynchronous, high-signal engagement. There are no mandatory meetings. Your contribution is prioritized through structured prompts (e.g., sharing a 10-minute breakdown of your biggest logistical failure this week). The primary value is in accessing the combined intelligence of others, allowing you to instantly reclaim the hours you would have spent navigating the crisis alone.</p>
+    <p>No. We are the <b>Logistics</b> & <b>Strategy</b> layer. We manage the business of their care contracts, appeals, and spend-downs so you can focus on the quality of their life.</p>
   </div>
 </details>
 
      {/* FAQ Item 4 */}
     <details className="group bg-white rounded-lg shadow-sm border border-gray-200 hover:border hover:border-red-500 overflow-hidden">
  <summary className="flex items-center justify-between p-5 cursor-pointer font-semibold text-lg text-gray-800  hover:bg-gray-50 transition-colors hover:text-red-500">
-   Who exactly are the other members? Is the community strictly vetted?
+   How does Poetiq save money on care bills?
     <div className="relative w-6 h-6 rounded-full items-center p-2 justify-center"> 
       <svg className="absolute inset-0 w-6 h-6 text-red-500 group-open:hidden transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
@@ -1806,7 +1806,7 @@ Unlock our services & tools to fix care gaps and avoid unexpected hospital bills
     </div>
   </summary>
   <div className="px-5 pb-5 text-gray-700">
-    <p>The community is strictly reserved for executive professionals - individuals operating in high-pressure, high-responsibility roles in knowledge work.  This tight focus ensures that every member understands the stakes (career stability, time constraints) and can contribute strategic insights rather than just general complaints. Our integrity relies on a membership of peers who value discretion and professional execution above all else.
+    <p>We audit nursing home contracts, optimize insurance coverage, and win long-term care appeals. Most clients see an average reduction in out-of-pocket costs of <b>$10,000+ per month</b>.
 </p>
   </div>
 </details>
@@ -1814,7 +1814,7 @@ Unlock our services & tools to fix care gaps and avoid unexpected hospital bills
      {/* FAQ Item 5 */}
      <details className="group bg-white rounded-lg shadow-sm border border-gray-200 hover:border hover:border-red-500 overflow-hidden">
  <summary className="flex items-center justify-between p-5 cursor-pointer font-semibold text-lg text-gray-800  hover:bg-gray-50 transition-colors hover:text-red-500">
-    How do I know my family's sensitive personal or financial details are protected?
+    Is my family’s data secure?
     <div className="relative w-6 h-6 rounded-full items-center p-2 justify-center"> 
       <svg className="absolute inset-0 w-6 h-6 text-red-500 group-open:hidden transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
@@ -1825,7 +1825,7 @@ Unlock our services & tools to fix care gaps and avoid unexpected hospital bills
     </div>
   </summary>
   <div className="px-5 pb-5 text-gray-700">
-    <p>Confidentiality is paramount. The Poetiq Community operates under explicit rules regarding privacy and disclosure. While you are encouraged to share the administrative failure (e.g., "I spent 4 hours on a caregiver assessment form"), you are never required to share specific personal or financial identifiers. Our system is designed to extract actionable unfiltered intelligence (the failure point) while preserving the anonymity and sensitive details of your personal life.
+    <p>Absolutely. We use <b>end-to-end encryption</b> for our Data Vault, ensuring your parent’s sensitive financial and medical records are accessible only to authorized family members.
     </p>
   </div>
 </details>
@@ -1833,7 +1833,7 @@ Unlock our services & tools to fix care gaps and avoid unexpected hospital bills
      {/* FAQ Item 6 */}
      <details className="group bg-white rounded-lg shadow-sm border border-gray-200 hover:border hover:border-red-500 overflow-hidden">
   <summary className="flex items-center justify-between p-5 cursor-pointer font-semibold text-lg text-gray-800  hover:bg-gray-50 transition-colors hover:text-red-500">
-   Is the founder qualified to lead a solution of this magnitude?
+   Can my siblings use the platform too?
     <div className="relative w-6 h-6 rounded-full items-center p-2 justify-center"> 
       <svg className="absolute inset-0 w-6 h-6 text-red-500 group-open:hidden transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
@@ -1844,7 +1844,7 @@ Unlock our services & tools to fix care gaps and avoid unexpected hospital bills
     </div>
   </summary>
   <div className="px-5 pb-5 text-gray-700">
-    <p>Olu's primary qualification is shared experiences and decades of executive-level competence. The solution is not driven by clinical expertise, but by logistical mastery. Olu faced the same crisis you face and applied corporate strategy to solve those personal care challenges. He leads the mission, but the ultimate authority and expertise reside within the collective professional intelligence of the executive members.
+    <p>Yes. Poetiq is built for <b>Family Collaboration</b>. You can grant access to siblings or stakeholders to keep everyone aligned on one "single source of truth."
     </p>
   </div>
 </details>
@@ -1852,7 +1852,7 @@ Unlock our services & tools to fix care gaps and avoid unexpected hospital bills
      {/* FAQ Item 7 */}
     <details className="group bg-white rounded-lg shadow-sm border border-gray-200 hover:border hover:border-red-500 overflow-hidden">
   <summary className="flex items-center justify-between p-5 cursor-pointer font-semibold text-lg text-gray-800  hover:bg-gray-50 transition-colors hover:text-red-500">
-    What is the financial investment for membership, and how is the ROI measured?
+    How do I get started while you're in the waitlist phase? 
     <div className="relative w-6 h-6 rounded-full items-center p-2 justify-center"> 
       <svg className="absolute inset-0 w-6 h-6 text-red-500 group-open:hidden transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
@@ -1863,33 +1863,15 @@ Unlock our services & tools to fix care gaps and avoid unexpected hospital bills
     </div>
   </summary>
   <div className="px-5 pb-5 text-gray-700">
-    <p>Membership requires a modest subscription fee, structured to ensure the community remains high-signal and dedicated. The Return on Investment (ROI) is measured in two ways:Time Reclaimed: The hours saved by accessing the collective blueprint and avoiding painful, low-signal searches.Compromise Avoided: The value of making high-quality, informed decisions that protect your parent's dignity and your own professional standing an invaluable asset.</p>
+    <p>Join the waitlist to <b>secure your spot</b> in our Founding Cohort. You'll be the first to receive our "Quick Win" guides and priority access to the Gap Finder tool.
+    </p>
   </div>
 </details>
-
-     {/* FAQ Item 8 */}
-    <details className="group bg-white rounded-lg shadow-sm border border-gray-200 hover:border hover:border-red-500 overflow-hidden">
-  <summary className="flex items-center justify-between p-5 cursor-pointer font-semibold text-lg text-gray-800  hover:bg-gray-50 transition-colors hover:text-red-500">
-    If we succeed, what will the final "professional blueprint" we forge actually look like?
-    <div className="relative w-6 h-6 rounded-full items-center p-2 justify-center"> 
-      <svg className="absolute inset-0 w-6 h-6 text-red-500 group-open:hidden transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-      </svg>
-      <svg className="absolute inset-0 w-6 h-6 text-red-500 hidden group-open:block transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12h16"></path>
-      </svg>
-    </div>
-  </summary>
-  <div className="px-5 pb-5 text-gray-700">
-    <p>While the community will determine the final product, the blueprint is the operational logic for the future. It will be the logic behind a high-integrity system that automatically executes the administrative chaos: the authoritative, evidence-based process for vetting care quality, the seamless data transfer protocols, and the accelerated logistical execution that transforms your 40-hour administrative drain into a single, executive-level dashboard.</p>
-  </div>
-</details>
-    
   </div>
 </section>
 
 
-  {/*------------------------------- end of the FAQ Section --------------------------------------*/}       
+  {/*------------------------------- end of the FAQ Section --------------------------------------*/}        
 
 
   {/* ------------------------------ Start Final Call to Action Section --------------------------*/}    
