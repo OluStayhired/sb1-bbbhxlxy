@@ -24,7 +24,8 @@ import {
   DatabaseZap,
   CircleDollarSign,
   Scale,
-  Brain
+  Brain,
+  Target
 } from 'lucide-react';
 
 
