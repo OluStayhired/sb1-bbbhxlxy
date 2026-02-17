@@ -490,7 +490,7 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
                   className="flex text-sm items-center space-x-2 px-4 py-2 hover:bg-gray-50 hover:text-red-500 rounded-lg"
                 >
                   <CheckCircle className="w-3.5 h-3.5" />
-                  <span>Take Dementia Assessment</span>
+                  <span>Take Dementia Test</span>
                 </Link>
               </div>
             </div>
