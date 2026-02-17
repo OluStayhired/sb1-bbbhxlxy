@@ -290,8 +290,10 @@ const getSessionId = (): string => {
                {/*The eldercare protection <br className="sm:hidden" /> assistant <br className="hidden sm:block"/>*/}
 
                 {/*The long-term care <br className="sm:hidden" /> navigator<br className="hidden sm:block"/>*/}
-                The long-term <br className="sm:hidden" />care navigator<br className="hidden sm:block"/>
-                
+                {/*The long-term <br className="sm:hidden" />care navigator<br className="hidden sm:block"/>*/}
+
+                The <span className="bg-gradient-to-l from-red-400 via-red-500 to-red-600 text-transparent bg-clip-text">
+                  long-term</span> <br className="sm:hidden"/>care navigator<br className="hidden sm:block"/>
                 
        <p className="block text-sm font-normal sm:text-xl sm:font-normal text-gray-600 leading-tight mt-1 sm:mt-6">
          
