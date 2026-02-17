@@ -259,10 +259,19 @@ const getSessionId = (): string => {
       bg-gradient-to-bl from-red-50 via-bg-red-50 via-white via-white to-white -inset-4
       ">
         
-        <PageMenuNav 
-          onOpenCommunityModal={openCommunityModal} 
-          onOpenOnboardingModal={openOnboardingModal}
+        <div className="hidden sm:block sticky top-0 z-50 bg-red-50/50 backdrop-blur-sm shadow-sm">
+          <PageMenuNav 
+            onOpenCommunityModal={openCommunityModal} 
+            onOpenOnboardingModal={openOnboardingModal}
           />
+        </div>
+
+        <div className="sm:hidden">
+          <PageMenuNav 
+            onOpenCommunityModal={openCommunityModal} 
+            onOpenOnboardingModal={openOnboardingModal}
+          />
+        </div>
 
       <main className="max-w-7xl mx-auto px-6 pt-10 pb-32">
         
