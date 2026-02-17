@@ -439,10 +439,29 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
       {isMobileMenuOpen && (
         <div className="sm:hidden fixed inset-0 bg-white z-40 flex flex-col items-center justify-center space-y-4 py-6">
 
+          <button
+            onClick={() => {
+              window.location.href = '#OperationalSupport';
+              setIsMobileMenuOpen(false);           
+              }}
+              className="mx-auto px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
+            >
+            Ask Ellie 💛
+          </button>
+
+          <button
+            onClick={() => {
+              window.location.href = '#HowItWorks';
+              setIsMobileMenuOpen(false);           
+              }}
+              className="mx-auto px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
+            >
+            How it Works ❤️
+          </button>
           {/* START: Care Tools Dropdown Menu */}
           <div className="relative group">
             {/* Menu Header - Care Tools */}
-            <button className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">
+            <button className="mx-auto px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">
               Free Care Tools 🧡
             </button>
 
@@ -505,7 +524,7 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
               window.location.href = '#OperationalSupport';
               setIsMobileMenuOpen(false);
             }}
-            className="w-11/12 max-w-sm px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
+            className="mx-auto px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
           >
            Premium Services 💚
           </button>
@@ -515,9 +534,9 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
               window.location.href = '#FAQ';
               setIsMobileMenuOpen(false);
             }}
-            className="w-11/12 max-w-sm px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
+            className="mx-auto px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
           >
-            FAQ ❓
+            Frequent Questions ❓
           </button>
 
           {/* Close button within the overlay */}
