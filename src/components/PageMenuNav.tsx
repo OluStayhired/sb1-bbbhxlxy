@@ -85,7 +85,7 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
                 {/* Card 1: Readiness Audit*/}
                 <div
                           onClick={onOpenOnboardingModal}
-                          className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-teal-50 hover:to-green-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-teal-200"
+                          className="group/card cursor-pointer flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-teal-50 hover:to-green-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-teal-200"
                           >
                         {/* Icon Container */}
                         <div className="flex items-center justify-center w-14 h-14 bg-teal-100 rounded-full mb-4 group-hover/card:bg-teal-200 transition-colors duration-300">
