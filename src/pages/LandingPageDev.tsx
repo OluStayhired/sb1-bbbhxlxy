@@ -398,8 +398,8 @@ Manage legal, financial, and care logistics for Mom & Dad in one place.{/*<br/>
       <img
         src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/funding_status.png"
         alt="Abstract green shape"
-        //className="hidden sm:block absolute top-1/3 right-10 animate-float opacity-90 w-36 h-36 sm:w-40 sm:h-40 rounded-md z-30"
-        className="absolute top-1/4 right-1 sm:top-1/3 sm:right-10 animate-float opacity-90 w-20 h-20 sm:w-40 sm:h-40 rounded-md z-30"
+        className="hidden sm:block absolute top-1/3 right-10 animate-float opacity-90 w-36 h-36 sm:w-40 sm:h-40 rounded-md z-30"
+        //className="absolute top-1/4 right-1 sm:top-1/3 sm:right-10 animate-float opacity-90 w-20 h-20 sm:w-40 sm:h-40 rounded-md z-30"
         style={{ animationDelay: '4s', animationDuration: '5s' }}
         onError={(e) => { e.target.onerror = null; e.target.src = "https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/funding_status.png"; }}
       />
@@ -417,8 +417,8 @@ Manage legal, financial, and care logistics for Mom & Dad in one place.{/*<br/>
         
         src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/proof_of_id_v2.png"
         alt="Abstract red shape"
-        //className="hidden sm:block absolute top-1/2 left-10 transform -translate-y-1/2 animate-float opacity-90 w-28 h-28 sm:w-40 sm:h-40 rounded-full z-30"
-        className="absolute top-1/4 sm:top-1/2 left-4 sm:left-10 transform -translate-y-1/2 animate-float opacity-90 w-20 h-20 sm:w-40 sm:h-40 rounded-full z-30"
+        className="hidden sm:block absolute top-1/2 left-10 transform -translate-y-1/2 animate-float opacity-90 w-28 h-28 sm:w-40 sm:h-40 rounded-full z-30"
+        //className="absolute top-1/4 sm:top-1/2 left-4 sm:left-10 transform -translate-y-1/2 animate-float opacity-90 w-20 h-20 sm:w-40 sm:h-40 rounded-full z-30"
         style={{ animationDelay: '3s', animationDuration: '6.5s' }}
         onError={(e) => { e.target.onerror = null; e.target.src = "https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/proof_of_id_v2.png"; }}
       />
