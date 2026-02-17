@@ -1,5 +1,5 @@
 import React from 'react';
-import { HeartPulse } from 'lucide-react';
+import { HeartPulse, Target } from 'lucide-react';
 
 export function PageFooter() {
   return (
@@ -9,13 +9,13 @@ export function PageFooter() {
           {/* Company Info */}
           <div className="space-y-4 space-x-1">
             <div className="inline-flex bg-red-500 rounded-full p-0.5">
-              <HeartPulse className="h-5 w-5 fill-white stroke-red-500" />
+              <Target className="h-5 w-5 fill-white stroke-red-500" />
             </div>
             <span className="text-xl font-bold text-red-500 sm:text-xl">poetiq</span>
             
             <p className="text-sm text-gray-600">
               {/*The best community for career professionals struggling with eldercare!*/}
-              The all-in-one platform for managing mom and dad's eldercare affairs!
+              The all-in-one platform for managing Mom and Dad's long-term care affairs!
             </p>
             {/* Social links */}
           </div>
@@ -95,10 +95,10 @@ export function PageFooter() {
         {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-gray-200">
           <div className="flex flex-col sm:flex-row items-center justify-between text-sm text-gray-600">
-            <p className="order-2 sm:order-1">&copy; 2025 poetiq.io All rights reserved.</p>
+            <p className="order-2 sm:order-1">&copy; 2026 poetiq.io All rights reserved.</p>
             <div className="flex space-x-6 order-1 sm:order-2">
               <p className="text-sm text-gray-700 text-center leading-relaxed">
-              We make it insanely easy for family caregivers to fix legal and financial gaps for mom and dad.
+              We make it insanely easy for family caregivers to fix legal and financial gaps for Mom and Dad.
                 Connect with
                 <a href="https://www.linkedin.com/in/oluadedeji" className="text-red-500 hover:text-red-600 font-medium transition-colors">
                   {' '}<u>Olu</u>{' '}
