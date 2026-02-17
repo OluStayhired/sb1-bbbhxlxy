@@ -1881,7 +1881,7 @@ end of old hero image */}
      to balance their hectic careers and caregiving responsibilities.
 */}
 {/*Unlock the care services and tools to fix the financial gaps and reclaim your time*/}
-Unlock our care services & tools to fix the gaps and avoid unexpected hospital bills!
+Unlock our services & tools to fix care gaps and avoid unexpected hospital bills!
   </p>   
 
  {/*Image for Mobile Devices - UX Optimized*/}
