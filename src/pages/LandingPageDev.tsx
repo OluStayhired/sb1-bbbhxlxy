@@ -380,7 +380,7 @@ Manage legal, financial, and care logistics for Mom & Dad in one place.{/*<br/>
       <img
         src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/sign_lpa_v2.png"
         //alt="Abstract blue shape"
-        className="hidden sm:block absolute top-8 left-1/4 animate-float opacity-90 w-40 h-40 sm:w-40 sm:h-40 rounded-md  z-30"
+        className="hidden sm:block absolute top-16 left-1/4 animate-float opacity-90 w-40 h-40 sm:w-40 sm:h-40 rounded-md  z-30"
         style={{ animationDelay: '0s', animationDuration: '6s' }}
         onError={(e) => { e.target.onerror = null; e.target.src = "https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/sign_lpa_v2.png"; }}
       />
