@@ -1438,8 +1438,8 @@ Unlock our services & tools to fix care gaps and avoid unexpected hospital bills
   {/*simple and easy way to reduce the entire grid by 20%*/}
   <div className="grid grid-cols-5 gap-3 h-[520px] grid-rows-2">
           
-        {/*---- Column 1: Two stacked images---*/}
-        <div className="col-span-1 flex flex-col gap-4 h-[520px]">
+         {/*---- Column 1: Two stacked images---*/}
+         <div className="col-span-1 flex flex-col gap-4 h-[520px]">
           {/*------ start first top left image -------*/}
           <div className="relative h-full border hover:p-2 hover:border-red-500 overflow-hidden rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl group">
             
@@ -1448,21 +1448,55 @@ Unlock our services & tools to fix care gaps and avoid unexpected hospital bills
               alt="Creative workspace"
               className="w-full h-full rounded-xl object-cover aspect-square"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
-            <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
+      
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/60 to-transparent pointer-events-none"></div>
 
-    <TooltipHelp text="👋 Try it Now!">
+
+{/*----------------------- Show Pulsing Ellie Image Here ----------------------*/}
+
+  {/* Improved Gradient Overlay - Better readability */}
+
+    {/* Hero Section - Ellie Avatar Centered */}
+      <div className="absolute inset-0 flex flex-col align-top items-center justify-center pt-22 transition-all duration-500 group-hover:justify-start group-hover:pt-2">
+
+      <div className="relative transition-all duration-500 group-hover:scale-75">
+            {/* Pulse Animation Ring */}
+            <div className="absolute inset-0 rounded-full bg-red-400 opacity-20 animate-ping group-hover:opacity-0 transition-opacity duration-500"></div>
+        
+            {/* Ellie Avatar - Hero Element */}
+            <div className="relative w-24 h-24 rounded-full bg-white p-1.5 shadow-2xl transform transition-all duration-500 hover:scale-110">
+              <img
+            src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/ellie_ai_square.png"
+            alt="Ellie AI Assistant"
+            className="w-full h-full rounded-full object-cover border-4 border-red-100" 
+              />
+            </div>
+        
+            {/* Active Indicator Badge */}
+            <div className="absolute right-2 bottom-2 w-4 h-4 bg-green-500 border-2 border-white rounded-full shadow-lg">
+              <span className="absolute inset-0 rounded-full bg-green-400 animate-ping opacity-75"></span>
+            </div>
+      </div>
+    </div>  
+            
+  {/*----------------------- End Show Pulsing Ellie Image Here -----------------------*/}
+    
+  <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-60 group-hover:opacity-100">
+
+    <TooltipHelp text="👋 Start Conversation!">
           <button
             onClick={openEligibilityModal}
-            className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
+            className="group flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
            
-           <span className="text-sm font-normal">Get Started</span>
+           <span className="text-sm font-normal">Ask a Question</span>
            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
     </TooltipHelp>       
-                <h3 className="text-xl font-bold drop-shadow-lg">Long-Term Care Assistant</h3>
+        <h3 className="text-xl font-bold drop-shadow-lg">Meet Ellie 👋</h3>
+        <p className="text-xs drop-shadow-lg">Your long-term care assistant</p>
             </div>
           </div>
+          
 
           {/*
           <div className="relative h-full overflow-hidden rounded-xl">
@@ -1471,6 +1505,9 @@ Unlock our services & tools to fix care gaps and avoid unexpected hospital bills
             />
           </div>
           */}
+
+          
+          {/*------ end first left image -------*/}
 
           
           {/*------ end first left image -------*/}
