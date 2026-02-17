@@ -41,7 +41,7 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
       <a href="/dev">
         <div className="flex items-center space-x-2">
           <div className="bg-red-100 rounded-full p-1 sm:p-1.5">
-            <HeartPulse className="h-7 w-7 fill-white stroke-red-500 sm:h-9 sm:w-9" />
+            <Target className="h-7 w-7 fill-white stroke-red-500 sm:h-9 sm:w-9" />
           </div>
           <span className="text-2xl font-bold text-red-500 sm:text-3xl">poetiq</span>
         </div>
