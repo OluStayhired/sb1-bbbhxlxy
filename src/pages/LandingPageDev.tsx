@@ -289,7 +289,7 @@ const getSessionId = (): string => {
     
 
            {/*start alternative header */}
-           <h1 className="text-3xl sm:text-6xl md:text-7xl lg:text-7xl leading-tight font-bold mb-2 sm:mb-3"> 
+           <h1 className="text-3xl mt-6 sm:text-6xl md:text-7xl lg:text-7xl leading-tight font-bold mb-2 sm:mb-3"> 
             <p>
               {/*<span className="inline-block sm:text-6xl bg-gradient-to-l from-red-300 via-red-400 to-red-500 text-transparent bg-clip-text mt-6">*/}
               <span className="inline-block sm:text-6xl bg-gradient-to-l from-gray-400 via-gray-500 to-gray-600 text-transparent bg-clip-text mt-6">
@@ -452,7 +452,7 @@ Manage legal, financial, and care logistics for Mom & Dad in one place.{/*<br/>
     {/* Adjusted button layout for mobile */}          
 <div className="mt-12 mb-6 flex flex-col sm:flex-row items-center justify-center gap-4">
   <button
-    onClick={openOnboardingModal}
+    onClick={openCommunityModal}
     type="submit"
     className="flex items-center space-x-2 w-full sm:w-auto bg-gradient-to-r from-red-500 to-red-600 text-white px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-10 shadow-red-500/60 hover:shadow-red-500/80 group"
   >    
