@@ -267,13 +267,22 @@ const getSessionId = (): string => {
       <main className="max-w-7xl mx-auto px-6 pt-10 pb-32">
         
         <div className="text-center px-4 sm:px-6 md:px-8 lg:px-12 py-12 sm:py-16 md:py-20 lg:py-24 rounded-lg">
-   
+
+        {/*
         <span className="sm:hidden text-xs sm:text-lg p-3 font-semibold bg-red-100 rounded-full text-red-500 border-8 border-red-50">    
           Built For Busy Career Professionals
         </span>
 
       <span className="hidden sm:inline text-xs sm:text-lg p-3 font-semibold bg-red-100 hover:bg-red-200 hover:text-red-600 rounded-full text-red-500 border-8 border-red-50 hover:border-red-100 duration-500">Built For Busy Career Professionals</span>
+      */}
 
+        <span className="sm:hidden text-xs sm:text-lg p-3 font-semibold bg-gray-300 rounded-full text-gray-500 border-8 border-gray-200">    
+          Built For Busy Career Professionals
+        </span>
+
+      <span className="hidden sm:inline text-xs sm:text-lg p-3 font-semibold bg-gray-200 hover:bg-gray-300 hover:text-gray-600 rounded-full text-gray-500 border-8 border-gray-100 hover:border-gray-200 duration-500">
+        Built For Busy Career Professionals
+      </span>
                
           
            {/*start alternative header */}
