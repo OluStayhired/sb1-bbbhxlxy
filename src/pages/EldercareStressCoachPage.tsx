@@ -76,10 +76,19 @@ export function EldercareStressCoachPage() {
   return (
     <>
       <div id="top_page" className="min-h-screen bg-white">
-      <PageMenuNav 
+      <div className="hidden sm:block sticky top-0 z-50 bg-white/50 backdrop-blur-sm shadow-sm">
+          <PageMenuNav 
             onOpenCommunityModal={openCommunityModal} 
             onOpenOnboardingModal={openOnboardingModal}
-            />
+          />
+        </div>
+
+        <div className="sm:hidden">
+          <PageMenuNav 
+            onOpenCommunityModal={openCommunityModal} 
+            onOpenOnboardingModal={openOnboardingModal}
+          />
+        </div>
 
         <main className="max-w-7xl mx-auto px-6 pb-32">
           {/* Hero Section */}

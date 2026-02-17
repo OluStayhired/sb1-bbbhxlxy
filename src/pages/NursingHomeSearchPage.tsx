@@ -125,10 +125,19 @@ const handleLoginClick = () => {
 
       <div id="top_page" className="min-h-screen bg-white">
         {/*--- Replaced Menu Code with Menu Component ---- */}
-        <PageMenuNav 
+        <div className="hidden sm:block sticky top-0 z-50 bg-white/50 backdrop-blur-sm shadow-sm">
+          <PageMenuNav 
             onOpenCommunityModal={openCommunityModal} 
             onOpenOnboardingModal={openOnboardingModal}
-            />
+          />
+        </div>
+
+        <div className="sm:hidden">
+          <PageMenuNav 
+            onOpenCommunityModal={openCommunityModal} 
+            onOpenOnboardingModal={openOnboardingModal}
+          />
+        </div>
       <main className="max-w-7xl mx-auto px-6 pb-32">
         <div className="text-center px-4 sm:px-6 md:px-8 lg:px-12 py-2 rounded-lg">
 
