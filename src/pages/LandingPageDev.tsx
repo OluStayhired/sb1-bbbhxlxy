@@ -293,7 +293,7 @@ const getSessionId = (): string => {
                 The long-term <br className="sm:hidden" />care navigator<br className="hidden sm:block"/>
                 
                 
-       <p className="block text-sm font-normal sm:text-xl sm:font-normal text-red-500 leading-tight mt-1 sm:mt-6">
+       <p className="block text-sm font-normal sm:text-xl sm:font-normal text-gray-600 leading-tight mt-1 sm:mt-6">
          
              <span className="sm:hidden font-normal">
               {/*Fix legal and financial gaps for mom and dad before a major health crisis hits.*/}
