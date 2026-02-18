@@ -1483,7 +1483,7 @@ Unlock our services & tools to fix care gaps and avoid unexpected hospital bills
     
   <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-60 group-hover:opacity-100">
 
-    <TooltipHelp text="👋 Start Conversation!">
+    <TooltipHelp text="👋 Start a conversation with Ellie">
           <button
             onClick={openEligibilityModal}
             className="group flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
@@ -1491,6 +1491,7 @@ Unlock our services & tools to fix care gaps and avoid unexpected hospital bills
            <span className="text-sm font-normal">Ask a Question</span>
            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
+          
     </TooltipHelp>       
         <h3 className="text-xl font-bold drop-shadow-lg">Meet Ellie 👋</h3>
         <p className="text-xs drop-shadow-lg">Your long-term care assistant</p>
@@ -1605,7 +1606,7 @@ Unlock our services & tools to fix care gaps and avoid unexpected hospital bills
 
             
           <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-60 group-hover:opacity-100">
-            <TooltipHelp text="👋 Start Conversation!">
+            <TooltipHelp text="👋 Start a conversation with Sophia">
               <button
             onClick={openStressCoachModal}
             className="group items-center flex mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
