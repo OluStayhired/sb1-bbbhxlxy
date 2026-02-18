@@ -954,7 +954,7 @@ const handleSendMessage = async (content: string) => {
                       handleSendMessage(inputValue);
                     }
                   }}
-                  placeholder="Ask me anything about family conflicts..."
+                  placeholder="Ask me anything about family conflicts 🤔"
                   className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none resize-none min-h-[100px] max-h-[160px]"
                 />
                 
