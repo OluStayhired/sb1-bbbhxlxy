@@ -87,16 +87,17 @@ export function MedicaidCoPilotPage() {
 <main className="max-w-7xl mx-auto px-6 pb-32">
           {/* Hero Section */}
           <div className="text-center px-4 sm:px-6 md:px-8 lg:px-12 py-2 rounded-lg">
-            <h1 className="mt-24 text-3xl sm:text-5xl font-bold text-gray-900 mb-4">
+            <h1 className="mt-24 text-3xl sm:text-5xl font-bold text-gray-700 mb-4">
               {/*Navigate*/}
               Get
               <span className="space-x-1">
-                <span className="bg-gradient-to-l from-red-300 via-red-400 to-red-500 bg-clip-text text-transparent"> Long-Term <br className="sm:hidden"/> Care Insurance </span> 
-                Support
+                <span className="bg-gradient-to-l from-red-300 via-red-400 to-red-500 bg-clip-text text-transparent"> Long-Term <br className="sm:hidden"/> Care Support</span> 
+                {/*Support*/}
               </span>
               <p className="block text-sm font-normal sm:text-xl sm:font-normal text-gray-600 leading-tight mt-1 sm:mt-3">
                 <span className="sm:hidden font-normal">Quick eligibility answers . Expert guidance . Free AI assistant</span>   
-                <span className="hidden sm:inline font-normal">Quick answers to eligibility questions, state specific guidance, and free AI-powered support</span> 
+                {/*<span className="hidden sm:inline font-normal">Quick answers to eligibility questions, state specific guidance, and free AI-powered support</span> */}
+                <span className="hidden sm:inline font-normal">Quick answers to complex Medicaid, VA, and state-specific eligibility rules.</span>
               </p>
             </h1>
           </div>
