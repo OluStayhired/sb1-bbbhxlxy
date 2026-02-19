@@ -644,6 +644,14 @@ const [isPanelOpen, setIsPanelOpen] = useState(false);
                       <td className="px-4 py-4 text-xs whitespace-nowrap" >
                       
                         {provider.poetiq_rating && renderStarRating(provider.poetiq_rating)}
+
+                        <button
+                           //onClick={openCommunityModal}
+                            className="sm:hidden mt-2 flex items-center space-x-1 px-2 py-2 bg-red-500 text-white rounded-lg hover:bg-red-500 transition-colors shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 group" 
+                         >
+                          <span>Insights</span>
+                          <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+                        </button>
                         
                       </td>
                       <td className="px-4 py-4">
