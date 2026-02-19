@@ -944,8 +944,8 @@ const getFundedStatus = (answer: string): {
                         <Scale className={`w-8 h-8 ${poaStatus.color}`} />
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold text-gray-900 mb-1">
-                          Legal Power of Attorney
+                        <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-1">
+                        Legal Power <br className="sm:hidden"/> of Attorney
                         </h3>
                         <p className="text-sm text-gray-600">
                           Critical Legal Document Status
@@ -953,7 +953,7 @@ const getFundedStatus = (answer: string): {
                       </div>
                     </div>
                     
-                    <div className={`flex items-center px-4 py-2 rounded-lg border-2 ${poaStatus.borderColor} ${poaStatus.bgColor}`}>
+                    <div className={`hidden sm:flex items-center px-4 py-2 rounded-lg border-2 ${poaStatus.borderColor} ${poaStatus.bgColor}`}>
                       <StatusIcon className={`w-6 h-6 ${poaStatus.color} mr-2`} />
                       <span className={`font-bold text-lg ${poaStatus.color} uppercase tracking-wide`}>
                         {poaStatus.status}
@@ -980,7 +980,7 @@ const getFundedStatus = (answer: string): {
                       onClick={openCommunityModal}
                       className="mt-4 w-full flex items-center justify-between p-4 bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md">
                       <div className="flex items-center">
-                        <Zap className="w-5 h-5 text-red-500 mr-3" />
+                        <Zap className="hidden sm:inline w-5 h-5 text-red-500 mr-3" />
                         <p className="text-sm font-semibold text-gray-900">
                           Poetiq can help you {poaStatus.level === 'red' ? 'fix' : 'organize'} this immediately
                         </p>
@@ -991,16 +991,16 @@ const getFundedStatus = (answer: string): {
 
                   {poaStatus.level == 'green' && (
                     <button 
-                      onClick={openCommunityModal}
-                      className="mt-4 w-full flex items-center justify-between p-4 bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md">
-                      <div className="flex items-center">
-                        <ShieldCheck className="w-5 h-5 text-green-700 mr-3" />
-                        <p className="text-sm font-semibold text-gray-700">
-                          Store legal document safely with Poetiq!
-                        </p>
-                      </div>
-                      <ChevronRight className="w-5 h-5 text-green-700" />
-                    </button>
+                    onClick={openCommunityModal}
+                    className="mt-4 w-full flex items-center justify-between p-4 bg-green-100 border-green-200 sm:bg-white rounded-lg border sm:border-gray-200 shadow-sm hover:shadow-md">
+                    <div className="flex items-center">
+                      <ShieldCheck className="hidden sm:inline w-5 h-5 text-green-700 mr-3" />
+                      <p className="text-sm font-semibold text-gray-700">
+                        Store legal document safely with Poetiq!
+                      </p>
+                    </div>
+                    <ChevronRight className="w-5 h-5 text-green-700" />
+                  </button>
                   )}
                 </div>
               </div>
@@ -1198,27 +1198,42 @@ const getFundedStatus = (answer: string): {
                       
                       {status === 'missing' && (
                         <div className="mt-3 pt-3 border-t border-red-200">
-                          <p className="text-xs text-red-600 font-medium">
+                          <p className="hidden sm:block text-xs text-red-600 font-medium">
                             <Zap className="w-3 h-3 inline mr-1" />
                             Unlock Poetiq to resolve now
+                          </p>
+
+                          <p className="sm:hidden text-xs text-red-600 font-medium">
+                            <Zap className="w-3 h-3 inline mr-1" />
+                            Unlock Poetiq and fix now
                           </p>
                         </div>
                       )}
 
                        {status === 'complete' && (
                         <div className="mt-3 pt-3 border-t border-green-200">
-                          <p className="text-xs text-green-700 font-medium">
+                          <p className="hidden sm:block text-xs text-green-700 font-medium">
                             <ShieldCheck className="w-5 h-5 text-white fill-green-600 inline mr-1" />
                              Store document safely with Poetiq
+                          </p>
+
+                          <p className="sm:hidden text-xs text-green-700 font-medium">
+                            <ShieldCheck className="w-5 h-5 text-white fill-green-600 inline mr-1" />
+                             Store safely with Poetiq
                           </p>
                         </div>
                       )}
 
                        {status === 'partial' && (
                         <div className="mt-3 pt-3 border-t border-yellow-200">
-                          <p className="text-xs text-yellow-600 font-medium">
+                          <p className="hidden sm:block text-xs text-yellow-600 font-medium">
                             <Zap className="w-3 h-3 inline mr-1" />
                             Unlock Poetiq to complete this task
+                          </p>
+
+                          <p className="sm:hidden text-xs text-yellow-600 font-medium">
+                            <Zap className="w-3 h-3 inline mr-1" />
+                            Unlock Poetiq to complete
                           </p>
                         </div>
                       )}
