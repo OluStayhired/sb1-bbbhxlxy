@@ -144,7 +144,7 @@ const handleLoginClick = () => {
         <div className="text-center px-4 sm:px-6 md:px-8 lg:px-12 py-2 rounded-lg">
 
         <h1 className="mt-24 text-3xl sm:text-5xl font-bold text-gray-700 mb-4">
-            EValuate<br className="sm:hidden"/>
+            Evaluate<br className="sm:hidden"/>
     {/*<span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Unstoppable Brands</span>*/}
             <span>
              <span className="bg-gradient-to-l from-red-400 via-red-400 to-red-500  bg-clip-text text-transparent"> Home Care <br className="sm:hidden"/> for Mom</span> 
@@ -170,7 +170,7 @@ const handleLoginClick = () => {
 
           
 {/*Image for Mobile Devices*/}
-<div className="sm:hidden w-full p-4 mt-8">
+<div className="hidden w-full p-4 mt-8">
   <div className="grid grid-cols-1 h-[450px]">
      {/* Column 4: One image, spanning two rows */}
         <div className="col-span-1">
