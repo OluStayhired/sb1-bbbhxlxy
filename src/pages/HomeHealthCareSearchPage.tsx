@@ -143,18 +143,19 @@ const handleLoginClick = () => {
       <main className="max-w-7xl mx-auto px-6 pb-32">
         <div className="text-center px-4 sm:px-6 md:px-8 lg:px-12 py-2 rounded-lg">
 
-        <h1 className="mt-24 text-3xl sm:text-5xl font-bold text-gray-900 mb-4">
-            Find<br className="sm:hidden"/>
+        <h1 className="mt-24 text-3xl sm:text-5xl font-bold text-gray-700 mb-4">
+            EValuate<br className="sm:hidden"/>
     {/*<span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Unstoppable Brands</span>*/}
             <span>
-             <span className="bg-gradient-to-l from-red-400 via-red-400 to-red-500  bg-clip-text text-transparent"> home caregivers <br className="sm:hidden"/> {/*Agencies*/}</span> 
-              near me 📌
+             <span className="bg-gradient-to-l from-red-400 via-red-400 to-red-500  bg-clip-text text-transparent"> Home Care <br className="sm:hidden"/> for Mom</span> 
+              
               </span>
              <p className="block text-sm font-normal sm:text-xl sm:font-normal text-gray-600 leading-tight mt-1 sm:mt-3">
 
                {/*<span className="sm:hidden font-normal">Join a network of career professionals navigating eldercare together</span>  */}
-            <span className="sm:hidden font-normal">Search 12,500 caregiving agencies . Get detailed reports . Book Consultation </span>   
-          <span className="hidden sm:inline font-normal">Search 12,500 caregiving agencies. Get summary reports and book a consultation today</span> 
+            {/*<span className="sm:hidden font-normal">Search 12,500 caregiving agencies . Get detailed reports . Book Consultation </span>   
+          <span className="hidden sm:inline font-normal">Search 12,500 caregiving agencies. Get summary reports and book a consultation today</span>*/} 
+          <span className="font-normal">Vet the agencies providing caregivers. Access clinical data on mobility, safety & patient dignity.</span>
          </p>
             
           </h1>
