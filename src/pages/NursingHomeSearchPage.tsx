@@ -142,17 +142,18 @@ const handleLoginClick = () => {
         <div className="text-center px-4 sm:px-6 md:px-8 lg:px-12 py-2 rounded-lg">
 
     <h1 className="mt-24 text-3xl sm:text-5xl font-bold text-gray-900 mb-4">
-            Book 
+            Verify 
     {/*<span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Unstoppable Brands</span>*/}
             <span>
-             <span className="bg-gradient-to-l from-red-300 via-red-400 to-red-500  bg-clip-text text-transparent"> nursing <br className="sm:hidden"/> homes </span> 
-              faster 👩‍⚕️
+             <span className="bg-gradient-to-l from-red-300 via-red-400 to-red-500  bg-clip-text text-transparent"> Care <br className="sm:hidden"/> Quality </span> 
+              for Mom
               </span>
              <p className="block text-sm font-normal sm:text-xl sm:font-normal text-gray-600 leading-tight mt-1 sm:mt-3">
 
                {/*<span className="sm:hidden font-normal">Join a network of career professionals navigating eldercare together</span>  */}
-            <span className="sm:hidden font-normal">Search 14,700 homes . Get detailed reports . Book Consultation </span>   
-          <span className="hidden sm:inline font-normal">Search 14,700 nursing homes. Get summary reports and book a consultation today</span> 
+            {/*<span className="sm:hidden font-normal">Search 14,700 homes . Get detailed reports . Book Consultation </span>   
+          <span className="hidden sm:inline font-normal">Search 14,700 nursing homes. Get summary reports and book a consultation today</span> */}
+          <span className="font-normal">Audit 14,700+ homes for staffing ratios and safety violations before you sign a contract.</span>
          </p>
             
           </h1>
@@ -167,7 +168,7 @@ const handleLoginClick = () => {
 
           
 {/*Image for Mobile Devices*/}
-<div className="sm:hidden w-full p-4 mt-8">
+<div className="hidden w-full p-4 mt-8">
   <div className="grid grid-cols-1 h-[450px]">
      {/* Column 4: One image, spanning two rows */}
         <div className="col-span-1">
@@ -178,8 +179,8 @@ const handleLoginClick = () => {
               className="w-full h-full object-cover object-[30%_50%]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
-                <h3 class="text-xl font-bold drop-shadow-lg">Book Emergency <br/> Caregivers</h3>
+            <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
+                <h3 className="text-xl font-bold drop-shadow-lg">Book Emergency <br/> Caregivers</h3>
             </div>
           </div>
         </div>
