@@ -698,12 +698,14 @@ end of old hero image */}
   
  <h2 className="hidden sm:block text-2xl text-red-400 sm:text-4xl md:text-5xl font-bold leading-tight mt-4 mb-4">
    {/*Care shouldn't cost you your Career*/}
-    Juggling a career while caring for mom?
+    {/*Juggling a career while caring for mom?*/}
+    Struggling with long-term care for mom?
   </h2>
 
   <h2 className="sm:hidden text-2xl text-red-400 sm:text-4xl md:text-5xl font-bold leading-tight mt-8 mb-4">
     {/*Care shouldn't cost you <br/> your Career*/}
-    Juggling a career <br/> while caring for mom?
+    {/*Juggling a career <br/> while caring for mom?*/}
+    Struggling with <br/> long-term care for mom?
   </h2>
   
   <p className="text-xl sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
