@@ -6,7 +6,7 @@ import {
   ArrowLeft, ArrowRight, Star, Globe, 
   MapPin, ArrowUpDown, Clock, 
   Heart, Activity, Briefcase, Filter,
-  CheckCircle, UserCheck, Stethoscope
+  CheckCircle, UserCheck, Stethoscope, Lightbulb
 } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import { TooltipExtended } from '/src/utils/TooltipExtended';
@@ -799,8 +799,8 @@ const [isPanelOpen, setIsPanelOpen] = useState(false);
                   className="hidden sm:table-cell px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
                   >
                     <div className="flex items-center text-gray-500 space-x-1">
-                      <span className="text-gray-400"><Calendar className="w-3.5 h-3.5"/></span>
-                      <span>Availability</span>
+                      <span className="text-gray-400"><Lightbulb className="w-3.5 h-3.5"/></span>
+                      <span>Insights</span>
                       
                     </div>
 
@@ -832,6 +832,14 @@ const [isPanelOpen, setIsPanelOpen] = useState(false);
                       >
                       <td className="px-4 py-4 text-xs whitespace-nowrap">
                         {renderStarRating(agency.quality_of_patient_care_star_rating)}
+
+                        <button     
+                            className="sm:hidden mt-2 flex items-center space-x-1 px-2 py-2 bg-red-500 text-white rounded-lg hover:bg-red-500 transition-colors shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 group"                          
+                         >
+                              <span>Insights</span>
+                              <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+                        </button>
+
                       </td>
                       <td className="px-4 py-4">
                         <div className="text-xs font-medium text-gray-900">{agency.provider_name}</div>
@@ -895,17 +903,12 @@ const [isPanelOpen, setIsPanelOpen] = useState(false);
                       </td>
 
                         <td className="hidden sm:table-cell px-2 items-center">
-                      <TooltipHelp text="⚡get more insights">  
+                      <TooltipHelp text="⚡get insights">  
                        <button
-                           //onClick={openCommunityModal}
+                           
                             className="flex items-center space-x-1 px-2 py-2 bg-red-500 text-white rounded-lg hover:bg-red-500 transition-colors shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 group" 
-                          //onClick={(e) => {
-                          //e.stopPropagation();
-                          //setSelectedAgency(agency);
-                          //setIsModalOpen(true);
-                            //}}
                          >
-                    <span>Book Call</span>
+                    <span>Insights</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
                           </button>
                       </TooltipHelp>
