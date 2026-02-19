@@ -117,7 +117,7 @@ export function EldercareModalPopUpSmall({ isOpen, onClose, onStartOnboarding }:
               onClick={handleOpenOnboarding}
               className="w-auto px-6 py-3 bg-gradient-to-r from-red-500 to-red-600 text-white text-base font-bold rounded-xl hover:from-red-600 hover:to-red-700 transition-all duration-300 shadow-xl shadow-red-500/30 hover:shadow-2xl hover:shadow-red-500/50 hover:scale-105 active:scale-95 transform"
             >
-              Discover Care Gaps in 2mins
+              Discover Care Gaps in 60 secs
             </button>
             
             <p className="text-xs text-gray-500">
