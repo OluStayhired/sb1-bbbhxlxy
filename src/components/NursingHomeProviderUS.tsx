@@ -706,7 +706,7 @@ const [isPanelOpen, setIsPanelOpen] = useState(false);
                             //setIsModalOpen(true);
                               //  }}
                          >
-                    <span>Book Call</span>
+                    <span>Insights</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
                           </button>
                       </TooltipHelp>
