@@ -52,7 +52,7 @@ export function EldercareModalPopUpSmall({ isOpen, onClose, onStartOnboarding }:
         {/* Content Container */}
         <div className="p-6">
           {/* Icon Section */}
-          <div className="flex justify-center mb-4">
+          <div className="hidden sm:flex justify-center mb-4">
             <div className="relative">
               <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center shadow-lg shadow-red-500/30 rotate-3 transition-transform hover:rotate-6">
                 <ShieldCheck className="w-8 h-8 text-white" />
@@ -67,7 +67,7 @@ export function EldercareModalPopUpSmall({ isOpen, onClose, onStartOnboarding }:
           {/* Title Section */}
           <div className="text-center mb-4">
             <h2 className="text-2xl font-bold text-white mb-3 tracking-tight">
-              The Gap Finder
+              Try Gap Finder!
             </h2>
             
             {/* Headline - Prominent */}
@@ -117,7 +117,7 @@ export function EldercareModalPopUpSmall({ isOpen, onClose, onStartOnboarding }:
               onClick={handleOpenOnboarding}
               className="w-auto px-6 py-3 bg-gradient-to-r from-red-500 to-red-600 text-white text-base font-bold rounded-xl hover:from-red-600 hover:to-red-700 transition-all duration-300 shadow-xl shadow-red-500/30 hover:shadow-2xl hover:shadow-red-500/50 hover:scale-105 active:scale-95 transform"
             >
-              Run the 2-Minute Gap Finder
+              Discover Care Gaps in 2mins
             </button>
             
             <p className="text-xs text-gray-500">
