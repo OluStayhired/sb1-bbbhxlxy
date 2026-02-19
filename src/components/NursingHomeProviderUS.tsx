@@ -2,7 +2,8 @@ import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { Loader2, Search, X, Building2, 
         ChevronUp, ChevronDown, Calendar,
         ArrowLeft, ArrowRight, Star, Zap, Globe, Bed, Heart,
-        MapPin, ArrowUpDown, Clock, CircleDollarSign } from 'lucide-react';
+        MapPin, ArrowUpDown, Clock, CircleDollarSign, 
+        Lightbulb} from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import { TooltipExtended } from '/src/utils/TooltipExtended';
 import { TooltipHelp } from '/src/utils/TooltipHelp';
@@ -608,8 +609,8 @@ const [isPanelOpen, setIsPanelOpen] = useState(false);
                   className="hidden sm:table-cell px-4 py-3 text-left text-xs font-normal text-gray-700 tracking-wider cursor-pointer hover:bg-gray-100"
                   >
                     <div className="flex items-center text-gray-500 space-x-1">
-                      <span className="text-gray-400"><Calendar className="w-3.5 h-3.5"/></span>
-                      <span>Availability</span>
+                      <span className="text-gray-400"><Lightbulb className="w-3.5 h-3.5"/></span>
+                      <span>Insights</span>
                       
                     </div>
 
@@ -697,7 +698,7 @@ const [isPanelOpen, setIsPanelOpen] = useState(false);
                       </td>
 
                       <td className="hidden sm:table-cell px-2 items-center">
-                      <TooltipHelp text="⚡get more insights">  
+                      <TooltipHelp text="⚡get insights">  
                        <button
                            //onClick={openCommunityModal}
                             className="flex items-center space-x-1 px-2 py-2 bg-red-500 text-white rounded-lg hover:bg-red-500 transition-colors shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 group" 
