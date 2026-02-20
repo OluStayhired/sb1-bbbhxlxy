@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CalendarCheck, Calendar, PenSquare, Clock, Users, PenTool, Briefcase, Plus, Minus,Menu, MailCheck,
   Bot, CheckCircle,X, Send,Timer, Zap, ArrowRight, HeartPulse, Rocket, Search, Heart, PlusCircle,
-  Lightbulb, Sparkles, CircleDollarSign, Star, Target, MapPin, Check } from 'lucide-react';
+  Lightbulb, Sparkles, CircleDollarSign, Star, Target, MapPin, Check, Ambulance } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { AuthModal } from '../components/AuthModal';
 import BlueskyLogo from '../images/bluesky-logo.svg';
@@ -139,9 +139,17 @@ const handleLoginClick = () => {
           />
         </div>
       <main className="max-w-7xl mx-auto px-6 pb-32">
+
+      <div className="text-center mb-2">
+          <div className="mx-auto inline-flex mt-8 items-center space-x-2 bg-white px-4 py-2 rounded-full border border-red-200">
+            <Ambulance className="w-4 h-4 text-red-500" />
+            <span className="text-sm font-semibold text-gray-700">Nursing Home Auditor</span>
+          </div>
+        </div>
+
         <div className="text-center px-4 sm:px-6 md:px-8 lg:px-12 py-2 rounded-lg">
 
-    <h1 className="mt-24 text-3xl sm:text-5xl font-bold text-gray-700 mb-4">
+    <h1 className="mt-12 text-3xl sm:text-5xl font-bold text-gray-700 mb-4">
             Verify 
     {/*<span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Unstoppable Brands</span>*/}
             <span>
