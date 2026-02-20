@@ -716,10 +716,12 @@ end of old hero image */}
     Struggling with <br/> long-term care for mom?
   </h2>
   
-  <p className="text-xl sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
-    {/*We empower the modern workforce to make better caregiving decisions.*/}
-    {/*Get instant community support without wasting hours on calls.*/}  
-  If you recognize yourself in any of these scenarios, you need a reset.
+  <p className="hidden sm:inline text-xl sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
+      If you recognize yourself in any of the scenarios below, you need a reset.
+  </p>  
+
+  <p className="sm:hidden text-xl sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
+      If any of the scenarios below sound familiar, you need a reset.
   </p>  
 
   {/* 3x2 Grid of Cards */}
