@@ -535,8 +535,8 @@ shadow-red-300/60 hover:shadow-3xl border-4 border-red-200 hover:p-2 hover:borde
 
 {/*----------- starting adding main hero image (mobile)-----------*/}          
 
-{/*Image for Mobile Devices*/}
-<div className="sm:hidden w-full p-4 mt-2">
+{/*Hide Image for Mobile Devices*/}
+<div className="hidden w-full p-4 mt-2">
   <div className="grid grid-cols-1 h-[450px]">
      {/* Column 4: One image, spanning two rows */}
         <div className="col-span-1">
