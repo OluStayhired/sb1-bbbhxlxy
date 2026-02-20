@@ -67,13 +67,18 @@ export function EldercareModalPopUpSmall({ isOpen, onClose, onStartOnboarding }:
           {/* Title Section */}
           <div className="text-center mb-4">
             <h2 className="text-2xl font-bold text-white mb-3 tracking-tight">
-              Try Gap Finder!
+              Try Gap Finder 👇
             </h2>
             
             {/* Headline - Prominent */}
             <div className="mb-4 pb-4 border-b border-gray-800">
-              <p className="text-lg font-bold text-red-400 leading-tight">
-              Avoid $10,000/month care bills
+              <p className="hidden sm:inline text-lg font-bold text-red-400 leading-tight">
+                Avoid huge monthly care bills
+              </p>
+
+              <p className="sm:hidden text-lg font-bold text-red-400 leading-tight">
+                {/*Avoid $10,000/month care bills*/}
+                Fix Legal & Financial Gaps Faster
               </p>
             </div>
 
@@ -117,11 +122,12 @@ export function EldercareModalPopUpSmall({ isOpen, onClose, onStartOnboarding }:
               onClick={handleOpenOnboarding}
               className="w-auto px-6 py-3 bg-gradient-to-r from-red-500 to-red-600 text-white text-base font-bold rounded-xl hover:from-red-600 hover:to-red-700 transition-all duration-300 shadow-xl shadow-red-500/30 hover:shadow-2xl hover:shadow-red-500/50 hover:scale-105 active:scale-95 transform"
             >
-              Discover Care Gaps in 60 secs
+              Find Care Gaps Fast
             </button>
             
             <p className="text-xs text-gray-500">
-              No credit card required
+              {/*No credit card required*/}
+              Free . Secure . Fast 
             </p>
           </div>
         </div>

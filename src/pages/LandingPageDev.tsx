@@ -78,7 +78,15 @@ function LandingPageDev() {
 
 
   const [isEldercareModalOpen, setIsEldercareModalOpen] = useState(true);
-  const [isEldercareSmallModalOpen, setIsEldercareSmallModalOpen] = useState(true);
+  const [isEldercareSmallModalOpen, setIsEldercareSmallModalOpen] = useState(false);
+
+ useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsEldercareSmallModalOpen(true);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
 
 const handleLoginClick = () => {
