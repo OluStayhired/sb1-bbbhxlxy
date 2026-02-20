@@ -291,7 +291,7 @@ export function DementiaAssessment() {
     <div className="max-w-4xl mx-auto space-y-6">
       <div className="bg-gradient-to-r from-red-100 to-red-50 rounded-xl p-8 border border-red-100">
         <div className="flex items-start space-x-4">
-          <div className="p-2 sm:p-3 bg-red-100 rounded-full">
+          <div className="p-2 sm:p-3 bg-red-200 rounded-full">
             <Brain className="w-5 h-5 sm:w-8 sm:h-8 text-red-600" />
           </div>
           <div className="flex-1">
