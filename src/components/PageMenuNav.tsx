@@ -49,7 +49,7 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
           <div className="bg-red-100 rounded-full p-1 sm:p-2">
             <Target className="h-7 w-7 fill-white stroke-red-500 sm:h-9 sm:w-9" />
           </div>
-          <span className="text-2xl font-bold text-red-500 sm:text-3xl">poetiq</span>
+          <span className="text-2xl font-bold text-gray-700 sm:text-3xl">poetiq</span>
         </div>
       </a>
 

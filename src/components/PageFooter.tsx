@@ -11,7 +11,7 @@ export function PageFooter() {
             <div className="inline-flex bg-red-100 rounded-full p-0.5">
               <Target className="h-5 w-5 fill-white stroke-red-500" />
             </div>
-            <span className="text-xl font-bold text-red-500 sm:text-xl">poetiq</span>
+            <span className="text-xl font-bold text-gray-700 sm:text-xl">poetiq</span>
             
             <p className="text-sm text-gray-600">
               {/*The best community for career professionals struggling with eldercare!*/}
