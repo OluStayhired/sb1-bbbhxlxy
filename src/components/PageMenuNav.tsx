@@ -225,12 +225,13 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
                   
                   {/* Title */}
                   <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-                    Dementia Assessment Test
+                    Cognitive Baseline Test
                   </h3>
                   
                   {/* Description */}
                   <p className="text-sm text-gray-600 leading-relaxed">
-                  Take a comprehensive cognitive test to evaluate memory and thinking skills.
+                  {/*Take a comprehensive cognitive test to evaluate memory and thinking skills.*/}
+                  Determine when medical and legal triggers are required for advanced care.
                   </p>
                 </Link>
 
@@ -330,7 +331,7 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
         
         {/* Title */}
         <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-          Beneftits Application Assistant
+          Care Eligibility Automator
         </h3>
         
         {/* Description */}
@@ -503,7 +504,7 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
                   className="flex text-sm items-center space-x-2 px-4 py-2 hover:bg-gray-50 hover:text-red-500 rounded-lg"
                 >
                   <CheckCircle className="w-3.5 h-3.5" />
-                  <span>Take Dementia Test</span>
+                  <span>Take Cognitive Test</span>
                 </Link>
               </div>
             </div>

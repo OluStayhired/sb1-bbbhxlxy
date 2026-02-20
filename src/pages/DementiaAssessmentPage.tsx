@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CalendarCheck, Calendar, PenSquare, Clock, Users, PenTool, Briefcase, Plus, Minus,Menu, MailCheck,
   Bot, CheckCircle,X, Send,Timer, Zap, ArrowRight, HeartPulse, Rocket, Search, Heart, PlusCircle,
-  Lightbulb, Sparkles, CircleDollarSign, Star, MapPin, Check } from 'lucide-react';
+  Lightbulb, Sparkles, CircleDollarSign, Star, MapPin, Check, TextSearch } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { AuthModal } from '../components/AuthModal';
 import BlueskyLogo from '../images/bluesky-logo.svg';
@@ -143,15 +143,21 @@ const handleLoginClick = () => {
         </div>
 
       <main className="max-w-7xl mx-auto px-6 pb-32">
+      <div className="text-center mb-2">
+        <div className="mx-auto inline-flex mt-8 items-center space-x-2 bg-white px-4 py-2 rounded-full border border-red-200">
+            <TextSearch className="w-4 h-4 text-red-500" />
+            <span className="text-sm font-semibold text-gray-700">Cognitive Baseline Test</span>
+          </div>
+        </div>
         <div className="text-center px-4 sm:px-6 md:px-8 lg:px-12 py-2 rounded-lg">
 
-    <h1 className="mt-24 text-3xl sm:text-5xl font-bold text-gray-900 mb-4">
+    <h1 className="mt-12 text-3xl sm:text-5xl font-bold text-gray-900 mb-4">
             Take
     {/*<span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Unstoppable Brands</span>*/}
             <span>
-             <span className="bg-gradient-to-l from-red-400 via-red-400 to-red-500  bg-clip-text text-transparent"> Dementia <br className="sm:hidden"/> 
+             <span className="bg-gradient-to-l from-red-400 via-red-400 to-red-500  bg-clip-text text-transparent"> Cognitive <br className="sm:hidden"/> 
              </span> 
-              Screening Tests ✅
+              Screening Tests
               </span>
              <p className="block text-sm font-normal sm:text-xl sm:font-normal text-gray-600 leading-tight mt-1 sm:mt-3">
 
@@ -183,8 +189,8 @@ const handleLoginClick = () => {
               className="w-full h-full object-cover object-[30%_50%]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
-                <h3 class="text-xl font-bold drop-shadow-lg">Book Emergency <br/> Caregivers</h3>
+            <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
+                <h3 className="text-xl font-bold drop-shadow-lg">Book Emergency <br/> Caregivers</h3>
             </div>
           </div>
         </div>

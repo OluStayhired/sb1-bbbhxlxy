@@ -289,10 +289,10 @@ export function DementiaAssessment() {
 
   const renderIntroScreen = () => (
     <div className="max-w-4xl mx-auto space-y-6">
-      <div className="bg-gradient-to-r from-red-50 to-pink-50 rounded-xl p-8 border border-red-100">
+      <div className="bg-gradient-to-r from-red-100 to-red-50 rounded-xl p-8 border border-red-100">
         <div className="flex items-start space-x-4">
-          <div className="p-3 bg-red-100 rounded-full">
-            <Brain className="w-8 h-8 text-red-600" />
+          <div className="p-2 sm:p-3 bg-red-100 rounded-full">
+            <Brain className="w-5 h-5 sm:w-8 sm:h-8 text-red-600" />
           </div>
           <div className="flex-1">
             <h2 className="text-2xl font-bold text-gray-900 mb-2">Get Started</h2>
@@ -301,26 +301,26 @@ export function DementiaAssessment() {
               of dementia or cognitive changes in their loved ones. Based on validated screening tools (AD8 and 
               GPCOG), this assessment takes about 5-10 minutes to complete.
             </p>
-            <div className="bg-white rounded-lg p-4 border border-red-100">
+            <div className="bg-white shadow shadow-2xl rounded-lg p-4 border border-red-100">
               <h3 className="font-semibold text-gray-900 mb-2 flex items-center space-x-2">
-                <Info className="w-4 h-4 text-blue-600" />
-                <span>Important Information</span>
+                <Info className="w-4 h-4 text-red-600" />
+                <span className="text-red-600">Important Information</span>
               </h3>
               <ul className="space-y-2 text-sm text-gray-700">
                 <li className="flex items-start space-x-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-white fill-red-500 mt-0.5 flex-shrink-0" />
                   <span>Compare the person's current abilities to how they functioned 3-5 years ago</span>
                 </li>
                 <li className="flex items-start space-x-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-white fill-red-500 mt-0.5 flex-shrink-0" />
                   <span>Answer based on your observations as a caregiver or close family member</span>
                 </li>
                 <li className="flex items-start space-x-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-white fill-red-500 mt-0.5 flex-shrink-0" />
                   <span>This is a screening tool only - not a diagnosis</span>
                 </li>
                 <li className="flex items-start space-x-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-white fill-red-500 mt-0.5 flex-shrink-0" />
                   <span>The results will include recommendations on whether professional evaluation is needed</span>
                 </li>
               </ul>
@@ -329,7 +329,7 @@ export function DementiaAssessment() {
         </div>
       </div>
 
-      <div className="bg-white rounded-xl p-6 border border-gray-200">
+      <div className="bg-white rounded-xl p-6 border border-red-300">
         <h3 className="font-semibold text-gray-900 mb-4">Before You Begin</h3>
         <div className="space-y-4">
           <div>
@@ -487,11 +487,13 @@ export function DementiaAssessment() {
     <div className="min-h-screen py-12 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
+        {/*
         <div className="text-center mb-8">
           <div className="inline-flex items-center space-x-2 bg-white px-4 py-2 rounded-full border border-gray-200 mb-4">
             <Heart className="w-4 h-4 text-red-500" />
             <span className="text-sm font-medium text-gray-700">Cognitive Assessment Tool</span>
           </div>
+          */}
           {/*
           <h1 className="text-4xl font-bold text-gray-900 mb-2">
             Early Dementia Screening Assessment
@@ -499,8 +501,9 @@ export function DementiaAssessment() {
           <p className="text-lg text-gray-600">
             A validated caregiver questionnaire to identify cognitive changes
           </p>
-          */}
+          
         </div>
+        */}
 
         {/* Content */}
         {currentStep === 'intro' && renderIntroScreen()}
