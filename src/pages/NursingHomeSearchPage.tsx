@@ -44,7 +44,9 @@ export function NursingHomeSearchPage() {
   const [isOnboardingModalOpen, setIsOnboardingModalOpen] = useState(false);
   const [isDashboardModalOpen, setIsDashboardModalOpen] = useState(false);  // ADD THIS LINE
   
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
 const handleLoginClick = () => {
     // This navigates to an external URL, not an internal route

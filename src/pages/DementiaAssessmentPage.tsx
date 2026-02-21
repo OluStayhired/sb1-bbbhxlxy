@@ -44,7 +44,9 @@ export function DementiaAssessmentPage() {
   const [isDashboardModalOpen, setIsDashboardModalOpen] = useState(false);  // ADD THIS LINE
 
  
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
 const handleLoginClick = () => {
     // This navigates to an external URL, not an internal route
@@ -127,8 +129,8 @@ const handleLoginClick = () => {
       <>
 
       <div id="top_page" className="min-h-screen bg-white">
-                {/*--- Replaced Menu Code with Menu Component ---- */}
-                <div className="hidden sm:block sticky top-0 z-50 bg-white/50 backdrop-blur-sm shadow-sm">
+        {/*--- Replaced Menu Code with Menu Component ---- */}
+        <div className="hidden sm:block sticky top-0 z-50 bg-white/50 backdrop-blur-sm shadow-sm">
           <PageMenuNav 
             onOpenCommunityModal={openCommunityModal} 
             onOpenOnboardingModal={openOnboardingModal}

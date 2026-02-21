@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { 
   Shield, 
@@ -37,6 +37,10 @@ export function MedicaidCoPilotPage() {
   const [isOnboardingModalOpen, setIsOnboardingModalOpen] = useState(false);
 
   const [isDashboardModalOpen, setIsDashboardModalOpen] = useState(false);  // ADD THIS LINE
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const openCommunityModal = () => {
     setIsCommunityModalOpen(true);
