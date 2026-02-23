@@ -987,7 +987,7 @@ end of old hero image */}
   
   <h2 className="hidden sm:block text-2xl text-red-400 sm:text-4xl md:text-5xl font-bold leading-tight mt-4 mb-4">
     {/*How we make it stress-free for you*/}
-    How we handle the logistics for you
+    How we handle the logistics
   </h2>
 
   <h2 className="sm:hidden text-2xl text-red-400 sm:text-4xl md:text-5xl font-bold leading-tight mt-4 mb-4">
