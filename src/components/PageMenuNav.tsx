@@ -44,19 +44,21 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
 
   return (
     <nav className="px-4 py-3 flex items-center justify-between sm:px-6 sm:py-4">
-      <a href="/dev">
+      <Link 
+        to="/dev">
         <div className="flex items-center space-x-2">
           <div className="bg-red-100 rounded-full p-1 sm:p-2">
             <Target className="h-7 w-7 fill-white stroke-red-500 sm:h-9 sm:w-9" />
           </div>
           <span className="text-2xl font-bold text-gray-700 sm:text-3xl">poetiq</span>
         </div>
-      </a>
+      </Link>
 
       
       {/* Desktop Navigation Buttons */}
       <div className="hidden sm:flex items-center space-x-4">
         <div className="items-center flex justify-center space-x-2">
+          {/*
           <button
             onClick={() => {
               window.location.href = '/dev#HowItWorks';
@@ -66,7 +68,27 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
           >
             How it Works ❤️
           </button>
+          */}
 
+          <Link
+            to="/dev#HowItWorks"
+            onClick={(e) => {
+              setIsMobileMenuOpen(false);
+              // If already on /dev page, manually scroll to element
+              if (window.location.pathname === '/dev') {
+                e.preventDefault();
+                const element = document.getElementById('HowItWorks');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }
+            }}
+            className="max-w-sm px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
+          >
+            How it Works ❤️
+          </Link>
+
+          {/*
           <button
             onClick={() => {
               window.location.href = '/dev/#OperationalSupport';
@@ -76,7 +98,28 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
           >
             Quick Tools 💛
           </button>
-          
+          */}
+
+          <Link
+            to="/dev#OperationalSupport"
+            onClick={(e) => {
+              setIsMobileMenuOpen(false);
+              // If already on /dev page, manually scroll to element
+              if (window.location.pathname === '/dev') {
+                e.preventDefault();
+                const element = document.getElementById('OperationalSupport');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }
+            }}
+            className="max-w-sm px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
+          >
+              Quick Tools 💛
+
+            </Link>   
+
+
           {/* START: Care Tools Dropdown Menu */}
           <div className="relative group">
             
@@ -462,6 +505,25 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
             Ask Ellie 💛
           </button>
 
+          <Link
+            to="/dev#HowItWorks"
+            onClick={(e) => {
+              setIsMobileMenuOpen(false);
+              // If already on /dev page, manually scroll to element
+              if (window.location.pathname === '/dev') {
+                e.preventDefault();
+                const element = document.getElementById('HowItWorks');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }
+            }}
+            className="max-w-sm px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
+          >
+            How it Works ❤️
+          </Link>
+
+          {/*    
           <button
             onClick={() => {
               window.location.href = '/dev/#HowItWorks';
@@ -471,6 +533,7 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
             >
             How it Works ❤️
           </button>
+            */}
 
           {/* START: Care Tools Dropdown Menu */}
           <div className="relative group">
