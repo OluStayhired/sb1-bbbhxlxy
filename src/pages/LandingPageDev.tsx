@@ -88,6 +88,22 @@ function LandingPageDev() {
     return () => clearTimeout(timer);
   }, []);
 
+  // Add this useEffect to handle hash scrolling when navigating from other pages
+  useEffect(() => {
+    // Check if there's a hash in the URL
+    if (window.location.hash) {
+      // Small delay to ensure DOM is fully rendered
+      const timeoutId = setTimeout(() => {
+        const id = window.location.hash.substring(1); // Remove the '#'
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+      
+      return () => clearTimeout(timeoutId);
+    }
+  }, []);
 
 const handleLoginClick = () => {
     // This navigates to an external URL, not an internal route
