@@ -983,7 +983,7 @@ end of old hero image */}
 
 {/* -------------------- Start How It Works Section -------------------- */}
 
-<section id="HowItWorks" className="mt-32 text-center">
+<section id="HowItWorks" className="mt-32 text-center scroll-mt-24">
   
   <h2 className="hidden sm:block text-2xl text-red-400 sm:text-4xl md:text-5xl font-bold leading-tight mt-4 mb-4">
     {/*How we make it stress-free for you*/}
@@ -1341,7 +1341,7 @@ end of old hero image */}
 
 
 {/*----------------- Start Caregiving Support ----------------------- */}
-<section id="OperationalSupport" className="text-center mt-32">
+<section id="OperationalSupport" className="text-center mt-32 scroll-mt-24">
   
   <h2 className="hidden sm:block text-2xl text-red-400 sm:text-4xl md:text-5xl font-bold leading-tight mt-4 mb-4">
     Let's move you from chaos to systems
