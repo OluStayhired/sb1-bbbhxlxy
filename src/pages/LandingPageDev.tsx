@@ -80,6 +80,10 @@ function LandingPageDev() {
   const [isEldercareModalOpen, setIsEldercareModalOpen] = useState(true);
   const [isEldercareSmallModalOpen, setIsEldercareSmallModalOpen] = useState(false);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
  useEffect(() => {
     const timer = setTimeout(() => {
       setIsEldercareSmallModalOpen(true);
