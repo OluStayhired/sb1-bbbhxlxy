@@ -326,7 +326,7 @@ export function EligibilityPillModal() {
 
       {/* Expanded Chat Modal */}
       {isOpen && (
-        <div className={`fixed bottom-6 right-6 z-40 transition-all duration-300 ${isMinimized ? 'w-80' : 'w-96 sm:w-[480px]'}`}>
+        <div className={`fixed bottom-6 right-6 z-40 transition-all duration-300 ${isMinimized ? 'w-80' : 'w-80 sm:w-[480px]'}`}>
           {/* Quota Limit Alert Popup */}
           {showQuotaAlert && (
             <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 rounded-xl">
@@ -417,13 +417,13 @@ export function EligibilityPillModal() {
             {!isMinimized && (
               <>
                 {/* Confidence Message Banner */}
-                <div className="bg-gradient-to-r from-red-50 to-rose-50 px-4 py-3 border-b border-red-100">
+                <div className="hidden sm:block bg-gradient-to-r from-red-50 to-rose-50 px-4 py-3 border-b border-red-100">
                   <div className="flex items-start space-x-2">
                     <Shield className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
                     <div>
                       <p className="text-xs text-gray-700 leading-relaxed">
                         <span className="font-semibold text-red-600">Expert guidance at your fingertips.</span> I'll answer all your questions about healthcare insurance and Medicaid eligibility with accuracy and care.
-                      </p>
+                      </p>                 
                     </div>
                   </div>
                 </div>
@@ -498,7 +498,7 @@ export function EligibilityPillModal() {
                 </div>
 
                 {/* Suggested Questions */}
-                <div className="px-4 py-2 bg-gray-50 border-t border-gray-200">
+                <div className="hidden sm:block px-4 py-2 bg-gray-50 border-t border-gray-200">
                   <div className="flex flex-wrap gap-2">
                     {suggestedQuestions.map((question, index) => (
                       <button
