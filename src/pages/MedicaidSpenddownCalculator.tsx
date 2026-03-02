@@ -129,10 +129,11 @@ export function MedicaidSpenddownCalculator() {
             <div className="text-center mb-16">
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
                 {/*Eliminate the Financial Guesswork*/}
-                Know When Financial Support Gets Triggered
+                {/*Know When Financial Support Gets Triggered*/}
+                Know Exactly When Financial Help Arrives
               </h2>
               <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Get a data-driven forecast on when your out-of-pocket obligation ends.
+              Get a data-driven forecast. Discover when to stop draining your personal savings.
               </p>
             </div>
 
