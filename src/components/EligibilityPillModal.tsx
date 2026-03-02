@@ -365,7 +365,9 @@ export function EligibilityPillModal() {
             </div>
           )}
 
-          <div className="bg-white rounded-xl shadow-2xl flex flex-col overflow-hidden border border-gray-200">
+          {/*<div className="bg-white rounded-xl shadow-2xl flex flex-col overflow-hidden border border-gray-200">*/}
+          <div className="bg-white rounded-xl shadow-2xl flex flex-col overflow-hidden border border-gray-200 max-h-[calc(100vh-100px)]">
+
             {/* Header */}
             <div className="flex items-center justify-between px-4 py-3 bg-gradient-to-r from-red-500 to-red-600 border-b border-red-400">
               <div className="flex items-center space-x-3">
@@ -427,7 +429,9 @@ export function EligibilityPillModal() {
                 </div>
 
                 {/* Messages Area */}
-                <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-gray-50 h-[400px]">
+                {/*<div className="flex-1 overflow-y-auto p-4 space-y-3 bg-gray-50 h-[400px]">*/}
+                <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-gray-50 min-h-[300px] max-h-[400px]">
+
                   {messages.map((message) => (
                     <div
                       key={message.id}
