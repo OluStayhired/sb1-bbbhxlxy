@@ -430,7 +430,7 @@ export function EligibilityPillModal() {
 
                 {/* Messages Area */}
                 {/*<div className="flex-1 overflow-y-auto p-4 space-y-3 bg-gray-50 h-[400px]">*/}
-                <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-gray-50 min-h-[300px] max-h-[310px]">
+                <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-gray-50 min-h-[300px] max-h-[300px]">
 
                   {messages.map((message) => (
                     <div
