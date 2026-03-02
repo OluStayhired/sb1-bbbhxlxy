@@ -20,7 +20,8 @@ import {
   HeartPulse,
   HandHeart,
   MapPin,
-  ShieldCheck
+  ShieldCheck,
+  Target
 } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import { z } from 'zod';
@@ -314,111 +315,7 @@ const calculateCognitiveDrag = async (
     }
     return null;
   };
-/* --------- Start old HandleNext Function --------- */
-  {/*
-  const handleNext = () => {
-    // Validation for each step
-    if (currentStep === 0 && !firstName.trim()) {
-      setError('Please enter your first name');
-      return;
-    }
-    if (currentStep === 1 && !elderRelation) {
-      setError('Please select your relationship');
-      return;
-    }
-    if (currentStep === 2 && !country) {
-      setError('Please select your country');
-      return;
-    }
-    
-    // Validate question answers
-    if (currentStep >= 3 && currentStep < 3 + questions.length) {
-      const questionIndex = currentStep - 3;
-      const question = questions[questionIndex];
-      if (!answers[question.question_id]) {
-        setError('Please select an answer');
-        return;
-      }
-    }
 
-    setError('');
-    if (currentStep < totalSteps - 1) {
-      setCurrentStep(currentStep + 1);
-    }
-  };
-*/}
-  /* ---- End Old HandleNext Function -----*/
-
-  /* ---- Start HandleNext Function that Saves Answers -----*/
-  {/*
-  const handleSaveNext = async () => {
-  // Validation for each step
-  if (currentStep === 0 && !firstName.trim()) {
-    setError('Please enter your first name');
-    return;
-  }
-  if (currentStep === 1 && !elderRelation) {
-    setError('Please select your relationship');
-    return;
-  }
-  if (currentStep === 2 && !country) {
-    setError('Please select your country');
-    return;
-  }
-  
-  // Validate question answers
-  if (currentStep >= 3 && currentStep < 3 + questions.length) {
-    const questionIndex = currentStep - 3;
-    const question = questions[questionIndex];
-    if (!answers[question.question_id]) {
-      setError('Please select an answer');
-      return;
-    }
-  }
-
-  // Save data to supabase
-  try {
-    const dataToSave = {
-      session_id: sessionId,
-      firstname: firstName || null,
-      relation: elderRelation || null,
-      country: country || null,
-      raw_answers: answers,
-      created_at: new Date().toISOString()
-    };
-
-    // Upsert: Insert new record or update existing one based on session_id
-    const { data, error: saveError } = await supabase
-      .from('eldercare_onboard_responses')
-      .upsert(dataToSave, { 
-        onConflict: 'session_id',
-        ignoreDuplicates: false 
-      })
-      .select();
-
-    if (saveError) {
-      console.error('Error saving onboarding data:', saveError);
-      setError('Failed to save your progress. Please try again.');
-      return;
-    }
-
-    console.log('Data saved successfully:', data);
-    
-  } catch (err) {
-    console.error('Unexpected error saving data:', err);
-    setError('An unexpected error occurred. Please try again.');
-    return;
-  }
-
-  // Proceed to next step after successful save
-  setError('');
-  if (currentStep < totalSteps - 1) {
-    setCurrentStep(currentStep + 1);
-  }
-};
-
-*/}
- /* ---- End HandleNext Function that Saves Answers -----*/
 
    /* ---- Start HandleNext Function that Calculates Phase and Cognitive Drag -----*/
   const handleSaveNext = async () => {
@@ -598,15 +495,16 @@ const calculateCognitiveDrag = async (
             <div className="space-y-6 animate-fadeIn">
               <div className="text-center mb-8">
                 <div className="mx-auto w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-4">
-                  {/*<Sparkles className="w-8 h-8 text-red-500" />*/}
-                  <ShieldCheck className="w-10 h-10 fill-red-400 justify-center align-top text-red-50"/>
-                </div>
+                  
+                  <Target className="w-10 h-10 fill-red-500 justify-center align-top text-red-50"/>
+                </div> 
                 <h2 className="text-3xl font-bold text-gray-700 mb-3">
-                The <span className="text-red-400">Gap Finder</span>
+                  <span className="text-gray-700 text-3xl">Care </span>
+                  <span className="text-red-400">Gap Finder</span>
                 </h2>
                 <p className="text-gray-600 text-lg">
-                  {/*Let's personalize your experience and build your custom dashboard*/}               
-                  Discover hidden gaps in your parents' long-term care plans
+                             
+                  Discover hidden gaps in your parents' long-term care setup
                 </p>
               </div>
 
@@ -643,46 +541,6 @@ const calculateCognitiveDrag = async (
             </div>
           )}
 
-          {/* Step 1: Elder Relation */}
-          {/*
-          {currentStep === 1 && (
-            <div className="space-y-6 animate-fadeIn">
-              <div className="text-center mb-8">
-                <div className="mx-auto w-16 h-16 bg-red-50 rounded-full flex items-center justify-center mb-4">
-                  <Heart className="w-8 h-8 text-red-500" />
-                </div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-3">
-                  Hi {firstName}!
-                </h2>
-                <p className="text-gray-600 text-lg">
-                  Who are you caring for?
-                </p>
-              </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                {relationOptions.map((option) => {
-                  const Icon = option.icon;
-                  return (
-                    <button
-                      key={option.value}
-                      onClick={() => setElderRelation(option.value)}
-                      className={`p-6 rounded-lg border-2 transition-all duration-200 hover:shadow-lg ${
-                        elderRelation === option.value
-                          ? 'border-red-500 bg-red-50 shadow-md'
-                          : 'border-gray-200 hover:border-red-300'
-                      }`}
-                    >
-                      <Icon className={`w-8 h-8 mx-auto mb-3 ${
-                        elderRelation === option.value ? 'text-red-500' : 'text-gray-400'
-                      }`} />
-                      <p className="text-lg font-semibold text-gray-900">{option.label}</p>
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-          )}
-          */}
 
           {currentStep === 1 && (
             <div className="space-y-6 animate-fadeIn">

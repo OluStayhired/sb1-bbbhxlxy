@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CalendarCheck, Calendar, PenSquare, Clock, Users, PenTool, Briefcase, Plus, Minus,Menu, MailCheck,
   Bot, CheckCircle,X, Send,Timer, Zap, ArrowRight, HeartPulse, Rocket, Search, Heart, PlusCircle,
-  Lightbulb, Sparkles, CircleDollarSign, Star, MapPin, Check, TextSearch } from 'lucide-react';
+  Lightbulb, Sparkles, CircleDollarSign, Star, Brain, MapPin, TextSearch } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { AuthModal } from '../components/AuthModal';
 import BlueskyLogo from '../images/bluesky-logo.svg';
@@ -19,12 +19,13 @@ import { CommunityModal } from '../components/CommunityModal.tsx';
 import { Link } from 'react-router-dom';
 //import { Helmet } from 'react-helmet-async'; // CRITICAL: For dynamic meta tags
 import { OurStoryTimeline } from '../components/OurStoryTimeline';
+//import { NursingHomeProviderUS } from '../components/NursingHomeProviderUS.tsx';
+//import { HomeHealthcareAgency } from '../components/HomeHealthcareAgency.tsx';
 import { DementiaAssessment } from '../components/DementiaAssessment';
 import { PageMenuNav } from '../components/PageMenuNav';
 import { PageFooter } from '../components/PageFooter';
-import { OnboardingQuestionsModal } from '../components/OnboardingQuestionsModal';
-import { EldercareGapDashboardModal } from '../components/EldercareGapDashboardModal';  // ADD THIS LINE
 
+import { OnboardingQuestionsModal } from '../components/OnboardingQuestionsModal';
 
 
 export function DementiaAssessmentPage() {
@@ -41,13 +42,11 @@ export function DementiaAssessmentPage() {
   const [isCommunityModalOpen, setIsCommunityModalOpen] = useState(false);
   const [isCommunitySuccessModalOpen, setIsCommunitySuccessModalOpen] = useState(false);
   const [isOnboardingModalOpen, setIsOnboardingModalOpen] = useState(false);
-  const [isDashboardModalOpen, setIsDashboardModalOpen] = useState(false);  // ADD THIS LINE
 
- 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
+  
 const handleLoginClick = () => {
     // This navigates to an external URL, not an internal route
     window.location.href = 'https://app.sosavvy.so/login';
@@ -82,30 +81,15 @@ const handleLoginClick = () => {
     setIsCommunityModalOpen(false);
   };
 
-  const openOnboardingModal = () => {
-    setIsOnboardingModalOpen(true);
-  };
+   const openOnboardingModal = () => {
+  setIsOnboardingModalOpen(true);
+};
+
+const closeOnboardingModal = () => {
+  setIsOnboardingModalOpen(false);
+};
+
   
-  const closeOnboardingModal = () => {
-    setIsOnboardingModalOpen(false);
-  };
-  
-  const openDashboardModal = () => {
-    setIsDashboardModalOpen(true);
-  };
-  
-  const closeDashboardModal = () => {
-    setIsDashboardModalOpen(false);
-  };  
-  
-      // GET SESSION ID FROM SESSION STORAGE
-  const getSessionId = (): string => {
-    return sessionStorage.getItem('eldercare_session_id') || '';
-  };       
-              
-  
-  
-       
   const handleGoogleLogin = async () => {
   try {
     await signInWithGoogle(); // This would be the new function from AuthContext
@@ -123,13 +107,12 @@ const handleLoginClick = () => {
   // Consider resetting any modal-related state here if needed
 };
 
-      
   
   return (
       <>
 
       <div id="top_page" className="min-h-screen bg-white">
-        {/*--- Replaced Menu Code with Menu Component ---- */}
+          {/*--- Replaced Menu Code with Menu Component ---- */}
         <div className="hidden sm:block sticky top-0 z-50 bg-white/50 backdrop-blur-sm shadow-sm">
           <PageMenuNav 
             onOpenCommunityModal={openCommunityModal} 
@@ -144,7 +127,9 @@ const handleLoginClick = () => {
           />
         </div>
 
+
       <main className="max-w-7xl mx-auto px-6 pb-32">
+        
       <div className="text-center mb-2">
         <div className="mx-auto inline-flex mt-8 items-center space-x-2 bg-white px-4 py-2 rounded-full border border-red-200">
             <TextSearch className="w-4 h-4 text-red-500" />
@@ -154,18 +139,16 @@ const handleLoginClick = () => {
         <div className="text-center px-4 sm:px-6 md:px-8 lg:px-12 py-2 rounded-lg">
 
     <h1 className="mt-12 text-3xl sm:text-5xl font-bold text-gray-700 mb-4">
-            Take
-    {/*<span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Unstoppable Brands</span>*/}
+      Take a
             <span>
-             <span className="bg-gradient-to-l from-red-400 via-red-400 to-red-500  bg-clip-text text-transparent"> Cognitive <br className="sm:hidden"/> 
-             </span> 
-              Screening Tests
+             <span className="bg-gradient-to-l from-red-400 via-red-400 to-red-500  bg-clip-text text-transparent"> Cognitive <br className="sm:hidden"/>                 
+             Screening</span> Test
               </span>
              <p className="block text-sm font-normal sm:text-xl sm:font-normal text-gray-600 leading-tight mt-1 sm:mt-3">
 
                {/*<span className="sm:hidden font-normal">Join a network of career professionals navigating eldercare together</span>  */}
-            <span className="sm:hidden font-normal">A validated caregiver questionnaire to identify cognitive changes</span>   
-          <span className="hidden sm:inline font-normal">A validated caregiver questionnaire to identify cognitive changes</span> 
+            <span className="sm:hidden font-normal">Identify early signs of decline using validated clinical screening tools</span>   
+          <span className="hidden sm:inline font-normal">Identify early signs of decline using validated clinical screening tools <br/> to determine if medical intervention is needed.</span> 
          </p>
             
           </h1>
@@ -180,7 +163,7 @@ const handleLoginClick = () => {
 
           
 {/*Image for Mobile Devices*/}
-<div className="sm:hidden w-full p-4 mt-8">
+<div className="hidden w-full p-4 mt-8">
   <div className="grid grid-cols-1 h-[450px]">
      {/* Column 4: One image, spanning two rows */}
         <div className="col-span-1">
@@ -191,8 +174,8 @@ const handleLoginClick = () => {
               className="w-full h-full object-cover object-[30%_50%]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
-            <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
-                <h3 className="text-xl font-bold drop-shadow-lg">Book Emergency <br/> Caregivers</h3>
+            <div class="absolute bottom-0 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-20 group-hover:opacity-100">
+                <h3 class="text-xl font-bold drop-shadow-lg">Book Emergency <br/> Caregivers</h3>
             </div>
           </div>
         </div>
@@ -267,9 +250,9 @@ const handleLoginClick = () => {
   {/*---------------------------------End Final Call to Action Section-----------------------------*/}      
 
 {/*----------------------Start Footer - Full Foot Breakdown ------------------------------ */}
-
-<PageFooter />
-
+    <PageFooter 
+      onOpenOnboardingModal={openOnboardingModal}
+    />  
 </main>
 
       
@@ -295,19 +278,10 @@ const handleLoginClick = () => {
       />
 
          {/* Onboarding Questions Modal */}
-      <OnboardingQuestionsModal
+        <OnboardingQuestionsModal
           isOpen={isOnboardingModalOpen}
           onClose={closeOnboardingModal}
-          onDashboardOpen={openDashboardModal} 
           />
-
-            <EldercareGapDashboardModal
-  isOpen={isDashboardModalOpen}
-  onClose={closeDashboardModal}
-  sessionId={getSessionId()}
-/> 
-  
-  
         
 {isWaitlistSuccessModalOpen ? (
   <div className="fixed top-4 right-4 bg-white rounded-lg shadow-lg border border-green-100 p-4 flex items-center space-x-3 animate-fade-in z-[9999]">

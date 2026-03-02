@@ -25,7 +25,12 @@ import {
   CircleDollarSign,
   Scale,
   Brain,
-  Target
+  Target,
+  Workflow,
+  Ambulance,
+  Glasses,
+  Microscope,
+  TextSearch
 } from 'lucide-react';
 
 
@@ -39,28 +44,51 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
 
   return (
     <nav className="px-4 py-3 flex items-center justify-between sm:px-6 sm:py-4">
-      <a href="/dev">
+      <Link 
+        to="/dev">
         <div className="flex items-center space-x-2">
-          <div className="bg-red-100 rounded-full p-1 sm:p-1.5">
+          <div className="bg-red-100 rounded-full p-1 sm:p-2">
             <Target className="h-7 w-7 fill-white stroke-red-500 sm:h-9 sm:w-9" />
           </div>
-          <span className="text-2xl font-bold text-red-500 sm:text-3xl">poetiq</span>
+          <span className="text-2xl font-bold text-gray-700 sm:text-3xl">poetiq</span>
         </div>
-      </a>
+      </Link>
 
+      
       {/* Desktop Navigation Buttons */}
       <div className="hidden sm:flex items-center space-x-4">
         <div className="items-center flex justify-center space-x-2">
-        <button
+          {/*
+          <button
             onClick={() => {
-              window.location.href = '/dev/#HowItWorks';
+              window.location.href = '/dev#HowItWorks';
               setIsMobileMenuOpen(false);
             }}
             className="max-w-sm px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
           >
             How it Works ❤️
           </button>
+          */}
 
+          <Link
+            to="/dev#HowItWorks"
+            onClick={(e) => {
+              setIsMobileMenuOpen(false);
+              // If already on /dev page, manually scroll to element
+              if (window.location.pathname === '/dev') {
+                e.preventDefault();
+                const element = document.getElementById('HowItWorks');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }
+            }}
+            className="max-w-sm px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
+          >
+            How it Works ❤️
+          </Link>
+
+          {/*
           <button
             onClick={() => {
               window.location.href = '/dev/#OperationalSupport';
@@ -70,9 +98,31 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
           >
             Quick Tools 💛
           </button>
-          
+          */}
+
+          <Link
+            to="/dev#OperationalSupport"
+            onClick={(e) => {
+              setIsMobileMenuOpen(false);
+              // If already on /dev page, manually scroll to element
+              if (window.location.pathname === '/dev') {
+                e.preventDefault();
+                const element = document.getElementById('OperationalSupport');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }
+            }}
+            className="max-w-sm px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
+          >
+              Quick Tools 💛
+
+            </Link>   
+
+
           {/* START: Care Tools Dropdown Menu */}
           <div className="relative group">
+            
             {/* Menu Header - Care Tools */}
             <button className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">
               Free Care Tools 🧡
@@ -85,7 +135,7 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
                 {/* Card 1: Readiness Audit*/}
                 <div
                           onClick={onOpenOnboardingModal}
-                          className="group/card cursor-pointer flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-teal-50 hover:to-green-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-teal-200"
+                          className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-teal-50 hover:to-green-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent cursor-pointer hover:border-teal-200"
                           >
                         {/* Icon Container */}
                         <div className="flex items-center justify-center w-14 h-14 bg-teal-100 rounded-full mb-4 group-hover/card:bg-teal-200 transition-colors duration-300">
@@ -129,7 +179,9 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
                  {/* Description */}
                   <p className="text-sm text-gray-600 leading-relaxed">
                   {/*Navigate complex Long-Term Care Insurance eligibility issues in real-time. */}
-                  Navigate state specific long-term care insurance eligibility issues with <b>Ellie</b>.
+                    {/*Navigate state specific long-term care insurance eligibility issues with <b>Ellie</b>.*/}
+
+                  Get answers to complex Medicaid, VA & state-specific eligibility rules with <b>Ellie</b>.
                   </p>
                 </Link>
 
@@ -168,17 +220,18 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
                 >
                   {/* Icon Container */}
                   <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
-                    <MapPin className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
+                    <Microscope className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
                   </div>
                   
                   {/* Title */}
                   <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-                    Caregivers Near Me
+                    Care Agency Inspector
                   </h3>
                   
                   {/* Description */}
                   <p className="text-sm text-gray-600 leading-relaxed">
-                  Discover rated caregiving agencies close to you. Search 12,500 providers.
+                    {/*Discover rated caregiving agencies close to you. Search 12,500 providers.*/}
+                  Inspect agencies by clinical outcomes in mobility, safety and patient dignity.
                   </p>
                 </Link>
 
@@ -189,17 +242,17 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
                 >
                   {/* Icon Container */}
                   <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
-                    <Search className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
+                    <Ambulance className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
                   </div>
                   
                   {/* Title */}
                   <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-                    Nursing Home Finder
+                    Nursing Home Auditor
                   </h3>
                   
                   {/* Description */}
                   <p className="text-sm text-gray-600 leading-relaxed">
-                  Find highly-rated nursing homes and assisted living facilities in your area.
+                  Audit facilities by staff attentiveness, health inspection ratings and more.
                   </p>
                 </Link>
 
@@ -210,17 +263,18 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
                 >
                   {/* Icon Container */}
                   <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
-                    <CheckCircle className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
+                    <TextSearch className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
                   </div>
                   
                   {/* Title */}
                   <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-                    Dementia Assessment Test
+                    Cognitive Baseline Test
                   </h3>
                   
                   {/* Description */}
                   <p className="text-sm text-gray-600 leading-relaxed">
-                  Take a comprehensive cognitive test to evaluate memory and thinking skills.
+                  {/*Take a comprehensive cognitive test to evaluate memory and thinking skills.*/}
+                  Determine when medical and legal triggers are required for advanced care.
                   </p>
                 </Link>
 
@@ -315,18 +369,19 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
       >
         {/* Icon Container */}
         <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
-          <Brain className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
+          <Workflow className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
         </div>
         
         {/* Title */}
         <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-          Mental Health Support
+          Care Eligibility Automator
         </h3>
         
         {/* Description */}
         <p className="text-sm text-gray-600 leading-relaxed">
           {/*Join a confidential circle of peers and clinical coaches to share the mental stress of balancing work with eldercare support. A safe space to vent, discuss and resolve family conflicts. */}
-          Join clinical coaches to share the mental stress of balancing work with eldercare support. 
+          
+          Avoid application denials. Pre-fill all required state and federal care benefits form with AI
         </p>
       </a>
 
@@ -399,16 +454,17 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
             Our Story 👋
           </button>
         */}
+
+ 
+          
           <button
             onClick={() => {
-              window.location.href = '/dev#FAQ';
+              window.location.href = '/dev/#FAQ';
             }}
             className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
           >
             FAQ ❓
           </button>
-          
-
         </div>
 
         <button
@@ -439,10 +495,9 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
         <div className="sm:hidden fixed inset-0 bg-white z-40 flex flex-col items-center justify-center space-y-4 py-6">
-
-          <button
+           <button
             onClick={() => {
-              window.location.href = '/dev#OperationalSupport';
+              window.location.href = '/dev/#OperationalSupport';
               setIsMobileMenuOpen(false);           
               }}
               className="mx-auto px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
@@ -450,15 +505,36 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
             Ask Ellie 💛
           </button>
 
+          <Link
+            to="/dev#HowItWorks"
+            onClick={(e) => {
+              setIsMobileMenuOpen(false);
+              // If already on /dev page, manually scroll to element
+              if (window.location.pathname === '/dev') {
+                e.preventDefault();
+                const element = document.getElementById('HowItWorks');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }
+            }}
+            className="max-w-sm px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
+          >
+            How it Works ❤️
+          </Link>
+
+          {/*    
           <button
             onClick={() => {
-              window.location.href = '/dev#HowItWorks';
+              window.location.href = '/dev/#HowItWorks';
               setIsMobileMenuOpen(false);           
               }}
               className="mx-auto px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
             >
             How it Works ❤️
           </button>
+            */}
+
           {/* START: Care Tools Dropdown Menu */}
           <div className="relative group">
             {/* Menu Header - Care Tools */}
@@ -491,7 +567,7 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
                   className="flex text-sm items-center space-x-2 px-4 py-2 hover:bg-gray-50 hover:text-red-500 rounded-lg"
                 >
                   <CheckCircle className="w-3.5 h-3.5" />
-                  <span>Take Dementia Test</span>
+                  <span>Take Cognitive Test</span>
                 </Link>
               </div>
             </div>
@@ -522,7 +598,7 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
 
           <button
             onClick={() => {
-              window.location.href = '/dev#OperationalSupport';
+              window.location.href = '/dev/#OperationalSupport';
               setIsMobileMenuOpen(false);
             }}
             className="mx-auto px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
@@ -532,7 +608,7 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
 
           <button
             onClick={() => {
-              window.location.href = '/dev#FAQ';
+              window.location.href = '/dev/#FAQ';
               setIsMobileMenuOpen(false);
             }}
             className="mx-auto px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
