@@ -60,17 +60,17 @@ function AppRoutes() {
       <Route path="/" element={<LandingPage />} />
       <Route path="/blog" element={<BlogListPage />} />    
       <Route path="blog/:slug" element={<BlogPostPage />} /> 
-      <Route path="dev/medicaid-co-pilot" element={<MedicaidCoPilotPage />} />
-      <Route path="dev/eldercare-stress-management" element={<EldercareStressCoachPage />} />
+      <Route path="/medicaid-co-pilot" element={<MedicaidCoPilotPage />} />
+      <Route path="/eldercare-stress-management" element={<EldercareStressCoachPage />} />
       <Route path="/virtual-healthcare-assistant" element={<VirtualHealthCareAssistant />} />
       <Route path="/medicaid-spenddown-calculator" element={<MedicaidSpenddownCalculator/>} />
       <Route path="/nursing-home-contract-analyzer" element={<NursingHomeContractAnalyzer/>} />
       <Route path="/healthcare-benefits-application-automation" element={<HealthcareBenefitsApplicationAutomation/>} />
       <Route path="/eldercare-private-data-store" element={<EldercareDataVault/>} />
       <Route path="/healthcare-insurance-claims-recovery" element={<HealthcareInsuranceClaimsRecovery/>} />
-      <Route path="dev/nursing-home" element={<NursingHomeSearchPage />} />
-      <Route path="dev/home-health-care" element={<HomeHealthCareSearchPage />} />
-      <Route path="dev/dementia-assessment" element={<DementiaAssessmentPage />} />
+      <Route path="/nursing-home" element={<NursingHomeSearchPage />} />
+      <Route path="/home-health-care" element={<HomeHealthCareSearchPage />} />
+      <Route path="/dementia-assessment" element={<DementiaAssessmentPage />} />
       <Route path="/report/:slug" element={<DementiaReportView />} />
     
       <Route
