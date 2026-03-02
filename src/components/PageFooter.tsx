@@ -124,20 +124,8 @@ export function PageFooter({ onOpenOnboardingModal }: PageFooterProps) {
               <div>
                 <h3 className="font-semibold mb-4">Free Care Resources</h3>
                 <ul className="space-y-2 text-sm text-gray-600">
-                  <li>
-                    <Link to="/nursing-home" className="no-underline hover:text-red-400 transition-colors">
-                      Nursing Home Auditor 
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/home-health-care" onClick={() => false} className="no-underline hover:text-red-400 transition-colors">
-                      Care Agency Inspector
-                    </Link>
-                  </li>
-                  <li> 
-                    <Link to="/dementia-assessment" className="no-underline hover:text-red-400 transition-colors">
-                      Cognitive Screening Test
-                    </Link>
+                  <li className="mb-2">
+                        <p className="text-gray-400 text-sm">Start Here 🏁 </p>
                   </li>
                   <li> 
                     <div
@@ -146,6 +134,16 @@ export function PageFooter({ onOpenOnboardingModal }: PageFooterProps) {
                       Eldercare Gap Finder
                     </div>
                   </li>
+                  <li> 
+                    <Link to="/dementia-assessment" className="no-underline hover:text-red-400 transition-colors">
+                     Cognitive Screening Test
+                    </Link>
+                  </li>
+                  
+                  <li className="mb-2">
+                        <p className="text-gray-400 text-sm">Care Help 👩‍⚕️ </p>
+                  </li> 
+                  
                   <li> 
                     <Link to="/medicaid-co-pilot" className="no-underline hover:text-red-400 transition-colors">
                       Long-Term Care Assistant
@@ -156,9 +154,28 @@ export function PageFooter({ onOpenOnboardingModal }: PageFooterProps) {
                       Family Conflict Advisor
                     </Link>
                   </li>
+                  
+                  <li className="mb-2">
+                        <p className="text-gray-400 text-sm">Due Diligence 🕵️‍♀️ </p>
+                  </li>                                
+                  <li>
+                    <Link to="/nursing-home" className="no-underline hover:text-red-400 transition-colors">
+                      Nursing Home Auditor 
+                    </Link>
+                  </li>
+
+                  <li>
+                    <Link to="/home-health-care" onClick={() => false} className="no-underline hover:text-red-400 transition-colors">
+                      Care Agency Inspector
+                    </Link>
+                  </li>
+                  
+                  <li className="mb-2">
+                        <p className="text-gray-400 text-sm">Care Blogs ✍️</p>
+                  </li>
                   <li>
                     <a href="#" className="no-underline hover:text-red-400 transition-colors">
-                      Blogs (coming soon) ✍️
+                      Blogs (coming soon)
                     </a>
                   </li>
                 </ul>
@@ -168,6 +185,9 @@ export function PageFooter({ onOpenOnboardingModal }: PageFooterProps) {
               <div>
                 <h3 className="font-semibold mb-4">Premium Care Services</h3>
                 <ul className="space-y-2 text-sm text-gray-600">
+                <li className="mb-2">
+                        <p className="text-gray-400 text-sm">Crisis Readiness 🆘 </p>
+                  </li> 
                   <li>
                     <Link to="/eldercare-private-data-store" className="no-underline hover:text-red-400 transition-colors">
                       Eldercare Private Data Store
@@ -178,6 +198,10 @@ export function PageFooter({ onOpenOnboardingModal }: PageFooterProps) {
                       Care Benefits Automator
                     </Link>
                   </li>
+
+                  <li className="mb-2">
+                        <p className="text-gray-400 text-sm">Financial Protection 💰</p>
+                  </li> 
                   <li> 
                     <Link to="/medicaid-spenddown-calculator" className="no-underline hover:text-red-400 transition-colors">
                       Spend-Down Calculator
@@ -188,6 +212,10 @@ export function PageFooter({ onOpenOnboardingModal }: PageFooterProps) {
                       Automated Insurance Appeals
                     </Link>
                   </li>
+
+                  <li className="mb-2">
+                        <p className="text-gray-400 text-sm">Operation Suport 🛠️ </p>
+                  </li> 
                   <li> 
                     <Link to="/nursing-home-contract-analyzer" className="no-underline hover:text-red-400 transition-colors">
                       AI-Powered Contract Analyzer
