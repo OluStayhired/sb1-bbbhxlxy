@@ -219,7 +219,7 @@ const handleJoinCommunity = async (e: React.FormEvent) => {
           <button
             type="submit"
             disabled={loading}
-            className="group mt-8 w-full py-2 px-4 sm:w-1/2 border border-transparent rounded-md text-sm font-medium text-white bg-gradient-to-r from-red-500 to-red-400 text-white hover:bg-red-600 transition-colors shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 disabled:opacity-50"
+            className="group mt-8 w-full py-2 px-4 sm:w-1/2 border border-transparent rounded-md text-sm font-medium text-white bg-gradient-to-r from-red-500 to-red-600 text-white hover:bg-red-600 transition-colors shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 disabled:opacity-50"
           >
             {loading ? 'Joining...' : 'Join Waitlist'}
           </button>
