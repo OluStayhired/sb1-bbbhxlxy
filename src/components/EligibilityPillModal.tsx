@@ -293,7 +293,9 @@ export function EligibilityPillModal() {
         <div className="fixed bottom-6 right-6 z-40 animate-bounce-subtle">
           <button
             onClick={toggleOpen}
-            className="group relative bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white rounded-full shadow-2xl hover:shadow-red-500/50 transition-all duration-300 hover:scale-105 active:scale-95 pl-4 pr-6 py-3 flex items-center space-x-3 border-2 border-red-400"
+            //className="group relative bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white rounded-full shadow-2xl hover:shadow-red-500/50 transition-all duration-300 hover:scale-105 active:scale-95 pl-4 pr-6 py-3 flex items-center space-x-3 border-2 border-red-400"
+
+            className="group relative bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 hover:from-red-600 hover:to-red-700 text-white rounded-full shadow-2xl hover:shadow-red-500/50 transition-all duration-300 hover:scale-105 active:scale-95 pl-4 pr-6 py-3 flex items-center space-x-3 border-4 border-red-400"
           >
             {/* Ellie's Avatar */}
             <div className="relative w-12 h-12 flex-shrink-0">
@@ -525,7 +527,7 @@ export function EligibilityPillModal() {
                           handleSendMessage(inputValue);
                         }
                       }}
-                      placeholder="Ask me anything about long-term care..."
+                      placeholder="Ask me about long-term care"
                       className="flex-1 px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none resize-none"
                     />
                     
