@@ -498,7 +498,7 @@ export function EligibilityPillModal() {
                 </div>
 
                 {/* Suggested Questions */}
-                <div className="hidden sm:block px-4 py-2 bg-gray-50 border-t border-gray-200">
+                <div className="hidden px-4 py-2 bg-gray-50 border-t border-gray-200">
                   <div className="flex flex-wrap gap-2">
                     {suggestedQuestions.map((question, index) => (
                       <button
