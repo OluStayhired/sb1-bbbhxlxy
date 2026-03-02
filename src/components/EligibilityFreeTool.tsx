@@ -852,7 +852,7 @@ const handleSendMessage = async (content: string) => {
                       setEmail(e.target.value);
                       setError('');
                     }}
-                    placeholder="Get actionable Medicaid eligibility tips via email"
+                    placeholder="Get actionable tips via email..."
                     className="flex-1 px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none"
                   />
                 <TooltipHelp className="font-normal" text="⚡Subscribe to Newsletter">
