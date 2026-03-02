@@ -511,7 +511,7 @@ const getSessionId = (): string => {
           
           
           <p className="hidden sm:block text-center text-gray-700 font-semibold text-xl sm:text-2xl text-gray-600 mx-auto">  
-             Trusted by <b className="text-red-400 font-bold">120+ Family Caregivers</b> Actively Supporting Elderly Parents
+             Trusted by <b className="text-red-400 font-bold">120+ Career Professionals</b> actively supporting elderly parents
           </p>  
 
           <p className="sm:hidden text-xs text-center text-gray-700 font-semibold text-xl sm:text-2xl text-gray-600 mx-auto">  
