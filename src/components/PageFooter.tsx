@@ -125,7 +125,7 @@ export function PageFooter({ onOpenOnboardingModal }: PageFooterProps) {
                 <h3 className="font-semibold mb-4">Free Care Resources</h3>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li className="mb-2">
-                        <p className="text-gray-400 text-sm">Start Here 🏁 </p>
+                        <p className="text-gray-400 text-sm font-semibold">🏁 Start Here</p>
                   </li>
                   <li> 
                     <div
@@ -141,7 +141,7 @@ export function PageFooter({ onOpenOnboardingModal }: PageFooterProps) {
                   </li>
                   
                   <li className="mb-2">
-                        <p className="text-gray-400 text-sm">Care Help 👩‍⚕️ </p>
+                        <p className="text-gray-400 text-sm font-semibold">👩‍⚕️ Care Help</p>
                   </li> 
                   
                   <li> 
@@ -156,7 +156,7 @@ export function PageFooter({ onOpenOnboardingModal }: PageFooterProps) {
                   </li>
                   
                   <li className="mb-2">
-                        <p className="text-gray-400 text-sm">Due Diligence 🕵️‍♀️ </p>
+                        <p className="text-gray-400 text-sm font-semibold">🕵️‍♀️ Due Diligence</p>
                   </li>                                
                   <li>
                     <Link to="/nursing-home" className="no-underline hover:text-red-400 transition-colors">
@@ -171,7 +171,7 @@ export function PageFooter({ onOpenOnboardingModal }: PageFooterProps) {
                   </li>
                   
                   <li className="mb-2">
-                        <p className="text-gray-400 text-sm">Care Blogs ✍️</p>
+                        <p className="text-gray-400 text-sm font-semibold">✍️ Care Blogs</p>
                   </li>
                   <li>
                     <a href="#" className="no-underline hover:text-red-400 transition-colors">
@@ -186,7 +186,7 @@ export function PageFooter({ onOpenOnboardingModal }: PageFooterProps) {
                 <h3 className="font-semibold mb-4">Premium Care Services</h3>
                 <ul className="space-y-2 text-sm text-gray-600">
                 <li className="mb-2">
-                        <p className="text-gray-400 text-sm">Crisis Readiness 🆘 </p>
+                        <p className="text-gray-400 text-sm font-semibold">🆘 Crisis Readiness</p>
                   </li> 
                   <li>
                     <Link to="/eldercare-private-data-store" className="no-underline hover:text-red-400 transition-colors">
@@ -200,7 +200,7 @@ export function PageFooter({ onOpenOnboardingModal }: PageFooterProps) {
                   </li>
 
                   <li className="mb-2">
-                        <p className="text-gray-400 text-sm">Financial Protection 💰</p>
+                        <p className="text-gray-400 text-sm font-semibold">💰 Financial Protection</p>
                   </li> 
                   <li> 
                     <Link to="/medicaid-spenddown-calculator" className="no-underline hover:text-red-400 transition-colors">
@@ -214,7 +214,7 @@ export function PageFooter({ onOpenOnboardingModal }: PageFooterProps) {
                   </li>
 
                   <li className="mb-2">
-                        <p className="text-gray-400 text-sm">Operation Suport 🛠️ </p>
+                        <p className="text-gray-400 text-sm font-semibold">🛠️ Operation Suport</p>
                   </li> 
                   <li> 
                     <Link to="/nursing-home-contract-analyzer" className="no-underline hover:text-red-400 transition-colors">
