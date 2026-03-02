@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, CheckCircle, Info, MailCheck, Users, UserPlus, ShieldCheck } from 'lucide-react';
+import { X, CheckCircle, Info, MailCheck, Users, UserPlus, ShieldCheck, Target } from 'lucide-react';
 import { z } from 'zod';
 import { supabase } from '../lib/supabase';
 import { TooltipExtended } from '/src/utils/TooltipExtended';
@@ -150,14 +150,14 @@ const handleJoinCommunity = async (e: React.FormEvent) => {
           {/* Header */}
         <div className="text-center mb-6">
           <div className="mx-auto w-12 h-12 bg-red-50 rounded-full flex items-center justify-center mb-4">
-            <ShieldCheck className="w-8 h-8 text-red-500" />
+            <Target className="w-8 h-8 text-red-500" />
           </div>
           <h2 className="text-3xl font-bold text-gray-700 mb-2">
             Welcome to <span className="text-red-500">Poetiq</span>
           </h2>
           <p className="text-gray-600 text-sm text-red-500">
             {/*Get insights from other career professionals!*/}
-            {/*Start fixing caregiving gaps for mom and dad!*/}
+            {/*Start fixing long-term care gaps for mom and dad!*/}
             Let's fix long-term care gaps for mom and dad!
           </p>
         </div>    
