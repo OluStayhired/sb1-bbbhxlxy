@@ -36,7 +36,7 @@ import { TypingEffect } from '../components/TypingEffect'
 
 import { EldercareModalPopUp } from '../components/EldercareModalPopUp';
 import { EldercareModalPopUpSmall } from '../components/EldercareModalPopUpSmall';
-
+import { EligibilityPillModal } from '../components/EligibilityPillModal.tsx';
 import { PageFooter } from '../components/PageFooter';
 import { PageMenuNav } from '../components/PageMenuNav';
 
@@ -2091,7 +2091,10 @@ end of old hero image */}
     setIsEldercareSmallModalOpen(false);
     setIsOnboardingModalOpen(true);
   }}
-/>          
+/>   
+
+{/* Ellie Pill Chatbot - Always Available */}
+<EligibilityPillModal />
 
     <OnboardingQuestionsModal 
       isOpen={isOnboardingModalOpen}
