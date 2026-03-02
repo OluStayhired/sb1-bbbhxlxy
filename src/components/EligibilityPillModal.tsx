@@ -578,7 +578,7 @@ export function EligibilityPillModal() {
                           ) : (
                             <>
                               <Send className="w-3 h-3" />
-                              <span>Send</span>
+                              <span className="hidden sm:inline">Send</span>
                             </>
                           )}
                         </button>
