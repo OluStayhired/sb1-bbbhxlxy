@@ -155,10 +155,11 @@ const handleJoinCommunity = async (e: React.FormEvent) => {
           <h2 className="text-3xl font-bold text-gray-700 mb-2">
             Welcome to <span className="text-red-500">Poetiq</span>
           </h2>
-          <p className="text-gray-600 text-sm text-red-500">
-            {/*Get insights from other career professionals!*/}
-            {/*Start fixing long-term care gaps for mom and dad!*/}
-            Let's fix long-term care gaps for mom and dad!
+          <p className="hidden sm:inline text-gray-600 text-sm text-red-500">
+            Fix long-term care issues for Mom without drowning in admin!
+          </p>
+          <p className="sm:hidden text-gray-600 text-sm text-red-500">    
+            Fix long-term care gaps for Mom and Dad!  
           </p>
         </div>    
 
