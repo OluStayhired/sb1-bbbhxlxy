@@ -155,10 +155,10 @@ const handleJoinCommunity = async (e: React.FormEvent) => {
           <h2 className="text-3xl font-bold text-gray-700 mb-2">
             Welcome to <span className="text-red-500">Poetiq</span>
           </h2>
-          <p className="hidden sm:inline text-gray-600 text-sm text-red-500">
-            Fix long-term care issues for Mom without drowning in admin!
+          <p className="hidden sm:inline text-gray-600 text-base text-gray-500">
+            Fix long-term care issues for Mom and Dad <br/> without drowning in endless paperwork!
           </p>
-          <p className="sm:hidden text-gray-600 text-sm text-red-500">    
+          <p className="sm:hidden text-gray-600 text-sm text-gray-500">    
             Fix long-term care gaps for Mom and Dad!  
           </p>
         </div>    
@@ -220,7 +220,7 @@ const handleJoinCommunity = async (e: React.FormEvent) => {
           <button
             type="submit"
             disabled={loading}
-            className="group mt-8 w-full py-2 px-4 sm:w-1/2 border border-transparent rounded-md text-sm font-medium text-white bg-gradient-to-r from-red-500 to-red-600 text-white hover:bg-red-600 transition-colors shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 disabled:opacity-50"
+            className="group mt-8 w-full py-3 px-4 sm:w-1/2 border border-transparent rounded-md text-base font-semibold text-white bg-gradient-to-r from-red-500 to-red-600 text-white hover:bg-red-700 transition-colors shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 disabled:opacity-50"
           >
             {loading ? 'Joining...' : 'Join Waitlist'}
           </button>
