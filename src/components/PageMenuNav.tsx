@@ -383,7 +383,7 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
       <div className="col-span-1 space-y-6 group/col3">
         {/* Column 3 Header */}
         <div className="border-b border-gray-200">
-          <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3 px-6 group-hover/col3:text-red-500 transition-colors duration-300">🛠️ Operational Support</h4>
+          <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3 px-6 group-hover/col3:text-red-500 transition-colors duration-300">🤝 Executive Assistance</h4>
         </div>
 
         {/* Card 3: Nursing Home Contract Analyzer */}

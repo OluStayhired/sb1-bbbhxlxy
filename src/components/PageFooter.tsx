@@ -214,7 +214,7 @@ export function PageFooter({ onOpenOnboardingModal }: PageFooterProps) {
                   </li>
 
                   <li className="mb-2">
-                        <p className="text-gray-400 text-sm font-semibold">🛠️ Operation Suport</p>
+                        <p className="text-gray-400 text-sm font-semibold">🤝 Executive Assistance</p>
                   </li> 
                   <li> 
                     <Link to="/nursing-home-contract-analyzer" className="no-underline hover:text-red-400 transition-colors">

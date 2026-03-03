@@ -444,6 +444,7 @@ const getSessionId = (): string => {
 </div> 
 </div>  
 
+
 {/*------------ start poetiq image design image ----------------------*/}          
 <div className="hidden sm:inline mt-12 mb-8 w-full max-w-6xl mx-auto px-4">
 
@@ -458,22 +459,22 @@ const getSessionId = (): string => {
   {/*----------- start the styling for the image here --------------------*/}
 
  <div className="absolute bg-gray-900 inset-0 opacity-0 duration-500 transition-colors transition-opacity group-hover:opacity-45 pointer-events-none"></div>
-    <div className="absolute top-60 left-0 right-0 p-4 text-white text-center transition-opacity duration-300 opacity-0 group-hover:opacity-100">
-        <TooltipHelp className="text-lg" text="🧡 Try it Now!">
+    <div className="absolute top-60 left-0 right-0 p-4 text-white text-center transition-opacity duration-500 opacity-0 group-hover:opacity-100">
+        <TooltipHelp className="text-lg" text="🧡 Fix Eldercare Gaps for Mom!">
           <button
             onClick={openOnboardingModal}
             className="group items-center flex items-center mx-auto space-x-2 sm:w-auto p-1 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-colors shadow-md shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-2 sm:text-lg justify-center mb-6">
            
-           <span className="text-2xl font-semibold">Try Gap Finder</span>
+           <span className="text-2xl font-bold">Try Gap Finder</span>
            <ArrowRight className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1" />
           </button>
         </TooltipHelp>
-                <h3 className="text-3xl font-bold drop-shadow-lg whitespace-pre-line">
+                <h3 className="text-3xl font-semibold drop-shadow-lg whitespace-pre-line">
                   Identify legal & financial gaps<br/> you need to fix now 
-                  <ShieldCheck className="w-8 h-8 fill-red-500 justify-center align-middle text-white ml-1 inline"/>
-
-                
+                  {/*<ShieldCheck className="w-8 h-8 fill-red-500 justify-center align-middle text-white ml-1 inline"/>*/}
                 </h3>
+
+      <ShieldCheck className="w-32 h-32 mt-4 fill-red-500/80 transition-colors hover:fill-red-500 hover:text-white duration-500 justify-center align-middle text-red-50/95 ml-1 inline"/>
             </div>
 
 
