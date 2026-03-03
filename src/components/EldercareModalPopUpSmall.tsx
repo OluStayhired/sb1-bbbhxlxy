@@ -67,18 +67,21 @@ export function EldercareModalPopUpSmall({ isOpen, onClose, onStartOnboarding }:
           {/* Title Section */}
           <div className="text-center mb-4">
             <h2 className="text-2xl font-bold text-white mb-3 tracking-tight">
-              Try Gap Finder 👇
+              Care Gap Finder 👇
             </h2>
             
             {/* Headline - Prominent */}
             <div className="mb-4 pb-4 border-b border-gray-800">
               <p className="hidden sm:inline text-lg font-bold text-red-400 leading-tight">
-                Avoid huge monthly care bills
+                {/*Avoid huge monthly care bills*/}
+                Fix eldercare gaps for Mom
               </p>
 
               <p className="sm:hidden text-lg font-bold text-red-400 leading-tight">
                 {/*Avoid $10,000/month care bills*/}
-                Avoid huge monthly care bills
+                {/*Avoid huge monthly care bills*/}
+                {/*Discover hidden care gaps*/}
+                Fix eldercare gaps for Mom
               </p>
             </div>
 
@@ -120,9 +123,9 @@ export function EldercareModalPopUpSmall({ isOpen, onClose, onStartOnboarding }:
           <div className="flex flex-col items-center space-y-3">
             <button
               onClick={handleOpenOnboarding}
-              className="w-auto px-6 py-3 bg-gradient-to-r from-red-500 to-red-600 text-white text-base font-bold rounded-xl hover:from-red-600 hover:to-red-700 transition-all duration-300 shadow-xl shadow-red-500/30 hover:shadow-2xl hover:shadow-red-500/50 hover:scale-105 active:scale-95 transform"
+              className="w-auto px-6 py-3 bg-gradient-to-r from-red-500 to-red-600 text-white text-base font-semibold rounded-xl hover:from-red-600 hover:to-red-700 transition-all duration-300 shadow-xl shadow-red-500/30 hover:shadow-2xl hover:shadow-red-500/50 hover:scale-105 active:scale-95 transform"
             >
-              Fix Eldercare Gaps for Mom
+              Start Fixing Care Gaps
             </button>
             
             <p className="text-xs text-gray-500">
