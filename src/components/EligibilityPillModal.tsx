@@ -299,7 +299,7 @@ export function EligibilityPillModal() {
             //className="group relative bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white rounded-full shadow-2xl hover:shadow-red-500/50 transition-all duration-300 hover:scale-105 active:scale-95 pl-4 pr-6 py-3 flex items-center space-x-3 border-2 border-red-400"
 
             //className="group relative bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 hover:from-red-600 hover:to-red-700 text-white rounded-full shadow-2xl hover:shadow-red-500/50 transition-all duration-300 hover:scale-105 active:scale-95 p-0 sm:pl-4 sm:pr-6 sm:py-3 flex items-center space-x-3 border-4 border-red-400 hover:sm:border-red-400 hover:border-green-400"
-            
+
             className="group relative bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 text-white rounded-full shadow-2xl hover:shadow-red-500/50 transition-all duration-300 hover:scale-105 active:scale-95 p-0 sm:pl-4 sm:pr-6 sm:py-3 flex items-center space-x-3 border-4 border-red-400 hover:sm:border-green-400 hover:border-green-400"
           >
             {/* Ellie's Avatar */}
@@ -312,7 +312,7 @@ export function EligibilityPillModal() {
                 />
               </div>
               {/* Online status indicator */}
-          <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-400 rounded-full border-2 sm:border-white animate-ping sm:animate-pulse"></div>
+          <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-400 rounded-full border-2 sm:border-white animate-ping sm:animate-ping"></div>
               <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-400 rounded-full"></div>
             </div>
 
@@ -327,8 +327,8 @@ export function EligibilityPillModal() {
             </div>
 
             {/* Pulsing dot indicator */}
-            <div className="hidden sm:block absolute -top-1 -right-1/2 w-3 h-3 bg-green-400 rounded-full animate-ping"></div>
-            <div className="hidden sm:block absolute -top-1 -right-1/2 w-3 h-3 bg-green-400 rounded-full"></div>
+            <div className="hidden absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full animate-ping"></div>
+            <div className="hidden absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full"></div>
           </button>
         </div>
       )}
