@@ -56,6 +56,9 @@ export function EligibilityPillModal() {
   const [quotaMessage, setQuotaMessage] = useState('');
   const [quotaEmail, setQuotaEmail] = useState('');
   const [isPillVisible, setIsPillVisible] = useState(true);
+  const [lastTypedMessageId, setLastTypedMessageId] = useState<string>('1'); // Track the last message that had typing effect
+
+
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -476,6 +479,28 @@ export function EligibilityPillModal() {
                           <p className="text-xs leading-relaxed">
                             {message.role === 'assistant' ? (
                               typeof message.content === 'string' ? (
+      // Only show typing effect for the most recent assistant message that hasn't been typed yet
+                              message.id !== lastTypedMessageId && message.id === messages.filter(m => m.role === 'assistant').pop()?.id ? (
+                                <TypingEffect 
+                                  text={message.content} 
+                                  speed={20}
+                                  onComplete={() => setLastTypedMessageId(message.id)}
+                                />
+                            ) : (
+                              message.content
+                              )
+                            ) : (
+                              message.content
+                              )
+                            ) : (
+                              message.content
+                            )}
+                          </p>
+
+                          {/*
+                          <p className="text-xs leading-relaxed">
+                            {message.role === 'assistant' ? (
+                              typeof message.content === 'string' ? (
                                 <TypingEffect text={message.content} speed={20} />
                               ) : (
                                 message.content
@@ -484,6 +509,7 @@ export function EligibilityPillModal() {
                               message.content
                             )}
                           </p>
+                          */}
                           
                           <p className={`text-xs mt-1 ${message.role === 'user' ? 'text-red-100' : 'text-gray-500'}`}>
                             {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
