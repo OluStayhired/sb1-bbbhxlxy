@@ -560,7 +560,7 @@ export function EligibilityPillModal() {
                           setEmail(e.target.value);
                           setError('');
                         }}
-                        placeholder="Get tips via email"
+                        placeholder="Subscribe to Newsletter"
                         className="flex-1 px-2 py-1.5 text-xs border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none"
                       />
                       <TooltipHelp className="font-normal" text="Subscribe Now">
