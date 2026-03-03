@@ -718,7 +718,7 @@ const handleSendMessage = async (content: string) => {
                       className={`rounded-lg p-2 sm:p-4 ${
                         message.role === 'user'
                           ? 'max-w-[85%] sm:max-w-full bg-red-500 text-white hover:shadow-md hover:shadow-red-200 duration-500'
-                          : 'max-w-[65%] sm:max-w-[75%] bg-gray-100 text-gray-900 border border-gray-200 hover:shadow-md hover:border-red-200 duration-500 h-full w-full min-w-[230px] sm:min-w-[520px]'
+                          : 'max-w-[75%] sm:max-w-[75%] bg-gray-100 text-gray-900 border border-gray-200 hover:shadow-md hover:border-red-200 duration-500 h-full w-full min-w-[210px] sm:min-w-[520px]'
                       }`}
                     >
                   
