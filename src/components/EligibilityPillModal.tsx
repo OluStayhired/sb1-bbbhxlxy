@@ -37,7 +37,7 @@ export function EligibilityPillModal() {
   const [isMinimized, setIsMinimized] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
-      id: '1',
+      id: '0',
       role: 'assistant',
       //content: "Hi I'm Ellie, your Long-Term Care Assistant. I'm here to answer all your questions about healthcare insurance and Medicaid eligibility. How can I help you today?",
       content:"Hi I'm Ellie, happy to answer your questions about long term care eligibility. How can I help you today?",

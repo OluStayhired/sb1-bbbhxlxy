@@ -13,7 +13,8 @@ import {
   Brain,
   Shield,
   X,
-  AlertCircle
+  AlertCircle,
+  HeartPulse
 } from 'lucide-react';
 import { z } from 'zod';
 import { supabase } from '../lib/supabase';
@@ -36,7 +37,7 @@ const newsletterSchema = z.object({
 export function EligibilityFreeTool() {
   const [messages, setMessages] = useState<Message[]>([
     {
-      id: '1',
+      id: '0',
       role: 'assistant',
       content: "Hi I'm Ellie, happy to answer your questions about long term care insurance.",
       timestamp: new Date()
@@ -55,6 +56,7 @@ export function EligibilityFreeTool() {
   const [showQuotaAlert, setShowQuotaAlert] = useState(false);
   const [quotaMessage, setQuotaMessage] = useState('');
   const [quotaEmail, setQuotaEmail] = useState('');
+  const [lastTypedMessageId, setLastTypedMessageId] = useState<string>('1'); // Track the last message that had typing effect
   
   
   const [currentQuestions, setCurrentQuestions] = useState<string[]>([
@@ -508,7 +510,7 @@ const handleSendMessage = async (content: string) => {
   return (
     <div className="w-full max-w-7xl mx-auto py-8 px-4 rounded-xl border-gray-200">
       
-      <div className="bg-white border border-gray-200 rounded-xl w-full h-[125vh] flex flex-col relative">
+      <div className="bg-white border border-gray-200 rounded-xl w-full max-w-6xl h-[125vh] flex flex-col relative">
 
         {/* ----------------  Quota Limit Alert Popup ----------------------- */}
 {showQuotaAlert && (
@@ -554,12 +556,11 @@ const handleSendMessage = async (content: string) => {
 {/*--------------------- End Quota Limit Alert Pop Up ---------------------*/} 
 
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200">
+        <div className="flex items-center justify-between px-2 py-4 border-b border-gray-200">
           <div className="flex items-center space-x-3">
             <div className="p-2 bg-red-50 rounded-lg">
               <Shield className="w-6 h-6 text-red-500" />
             </div>
-            {/*<h2 className="text-2xl font-bold text-gray-900">Live Medicaid Assistant</h2>*/}
             <h2 className="text-2xl font-bold text-gray-900">Ask Ellie</h2>
           </div>
         </div>
@@ -567,7 +568,7 @@ const handleSendMessage = async (content: string) => {
         {/* Main Content - Split Layout */}
         <div className="flex-1 flex overflow-hidden">
           {/* Left Side - Ellie's Profile */}
-          <div className="w-1/3 bg-gradient-to-br from-red-50 to-rose-50 p-6  border-r rounded-bl-xl overflow-y-auto">
+          <div className="hidden sm:flex w-1/3 bg-gradient-to-br from-red-50 to-rose-50 p-6  border-r rounded-bl-xl overflow-y-auto">
             <div className="space-y-6">
               {/* Avatar and Name */}
               <div className="text-center">
@@ -679,11 +680,11 @@ const handleSendMessage = async (content: string) => {
           {/* Right Side - Chat Interface */}
           <div className="flex-1 flex flex-col">
             {/* Messages Area */}
-            <div className="flex-1 overflow-y-auto p-6 space-y-4">
+            <div className="flex-1 overflow-y-auto p-2 sm:p-6 space-y-4">
               {messages.map((message) => (
                 <div
                   key={message.id}
-                  className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
+                  className={`flex ${message.role === 'user' ? 'justify-center sm:justify-end' : 'justify-start'}`}
                 >
                   {/* Avatar for Ellie (assistant messages only) */}
                   {message.role === 'assistant' && (
@@ -693,7 +694,7 @@ const handleSendMessage = async (content: string) => {
                           <img
                             //src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/ltci-care-assistant.png"
                             src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/ellie_ai_square.png"
-                             alt="Ellie"
+                            alt="Ellie"
                             className="w-full h-full object-cover"
                           />
                         </div>
@@ -712,13 +713,25 @@ const handleSendMessage = async (content: string) => {
                     )}
       
                     {/* Message bubble */}
+                    
                     <div
-                      className={`max-w-[75%] rounded-lg p-4 ${
+                      className={`rounded-lg p-2 sm:p-4 ${
                         message.role === 'user'
-                          ? 'bg-red-500 text-white hover:shadow-md hover:shadow-red-200 duration-500'
-                          : 'bg-gray-100 text-gray-900 border border-gray-200 hover:shadow-md hover:border-red-200 duration-500 w-full min-w-[520px]'
+                          ? 'max-w-[85%] sm:max-w-full bg-red-500 text-white hover:shadow-md hover:shadow-red-200 duration-500'
+                          : 'max-w-[65%] sm:max-w-[75%] bg-gray-100 text-gray-900 border border-gray-200 hover:shadow-md hover:border-red-200 duration-500 h-full w-full min-w-[230px] sm:min-w-[520px]'
                       }`}
                     >
+                  
+
+                    {/* <div
+  className={`rounded-lg p-2 sm:p-4 ${
+    message.role === 'user'
+      ? 'max-w-[70%] bg-red-500 text-white hover:shadow-md hover:shadow-red-200 duration-500'
+      : 'max-w-[70%] sm:max-w-[85%] bg-gray-100 text-gray-900 border border-gray-200 hover:shadow-md hover:border-red-200 duration-500'
+  }`}
+>*/}
+
+                    {/* Old but working typing effect 
                       <p className="text-xs leading-relaxed">
                         {message.role === 'assistant' ? (
                           typeof message.content === 'string' ? (
@@ -730,6 +743,28 @@ const handleSendMessage = async (content: string) => {
                           message.content
                         )}
                       </p>
+                      */}
+
+                      <p className="text-xs leading-relaxed">
+                            {message.role === 'assistant' ? (
+                              typeof message.content === 'string' ? (
+      // Only show typing effect for the most recent assistant message that hasn't been typed yet
+                              message.id !== lastTypedMessageId && message.id === messages.filter(m => m.role === 'assistant').pop()?.id ? (
+                                <TypingEffect 
+                                  text={message.content} 
+                                  speed={20}
+                                  onComplete={() => setLastTypedMessageId(message.id)}
+                                />
+                            ) : (
+                              message.content
+                              )
+                            ) : (
+                              message.content
+                              )
+                            ) : (
+                              message.content
+                            )}
+                          </p>
 
                       <p
                         className={`text-xs mt-2 ${
@@ -761,7 +796,7 @@ const handleSendMessage = async (content: string) => {
             </div>
 
             {/* Pre-written Questions */}
-            <div className="px-6 pb-2">
+            <div className="hidden sm:block px-6 pb-2">
               <div className="flex flex-wrap gap-2">
                 {currentQuestions.map((question, index) => (
                   <button
@@ -806,8 +841,8 @@ const handleSendMessage = async (content: string) => {
                       handleSendMessage(inputValue);
                     }
                   }}
-                  placeholder="Ask me anything about long-term care eligibility 🤔"
-                  className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none resize-none min-h-[100px] max-h-[160px]"
+                  placeholder="Ask me about long-term care eligibility 🤔"
+                  className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none resize-none max-w-[210px] sm:max-w-full min-h-[100px] max-h-[160px]"
                 />
 
                 
@@ -842,7 +877,7 @@ const handleSendMessage = async (content: string) => {
               </div>
 
               {/* Email Summary Section */}
-              <div className="bg-gradient-to-r from-red-50 to-rose-50 rounded-lg p-4 border border-red-100">
+              <div className="hidden sm:block bg-gradient-to-r from-red-50 to-rose-50 rounded-lg p-4 border border-red-100">
                 <form onSubmit={handleEmailSubmit} className="flex items-center space-x-3">
                   <Mail className="w-5 h-5 text-red-500 flex-shrink-0" />
                   <input
@@ -852,7 +887,7 @@ const handleSendMessage = async (content: string) => {
                       setEmail(e.target.value);
                       setError('');
                     }}
-                    placeholder="Get actionable tips via email..."
+                    placeholder="Subscribe to Newsletter..."
                     className="flex-1 px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none"
                   />
                 <TooltipHelp className="font-normal" text="⚡Subscribe to Newsletter">

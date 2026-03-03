@@ -43,7 +43,7 @@ const newsletterSchema = z.object({
 export function EligibilityModal({ isOpen, onClose }: EligibilityModalProps) {
   const [messages, setMessages] = useState<Message[]>([
     {
-      id: '1',
+      id: '0',
       role: 'assistant',
       //content: "Hi I'm Ellie, here to help you with long term care insurance. What questions do you have about LTCI eligibility?",
       content: "Hi I'm Ellie, happy to answer your questions about long term care insurance.",
@@ -63,6 +63,8 @@ export function EligibilityModal({ isOpen, onClose }: EligibilityModalProps) {
   const [showQuotaAlert, setShowQuotaAlert] = useState(false);
   const [quotaMessage, setQuotaMessage] = useState('');
   const [quotaEmail, setQuotaEmail] = useState('');
+
+  const [lastTypedMessageId, setLastTypedMessageId] = useState<string>('1'); // Track the last message that had typing effect
 
 
 
@@ -804,25 +806,8 @@ const handleSendMessage = async (content: string) => {
                         : 'bg-gray-100 text-gray-900 border border-gray-200 hover:shadow-md hover:border-red-200 duration-500 h-full w-full min-w-[230px] sm:min-w-[520px]'
                     }`}
                   >
-                    {/*<p className="text-xs leading-relaxed">{message.content}</p>*/}
+                    {/* Old but working Typing Effect
                     
-                    {/*
-                    speed={10} - Very fast typing
-                    speed={20} - Fast typing (recommended)
-                    speed={30} - Medium typing
-                    speed={50} - Slower typing (default)
-                    */}
-
-                    {/*
-                    <p className="text-xs leading-relaxed">
-                        {message.role === 'assistant' ? (
-                          <TypingEffect text={message.content} speed={20} />
-                        ) : (
-                          message.content
-                        )}
-                    </p>
-                    */}
-
                     <p className="text-xs leading-relaxed">
                       {message.role === 'assistant' ? (
                         typeof message.content === 'string' ? (
@@ -834,7 +819,28 @@ const handleSendMessage = async (content: string) => {
                           message.content
                         )}
                       </p>
+                      */}
 
+                        <p className="text-xs leading-relaxed">
+                            {message.role === 'assistant' ? (
+                              typeof message.content === 'string' ? (
+      // Only show typing effect for the most recent assistant message that hasn't been typed yet
+                              message.id !== lastTypedMessageId && message.id === messages.filter(m => m.role === 'assistant').pop()?.id ? (
+                                <TypingEffect 
+                                  text={message.content} 
+                                  speed={20}
+                                  onComplete={() => setLastTypedMessageId(message.id)}
+                                />
+                            ) : (
+                              message.content
+                              )
+                            ) : (
+                              message.content
+                              )
+                            ) : (
+                              message.content
+                            )}
+                          </p>
                     
                     <p
                       className={`text-xs mt-2 ${

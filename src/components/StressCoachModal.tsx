@@ -42,7 +42,7 @@ const newsletterSchema = z.object({
 export function StressCoachModal({ isOpen, onClose }: EligibilityModalProps) {
   const [messages, setMessages] = useState<Message[]>([
     {
-      id: '1',
+      id: '0',
       role: 'assistant',
       //content: "Hi I'm Sophia, here to help you with long term care insurance. What questions do you have about LTCI eligibility?",
       content: "Hi I'm Sophia, happy to answer your questions about eldercare conflicts and guide you through family disagreements.",
@@ -63,6 +63,7 @@ export function StressCoachModal({ isOpen, onClose }: EligibilityModalProps) {
   const [showQuotaAlert, setShowQuotaAlert] = useState(false);
   const [quotaMessage, setQuotaMessage] = useState('');
   const [quotaEmail, setQuotaEmail] = useState('');
+  const [lastTypedMessageId, setLastTypedMessageId] = useState<string>('1'); // Track the last message that had typing effect
   
   const [currentQuestions, setCurrentQuestions] = useState<string[]>([
           "Do family conflicts ever actually go away?",
@@ -141,7 +142,7 @@ const handleMedicaidTopic = async (topic: string) => {
        message: 
       (
         <>
-        This is the most common flashpoint especially where one of your parents or sibling is the main caregiver. Career professionals often enter the situation with a "fix-it" mindset, offering unsolicited advice on efficiency or clinical choices. The unpaid caregiver (spouse or sibling) feels patronized and undervalued, leading to the resentment: <i>"Don't tell me how to run the house when you're only here for two hours a month."</i>
+        This is the most common flashpoint especially where one of your parents or sibling is the main caregiver.<br/><br/> Career professionals often enter the situation with a "fix-it" mindset, offering unsolicited advice on efficiency or clinical choices.<br/><br/> The unpaid caregiver (spouse or sibling) feels patronized and undervalued, leading to the resentment: <i>"Don't tell me how to run the house when you're only here for two hours a month."</i>
         
         </>
       ),
@@ -154,7 +155,7 @@ const handleMedicaidTopic = async (topic: string) => {
       message: 
       (
         <>
-        The executive often thinks, <i>"I am paying for the private nurses and the facility; I am doing my part."</i> Meanwhile, the sibling providing the daily care thinks, <i>"Money doesn't change diapers or handle the midnight falls."</i> <br/><br/> Disagreements arise over whether financial contributions "equalize" the physical labor.
+        The executive often thinks,<br/><br/> <i>"I am paying for the private nurses and the facility; I am doing my part."</i><br/><br/> Meanwhile, the sibling providing the daily care thinks, <br/><br/><i>"Money doesn't change diapers or handle the midnight falls."</i> <br/><br/> Disagreements arise over whether financial contributions "equalize" the physical labor.
         </>
       ),
       questions: [
@@ -163,11 +164,7 @@ const handleMedicaidTopic = async (topic: string) => {
       ]
     },
     "Avoiding the Betrayal Narrative": {
-  message: ( 
-    <>
-      A classic conflict between a spouse caregiver and their children. The spouse may want to keep their partner at home at all costs to honor a vow, while the career-driven children see the clinical risks and push for a facility. This creates a "betrayal" narrative between the parent and child.
-    </>
-  ),
+  message:" A classic conflict between a spouse caregiver and their children. The spouse may want to keep their partner at home at all costs to honor a vow, while the career-driven children see the clinical risks and push for a facility. This creates a 'betrayal' narrative between the parent and child.",
   questions: [
     "How do I tell my Mom she can't handle Dad anymore?",
     "At what point is 'staying at home' actually dangerous?"
@@ -176,7 +173,7 @@ const handleMedicaidTopic = async (topic: string) => {
     "Managing Communication Breakdowns": {
   message: ( 
     <>
-The primary caregiver often stops sharing details because <i>"it's too much to explain."</i> The executive feels <i>"left out of the loop."</i> Eventually, the executive stops asking, and the caregiver feels <i>"abandoned."</i> Communication breaks down into silos of silence and sudden explosions.    
+The primary caregiver often stops sharing details because <i>"it's too much to explain."</i> The executive feels <i>"left out of the loop."</i> <br/><br/>Eventually, the executive stops asking, and the caregiver feels <i>"abandoned."</i> Communication breaks down into silos of silence and sudden explosions.    
   </>
   ),
   questions: [
@@ -229,33 +226,6 @@ The primary caregiver often stops sharing details because <i>"it's too much to e
       setIsTyping(false);
     }
 
-  // Get the configuration for the selected topic
-  {/*const config = topicConfig[topic];
-  
-  if (config) {
-    // Show typing indicator
-    setIsTyping(true);
-    
-    // Simulate AI processing time
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    // Add assistant message with the topic-specific content
-    const assistantMessage: Message = {
-      id: Date.now().toString(),
-      role: 'assistant',
-      content: config.message,
-      timestamp: new Date()
-    };
-    
-    setMessages(prev => [...prev, assistantMessage]);
-    
-    // Update the prewritten questions
-    setCurrentQuestions(config.questions);
-
-    // Hide typing indicator
-    setIsTyping(false);
-  }
-  */}
 };
 
 //----------- Start Helper Functions for Processing ------------//
@@ -651,9 +621,9 @@ const handleSendMessage = async (content: string) => {
               <div className="text-center">
                 <div className="relative mx-auto w-24 h-24 bg-gradient-to-br from-red-400 to-red-500 rounded-full flex items-center justify-center mb-4 shadow-lg border-4 border-white">
                   <img
-                   //src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/ltci-care-assistant.png"
+                    //src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/ltci-care-assistant.png"
                   //src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/caregiving_stress_coach.png"
-                  src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/sophia_ai_coach.png"
+                    src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/sophia_ai_coach.png"
               alt="Image 1"
               className="relative rounded-full w-full h-full aspect-square" // Square aspect ratio for stacked images
             />
@@ -665,7 +635,7 @@ const handleSendMessage = async (content: string) => {
                 <h3 className="text-2xl font-bold text-gray-900">Sophia</h3>
                 <p className="text-sm font-semibold text-red-600 flex items-center justify-center space-x-1 mt-1">
                   <Sparkles className="w-4 h-4" />
-                  <span>Family Conflict Advisor</span>
+                  <span>Eldercare Stress Advisor</span>
                 </p>
               </div>
 
@@ -846,6 +816,7 @@ const handleSendMessage = async (content: string) => {
                     */}
 
                     {/*<p className="text-xs leading-relaxed">*/}
+                    {/* Old but working typing effect modal
                     <p className="text-xs leading-relaxed whitespace-pre-line">
                       {message.role === 'assistant' ? (
                         typeof message.content === 'string' ? (
@@ -857,7 +828,28 @@ const handleSendMessage = async (content: string) => {
                           message.content
                         )}
                       </p>
+                      */}
 
+                     <p className="text-xs leading-relaxed whitespace-pre-line">
+                            {message.role === 'assistant' ? (
+                              typeof message.content === 'string' ? (
+      // Only show typing effect for the most recent assistant message that hasn't been typed yet
+                              message.id !== lastTypedMessageId && message.id === messages.filter(m => m.role === 'assistant').pop()?.id ? (
+                                <TypingEffect 
+                                  text={message.content} 
+                                  speed={20}
+                                  onComplete={() => setLastTypedMessageId(message.id)}
+                                />
+                            ) : (
+                              message.content
+                              )
+                            ) : (
+                              message.content
+                              )
+                            ) : (
+                              message.content
+                            )}
+                          </p>
                     
                     <p
                       className={`text-xs mt-2 ${
@@ -954,7 +946,7 @@ const handleSendMessage = async (content: string) => {
                       handleSendMessage(inputValue);
                     }
                   }}
-                  placeholder="Ask me anything about family conflicts 🤔"
+                  placeholder="Ask me anything about family conflicts..."
                   className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none resize-none min-h-[100px] max-h-[160px]"
                 />
                 
