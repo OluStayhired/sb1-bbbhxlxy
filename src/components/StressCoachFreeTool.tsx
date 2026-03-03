@@ -707,7 +707,7 @@ const handleSendMessage = async (content: string) => {
           {/* Right Side - Chat Interface */}
           <div className="flex-1 flex flex-col">
             {/* Messages Area */}
-            <div className="flex-1 overflow-y-auto p-6 space-y-4">
+            <div className="flex-1 overflow-y-auto p-2 sm:p-6 space-y-4">
               {messages.map((message) => (
                 <div
                   key={message.id}
