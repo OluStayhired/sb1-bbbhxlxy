@@ -36,7 +36,7 @@ const newsletterSchema = z.object({
 export function StressCoachFreeTool() {
   const [messages, setMessages] = useState<Message[]>([
     {
-      id: '1',
+      id: '0',
       role: 'assistant',
       content: "Hi I'm Sophia, happy to answer your questions about eldercare conflicts and guide you through family disagreements.",
       timestamp: new Date()
@@ -56,6 +56,7 @@ export function StressCoachFreeTool() {
   const [showQuotaAlert, setShowQuotaAlert] = useState(false);
   const [quotaMessage, setQuotaMessage] = useState('');
   const [quotaEmail, setQuotaEmail] = useState('');
+  const [lastTypedMessageId, setLastTypedMessageId] = useState<string>('1'); // Track the last message that had typing effect
   
   const [currentQuestions, setCurrentQuestions] = useState<string[]>([
     "Do family conflicts ever actually go away?",
@@ -111,68 +112,71 @@ useEffect(() => {
   };
 
   // Handle topic selection from the left panel
-  const handleMedicaidTopic = async (topic: string) => {
-    // Define topic configurations
-    const topicConfig: Record<string, { message: string | React.ReactNode; questions: string[] }> = {
-      "Understanding What Causes Conflict": {
-        message: (
-          <>
-        In my decades of advising high-achieving executives and their families, I've observed that conflict rarely stems from a lack of love. Instead, it arises from the friction between two different worlds: the <b>high-pressure, results-oriented world</b> of the career executive and the <b>emotionally draining, 24/7 reality</b> of the primary caregiver.       
-        </>
-          ),
-        questions: [
-          "Do family conflicts ever actually go away?",
-          "So what's my role if my approach causes conflict?"
-        ]
-      },
-      "Offering Advice without Causing Offence": {
-         message: 
-        (
-          <>
-          This is the most common flashpoint especially where one of your parents or sibling is the main caregiver. Career professionals often enter the situation with a "fix-it" mindset, offering unsolicited advice on efficiency or clinical choices. The unpaid caregiver (spouse or sibling) feels patronized and undervalued, leading to the resentment: <i>"Don't tell me how to run the house when you're only here for two hours a month."</i>
-          
-          </>
-        ),
-         questions: [
-           "How do I offer help without causing offense?", 
-           "What happens if my sibling get it badly wrong?"
-         ]
-       },
-      "Navigating Financial Resentment": {
-        message: 
-        (
-          <>
-          The executive often thinks, <i>"I am paying for the private nurses and the facility; I am doing my part."</i> Meanwhile, the sibling providing the daily care thinks, <i>"Money doesn't change diapers or handle the midnight falls."</i> <br/><br/> Disagreements arise over whether financial contributions "equalize" the physical labor.
-          </>
-        ),
-        questions: [
-          "I'm paying for everything, do I still need to show up?",
-          "How do I pay my sister for her time without it feeling weird?"    
-        ]
-      },
-      "Avoiding the Betrayal Narrative": {
-    message: ( 
-      <>
-        A classic conflict between a spouse caregiver and their children. The spouse may want to keep their partner at home at all costs to honor a vow, while the career-driven children see the clinical risks and push for a facility. This creates a "betrayal" narrative between the parent and child.
+const handleMedicaidTopic = async (topic: string) => {
+  // Define topic configurations
+  const topicConfig: Record<string, { message: string | React.ReactNode; questions: string[] }> = {
+    "Understanding What Causes Conflict": {
+      message: (
+        <>
+      In my decades of advising high-achieving executives and their families, I’ve observed that conflict rarely stems from a lack of love. Instead, it arises from the friction between two different worlds: the <b>high-pressure, results-oriented world</b> of the career executive and the <b>emotionally draining, 24/7 reality</b> of the primary caregiver.       
       </>
-    ),
-    questions: [
-      "How do I tell my Mom she can't handle Dad anymore?",
-      "At what point is 'staying at home' actually dangerous?"
-    ]
-  },
-      "Managing Communication Breakdowns": {
-    message: ( 
-      <>
-  The primary caregiver often stops sharing details because <i>"it's too much to explain."</i> The executive feels <i>"left out of the loop."</i> Eventually, the executive stops asking, and the caregiver feels <i>"abandoned."</i> Communication breaks down into silos of silence and sudden explosions.    
-    </>
-    ),
-    questions: [
-      "Why am I always the last to know what's going on?",
-      "Is there an app where we can just see the daily updates?"
-    ]
-  }
-    };
+        ),
+      questions: [
+        "Do family conflicts ever actually go away?",
+        "So what's my role if my approach causes conflict?"
+      ]
+    },
+    "Offering Advice without Causing Offence": {
+       message: 
+      (
+        <>
+        This is the most common flashpoint especially where one of your parents or sibling is the main caregiver.<br/><br/> Career professionals often enter the situation with a "fix-it" mindset, offering unsolicited advice on efficiency or clinical choices.<br/><br/> The unpaid caregiver (spouse or sibling) feels patronized and undervalued, leading to the resentment: <i>"Don't tell me how to run the house when you're only here for two hours a month."</i>
+        
+        </>
+      ),
+       questions: [
+         "How do I offer help without causing offense?", 
+         "What happens if my sibling get it badly wrong?"
+       ]
+     },
+    "Navigating Financial Resentment": {
+      message: 
+      (
+        <>
+        The executive often thinks,<br/><br/> <i>"I am paying for the private nurses and the facility; I am doing my part."</i><br/><br/> Meanwhile, the sibling providing the daily care thinks, <br/><br/><i>"Money doesn't change diapers or handle the midnight falls."</i> <br/><br/> Disagreements arise over whether financial contributions "equalize" the physical labor.
+        </>
+      ),
+      questions: [
+        "I’m paying for everything, do I still need to show up?",
+        "How do I pay my sister for her time without it feeling weird?"    
+      ]
+    },
+    "Avoiding the Betrayal Narrative": {
+  message:" A classic conflict between a spouse caregiver and their children. The spouse may want to keep their partner at home at all costs to honor a vow, while the career-driven children see the clinical risks and push for a facility. This creates a 'betrayal' narrative between the parent and child.",
+  questions: [
+    "How do I tell my Mom she can't handle Dad anymore?",
+    "At what point is 'staying at home' actually dangerous?"
+  ]
+},
+    "Managing Communication Breakdowns": {
+  message: ( 
+    <>
+The primary caregiver often stops sharing details because <i>"it's too much to explain."</i> The executive feels <i>"left out of the loop."</i> <br/><br/>Eventually, the executive stops asking, and the caregiver feels <i>"abandoned."</i> Communication breaks down into silos of silence and sudden explosions.    
+  </>
+  ),
+  questions: [
+    "Why am I always the last to know what’s going on?",
+    "Is there an app where we can just see the daily updates?"
+  ]
+}
+
+
+    // Add more topics here as needed in the future
+    // "Understanding LTCI eligibility criteria": {
+    //   message: "Your message here",
+    //   questions: ["Question 1", "Question 2"]
+    // }
+  };
 
     const config = topicConfig[topic];
     
@@ -572,7 +576,7 @@ const handleSendMessage = async (content: string) => {
         {/* Main Content - Split Layout */}
         <div className="flex-1 flex overflow-hidden">
           {/* Left Side - Sophia's Profile */}
-          <div className="w-1/3 bg-gradient-to-br from-red-50 to-rose-50 p-6 border-r rounded-bl-xl overflow-y-auto">
+          <div className="hidden sm:flex w-1/3 bg-gradient-to-br from-red-50 to-rose-50 p-6 border-r rounded-bl-xl overflow-y-auto">
             <div className="space-y-6">
               {/* Avatar and Name */}
               <div className="text-center">
@@ -736,6 +740,7 @@ const handleSendMessage = async (content: string) => {
                     )}
       
                     {/* Message bubble */}
+                    {/*
                     <div
                       className={`max-w-[75%] rounded-lg p-4 ${
                         message.role === 'user'
@@ -743,6 +748,16 @@ const handleSendMessage = async (content: string) => {
                           : 'bg-gray-100 text-gray-900 border border-gray-200 hover:shadow-md hover:border-red-200 duration-500 w-full min-w-[520px]'
                       }`}
                     >
+                    */}
+
+                      <div
+                      className={`rounded-lg p-2 sm:p-4 ${
+                        message.role === 'user'
+                          ? 'max-w-[85%] sm:max-w-full bg-red-500 text-white hover:shadow-md hover:shadow-red-200 duration-500'
+                          : 'max-w-[75%] sm:max-w-[75%] bg-gray-100 text-gray-900 border border-gray-200 hover:shadow-md hover:border-red-200 duration-500 h-full w-full min-w-[220px] sm:min-w-[520px]'
+                      }`}
+                    >  
+                      {/* Old working message typing effect
                       <p className="text-xs leading-relaxed whitespace-pre-line">
                         {message.role === 'assistant' ? (
                           typeof message.content === 'string' ? (
@@ -754,6 +769,28 @@ const handleSendMessage = async (content: string) => {
                           message.content
                         )}
                       </p>
+                      */}
+
+                       <p className="text-xs leading-relaxed whitespace-pre-line">
+                            {message.role === 'assistant' ? (
+                              typeof message.content === 'string' ? (
+      // Only show typing effect for the most recent assistant message that hasn't been typed yet
+                              message.id !== lastTypedMessageId && message.id === messages.filter(m => m.role === 'assistant').pop()?.id ? (
+                                <TypingEffect 
+                                  text={message.content} 
+                                  speed={20}
+                                  onComplete={() => setLastTypedMessageId(message.id)}
+                                />
+                            ) : (
+                              message.content
+                              )
+                            ) : (
+                              message.content
+                              )
+                            ) : (
+                              message.content
+                            )}
+                          </p>
 
                       <p
                         className={`text-xs mt-2 ${
@@ -785,7 +822,7 @@ const handleSendMessage = async (content: string) => {
             </div>
 
             {/* Pre-written Questions */}
-            <div className="px-6 pb-2">
+            <div className="hidden sm:block px-6 pb-2">
               <div className="flex flex-wrap gap-2">
                 {currentQuestions.map((question, index) => (
                   <button
@@ -828,9 +865,10 @@ const handleSendMessage = async (content: string) => {
                       handleSendMessage(inputValue);
                     }
                   }}
-                  placeholder="Ask me anything about family conflicts 🤔"
-                  className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none resize-none min-h-[100px] max-h-[160px]"
+                  placeholder="Ask me about family conflicts..."
+                  className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none resize-none max-w-[210px] sm:max-w-full min-h-[100px] max-h-[160px]"
                 />
+
                 
                 {/* Upload Button */}
                 <input
@@ -863,7 +901,7 @@ const handleSendMessage = async (content: string) => {
               </div>
 
               {/* Email Summary Section */}
-              <div className="bg-gradient-to-r from-red-50 to-rose-50 rounded-lg p-4 border border-red-100">
+              <div className="hidden sm:block bg-gradient-to-r from-red-50 to-rose-50 rounded-lg p-4 border border-red-100">
                 <form onSubmit={handleEmailSubmit} className="flex items-center space-x-3">
                   <Mail className="w-5 h-5 text-red-500 flex-shrink-0" />
                   <input
