@@ -94,17 +94,12 @@ export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: Pag
           </Link>
 
 
-          {/*
-          <button
-            onClick={() => {
-              window.location.href = '/dev#OperationalSupport';
-              setIsMobileMenuOpen(false);
-            }}
+          <Link
+            to="/eldercare-case-studies"
             className="max-w-sm px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
           >
-            Quick Tools 💛
-          </button>
-          */}
+            Case Studies 🩶
+          </Link>
 
             <Link
             to="/#OperationalSupport"

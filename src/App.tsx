@@ -22,6 +22,7 @@ import { NursingHomeContractAnalyzer } from './pages/NursingHomeContractAnalyzer
 import { HealthcareBenefitsApplicationAutomation } from './pages/HealthcareBenefitsApplicationAutomation';
 import { EldercareDataVault } from './pages/EldercareDataVault';
 import { HealthcareInsuranceClaimsRecovery } from './pages/HealthcareInsuranceClaimsRecovery';
+import { EldercareCaseStudies } from './pages/EldercareCaseStudies';
 
 
 
@@ -68,6 +69,7 @@ function AppRoutes() {
       <Route path="/healthcare-benefits-application-automation" element={<HealthcareBenefitsApplicationAutomation/>} />
       <Route path="/eldercare-private-data-store" element={<EldercareDataVault/>} />
       <Route path="/healthcare-insurance-claims-recovery" element={<HealthcareInsuranceClaimsRecovery/>} />
+      <Route path="/eldercare-case-studies" element={<EldercareCaseStudies/>} />
       <Route path="/nursing-home" element={<NursingHomeSearchPage />} />
       <Route path="/home-health-care" element={<HomeHealthCareSearchPage />} />
       <Route path="/dementia-assessment" element={<DementiaAssessmentPage />} />

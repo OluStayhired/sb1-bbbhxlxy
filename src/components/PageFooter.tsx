@@ -112,6 +112,13 @@ export function PageFooter({ onOpenOnboardingModal }: PageFooterProps) {
             </Link>    
                   
               </li>
+              
+              <li>
+                <Link to="/eldercare-case-studies" className="no-underline hover:text-red-400 transition-colors">
+                      Eldercare Case Studies
+                </Link>
+              </li>
+              
             </ul>
           </div>
 
