@@ -671,8 +671,8 @@ end of old hero image */}
   <p className="hidden sm:inline text-xl sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
       If you recognize yourself in any of the scenarios below, you need a reset.
   </p>  
-
-  <p className="sm:hidden text-xl sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
+ 
+  <p className="sm:hidden text-lg sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
       If any of the scenarios below sound familiar, then you need a reset.
   </p> 
 
@@ -827,7 +827,7 @@ end of old hero image */}
     These amazing people <br/> found a way!
   </h2>
   
-  <p className="text-xl sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
+  <p className="text-lg sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
   Real results from senior leaders who reclaimed their careers.
   </p>  
 
@@ -947,7 +947,7 @@ end of old hero image */}
   <h2 className="sm:hidden text-2xl text-red-400 sm:text-4xl md:text-5xl font-bold leading-tight mt-4 mb-4">
     How we handle the logistics
   </h2>
-  <p className="text-xl sm:text-2xl text-gray-600 mb-16 mx-auto max-w-3xl hover:text-red-500">  
+  <p className="text-lg sm:text-2xl text-gray-600 mb-16 mx-auto max-w-3xl hover:text-red-500">  
     {/*We fix the gaps in mom and dad's eldercare plans so you don't have to.*/}
     We find the hidden gaps, build a plan and take over all the admin.
   </p>  
@@ -982,7 +982,7 @@ end of old hero image */}
           <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             Identify Hidden Gaps
           </h3>
-          <p className="text-lg text-gray-600 leading-relaxed mb-6">
+          <p className="text-md sm:text-lg text-gray-600 leading-relaxed mb-6">
             {/*Use our Gap Finder to instantly reveal the critical vulnerabilities in your eldercare plan. Most families miss an average of 14 essential protections that leave them exposed to financial and legal risks.*/}
             Use our Gap Finder to instantly reveal the critical blind spots in your parent's long-term care setup. Most families miss at least 14 essential protections, leaving them exposed to massive out-of-pocket legal and financial liabilities.
           </p>
@@ -1019,7 +1019,7 @@ end of old hero image */}
           <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             Build your Strategy
           </h3>
-          <p className="text-lg text-gray-600 leading-relaxed mb-6">
+          <p className="text-md sm:text-lg text-gray-600 leading-relaxed mb-6">
             Use our suite of specialized tools and services to repair the gaps in your parent’s setup. From nursing home contract analysis to spend-down calculations and expert legal referrals, we handle the complexity while you stay in control.
           </p>
           
@@ -1091,7 +1091,7 @@ end of old hero image */}
           <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             Centralize your Assets
           </h3>
-          <p className="text-lg text-gray-600 leading-relaxed mb-6">
+          <p className="text-md sm:text-lg text-gray-600 leading-relaxed mb-6">
             Your Eldercare Data Vault keeps all critical documents, medical records, and legal paperwork in one secure place. Share updates with family members instantly and eliminate the chaos of scattered information.
           </p>
           <div className="space-y-3">
@@ -1136,7 +1136,7 @@ end of old hero image */}
           <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             Maximize your Savings
           </h3>
-          <p className="text-lg text-gray-600 leading-relaxed mb-6">
+          <p className="text-md sm:text-lg text-gray-600 leading-relaxed mb-6">
             Stop losing $10,000/month to long-term care bills. Our team fights to win insurance appeals and unlock hidden coverage so you can protect your family's assets and your own professional bandwidth.
           </p>
           
@@ -1295,7 +1295,7 @@ end of old hero image */}
   <h2 className="sm:hidden text-2xl text-red-400 sm:text-4xl md:text-5xl font-bold leading-tight mt-4 mb-4">
     Let's move you from <br/> chaos to systems
   </h2>
-  <p className="sm:hidden text-xl sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
+  <p className="sm:hidden text-lg sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
   Unlock our care services & tools to fix the gaps and avoid unexpected hospital bills!
   </p>          
 
@@ -1729,7 +1729,7 @@ end of old hero image */}
   <h2 className="text-2xl text-red-400 sm:text-4xl md:text-5xl font-bold leading-tight mb-4">
     Have Questions? 🤔
   </h2>
-  <p className="text-xl sm:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto hover:text-red-500">
+  <p className="text-lg sm:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto hover:text-red-500">
    Find out how Poetiq's services support you with eldercare. 
   </p>
 
