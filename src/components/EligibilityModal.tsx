@@ -806,20 +806,7 @@ const handleSendMessage = async (content: string) => {
                         : 'bg-gray-100 text-gray-900 border border-gray-200 hover:shadow-md hover:border-red-200 duration-500 h-full w-full min-w-[230px] sm:min-w-[520px]'
                     }`}
                   >
-                    {/* Old but working Typing Effect
                     
-                    <p className="text-xs leading-relaxed">
-                      {message.role === 'assistant' ? (
-                        typeof message.content === 'string' ? (
-                          <TypingEffect text={message.content} speed={20} />
-                          ) : (
-                          message.content
-                        )
-                          ) : (
-                          message.content
-                        )}
-                      </p>
-                      */}
 
                         <p className="text-xs leading-relaxed">
                             {message.role === 'assistant' ? (
@@ -871,27 +858,10 @@ const handleSendMessage = async (content: string) => {
               <div ref={messagesEndRef} />
             </div>
 
-            {/* Start old Pre-written Questions */}
-            {/*
-            <div className="px-6 pb-2">
-              <div className="flex flex-wrap gap-2">
-                {prewrittenQuestions.map((question, index) => (
-                  <button
-                    key={index}
-                    onClick={() => handleSendMessage(question)}
-                    className="text-xs px-3 py-2 bg-white border border-red-200 text-red-600 rounded-full hover:bg-red-50 hover:border-red-300 transition-all duration-200 shadow-sm hover:shadow-md"
-                  >
-                    {question}
-                  </button>
-                ))}
-              </div>
-            </div>
-            */}
-            {/*  End old Pre-written Questions */}
 
             {/*--------------- Pre-written Questions -------------*/}
             
-              <div className="px-6 pb-2">
+              <div className="hidden sm:block px-6 pb-2">
                 <div className="flex flex-wrap gap-2">
                     {currentQuestions.map((question, index) => (
                       <button
@@ -910,23 +880,6 @@ const handleSendMessage = async (content: string) => {
 
             {/* Input Area */}
             <div className="border-t border-gray-200 p-6">
-              {/*
-              <div className="flex text-sm items-center space-x-3 mb-4">
-                <input
-                  type="text"
-                  value={inputValue}
-                  onChange={(e) => setInputValue(e.target.value)}
-                  onKeyPress={(e) => {
-                    if (e.key === 'Enter' && !e.shiftKey) {
-                      e.preventDefault();
-                      handleSendMessage(inputValue);
-                    }
-                  }}
-                  placeholder="Ask me anything about Medicaid eligibility..."
-                  className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none"
-                />
-                */}
-
               <div className="flex items-end text-sm space-x-3 mb-4">
                 <textarea
                   rows={4}
@@ -979,7 +932,6 @@ const handleSendMessage = async (content: string) => {
                   <input
                     type="email"
                     value={email}
-                    //onChange={(e) => setEmail(e.target.value)}
                     onChange={(e) => {
                       setEmail(e.target.value);
                       setError('');
