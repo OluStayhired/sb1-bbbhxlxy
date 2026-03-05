@@ -47,118 +47,6 @@ interface PageMenuNavProps {
 export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: PageMenuNavProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Mobile Accordion Component for nested menus
-function MobileAccordion({ title, items }: { 
-  title: string; 
-  items: Array<{
-    section: string;
-    cards: Array<{
-      title: string;
-      icon: React.ReactNode;
-      description: string;
-      link?: string;
-      onClick: () => void;
-      badge?: boolean;
-    }>;
-  }>;
-}) {
-  const [isOpen, setIsOpen] = useState(false);
-
-  return (
-    <div className="border border-gray-200 rounded-lg overflow-hidden">
-      {/* Accordion Header */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between px-4 py-3 text-gray-900 font-semibold bg-white hover:bg-gray-50 transition-all duration-500"
-      >
-        <span>{title}</span>
-        <ArrowRight 
-          className={`w-4 h-4 text-gray-600 transition-transform duration-500 ${
-            isOpen ? 'rotate-90' : 'rotate-0'
-          }`}
-        />
-      </button>
-
-      {/* Accordion Content */}
-      <div
-        className={`overflow-hidden transition-all duration-500 ${
-          isOpen ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'
-        }`}
-      >
-        <div className="bg-gray-50 px-2 py-3 space-y-4">
-          {items.map((section, sectionIdx) => (
-            <div key={sectionIdx} className="space-y-2">
-              {/* Section Header */}
-              <div className="px-3 py-1">
-                <h4 className="text-xs font-bold text-red-300 uppercase tracking-wider">
-                  {section.section}
-                </h4>
-              </div>
-
-              {/* Section Cards */}
-              {section.cards.map((card, cardIdx) => (
-                card.link ? (
-                  <Link
-                    key={cardIdx}
-                    to={card.link}
-                    onClick={card.onClick}
-                    className="block bg-white rounded-lg p-3 hover:bg-red-50 border border-gray-200 hover:border-red-200 transition-all duration-500"
-                  >
-                    <div className="flex items-start space-x-3">
-                      <div className="flex-shrink-0 mt-0.5">
-                        {card.icon}
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center space-x-2">
-                          <h5 className="text-sm font-bold text-gray-900">
-                            {card.title}
-                          </h5>
-                          {card.badge && (
-                            <CheckCircle2 className="w-4 h-4 fill-teal-500 text-white flex-shrink-0" />
-                          )}
-                        </div>
-                        <p className="text-xs text-gray-600 mt-1 leading-relaxed">
-                          {card.description}
-                        </p>
-                      </div>
-                    </div>
-                  </Link>
-                ) : (
-                  <button
-                    key={cardIdx}
-                    onClick={card.onClick}
-                    className="w-full bg-white rounded-lg p-3 hover:bg-red-50 border border-gray-200 hover:border-red-200 transition-all duration-500 text-left"
-                  >
-                    <div className="flex items-start space-x-3">
-                      <div className="flex-shrink-0 mt-0.5">
-                        {card.icon}
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center space-x-2">
-                          <h5 className="text-sm font-bold text-gray-900">
-                            {card.title}
-                          </h5>
-                          {card.badge && (
-                            <CheckCircle2 className="w-4 h-4 fill-teal-500 text-white flex-shrink-0" />
-                          )}
-                        </div>
-                        <p className="text-xs text-gray-600 mt-1 leading-relaxed">
-                          {card.description}
-                        </p>
-                      </div>
-                    </div>
-                  </button>
-                )
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-
   return (
     <nav className="px-4 py-3 flex items-center justify-between sm:px-6 sm:py-4">
       <Link to="/">
@@ -204,14 +92,14 @@ function MobileAccordion({ title, items }: {
           >
             How it Works ❤️
           </Link>
-      
+
+
           <Link
             to="/eldercare-case-studies"
             className="max-w-sm px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
           >
             Case Studies 🩶
           </Link>
-          
 
             <Link
             to="/#OperationalSupport"
@@ -249,7 +137,7 @@ function MobileAccordion({ title, items }: {
                 <div className="col-span-1 space-y-6 group/col1">
                   {/* Column 1 Header */}
                   <div className="border-b border-gray-200">
-                    <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3 px-6 group-hover/col1:text-red-500 transition-colors duration-300">🏁 START HERE</h4>
+                    <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3 px-6 group-hover/col1:text-red-500 transition-colors duration-300">🏁 YOUR STARTING POINT</h4>
                   </div>
 
                   {/* Card 1: Readiness Audit */}
@@ -261,9 +149,6 @@ function MobileAccordion({ title, items }: {
                     <div className="flex items-center justify-center w-14 h-14 bg-teal-100 rounded-full mb-4 group-hover/card:bg-teal-200 transition-colors duration-300">
                       <ShieldCheck className="w-7 h-7 text-teal-600 group-hover/card:scale-110 transition-transform duration-300" />
                     </div>
-
-                    
-                    
                     {/* Title */}
                     <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-teal-600 transition-colors duration-300">
                       Eldercare Gap Finder
@@ -533,6 +418,35 @@ function MobileAccordion({ title, items }: {
 </div>
 {/* ---------------------END Executive Services Dropdown Menu --------------------*/}
 
+        {/*
+          <button
+            onClick={() => {
+              window.location.href = '/dev#Community';
+            }}
+            className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
+          >
+            Community 🧡
+          </button>
+
+          <button
+            onClick={() => {
+              window.location.href = '/dev#our_story';
+            }}
+            className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
+          >
+            Our Story 👋
+          </button>
+        */}
+
+ 
+          
+          {/*<button
+            onClick={() => {
+              window.location.href = '/dev#FAQ';
+            }}
+            className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
+          >*/}
+
           <Link
             to="/#FAQ"
             onClick={(e) => {
@@ -578,241 +492,138 @@ function MobileAccordion({ title, items }: {
       </div>
 
       {/* Mobile Menu Overlay */}
-{isMobileMenuOpen && (
-  <div className="sm:hidden fixed inset-0 bg-white z-40 overflow-y-auto">
-    {/* Header with Close Button */}
-    <div className="sticky top-0 bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between shadow-sm z-50">
-      <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
-        <div className="flex items-center space-x-2">
-          <div className="bg-red-100 rounded-full p-1">
-            <Target className="h-6 w-6 fill-white stroke-red-500" />
+      {isMobileMenuOpen && (
+        <div className="sm:hidden fixed inset-0 bg-white z-40 flex flex-col items-center justify-center space-y-4 py-6">
+           <button
+            onClick={() => {
+              window.location.href = '#OperationalSupport';
+              setIsMobileMenuOpen(false);           
+              }}
+              className="mx-auto px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
+            >
+            Ask Ellie 💛
+          </button>
+
+          <Link
+            to="/#HowItWorks"
+            onClick={(e) => {
+              setIsMobileMenuOpen(false);
+              // If already on /dev page, manually scroll to element
+              if (window.location.pathname === '/') {
+                e.preventDefault();
+                const element = document.getElementById('HowItWorks');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }
+            }}
+            className="max-w-sm px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
+          >
+            How it Works ❤️
+          </Link>
+
+
+
+          {/* START: Care Tools Dropdown Menu */}
+          <div className="relative group">
+            {/* Menu Header - Care Tools */}
+            <button className="mx-auto px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">
+              Free Care Tools 🧡
+            </button>
+
+            {/* Dropdown Content - Hidden by default, shown on group hover */}
+            <div className="absolute left-1/2 -translate-x-1/2 top-full mt-[-0.5] w-56 rounded-lg shadow-xl bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block z-50 transition-opacity duration-150 ease-out">
+              <div className="py-1">
+                {/* Caregivers Near Me */}
+                <Link
+                  to="/home-health-care"
+                  className="flex text-sm items-center space-x-2 px-4 py-2 hover:bg-gray-50 hover:text-red-500 rounded-lg"
+                >
+                  <MapPin className="w-3.5 h-3.5" />
+                  <span>Find Caregivers</span>
+                </Link>
+                {/* Nursing Home Finder */}
+                <Link
+                  to="/nursing-home"
+                  className="flex text-sm items-center space-x-2 px-4 py-2 hover:bg-gray-50 hover:text-red-500 rounded-lg"
+                >
+                  <Search className="w-3.5 h-3.5" />
+                  <span>Search Nursing Homes</span>
+                </Link>
+
+                <Link
+                  to="/dementia-assessment"
+                  className="flex text-sm items-center space-x-2 px-4 py-2 hover:bg-gray-50 hover:text-red-500 rounded-lg"
+                >
+                  <CheckCircle className="w-3.5 h-3.5" />
+                  <span>Take Cognitive Test</span>
+                </Link>
+              </div>
+            </div>
           </div>
-          <span className="text-xl font-bold text-gray-700">poetiq</span>
+          {/* END: Care Tools Dropdown Menu */}
+          
+          {/*
+          <button
+            onClick={() => {
+              window.location.href = '#Community';
+              setIsMobileMenuOpen(false);
+            }}
+            className="w-11/12 max-w-sm px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
+          >
+            Community 🧡
+          </button>
+
+          <button
+            onClick={() => {
+              window.location.href = '#our_story';
+              setIsMobileMenuOpen(false);
+            }}
+            className="w-11/12 max-w-sm px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
+          >
+            Our Story 👋
+          </button>
+          */}
+
+          <button
+            onClick={() => {
+              window.location.href = '#OperationalSupport';
+              setIsMobileMenuOpen(false);
+            }}
+            className="mx-auto px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
+          >
+           Premium Services 💚
+          </button>
+
+          <button
+            onClick={() => {
+              window.location.href = '/#FAQ';
+              setIsMobileMenuOpen(false);
+            }}
+            className="mx-auto px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
+          >
+            Frequent Questions ❓
+          </button>
+
+          {/* Close button within the overlay */}
+          <button
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="absolute top-4 right-4 p-2 text-gray-600 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-md"
+            aria-label="Close navigation"
+          >
+            <X className="h-6 w-6" />
+          </button>
+
+          <button
+            onClick={onOpenCommunityModal}
+            className="group flex items-center justify-center space-x-2 w-1/2 sm:w-auto p-4 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 transition-colors shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-4 sm:text-lg"
+          >
+            <span>Join Waitlist</span>
+            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </button>
+
         </div>
-      </Link>
-      <button
-        onClick={() => setIsMobileMenuOpen(false)}
-        className="p-2 text-gray-600 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-red-500 rounded-md"
-        aria-label="Close navigation"
-      >
-        <X className="h-6 w-6" />
-      </button>
-    </div>
-
-    {/* Menu Content */}
-    <div className="px-4 py-6 space-y-2">
-      
-      {/* How it Works */}
-      <Link
-        to="/#HowItWorks"
-        onClick={(e) => {
-          setIsMobileMenuOpen(false);
-          if (window.location.pathname === '/') {
-            e.preventDefault();
-            const element = document.getElementById('HowItWorks');
-            if (element) {
-              element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-          }
-        }}
-        className="block w-full text-left px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-all duration-500"
-      >
-        How it Works ❤️
-      </Link>
-
-      {/* Case Studies */}
-      <Link
-        to="/eldercare-case-studies"
-        onClick={() => setIsMobileMenuOpen(false)}
-        className="block w-full text-left px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-all duration-500"
-      >
-        Case Studies 🩶
-      </Link>
-
-      {/* Quick Tools */}
-      <Link
-        to="/#OperationalSupport"
-        onClick={(e) => {
-          setIsMobileMenuOpen(false);
-          if (window.location.pathname === '/') {
-            e.preventDefault();
-            const element = document.getElementById('OperationalSupport');
-            if (element) {
-              element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-          }
-        }}
-        className="block w-full text-left px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-all duration-500"
-      >
-        Quick Tools 💛
-      </Link>
-
-      {/* Free Care Tools Accordion */}
-      <MobileAccordion
-        title="Free Care Tools 🧡"
-        items={[
-          {
-            section: "🏁 START HERE",
-            cards: [
-              {
-                title: "Eldercare Gap Finder",
-                icon: <ShieldCheck className="w-5 h-5 text-teal-600" />,
-                description: "Identify legal and financial gaps before a crisis hits",
-                onClick: () => {
-                  onOpenOnboardingModal();
-                  setIsMobileMenuOpen(false);
-                },
-                badge: true
-              },
-              {
-                title: "Cognitive Baseline Test",
-                icon: <TextSearch className="w-5 h-5 text-red-600" />,
-                description: "Identify early signs of cognitive decline",
-                link: "/dementia-assessment",
-                onClick: () => setIsMobileMenuOpen(false)
-              }
-            ]
-          },
-          {
-            section: "👩‍⚕️ PROFESSIONAL SUPPORT",
-            cards: [
-              {
-                title: "Long-Term Care Assistant",
-                icon: <img src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/ellie_ai_square.png" alt="Ellie AI" className="w-5 h-5 rounded-full" />,
-                description: "Get answers to Medicaid, VA & eligibility rules with Ellie",
-                link: "/medicaid-co-pilot",
-                onClick: () => setIsMobileMenuOpen(false)
-              },
-              {
-                title: "Family Conflict Advisor",
-                icon: <img src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/sophia_ai_coach.png" alt="Sophia AI" className="w-5 h-5 rounded-full" />,
-                description: "Resolve sibling friction with advice from Sophia",
-                link: "/eldercare-stress-management",
-                onClick: () => setIsMobileMenuOpen(false)
-              }
-            ]
-          },
-          {
-            section: "🕵️‍♀️ INSTANT DUE DILIGENCE",
-            cards: [
-              {
-                title: "Care Agency Inspector",
-                icon: <Microscope className="w-5 h-5 text-red-600" />,
-                description: "Inspect agencies by clinical outcomes",
-                link: "/home-health-care",
-                onClick: () => setIsMobileMenuOpen(false)
-              },
-              {
-                title: "Nursing Home Auditor",
-                icon: <Ambulance className="w-5 h-5 text-red-600" />,
-                description: "Audit facilities by staff attentiveness",
-                link: "/nursing-home",
-                onClick: () => setIsMobileMenuOpen(false)
-              }
-            ]
-          }
-        ]}
-      />
-
-      {/* Premium Services Accordion */}
-      <MobileAccordion
-        title="Premium Services 💚"
-        items={[
-          {
-            section: "🆘 CRISIS READINESS",
-            cards: [
-              {
-                title: "Eldercare Data Vault",
-                icon: <FolderLock className="w-5 h-5 text-red-600" />,
-                description: "Structured searchable data vaults",
-                link: "/eldercare-private-data-store",
-                onClick: () => setIsMobileMenuOpen(false)
-              },
-              {
-                title: "Care Benefits Automator",
-                icon: <BrainCircuit className="w-5 h-5 text-red-600" />,
-                description: "Pre-fill all care benefits forms with AI",
-                link: "/healthcare-benefits-application-automation",
-                onClick: () => setIsMobileMenuOpen(false)
-              }
-            ]
-          },
-          {
-            section: "💰 FINANCIAL PROTECTION",
-            cards: [
-              {
-                title: "Spend-Down Calculator",
-                icon: <Calculator className="w-5 h-5 text-red-600" />,
-                description: "Track asset and income thresholds",
-                link: "/medicaid-spenddown-calculator",
-                onClick: () => setIsMobileMenuOpen(false)
-              },
-              {
-                title: "Claims Recovery Engine",
-                icon: <RotateCcw className="w-5 h-5 text-red-600" />,
-                description: "Automate your insurance appeal",
-                link: "/healthcare-insurance-claims-recovery",
-                onClick: () => setIsMobileMenuOpen(false)
-              }
-            ]
-          },
-          {
-            section: "🤝 EXECUTIVE ASSISTANCE",
-            cards: [
-              {
-                title: "Nursing Home Contract Analyzer",
-                icon: <FileSearch className="w-5 h-5 text-red-600" />,
-                description: "Detect predatory contracts",
-                link: "/nursing-home-contract-analyzer",
-                onClick: () => setIsMobileMenuOpen(false)
-              },
-              {
-                title: "Healthcare Virtual Assistants",
-                icon: <Headset className="w-5 h-5 text-red-600" />,
-                description: "HIPAA-trained VAs handle insurance calls",
-                link: "/virtual-healthcare-assistant",
-                onClick: () => setIsMobileMenuOpen(false)
-              }
-            ]
-          }
-        ]}
-      />
-
-      {/* FAQ */}
-      <Link
-        to="/#FAQ"
-        onClick={(e) => {
-          setIsMobileMenuOpen(false);
-          if (window.location.pathname === '/') {
-            e.preventDefault();
-            const element = document.getElementById('FAQ');
-            if (element) {
-              element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-          }
-        }}
-        className="block w-full text-left px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-all duration-500"
-      >
-        FAQ ❓
-      </Link>
-
-      {/* Join Waitlist CTA */}
-      <div className="pt-4">
-        <button
-          onClick={() => {
-            onOpenCommunityModal();
-            setIsMobileMenuOpen(false);
-          }}
-          className="group flex items-center justify-center space-x-2 w-full px-6 py-4 bg-gradient-to-r from-red-500 to-red-600 text-white text-base font-semibold rounded-lg hover:from-red-600 hover:to-red-700 transition-all duration-500 shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80"
-        >
-          <span>Join Waitlist</span>
-          <ArrowRight className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1" />
-        </button>
-      </div>
-    </div>
-  </div>
-)}
-
+      )}
 
     </nav>
   );
