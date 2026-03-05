@@ -110,7 +110,7 @@ function MobileAccordion({ title, items }: {
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center space-x-2">
-                          <h5 className="text-sm font-bold text-gray-900">
+                          <h5 className="text-sm font-bold text-gray-700">
                             {card.title}
                           </h5>
                           {card.badge && (
@@ -135,7 +135,7 @@ function MobileAccordion({ title, items }: {
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center space-x-2">
-                          <h5 className="text-sm font-bold text-gray-900">
+                          <h5 className="text-sm font-bold text-gray-700">
                             {card.title}
                           </h5>
                           {card.badge && (
@@ -657,7 +657,7 @@ function MobileAccordion({ title, items }: {
               {
                 title: "Eldercare Gap Finder",
                 icon: <ShieldCheck className="w-5 h-5 text-teal-600" />,
-                description: "Identify legal and financial gaps before a crisis hits",
+                description: "Close legal and financial gaps before a crisis",
                 onClick: () => {
                   onOpenOnboardingModal();
                   setIsMobileMenuOpen(false);
@@ -679,7 +679,7 @@ function MobileAccordion({ title, items }: {
               {
                 title: "Long-Term Care Assistant",
                 icon: <img src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/ellie_ai_square.png" alt="Ellie AI" className="w-5 h-5 rounded-full" />,
-                description: "Get answers to Medicaid, VA & eligibility rules with Ellie",
+                description: "Ask Ellie about Medicaid, VA & eligibility rules",
                 link: "/medicaid-co-pilot",
                 onClick: () => setIsMobileMenuOpen(false)
               },
@@ -793,7 +793,7 @@ function MobileAccordion({ title, items }: {
         }}
         className="block w-full text-left px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-all duration-500"
       >
-        FAQ ❓
+        Frequent Questions ❓
       </Link>
 
       {/* Join Waitlist CTA */}
