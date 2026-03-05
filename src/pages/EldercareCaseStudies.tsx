@@ -221,7 +221,7 @@ export function EldercareCaseStudies() {
       title: "Unblocked Communication Challenges",
       subtitle: "Used a HIPAA Assistant to improve communication with facility staff",
       persona: {
-        name: "Sarah Patel",
+        name: "Sarah Hernandez",
         age: 44,
         profession: "Marketing Director",
         location: "Boston, MA",
@@ -527,7 +527,7 @@ export function EldercareCaseStudies() {
                             <div className="p-2 bg-red-500 rounded-full">
                               <Users className="w-5 h-5 text-white" />
                             </div>
-                            <span className="font-bold text-gray-900">Persona</span>
+                            <span className="font-bold text-gray-900">Profile</span>
                           </div>
                           <div className="space-y-2 text-sm">
                             <div className="font-bold text-lg text-red-600">{study.persona.name}</div>
@@ -634,7 +634,7 @@ export function EldercareCaseStudies() {
         className="absolute inset-0 w-full h-full object-cover"
       />
       {/* Gradient overlay for better text readability on mobile */}
-      <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-white via-white/80 to-transparent md:from-transparent md:via-transparent md:to-white"></div>
+      <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-white/10 via-white/10 to-transparent md:from-transparent md:via-transparent md:to-red-50/80"></div>
     </div>
     
     {/* Quote Section - Takes up 3 columns */}
