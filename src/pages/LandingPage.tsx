@@ -312,10 +312,10 @@ const getSessionId = (): string => {
 
           
         <span className="sm:hidden text-xs sm:text-lg p-3 font-semibold bg-gray-300 rounded-full text-gray-500 border-8 border-gray-200">    
-          Built For Busy Career Professionals
+          Serving Busy Career Professionals
         </span>
 
-      <span className="hidden sm:inline text-xs sm:text-lg p-3 font-semibold bg-gray-300 hover:bg-gray-200 hover:text-gray-500 rounded-full text-gray-600 border-8 border-gray-200 hover:border-gray-100 duration-500">Built For Busy Career Professionals</span>
+      <span className="hidden sm:inline text-xs sm:text-lg p-3 font-semibold bg-gray-300 hover:bg-gray-200 hover:text-gray-500 rounded-full text-gray-600 border-8 border-gray-200 hover:border-gray-100 duration-500">Serving Busy Career Professionals</span>
 
                
           
