@@ -113,7 +113,8 @@ export async function generateContent(prompt: string): Promise<GeminiResponse> {
       },
       body: JSON.stringify({
         prompt,
-        model: 'gemini-2.0-flash', // Pass the model name to the Edge Function if it's dynamic
+        //model: 'gemini-2.0-flash', // Pass the model name to the Edge Function if it's dynamic
+        model: 'gemini-3.1-pro-preview',
         // Optional: Add a cache key for the Edge Function to use
         cacheKey: prompt.substring(0, 50) // Use first 50 chars as cache key
       }),
@@ -190,7 +191,7 @@ export async function getLongTermCareSupport(
 
     const selectedTone = getRandomTone(); // Ensure this function correctly returns a valid tone string
     const prompt = `You are a world-class Long Term Care Insurance Eligbility Expert. 
-    You have a deep knowledge of the eldercare industry. You specifically  specialize in answering questions about eldercare insurance eligibility. 
+    You have a deep knowledge of the eldercare industry and the names of the forms to fill for every single insurer. You specifically  specialize in answering questions about eldercare insurance eligibility including state specific knowledge of Medicaid and Medicare eligibility. 
     You have read all the medicaid and medicare literature about the major challenges most people face when trying to determine if their loved ones are eligible for Long Term Care insurance cover. 
     As well as understanding the step-by-step  process required to meet the requirements for LTCI eligibility, you have a deep experience of the best practices and the initial steps families must focus on to ensure they have the correct insurance cover for long term care. 
 
@@ -219,10 +220,12 @@ Write like a human. No fluff. No cringe. Make it hit.
 Follow the [Rules] below:
 
 [Rules]:
-- Start your response directly with the answer
+- Start your response directly with the specific answer
 - **Write in a clear, straightforward manner that a university graduate could easily understand.**
-- Your first sentence should be the answer, not a restatement of the question
+- Your first sentence should be the answer, not a restatement of the question do not re-direct the question
 - Keep to ${char_length} Characters in total.
+- Ban Answers like contact insurance company
+- Ban Answers like contact Department of Health
 - Ban Generic Answers
 - Ban Colons
 - Ban Semicolons 
@@ -307,3 +310,8 @@ User Question: ${content}
 }
 
 // ------ End Long Term Care Support (getLongTermCareSupport) --------//
+
+
+
+
+
