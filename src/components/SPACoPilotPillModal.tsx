@@ -40,7 +40,7 @@ export function SPACoPilotPillModal() {
     {
       id: '0',
       role: 'assistant',
-      content:"Hi, I'm Ellie, Use me to run eligibility logic, audit facility data, or prep for high-acuity placements.",
+      content:"Hi, I'm Ellie, use me to run eligibility logic, audit facility data, or prep for high-acuity placements.",
       timestamp: new Date()
     }
   ]);
