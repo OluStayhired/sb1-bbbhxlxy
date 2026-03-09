@@ -232,5 +232,5 @@ const handleJoinCommunity = async (e: React.FormEvent) => {
       )}
       </div> 
     </div>
-   );
+  );
 }
