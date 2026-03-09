@@ -23,6 +23,7 @@ import { HealthcareBenefitsApplicationAutomation } from './pages/HealthcareBenef
 import { EldercareDataVault } from './pages/EldercareDataVault';
 import { HealthcareInsuranceClaimsRecovery } from './pages/HealthcareInsuranceClaimsRecovery';
 import { EldercareCaseStudies } from './pages/EldercareCaseStudies';
+import { SeniorPlacementAgentPartners } from './pages/SeniorPlacementAgentPartners';
 
 
 
@@ -70,6 +71,7 @@ function AppRoutes() {
       <Route path="/eldercare-private-data-store" element={<EldercareDataVault/>} />
       <Route path="/healthcare-insurance-claims-recovery" element={<HealthcareInsuranceClaimsRecovery/>} />
       <Route path="/eldercare-case-studies" element={<EldercareCaseStudies/>} />
+      <Route path="/senior-placement-agent-partner" element={<SeniorPlacementAgentPartners/>} />
       <Route path="/nursing-home" element={<NursingHomeSearchPage />} />
       <Route path="/home-health-care" element={<HomeHealthCareSearchPage />} />
       <Route path="/dementia-assessment" element={<DementiaAssessmentPage />} />
