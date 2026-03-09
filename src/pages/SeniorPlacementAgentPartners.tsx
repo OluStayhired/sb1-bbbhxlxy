@@ -1372,7 +1372,7 @@ function TestimonialCard({
         </div>
       </div>
     </div>
-  );
+   );
 }
 
 // Benefit Card Component
