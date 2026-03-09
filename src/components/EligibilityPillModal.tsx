@@ -61,6 +61,7 @@ export function EligibilityPillModal() {
 
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const dailyQuota = 5;
 
   const suggestedQuestions = [
     "What are basic eligibility requirements for LTC insurance?",
@@ -102,7 +103,7 @@ export function EligibilityPillModal() {
         return false;
       }
 
-      return (data?.length || 0) >= 5;
+      return (data?.length || 0) >= dailyQuota;
     } catch (error) {
       console.error('Error in checkDailyQuota:', error);
       return false;

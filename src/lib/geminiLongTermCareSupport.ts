@@ -248,6 +248,7 @@ Follow the [Rules] below:
 [writing format]:
 - Place each of the first 2 sentences in the post on a new line.
 - Add a space after each of the first 2 lines for readability.
+- Always add a space after every 2 sentences for readability
 - Make sure that the final sentence is a standalone from any paragraph.
 - Add a space between the final sentence and the last paragraph.
 
