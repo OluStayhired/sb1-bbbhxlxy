@@ -46,6 +46,7 @@ import { PageMenuNav } from '../components/PageMenuNav';
 import { PageFooter } from '../components/PageFooter';
 import { CommunityModal } from '../components/CommunityModal';
 import { PartnerRegisterModal } from '../components/PartnerRegisterModal';
+import { SPACoPilotPillModal } from '../components/SPACoPilotPillModal.tsx';
 
 export function SeniorPlacementAgentPartners() {
   const navigate = useNavigate();
@@ -1165,6 +1166,9 @@ export function SeniorPlacementAgentPartners() {
           isOpen={isPartnerResisterModalOpen}
           onClose={closePartnerRegisterModal}
         />
+
+        {/* Ellie SPA Pill Chatbot - Always Available */}
+            <SPACoPilotPillModal />
       </div>
     </>
   );

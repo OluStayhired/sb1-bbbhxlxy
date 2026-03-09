@@ -12,10 +12,29 @@ export function TypingEffect({ text, speed = 50, onComplete }: TypingEffectProps
   const [displayedText, setDisplayedText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Preprocess text to add line breaks after every 2 sentences
+  const processedText = React.useMemo(() => {
+    // Split by sentence endings (., !, ?)
+    const sentences = text.split(/(?<=[.!?])\s+/);
+    let result = '';
+    
+    sentences.forEach((sentence, index) => {
+      result += sentence;
+      // Add line break after every 2 sentences
+      if ((index + 1) % 2 === 0 && index !== sentences.length - 1) {
+        result += '\n\n';
+      } else if (index !== sentences.length - 1) {
+        result += ' ';
+      }
+    });
+    
+    return result;
+  }, [text]);
+
   useEffect(() => {
-    if (currentIndex < text.length) {
+    if (currentIndex < processedText.length) {
       const timeoutId = setTimeout(() => {
-        setDisplayedText((prev) => prev + text[currentIndex]);
+        setDisplayedText((prev) => prev + processedText[currentIndex]);
         setCurrentIndex((prev) => prev + 1);
       }, speed);
 
@@ -26,7 +45,8 @@ export function TypingEffect({ text, speed = 50, onComplete }: TypingEffectProps
         onComplete();
       }
     }
-  }, [text, speed, currentIndex, onComplete]); // Re-run effect when text, speed, or currentIndex changes
+  }, [processedText, speed, currentIndex, onComplete]); // Re-run effect when text, speed, or currentIndex changes
 
-  return <>{displayedText}</>; // Render the gradually displayed text
+  // Preserve line breaks by using white-space: pre-wrap
+  return <span style={{ whiteSpace: 'pre-wrap' }}>{displayedText}</span>;
 }
