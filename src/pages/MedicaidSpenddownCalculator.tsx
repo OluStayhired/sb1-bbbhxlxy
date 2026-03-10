@@ -39,11 +39,17 @@ import {
 import { PageMenuNav } from '../components/PageMenuNav';
 import { PageFooter } from '../components/PageFooter';
 import { CommunityModal } from '../components/CommunityModal';
+import { OnboardingQuestionsModal } from '../components/OnboardingQuestionsModal';
+import { EldercareGapDashboardModal } from '../components/EldercareGapDashboardModal';  // ADD THIS LINE  
+
+
+
 
 export function MedicaidSpenddownCalculator() {
   const navigate = useNavigate();
   const [isCommunityModalOpen, setIsCommunityModalOpen] = useState(false);
   const [isOnboardingModalOpen, setIsOnboardingModalOpen] = useState(false);
+  const [isDashboardModalOpen, setIsDashboardModalOpen] = useState(false);  // ADD THIS LINE
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -64,6 +70,20 @@ export function MedicaidSpenddownCalculator() {
   const closeOnboardingModal = () => {
     setIsOnboardingModalOpen(false);
   };
+
+  const openDashboardModal = () => {
+  setIsDashboardModalOpen(true);
+};
+
+const closeDashboardModal = () => {
+  setIsDashboardModalOpen(false);
+};  
+
+  // GET SESSION ID FROM SESSION STORAGE
+const getSessionId = (): string => {
+  return sessionStorage.getItem('eldercare_session_id') || '';
+};
+
 
   return (
     <>
@@ -133,7 +153,7 @@ export function MedicaidSpenddownCalculator() {
                 Know Exactly When Financial Help Arrives
               </h2>
               <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Get a data-driven forecast. Discover when to stop draining your personal savings.
+                Get a data-driven forecast. Discover when to stop draining your personal savings.
               </p>
             </div>
 
@@ -373,6 +393,19 @@ export function MedicaidSpenddownCalculator() {
           isOpen={isCommunityModalOpen}
           onClose={closeCommunityModal}
         />
+
+        <EldercareGapDashboardModal
+            isOpen={isDashboardModalOpen}
+            onClose={closeDashboardModal}
+            sessionId={getSessionId()}
+          />   
+
+            {/* Onboarding Questions Modal */}
+        <OnboardingQuestionsModal
+          isOpen={isOnboardingModalOpen}
+          onClose={closeOnboardingModal}
+          onDashboardOpen={openDashboardModal} 
+          />
       </div>
     </>
   );

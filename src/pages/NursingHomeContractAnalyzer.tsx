@@ -39,11 +39,16 @@ import {
 import { PageMenuNav } from '../components/PageMenuNav';
 import { PageFooter } from '../components/PageFooter';
 import { CommunityModal } from '../components/CommunityModal';
+import { OnboardingQuestionsModal } from '../components/OnboardingQuestionsModal';
+import { EldercareGapDashboardModal } from '../components/EldercareGapDashboardModal';  // ADD THIS LINE  
+
+
 
 export function NursingHomeContractAnalyzer() {
   const navigate = useNavigate();
   const [isCommunityModalOpen, setIsCommunityModalOpen] = useState(false);
   const [isOnboardingModalOpen, setIsOnboardingModalOpen] = useState(false);
+  const [isDashboardModalOpen, setIsDashboardModalOpen] = useState(false);  // ADD THIS LINE
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -64,6 +69,20 @@ export function NursingHomeContractAnalyzer() {
   const closeOnboardingModal = () => {
     setIsOnboardingModalOpen(false);
   };
+
+  const openDashboardModal = () => {
+  setIsDashboardModalOpen(true);
+};
+
+const closeDashboardModal = () => {
+  setIsDashboardModalOpen(false);
+};  
+
+  // GET SESSION ID FROM SESSION STORAGE
+const getSessionId = (): string => {
+  return sessionStorage.getItem('eldercare_session_id') || '';
+};
+
 
   return (
     <>
@@ -375,6 +394,19 @@ export function NursingHomeContractAnalyzer() {
           isOpen={isCommunityModalOpen}
           onClose={closeCommunityModal}
         />
+
+        <EldercareGapDashboardModal
+            isOpen={isDashboardModalOpen}
+            onClose={closeDashboardModal}
+            sessionId={getSessionId()}
+          />   
+
+            {/* Onboarding Questions Modal */}
+        <OnboardingQuestionsModal
+          isOpen={isOnboardingModalOpen}
+          onClose={closeOnboardingModal}
+          onDashboardOpen={openDashboardModal} 
+          />
       </div>
     </>
   );
