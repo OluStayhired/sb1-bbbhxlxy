@@ -109,6 +109,7 @@ export function SeniorPlacementAgentPartners() {
                 <span className="text-sm font-bold text-gray-700">Strategic Partnership Program</span>
               </div>
 
+              {/*
               <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold text-gray-700 mb-6 leading-tight">
                 Place More Seniors{' '}
                 <span className="bg-gradient-to-r from-red-400 via-red-500 to-red-600 bg-clip-text text-transparent">
@@ -117,10 +118,17 @@ export function SeniorPlacementAgentPartners() {
                   <br className="sm:hidden"/>
                     <span className="sm:hidden inline text-2xl">Without Admin Fatigue</span>
                 </span>
-                {/*
-                <br />
-                <span className="text-3xl sm:text-4xl md:text-5xl text-gray-600">Zero Conflict of Interest.</span>
-                */}
+              </h1>
+              */}
+
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold text-gray-700 mb-6 leading-tight">
+                Senior Placement Solutions{' '}
+                <span className="bg-gradient-to-r from-red-400 via-red-500 to-red-600 bg-clip-text text-transparent">
+                  <br className="hidden sm:inline"/>
+                  <span className="hidden text-5xl sm:inline-block sm:mt-2">for all your boring work</span>
+                  <br className="sm:hidden"/>
+                    <span className="sm:hidden inline text-2xl">Without Admin Fatigue</span>
+                </span>
               </h1>
 
               <p className="text-lg sm:text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
