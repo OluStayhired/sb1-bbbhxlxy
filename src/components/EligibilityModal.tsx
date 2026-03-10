@@ -675,7 +675,8 @@ const handleSendMessage = async (content: string) => {
                   Hey there I'm Ellie! I know how hard it is to navigate long term care insurance. 
                   I'm here to help you figure out your options, answer your questions and guide you through the eligibility process with clarity.
                   */}
-                  I help career professionals with long term care insurance applications and Medicaid elgibility checks. 
+                  {/*I help career professionals with long term care insurance applications and Medicaid elgibility checks. */}
+                  I help busy career professionals with long term care insurance applications and Medicaid elgibility checks for their aging parents.
                 </p>
               </div>
 
