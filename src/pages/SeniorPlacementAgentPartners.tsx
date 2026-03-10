@@ -575,12 +575,12 @@ export function SeniorPlacementAgentPartners() {
                       Stop chasing fragmented medical records and legal gaps. Provide every inquiry with a personalized Care Gap Finder link that builds a forensic "Ready-to-Move" dossier in minutes, not weeks.
                     </p>
 
-                    <div className="bg-green-50 border-l-4 border-green-200/80 rounded-lg p-5 mb-8">
+                    <div className="bg-gray-100 border-l-4 border-gray-400/80 rounded-lg p-5 mb-8">
                       <div className="flex items-start space-x-3">
-                        <TrendingUp className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
+                        <TrendingUp className="w-6 h-6 text-gray-600 flex-shrink-0 mt-1" />
                         <div>
-                          <div className="text-xs font-bold text-green-700 uppercase tracking-wide mb-2">The Payoff</div>
-                          <p className="text-green-700 font-normal leading-relaxed">
+                          <div className="text-xs font-bold text-gray-700 uppercase tracking-wide mb-2">The Payoff</div>
+                          <p className="text-gray-700 font-normal leading-relaxed">
                             Walk into the first tour with a complete clinical and financial profile, eliminating discovery drag and shortening your sales cycle.
                           </p>
                         </div>
@@ -713,12 +713,12 @@ export function SeniorPlacementAgentPartners() {
                       Families are naturally wary of "free" referral services. Break through the skepticism by backing your recommendations with hard data on staffing ratios, safety violations, and clinical performance that marketing brochures hide.
                     </p>
 
-                    <div className="bg-green-50 border-l-4 border-green-200/80 rounded-lg p-5 mb-8">
+                    <div className="bg-gray-100 border-l-4 border-gray-400/80 rounded-lg p-5 mb-8">
                       <div className="flex items-start space-x-3">
-                        <Award className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
+                        <Award className="w-6 h-6 text-gray-600 flex-shrink-0 mt-1" />
                         <div>
-                          <div className="text-xs font-bold text-green-700 uppercase tracking-wide mb-2">The Payoff</div>
-                          <p className="text-green-700 font-normal leading-relaxed">
+                          <div className="text-xs font-bold text-gray-700 uppercase tracking-wide mb-2">The Payoff</div>
+                          <p className="text-gray-700 font-normal leading-relaxed">
                             Shift from "Salesperson" to "Trusted Advisor." Use objective due diligence reports to win over high-net-worth families and professional referral sources.
                           </p>
                         </div>
@@ -798,9 +798,11 @@ export function SeniorPlacementAgentPartners() {
                       </div>
                       */}
                       {/*<div className="bg-gradient-to-r from-red-500 to-red-600 rounded-2xl p-6 text-white text-center shadow-xl">*/}
-                      <div className="bg-gradient-to-r from-red-300 via-red-100 via-red-200 to-red-300 rounded-2xl p-6 text-red-500 text-center border-2 border-red-500 shadow-xl">
-                        <div className="text-5xl font-bold mb-2 text-red-600">100%</div>
-                        <div className="text-sm font-semibold uppercase tracking-wide opacity-90 text-red-600">Data Transparency</div>
+                      {/*<div className="bg-gradient-to-r from-green-300 via-green-100 via-green-200 to-green-300 rounded-2xl p-6 text-green-500 text-center border-2 border-green-500 shadow-xl">*/}
+
+                        <div className="bg-white rounded-2xl p-6 text-green-500 text-center border-2 border-green-400 shadow-xl">
+                        <div className="text-5xl font-bold mb-2 text-green-600">100%</div>
+                        <div className="text-sm font-semibold uppercase tracking-wide opacity-90 text-green-600">Data Transparency</div>
                       </div>
                     </div>
                   </div>
@@ -838,26 +840,28 @@ export function SeniorPlacementAgentPartners() {
                       Don't lose your afternoon on hold with the VA or buried in Medicaid manuals. Use the LTC Assistant to get instant clarity on complex state rules and financial roadblocks for every lead.
                     </p>
 
-                    <div className="bg-green-50 border-l-4 border-green-200/80 rounded-lg p-5 mb-8">
+                    <div className="bg-gray-100 border-l-4 border-gray-400/80 rounded-lg p-5 mb-8">
                       <div className="flex items-start space-x-3">
-                        <Sparkles className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
+                        <Sparkles className="w-6 h-6 text-gray-600 flex-shrink-0 mt-1" />
                         <div>
-                          <div className="text-xs font-bold text-green-700 uppercase tracking-wide mb-2">The Payoff</div>
-                          <p className="text-green-700 font-normal leading-relaxed">
+                          <div className="text-xs font-bold text-gray-700 uppercase tracking-wide mb-2">The Payoff</div>
+                          <p className="text-gray-700 font-normal leading-relaxed">
                             Reclaim 4+ hours of admin per inquiry. By automating the financial due diligence, you shift your energy from "unpaid researcher" to "high-volume closer."
                           </p>
                         </div>
                       </div>
                     </div>
 
-                    <Link className="group w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-8 py-4 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-xl hover:from-red-600 hover:to-red-700 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 font-semibold"
-                      to="/medicaid-co-pilot">
+                    <button className="group w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-8 py-4 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-xl hover:from-red-600 hover:to-red-700 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 font-semibold"
+                      //to="/medicaid-co-pilot"
+                      onClick={openPartnerRegisterModal}
+                      >
                       
                       <Headset className="w-5 h-5" />
                         <span className="hidden sm:inline">Ask LTC Assistant</span>
                       <span className="sm:hidden">Ask Assistant</span>
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    </Link>
+                    </button>
                   </div>
 
                   {/* Right: Visual Stats */}
@@ -1372,7 +1376,7 @@ function TestimonialCard({
         </div>
       </div>
     </div>
-   );
+  );
 }
 
 // Benefit Card Component
