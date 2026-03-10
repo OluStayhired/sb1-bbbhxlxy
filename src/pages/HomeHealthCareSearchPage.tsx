@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { CalendarCheck, Calendar, PenSquare, Clock, Users, PenTool, Briefcase, Plus, Minus,Menu, MailCheck,Check,
+import { CalendarCheck, Calendar, PenSquare, Clock, Users, PenTool, Briefcase, Plus, Minus,Menu, MailCheck,
   Bot, CheckCircle,X, Send,Timer, Zap, ArrowRight, HeartPulse, Rocket, Search, Heart, PlusCircle,
   Lightbulb, Sparkles, CircleDollarSign, Star, MapPin, Microscope } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
@@ -24,6 +24,7 @@ import { HomeHealthcareAgency } from '../components/HomeHealthcareAgency.tsx';
 import { PageMenuNav } from '../components/PageMenuNav';
 import { PageFooter } from '../components/PageFooter';
 import { OnboardingQuestionsModal } from '../components/OnboardingQuestionsModal';
+import { EldercareGapDashboardModal } from '../components/EldercareGapDashboardModal';  // ADD THIS LINE  
 
 
 
@@ -41,6 +42,7 @@ export function HomeHealthCareSearchPage() {
   const [isCommunityModalOpen, setIsCommunityModalOpen] = useState(false);
   const [isCommunitySuccessModalOpen, setIsCommunitySuccessModalOpen] = useState(false);
   const [isOnboardingModalOpen, setIsOnboardingModalOpen] = useState(false);
+  const [isDashboardModalOpen, setIsDashboardModalOpen] = useState(false);  // ADD THIS LINE
 
   
   useEffect(() => {
@@ -88,6 +90,20 @@ const handleLoginClick = () => {
 const closeOnboardingModal = () => {
   setIsOnboardingModalOpen(false);
 };
+
+const openDashboardModal = () => {
+  setIsDashboardModalOpen(true);
+};
+
+const closeDashboardModal = () => {
+  setIsDashboardModalOpen(false);
+};  
+
+  // GET SESSION ID FROM SESSION STORAGE
+const getSessionId = (): string => {
+  return sessionStorage.getItem('eldercare_session_id') || '';
+};
+  
 
   
   const handleGoogleLogin = async () => {
@@ -144,6 +160,10 @@ const closeOnboardingModal = () => {
               
               </span>
              <p className="block text-sm font-normal sm:text-xl sm:font-normal text-gray-600 leading-tight mt-1 sm:mt-3">
+
+               {/*<span className="sm:hidden font-normal">Join a network of career professionals navigating eldercare together</span>  */}
+               {/*<span className="sm:hidden font-normal">Search 12,500 caregiving agencies . Get detailed reports . Book Consultation </span>   
+          <span className="hidden sm:inline font-normal">Search 12,500 caregiving agencies. Get summary reports and book a consultation today</span> */}
                <span className="font-normal">Vet the agencies providing caregivers. Access clinical data on mobility, safety & patient dignity.</span>
          </p>
             
@@ -274,10 +294,17 @@ const closeOnboardingModal = () => {
       />
 
         
-        {/* Onboarding Questions Modal */}
+      <EldercareGapDashboardModal
+            isOpen={isDashboardModalOpen}
+            onClose={closeDashboardModal}
+            sessionId={getSessionId()}
+          />   
+
+            {/* Onboarding Questions Modal */}
         <OnboardingQuestionsModal
           isOpen={isOnboardingModalOpen}
           onClose={closeOnboardingModal}
+          onDashboardOpen={openDashboardModal} 
           />
         
 {isWaitlistSuccessModalOpen ? (

@@ -24,7 +24,6 @@ import { PageMenuNav } from '../components/PageMenuNav';
 import { PageFooter } from '../components/PageFooter';
 
 import { OnboardingQuestionsModal } from '../components/OnboardingQuestionsModal';
-
 import { EldercareGapDashboardModal } from '../components/EldercareGapDashboardModal';  // ADD THIS LINE
 
 export function NursingHomeSearchPage() {

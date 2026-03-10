@@ -47,12 +47,15 @@ import { PageFooter } from '../components/PageFooter';
 import { CommunityModal } from '../components/CommunityModal';
 import { PartnerRegisterModal } from '../components/PartnerRegisterModal';
 import { SPACoPilotPillModal } from '../components/SPACoPilotPillModal.tsx';
+import { OnboardingQuestionsModal } from '../components/OnboardingQuestionsModal';
+import { EldercareGapDashboardModal } from '../components/EldercareGapDashboardModal';  // ADD THIS LINE
 
 export function SeniorPlacementAgentPartners() {
   const navigate = useNavigate();
   const [isCommunityModalOpen, setIsCommunityModalOpen] = useState(false);
   const [isPartnerResisterModalOpen, setIsPartnerRegisterModalOpen] = useState(false);
   const [isOnboardingModalOpen, setIsOnboardingModalOpen] = useState(false);
+  const [isDashboardModalOpen, setIsDashboardModalOpen] = useState(false);  // ADD THIS LINE
   
 
   useEffect(() => {
@@ -81,6 +84,19 @@ export function SeniorPlacementAgentPartners() {
   const closePartnerRegisterModal = () => {
     setIsPartnerRegisterModalOpen(false);
   };
+
+  const openDashboardModal = () => {
+  setIsDashboardModalOpen(true);
+};
+
+const closeDashboardModal = () => {
+  setIsDashboardModalOpen(false);
+};  
+
+  // GET SESSION ID FROM SESSION STORAGE
+const getSessionId = (): string => {
+  return sessionStorage.getItem('eldercare_session_id') || '';
+};
 
   return (
     <>
@@ -121,13 +137,13 @@ export function SeniorPlacementAgentPartners() {
               </h1>
               */}
 
-            <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold text-gray-700 mb-6 leading-tight">
-                Senior Placement Solutions{' '}
+              <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold text-gray-700 mb-6 leading-tight">
+                Senior Placement Intelligence{' '}
                 <span className="bg-gradient-to-r from-red-400 via-red-500 to-red-600 bg-clip-text text-transparent">
                   <br className="hidden sm:inline"/>
-                  <span className="hidden text-5xl sm:inline-block sm:mt-2">for all your boring work</span>
+                  <span className="hidden text-5xl sm:inline-block sm:mt-2">AI for all your boring work</span>
                   <br className="sm:hidden"/>
-                    <span className="sm:hidden inline text-2xl">Without Admin Fatigue</span>
+                    <span className="sm:hidden inline text-2xl">AI for the boring stuff</span>
                 </span>
               </h1>
 
@@ -1178,6 +1194,19 @@ export function SeniorPlacementAgentPartners() {
           isOpen={isPartnerResisterModalOpen}
           onClose={closePartnerRegisterModal}
         />
+
+         <EldercareGapDashboardModal
+            isOpen={isDashboardModalOpen}
+            onClose={closeDashboardModal}
+            sessionId={getSessionId()}
+          />   
+
+            {/* Onboarding Questions Modal */}
+        <OnboardingQuestionsModal
+          isOpen={isOnboardingModalOpen}
+          onClose={closeOnboardingModal}
+          onDashboardOpen={openDashboardModal} 
+          />
 
         {/* Ellie SPA Pill Chatbot - Always Available */}
             <SPACoPilotPillModal />

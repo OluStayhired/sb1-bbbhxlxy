@@ -31,6 +31,7 @@ import { StressCoachFreeTool } from '../components/StressCoachFreeTool';
 import { CommunityModal } from '../components/CommunityModal';
 import { TooltipExtended } from '/src/utils/TooltipExtended';
 import { OnboardingQuestionsModal } from '../components/OnboardingQuestionsModal';
+import { EldercareGapDashboardModal } from '../components/EldercareGapDashboardModal';  // ADD THIS LINE  
 
 
 
@@ -39,6 +40,7 @@ export function EldercareStressCoachPage() {
   const navigate = useNavigate();
   const [isCommunityModalOpen, setIsCommunityModalOpen] = useState(false);
   const [isOnboardingModalOpen, setIsOnboardingModalOpen] = useState(false);
+  const [isDashboardModalOpen, setIsDashboardModalOpen] = useState(false);  // ADD THIS LINE
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -59,6 +61,20 @@ export function EldercareStressCoachPage() {
 const closeOnboardingModal = () => {
   setIsOnboardingModalOpen(false);
 };
+
+const openDashboardModal = () => {
+  setIsDashboardModalOpen(true);
+};
+
+const closeDashboardModal = () => {
+  setIsDashboardModalOpen(false);
+};  
+
+  // GET SESSION ID FROM SESSION STORAGE
+const getSessionId = (): string => {
+  return sessionStorage.getItem('eldercare_session_id') || '';
+};
+  
 
        
 
@@ -341,10 +357,17 @@ const closeOnboardingModal = () => {
           onClose={closeCommunityModal}
         />
 
-         {/* Onboarding Questions Modal */}
+           <EldercareGapDashboardModal
+            isOpen={isDashboardModalOpen}
+            onClose={closeDashboardModal}
+            sessionId={getSessionId()}
+          />   
+
+            {/* Onboarding Questions Modal */}
         <OnboardingQuestionsModal
           isOpen={isOnboardingModalOpen}
           onClose={closeOnboardingModal}
+          onDashboardOpen={openDashboardModal} 
           />
       </div>
     </>
