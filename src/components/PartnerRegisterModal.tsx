@@ -173,7 +173,7 @@ export function PartnerRegisterModal({ isOpen, onClose }: PartnerRegisterModalPr
             <h2 className="text-4xl font-bold text-gray-800 mb-4">Welcome Aboard!</h2>
             <p className="text-lg text-gray-600 mb-8 max-w-md mx-auto">
               You've successfully registered as a Poetiq Partner.<br />
-              <span className="font-semibold text-red-600">Expect an email soon with next steps!</span>
+              <span className="font-semibold text-green-600">Expect an email soon with next steps!</span>
             </p>
             <button
               onClick={resetFormAndModal}
@@ -203,7 +203,9 @@ export function PartnerRegisterModal({ isOpen, onClose }: PartnerRegisterModalPr
                   <CheckCircle className="w-5 h-5 text-red-500" />
                 </div>
                 <p className="text-xs text-gray-700 leading-relaxed">
-                  <span className="font-semibold text-red-600">Your data helps us serve you better.</span> We use this information solely to match you with the most relevant cases and resources in your region.
+                  {/*<span className="font-semibold text-red-600">Your data helps us serve you better.</span> We use this information solely to match you with the most relevant cases and resources in your region.*/}
+                  <span className="font-semibold text-sm text-red-600">Your data helps us serve you better.</span> 
+                  <br/> We use this information solely to match you with the most relevant cases and resources in your region.
                 </p>
               </div>
             </div>
