@@ -272,7 +272,7 @@ export function EldercareCaseStudies() {
       title: "Automated Spend-Down Accounting",
       subtitle: "Seamlessly navigated the Medicaid Look-Back for Dad's transition",
       persona: {
-        name: "James Thompson",
+        name: "Juan Garcia",
         age: 45,
         profession: "Financial Analyst",
         location: "Chicago, IL",
