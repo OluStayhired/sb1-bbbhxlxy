@@ -299,7 +299,7 @@ export function SPACoPilotPillModal() {
       {isPillVisible && !isOpen && (
       
         <div className="fixed bottom-6 right-1 -translate-x-1/2 sm:left-auto sm:right-6 sm:translate-x-0 z-40 animate-bounce-subtle">
-<TooltipBoundary className="sm:hidden text-right" text="👋 Ask Ellie. Get quick answers to complex LTC eligibility issues.">
+  <TooltipBoundary className="sm:hidden text-right" text="👋 Ask Ellie. Get quick answers to complex LTC eligibility issues." alwaysVisible={true}>
           <button
             onClick={toggleOpen}
             className="group relative bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 text-white rounded-full shadow-2xl hover:shadow-red-500/50 transition-all duration-300 hover:scale-105 active:scale-95 p-0 sm:pl-4 sm:pr-6 sm:py-3 flex items-center space-x-3 border-4 border-red-400 hover:sm:border-green-400 hover:border-green-400"
