@@ -1,6 +1,5 @@
-// src/utils/TooltipHelp.tsx
-import React, { useState, useRef, useEffect, ReactNode, useCallback } from 'react';
-import ReactDOM from 'react-dom'; // Import ReactDOM
+// src/utils/TooltipBoundary.tsx
+import React, { useState, useRef, useEffect, ReactNode } from 'react';
 
 interface TooltipBoundaryProps {
   text: string;
@@ -9,19 +8,28 @@ interface TooltipBoundaryProps {
   textColor?: string;
   className?: string;
   show?: boolean;
-  
+  alwaysVisible?: boolean; // New prop to control permanent visibility
 }
 
-export function TooltipBoundary({ text, children, bgColor = 'gray-900', textColor = 'white', className, show = true }: TooltipExtendedProps) {
+export function TooltipBoundary({ 
+  text, 
+  children, 
+  bgColor = 'gray-900', 
+  textColor = 'white', 
+  className, 
+  show = true,
+  alwaysVisible = false // Default to false for backward compatibility
+}: TooltipBoundaryProps) {
   // State to manage the tooltip's visibility
-  const [isTooltipVisible, setIsTooltipVisible] = useState(false);
+  const [isTooltipVisible, setIsTooltipVisible] = useState(alwaysVisible);
   const [tooltipPosition, setTooltipPosition] = useState<'left' | 'center' | 'right'>('center');
   const containerRef = useRef<HTMLDivElement>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
 
   // Calculate tooltip position to prevent overflow
   useEffect(() => {
-    if (isTooltipVisible && containerRef.current && tooltipRef.current) {
+    // If alwaysVisible, calculate position immediately on mount
+    if ((isTooltipVisible || alwaysVisible) && containerRef.current && tooltipRef.current) {
       const containerRect = containerRef.current.getBoundingClientRect();
       const tooltipWidth = 200; // Match the w-[200px] class
       const viewportWidth = window.innerWidth;
@@ -44,17 +52,49 @@ export function TooltipBoundary({ text, children, bgColor = 'gray-900', textColo
         setTooltipPosition('center');
       }
     }
-  }, [isTooltipVisible]);
+  }, [isTooltipVisible, alwaysVisible]);
 
-  // Only allow visibility change if the 'show' prop is true
+  // Recalculate position on window resize when always visible
+  useEffect(() => {
+    if (alwaysVisible) {
+      const handleResize = () => {
+        if (containerRef.current && tooltipRef.current) {
+          const containerRect = containerRef.current.getBoundingClientRect();
+          const tooltipWidth = 200;
+          const viewportWidth = window.innerWidth;
+          const padding = 16;
+
+          const centerPosition = containerRect.left + (containerRect.width / 2) - (tooltipWidth / 2);
+          const leftEdge = centerPosition;
+          const rightEdge = centerPosition + tooltipWidth;
+
+          if (leftEdge < padding) {
+            setTooltipPosition('left');
+          } else if (rightEdge > viewportWidth - padding) {
+            setTooltipPosition('right');
+          } else {
+            setTooltipPosition('center');
+          }
+        }
+      };
+
+      window.addEventListener('resize', handleResize);
+      // Trigger initial calculation
+      handleResize();
+
+      return () => window.removeEventListener('resize', handleResize);
+    }
+  }, [alwaysVisible]);
+
+  // Only allow hover visibility change if not alwaysVisible
   const handleMouseEnter = () => {
-    if (show) {
+    if (show && !alwaysVisible) {
       setIsTooltipVisible(true);
     }
   };
 
   const handleMouseLeave = () => {
-    if (show) {
+    if (show && !alwaysVisible) {
       setIsTooltipVisible(false);
     }
   };
@@ -72,8 +112,10 @@ export function TooltipBoundary({ text, children, bgColor = 'gray-900', textColo
     }
   };
   
+  // Determine if tooltip should be shown
+  const shouldShowTooltip = alwaysVisible || isTooltipVisible;
+  
   return (
-    // Apply onMouseEnter and onMouseLeave directly to this container
     <div
       ref={containerRef}
       className="relative inline-block"
@@ -88,7 +130,7 @@ export function TooltipBoundary({ text, children, bgColor = 'gray-900', textColo
         className={`absolute z-9999 bottom-full mb-2
                    bg-${bgColor} text-${textColor} text-xs rounded-md py-1 px-2
                     shadow-lg w-[200px]  
-                   ${isTooltipVisible ? 'opacity-100' : 'opacity-0'}
+                   ${shouldShowTooltip ? 'opacity-100' : 'opacity-0'}
                    transition-opacity duration-300 pointer-events-none
                    ${getPositionClasses()}
                    ${className || ''} whitespace-pre-line`}
