@@ -18,7 +18,8 @@ import {
   Zap,
   Building2,
   ClipboardCheck,
-  Link as LinkIcon,
+  //Link as LinkIcon,
+  LinkIcon,
   Brain,
   PhoneCall,
   FileText,
@@ -146,7 +147,7 @@ export function EldercarePartnerPage() {
 
               <p className="sm:hidden text-base sm:text-lg text-gray-700 mb-6 max-w-3xl mx-auto leading-relaxed">
                 {/*The Clinical Intelligence Partner for Professionals Who Handle the "Messy Middle" of Long-Term Care.*/}
-                We provide the clinical intelligence. You provide the expert guidance. Together, we move families from crisis to action faster.   
+                We provide the clinical intelligence. You provide the expert guidance. Together, we move families from crisis to action effortlessly.   
               </p>
 
               <p className="text-base sm:text-lg text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
@@ -336,7 +337,6 @@ export function EldercarePartnerPage() {
                   ideal Poetiq Partner
                 </span>
               </h2>
-
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
                 Join a network of Placement Agents, Elder Law Attorneys, and Long-Term Care Professionals effortlessly moving families from Crisis to Clarity
               </p>
@@ -345,9 +345,10 @@ export function EldercarePartnerPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto px-4">
               <ProfileCard
                 icon={<Building2 className="w-10 h-10 text-red-500" />}
-                title="The High-Volume Placement Agency"
+                title="The Senior Placement Agency"
                 description="You have the leads, but your agents are drowning in manual intake. You need a standardized, clinical vetting process to scale."
                 highlight="Standardize intake at scale"
+                learn="Click for Placement Partnerships"
               />
 
               <ProfileCard
@@ -1096,12 +1097,14 @@ function ProfileCard({
   icon,
   title,
   description,
-  highlight
+  highlight,
+  learn
 }: {
   icon: React.ReactNode;
   title: string;
   description: string;
   highlight: string;
+  learn?: string
 }) {
   return (
     <div className="bg-white rounded-2xl p-8 border-2 border-red-100 hover:border-red-300 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 flex flex-col h-full">
@@ -1111,9 +1114,25 @@ function ProfileCard({
       <h3 className="text-xl font-bold text-gray-900 mb-4">{title}</h3>
       <p className="text-gray-600 leading-relaxed mb-4 flex-grow">{description}</p>
 
+      {learn && (
+      <Link 
+        to="/senior-placement-agent-partner" 
+        //className="group inline-flex items-center justify-center space-x-2 px-6 py-3 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-xl hover:from-red-600 hover:to-red-700 transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 font-semibold text-sm mb-4">
+        
+className="group inline-flex items-center justify-center space-x-2 px-6 py-3 bg-gradient-to-r from-red-300 to-red-400 text-white rounded-xl hover:from-red-400 hover:to-red-600 transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 font-semibold text-sm mb-4"
+      >
+        <span>{learn}</span>
+        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+      </Link>
+      )}
+
+
+
+      
       <div className="flex items-center space-x-2 pt-4 border-t border-red-100 mt-auto">
         <CheckCircle2 className="w-5 h-5 text-red-500 flex-shrink-0" />
         <span className="text-sm font-semibold text-red-600">{highlight}</span>
+        
       </div>
     </div>
   );
