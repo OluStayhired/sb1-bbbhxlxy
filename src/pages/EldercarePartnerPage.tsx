@@ -141,12 +141,12 @@ export function EldercarePartnerPage() {
 
               <p className="hidden sm:inline text-base sm:text-lg text-gray-700 mb-6 max-w-3xl mx-auto leading-relaxed">
                 {/*The Clinical Intelligence Partner for Professionals Who Handle the "Messy Middle" of Long-Term Care.*/}
-                We provide the clinical intelligence. You provide the expert guidance. Together, we move families from crisis to action effortlessly. Gain full access to solutions like Ellie when you join Poetiq. 👇  
+                We provide the clinical intelligence. You provide the expert guidance. Together, we move families from crisis to action quicker. Gain full access to solutions like Ellie when you join Poetiq. 👇  
               </p>
 
               <p className="sm:hidden text-base sm:text-lg text-gray-700 mb-6 max-w-3xl mx-auto leading-relaxed">
                 {/*The Clinical Intelligence Partner for Professionals Who Handle the "Messy Middle" of Long-Term Care.*/}
-                We provide the clinical intelligence. You provide the expert guidance. Together, we move families from crisis to action effortlessly.   
+                We provide the clinical intelligence. You provide the expert guidance. Together, we move families from crisis to action faster.   
               </p>
 
               <p className="text-base sm:text-lg text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
@@ -331,11 +331,12 @@ export function EldercarePartnerPage() {
               </div>
 
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-600 mb-4">
-                Are you the {' '}
+                You are an {' '}
                 <span className="bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent">
-                  ideal Poetiq Partner?
+                  ideal Poetiq Partner
                 </span>
               </h2>
+
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
                 Join a network of Placement Agents, Elder Law Attorneys, and Long-Term Care Professionals effortlessly moving families from Crisis to Clarity
               </p>
