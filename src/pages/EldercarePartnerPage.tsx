@@ -129,14 +129,25 @@ export function EldercarePartnerPage() {
               </h1>
               */}
 
-                <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold text-gray-700 mb-6 leading-tight">
+              <h1 className="hidden sm:block text-3xl sm:text-4xl md:text-5xl font-bold text-gray-700 mb-6 leading-tight">
                   {/*Senior Placement Intelligence{' '}*/}
-                Faster Diligent Answers {' '}
+                Get Faster Diligent Answers {' '}
                 <span className="bg-gradient-to-r from-red-400 via-red-500 to-red-600 bg-clip-text text-transparent">
                   <br className="hidden sm:inline"/>
-                  <span className="hidden text-5xl sm:inline-block sm:mt-2">with Conversational Research</span>
+                  <span className="hidden text-5xl sm:inline-block sm:mt-2">with AI-Driven Research</span>
                   <br className="sm:hidden"/>
                     <span className="sm:hidden inline text-2xl">with Conversational Research</span>
+                </span>
+              </h1>
+
+               <h1 className="sm:hidden text-3xl sm:text-4xl md:text-5xl font-bold text-gray-700 mb-6 leading-tight">
+                  {/*Senior Placement Intelligence{' '}*/}
+                Get Faster Answers {' '}
+                <span className="bg-gradient-to-r from-red-400 via-red-500 to-red-600 bg-clip-text text-transparent">
+                  <br className="hidden sm:inline"/>
+                  <span className="hidden text-5xl sm:inline-block sm:mt-2">with AI-Driven Research</span>
+                  <br className="sm:hidden"/>
+                    <span className="sm:hidden inline text-2xl">with AI-Driven Research</span>
                 </span>
               </h1>
 
