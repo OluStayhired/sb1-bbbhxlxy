@@ -120,6 +120,14 @@ export function PageFooter({ onOpenOnboardingModal }: PageFooterProps) {
               </li>
 
               <li>
+                <Link to="/partner-program" className="no-underline hover:text-red-400 transition-colors">
+                  <h3 className="font-semibold text-gray-900 text-base mt-4 mb-2">
+                      Become a Partner
+                  </h3>
+                </Link>
+              </li>
+
+              <li>
                   <h3 className="font-semibold text-gray-900 text-base mt-4 mb-2">
                       Become a Partner
                   </h3>

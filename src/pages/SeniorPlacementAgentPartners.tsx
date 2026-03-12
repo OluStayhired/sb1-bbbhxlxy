@@ -49,6 +49,7 @@ import { PartnerRegisterModal } from '../components/PartnerRegisterModal';
 import { SPACoPilotPillModal } from '../components/SPACoPilotPillModal.tsx';
 import { OnboardingQuestionsModal } from '../components/OnboardingQuestionsModal';
 import { EldercareGapDashboardModal } from '../components/EldercareGapDashboardModal';  // ADD THIS LINE
+import { TooltipExtended } from '/src/utils/TooltipExtended';
 
 export function SeniorPlacementAgentPartners() {
   const navigate = useNavigate();
@@ -1011,6 +1012,7 @@ const getSessionId = (): string => {
           </section>
 
           {/* Bottom CTA */}
+          {/*
               <div className="mt-16 text-center">
                 <div className="bg-gradient-to-r from-red-50 to-red-100 rounded-3xl p-10">
                   <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
@@ -1018,6 +1020,29 @@ const getSessionId = (): string => {
                   </h3>
                   <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
                     Join placement agents who are closing deals faster with Poetiq's partnership tools.
+                  </p>
+                  <button
+                    onClick={openPartnerRegisterModal}
+                    className="group inline-flex items-center justify-center space-x-2 px-10 py-5 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-xl hover:from-red-600 hover:to-red-700 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1 font-bold text-lg"
+                  >
+                    <Handshake className="w-6 h-6" />
+                    <span>Become a Partner Today</span>
+                    <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                </div>
+              </div>
+          */}
+
+          {/* Bottom CTA */}
+              <div className="mt-16 text-center">
+                <div className="bg-gradient-to-br from-red-50 via-white to-red-100/40 rounded-3xl p-10">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+                    {/*Ready to Build a Better Workflow*/}
+                    Start Closing Deals Faster with Poetiq
+                  </h3>
+                  <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
+                    {/*Join placement agents who are closing deals faster with Poetiq's partnership tools.*/}
+                    Integrate Poetiq's partnership tools into your workflow and transform your business.
                   </p>
                   <button
                     onClick={openPartnerRegisterModal}
@@ -1209,7 +1234,10 @@ const getSessionId = (): string => {
           />
 
         {/* Ellie SPA Pill Chatbot - Always Available */}
+        
             <SPACoPilotPillModal />
+        
+        
       </div>
     </>
   );

@@ -24,6 +24,7 @@ import { EldercareDataVault } from './pages/EldercareDataVault';
 import { HealthcareInsuranceClaimsRecovery } from './pages/HealthcareInsuranceClaimsRecovery';
 import { EldercareCaseStudies } from './pages/EldercareCaseStudies';
 import { SeniorPlacementAgentPartners } from './pages/SeniorPlacementAgentPartners';
+import { EldercarePartnerPage } from './pages/EldercarePartnerPage';
 
 
 
@@ -72,6 +73,7 @@ function AppRoutes() {
       <Route path="/healthcare-insurance-claims-recovery" element={<HealthcareInsuranceClaimsRecovery/>} />
       <Route path="/eldercare-case-studies" element={<EldercareCaseStudies/>} />
       <Route path="/senior-placement-agent-partner" element={<SeniorPlacementAgentPartners/>} />
+      <Route path="/partner-program" element={<EldercarePartnerPage/>} />
       <Route path="/nursing-home" element={<NursingHomeSearchPage />} />
       <Route path="/home-health-care" element={<HomeHealthCareSearchPage />} />
       <Route path="/dementia-assessment" element={<DementiaAssessmentPage />} />

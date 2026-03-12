@@ -214,7 +214,8 @@ function MobileAccordion({ title, items }: {
           
 
             <Link
-            to="/#OperationalSupport"
+            to="/partner-program"
+              /*
             onClick={(e) => {
               setIsMobileMenuOpen(false);
               // If already on /dev page, manually scroll to element
@@ -225,10 +226,10 @@ function MobileAccordion({ title, items }: {
                   element.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
               }
-            }}
+            }}*/
             className="max-w-sm px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
           >
-              Quick Tools 💛
+              Partnership 💛
 
             </Link>    
           
@@ -631,8 +632,10 @@ function MobileAccordion({ title, items }: {
 
       {/* Quick Tools */}
       <Link
-        to="/#OperationalSupport"
-        onClick={(e) => {
+        //to="/#OperationalSupport"
+        to="/partner-program"
+        
+        /*onClick={(e) => {
           setIsMobileMenuOpen(false);
           if (window.location.pathname === '/') {
             e.preventDefault();
@@ -642,9 +645,10 @@ function MobileAccordion({ title, items }: {
             }
           }
         }}
+        */
         className="block w-full text-left px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-all duration-500"
       >
-        Quick Tools 💛
+        Partnership 💛
       </Link>
 
       {/* Free Care Tools Accordion */}
