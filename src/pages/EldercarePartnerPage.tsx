@@ -1096,9 +1096,9 @@ function AdvantageCard({
       <h3 className="text-2xl font-bold text-gray-900 mb-4">{title}</h3>
       <p className="text-gray-600 leading-relaxed mb-6">{description}</p>
 
-      {/* Metric Badge - Absolute positioned at bottom */}
-      <div className="absolute bottom-6 left-8 right-8 bg-gradient-to-r from-red-500 to-red-600 rounded-xl p-4 text-white text-center shadow-lg">
-        <div className="text-2xl font-bold">{metric}</div>
+       {/* Metric Badge - Absolute positioned at bottom */}
+       <div className="absolute bottom-6 left-8 right-8 bg-gradient-to-r from-red-500 to-red-600 rounded-xl p-2 sm:p-4 text-white text-center shadow-lg">
+        <div className="text-lg sm:text-2xl font-bold">{metric}</div>
       </div>
     </div>
   );
