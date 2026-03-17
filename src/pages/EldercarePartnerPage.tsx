@@ -136,7 +136,7 @@ export function EldercarePartnerPage() {
                   <br className="hidden sm:inline"/>
                   <span className="hidden text-5xl sm:inline-block sm:mt-2">with AI-Driven Tools</span>
                   <br className="sm:hidden"/>
-                    <span className="sm:hidden inline text-2xl">with Conversational Tools</span>
+                    <span className="sm:hidden inline text-2xl">with AI-Driven Tools</span>
                 </span>
               </h1>
 
@@ -677,16 +677,20 @@ export function EldercarePartnerPage() {
                       </div>
                     </div>
 
-                    <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+                    <h3 className="hidden text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+                      LTC Assistant - Ellie
+                    </h3>
+
+                    <h3 className="sm:hidden text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
                       LTC Assistant
                     </h3>
 
                     <p className="text-xl font-semibold text-red-600 mb-6">
-                      Generate Eligibility Summaries in 60 Seconds
+                      Generate Eligibility Summaries in 60 Seconds with Ellie
                     </p>
 
                     <p className="text-gray-700 leading-relaxed mb-6">
-                      Don't lose your afternoon on hold with the VA or buried in Medicaid manuals. Use the LTC Assistant to get instant clarity on complex state rules and financial roadblocks for every lead.
+                      Don't lose your afternoon on hold with the VA or buried in Medicaid manuals. Ask Ellie the LTC Assistant for instant clarity on complex state rules and financial roadblocks for every lead.
                     </p>
 
                     {/*<div className="bg-gradient-to-r from-green-50 to-green-100 border-l-4 border-green-500 rounded-lg p-5 mb-8">*/}
