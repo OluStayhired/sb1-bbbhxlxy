@@ -129,7 +129,7 @@ export function EldercarePartnerPage() {
               </h1>
               */}
 
-              <h1 className="hidden sm:block text-3xl sm:text-4xl md:text-5xl font-bold text-gray-700 mb-6 leading-tight">
+                <h1 className="hidden sm:block text-3xl sm:text-4xl md:text-5xl font-bold text-gray-700 mb-6 leading-tight">
                   {/*Senior Placement Intelligence{' '}*/}
                 Get Faster Diligent Answers {' '}
                 <span className="bg-gradient-to-r from-red-400 via-red-500 to-red-600 bg-clip-text text-transparent">
@@ -359,7 +359,7 @@ export function EldercarePartnerPage() {
                 title="The Senior Placement Agency"
                 description="You have the leads, but your agents are drowning in manual intake. You need a standardized, clinical vetting process to scale."
                 highlight="Standardize intake at scale"
-                learn="Click for Placement Partnerships"
+                //learn="Click for Placement Partnerships"
               />
 
               <ProfileCard
@@ -410,15 +410,30 @@ export function EldercarePartnerPage() {
                     {/*Join placement agents who are closing deals faster with Poetiq's partnership tools.*/}
                     Integrate Poetiq's partnership tools into your workflow and transform your business.
                   </p>
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-4xl mx-auto">
+
                   <button
                     onClick={openPartnerRegisterModal}
-                    className="group inline-flex items-center justify-center space-x-2 px-10 py-5 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-xl hover:from-red-600 hover:to-red-700 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1 font-bold text-lg"
+                    className="w-full sm:w-auto group inline-flex items-center justify-center space-x-2 px-10 py-5 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-xl hover:from-red-600 hover:to-red-700 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1 font-bold text-lg"
                   >
                     <Handshake className="w-6 h-6" />
                     <span className="hidden sm:inline">Become a Partner Today</span>
                     <span className="sm:hidden">Become a Partner</span>
                     <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
                   </button>
+
+                  <Link 
+                    to="/senior-placement-agent-partner" 
+                    //onClick={openPartnerRegisterModal}
+                    className="w-full sm:w-auto group inline-flex items-center justify-center space-x-2 px-10 py-5 bg-white text-red-500 rounded-xl hover:from-red-50 hover:to-red-100 border-2 border-red-500 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1 font-bold text-lg"
+                  >
+                    <Building2 className="w-6 h-6" />
+                    <span className="hidden sm:inline">For Placement Partnerships</span>
+                    <span className="sm:hidden">Placement Partnerships</span>
+                    <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                  </div>
+                  
                 </div>
               </div>
 
@@ -1096,8 +1111,8 @@ function AdvantageCard({
       <h3 className="text-2xl font-bold text-gray-900 mb-4">{title}</h3>
       <p className="text-gray-600 leading-relaxed mb-6">{description}</p>
 
-       {/* Metric Badge - Absolute positioned at bottom */}
-       <div className="absolute bottom-6 left-8 right-8 bg-gradient-to-r from-red-500 to-red-600 rounded-xl p-2 sm:p-4 text-white text-center shadow-lg">
+      {/* Metric Badge - Absolute positioned at bottom */}
+      <div className="absolute bottom-6 left-8 right-8 bg-gradient-to-r from-red-500 to-red-600 rounded-xl p-2 sm:p-4 text-white text-center shadow-lg">
         <div className="text-lg sm:text-2xl font-bold">{metric}</div>
       </div>
     </div>
