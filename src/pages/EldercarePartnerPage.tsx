@@ -212,7 +212,7 @@ export function EldercarePartnerPage() {
               <ProcessStep
                 number="2"
                 icon={<PhoneCall className="w-8 h-8 text-white" />}
-                title="Join Your Onboarding Call"
+                title="Join the Onboarding Call"
                 //description="We'll hop on a brief call to align on your specific 'Ready-to-Move' criteria. We want to ensure that when we refer families back to you, they fit your exact expertise and zip code."
                 description="Attend a brief partner call to align on your specific 'Ready-to-Move' criteria."
               />
