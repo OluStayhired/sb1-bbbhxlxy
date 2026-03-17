@@ -677,7 +677,7 @@ export function EldercarePartnerPage() {
                       </div>
                     </div>
 
-                    <h3 className="hidden text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+                    <h3 className="hidden sm:inline text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
                       LTC Assistant - Ellie
                     </h3>
 
