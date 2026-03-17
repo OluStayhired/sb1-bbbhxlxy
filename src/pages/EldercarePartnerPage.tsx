@@ -686,7 +686,7 @@ export function EldercarePartnerPage() {
                     </h3>
 
                     <p className="text-xl font-semibold text-red-600 mb-6">
-                      Generate Eligibility Summaries in 60 Seconds with Ellie
+                    Generate Instant Eligibility Summaries with Ellie
                     </p>
 
                     <p className="text-gray-700 leading-relaxed mb-6">
