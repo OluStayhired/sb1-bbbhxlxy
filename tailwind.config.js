@@ -28,15 +28,14 @@ export default {
             require('@tailwindcss/aspect-ratio'),
 
             // Add this function below:
-    function({ addBase }) {
-      addBase({
-        'html': { 
-          transform: 'scale(0.8)', 
-          'transform-origin': 'top left',
-          width: '125%',
-          height: '125%'
-        },
-      })
-    },
+            function({ addBase }) {
+              addBase({
+                'html': { 
+                  'zoom': '0.8', // Or '80%'
+                  '-moz-transform': 'scale(0.8)', // Fallback for older Firefox versions
+                  '-moz-transform-origin': 'top left',
+                },
+              })
+            },
            ],
 };
