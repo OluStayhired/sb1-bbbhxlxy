@@ -26,5 +26,17 @@ export default {
   },
   plugins: [require('@tailwindcss/typography'),
             require('@tailwindcss/aspect-ratio'),
+
+            // Add this function below:
+    function({ addBase }) {
+      addBase({
+        'html': { 
+          transform: 'scale(0.8)', 
+          'transform-origin': 'top left',
+          width: '125%',
+          height: '125%'
+        },
+      })
+    },
            ],
 };
