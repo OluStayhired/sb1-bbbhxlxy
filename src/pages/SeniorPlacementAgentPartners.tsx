@@ -184,12 +184,14 @@ const getSessionId = (): string => {
     </h2>
     <p className="hidden sm:block mt-4 text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
       {/*Focusing on the Senior Placement Agent's bottom line*/}
-      We automate clinical vetting and stakeholder alignment to help you <br/>handle more leads faster, safer and at scale.
+      {/*We automate clinical vetting and stakeholder alignment to help you <br/>handle more leads faster, safer and at scale.*/}
+      We automate clinical vetting and eliminate manual research to help you <br/>handle more leads faster, safer and at scale.
     </p>
 
     <p className="sm:hidden text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
       {/*Focusing on the Senior Placement Agent's bottom line*/}
-      We automate clinical vetting and stakeholder alignment to help you<br/> handle more leads faster
+      {/*We automate clinical vetting and stakeholder alignment to help you<br/> handle more leads faster*/}
+      We automate clinical vetting and eliminate manual research to help you handle more leads faster, safer and at scale.
     </p>
   </div>
 
