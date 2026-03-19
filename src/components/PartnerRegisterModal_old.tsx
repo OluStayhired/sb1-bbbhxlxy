@@ -358,7 +358,11 @@ export function PartnerRegisterModal({ isOpen, onClose }: PartnerRegisterModalPr
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-3.5 px-6 border border-transparent rounded-lg text-base font-bold text-white bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 transition-all duration-300 shadow-lg shadow-red-500/50 hover:shadow-xl hover:shadow-red-500/70 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 disabled:opacity-50 disabled:cursor-not-allowed transform hover:-translate-y-0.5"
+                  className="w-full py-3.5 px-6 border border-transparent rounded-lg text-base 
+                  font-semibold text-white bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 
+                  transition-all duration-300 shadow-lg shadow-red-500/50 hover:shadow-xl hover:shadow-red-500/70 
+                  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 disabled:opacity-50 
+                  disabled:cursor-not-allowed transform hover:-translate-y-0.5"
                 >
                   {loading ? (
                     <span className="flex items-center justify-center">
