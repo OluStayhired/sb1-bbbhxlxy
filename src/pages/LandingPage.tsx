@@ -671,7 +671,7 @@ end of old hero image */}
   <p className="hidden sm:inline text-xl sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
       If you recognize yourself in any of the scenarios below, you need a reset.
   </p>  
- 
+
   <p className="sm:hidden text-lg sm:text-2xl text-gray-600 mb-8 mx-auto hover:text-red-500">  
       If any of the scenarios below sound familiar, then you need a reset.
   </p> 
@@ -692,7 +692,8 @@ end of old hero image */}
       </p>
       <button
         onClick={openMentallyBrokenModal}
-        className="w-full py-3 px-4 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-red-500/50 flex items-center justify-center space-x-2 group/btn"
+        //className="w-full py-3 px-4 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-red-500/50 flex items-center justify-center space-x-2 group/btn"
+        className="w-full py-3 px-4 bg-red-50 border-2 border-red-200 text-red-500 font-semibold rounded-lg hover:bg-red-100/30 transition-all duration-300 shadow-md hover:text-red-600 hover:shadow-lg hover:shadow-red-500/50 flex items-center justify-center space-x-2 group/btn"
       >
         <span>Restore your Focus</span>
         <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
@@ -716,7 +717,8 @@ end of old hero image */}
       <button
         //onClick={openCommunityModal}
         onClick={openNavigateSystemsModal}
-        className="w-full py-3 px-4 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-red-500/50 flex items-center justify-center space-x-2 group/btn"
+        //className="w-full py-3 px-4 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-red-500/50 flex items-center justify-center space-x-2 group/btn"
+        className="w-full py-3 px-4 bg-red-50 border-2 border-red-200 text-red-500 font-semibold rounded-lg hover:bg-red-100/30 transition-all duration-300 shadow-md hover:text-red-600 hover:shadow-lg hover:shadow-red-500/50 flex items-center justify-center space-x-2 group/btn"
       >
         <span>Fix the Logistics</span>
         <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
@@ -736,7 +738,8 @@ end of old hero image */}
       </p>
       <button
         onClick={openConsumedByBillsModal}
-        className="w-full py-3 px-4 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-red-500/50 flex items-center justify-center space-x-2 group/btn"
+        //className="w-full py-3 px-4 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-red-500/50 flex items-center justify-center space-x-2 group/btn"
+        className="w-full py-3 px-4 bg-red-50 border-2 border-red-200 text-red-500 font-semibold rounded-lg hover:bg-red-100/30 transition-all duration-300 shadow-md hover:text-red-600 hover:shadow-lg hover:shadow-red-500/50 flex items-center justify-center space-x-2 group/btn"
       >
         <span>Protect your Legacy</span>
         <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
@@ -758,7 +761,9 @@ end of old hero image */}
       <button
         //onClick={openCommunityModal}
         onClick={openCareerOppsModal}
-        className="w-full py-3 px-4 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-red-500/50 flex items-center justify-center space-x-2 group/btn"
+        //className="w-full py-3 px-4 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-red-500/50 flex items-center justify-center space-x-2 group/btn"
+
+        className="w-full py-3 px-4 bg-red-50 border-2 border-red-200 text-red-500 font-semibold rounded-lg hover:bg-red-100/30 transition-all duration-300 shadow-md hover:text-red-600 hover:shadow-lg hover:shadow-red-500/50 flex items-center justify-center space-x-2 group/btn"
       >
         <span>Reclaim your Career</span>
         <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
@@ -779,7 +784,8 @@ end of old hero image */}
       <button
         //onClick={openCommunityModal}
         onClick={openBrokenByFamilyModal}
-        className="w-full py-3 px-4 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-red-500/50 flex items-center justify-center space-x-2 group/btn"
+        //className="w-full py-3 px-4 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-red-500/50 flex items-center justify-center space-x-2 group/btn"
+        className="w-full py-3 px-4 bg-red-50 border-2 border-red-200 text-red-500 font-semibold rounded-lg hover:bg-red-100/30 transition-all duration-300 shadow-md hover:text-red-600 hover:shadow-lg hover:shadow-red-500/50 flex items-center justify-center space-x-2 group/btn"
       >
         <span>Share the Burden</span>
         <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
@@ -800,7 +806,8 @@ end of old hero image */}
       <button
         //onClick={openCommunityModal}
          onClick={openOnCallStressModal}
-        className="w-full py-3 px-4 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-red-500/50 flex items-center justify-center space-x-2 group/btn"
+        //className="w-full py-3 px-4 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-red-500/50 flex items-center justify-center space-x-2 group/btn"
+        className="w-full py-3 px-4 bg-red-50 border-2 border-red-200 text-red-500 font-semibold rounded-lg hover:bg-red-100/30 transition-all duration-300 shadow-md hover:text-red-600 hover:shadow-lg hover:shadow-red-500/50 flex items-center justify-center space-x-2 group/btn"
       >
         <span>Find your Peace</span>
         <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
