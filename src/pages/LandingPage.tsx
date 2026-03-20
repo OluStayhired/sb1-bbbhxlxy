@@ -334,10 +334,10 @@ const getSessionId = (): string => {
                 
        <p className="block text-sm font-normal sm:text-xl sm:font-normal text-gray-600 leading-tight mt-1 sm:mt-6">
          
-             <span className="sm:hidden font-normal">
+            <span className="sm:hidden text-xl font-normal">
                {/*Manage legal, financial & care logistics <br/>for Mom and Dad in one place. */}
-               AI to manage legal, financial and care logistics <br/> for Mom & Dad on Autopilot.
-             </span> 
+               AI to manage legal, financial and <br/>care logistics for Mom & Dad.
+             </span>  
 
           <span className="hidden space-y-2 text-3xl sm:inline font-normal">
             {/*Manage legal, financial, and care logistics for Mom & Dad in one place.*/}
