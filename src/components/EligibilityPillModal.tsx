@@ -477,6 +477,45 @@ export function EligibilityPillModal() {
                               : 'bg-white text-gray-900 border border-gray-200 shadow-sm'
                           }`}
                         >
+                          
+                             {/*This section ensures the gaps are persisted once typed*/}
+
+                             <p className="text-xs leading-relaxed whitespace-pre-wrap">
+                            {message.role === 'assistant' ? (
+                              typeof message.content === 'string' ? (
+                            // Only show typing effect for the most recent assistant message that hasn't been typed yet
+                              message.id !== lastTypedMessageId && message.id === messages.filter(m => m.role === 'assistant').pop()?.id ? (
+                                <TypingEffect 
+                                  text={message.content} 
+                                  speed={20}
+                                  onComplete={() => setLastTypedMessageId(message.id)}
+                                />
+                            ) : (
+                              // Apply the same formatting to completed messages
+                              (() => {
+                                const sentences = message.content.split(/(?<=[.!?])\s+/);
+                                let result = '';
+                                sentences.forEach((sentence, index) => {
+                                  result += sentence;
+                                  if ((index + 1) % 2 === 0 && index !== sentences.length - 1) {
+                                    result += '\n\n';
+                                  } else if (index !== sentences.length - 1) {
+                                    result += ' ';
+                                  }
+                                });
+                                return result;
+                              })()
+                              )
+                            ) : (
+                              message.content
+                              )
+                            ) : (
+                              message.content
+                            )}
+                          </p>
+
+                          {/*
+                          
                           <p className="text-xs leading-relaxed">
                             {message.role === 'assistant' ? (
                               typeof message.content === 'string' ? (
