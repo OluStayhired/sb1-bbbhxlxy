@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CalendarCheck, Calendar, PenSquare, Clock, Users, PenTool, Briefcase, Plus, Minus,Menu, MailCheck,
   Bot, CheckCircle,X, Send,Timer, Zap, ArrowRight, HeartPulse, Brain, MapPin, Target,
-  Lightbulb, Sparkles, CircleDollarSign, Star, Search, Activity, FileText, Shield, ShieldCheck, TrendingUp, ShieldAlert, User, CheckCircle2, Headset, Dumbbell, UserSearch, DatabaseZap, Scale } from 'lucide-react';
+  Lightbulb, Sparkles, CircleDollarSign, Star, Search, Activity, FileText, Shield, ShieldCheck, TrendingUp, ShieldAlert, User, CheckCircle2, Headset, Dumbbell, UserSearch, DatabaseZap, Scale, Rocket } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { AuthModal } from '../components/AuthModal';
 import BlueskyLogo from '../images/bluesky-logo.svg';
@@ -37,6 +37,7 @@ import { TypingEffect } from '../components/TypingEffect'
 import { EldercareModalPopUp } from '../components/EldercareModalPopUp';
 import { EldercareModalPopUpSmall } from '../components/EldercareModalPopUpSmall';
 import { EligibilityPillModal } from '../components/EligibilityPillModal.tsx';
+
 import { PageFooter } from '../components/PageFooter';
 import { PageMenuNav } from '../components/PageMenuNav';
 
@@ -326,23 +327,27 @@ const getSessionId = (): string => {
            <h1 className="text-3xl mt-6 sm:text-6xl md:text-7xl lg:text-7xl leading-tight font-bold mb-2 sm:mb-3"> 
             <p>
               {/*<span className="inline-block sm:text-6xl bg-gradient-to-l from-red-300 via-red-400 to-red-500 text-transparent bg-clip-text mt-6">*/}
-              <span className="inline-block sm:text-6xl bg-gradient-to-l from-gray-400 via-gray-500 to-gray-600 text-transparent bg-clip-text mt-6 duration-300">
+              <span className="inline-block sm:text-7xl bg-gradient-to-l from-gray-400 via-gray-500 to-gray-600 text-transparent bg-clip-text mt-6 duration-300">
                 {/* This is the key change! */}
 
-                   The <span className="bg-gradient-to-l from-red-400 via-red-500 to-red-600 text-transparent bg-clip-text">long-term</span> <br className="sm:hidden" />care navigator<br className="hidden sm:block"/>
+                {/*The*/} <span className="bg-gradient-to-l from-red-400 via-red-500 to-red-600 text-transparent bg-clip-text">long-term care</span> <br className="sm:hidden" /> navigator<br className="hidden sm:block"/>
                 
        <p className="block text-sm font-normal sm:text-xl sm:font-normal text-gray-600 leading-tight mt-1 sm:mt-6">
          
              <span className="sm:hidden font-normal">
-               Manage legal, financial & care logistics <br/>for Mom and Dad in one place.               
+               {/*Manage legal, financial & care logistics <br/>for Mom and Dad in one place. */}
+               AI to manage legal, financial and care logistics <br/> for Mom & Dad on Autopilot.
              </span> 
 
-          <span className="hidden space-y-2 text-2xl sm:inline font-normal">
-            Manage legal, financial, and care logistics for Mom & Dad in one place.
+          <span className="hidden space-y-2 text-3xl sm:inline font-normal">
+            {/*Manage legal, financial, and care logistics for Mom & Dad in one place.*/}
+            AI that helps you navigate legal, financial and care logistics 
           </span>
 
-         <p className="hidden sm:block mt-1 space-y-2 text-2xl font-normal">We take over the admin and help you reclaim your focus at work.
-           <span><Target className="w-6 h-6 align-middle ml-1 fill-red-400 justify-center text-red-50 inline"/></span>
+         <p className="hidden sm:block mt-2 space-y-2 text-3xl font-normal">
+         {/*We take over the admin and help you reclaim your focus at work.*/}
+           for Mom & Dad on Autopilot.
+           <span><Rocket className="w-8 h-8 align-middle ml-1 fill-red-400 justify-center text-red-100 inline"/></span>
            </p>
          
          </p>
@@ -443,7 +448,6 @@ const getSessionId = (): string => {
   </button>
 </div> 
 </div>  
-
 
 {/*------------ start poetiq image design image ----------------------*/}          
 <div className="hidden sm:inline mt-12 mb-8 w-full max-w-6xl mx-auto px-4">
@@ -2099,10 +2103,16 @@ end of old hero image */}
     setIsEldercareSmallModalOpen(false);
     setIsOnboardingModalOpen(true);
   }}
-/>   
+/>  
 
 {/* Ellie Pill Chatbot - Always Available */}
 <EligibilityPillModal />
+
+    <OnboardingQuestionsModal 
+      isOpen={isOnboardingModalOpen}
+      onClose={closeOnboardingModal}
+      onDashboardOpen={openDashboardModal} 
+    />                
 
     <OnboardingQuestionsModal 
       isOpen={isOnboardingModalOpen}
