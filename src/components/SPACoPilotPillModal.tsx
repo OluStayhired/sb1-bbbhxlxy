@@ -325,8 +325,8 @@ export function SPACoPilotPillModal() {
             {/* Text Content */}
             <div className="hidden sm:flex flex-col items-start">
               <div className="flex items-center space-x-1.5">
-                <span className="font-bold text-sm sm:text-base">Ask Ellie</span>
-                <Sparkles className="w-4 h-4 animate-pulse" />
+                <span className="font-bold text-sm sm:text-base">Ask Ellie |</span> <span className="font-bold text-red-400 text-sm sm:text-base">Pro</span>
+                <Sparkles className="w-4 h-4 text-red-400 animate-pulse" />
               </div>
               <span className="text-xs text-red-100 font-medium">Clinical & Financial Co-Pilot</span>
               {/*<span className="sm:hidden text-xs text-red-100 font-medium">Care Assistant</span>*/}

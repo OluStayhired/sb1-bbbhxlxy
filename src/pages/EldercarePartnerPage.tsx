@@ -428,7 +428,7 @@ export function EldercarePartnerPage() {
                     className="w-full sm:w-auto group inline-flex items-center justify-center space-x-2 px-10 py-5 bg-white text-red-500 rounded-xl hover:from-red-50 hover:to-red-100 border-2 border-red-500 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1 font-bold text-lg"
                   >
                     <Building2 className="w-6 h-6" />
-                    <span className="hidden sm:inline">For Placement Partnerships</span>
+                    <span className="hidden sm:inline">Get Placement Partnerships</span>
                     <span className="sm:hidden">Placement Partnerships</span>
                     <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
                   </Link>
