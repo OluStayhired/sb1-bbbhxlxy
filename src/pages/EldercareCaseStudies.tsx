@@ -323,15 +323,17 @@ export function EldercareCaseStudies() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-white">
       <div className="hidden sm:block sticky top-0 z-50 bg-white/50 backdrop-blur-sm shadow-sm">
-        <PageMenuNav 
-          onOpenOnboardingModal={openOnboardingModal}
-        />
+        <PageMenuNav
+            onOpenCommunityModal={openCommunityModal}
+            onOpenOnboardingModal={openOnboardingModal}
+          />
       </div>
 
       <div className="sm:hidden">
-        <PageMenuNav 
-          onOpenOnboardingModal={openOnboardingModal}
-        />
+        <PageMenuNav
+            onOpenCommunityModal={openCommunityModal}
+            onOpenOnboardingModal={openOnboardingModal}
+          />
       </div>
       
       <main className="max-w-7xl mx-auto px-6 pb-32">
@@ -527,7 +529,7 @@ export function EldercareCaseStudies() {
                             <div className="p-2 bg-red-500 rounded-full">
                               <Users className="w-5 h-5 text-white" />
                             </div>
-                            <span  className="font-bold text-gray-900">Profile</span>
+                            <span className="font-bold text-gray-900">Profile</span>
                           </div>
                           <div className="space-y-2 text-sm">
                             <div className="font-bold text-lg text-red-600">{study.persona.name}</div>
