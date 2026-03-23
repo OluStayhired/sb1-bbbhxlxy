@@ -132,7 +132,7 @@ export function PartnerRegisterModal({ isOpen, onClose }: PartnerRegisterModalPr
         us_region: usRegion,
         customer_type: professionalProfile,
         placement_vol: caseVolume,
-        project_name: 'GTM Phase 1',
+        project_name: 'Early Partner Program',
         email_sent: false,
         approved: false,
         click_url: launchUrl 
