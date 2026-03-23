@@ -260,7 +260,8 @@ const calculateCognitiveDrag = async (
       // Fetch choices
       const { data: choicesData, error: choicesError } = await supabase
         .from('eldercare_onboard_choices')
-        .select('eldercare_question, question_choices');
+        .select('eldercare_question, question_choices')
+        .order('id', { ascending: true });
 
       if (choicesError) throw choicesError;
 
