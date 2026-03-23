@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, CheckCircle, Briefcase, MapPin, TrendingUp, Award, Handshake } from 'lucide-react';
 import { z } from 'zod';
 import { supabase } from '../lib/supabase';
@@ -79,6 +79,14 @@ export function PartnerRegisterModal({ isOpen, onClose }: PartnerRegisterModalPr
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [showSuccessScreen, setShowSuccessScreen] = useState(false);
+  const [launchUrl, setLaunchUrl] = useState('');
+
+  React.useEffect(() => {
+  if (isOpen) {
+    // Capture the full URL when modal opens
+    setLaunchUrl(window.location.href);
+  }
+}, [isOpen]);
 
   if (!isOpen) return null;
 
@@ -89,6 +97,7 @@ export function PartnerRegisterModal({ isOpen, onClose }: PartnerRegisterModalPr
     setUsState('');
     setProfessionalProfile('');
     setCaseVolume('');
+    setLaunchUrl('');
     setError('');
     setLoading(false);
     setShowSuccessScreen(false);
@@ -108,7 +117,7 @@ export function PartnerRegisterModal({ isOpen, onClose }: PartnerRegisterModalPr
         linkedinProfile, 
         usState, 
         professionalProfile, 
-        caseVolume 
+        caseVolume
       });
 
       // Auto-map region based on state
@@ -125,7 +134,8 @@ export function PartnerRegisterModal({ isOpen, onClose }: PartnerRegisterModalPr
         placement_vol: caseVolume,
         project_name: 'GTM Phase 1',
         email_sent: false,
-        approved: false
+        approved: false,
+        click_url: launchUrl 
       });
 
       if (supabaseError) {
@@ -173,7 +183,7 @@ export function PartnerRegisterModal({ isOpen, onClose }: PartnerRegisterModalPr
             <h2 className="text-4xl font-bold text-gray-800 mb-4">Welcome Aboard!</h2>
             <p className="text-lg text-gray-600 mb-8 max-w-md mx-auto">
               You've successfully registered as a Poetiq Partner.<br />
-              <span className="font-semibold text-green-600">Expect an email soon with next steps!</span>
+              <span className="font-semibold text-red-600">Expect an email soon with next steps!</span>
             </p>
             <button
               onClick={resetFormAndModal}
@@ -203,9 +213,7 @@ export function PartnerRegisterModal({ isOpen, onClose }: PartnerRegisterModalPr
                   <CheckCircle className="w-5 h-5 text-red-500" />
                 </div>
                 <p className="text-xs text-gray-700 leading-relaxed">
-                  {/*<span className="font-semibold text-red-600">Your data helps us serve you better.</span> We use this information solely to match you with the most relevant cases and resources in your region.*/}
-                  <span className="font-semibold text-sm text-red-600">Your data helps us serve you better.</span> 
-                  <br/> We use this information solely to match you with the most relevant cases and resources in your region.
+                  <span className="font-semibold text-sm text-red-600">Your data helps us serve you better.</span> <br/> We use this information solely to match you with the most relevant cases and resources in your region.
                 </p>
               </div>
             </div>
@@ -356,7 +364,7 @@ export function PartnerRegisterModal({ isOpen, onClose }: PartnerRegisterModalPr
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-3 px-6 border border-transparent rounded-lg text-base font-bold text-white bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 transition-all duration-300 shadow-lg shadow-red-500/50 hover:shadow-xl hover:shadow-red-500/70 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 disabled:opacity-50 disabled:cursor-not-allowed transform hover:-translate-y-0.5"
+                  className="w-full py-3 px-6 border border-transparent rounded-lg text-base font-semibold text-white bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 transition-all duration-300 shadow-lg shadow-red-500/50 hover:shadow-xl hover:shadow-red-500/70 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 disabled:opacity-50 disabled:cursor-not-allowed transform hover:-translate-y-0.5"
                 >
                   {loading ? (
                     <span className="flex items-center justify-center">
