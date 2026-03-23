@@ -32,6 +32,8 @@ export function CommunityModal({ isOpen, onClose, onSuccess }: NewsletterModalPr
   const [firstName, setFirstName] = useState('');
   const [emailSent, setEmailSent] = useState(false);
   const [linkedinProfile, setLinkedinProfile] = useState('');
+  const [launchUrl, setLaunchUrl] = useState('');
+
   
   //const [discount, setDiscount] = useState('');
   const [error, setError] = useState('');
@@ -39,6 +41,14 @@ export function CommunityModal({ isOpen, onClose, onSuccess }: NewsletterModalPr
   const [showSuccessScreen, setShowSuccessScreen] = useState(false); // New state for success screen
 
   //const [isWaitlistSuccessModalOpen, setIsWaitlistSuccessModalOpen] = useState(false);
+
+  React.useEffect(() => {
+  if (isOpen) {
+    // Capture the full URL when modal opens
+    setLaunchUrl(window.location.href);
+  }
+}, [isOpen]);
+
 
   if (!isOpen) return null;
 
@@ -48,6 +58,7 @@ export function CommunityModal({ isOpen, onClose, onSuccess }: NewsletterModalPr
     setFirstName('');
     setEmailSent(false);
     setLinkedinProfile('');
+    setLaunchUrl('');
     setError('');
     setLoading(false);
     setShowSuccessScreen(false); // Reset success screen state
@@ -71,7 +82,8 @@ const handleJoinCommunity = async (e: React.FormEvent) => {
         first_name: firstName,
         project_name: 'poetiq community',
         email_sent: emailSent,
-        linkedin_profile: linkedinProfile
+        linkedin_profile: linkedinProfile,
+         join_waitlist_url: launchUrl 
         //discount: discount,
       });
 
