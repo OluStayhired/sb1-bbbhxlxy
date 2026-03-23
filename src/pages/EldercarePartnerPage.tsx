@@ -134,9 +134,9 @@ export function EldercarePartnerPage() {
                 Get Faster Diligent Answers {' '}
                 <span className="bg-gradient-to-r from-red-400 via-red-500 to-red-600 bg-clip-text text-transparent">
                   <br className="hidden sm:inline"/>
-                  <span className="hidden text-5xl sm:inline-block sm:mt-2">with AI-Driven Tools</span>
+                  <span className="hidden text-5xl sm:inline-block sm:mt-2">with AI-Driven Care Tools</span>
                   <br className="sm:hidden"/>
-                    <span className="sm:hidden inline text-2xl">with AI-Driven Tools</span>
+                    <span className="sm:hidden inline text-2xl">with AI-Driven Care Tools</span>
                 </span>
               </h1>
 
@@ -145,9 +145,9 @@ export function EldercarePartnerPage() {
                 Get Faster Answers {' '}
                 <span className="bg-gradient-to-r from-red-400 via-red-500 to-red-600 bg-clip-text text-transparent">
                   <br className="hidden sm:inline"/>
-                  <span className="hidden text-5xl sm:inline-block sm:mt-2">with AI-Driven Tools</span>
+                  <span className="hidden text-5xl sm:inline-block sm:mt-2">with AI-Driven Care Tools</span>
                   <br className="sm:hidden"/>
-                    <span className="sm:hidden inline text-2xl">with AI-Driven Tools</span>
+                    <span className="sm:hidden inline text-2xl">with AI-Driven Care Tools</span>
                 </span>
               </h1>
 
