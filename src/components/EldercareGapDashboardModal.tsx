@@ -31,7 +31,8 @@ import {
   CloudSun,
   Sun,
   Sunset,
-  Moon
+  Moon,
+  Mail
 
 } from 'lucide-react';
 import { supabase } from '../lib/supabase';
@@ -41,6 +42,7 @@ import { TooltipExtended } from '/src/utils/TooltipExtended';
 // Added Community Modal and Waitlist Modal
 import { CommunityModal } from '../components/CommunityModal.tsx';
 import { WaitlistModal } from '../components/WaitlistModal.tsx';
+import { z } from 'zod';
 
 
 interface EldercareGapDashboardModalProps {
@@ -98,6 +100,10 @@ interface FundedStatus {
   borderHoverColor: string;
 }    
 
+const dashboardSchema = z.object({
+  email: z.string().email('Invalid email address'),
+});
+
 export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: EldercareGapDashboardModalProps) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -113,6 +119,8 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
 
   const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false);
   const [isWaitlistSuccessModalOpen, setIsWaitlistSuccessModalOpen] = useState(false);
+
+   const [email, setEmail] = useState('');
 
   useEffect(() => {
     if (isOpen && sessionId) {
@@ -407,12 +415,12 @@ const getTimeBasedGreeting = (): string => {
   const hour = new Date().getHours();
   
   if (hour >= 5 && hour < 12) {
-    return '⛅ Good Morning';
+    return 'Good Morning';
   } else if (hour >= 12 && hour < 17) {
     
     return 'Good Afternoon';
   } else if (hour >= 17 && hour < 22) {
-    return '🌇 Good Evening';
+    return 'Good Evening';
   } else {
     return 'Good Night';
   }
@@ -474,7 +482,55 @@ const getFundedStatus = (answer: string): {
 
   const fundedStatusColors = responseData?.raw_answers[7] ? getFundedStatus(responseData.raw_answers[7]) : null;
 
-  
+  //------------- Start handleSubmit ---------------//
+// Handle email submission
+  const handleEmailSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email.trim()) return;
+
+    setIsSending(true);
+   
+    try {
+      // Validate input using Zod
+      dashboardSchema.parse({ email });
+       //setWelcomeMail(true);
+
+       // Insert data into Supabase
+      const { error: supabaseError } = await supabase.from('newsletter_list').insert({
+        email: email,
+        welcome_email: welcomeMail,
+        project_name: 'poetiq community',
+      });
+      
+       // --- CRITICAL ERROR HANDLING SECTION ---
+      if (supabaseError) {
+        // Check for the specific PostgreSQL unique constraint violation error code
+        if (supabaseError.code === '23505') {
+          setError("You're already subscribed to our newsletter!"); // User-friendly message
+        } else {
+          // For other Supabase errors, log the technical error for debugging
+          console.error("Supabase Error:", supabaseError);
+          // And provide a more general user-friendly error message
+          setError(`Failed to join newsletter: ${supabaseError.message || 'An unexpected database error occurred.'}`);
+        }
+        // IMPORTANT: Exit the function here after handling a Supabase error
+        return;
+      }
+      // --- END CRITICAL ERROR HANDLING SECTION ---
+
+      setEmailSent(true);
+      setTimeout(() => {
+        setEmailSent(false);
+        setEmail('');
+      }, 3000);
+    } catch (error) {
+      console.error('Error subscribing to newsletter:', error);
+    } finally {
+      setIsSending(false);
+    }
+  };
+
+  //------------ End handleSubmit ------------------//
 
   if (!isOpen) return null;
 
@@ -945,7 +1001,7 @@ const getFundedStatus = (answer: string): {
                       </div>
                       <div>
                         <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-1">
-                        Legal Power <br className="sm:hidden"/> of Attorney
+                          Legal Power <br className="sm:hidden"/> of Attorney
                         </h3>
                         <p className="text-sm text-gray-600">
                           Critical Legal Document Status
@@ -991,16 +1047,16 @@ const getFundedStatus = (answer: string): {
 
                   {poaStatus.level == 'green' && (
                     <button 
-                    onClick={openCommunityModal}
-                    className="mt-4 w-full flex items-center justify-between p-4 bg-green-100 border-green-200 sm:bg-white rounded-lg border sm:border-gray-200 shadow-sm hover:shadow-md">
-                    <div className="flex items-center">
-                      <ShieldCheck className="hidden sm:inline w-5 h-5 text-green-700 mr-3" />
-                      <p className="text-sm font-semibold text-gray-700">
-                        Store legal document safely with Poetiq!
-                      </p>
-                    </div>
-                    <ChevronRight className="w-5 h-5 text-green-700" />
-                  </button>
+                      onClick={openCommunityModal}
+                      className="mt-4 w-full flex items-center justify-between p-4 bg-green-100 border-green-200 sm:bg-white rounded-lg border sm:border-gray-200 shadow-sm hover:shadow-md">
+                      <div className="flex items-center">
+                        <ShieldCheck className="hidden sm:inline w-5 h-5 text-green-700 mr-3" />
+                        <p className="text-sm font-semibold text-gray-700">
+                          Store legal document safely with Poetiq!
+                        </p>
+                      </div>
+                      <ChevronRight className="w-5 h-5 text-green-700" />
+                    </button>
                   )}
                 </div>
               </div>
@@ -1333,6 +1389,30 @@ const getFundedStatus = (answer: string): {
               Poetiq can help you generate the missing documentation, organize your legal affairs, 
               and reduce your cognitive load by up to {dragPercentage}%.
             </p>
+
+            {/*------------ Start Add Email Collection Point Here -------------------
+
+           <form onSubmit={handleEmailSubmit} className="mb-2 mx-auto items-center space-x-3">
+                  <Mail className="w-5 h-5 text-white flex-shrink-0" />
+                  <input
+                    type="email"
+                    value={email}
+                    //onChange={(e) => setEmail(e.target.value)}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                      setError('');
+                    }}
+
+                    //placeholder="Get conversation summary via email"
+                    placeholder="Get actionable Medicaid eligibility tips via email"
+                    className="flex-1 px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none"
+                  />
+           </form>
+*/}
+
+            {/*------------ End Add EMail Collection Point Here -------------------*/}
+
+            
             <button 
               onClick={openCommunityModal}
               className="bg-white text-red-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-red-50 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all">
