@@ -119,8 +119,8 @@ const calculatePhase = (location: string, dependency: string): number => {
     // Check dependency level for home-based care
     const dependencyLower = dependency.toLowerCase();
     
-    if (dependencyLower.includes('significant') || 
-        dependencyLower.includes('total') ||
+    if (dependencyLower.includes('1-person') || 
+        dependencyLower.includes('2-person') ||
         dependencyLower.includes('complete')) {
       return 3; // Intensive Home Care
     } else {
