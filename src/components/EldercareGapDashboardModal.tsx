@@ -790,7 +790,7 @@ const getFundedStatus = (answer: string): {
             {getTimeBasedGreeting()} {responseData.firstname}
           </h1>
           <p className="text-sm text-gray-500 font-medium mt-0.5">
-            Your Eldercare Readiness Dashboard
+            Welcome to your Eldercare Readiness Dashboard
           </p>
         </div>
       </div>
