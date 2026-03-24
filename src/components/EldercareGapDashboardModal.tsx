@@ -1339,7 +1339,7 @@ const getFundedStatus = (answer: string): {
   </div>
 
   {/* Phase Toggle Buttons */}
-  <div className="mb-6 pb-6 border-b border-gray-200">
+  <div className="mb-6 pb-6 border-b border-red-200 hover:border-red-400">
     <div className="flex items-center justify-between mb-3">
       <h4 className="text-sm font-semibold text-gray-700 uppercase tracking-wider">
         Select Care Journey Phase
@@ -1360,7 +1360,7 @@ const getFundedStatus = (answer: string): {
         { id: 1, name: 'Phase 1', shortName: 'P1', description: 'Early Planning' },
         { id: 2, name: 'Phase 2', shortName: 'P2', description: 'Acute Crisis' },
         { id: 3, name: 'Phase 3', shortName: 'P3', description: 'Home Care' },
-        { id: 4, name: 'Phase 4', shortName: 'P4', description: 'Institutional' },
+        { id: 4, name: 'Phase 4', shortName: 'P4', description: 'Care Facility' },
         { id: 5, name: 'Phase 5', shortName: 'P5', description: 'End of Life' }
       ].map((phase) => {
         const isSelected = selectedChecklistPhase === phase.id;
@@ -1374,7 +1374,7 @@ const getFundedStatus = (answer: string): {
               group relative rounded-lg p-3 border-2 transition-all duration-300 transform
               ${isSelected 
                 ? 'bg-red-500 border-red-600 shadow-lg scale-105 -translate-y-1' 
-                : 'bg-white border-gray-200 hover:border-red-300 hover:shadow-md hover:-translate-y-0.5'
+                : 'bg-red-50 border-red-100 hover:border-red-300 hover:shadow-md hover:-translate-y-0.5'
               }
             `}
           >
@@ -1391,7 +1391,7 @@ const getFundedStatus = (answer: string): {
               {/* Phase Number */}
               <div className={`
                 text-lg font-bold mb-1 transition-colors duration-300
-                ${isSelected ? 'text-white' : 'text-gray-900 group-hover:text-red-600'}
+                ${isSelected ? 'text-white' : 'text-red-600 group-hover:text-red-700'}
               `}>
                 {phase.shortName}
               </div>
@@ -1399,7 +1399,7 @@ const getFundedStatus = (answer: string): {
               {/* Phase Description */}
               <div className={`
                 text-xs text-center leading-tight transition-colors duration-300
-                ${isSelected ? 'text-red-50' : 'text-gray-600 group-hover:text-red-700'}
+                ${isSelected ? 'text-red-50' : 'text-red-600 group-hover:text-red-700'}
               `}>
                 {phase.description}
               </div>
