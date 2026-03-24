@@ -750,84 +750,128 @@ const getFundedStatus = (answer: string): {
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute right-6 top-6 text-gray-400 hover:text-gray-600 transition-colors z-50 bg-white rounded-full p-2 shadow-md hover:shadow-lg"
+          className="absolute border-2 border-red-400 hover:border-red-600 right-6 top-6 text-red-400  transition-all z-50 hover:text-white bg-white hover:bg-red-400 rounded-full p-2 shadow-md hover:shadow-lg"
         >
           <X className="w-6 h-6" />
         </button>
 
-        {/* Header Section */}
-        <div className="bg-gradient-to-r from-red-500 via-red-600 to-red-700 px-8 py-6 text-white relative overflow-hidden">
-
-          <div className="absolute inset-0 bg-black opacity-5"></div>
-          <div className="relative z-10">
-            <div className="flex items-start justify-between mb-4">
-              <div className="flex mb-2">
+      {/*--------------- Header Section -----------------------*/}
+<div className="relative bg-gradient-to-br from-red-50 via-white to-red-50/50 px-8 py-8 border-b-2 border-red-100 overflow-hidden">
+  {/* Decorative Background Elements */}
+  <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-radial from-red-100/40 to-transparent rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+  <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-radial from-red-50/60 to-transparent rounded-full blur-2xl translate-y-1/2 -translate-x-1/2"></div>
   
-               {timeofDay === 'Good Morning' && (
-                <span>
-                    <Sun className="w-8 h-8 mr-2 text-white"/>
-                </span>
-                  )}
-                {timeofDay === 'Good Afternoon' && (
-                <span>
-                    <CloudSun className="w-8 h-8 mr-2 text-white"/>
-                </span>
-                  )}
-                {timeofDay === 'Good Evening' && (
-                <span>
-                    <Sunset className="w-8 h-8 mr-2 text-white"/>
-                </span>
-                  )}
-                {timeofDay === 'Good Night' && (
-                <span>
-                  <Moon className="w-8 h-8 mr-2 text-white"/>
-                </span>
-                    )}
-
-                <h1 className="text-3xl text-white font-bold">   
-                  {getTimeBasedGreeting()} {responseData.firstname} . . .             
-                </h1>
-                {/*
-                <p className="text-red-100 text-lg">
-                  {responseData.firstname}'s {responseData.relation} - {phaseData.phase_name}
-                </p>
-                */}
-                
-              </div>
-             
-            </div>
-            
-            <div className={`p-4 rounded-lg border ${executiveInsight?.borderColor} ${executiveInsight?.bgColor} backdrop-blur-sm`}>
-              <div className="flex items-center">
-                <AlertTriangle className={`w-5 h-5 mr-3 ${executiveInsight?.color}`} />
-                <p className={`text-sm font-medium ${executiveInsight?.color}`}>
-                  {executiveInsight?.message}
-                </p>
-              </div>
-            </div>
+  <div className="relative z-10">
+    {/* Greeting Row */}
+    <div className="flex items-center justify-between mb-6">
+      <div className="flex items-center gap-3">
+        {/* Time-based Icon with modern styling */}
+        <div className="relative">
+          <div className="absolute inset-0 bg-red-200/30 rounded-2xl blur-md"></div>
+          <div className="relative bg-gradient-to-br from-white to-red-50 p-3 rounded-2xl border border-red-100 shadow-sm">
+            {timeofDay === 'Good Morning' && (
+              <Sun className="w-7 h-7 text-amber-500" strokeWidth={2} />
+            )}
+            {timeofDay === 'Good Afternoon' && (
+              <CloudSun className="w-7 h-7 text-orange-500" strokeWidth={2} />
+            )}
+            {timeofDay === 'Good Evening' && (
+              <Sunset className="w-7 h-7 text-rose-500" strokeWidth={2} />
+            )}
+            {timeofDay === 'Good Night' && (
+              <Moon className="w-7 h-7 text-slate-600" strokeWidth={2} />
+            )}
           </div>
         </div>
-
-        {/* Scrollable Content Area */}
-        <div className="flex-1 overflow-y-auto px-8 py-6">
-
+        
+        {/* Greeting Text */}
+        <div>
+          <h1 className="text-3xl font-bold bg-gradient-to-r from-gray-800 via-red-700 to-gray-800 bg-clip-text text-transparent">   
+            {getTimeBasedGreeting()} {responseData.firstname}
+          </h1>
+          <p className="text-sm text-gray-500 font-medium mt-0.5">
+            Your Eldercare Readiness Dashboard
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    {/* Executive Insight Alert Box */}
+    <div className={`
+      relative overflow-hidden rounded-2xl border-2 transition-all duration-300
+      ${executiveInsight?.borderColor} backdrop-blur-sm
+      ${executiveInsight?.level === 'red' ? 'bg-gradient-to-br from-red-50 via-white to-red-50 shadow-red-100' : ''}
+      ${executiveInsight?.level === 'orange' ? 'bg-gradient-to-br from-red-50 via-white to-red-50 shadow-red-100' : ''}
+      ${executiveInsight?.level === 'yellow' ? 'bg-gradient-to-br from-yellow-50 via-white to-yellow-50 shadow-yellow-100' : ''}
+      ${executiveInsight?.level === 'green' ? 'bg-gradient-to-br from-green-50 via-white to-green-50 shadow-green-100' : ''}
+      shadow-lg hover:shadow-xl
+    `}>
+      {/* Decorative corner accent */}
+      <div className={`absolute top-0 right-0 w-32 h-32 opacity-20 ${
+        executiveInsight?.level === 'red' || executiveInsight?.level === 'orange' ? 'bg-red-300' :
+        executiveInsight?.level === 'yellow' ? 'bg-yellow-300' : 'bg-green-300'
+      } rounded-full blur-2xl -translate-y-1/2 translate-x-1/2`}></div>
+      
+      <div className="relative p-5">
+        <div className="flex items-start gap-4">
+          {/* Icon Container */}
+          <div className={`
+            flex-shrink-0 p-3 rounded-xl border-2 transition-all duration-300
+            ${executiveInsight?.borderColor}
+            ${executiveInsight?.level === 'red' || executiveInsight?.level === 'orange' ? 'bg-gradient-to-br from-red-100 to-red-50' : ''}
+            ${executiveInsight?.level === 'yellow' ? 'bg-gradient-to-br from-yellow-100 to-yellow-50' : ''}
+            ${executiveInsight?.level === 'green' ? 'bg-gradient-to-br from-green-100 to-green-50' : ''}
+          `}>
+            <AlertTriangle className={`w-6 h-6 ${executiveInsight?.color}`} strokeWidth={2.5} />
+          </div>
           
-          {/*<div className={`flex-col mt-4 p-3 mb-4 rounded-lg border ${executiveInsight?.borderColor} ${executiveInsight?.bgColor} ${executiveInsight?.borderHoverColor}`}>*/}
+          {/* Message Content */}
+          <div className="flex-1 min-w-0">
+            <p className={`text-base font-bold ${executiveInsight?.color} mb-1 leading-tight`}>
+              {executiveInsight?.status}
+            </p>
+            <p className={`text-sm font-semibold ${executiveInsight?.color} opacity-90`}>
+              {executiveInsight?.message}
+            </p>
+          </div>
+          
+          {/* Pulse Indicator */}
+          {(executiveInsight?.level === 'red' || executiveInsight?.level === 'orange') && (
+            <div className="flex-shrink-0 flex items-center">
+              <div className="relative">
+                <div className={`w-3 h-3 ${executiveInsight?.level === 'red' ? 'bg-red-500' : 'bg-orange-500'} rounded-full animate-pulse`}></div>
+                <div className={`absolute inset-0 w-3 h-3 ${executiveInsight?.level === 'red' ? 'bg-red-400' : 'bg-orange-400'} rounded-full animate-ping`}></div>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{/*---------------- End the Header Section -------------------*/}
 
+
+        {/* ------------- Start Readiness Dashboard Area ------------------*/}
+        
+        {/* Scrollable Content Area*/}
+        <div className="flex-1 overflow-y-auto px-8 py-6">
             <div className={`flex-col mt-4 p-3 mb-4 rounded-lg`}>
                     <div className="flex items-center space-x-2">
                         <div className={`p-2 ${executiveInsight?.bgIconColor} rounded-lg`}>
-                          <ShieldCheck className={`w-8 h-8  ${executiveInsight?.color}`} />
+                          <ShieldCheck className={`w-8 h-8  ${executiveInsight?.color}`} strokeWidth={2} />
                         </div>
                          <div>
-                              <h3 className={`text-2xl font-bold ${executiveInsight?.color}`}> 
-                                {/*{executiveInsight?.status}*/}
+                            <h3 className={`text-2xl font-bold ${executiveInsight?.color}`}> 
                                 Readiness Dashboard
-                              </h3>
-                               <p className={`text-xs  ${executiveInsight?.color}`}>{executiveInsight?.status}</p>
+                            </h3>
+                        <p className={`text-xs  ${executiveInsight?.color}`}>{executiveInsight?.status}</p>
                          </div>
                      </div>                                                                      
-          </div>
+            </div>
+
+          {/*---------------End Rediness Dashboard Area ----------------------*/}
+          
           
           {/* Top Metrics Row */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
@@ -1650,63 +1694,55 @@ const getFundedStatus = (answer: string): {
                 <b>Important Note: </b>{phaseData.next_stage_must_have}
               </p>
 
-
-              {/*
-              
-              <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
-                <Ambulance className="w-5 h-5 mr-2 font-normal text-gray-600" />
-                Next Eldercare Stage
-              </h3>
-              <p className="text-sm text-gray-700 leading-relaxed mb-4">
-                {phaseData.likely_next_stage}
-              </p>
-
-              <p className="text-xs text-gray-700 leading-relaxed">
-                <b>Important: </b>{phaseData.next_stage_must_have}
-              </p>
-              */}
             </div>
           </div>
 
           {/* Call to Action */}
-          <div className="bg-gradient-to-r from-red-500 to-red-600 rounded-xl shadow-lg p-8 text-white text-center">
-            <Zap className="w-12 h-12 mx-auto mb-4" />
-            <h3 className="text-2xl font-bold mb-3">Ready to Close the Gaps?</h3>
-            <p className="text-red-100 mb-6 max-w-2xl mx-auto">
-              Poetiq can help you generate the missing documentation, organize your legal affairs, 
-              and reduce your cognitive load by up to {dragPercentage}%.
-            </p>
-
-            {/*------------ Start Add Email Collection Point Here -------------------
-
-           <form onSubmit={handleEmailSubmit} className="mb-2 mx-auto items-center space-x-3">
-                  <Mail className="w-5 h-5 text-white flex-shrink-0" />
-                  <input
-                    type="email"
-                    value={email}
-                    //onChange={(e) => setEmail(e.target.value)}
-                    onChange={(e) => {
-                      setEmail(e.target.value);
-                      setError('');
-                    }}
-
-                    //placeholder="Get conversation summary via email"
-                    placeholder="Get actionable Medicaid eligibility tips via email"
-                    className="flex-1 px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none"
-                  />
-           </form>
-*/}
-
-            {/*------------ End Add EMail Collection Point Here -------------------*/}
-
-            
-            <button 
-              onClick={openCommunityModal}
-              className="bg-white text-red-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-red-50 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all">
-              Get Started with Poetiq
-              <ChevronRight className="w-5 h-5 inline ml-2" />
-            </button>
-          </div>
+<div className="relative bg-gradient-to-br from-red-50 via-white to-red-50 rounded-2xl shadow-xl p-8 text-center border-2 border-red-100 overflow-hidden">
+  {/* Decorative Background Elements */}
+  <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-radial from-red-200/30 to-transparent rounded-full blur-3xl"></div>
+  <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-radial from-red-100/40 to-transparent rounded-full blur-2xl"></div>
+  
+  <div className="relative z-10">
+    {/* Icon with glow effect */}
+    <div className="inline-block relative mb-6">
+      <div className="absolute inset-0 bg-red-300/40 rounded-full blur-xl animate-pulse"></div>
+      <div className="relative bg-gradient-to-br from-red-500 to-red-600 p-4 rounded-2xl shadow-lg">
+        <Zap className="w-10 h-10 text-white" strokeWidth={2.5} />
+      </div>
+    </div>
+    
+    <h3 className="text-3xl font-bold bg-gradient-to-r from-gray-800 via-red-700 to-gray-800 bg-clip-text text-transparent mb-4">
+      Ready to Close the Gaps?
+    </h3>
+    <p className="text-gray-700 font-medium mb-8 max-w-2xl mx-auto leading-relaxed">
+      Poetiq can help you with the missing documentation, organize your legal affairs, 
+      and reduce your cognitive load by up to <span className="font-bold text-red-600">{dragPercentage}%</span>.
+    </p>
+    
+    <button 
+      onClick={openCommunityModal}
+      className="
+        group relative inline-flex items-center gap-3
+        bg-gradient-to-r from-red-500 via-red-600 to-red-500 
+        hover:from-red-600 hover:via-red-700 hover:to-red-600
+        text-white font-bold text-lg
+        px-10 py-5 rounded-xl
+        shadow-lg hover:shadow-2xl
+        transform hover:-translate-y-1 active:translate-y-0
+        transition-all duration-300
+        border-2 border-red-400/50
+        overflow-hidden
+      "
+    >
+      {/* Button glow effect */}
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+      
+      <span className="relative z-10">Get Started with Poetiq</span>
+      <ChevronRight className="relative z-10 w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" strokeWidth={3} />
+    </button>
+  </div>
+</div>
         </div>
       </div>
 
