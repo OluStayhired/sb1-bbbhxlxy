@@ -112,6 +112,8 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
   const [checklistItems, setChecklistItems] = useState<ChecklistItem[]>([]);
   const [executiveInsight, setExecutiveInsight] = useState<ExecutiveInsight | null>(null);
   const [fundedstatus, setFundedStatus] = useState<FundedStatus | null>(null);
+  const [selectedChecklistPhase, setSelectedChecklistPhase] = useState<number | null>(null);
+
 
 
   const [isCommunityModalOpen, setIsCommunityModalOpen] = useState(false);
@@ -127,6 +129,13 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
       fetchDashboardData();
     }
   }, [isOpen, sessionId]);
+
+  useEffect(() => {
+  if (responseData?.calculated_phase && selectedChecklistPhase === null) {
+    setSelectedChecklistPhase(responseData.calculated_phase);
+  }
+}, [responseData?.calculated_phase]);
+
 
      const openWaitlistModal = () => {
     setIsWaitlistModalOpen(true);
@@ -250,6 +259,66 @@ export function EldercareGapDashboardModal({ isOpen, onClose, sessionId }: Elder
       setLoading(false);
     }
   };
+
+  // Start Add Function to fetch all checklist data
+const fetchChecklistForPhase = async (phaseId: number) => {
+  try {
+    // Fetch phase data for the selected phase
+    const { data: selectedPhaseData, error: phaseError } = await supabase
+      .from('eldercare_phase')
+      .select('*')
+      .eq('id', phaseId)
+      .single();
+
+    if (phaseError) {
+      console.error('Error fetching phase data:', phaseError);
+      return [];
+    }
+
+    if (!selectedPhaseData) {
+      console.error('No phase data found for phase ID:', phaseId);
+      return [];
+    }
+
+    //console.log('Fetching checklist for phase:', selectedPhaseData.phase_name);
+
+    // Fetch checklist items for this phase
+    const { data: checklistData, error: checklistError } = await supabase
+      .from('eldercare_phase_checklist')
+      .select('*')
+      .eq('checklist_phase_name', selectedPhaseData.phase_name);
+
+    if (checklistError) {
+      console.error('Error fetching checklist:', checklistError);
+      return [];
+    }
+
+    //console.log(`Found ${checklistData?.length || 0} checklist items for ${selectedPhaseData.phase_name}`);
+
+    return checklistData || [];
+  } catch (err) {
+    console.error('Error in fetchChecklistForPhase:', err);
+    return [];
+  }
+};
+
+  // End Function to fetch all checklist data
+
+  // Start function to Fetch Checklist When phase changes
+    const [displayedChecklistItems, setDisplayedChecklistItems] = useState<ChecklistItem[]>([]);
+
+        useEffect(() => {
+          if (selectedChecklistPhase !== null) {
+            fetchChecklistForPhase(selectedChecklistPhase).then(items => {
+            setDisplayedChecklistItems(items);
+              });
+            }
+          }, [selectedChecklistPhase]);
+
+    // End function to Fetch Checklist when phase changes 
+
+
+  
 
   // Calculate financial burn rate (example logic - adjust based on your data)
   const calculateFinancialBurnRate = () => {
@@ -573,7 +642,8 @@ const getFundedStatus = (answer: string): {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4 z-50 backdrop-blur-sm">
-      <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl w-full max-w-7xl relative shadow-2xl max-h-[95vh] overflow-hidden flex flex-col border border-gray-200">
+      <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl w-full max-w-7xl relative shadow-2xl max-h-[125vh] overflow-hidden flex flex-col border border-gray-200">
+        {/*changed from 95vh to 125vh*/}
         
         {/* Close Button */}
         <button
@@ -1084,16 +1154,18 @@ const getFundedStatus = (answer: string): {
             </div>     
           */}
 
-          {/* Logistics Readiness Matrix */}
+{/* =================  Start Logistics Readiness Matrix ==========================*/}
+
 <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-6 mb-8">
   <div className="flex items-center mb-6">
     {(() => {
-      // Calculate overall checklist status
-      const statuses = checklistItems.map(item => getChecklistStatus(item));
+      // Use displayedChecklistItems instead of checklistItems
+      const itemsToDisplay = displayedChecklistItems.length > 0 ? displayedChecklistItems : checklistItems;
+      const statuses = itemsToDisplay.map(item => getChecklistStatus(item));
       const missingCount = statuses.filter(s => s === 'missing').length;
       const partialCount = statuses.filter(s => s === 'partial').length;
       const completeCount = statuses.filter(s => s === 'complete').length;
-      const totalCount = checklistItems.length;
+      const totalCount = itemsToDisplay.length;
       
       // Determine overall status and styling
       let statusConfig;
@@ -1104,7 +1176,7 @@ const getFundedStatus = (answer: string): {
           iconColor: 'text-gray-500',
           titleColor: 'text-gray-900',
           statusText: 'Phase Readiness Checklist',
-          subtitle: `Critical action items for Phase ${responseData.calculated_phase}`
+          subtitle: `Critical action items for Phase ${selectedChecklistPhase || responseData.calculated_phase}`
         };
       } else if (completeCount === totalCount) {
         statusConfig = {
@@ -1113,7 +1185,7 @@ const getFundedStatus = (answer: string): {
           iconColor: 'text-green-600',
           titleColor: 'text-green-900',
           statusText: 'Phase Readiness Complete',
-          subtitle: `All ${totalCount} items completed for Phase ${responseData.calculated_phase}`
+          subtitle: `All ${totalCount} items completed for Phase ${selectedChecklistPhase || responseData.calculated_phase}`
         };
       } else if (missingCount > 0) {
         statusConfig = {
@@ -1140,7 +1212,7 @@ const getFundedStatus = (answer: string): {
           iconColor: 'text-gray-500',
           titleColor: 'text-gray-900',
           statusText: 'Phase Readiness Checklist',
-          subtitle: `Critical action items for Phase ${responseData.calculated_phase}`
+          subtitle: `Critical action items for Phase ${selectedChecklistPhase || responseData.calculated_phase}`
         };
       }
       
@@ -1153,11 +1225,9 @@ const getFundedStatus = (answer: string): {
           </div>  
           <div>
             <h3 className={`text-xl font-bold text-gray-900 transition-colors duration-300`}>
-              {/*{statusConfig.statusText}*/}
               Readiness Checklist
             </h3>
             <p className="text-sm text-gray-600 mt-1">
-              
               {statusConfig.subtitle}
             </p>
           </div>
@@ -1166,146 +1236,261 @@ const getFundedStatus = (answer: string): {
     })()}
   </div>
 
-            
-            
-            {checklistItems.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {checklistItems.map((item) => {
-                  const status = getChecklistStatus(item);
-                  const statusConfig = {
-                    missing: {
-                      icon: XCircle,
-                      color: 'text-red-600',
-                      bgColor: 'bg-red-50',
-                      borderColor: 'border-red-300',
-                      label: 'MISSING',
-                      iconBg: 'bg-red-100',
-                      labelText: '⚡Fix Now'
-                    },
-                    partial: {
-                      icon: AlertCircle,
-                      color: 'text-yellow-600',
-                      bgColor: 'bg-yellow-50',
-                      borderColor: 'border-yellow-300',
-                      label: 'PARTIAL',
-                      iconBg: 'bg-yellow-100',
-                      labelText: '⚡Fix Now'
-                    },
-                    complete: {
-                      icon: CheckCircle2,
-                      color: 'text-green-600',
-                      bgColor: 'bg-green-50',
-                      borderColor: 'border-green-300',
-                      label: 'COMPLETE',
-                      iconBg: 'bg-green-100',
-                      labelText: '⚡All Done'
-                    }
-                  };
-                  
-                  const config = statusConfig[status];
-                  const StatusIcon = config.icon;
-                  
-                  // Icon mapping for checklist types
-                  const typeIconMap: { [key: string]: any } = {
-                    'legal': Scale,
-                    'financial': DollarSign,
-                    'medical': Heart,
-                    'care': Users,
-                    'documents': FileText,
-                    'facility': Building2,
-                    'home': Home,
-                    'default': Shield
-                  };
-                  
-                  const TypeIcon = typeIconMap[item.checklist_type.toLowerCase()] || typeIconMap['default'];
-                  
-                  return (
-                    <div 
-                      onClick={openCommunityModal}
-                      key={item.id}
-                      className={`group relative rounded-xl p-5 border-2 ${config.borderColor} ${config.bgColor} hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:-translate-y-1 flex flex-col h-full min-h-[240px]`}
-                    >
-                      <div className="flex items-start justify-between mb-3">
-                       
-                        <div className={`p-2 rounded-lg ${config.iconBg}`}>
-                          <TypeIcon className={`w-5 h-5 ${config.color}`} />
-                        </div>
-                        <StatusIcon className={`w-5 h-5 ${config.color}`} />
-                      </div>
-                      
-                      <h4 className="text-sm font-bold text-gray-900 mb-1 uppercase tracking-wide">
-                        {item.checklist_type}
-                      </h4>
-                      <p className="text-sm text-gray-700 mb-3 line-clamp-2 min-h-[2.5rem]">
-                        {item.checklist}
-                      </p>
-
-               
-                  <div className="inline-block">
-                      <TooltipHelp text={`${config.labelText}`} >
-                      <div className={`inline-flex items-center px-2 py-1 rounded 
-                      text-xs font-bold ${config.color} ${config.bgColor} border ${config.borderColor}`}>
-                          {config.label}                
-                      </div>
-                      </TooltipHelp>
-                  </div>
-
-                      {/*</TooltipHelp>*/}
-                      
-                      {status === 'missing' && (
-                        <div className="mt-3 pt-3 border-t border-red-200">
-                          <p className="hidden sm:block text-xs text-red-600 font-medium">
-                            <Zap className="w-3 h-3 inline mr-1" />
-                            Unlock Poetiq to resolve now
-                          </p>
-
-                          <p className="sm:hidden text-xs text-red-600 font-medium">
-                            <Zap className="w-3 h-3 inline mr-1" />
-                            Unlock Poetiq and fix now
-                          </p>
-                        </div>
-                      )}
-
-                       {status === 'complete' && (
-                        <div className="mt-3 pt-3 border-t border-green-200">
-                          <p className="hidden sm:block text-xs text-green-700 font-medium">
-                            <ShieldCheck className="w-5 h-5 text-white fill-green-600 inline mr-1" />
-                             Store document safely with Poetiq
-                          </p>
-
-                          <p className="sm:hidden text-xs text-green-700 font-medium">
-                            <ShieldCheck className="w-5 h-5 text-white fill-green-600 inline mr-1" />
-                             Store safely with Poetiq
-                          </p>
-                        </div>
-                      )}
-
-                       {status === 'partial' && (
-                        <div className="mt-3 pt-3 border-t border-yellow-200">
-                          <p className="hidden sm:block text-xs text-yellow-600 font-medium">
-                            <Zap className="w-3 h-3 inline mr-1" />
-                            Unlock Poetiq to complete this task
-                          </p>
-
-                          <p className="sm:hidden text-xs text-yellow-600 font-medium">
-                            <Zap className="w-3 h-3 inline mr-1" />
-                            Unlock Poetiq to complete
-                          </p>
-                        </div>
-                      )}
-                      
-                    </div>
-                  );
-                })}
-              </div>
-                 
-            ) : (
-              <div className="text-center py-12 text-gray-500">
-                <FileText className="w-16 h-16 mx-auto mb-4 text-gray-300" />
-                <p>No checklist items found for this phase.</p>
+  {/* Phase Toggle Buttons */}
+  <div className="mb-6 pb-6 border-b border-gray-200">
+    <div className="flex items-center justify-between mb-3">
+      <h4 className="text-sm font-semibold text-gray-700 uppercase tracking-wider">
+        Select Care Journey Phase
+      </h4>
+      {selectedChecklistPhase !== responseData.calculated_phase && (
+        <button
+          onClick={() => setSelectedChecklistPhase(responseData.calculated_phase)}
+          className="text-xs text-red-600 hover:text-red-700 font-medium flex items-center gap-1 transition-colors duration-200"
+        >
+          <Target className="w-3 h-3" />
+          Return to Your Phase
+        </button>
+      )}
+    </div>
+    
+    <div className="grid grid-cols-5 gap-2">
+      {[
+        { id: 1, name: 'Phase 1', shortName: 'P1', description: 'Early Planning' },
+        { id: 2, name: 'Phase 2', shortName: 'P2', description: 'Acute Crisis' },
+        { id: 3, name: 'Phase 3', shortName: 'P3', description: 'Home Care' },
+        { id: 4, name: 'Phase 4', shortName: 'P4', description: 'Institutional' },
+        { id: 5, name: 'Phase 5', shortName: 'P5', description: 'End of Life' }
+      ].map((phase) => {
+        const isSelected = selectedChecklistPhase === phase.id;
+        const isCurrentPhase = responseData.calculated_phase === phase.id;
+        
+        return (
+          <button
+            key={phase.id}
+            onClick={() => setSelectedChecklistPhase(phase.id)}
+            className={`
+              group relative rounded-lg p-3 border-2 transition-all duration-300 transform
+              ${isSelected 
+                ? 'bg-red-500 border-red-600 shadow-lg scale-105 -translate-y-1' 
+                : 'bg-white border-gray-200 hover:border-red-300 hover:shadow-md hover:-translate-y-0.5'
+              }
+            `}
+          >
+            {/* Current Phase Indicator */}
+            {isCurrentPhase && (
+              <div className="absolute -top-1 -right-1">
+                <div className="relative">
+                  <div className="w-3 h-3 bg-red-600 rounded-full border-2 border-white animate-pulse"></div>
+                </div>
               </div>
             )}
-          </div>
+            
+            <div className="flex flex-col items-center">
+              {/* Phase Number */}
+              <div className={`
+                text-lg font-bold mb-1 transition-colors duration-300
+                ${isSelected ? 'text-white' : 'text-gray-900 group-hover:text-red-600'}
+              `}>
+                {phase.shortName}
+              </div>
+              
+              {/* Phase Description */}
+              <div className={`
+                text-xs text-center leading-tight transition-colors duration-300
+                ${isSelected ? 'text-red-50' : 'text-gray-600 group-hover:text-red-700'}
+              `}>
+                {phase.description}
+              </div>
+              
+              {/* Selection Indicator */}
+              {isSelected && (
+                <div className="mt-2 w-full h-0.5 bg-white rounded-full"></div>
+              )}
+            </div>
+          </button>
+        );
+      })}
+    </div>
+    
+    {/* Helper Text */}
+    <div className="mt-3 flex items-start gap-2">
+      <div className="mt-0.5">
+        <Lightbulb className="w-4 h-4 text-red-500" />
+      </div>
+      <p className="text-xs text-gray-600">
+        {selectedChecklistPhase === responseData.calculated_phase ? (
+          <>
+            Viewing checklist for <span className="font-semibold text-red-600">your current phase</span>. 
+            Click other phases to preview their requirements.
+          </>
+        ) : (
+          <>
+            Previewing Phase {selectedChecklistPhase} checklist. 
+            <span className="font-semibold text-gray-900"> Your current phase is {responseData.calculated_phase}</span>.
+          </>
+        )}
+      </p>
+    </div>
+  </div>
+
+  {/* Checklist Items Display */}
+  {(() => {
+    //const itemsToDisplay = displayedChecklistItems.length > 0 ? displayedChecklistItems : checklistItems;
+  
+  {/*console.log('Rendering checklist:', {
+    selectedChecklistPhase,
+    currentPhase: responseData?.calculated_phase,
+    displayedChecklistItemsLength: displayedChecklistItems.length,
+    checklistItemsLength: checklistItems.length,
+    displayedItems: displayedChecklistItems,
+    checklistItems: checklistItems
+  });*/}
+  
+  const itemsToDisplay = selectedChecklistPhase !== null && selectedChecklistPhase !== responseData?.calculated_phase
+    ? displayedChecklistItems 
+    : checklistItems;
+
+
+    
+    return itemsToDisplay.length > 0 ? (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {itemsToDisplay.map((item) => {
+          const status = getChecklistStatus(item);
+          const statusConfig = {
+            missing: {
+              icon: XCircle,
+              color: 'text-red-600',
+              bgColor: 'bg-red-50',
+              borderColor: 'border-red-300',
+              label: 'MISSING',
+              iconBg: 'bg-red-100',
+              labelText: '⚡Fix Now'
+            },
+            partial: {
+              icon: AlertCircle,
+              color: 'text-yellow-600',
+              bgColor: 'bg-yellow-50',
+              borderColor: 'border-yellow-300',
+              label: 'PARTIAL',
+              iconBg: 'bg-yellow-100',
+              labelText: '⚡Fix Now'
+            },
+            complete: {
+              icon: CheckCircle2,
+              color: 'text-green-600',
+              bgColor: 'bg-green-50',
+              borderColor: 'border-green-300',
+              label: 'COMPLETE',
+              iconBg: 'bg-green-100',
+              labelText: '⚡All Done'
+            }
+          };
+          
+          const config = statusConfig[status];
+          const StatusIcon = config.icon;
+          
+          // Icon mapping for checklist types
+          const typeIconMap: { [key: string]: any } = {
+            'legal': Scale,
+            'financial': DollarSign,
+            'medical': Heart,
+            'care': Users,
+            'documents': FileText,
+            'facility': Building2,
+            'home': Home,
+            'default': Shield
+          };
+          
+          const TypeIcon = typeIconMap[item.checklist_type.toLowerCase()] || typeIconMap['default'];
+          
+          return (
+            <div 
+              onClick={openCommunityModal}
+              key={item.id}
+              className={`
+                group relative rounded-xl p-5 border-2 ${config.borderColor} ${config.bgColor} 
+                hover:shadow-xl transition-all duration-500 cursor-pointer transform hover:-translate-y-1 
+                flex flex-col h-full min-h-[240px] opacity-0 animate-fadeIn
+              `}
+              style={{
+                animationDelay: `${itemsToDisplay.indexOf(item) * 50}ms`,
+                animationFillMode: 'forwards'
+              }}
+            >
+              <div className="flex items-start justify-between mb-3">
+                <div className={`p-2 rounded-lg ${config.iconBg} transition-transform duration-300 group-hover:scale-110`}>
+                  <TypeIcon className={`w-5 h-5 ${config.color}`} />
+                </div>
+                <StatusIcon className={`w-5 h-5 ${config.color} transition-transform duration-300 group-hover:scale-110`} />
+              </div>
+              
+              <h4 className="text-sm font-bold text-gray-900 mb-1 uppercase tracking-wide">
+                {item.checklist_type}
+              </h4>
+              <p className="text-sm text-gray-700 mb-3 line-clamp-2 min-h-[2.5rem]">
+                {item.checklist}
+              </p>
+
+              <div className="inline-block">
+                <TooltipHelp text={`${config.labelText}`}>
+                  <div className={`inline-flex items-center px-2 py-1 rounded 
+                    text-xs font-bold ${config.color} ${config.bgColor} border ${config.borderColor}`}>
+                    {config.label}                
+                  </div>
+                </TooltipHelp>
+              </div>
+              
+              {status === 'missing' && (
+                <div className="mt-3 pt-3 border-t border-red-200">
+                  <p className="hidden sm:block text-xs text-red-600 font-medium">
+                    <Zap className="w-3 h-3 inline mr-1" />
+                    Unlock Poetiq to resolve now
+                  </p>
+                  <p className="sm:hidden text-xs text-red-600 font-medium">
+                    <Zap className="w-3 h-3 inline mr-1" />
+                    Unlock Poetiq and fix now
+                  </p>
+                </div>
+              )}
+
+              {status === 'complete' && (
+                <div className="mt-3 pt-3 border-t border-green-200">
+                  <p className="hidden sm:block text-xs text-green-700 font-medium">
+                    <ShieldCheck className="w-5 h-5 text-white fill-green-600 inline mr-1" />
+                    Store document safely with Poetiq
+                  </p>
+                  <p className="sm:hidden text-xs text-green-700 font-medium">
+                    <ShieldCheck className="w-5 h-5 text-white fill-green-600 inline mr-1" />
+                    Store safely with Poetiq
+                  </p>
+                </div>
+              )}
+
+              {status === 'partial' && (
+                <div className="mt-3 pt-3 border-t border-yellow-200">
+                  <p className="hidden sm:block text-xs text-yellow-600 font-medium">
+                    <Zap className="w-3 h-3 inline mr-1" />
+                    Unlock Poetiq to complete this task
+                  </p>
+                  <p className="sm:hidden text-xs text-yellow-600 font-medium">
+                    <Zap className="w-3 h-3 inline mr-1" />
+                    Unlock Poetiq to complete
+                  </p>
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    ) : (
+      <div className="text-center py-12 text-gray-500">
+        <FileText className="w-16 h-16 mx-auto mb-4 text-gray-300" />
+        <p>No checklist items found for Phase {selectedChecklistPhase}.</p>
+      </div>
+    );
+  })()}
+</div>
+
                                     
           {/* Additional Context Section */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
