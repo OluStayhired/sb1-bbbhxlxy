@@ -137,7 +137,9 @@ const calculateCognitiveDrag = async (
   calculatedPhase: number,
   q4Answer: string,  // Question 4: Time/Schedule question
   q5Answer: string,  // Question 5: Legal/Documents question
-  q6Answer: string   // Question 6: Family/Conflict question
+  q6Answer: string,   // Question 6: Family/Conflict question
+  q8Answer: string,  // Question 8: Doctor visit frequency
+  q9Answer: string   // Question 9: Medication list status
 ): Promise<CognitiveDragData | null> => {
   try {
     // Step 1: Get base_cognitive_drag from eldercare_phase table based on phase
@@ -170,11 +172,11 @@ const calculateCognitiveDrag = async (
     let legal_exposure_drag = 0;
     let conflict_drag = 0;
 
-    // Get question texts for Q4, Q5, Q6
+    // Get question texts for Q4, Q5, Q6, Q8, Q9
     const { data: questionsData } = await supabase
       .from('eldercare_onboard_questions')
       .select('question_id, onboard_question')
-      .in('question_id', [4, 5, 6]);
+      .in('question_id', [4, 5, 6, 8, 9]);
 
     if (questionsData) {
       const q4Text = questionsData.find(q => q.question_id === 4)?.onboard_question;
@@ -205,15 +207,44 @@ const calculateCognitiveDrag = async (
         conflict_drag = q6Choice?.choice_cognitive_drag || 0;
       }
     }
+//================== Start New Section Just Added for Q8 and Q9 ==========
+let health_monitoring_drag = 0;
+let medication_management_drag = 0;
+
+const q8Text = questionsData.find(q => q.question_id === 8)?.onboard_question;
+const q9Text = questionsData.find(q => q.question_id === 9)?.onboard_question;
+
+// Find drag values for Q8 answer (health monitoring)
+if (q8Text && q8Answer) {
+  const q8Choice = choicesData.find(
+    c => c.eldercare_question === q8Text && c.question_choices === q8Answer
+  );
+  health_monitoring_drag = q8Choice?.choice_cognitive_drag || 0;
+}
+
+// Find drag values for Q9 answer (medication management)
+if (q9Text && q9Answer) {
+  const q9Choice = choicesData.find(
+    c => c.eldercare_question === q9Text && c.question_choices === q9Answer
+  );
+  medication_management_drag = q9Choice?.choice_cognitive_drag || 0;
+}
+
+//================== End New Section Just Added for Q8 and Q9 ==========    
+    
 
     // Step 4: Calculate total drag using the formula
-    const total_drag = base_cognitive_drag + time_friction_drag + legal_exposure_drag + conflict_drag;
+    //const total_drag = base_cognitive_drag + time_friction_drag + legal_exposure_drag + conflict_drag;
+    const total_drag = base_cognitive_drag + time_friction_drag + legal_exposure_drag + conflict_drag + health_monitoring_drag + medication_management_drag;
+
 
     console.log('Cognitive Drag Calculation:', {
       base_cognitive_drag,
       time_friction_drag,
       legal_exposure_drag,
       conflict_drag,
+      health_monitoring_drag,
+      medication_management_drag,
       total_drag
     });
 
@@ -247,12 +278,12 @@ const calculateCognitiveDrag = async (
     try {
       setLoading(true);
       
-      // Fetch questions (question_id 2 to 7)
+      // Fetch questions (question_id 2 to 9)
       const { data: questionsData, error: questionsError } = await supabase
         .from('eldercare_onboard_questions')
         .select('*')
         .gte('question_id', 2)
-        .lte('question_id', 7)
+        .lte('question_id', 9)
         .order('question_id', { ascending: true });
 
       if (questionsError) throw questionsError;
@@ -367,14 +398,20 @@ const calculateCognitiveDrag = async (
     const q4Answer = answers[4]; // Question ID 4 - Time/Schedule
     const q5Answer = answers[5]; // Question ID 5 - Legal/Documents
     const q6Answer = answers[6]; // Question ID 6 - Family/Conflict
+    const q7Answer = answers[7]; // Question ID 7 - (existing question)
+    const q8Answer = answers[8]; // Question ID 8 - Doctor visit
+    const q9Answer = answers[9]; // Question ID 9 - Medication list
+
     
-    if (calculatedPhase !== null && q4Answer && q5Answer && q6Answer) {
-      const dragData = await calculateCognitiveDrag(
-        calculatedPhase,
-        q4Answer,
-        q5Answer,
-        q6Answer
-      );
+    if (calculatedPhase !== null && q4Answer && q5Answer && q6Answer && q8Answer && q9Answer) {
+        const dragData = await calculateCognitiveDrag(
+            calculatedPhase,
+            q4Answer,
+            q5Answer,
+            q6Answer,
+            q8Answer,
+            q9Answer
+          );
       
       if (dragData) {
         dragScore = dragData.total_drag;
