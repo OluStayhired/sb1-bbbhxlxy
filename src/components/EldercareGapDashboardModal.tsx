@@ -370,7 +370,7 @@ const fetchChecklistForPhase = async (phaseId: number) => {
 
 
 //------------------ getChecklistStatus -----------------//
-  const getChecklistStatus = (item: ChecklistItem): 'missing' | 'partial' | 'complete' => {
+const getChecklistStatus = (item: ChecklistItem): 'missing' | 'partial' | 'complete' => {
   // Check if this is the LPA checklist item
   if (item.checklist_type.toLowerCase() === 'sign legal documents' && 
       (item.checklist.toLowerCase().includes('lpa') || 
@@ -392,7 +392,27 @@ const fetchChecklistForPhase = async (phaseId: number) => {
     
     // Default to missing if no answer provided
     return 'missing';
+  }
 
+  // Check if this is the Medication Folder checklist item
+  if (item.checklist_type.toLowerCase() === 'create medication folder') {
+    
+    // Get Medication status from raw_answers[9]
+    if (responseData?.raw_answers[9]) {
+      const medicationStatus = getMedicationStatus(responseData.raw_answers[9]);
+      
+      // Map medicationStatus.level to checklist status
+      if (medicationStatus.level === 'green') {
+        return 'complete';
+      } else if (medicationStatus.level === 'amber') {
+        return 'partial';
+      } else if (medicationStatus.level === 'red') {
+        return 'missing';
+      }
+    }
+    
+    // Default to missing if no answer provided
+    return 'missing';
   }
  
   // Default logic for other checklist items
@@ -407,6 +427,8 @@ const fetchChecklistForPhase = async (phaseId: number) => {
     return 'missing';
   }
 };
+
+  //--------------- End getChecklistStatus -------------//
 
   
   //---------------- getLegalPOAStatus --------------- //
@@ -478,6 +500,86 @@ const fetchChecklistForPhase = async (phaseId: number) => {
   };
 
   //---------------- End getLegalPOAStatus ------------//
+
+  //---------------- getMedicationStatus --------------- //
+
+const getMedicationStatus = (answer: string): { 
+  level: 'red' | 'amber' | 'green';
+  status: string;
+  icon: any;
+  color: string;
+  bgColor: string;
+  bgIconColor: string;
+  borderColor: string;
+  message: string;
+} => {
+  const lowerAnswer = responseData.raw_answers[9]?.toLowerCase() || '';
+  
+  // Green: Yes - medications are organized
+  if (lowerAnswer.includes('yes') && !lowerAnswer.includes('mostly')) {
+    return {
+      level: 'green',
+      status: 'ORGANIZED',
+      icon: CheckCircle2,
+      color: 'text-green-700',
+      bgColor: 'bg-green-50',
+      bgIconColor: 'bg-green-200',
+      borderColor: 'border-green-500',
+      borderHoverColor: 'hover:border-green-600',
+      message: 'Medications are properly organized and accessible.'
+    };
+  }
+  
+  // Red Alert: No or I'm not sure
+  if (lowerAnswer.includes('no') || 
+      lowerAnswer.includes('not sure') ||
+      lowerAnswer.includes('not organized')) {
+    return {
+      level: 'red',
+      status: 'CRITICAL GAP',
+      icon: XCircle,
+      color: 'text-red-700',
+      bgColor: 'bg-red-50',
+      bgIconColor: 'bg-red-200',
+      borderColor: 'border-red-500',
+      borderHoverColor: 'hover:border-red-600',
+      message: 'Medication organization needed immediately for safety.'
+    };
+  }
+  
+  // Amber: Mostly or Partially
+  if (lowerAnswer.includes('mostly') || 
+      lowerAnswer.includes('partially') || 
+      lowerAnswer.includes('partial')) {
+    return {
+      level: 'amber',
+      status: 'INCOMPLETE',
+      icon: AlertCircle,
+      color: 'text-yellow-600',
+      bgColor: 'bg-yellow-50',
+      bgIconColor: 'bg-yellow-100',
+      borderColor: 'border-yellow-300',
+      borderHoverColor: 'hover:border-yellow-500',
+      message: 'Medication organization partially complete. Full organization recommended.'
+    };
+  }
+  
+  // Default to red if answer unclear
+  return {
+    level: 'red',
+    status: 'UNKNOWN STATUS',
+    icon: XCircle,
+    color: 'text-red-700',
+    bgColor: 'bg-red-50',
+    bgIconColor: 'bg-red-200',
+    borderColor: 'border-red-500',
+    borderHoverColor: 'hover:border-red-600',
+    message: 'Medication status unclear. Organization needed.'
+  };
+};
+
+//---------------- End getMedicationStatus ------------//
+
 
   //----------------- Start getTimeBasedGreeting -----------//
 const getTimeBasedGreeting = (): string => {
@@ -643,7 +745,7 @@ const getFundedStatus = (answer: string): {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4 z-50 backdrop-blur-sm">
       <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl w-full max-w-7xl relative shadow-2xl max-h-[115vh] overflow-hidden flex flex-col border border-gray-200">
-        {/*changed from 95vh to 125vh*/}
+        {/*changed from 95vh to 115vh*/}
         
         {/* Close Button */}
         <button
