@@ -113,7 +113,8 @@ export async function generateContent(prompt: string): Promise<GeminiResponse> {
       },
       body: JSON.stringify({
         prompt,
-        model: 'gemini-3-flash-preview', // Pass the model name to the Edge Function if it's dynamic
+        //model: 'gemini-3-flash-preview', // Pass the model name to the Edge Function if it's dynamic
+        model: 'gemini-3.1-flash-lite',
         // Optional: Add a cache key for the Edge Function to use
         cacheKey: prompt.substring(0, 50), // Use first 50 chars as cache key
         
