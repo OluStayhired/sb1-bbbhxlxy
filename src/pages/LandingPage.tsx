@@ -113,7 +113,7 @@ useEffect(() => {
 
 const handleLoginClick = () => {
     // This navigates to an external URL, not an internal route
-    window.location.href = 'https://app.sosavvy.so/login';
+    window.location.href = 'https://app.poetiq.io/login';
   };
 
   const handleBlogClick = () => {
@@ -436,14 +436,15 @@ const getSessionId = (): string => {
     {/* Adjusted button layout for mobile */}          
 <div className="mt-12 mb-6 flex flex-col sm:flex-row items-center justify-center gap-4">
   <button
-    onClick={openCommunityModal}
+    //onClick={openCommunityModal}
+    onClick={handleLoginClick}
     type="submit"
     className="flex items-center space-x-2 w-full sm:w-auto bg-gradient-to-r from-red-500 to-red-600 text-white px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-10 shadow-red-500/60 hover:shadow-red-500/80  group"
   >    
-    {/*<span className="hidden sm:inline"> Get Started for Free </span>*/}
-    <span className="hidden sm:inline"> Join Waitlist </span>
-    {/*<span className="sm:hidden items-center"> Get Started for Free </span>*/}
-    <span className="sm:hidden items-center"> Join Waitlist </span>
+    <span className="hidden sm:inline"> Get Started for Free </span>
+    {/*<span className="hidden sm:inline"> Join Waitlist </span>*/}
+    <span className="sm:hidden items-center"> Get Started for Free </span>
+    {/*<span className="sm:hidden items-center"> Join Waitlist </span>*/}
     <span><ArrowRight className="w-4 h-4 sm:w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" /></span>  
   </button>
 </div> 
@@ -937,9 +938,11 @@ end of old hero image */}
   </div>
 
   <button
-    onClick={openCommunityModal}
+    //onClick={openCommunityModal}
+    onClick={handleLoginClick}
     className="mt-8 items-center group flex items-center justify-center space-x-2 w-full sm:w-auto px-6 py-3 bg-red-500 text-white text-base font-semibold rounded-lg hover:bg-red-600 transition-colors shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-4 sm:text-lg mx-auto">
-    <span>Join Waitlist</span>
+    {/*<span>Join Waitlist</span>*/}
+    <span>Get Started</span>
       <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
    </button> 
 </section>
@@ -1689,9 +1692,11 @@ end of old hero image */}
     </div>  
 
               <button
-                onClick={openCommunityModal}
+                //onClick={openCommunityModal}
+                onClick={handleLoginClick}
                 className="hidden sm:flex mt-8 items-center justify-center space-x-2 w-full sm:w-auto px-6 py-3 border border-red-500 bg-white text-red-500 text-base font-semibold rounded-lg hover:bg-red-500 hover:text-white transition-colors shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 sm:px-8 sm:py-4 sm:text-lg group mx-auto">
-                <span>Join Waitlist</span>
+                {/*<span>Join Waitlist</span>*/}
+                <span>Get Started</span>
                 {/* Placeholder for ArrowRight icon or similar */}
                <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
             </button> 
@@ -1983,13 +1988,15 @@ end of old hero image */}
         {/* Buttons */}
       <div className="flex flex-col sm:mr-10  sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 mb-16"> 
           <button
-            onClick={openCommunityModal}
+            //onClick={openCommunityModal}
+            onClick={handleLoginClick}
             className="flex items-center justify-center space-x-2 w-full sm:w-auto px-6 py-4 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors text-base font-semibold sm:px-4 sm:py-3 sm:text-base
                          shadow-lg shadow-red-500/60       
              hover:shadow-xl hover:shadow-red-500/80 group" // Adjusted mobile button size/text for consistency
           >
             {/*<Send className="w-3.5 h-3.5"/>*/}
-           <span>Join Waitlist</span>
+           {/*<span>Join Waitlist</span>*/}
+           <span>Get Started</span>
            <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
 
