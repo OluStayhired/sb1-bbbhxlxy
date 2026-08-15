@@ -47,6 +47,11 @@ interface PageMenuNavProps {
 export function PageMenuNav({ onOpenCommunityModal, onOpenOnboardingModal }: PageMenuNavProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const handleLoginClick = () => {
+    // This navigates to an external URL, not an internal route
+    window.location.href = 'https://app.poetiq.io/login';
+  };
+
   // Mobile Accordion Component for nested menus
 function MobileAccordion({ title, items }: { 
   title: string; 
@@ -554,10 +559,12 @@ function MobileAccordion({ title, items }: {
         </div>
 
         <button
-          onClick={onOpenCommunityModal}
+          //onClick={onOpenCommunityModal}
+          onClick={handleLoginClick}
           className="flex items-center justify-center space-x-2 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-500 transition-colors shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 group"
         >
-          <span>Join Waitlist</span>
+          {/*<span>Join Waitlist</span>*/}
+          <span>Get Started</span>
           <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
         </button>
 
@@ -804,12 +811,14 @@ function MobileAccordion({ title, items }: {
       <div className="pt-4">
         <button
           onClick={() => {
-            onOpenCommunityModal();
+            //onOpenCommunityModal();
+            handleLoginClick();
             setIsMobileMenuOpen(false);
           }}
           className="group flex items-center justify-center space-x-2 w-full px-6 py-4 bg-gradient-to-r from-red-500 to-red-600 text-white text-base font-semibold rounded-lg hover:from-red-600 hover:to-red-700 transition-all duration-500 shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80"
         >
-          <span>Join Waitlist</span>
+          {/*<span>Join Waitlist</span>*/}
+          <span>Get Started</span>
           <ArrowRight className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1" />
         </button>
       </div>
