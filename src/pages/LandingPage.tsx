@@ -140,29 +140,32 @@ const handleGetStartedClick = () => {
       <div className="max-w-5xl mx-auto px-6 pt-20 pb-8 sm:pt-32 sm:pb-12 text-center">
         <div className="inline-flex items-center px-4 py-2 bg-red-50 border border-red-200 rounded-full text-red-600 text-sm font-medium mb-8">
           <HeartPulse className="w-4 h-4 mr-2" />
-          <span>Serving family caregivers nationwide</span>
+          <span>Serving family carers nationwide</span>
         </div>
 
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight tracking-tight">
-          Bring order to the{' '}
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-slate-700 leading-tight tracking-tight">
+          {/*} Bring order to the{' '}*/}
+          Care{' '}
           <span className="bg-gradient-to-r from-red-500 to-red-400 text-transparent bg-clip-text">
-            chaos
+            {/*chaos*/}
+            Operating System
           </span>{' '}
           <br className="hidden sm:block" />
-          of elder care.
+          {/*of elder care.*/}
+          for family caregivers
         </h1>
 
-        {/* WHAT -- product positioning statement */}
-        <p className="mt-6 sm:mt-8 text-xl sm:text-2xl md:text-3xl text-slate-600 max-w-3xl mx-auto leading-snug font-semibold tracking-tight">
-          The Only Care Operating System for Family Caregivers
+          {/* WHAT -- product positioning statement */}
+          <p className="mt-6 sm:mt-8 text-xl sm:text-2xl md:text-3xl text-slate-600 max-w-3xl mx-auto leading-snug font-semibold tracking-tight">
+          {/*The Only Care Operating System for Family Caregivers*/}
+          We bring order to the chaos of elder care
         </p>
 
         {/* HOW -- supporting value proposition */}
         <p className="mt-3 sm:mt-4 text-base sm:text-lg md:text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed font-normal">
-          Close care gaps, improve Medicaid eligibility, and seamlessly coordinate
+          Close care gaps, qualify for Medicaid and seamlessly <br/> manage
           your parent's care journey. All in one place.
         </p>
-
 
         <div className="mt-10 sm:mt-12">
           <button
@@ -329,8 +332,8 @@ function BeforeAfterSection() {
             </span>
           </div>
           <div className="text-center">
-            <span className="inline-flex items-center px-4 py-2 bg-red-50 border border-red-200 rounded-full text-red-600 font-semibold text-sm">
-              <CheckCircle2 className="w-4 h-4 text-red-500 mr-2" />
+            <span className="inline-flex items-center px-4 py-2 bg-teal-50 border border-teal-200 rounded-full text-teal-600 font-semibold text-sm">
+              <CheckCircle2 className="w-4 h-4 text-teal-500 mr-2" />
               The Poetiq Way
             </span>
           </div>
@@ -353,15 +356,15 @@ function BeforeAfterSection() {
                 </div>
               </div>
               {/* After */}
-              <div className="bg-red-50/60 border border-red-200 rounded-xl p-6 sm:p-8">
+              <div className="bg-teal-50/60 border border-teal-200 rounded-xl p-6 sm:p-8">
                 <div className="sm:hidden mb-3">
-                  <span className="inline-flex items-center px-3 py-1 bg-red-50 border border-red-200 rounded-full text-red-600 font-medium text-xs">
+                  <span className="inline-flex items-center px-3 py-1 bg-teal-50 border border-teal-200 rounded-full text-teal-600 font-medium text-xs">
                     <CheckCircle2 className="w-3 h-3 mr-1" />
                     The Poetiq Way
                   </span>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <CheckCircle2 className="hidden sm:block w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="hidden sm:block w-5 h-5 text-teal-500 flex-shrink-0 mt-0.5" />
                   <p className="text-gray-800 leading-relaxed font-medium">{row.after}</p>
                 </div>
               </div>
