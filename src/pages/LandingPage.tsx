@@ -252,7 +252,7 @@ function ThreePillarsSection() {
     <section id="HowItWorks" className="scroll-mt-24 py-20 sm:py-32 bg-gray-50/50">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-normal">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-700 leading-normal">
             The three hardest parts of elder care,{' '}
             <span className="text-red-500">finally simplified.</span>
           </h2>
@@ -273,7 +273,7 @@ function ThreePillarsSection() {
                 <pillar.icon className="w-7 h-7 text-red-500" />
               </div>
               <p className="text-red-500 font-bold text-lg mb-2">{pillar.hook}</p>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">{pillar.title}</h3>
+              <h3 className="text-2xl font-bold text-slate-700 mb-4">{pillar.title}</h3>
               <p className="text-gray-600 leading-relaxed">{pillar.description}</p>
             </div>
           ))}
@@ -313,7 +313,7 @@ function BeforeAfterSection() {
     <section id="BeforeAfter" className="scroll-mt-24 py-20 sm:py-32">
       <div className="max-w-5xl mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-relaxed">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-700 leading-relaxed">
             From midnight guesswork to{' '}
             <span className="text-red-500">complete clarity.</span>
           </h2>
@@ -391,7 +391,7 @@ const handleGetStartedClick = () => {
     <section id="SocialProof" className="scroll-mt-24 py-20 sm:py-32 bg-gray-50/50">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-loose">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-700 leading-loose">
             Trusted by families navigating the{' '}
             <span className="text-red-500 mt-2">weight of caregiving.</span>
           </h2>
@@ -481,7 +481,7 @@ function FAQSection() {
             <Sparkles className="w-4 h-4 mr-2" />
             <span>Frequently Asked Questions</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-700 leading-tight">
             Have Questions?
           </h2>
           <p className="mt-4 text-lg sm:text-xl text-gray-600 leading-relaxed">
@@ -565,7 +565,7 @@ const handleGetStartedClick = () => {
           <span>Begin in under 3 minutes</span>
         </div>
 
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-700 leading-tight">
           Your family deserves{' '}
           <span className="bg-gradient-to-r from-red-500 to-red-400 text-transparent bg-clip-text">
             clarity.
