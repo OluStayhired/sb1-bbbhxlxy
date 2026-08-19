@@ -221,70 +221,77 @@ const handleGetStartedClick = () => {
 /* ================================================================
    THREE PILLARS SECTION
    ================================================================ */
-function ThreePillarsSection() {
-  const pillars = [
-    {
-      icon: HeartPulse,
-      hook: 'Uncover the blind spots.',
-      title: 'Manage Care',
-      description:
-        'Instantly identify missing legal and medical documents, calculate your readiness score, and bring out-of-town siblings onto one collaborative page to share the load.',
-    },
-    {
-      icon: CircleDollarSign,
-      hook: "Protect your family's assets.",
-      title: 'Manage Money',
-      description:
-        'Navigate state-specific Medicaid rules, evaluate Miller Trusts, and avoid devastating unspent income traps before the turn of the month.',
-    },
-    {
-      icon: Search,
-      hook: 'Source trusted help.',
-      title: 'Find Services & Audit',
-      description:
-        'Easily source in-home care, adult family living homes, and residential facilities, then audit your care agreements for hidden risks.',
-    },
-  ];
-
-  return (
-    <section id="HowItWorks" className="scroll-mt-24 py-20 sm:py-32 bg-gray-50/50">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-        <h2 className="hidden sm:block text-3xl sm:text-4xl md:text-5xl font-bold text-slate-700 leading-normal">
-            The three hardest parts of elder care,{' '}
-            <span className="text-red-500">finally simplified.</span>
-          </h2>
-
-          <h2 className="sm:hidden text-3xl sm:text-4xl md:text-5xl font-bold text-slate-700 leading-tight">
-            The three hardest parts of elder care,{' '}
-            <span className="text-red-500">finally simplified.</span>
-          </h2>
-          <p className="mt-6 text-lg sm:text-xl text-gray-600 leading-relaxed">
-            Whether you are untangling medical paperwork, figuring out Medicaid asset rules, or
-            sourcing local care, Poetiq keeps your entire family aligned across three core
-            modules.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {pillars.map((pillar) => (
-            <div
-              key={pillar.title}
-              className="group bg-white border-2 border-gray-100 hover:border-red-300 rounded-2xl p-8 sm:p-10 shadow-sm hover:shadow-xl hover:shadow-red-500/10 transition-all duration-300 hover:-translate-y-1"
-            >
-              <div className="flex items-center justify-center w-14 h-14 bg-red-50 rounded-2xl mb-6 group-hover:bg-red-100 transition-colors duration-300">
-                <pillar.icon className="w-7 h-7 text-red-500" />
+   function ThreePillarsSection() {
+    const pillars = [
+      {
+        icon: HeartPulse,
+        hook: 'Uncover the blind spots.',
+        title: 'Manage Care',
+        description:
+          'Instantly identify missing legal and medical documents, calculate your readiness score, and bring out-of-town siblings onto one collaborative page to share the load.',
+        iconColor: 'text-red-500',
+        bgColor: 'bg-red-50 group-hover:bg-red-100',
+      },
+      {
+        icon: CircleDollarSign,
+        hook: "Protect your family's assets.",
+        title: 'Manage Money',
+        description:
+          'Navigate state-specific Medicaid rules, evaluate Miller Trusts, and avoid devastating unspent income traps before the turn of the month.',
+        iconColor: 'text-green-500',
+        bgColor: 'bg-green-50 group-hover:bg-green-100'
+      },
+      {
+        icon: Search,
+        hook: 'Source trusted help.',
+        title: 'Find Services',
+        description:
+          'Easily source in-home care, adult family living homes, and residential facilities, then audit your care agreements for hidden risks.',
+        iconColor: 'text-amber-600',
+        bgColor: 'bg-amber-50 group-hover:bg-amber-100'
+      },
+    ];
+  
+    return (
+      <section id="HowItWorks" className="scroll-mt-24 py-20 sm:py-32 bg-gray-50/50">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+            <h2 className="hidden sm:block text-3xl sm:text-4xl md:text-5xl font-bold text-slate-700 leading-normal">
+              The three hardest parts of elder care,{' '}
+              <span className="text-red-500">finally simplified.</span>
+            </h2>
+  
+            <h2 className="sm:hidden text-3xl sm:text-4xl md:text-5xl font-bold text-slate-700 leading-tight">
+              The three hardest parts of elder care,{' '}
+              <span className="text-red-500">finally simplified.</span>
+            </h2>
+            
+            <p className="mt-6 text-lg sm:text-xl text-gray-600 leading-relaxed">
+              Whether you are untangling medical paperwork, figuring out Medicaid asset rules, or
+              sourcing local care, Poetiq keeps your entire family aligned across three core
+              modules.
+            </p>
+          </div>
+  
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {pillars.map((pillar) => (
+              <div
+                key={pillar.title}
+                className="group bg-white border-2 border-gray-100 hover:border-red-300 rounded-2xl p-8 sm:p-10 shadow-sm hover:shadow-xl hover:shadow-red-500/10 transition-all duration-300 hover:-translate-y-1"
+              >
+                <div className={`flex items-center justify-center w-14 h-14  rounded-2xl mb-6 ${pillar.bgColor} transition-colors duration-300`}>
+                  <pillar.icon className={`w-7 h-7 ${pillar.iconColor}`} />
+                </div>
+                <p className="text-slate-400 font-bold text-lg mb-2">{pillar.hook}</p>
+                <h3 className="text-2xl font-bold text-slate-700 mb-4">{pillar.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{pillar.description}</p>
               </div>
-              <p className="text-red-500 font-bold text-lg mb-2">{pillar.hook}</p>
-              <h3 className="text-2xl font-bold text-slate-700 mb-4">{pillar.title}</h3>
-              <p className="text-gray-600 leading-relaxed">{pillar.description}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
-  );
-}
+      </section>
+    );
+  }
 
 /* ================================================================
    BEFORE & AFTER SECTION
