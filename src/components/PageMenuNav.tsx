@@ -248,7 +248,7 @@ function MobileAccordion({ title, items }: {
         {/* Card 1: Eldercare Data Vault */}
         <Link
           //to="/eldercare-private-data-store"
-          to="/login"
+          to="https://app.poetiq.io/login"
           className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200">
           <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
             <Activity className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
@@ -264,7 +264,7 @@ function MobileAccordion({ title, items }: {
         {/* Card 4: Care Benefits Automator */}
         <Link
           //to="/healthcare-benefits-application-automation"
-          to="/login"
+          to="https://app.poetiq.io/login"
           className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200">
           <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
             <UserCheck className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
@@ -289,7 +289,7 @@ function MobileAccordion({ title, items }: {
         {/* Card 2: Spend-Down Calculator */}
         <Link
          //to="/medicaid-spenddown-calculator"
-          to="/login"
+          to="https://app.poetiq.io/login"
           className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200">
           <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
             <TrendingDown className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
@@ -306,7 +306,7 @@ function MobileAccordion({ title, items }: {
         {/* Card 5: Claims Recovery Engine */}
         <Link
           //to="/healthcare-insurance-claims-recovery"
-          to="/login"
+          to="https://app.poetiq.io/login"
           className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200">
           <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
             <CircleDollarSign className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
@@ -333,7 +333,7 @@ function MobileAccordion({ title, items }: {
         {/* Card 3: Nursing Home Contract Analyzer */}
         <Link
           //to="/nursing-home-contract-analyzer"
-          to="/login"
+          to="https://app.poetiq.io/login"
           className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200">
           <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
             <Search className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
@@ -350,7 +350,7 @@ function MobileAccordion({ title, items }: {
         {/* Card 6: Healthcare Virtual Assistants */}
         <Link
           //to="/virtual-healthcare-assistant"
-          to="/login"
+          to="https://app.poetiq.io/login"
           className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200">
           <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
             <Scale className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
