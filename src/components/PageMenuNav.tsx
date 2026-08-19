@@ -16,6 +16,7 @@ import {
   Zap,
   CheckCircle2,
   User,
+  UserCheck,
   ShieldAlert,
   ShieldCheck,
   Headset,
@@ -26,6 +27,7 @@ import {
   Scale,
   Brain,
   Target,
+  TrendingDown,
   Workflow,
   Ambulance,
   Glasses,
@@ -35,7 +37,9 @@ import {
   FileSearch,
   RotateCcw,
   FolderLock,
-  BrainCircuit
+  BrainCircuit,
+  Cog,
+  HelpCircle,
 } from 'lucide-react';
 
 
@@ -165,7 +169,10 @@ function MobileAccordion({ title, items }: {
 
 
   return (
+  
     <nav className="px-4 py-3 flex items-center justify-between sm:px-6 sm:py-4">
+      {/*<nav className="sticky top-0 z-9999 bg-white px-4 py-3 flex items-center justify-between sm:px-6 sm:py-4">*/}
+
       <Link to="/">
         <div className="flex items-center space-x-2">
           <div className="bg-red-100 rounded-full p-1 sm:p-2">
@@ -205,213 +212,18 @@ function MobileAccordion({ title, items }: {
                 }
               }
             }}
-            className="max-w-sm px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
+            className="flex items-center max-w-sm px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
           >
-            How it Works ❤️
+            <Workflow className='w-3.5 h-3.5 mr-2'/>
+            How it Works
           </Link>
-      
-          <Link
-            to="/eldercare-case-studies"
-            className="max-w-sm px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
-          >
-            Case Studies 🩶
-          </Link>
-          
-
-            <Link
-            to="/partner-program"
-              /*
-            onClick={(e) => {
-              setIsMobileMenuOpen(false);
-              // If already on /dev page, manually scroll to element
-              if (window.location.pathname === '/') {
-                e.preventDefault();
-                const element = document.getElementById('OperationalSupport');
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-              }
-            }}*/
-            className="max-w-sm px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
-          >
-              Partnership 💛
-
-            </Link>    
-          
-          {/* START: Care Tools Dropdown Menu */}
-          <div className="relative group">
-            
-            {/* Menu Header - Care Tools */}
-            <button className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">
-              Free Care Tools 🧡
-            </button>
-
-                      {/* Mega Menu Dropdown - Full Width 3 Column */}
-            <div className="absolute left-1/2 -translate-x-1/2 top-full mt-[-0.5] w-screen max-w-5xl rounded-2xl shadow-2xl bg-white ring-1 ring-black ring-opacity-5 hidden group-hover:block z-50 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out transform group-hover:translate-y-0 translate-y-2">
-              {/* Grid Container */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-8">
-
-                {/* ========== COLUMN 1: YOUR STARTING POINT ========== */}
-                <div className="col-span-1 space-y-6 group/col1">
-                  {/* Column 1 Header */}
-                  <div className="border-b border-gray-200">
-                    <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3 px-6 group-hover/col1:text-red-500 transition-colors duration-300">🏁 START HERE</h4>
-                  </div>
-
-                  {/* Card 1: Readiness Audit */}
-                  <div
-                    onClick={onOpenOnboardingModal}
-                    className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-teal-50 hover:to-green-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent cursor-pointer hover:border-teal-200"
-                  >
-                    {/* Icon Container */}
-                    <div className="flex items-center justify-center w-14 h-14 bg-teal-100 rounded-full mb-4 group-hover/card:bg-teal-200 transition-colors duration-300">
-                      <ShieldCheck className="w-7 h-7 text-teal-600 group-hover/card:scale-110 transition-transform duration-300" />
-                    </div>
-
-                    
-                    
-                    {/* Title */}
-                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-teal-600 transition-colors duration-300">
-                      Eldercare Gap Finder
-                      <CheckCircle2 className="w-5 h-5 fill-teal-500 justify-center align-top text-white ml-1 inline"/>
-                    </h3>
-                    {/* Description */}
-                    <p className="text-sm text-gray-600 leading-relaxed">
-                      Identify legal and financial gaps in your parents' healthcare before a crisis hits. 
-                    </p>
-                  </div>
-
-                  {/* Card 4: Dementia Assessment Test */}
-                  <Link
-                    to="/dementia-assessment"
-                    className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
-                  >
-                    {/* Icon Container */}
-                    <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
-                      <TextSearch className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
-                    </div>
-                    {/* Title */}
-                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-                      Cognitive Baseline Test
-                    </h3>
-                    {/* Description */}
-                    <p className="text-sm text-gray-600 leading-relaxed">
-                      Identify early signs of cognitive decline using validated clinical screening tools.
-                    </p>
-                  </Link>
-                </div>
-
-                {/* ========== COLUMN 2: PROFESSIONAL SUPPORT ========== */}
-                <div className="col-span-1 space-y-6 group/col2">
-                  {/* Column 2 Header */}
-                  <div className="border-b border-gray-200">
-                    <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3 px-6 group-hover/col2:text-red-500 transition-colors duration-300">👩‍⚕️ PROFESSIONAL SUPPORT</h4>
-                  </div>
-
-                  {/* Card 2: Medicaid Co-Pilot */}
-                  <Link
-                    to="/medicaid-co-pilot"
-                    className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
-                  >
-                    {/* Icon Container */}
-                    <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
-                      <img
-                        src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/ellie_ai_square.png"
-                        alt="Image 1"
-                        className="relative rounded-full w-full h-full border-4 border-red-100 aspect-square group-hover/card:scale-110 transition-transform duration-300" 
-                      />
-                    </div>
-                    {/* Title */}
-                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-                      Long-Term Care Assistant
-                    </h3>
-                    {/* Description */}
-                    <p className="text-sm text-gray-600 leading-relaxed">
-                      Get answers to complex Medicaid, VA & state-specific eligibility rules with <b>Ellie</b>.
-                    </p>
-                  </Link>
-
-                  {/* Card 5: Conflict Coach */}
-                  <Link
-                    to="/eldercare-stress-management"
-                    className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
-                  >
-                    {/* Icon Container */}
-                    <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
-                      <img
-                        src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/sophia_ai_coach.png"
-                        alt="Image 1"
-                        className="relative rounded-full w-full h-full border-4 border-red-100 aspect-square group-hover/card:scale-110 transition-transform duration-300" 
-                      />
-                    </div>
-                    {/* Title */}
-                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-                      Family Conflict Advisor
-                    </h3>
-                    {/* Description */}
-                    <p className="text-sm text-gray-600 leading-relaxed">
-                      Resolve sibling friction and caregiving disputes with advice from <b>Sophia</b>.
-                    </p>
-                  </Link>
-                </div>
-
-                {/* ========== COLUMN 3: INSTANT DUE DILIGENCE ========== */}
-                <div className="col-span-1 space-y-6 group/col3">
-                  {/* Column 3 Header */}
-                  <div className="border-b border-gray-200">
-                    <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3 px-6 group-hover/col3:text-red-500 transition-colors duration-300">🕵️‍♀️ INSTANT DUE DILIGENCE</h4>
-                  </div>
-
-                  {/* Card 3: Caregiver Agency Finder */}
-                  <Link
-                    to="/home-health-care"
-                    className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
-                  >
-                    {/* Icon Container */}
-                    <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
-                      <Microscope className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
-                    </div>
-                    {/* Title */}
-                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-                      Care Agency Inspector
-                    </h3>
-                    {/* Description */}
-                    <p className="text-sm text-gray-600 leading-relaxed">
-                      Inspect agencies by clinical outcomes in mobility, safety and patient dignity.
-                    </p>
-                  </Link>
-
-                  {/* Card 6: Nursing Home Finder */}
-                  <Link
-                    to="/nursing-home"
-                    className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200"
-                  >
-                    {/* Icon Container */}
-                    <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
-                      <Ambulance className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
-                    </div>
-                    {/* Title */}
-                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-                      Nursing Home Auditor
-                    </h3>
-                    {/* Description */}
-                    <p className="text-sm text-gray-600 leading-relaxed">
-                      Audit facilities by staff attentiveness, health inspection ratings and more.
-                    </p>
-                  </Link>
-                </div>
-
-              </div>
-            </div>
-
-          </div>
-          {/* END: Care Tools Dropdown Menu */}
 
         {/* ----------------------- START: Executive Services Dropdown Menu -----------------------*/}
 <div className="relative group">
   {/* Menu Header - Executive Services */}
-  <button className="px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">
-  Premium Services 💚
+  <button className="flex items-center px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">
+    <Cog className='w-3.5 h-3.5 mr-2'/>
+  Operating System
   </button>
 
     {/* Mega Menu Dropdown - Full Width 3 Column Grid */}
@@ -423,36 +235,46 @@ function MobileAccordion({ title, items }: {
       <div className="col-span-1 space-y-6 group/col1">
         {/* Column 1 Header */}
         <div className="border-b border-gray-200">
-          <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3 px-6 group-hover/col1:text-red-500 transition-colors duration-300">🆘 Crisis Readiness</h4>
+          <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3 px-6 group-hover/col1:text-red-500 transition-colors duration-300">
+          
+            {/*🆘 Crisis Readiness*/}
+            {/* 🏁 START HERE     */}
+            {/*🚀 START HERE */}
+            
+            🆘 Start Here
+          </h4>
         </div>
 
         {/* Card 1: Eldercare Data Vault */}
         <Link
-          to="/eldercare-private-data-store"
+          //to="/eldercare-private-data-store"
+          to="/login"
           className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200">
           <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
-            <FolderLock className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
+            <Activity className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
           </div>
           <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-            Eldercare Data Vault
+            Pulse Checker
           </h3>
           <p className="text-sm text-gray-600 leading-relaxed">
-            Replace fragmented unsecure personal data stores with structured searchable data vaults.
+            Identify legal, financial and medical gaps in 60 seconds! Get your elder care readiness score. 
           </p>
         </Link>
 
         {/* Card 4: Care Benefits Automator */}
         <Link
-          to="/healthcare-benefits-application-automation"
+          //to="/healthcare-benefits-application-automation"
+          to="/login"
           className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200">
           <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
-            <BrainCircuit className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
+            <UserCheck className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
           </div>
           <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-            Care Benefits Automator
+            Care Tracker
           </h3>
           <p className="text-sm text-gray-600 leading-relaxed">
-            Avoid application denials. Pre-fill all required state and federal care benefits form with AI
+            {/*Avoid application denials. Pre-fill all required state and federal care benefits form with AI*/}
+            Improve your care readiness score. Track and close care gaps to qualify for Medicaid.
           </p>
         </Link>
       </div>
@@ -461,36 +283,40 @@ function MobileAccordion({ title, items }: {
       <div className="col-span-1 space-y-6 group/col2">
         {/* Column 2 Header */}
         <div className="border-b border-gray-200">
-          <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3 px-6 group-hover/col2:text-red-500 transition-colors duration-300">💰 Financial Protection</h4>
+          <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3 px-6 group-hover/col2:text-red-500 transition-colors duration-300">💵 Financial Protection</h4>
         </div>
 
         {/* Card 2: Spend-Down Calculator */}
         <Link
-          to="/medicaid-spenddown-calculator"
+         //to="/medicaid-spenddown-calculator"
+          to="/login"
           className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200">
           <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
-            <Calculator className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
+            <TrendingDown className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
           </div>
           <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-            Spend-Down Calculator
+            Spend-Down Genius
           </h3>
           <p className="text-sm text-gray-600 leading-relaxed">
-            Track asset and income thresholds to trigger financial support so you're never out-of-pocket.
+            {/*Track asset and income thresholds to trigger financial support so you're never out-of-pocket.*/}
+            Generate personalized income & asset spend-down strategies for instant Medicaid eligibility. 
           </p>
         </Link>
 
         {/* Card 5: Claims Recovery Engine */}
         <Link
-          to="/healthcare-insurance-claims-recovery"
+          //to="/healthcare-insurance-claims-recovery"
+          to="/login"
           className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200">
           <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
-            <RotateCcw className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
+            <CircleDollarSign className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
           </div>
           <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-            Claims Recovery Engine
+            Medicaid Planner
           </h3>
           <p className="text-sm text-gray-600 leading-relaxed">
-            Scan denial letters, identify look-back and gifting errors, automate your insurance appeal.
+            {/*Scan denial letters, identify look-back and gifting errors, automate your insurance appeal.*/}
+            Manage documents, run what-if scenarios and lock-in asset & income protection strategies.
           </p>
         </Link>
       </div>
@@ -499,36 +325,42 @@ function MobileAccordion({ title, items }: {
       <div className="col-span-1 space-y-6 group/col3">
         {/* Column 3 Header */}
         <div className="border-b border-gray-200">
-          <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3 px-6 group-hover/col3:text-red-500 transition-colors duration-300">🤝 Executive Assistance</h4>
+          <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3 px-6 group-hover/col3:text-red-500 transition-colors duration-300">{/*🤝 Executive Assistance*/}
+          ❤️ FIND CARE SERVICES   
+          </h4>
         </div>
 
         {/* Card 3: Nursing Home Contract Analyzer */}
         <Link
-          to="/nursing-home-contract-analyzer"
+          //to="/nursing-home-contract-analyzer"
+          to="/login"
           className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200">
           <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
-            <FileSearch className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
+            <Search className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
           </div>
           <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-            Nursing Home Contract Analyzer
+            Care Services Finder
           </h3>
           <p className="text-sm text-gray-600 leading-relaxed">
-            Detect predatory contracts that inflate monthly care bills for Mom and Dad after admission.
+            {/*Detect predatory contracts that inflate monthly care bills for Mom and Dad after admission.*/}
+            Audit in-home care, assisted living, nursing homes & long term care hospitals with 1-click.
           </p>
         </Link>
 
         {/* Card 6: Healthcare Virtual Assistants */}
         <Link
-          to="/virtual-healthcare-assistant"
+          //to="/virtual-healthcare-assistant"
+          to="/login"
           className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200">
           <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
-            <Headset className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
+            <Scale className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
           </div>
           <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-            Healthcare Virtual Assistants
+            Attorney Finder
           </h3>
           <p className="text-sm text-gray-600 leading-relaxed">
-            HIPAA-trained VAs who take over insurance calls, provider logistics, and email follow ups.
+            {/*HIPAA-trained VAs who take over insurance calls, provider logistics, and email follow ups.*/}
+            Find Medicaid and elder law attorneys in your state for asset protection and appeals.
           </p>
         </Link>
       </div>
@@ -552,15 +384,20 @@ function MobileAccordion({ title, items }: {
                 }
               }
             }}
-            className="max-w-sm px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
+            className="flex items-center max-w-sm px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
           >
-            FAQ ❓
+            {/*FAQ ❓*/}
+
+            <HelpCircle className='w-3.5 h-3.5 mr-2' strokeWidth={2.5}/>
+            Frequently Asked Questions
           </Link>
         </div>
 
         <button
-          //onClick={onOpenCommunityModal}
           onClick={handleLoginClick}
+          //onClick={onOpenCommunityModal}
+          //onClick= {() => {window.location.href='/login'}}
+
           className="flex items-center justify-center space-x-2 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-500 transition-colors shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80 group"
         >
           {/*<span>Join Waitlist</span>*/}
@@ -623,165 +460,80 @@ function MobileAccordion({ title, items }: {
             }
           }
         }}
-        className="block w-full text-left px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-all duration-500"
+        className="block  items-center flex w-full text-left px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-all duration-500"
       >
-        How it Works ❤️
+        {/*How it Works ❤️*/}
+        How it Works
       </Link>
 
-      {/* Case Studies */}
-      <Link
-        to="/eldercare-case-studies"
-        onClick={() => setIsMobileMenuOpen(false)}
-        className="block w-full text-left px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-all duration-500"
-      >
-        Case Studies 🩶
-      </Link>
-
-      {/* Quick Tools */}
-      <Link
-        //to="/#OperationalSupport"
-        to="/partner-program"
-        
-        /*onClick={(e) => {
-          setIsMobileMenuOpen(false);
-          if (window.location.pathname === '/') {
-            e.preventDefault();
-            const element = document.getElementById('OperationalSupport');
-            if (element) {
-              element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-          }
-        }}
-        */
-        className="block w-full text-left px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-all duration-500"
-      >
-        Partnership 💛
-      </Link>
-
-      {/* Free Care Tools Accordion */}
-      <MobileAccordion
-        title="Free Care Tools 🧡"
-        items={[
-          {
-            section: "🏁 START HERE",
-            cards: [
-              {
-                title: "Eldercare Gap Finder",
-                icon: <ShieldCheck className="w-5 h-5 text-teal-600" />,
-                description: "Close legal and financial gaps before a crisis",
-                onClick: () => {
-                  onOpenOnboardingModal();
-                  setIsMobileMenuOpen(false);
-                },
-                badge: true
-              },
-              {
-                title: "Cognitive Baseline Test",
-                icon: <TextSearch className="w-5 h-5 text-red-600" />,
-                description: "Identify early signs of cognitive decline",
-                link: "/dementia-assessment",
-                onClick: () => setIsMobileMenuOpen(false)
-              }
-            ]
-          },
-          {
-            section: "👩‍⚕️ PROFESSIONAL SUPPORT",
-            cards: [
-              {
-                title: "Long-Term Care Assistant",
-                icon: <img src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/ellie_ai_square.png" alt="Ellie AI" className="w-5 h-5 rounded-full" />,
-                description: "Ask Ellie about Medicaid, VA & eligibility rules",
-                link: "/medicaid-co-pilot",
-                onClick: () => setIsMobileMenuOpen(false)
-              },
-              {
-                title: "Family Conflict Advisor",
-                icon: <img src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/sophia_ai_coach.png" alt="Sophia AI" className="w-5 h-5 rounded-full" />,
-                description: "Resolve sibling friction with advice from Sophia",
-                link: "/eldercare-stress-management",
-                onClick: () => setIsMobileMenuOpen(false)
-              }
-            ]
-          },
-          {
-            section: "🕵️‍♀️ INSTANT DUE DILIGENCE",
-            cards: [
-              {
-                title: "Care Agency Inspector",
-                icon: <Microscope className="w-5 h-5 text-red-600" />,
-                description: "Inspect agencies by clinical outcomes",
-                link: "/home-health-care",
-                onClick: () => setIsMobileMenuOpen(false)
-              },
-              {
-                title: "Nursing Home Auditor",
-                icon: <Ambulance className="w-5 h-5 text-red-600" />,
-                description: "Audit facilities by staff attentiveness",
-                link: "/nursing-home",
-                onClick: () => setIsMobileMenuOpen(false)
-              }
-            ]
-          }
-        ]}
-      />
 
       {/* Premium Services Accordion */}
       <MobileAccordion
-        title="Premium Services 💚"
+        //title="Operating System 💚"
+        title="Operating System"
         items={[
           {
-            section: "🆘 CRISIS READINESS",
+            //section: "🆘 CRISIS READINESS",
+            //section: "🏁 START HERE",
+            section: "🆘 START HERE",
+            
             cards: [
               {
-                title: "Eldercare Data Vault",
-                icon: <FolderLock className="w-5 h-5 text-red-600" />,
-                description: "Structured searchable data vaults",
-                link: "/eldercare-private-data-store",
+                title: "Pulse Checker",
+                icon: <Activity className="w-5 h-5 text-red-600" />,
+                description: "Uncover critical care gaps fast",
+                //link: "/eldercare-private-data-store",
+                link: "https://app.poetiq.io/login",
                 onClick: () => setIsMobileMenuOpen(false)
               },
               {
-                title: "Care Benefits Automator",
-                icon: <BrainCircuit className="w-5 h-5 text-red-600" />,
-                description: "Pre-fill all care benefits forms with AI",
-                link: "/healthcare-benefits-application-automation",
+                title: "Care Tracker",
+                icon: <UserCheck className="w-5 h-5 text-red-600" />,
+                description: "Seamlessly track and close care gaps",
+                //link: "/healthcare-benefits-application-automation",
+                link: "https://app.poetiq.io/login",
                 onClick: () => setIsMobileMenuOpen(false)
               }
             ]
           },
           {
-            section: "💰 FINANCIAL PROTECTION",
+            section: "💵 FINANCIAL PROTECTION",
             cards: [
               {
-                title: "Spend-Down Calculator",
-                icon: <Calculator className="w-5 h-5 text-red-600" />,
-                description: "Track asset and income thresholds",
-                link: "/medicaid-spenddown-calculator",
+                title: "Spend-Down Genius",
+                icon: <TrendingDown className="w-5 h-5 text-red-600" />,
+                description: "Get qualified for Medicaid",
+                //link: "/medicaid-spenddown-calculator",
+                link: "https://app.poetiq.io/login",
                 onClick: () => setIsMobileMenuOpen(false)
               },
               {
-                title: "Claims Recovery Engine",
-                icon: <RotateCcw className="w-5 h-5 text-red-600" />,
-                description: "Automate your insurance appeal",
-                link: "/healthcare-insurance-claims-recovery",
+                title: "Medicaid Planner",
+                icon: <CircleDollarSign className="w-5 h-5 text-red-600" />,
+                description: "Generate instant Medicaid plans",
+                //link: "/healthcare-insurance-claims-recovery",
+                link: "https://app.poetiq.io/login",
                 onClick: () => setIsMobileMenuOpen(false)
               }
             ]
           },
           {
-            section: "🤝 EXECUTIVE ASSISTANCE",
+            section: "❤️ FIND CARE SERVICES",
             cards: [
               {
-                title: "Nursing Home Contract Analyzer",
-                icon: <FileSearch className="w-5 h-5 text-red-600" />,
-                description: "Detect predatory contracts",
-                link: "/nursing-home-contract-analyzer",
+                title: "Audit Care Services",
+                icon: <Search className="w-5 h-5 text-red-600" />,
+                description: "Search & Audit Care Providers",
+                //link: "/nursing-home-contract-analyzer",
+                link: "https://app.poetiq.io/login",
                 onClick: () => setIsMobileMenuOpen(false)
               },
               {
-                title: "Healthcare Virtual Assistants",
-                icon: <Headset className="w-5 h-5 text-red-600" />,
-                description: "HIPAA-trained VAs handle insurance calls",
-                link: "/virtual-healthcare-assistant",
+                title: "Attorney Finder",
+                icon: <Scale className="w-5 h-5 text-red-600" />,
+                description: "Locate Elder Law Attorneys",
+                //link: "/virtual-healthcare-assistant",
+                link: "https://app.poetiq.io/login",
                 onClick: () => setIsMobileMenuOpen(false)
               }
             ]
@@ -802,9 +554,11 @@ function MobileAccordion({ title, items }: {
             }
           }
         }}
-        className="block w-full text-left px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-all duration-500"
+        className="flex items-center block w-full text-left px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-all duration-500"
       >
-        Frequent Questions ❓
+      {/*Frequent Questions ❓*/}
+
+        Frequent Questions
       </Link>
 
       {/* Join Waitlist CTA */}
@@ -812,12 +566,12 @@ function MobileAccordion({ title, items }: {
         <button
           onClick={() => {
             //onOpenCommunityModal();
+            //window.location.href='/login';
             handleLoginClick();
             setIsMobileMenuOpen(false);
           }}
           className="group flex items-center justify-center space-x-2 w-full px-6 py-4 bg-gradient-to-r from-red-500 to-red-600 text-white text-base font-semibold rounded-lg hover:from-red-600 hover:to-red-700 transition-all duration-500 shadow-lg shadow-red-500/60 hover:shadow-xl hover:shadow-red-500/80"
         >
-          {/*<span>Join Waitlist</span>*/}
           <span>Get Started</span>
           <ArrowRight className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1" />
         </button>
