@@ -144,14 +144,12 @@ const handleGetStartedClick = () => {
         </div>
 
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-slate-700 leading-tight tracking-tight">
-          {/*} Bring order to the{' '}*/}
           Care{' '}
           <span className="bg-gradient-to-r from-red-500 to-red-400 text-transparent bg-clip-text">
-            {/*chaos*/}
             Operating System
           </span>{' '}
-          <br className="hidden sm:block" />
-          {/*of elder care.*/}
+          {/*<br className="hidden sm:block" />*/}
+          <br/>
           for family caregivers
         </h1>
 
@@ -252,7 +250,12 @@ function ThreePillarsSection() {
     <section id="HowItWorks" className="scroll-mt-24 py-20 sm:py-32 bg-gray-50/50">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-700 leading-normal">
+        <h2 className="hidden sm:block text-3xl sm:text-4xl md:text-5xl font-bold text-slate-700 leading-normal">
+            The three hardest parts of elder care,{' '}
+            <span className="text-red-500">finally simplified.</span>
+          </h2>
+
+          <h2 className="sm:hidden text-3xl sm:text-4xl md:text-5xl font-bold text-slate-700 leading-tight">
             The three hardest parts of elder care,{' '}
             <span className="text-red-500">finally simplified.</span>
           </h2>
@@ -313,9 +316,14 @@ function BeforeAfterSection() {
     <section id="BeforeAfter" className="scroll-mt-24 py-20 sm:py-32">
       <div className="max-w-5xl mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-700 leading-relaxed">
-            From midnight guesswork to{' '}
-            <span className="text-red-500">complete clarity.</span>
+        <h2 className="hidden sm:block text-3xl sm:text-4xl md:text-5xl font-bold text-slate-700 leading-relaxed">
+            From midnight guesswork{' '}<br/>
+            <span className="text-teal-500">to complete clarity.</span>
+          </h2>
+
+          <h2 className="sm:hidden text-3xl sm:text-4xl md:text-5xl font-bold text-slate-700 leading-tight">
+            From midnight guesswork{' '}<br/>
+            <span className="text-teal-500">to complete clarity.</span>
           </h2>
           <p className="mt-6 text-lg sm:text-xl text-gray-600 leading-relaxed">
             See the difference between piecing things together alone at 2 AM and having a
@@ -391,7 +399,11 @@ const handleGetStartedClick = () => {
     <section id="SocialProof" className="scroll-mt-24 py-20 sm:py-32 bg-gray-50/50">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-700 leading-loose">
+        <h2 className="hidden sm:block text-3xl sm:text-4xl md:text-5xl font-bold text-slate-700 leading-loose">
+            Trusted by families navigating the{' '}
+            <span className="text-red-500 mt-2">weight of caregiving.</span>
+          </h2>
+          <h2 className="sm:hidden text-3xl sm:text-4xl md:text-5xl font-bold text-slate-700 leading-tight">
             Trusted by families navigating the{' '}
             <span className="text-red-500 mt-2">weight of caregiving.</span>
           </h2>
@@ -449,17 +461,17 @@ function FAQSection() {
     {
       question: 'What do I actually get with the free Care Pulse assessment?',
       answer:
-        'A 3-minute readiness score that reveals missing legal and medical documents, highlights financial vulnerabilities, and surfaces a burnout risk summary for your caregiving situation — all before you create an account.',
+        'A 3-minute readiness score that reveals missing legal and medical documents, highlights financial vulnerabilities, and surfaces a burnout risk summary for your caregiving situation, all before you create an account.',
     },
     {
       question: 'How does the token and pass system work?',
       answer:
-        'Poetiq uses flexible daily passes and pay-as-you-go tokens so you only pay for what you use. There is no rigid enterprise lock-in — scale up on busy days and scale down when things are quiet.',
+        'Poetiq uses flexible daily passes and pay-as-you-go tokens so you only pay for what you use. There is no rigid enterprise lock-in, scale up on busy days and scale down when things are quiet.',
     },
     {
       question: 'How does Spend Down Genius help with Medicaid?',
       answer:
-        'Our state-specific rules engine walks you through Medicaid asset thresholds, evaluates whether a Miller Trust applies in your state, and alerts you to unspent income traps before the turn of the month — all in plain language.',
+        'Our state-specific rules engine walks you through Medicaid asset thresholds, evaluates whether a Miller Trust applies in your state, and alerts you to unspent income traps before the turn of the month, all in plain language.',
     },
     {
       question: 'Is our family\'s medical and financial data secure?',
@@ -469,7 +481,7 @@ function FAQSection() {
     {
       question: 'How do I share information with out-of-town siblings?',
       answer:
-        'Every report and assessment can be downloaded as a professional PDF and emailed directly to siblings, financial planners, or elder law attorneys — keeping everyone aligned without extra phone calls.',
+        'Every report and assessment can be downloaded as a professional PDF and emailed directly to siblings, financial planners, or elder law attorneys, keeping everyone aligned without extra phone calls.',
     },
   ];
 
