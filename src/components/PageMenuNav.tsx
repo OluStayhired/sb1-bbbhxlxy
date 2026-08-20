@@ -283,7 +283,7 @@ function MobileAccordion({ title, items }: {
       <div className="col-span-1 space-y-6 group/col2">
         {/* Column 2 Header */}
         <div className="border-b border-gray-200">
-          <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3 px-6 group-hover/col2:text-red-500 transition-colors duration-300">💵 Financial Protection</h4>
+          <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3 px-6 group-hover/col2:text-red-500 transition-colors duration-300">✅ Protect Assets</h4>
         </div>
 
         {/* Card 2: Spend-Down Calculator */}
@@ -497,7 +497,7 @@ function MobileAccordion({ title, items }: {
             ]
           },
           {
-            section: "💵 FINANCIAL PROTECTION",
+            section: "✅ PROTECT ASSETS",
             cards: [
               {
                 title: "Spend-Down Genius",
