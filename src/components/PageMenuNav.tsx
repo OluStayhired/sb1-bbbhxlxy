@@ -5,6 +5,7 @@ import {
   X, 
   ArrowRight, 
   HeartPulse, 
+  Heart,
   MapPin, 
   Search, 
   CheckCircle, 
@@ -222,7 +223,7 @@ function MobileAccordion({ title, items }: {
 <div className="relative group">
   {/* Menu Header - Executive Services */}
   <button className="flex items-center px-4 py-2 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors">
-    <Cog className='w-3.5 h-3.5 mr-2'/>
+    <Heart className='w-3.5 h-3.5 mr-2' strokeWidth={2}/>
   Operating System
   </button>
 
@@ -389,7 +390,7 @@ function MobileAccordion({ title, items }: {
             {/*FAQ ❓*/}
 
             <HelpCircle className='w-3.5 h-3.5 mr-2' strokeWidth={2.5}/>
-            Frequently Asked Questions
+            Frequent Questions
           </Link>
         </div>
 
