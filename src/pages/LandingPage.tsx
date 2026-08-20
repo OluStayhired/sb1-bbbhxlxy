@@ -10,6 +10,7 @@ import {
   CheckCircle2,
   X,
   Heart,
+  Clock,
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { CommunityModal } from '../components/CommunityModal';
@@ -183,15 +184,15 @@ const handleGetStartedClick = () => {
     <div className="hidden sm:flex flex-wrap items-center justify-center gap-6 mt-8 text-sm text-gray-600">
       
       <div className="flex items-center space-x-2">
-        <CheckCircle2 className="w-5 h-5 text-red-500" />
+        <CheckCircle2 className="w-5 h-5 text-teal-500" />
         <span>No Upfront Costs</span>
       </div>
       <div className="flex items-center space-x-2">
-        <CheckCircle2 className="w-5 h-5 text-red-500" />
+        <CheckCircle2 className="w-5 h-5 text-teal-500" />
         <span>Uncover Care Gaps</span>
       </div>
       <div className="flex items-center space-x-2">
-        <CheckCircle2 className="w-5 h-5 text-red-500" />
+        <CheckCircle2 className="w-5 h-5 text-teal-500" />
         <span>Download Action Plan</span>
       </div>
   </div>
@@ -580,8 +581,8 @@ const handleGetStartedClick = () => {
       <div className="relative max-w-5xl mx-auto px-6 text-center">
         {/* Pill badge -- mirrors the hero badge style */}
         <div className="inline-flex items-center px-4 py-2 bg-white/80 border border-red-200 rounded-full text-red-600 text-sm font-medium mb-8 shadow-sm">
-          <Heart className="w-4 h-4 mr-2" />
-          <span>Begin in under 3 minutes</span>
+          <Clock className="w-4 h-4 mr-2" />
+          <span>Get Clarity in 60 seconds</span>
         </div>
 
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-700 leading-tight">
