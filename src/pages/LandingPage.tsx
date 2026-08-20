@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import {
   ArrowRight,
   HeartPulse,
@@ -129,13 +129,19 @@ function LandingPage() {
    ================================================================ */}
 function HeroSection({ onStartAssessment }: { onStartAssessment: () => void }) {
    const loginUrl = 'https://app.poetiq.io/login';   
-
+   const headingRef = useRef<HTMLHeadingElement>(null);
+   const [headingVisible, setHeadingVisible] = useState(false);
+ 
+   useEffect(() => {
+     // Small delay so the fade feels intentional, not just a loading flash
+     const timer = setTimeout(() => setHeadingVisible(true), 150);
+     return () => clearTimeout(timer);
+   }, []);
 
 const handleGetStartedClick = () => {
-    // This will trigger a full page reload to the specified URL.
-    window.location.href = loginUrl;
-  };
-
+   window.location.href = loginUrl;
+ };
+  
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-red-50/40 via-white to-white">
       <div className="max-w-5xl mx-auto px-6 pt-20 pb-8 sm:pt-32 sm:pb-12 text-center">
@@ -144,14 +150,28 @@ const handleGetStartedClick = () => {
           <span>Serving family carers nationwide</span>
         </div>
 
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-slate-700 leading-tight tracking-tight">
+        <h1
+          ref={headingRef}
+          className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-slate-700 leading-tight tracking-tight transition-all duration-[1200ms] ease-out ${
+            headingVisible
+              ? 'opacity-100 translate-y-0'
+              : 'opacity-0 translate-y-4'
+          }`}
+        >
           Care{' '}
           <span className="bg-gradient-to-r from-red-500 to-red-400 text-transparent bg-clip-text">
             Operating System
           </span>{' '}
-          {/*<br className="hidden sm:block" />*/}
           <br/>
-          for family caregivers
+          <span
+            className={`inline-block transition-all duration-[1400ms] ease-out delay-300 ${
+              headingVisible
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-3'
+            }`}
+          >
+            for family caregivers
+          </span>
         </h1>
 
           {/* WHAT -- product positioning statement */}
