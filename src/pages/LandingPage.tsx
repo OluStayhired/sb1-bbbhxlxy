@@ -489,22 +489,22 @@ function FAQSection() {
     {
       question: 'What do I actually get with the free Care Pulse assessment?',
       answer:
-        'A 3-minute readiness score that reveals missing legal and medical documents, highlights financial vulnerabilities, and surfaces a burnout risk summary for your caregiving situation, all before you create an account.',
+        'A 3-minute readiness score that reveals missing legal and medical documents, highlights financial vulnerabilities, and surfaces a burnout risk summary for your specific caregiving situation, all before you spend a cent.',
     },
     {
       question: 'How does the token and pass system work?',
       answer:
-        'Poetiq uses flexible daily passes and pay-as-you-go tokens so you only pay for what you use. There is no rigid enterprise lock-in, scale up on busy days and scale down when things are quiet.',
+        'Poetiq uses flexible daily care passes and pay-as-you-go care tokens so you only pay for what you use. There is no rigid enterprise lock-in, scale up on busy days and scale down when things are quiet.',
     },
     {
       question: 'How does Spend Down Genius help with Medicaid?',
       answer:
-        'Our state-specific rules engine walks you through Medicaid asset thresholds, evaluates whether a Miller Trust applies in your state, and alerts you to unspent income traps before the turn of the month, all in plain language.',
+        'Our state-specific rules engine calculates Medicaid asset thresholds, evaluates whether a Miller Trust applies in your state for your specific situation, and alerts you to unspent income traps before the turn of the month, all in plain language.',
     },
     {
       question: 'Is our family\'s medical and financial data secure?',
       answer:
-        'Absolutely. All sensitive documents stored in the Eldercare Data Vault are protected with bank-grade encryption. Only authorized family members you invite can access the information.',
+        'Absolutely. All sensitive documents stored in the Spend Down Planner Vault are protected with HIPAA approved encryption. Only authorized family members can access the information.',
     },
     {
       question: 'How do I share information with out-of-town siblings?',
