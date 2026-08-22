@@ -227,7 +227,8 @@ const handleGetStartedClick = () => {
       <div className="max-w-6xl mx-auto px-6 pb-20 sm:pb-32">
         <div className="relative overflow-hidden rounded-2xl shadow-2xl shadow-red-200/60 transform transition-all duration-300 hover:scale-[1.01] border border-red-100 hover:border-red-300 hover:shadow-red-300/50">
           <img
-            src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/poetiq_hero_v2.png"
+            //src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/poetiq_hero_v2.png"
+            src="https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/poetiq_hero_v3.png"
             alt="Poetiq Dashboard"
             className="w-full h-auto object-cover"
           />
