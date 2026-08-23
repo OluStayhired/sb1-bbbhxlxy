@@ -250,7 +250,7 @@ const handleGetStartedClick = () => {
         hook: 'Uncover the blind spots.',
         title: 'Manage Care',
         description:
-          'Instantly identify missing legal and medical documents, calculate your readiness score, and bring out-of-town siblings onto one collaborative page to share the load.',
+          'Identify missing legal & medical documents, calculate your readiness score, and collaborate with your siblings to share the load.',
         iconColor: 'text-red-500',
         bgColor: 'bg-red-50 group-hover:bg-red-100',
       },
@@ -268,7 +268,7 @@ const handleGetStartedClick = () => {
         hook: 'Source trusted help.',
         title: 'Find Services',
         description:
-          'Easily source in-home care, adult family living homes, and residential facilities, then audit your care agreements for hidden risks.',
+          'In 60secs, you can source in-home care, adult family living homes, and residential facilities, then audit them for quality & value with 1-click.',
         iconColor: 'text-amber-600',
         bgColor: 'bg-amber-50 group-hover:bg-amber-100'
       },
@@ -279,7 +279,7 @@ const handleGetStartedClick = () => {
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
             <h2 className="hidden sm:block text-3xl sm:text-4xl md:text-5xl font-bold text-slate-700 leading-normal">
-              The three hardest parts of elder care,{' '}
+              3 hardest parts of elder care,{' '}
               <span className="text-red-500">finally simplified.</span>
             </h2>
   
