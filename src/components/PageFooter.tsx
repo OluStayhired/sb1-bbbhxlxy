@@ -64,9 +64,15 @@ export function PageFooter({ onOpenOnboardingModal }: PageFooterProps) {
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li>
                     <a href="https://app.poetiq.io/elder-care-checklist" className="flex items-center gap-3 hover:text-red-500 transition-colors">
-                        download eldercare checklist
+                        elder care document checklist
                     </a>
                   </li>
+                  <li>
+                    <a href="https://app.poetiq.io/personal-care-agreement" className="flex items-center gap-3 hover:text-red-500 transition-colors">
+                        personal care agreement
+                    </a>
+                  </li>
+                  
                 </ul>
               </div>
             </div>
