@@ -72,6 +72,11 @@ export function PageFooter({ onOpenOnboardingModal }: PageFooterProps) {
                         personal care agreement
                     </a>
                   </li>
+                  <li>
+                    <a href="https://app.poetiq.io/personal-patient-property-record" className="flex items-center gap-3 hover:text-red-500 transition-colors">
+                        personal property record
+                    </a>
+                  </li>
                   
                 </ul>
               </div>
