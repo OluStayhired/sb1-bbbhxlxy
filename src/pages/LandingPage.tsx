@@ -248,7 +248,7 @@ const handleGetStartedClick = () => {
       {
         icon: HeartPulse,
         hook: 'Uncover the blind spots.',
-        title: 'Manage Care',
+        title: '1. Manage Care',
         description:
           'Identify missing legal & medical documents, calculate your readiness score, and collaborate with your siblings to share the load.',
         iconColor: 'text-red-500',
@@ -256,8 +256,8 @@ const handleGetStartedClick = () => {
       },
       {
         icon: CircleDollarSign,
-        hook: "Protect your family's assets.",
-        title: 'Manage Money',
+        hook: "Get qualified for Medicaid.",
+        title: '2. Protect Assets',
         description:
           'Navigate state-specific Medicaid rules, evaluate Miller Trusts, and avoid devastating unspent income traps before the turn of the month.',
         iconColor: 'text-green-500',
@@ -266,7 +266,7 @@ const handleGetStartedClick = () => {
       {
         icon: Search,
         hook: 'Source trusted help.',
-        title: 'Find Services',
+        title: '3. Find Services',
         description:
           'In 60secs, you can source in-home care, adult family living homes, and residential facilities, then audit them for quality & value with 1-click.',
         iconColor: 'text-amber-600',
