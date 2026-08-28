@@ -177,7 +177,7 @@ const handleGetStartedClick = () => {
           {/* WHAT -- product positioning statement */}
           <p className="mt-6 sm:mt-8 text-xl sm:text-2xl md:text-3xl text-slate-600 max-w-3xl mx-auto leading-snug font-semibold tracking-tight">
           {/*The Only Care Operating System for Family Caregivers*/}
-          We bring order to the chaos of elder care
+          Let's bring order to the chaos of elder care
         </p>
 
         {/* HOW -- supporting value proposition */}
