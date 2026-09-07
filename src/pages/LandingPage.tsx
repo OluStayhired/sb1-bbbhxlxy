@@ -147,7 +147,8 @@ const handleGetStartedClick = () => {
       <div className="max-w-5xl mx-auto px-6 pt-20 pb-8 sm:pt-32 sm:pb-12 text-center">
         <div className="inline-flex items-center px-4 py-2 bg-red-50 border border-red-200 rounded-full text-red-600 text-sm font-medium mb-8">
           <HeartPulse className="w-4 h-4 mr-2" />
-          <span>Serving family carers nationwide</span>
+          {/*<span>Serving family carers nationwide</span>*/}
+          <span>Built for a sandwich generation managing aging parents</span>
         </div>
 
         <h1
