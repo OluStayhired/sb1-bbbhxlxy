@@ -513,6 +513,11 @@ function FAQSection() {
       answer:
         'Every report and assessment can be downloaded as a professional PDF and emailed directly to siblings, financial planners, or elder law attorneys, keeping everyone aligned without extra phone calls.',
     },
+    {
+      question: 'Do you provide legal advice and tax planning solutions?',
+      answer:
+        'We provide guidance not advice. We help you get organized with the questions, documents and options available to you before you speak to an industry professional. We have over 400 highly specialized elder law attorneys on Poetiq\'s Attorney finder.',
+    },    
   ];
 
   return (
