@@ -41,6 +41,7 @@ import {
   BrainCircuit,
   Cog,
   HelpCircle,
+  Compass,
 } from 'lucide-react';
 
 
@@ -252,13 +253,13 @@ function MobileAccordion({ title, items }: {
           to="https://app.poetiq.io/login"
           className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200">
           <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
-            <Activity className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
+            <Compass className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
           </div>
           <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-            Pulse Checker
+            Care Pilot
           </h3>
           <p className="text-sm text-gray-600 leading-relaxed">
-            Identify legal, financial and medical gaps in 60 seconds! Get your elder care readiness score. 
+            Get actionable care plans and expert advice tailored to your family's specific care situation.
           </p>
         </Link>
 
@@ -268,14 +269,13 @@ function MobileAccordion({ title, items }: {
           to="https://app.poetiq.io/login"
           className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-red-50 hover:to-orange-50 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-red-200">
           <div className="flex items-center justify-center w-14 h-14 bg-red-100 rounded-full mb-4 group-hover/card:bg-red-200 transition-colors duration-300">
-            <UserCheck className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
+            <Target className="w-7 h-7 text-red-600 group-hover/card:scale-110 transition-transform duration-300" />
           </div>
           <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-red-600 transition-colors duration-300">
-            Care Tracker
+            Care Pulse
           </h3>
           <p className="text-sm text-gray-600 leading-relaxed">
-            {/*Avoid application denials. Pre-fill all required state and federal care benefits form with AI*/}
-            Improve your care readiness score. Track and close care gaps to qualify for Medicaid.
+              Dive deeper to uncover legal, financial and medical care gaps, before a major crisis occurs.
           </p>
         </Link>
       </div>
@@ -480,18 +480,16 @@ function MobileAccordion({ title, items }: {
             
             cards: [
               {
-                title: "Pulse Checker",
-                icon: <Activity className="w-5 h-5 text-red-600" />,
-                description: "Uncover critical care gaps fast",
-                //link: "/eldercare-private-data-store",
+                title: "Care Pilot",
+                icon: <Compass className="w-5 h-5 text-red-600" />,
+                description: "Get personalized care plans 24/7",
                 link: "https://app.poetiq.io/login",
                 onClick: () => setIsMobileMenuOpen(false)
               },
               {
-                title: "Care Tracker",
-                icon: <UserCheck className="w-5 h-5 text-red-600" />,
-                description: "Seamlessly track and close care gaps",
-                //link: "/healthcare-benefits-application-automation",
+                title: "Care Pulse",
+                icon: <Target className="w-5 h-5 text-red-600" />,
+                description: "Uncover critical care gaps fast",
                 link: "https://app.poetiq.io/login",
                 onClick: () => setIsMobileMenuOpen(false)
               }
