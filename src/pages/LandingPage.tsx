@@ -245,8 +245,48 @@ const handleGetStartedClick = () => {
    THREE PILLARS SECTION
    ================================================================ */
    function ThreePillarsSection() {
-    const pillars = [
+    const PILLAR_IMAGES = {
+      'manage':  'https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/poetiq_hero_gap_v2.png',
+      'protect': 'https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/poetiq_hero_spend_v2.png',
+      'find':    'https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/poetiq_hero_care_v2.png',
+    };
+  
+    const CAROUSEL_ORDER: Array<keyof typeof PILLAR_IMAGES> = ['manage', 'protect', 'find'];
+  
+    const [activeImage, setActiveImage] = useState<keyof typeof PILLAR_IMAGES>('manage');
+    const [hoveredPillar, setHoveredPillar] = useState<keyof typeof PILLAR_IMAGES | null>(null);
+    const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  
+    // Auto-rotate carousel every 2 seconds when no card is hovered
+    useEffect(() => {
+      if (hoveredPillar) {
+        // Pause carousel while hovering
+        if (intervalRef.current) clearInterval(intervalRef.current);
+        setActiveImage(hoveredPillar);
+        return;
+      }
+      // Resume carousel
+      intervalRef.current = setInterval(() => {
+        setActiveImage(prev => {
+          const idx = CAROUSEL_ORDER.indexOf(prev);
+          return CAROUSEL_ORDER[(idx + 1) % CAROUSEL_ORDER.length];
+        });
+      }, 5000);
+      return () => { if (intervalRef.current) clearInterval(intervalRef.current); };
+    }, [hoveredPillar]);
+  
+    const pillars: {
+      key: keyof typeof PILLAR_IMAGES;
+      icon: typeof HeartPulse;
+      hook: string;
+      title: string;
+      description: string;
+      iconColor: string;
+      bgColor: string;
+      activeBorder: string;
+    }[] = [
       {
+        key: 'manage',
         icon: HeartPulse,
         hook: 'Uncover the blind spots.',
         title: '1. Manage Care',
@@ -254,24 +294,29 @@ const handleGetStartedClick = () => {
           'Identify missing legal & medical documents, calculate your readiness score, and collaborate with your siblings to share the load.',
         iconColor: 'text-red-500',
         bgColor: 'bg-red-50 group-hover:bg-red-100',
+        activeBorder: 'border-red-300 shadow-red-500/10',
       },
       {
+        key: 'protect',
         icon: CircleDollarSign,
         hook: "Get qualified for Medicaid.",
         title: '2. Protect Assets',
         description:
           'Navigate state-specific Medicaid rules, evaluate Miller Trusts, and avoid devastating unspent income traps before the turn of the month.',
         iconColor: 'text-green-500',
-        bgColor: 'bg-green-50 group-hover:bg-green-100'
+        bgColor: 'bg-green-50 group-hover:bg-green-100',
+        activeBorder: 'border-green-300 shadow-green-500/10',
       },
       {
+        key: 'find',
         icon: Search,
         hook: 'Source trusted help.',
         title: '3. Find Services',
         description:
           'In 60secs, you can source in-home care, adult family living homes, and residential facilities, then audit them for quality & value with 1-click.',
         iconColor: 'text-amber-600',
-        bgColor: 'bg-amber-50 group-hover:bg-amber-100'
+        bgColor: 'bg-amber-50 group-hover:bg-amber-100',
+        activeBorder: 'border-amber-300 shadow-amber-500/10',
       },
     ];
   
@@ -296,20 +341,67 @@ const handleGetStartedClick = () => {
             </p>
           </div>
   
+          {/* Pillar Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {pillars.map((pillar) => (
-              <div
-                key={pillar.title}
-                className="group bg-white border-2 border-gray-100 hover:border-red-300 rounded-2xl p-8 sm:p-10 shadow-sm hover:shadow-xl hover:shadow-red-500/10 transition-all duration-300 hover:-translate-y-1"
-              >
-                <div className={`flex items-center justify-center w-14 h-14  rounded-2xl mb-6 ${pillar.bgColor} transition-colors duration-300`}>
-                  <pillar.icon className={`w-7 h-7 ${pillar.iconColor}`} />
+            {pillars.map((pillar) => {
+              const isActive = activeImage === pillar.key;
+              return (
+                <div
+                  key={pillar.title}
+                  onMouseEnter={() => setHoveredPillar(pillar.key)}
+                  onMouseLeave={() => setHoveredPillar(null)}
+                  className={`group bg-white border-2 rounded-2xl p-8 sm:p-10 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer ${
+                    isActive
+                      ? `${pillar.activeBorder} shadow-xl -translate-y-1`
+                      : 'border-gray-100 hover:border-red-300 hover:shadow-red-500/10'
+                  }`}
+                >
+                  <div className={`flex items-center justify-center w-14 h-14 rounded-2xl mb-6 ${pillar.bgColor} transition-colors duration-300`}>
+                    <pillar.icon className={`w-7 h-7 ${pillar.iconColor}`} />
+                  </div>
+                  <p className="text-slate-400 font-bold text-lg mb-2">{pillar.hook}</p>
+                  <h3 className="text-2xl font-bold text-slate-700 mb-4">{pillar.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{pillar.description}</p>
                 </div>
-                <p className="text-slate-400 font-bold text-lg mb-2">{pillar.hook}</p>
-                <h3 className="text-2xl font-bold text-slate-700 mb-4">{pillar.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{pillar.description}</p>
-              </div>
-            ))}
+              );
+            })}
+          </div>
+  
+          {/* Interactive Hero Carousel -- same styling as the main hero image */}
+          <div className="mt-12 sm:mt-16">
+            <div className="relative overflow-hidden rounded-2xl shadow-2xl shadow-red-200/60 border border-red-100 hover:border-red-300 hover:shadow-red-300/50 transition-all duration-300">
+              {/* All three images stacked; only the active one is visible */}
+              {CAROUSEL_ORDER.map((key) => (
+                <img
+                  key={key}
+                  src={PILLAR_IMAGES[key]}
+                  alt={`Poetiq ${key} feature`}
+                  className={`w-full h-auto object-cover transition-opacity duration-700 ease-in-out ${
+                    activeImage === key
+                      ? 'opacity-100 relative'
+                      : 'opacity-0 absolute inset-0'
+                  }`}
+                />
+              ))}
+              {/* Subtle gradient overlay matching the hero image style */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent pointer-events-none" />
+            </div>
+  
+            {/* Carousel indicator dots */}
+            <div className="flex items-center justify-center gap-2 mt-5">
+              {CAROUSEL_ORDER.map((key) => (
+                <button
+                  key={key}
+                  onClick={() => { setHoveredPillar(null); setActiveImage(key); }}
+                  className={`rounded-full transition-all duration-300 ${
+                    activeImage === key
+                      ? 'w-8 h-2.5 bg-red-400'
+                      : 'w-2.5 h-2.5 bg-slate-300 hover:bg-slate-400'
+                  }`}
+                  aria-label={`Show ${key} screenshot`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
