@@ -218,7 +218,7 @@ function HeroSection() {
         <p className="mt-6 sm:mt-8 text-lg sm:text-xl md:text-2xl text-slate-500 max-w-3xl mx-auto leading-relaxed font-normal">
           Poetiq makes it easy for agency care teams to unlock hidden care funds 
           <br className="hidden sm:block" />{' '}
-          for desperate families on their first discovery call 
+          for desperate families on the very first discovery call 
         </p>
 
         {/* CTA Button */}

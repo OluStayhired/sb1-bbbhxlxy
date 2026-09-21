@@ -16,16 +16,17 @@ export function PageFooter({ onOpenOnboardingModal }: PageFooterProps) {
         <Link to="/">
           <div className="space-y-2 space-x-1">
           
-            <div className="inline-flex bg-red-100 rounded-full p-0.5">
-              <Target className="h-5 w-5 fill-white stroke-red-500" />
+            <div className="inline-flex bg-teal-100 rounded-full p-0.5">
+              <Target className="h-5 w-5 fill-white stroke-teal-500" />
             </div>
             <span className="text-xl font-bold text-gray-700 sm:text-xl">poetiq</span>
-                           
-            <p className="text-sm text-gray-600">
-              
+
+            <p className="text-sm text-gray-600">           
               {/*The all-in-one platform for managing Mom and Dad's long-term care affairs!*/}
-              The care operating system for family caregivers. <br/><br/>
-              Close care gaps, qualify for Medicaid and manage your parent's care journey with zero stress.
+              {/*The care operating system for family caregivers. <br/><br/>
+              Close care gaps, qualify for Medicaid and manage your parent's care journey with zero stress.*/}
+              Intake intelligence for home care agencies. <br/><br/>
+              Assess care needs, flag financial gaps and unlock care funds for families on the very first call.  
             </p>
             {/* Social links */}
           </div>
