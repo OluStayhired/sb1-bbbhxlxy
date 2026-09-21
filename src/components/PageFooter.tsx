@@ -21,12 +21,11 @@ export function PageFooter({ onOpenOnboardingModal }: PageFooterProps) {
             </div>
             <span className="text-xl font-bold text-gray-700 sm:text-xl">poetiq</span>
 
-            <p className="text-sm text-gray-600">           
-              {/*The all-in-one platform for managing Mom and Dad's long-term care affairs!*/}
-              {/*The care operating system for family caregivers. <br/><br/>
-              Close care gaps, qualify for Medicaid and manage your parent's care journey with zero stress.*/}
-              Intake intelligence for home care agencies. <br/><br/>
-              Assess care needs, flag financial gaps and unlock care funds for families on the very first call.  
+            <p className="text-sm text-gray-600 py-2">
+              Intake intelligence for home care agencies. {' '}
+                <p className="text-sm text-gray-600 py-2">
+                  Assess care needs, flag financial gaps & unlock care funds for families on the very first call.
+                </p>
             </p>
             {/* Social links */}
           </div>
