@@ -16,10 +16,10 @@ export function PageFooter({ onOpenOnboardingModal }: PageFooterProps) {
         <Link to="/">
           <div className="space-y-2 space-x-1">
           
-            <div className="inline-flex bg-teal-100 rounded-full p-0.5">
-              <Target className="h-5 w-5 fill-white stroke-teal-500" />
+          <div className="inline-flex bg-red-100/60 rounded-full p-1">
+              <Target className="h-5 w-5 fill-red-50 stroke-red-500" />
             </div>
-            <span className="text-xl font-bold text-gray-700 sm:text-xl">poetiq</span>
+            <span className="text-xl font-bold text-gray-700 sm:text-xl">Poetiq</span>
 
             <p className="text-sm text-gray-600 py-2">
               Intake intelligence for home care agencies. {' '}
