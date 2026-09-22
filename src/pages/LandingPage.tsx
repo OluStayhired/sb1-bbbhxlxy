@@ -539,7 +539,7 @@ function HowItWorksSection() {
                   <div className="flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-teal-50 to-white border-b border-slate-100">
                     <MessageCircle className="w-4 h-4 text-teal-600" />
                     <span className="text-xs font-bold text-teal-700">
-                      Step 4/4 &middot; Consult Ellie AI
+                      Step 4 &middot; Consult Ellie AI
                     </span>
                   </div>
 
@@ -556,7 +556,7 @@ function HowItWorksSection() {
                   <div className="flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-teal-50 to-white border-b border-slate-100">
                     <FileText className="w-4 h-4 text-teal-600" />
                     <span className="text-xs font-bold text-teal-700">
-                      Step 3/4 &middot; Generate Attorney Brief
+                      Step 3 &middot; Generate Attorney Brief
                     </span>
                   </div>
 
@@ -573,7 +573,7 @@ function HowItWorksSection() {
                   <div className="flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-teal-50 to-white border-b border-slate-100">
                     <Calculator className="w-4 h-4 text-teal-600" />
                     <span className="text-xs font-bold text-teal-700">
-                      Step 2/4 &middot; Non-MAGI Triage
+                      Step 2 &middot; Non-MAGI Triage
                     </span>
                   </div>
 
@@ -590,7 +590,7 @@ function HowItWorksSection() {
                   <div className="flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-teal-50 to-white border-b border-slate-100">
                     <Activity className="w-4 h-4 text-teal-600" />
                     <span className="text-xs font-bold text-teal-700">
-                      Step 1/4 &middot; Non-MAGI Triage
+                      Step 1 &middot; Screen Care Needs
                     </span>
                   </div>
 

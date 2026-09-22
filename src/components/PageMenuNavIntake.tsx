@@ -172,12 +172,12 @@ function MobileAccordion({ title, items }: {
       {/*<nav className="sticky top-0 z-9999 bg-white px-4 py-3 flex items-center justify-between sm:px-6 sm:py-4">*/}
 
       <Link to="/">
-        <div className="flex items-center space-x-2">
-          <div className="bg-red-100 rounded-full p-1 sm:p-2">
-            <Target className="h-7 w-7 fill-white stroke-red-500 sm:h-9 sm:w-9" />
+      <div className="flex items-center space-x-2">
+          <div className="bg-teal-100 rounded-full p-1 sm:p-2">
+            <Target className="h-7 w-7 fill-teal-50 stroke-teal-500 sm:h-9 sm:w-9" />
           </div>
           {/*<span className="text-2xl font-bold text-red-500 sm:text-3xl">poetiq</span>*/}
-          <span className="text-2xl font-bold text-gray-700 sm:text-3xl">poetiq</span>
+          <span className="text-2xl font-bold text-teal-700 sm:text-3xl">poetiq</span>
         </div>
       </Link>
 

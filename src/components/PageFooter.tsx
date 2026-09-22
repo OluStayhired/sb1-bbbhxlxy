@@ -97,7 +97,7 @@ export function PageFooter({ onOpenOnboardingModal }: PageFooterProps) {
               <p className="text-sm text-gray-700 text-center leading-relaxed">
                 {/*We make it super easy for family caregivers to qualify their parents for Medicaid. */}
                 Connect with
-                <a href="mailto:team@poetiq.io" className="text-red-500 hover:text-red-600 font-medium transition-colors">
+                <a href="mailto:team@poetiq.io" className="text-teal-500 hover:text-teal-600 font-medium transition-colors">
                   {' '}<u>The Poetiq Team</u>{' '}
                 </a>
                 via Email.
@@ -113,7 +113,7 @@ export function PageFooter({ onOpenOnboardingModal }: PageFooterProps) {
             <div className="flex space-x-6 order-1">
               <p className="text-sm text-gray-700 text-center leading-relaxed">
                 Connect with
-                <a href="mailto:team@poetiq.io" className="text-red-500 hover:text-red-600 font-medium transition-colors">
+                <a href="mailto:team@poetiq.io" className="text-teal-500 hover:text-teal-600 font-medium transition-colors">
                   {' '}<u>The Poetiq Team</u>{' '}
                 </a>
                 via Email.
