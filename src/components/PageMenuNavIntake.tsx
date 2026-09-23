@@ -54,7 +54,7 @@ interface PageMenuNavProps {
 export function PageMenuNavIntake({ onOpenCommunityModal, onOpenOnboardingModal }: PageMenuNavIntakeProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Mobile Accordion Component for nested menus
+// Mobile Accordion Component for nested menus
 function MobileAccordion({ title, items }: { 
   title: string; 
   items: Array<{
@@ -97,7 +97,7 @@ function MobileAccordion({ title, items }: {
             <div key={sectionIdx} className="space-y-2">
               {/* Section Header */}
               <div className="px-3 py-1">
-                <h4 className="text-xs font-bold text-red-300 uppercase tracking-wider">
+                <h4 className="text-xs font-bold text-teal-600 uppercase tracking-wider">
                   {section.section}
                 </h4>
               </div>
@@ -109,7 +109,7 @@ function MobileAccordion({ title, items }: {
                     key={cardIdx}
                     to={card.link}
                     onClick={card.onClick}
-                    className="block bg-white rounded-lg p-3 hover:bg-red-50 border border-gray-200 hover:border-red-200 transition-all duration-500"
+                    className="block bg-white rounded-lg p-3 hover:bg-teal-50 border border-gray-200 hover:border-teal-200 transition-all duration-500"
                   >
                     <div className="flex items-start space-x-3">
                       <div className="flex-shrink-0 mt-0.5">
@@ -134,7 +134,7 @@ function MobileAccordion({ title, items }: {
                   <button
                     key={cardIdx}
                     onClick={card.onClick}
-                    className="w-full bg-white rounded-lg p-3 hover:bg-red-50 border border-gray-200 hover:border-red-200 transition-all duration-500 text-left"
+                    className="w-full bg-white rounded-lg p-3 hover:bg-teal-50 border border-gray-200 hover:border-teal-200 transition-all duration-500 text-left"
                   >
                     <div className="flex items-start space-x-3">
                       <div className="flex-shrink-0 mt-0.5">
@@ -172,11 +172,11 @@ function MobileAccordion({ title, items }: {
       {/*<nav className="sticky top-0 z-9999 bg-white px-4 py-3 flex items-center justify-between sm:px-6 sm:py-4">*/}
 
       <Link to="/">
-      <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-2">
           <div className="bg-red-100/60 rounded-full p-1 sm:p-2">
             <Target className="h-7 w-7 fill-red-50 stroke-red-500 sm:h-9 sm:w-9" />
           </div>
-          <span className="text-2xl font-bold text-slate-700 sm:text-3xl">Poetiq</span>
+          <span className="text-2xl font-bold text-slate-900 sm:text-3xl">Poetiq</span>
         </div>
       </Link>
 
@@ -184,17 +184,6 @@ function MobileAccordion({ title, items }: {
       {/* Desktop Navigation Buttons */}
       <div className="hidden sm:flex items-center space-x-4">
         <div className="items-center flex justify-center space-x-2">
-          {/*
-          <button
-            onClick={() => {
-              window.location.href = '/dev#HowItWorks';
-              setIsMobileMenuOpen(false);
-            }}
-            className="max-w-sm px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition-colors"
-          >
-            How it Works ❤️
-          </button>
-        */}
           
           <Link
             to="/#how-it-works"
@@ -219,7 +208,6 @@ function MobileAccordion({ title, items }: {
 <div className="relative group">
   {/* Menu Header - Executive Services */}
   <button className="flex items-center px-4 py-2 text-gray-600 font-normal rounded-lg hover:bg-gray-200 transition-colors">
-    {/*<Heart className='w-3.5 h-3.5 mr-2' strokeWidth={2.5}/>*/}
   Product
     <ChevronDown className='w-3.5 h-3.5 ml-2' strokeWidth={2.5}/>
   </button>
@@ -297,7 +285,7 @@ function MobileAccordion({ title, items }: {
       <div className="col-span-1 space-y-6 group/col2">
         {/* Column 2 Header */}
         <div className="border-b border-gray-200">
-          <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3 px-6 group-hover/col2:text-teal-500 transition-colors duration-300">🛡️ Protect Assets</h4>
+          <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3 px-6 group-hover/col2:text-teal-500 transition-colors duration-300">🔓 UNLOCK FUNDS</h4>
         </div>
 
         {/* Card 2: Spend-Down Calculator */}
@@ -394,23 +382,7 @@ function MobileAccordion({ title, items }: {
             Share attorney-ready reports and actionable next steps with families and partner law firms.
           </p>
         </Link>
-
-        {/* Card 6: Healthcare Virtual Assistants */}
-        {/*
-        <Link
-          to="/login"
-          className="group/card flex flex-col p-6 rounded-xl hover:bg-gradient-to-br hover:from-teal-50 hover:to-teal-50/40 transition-all duration-300 hover:shadow-lg hover:scale-105 border-2 border-transparent hover:border-teal-200">
-          <div className="flex items-center justify-center w-14 h-14 bg-teal-100 rounded-full mb-4 group-hover/card:bg-teal-200 transition-colors duration-300">
-            <Scale className="w-7 h-7 text-teal-600 group-hover/card:scale-110 transition-transform duration-300" />
-          </div>
-          <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover/card:text-teal-600 transition-colors duration-300">
-            Attorney Finder
-          </h3>
-          <p className="text-sm text-gray-600 leading-relaxed">
-            Find Medicaid and elder law attorneys in your state for asset protection and appeals.
-          </p>
-        </Link>
-        */}
+ 
       </div>
       
     </div>
@@ -536,70 +508,75 @@ function MobileAccordion({ title, items }: {
 
       {/* Premium Services Accordion */}
       <MobileAccordion
-        //title="Operating System 💚"
-        title="Operating System"
+        title="Product"
         items={[
           {
-            //section: "🆘 CRISIS READINESS",
-            //section: "🏁 START HERE",
-            section: "🆘 START HERE",
+            section: "🆘 SCREEN FAMILIES",
             
             cards: [
               {
                 title: "Care Pilot",
-                icon: <Compass className="w-5 h-5 text-red-600" />,
-                description: "Get personalized care plans 24/7",
+                icon: <Compass className="w-5 h-5 text-teal-600" />,
+                //description: "Get personalized care plans 24/7",
+                description: "Assess immediate care needs",
                 link: "/#features",
-                onClick: () => setIsMobileMenuOpen(false)
-              },
-              {
-                title: "Care Pulse",
-                icon: <Target className="w-5 h-5 text-red-600" />,
-                description: "Uncover critical care gaps fast",
-                link: "/#features",
-                onClick: () => setIsMobileMenuOpen(false)
+                //onClick: () => setIsMobileMenuOpen(false)
+                onClick: (e) => {
+                  setIsMobileMenuOpen(false);
+                    if (window.location.pathname === '/') {
+                      e.preventDefault();
+                      const element = document.getElementById('features');
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                      }
+                  }
+                }   
               }
             ]
           },
           {
-            section: "💵 PROTECT ASSETS",
+            section: "🔓 UNLOCK FUNDS",
             cards: [
               {
                 title: "Spend-Down Genius",
-                icon: <TrendingDown className="w-5 h-5 text-red-600" />,
-                description: "Get qualified for Medicaid",
-                //link: "/medicaid-spenddown-calculator",
+                icon: <TrendingDown className="w-5 h-5 text-teal-600" />,
+                //description: "Get qualified for Medicaid",
+                description: "Uncover financial strategies",
                 link: "/#features",
-                onClick: () => setIsMobileMenuOpen(false)
-              },
-              {
-                title: "Medicaid Planner",
-                icon: <CircleDollarSign className="w-5 h-5 text-red-600" />,
-                description: "Generate instant Medicaid plans",
-                //link: "/healthcare-insurance-claims-recovery",
-                link: "/#features",
-                onClick: () => setIsMobileMenuOpen(false)
+                //onClick: () => setIsMobileMenuOpen(false)
+                onClick: (e) => {
+                  setIsMobileMenuOpen(false);
+                    if (window.location.pathname === '/') {
+                      e.preventDefault();
+                      const element = document.getElementById('features');
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                      }
+                  }
+                }   
               }
             ]
           },
           {
-            section: "❤️ FIND CARE SERVICES",
+            section: "🔥 BOOST REVENUE",
             cards: [
               {
-                title: "Audit Care Services",
-                icon: <Search className="w-5 h-5 text-red-600" />,
-                description: "Search & Audit Care Providers",
-                //link: "/nursing-home-contract-analyzer",
+                title: "Income Asset Planner",
+                icon: <CircleDollarSign className="w-5 h-5 text-teal-600" />,
+                //description: "Search & Audit Care Providers",
+                description: "Share attorney-ready reports",
                 link: "/#features",
-                onClick: () => setIsMobileMenuOpen(false)
-              },
-              {
-                title: "Attorney Finder",
-                icon: <Scale className="w-5 h-5 text-red-600" />,
-                description: "Locate Elder Law Attorneys",
-                //link: "/virtual-healthcare-assistant",
-                link: "/#features",
-                onClick: () => setIsMobileMenuOpen(false)
+                //onClick: () => setIsMobileMenuOpen(false)
+                onClick: (e) => {
+                  setIsMobileMenuOpen(false);
+                    if (window.location.pathname === '/') {
+                      e.preventDefault();
+                      const element = document.getElementById('features');
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                      }
+                  }
+                }     
               }
             ]
           }
@@ -624,6 +601,25 @@ function MobileAccordion({ title, items }: {
       {/*Frequent Questions ❓*/}
 
         FAQ
+      </Link>
+
+    {/* Testionial */}
+      <Link
+        to="/#testimonial"
+        onClick={(e) => {
+          setIsMobileMenuOpen(false);
+          if (window.location.pathname === '/') {
+            e.preventDefault();
+            const element = document.getElementById('testimonial');
+            if (element) {
+              element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }
+        }}
+        className="block  items-center flex w-full text-left px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-all duration-500"
+      >
+    {/*Testimonial*/}
+        Testimonials
       </Link>
 
       {/* Join Waitlist CTA */}
