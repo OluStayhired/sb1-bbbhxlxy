@@ -410,11 +410,11 @@ function HowItWorksSection() {
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-800 leading-tight tracking-tight">
             {/*} How Poetiq Transforms Your{' '}*/}
-            Resolves Complex Financial Gaps {' '}
+            Resolve complex financial gaps. {' '}
             <br className="hidden sm:block" />
             <span className="bg-gradient-to-r from-teal-600 to-teal-500 text-transparent bg-clip-text">
               {/*Intake Calls in 3 Minutes*/}
-              Answers Tricky Non-MAGI Questions
+              Answer tricky Non-MAGI questions.
             </span>
           </h2>
           <p className="mt-4 text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
@@ -786,7 +786,7 @@ function FeaturesSection() {
             <span>Platform Features</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-800 leading-tight tracking-tight">
-            What You Get with{' '}
+            What you get with{' '}
             <span className="bg-gradient-to-r from-teal-600 to-teal-500 text-transparent bg-clip-text">
               Poetiq
             </span>
@@ -1027,10 +1027,10 @@ function OldVsNewSection() {
             <span>Your Home Care Agency Transformation</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-800 leading-tight tracking-tight">
-            From Stalled Inquiries to{' '}
+            From stalled inquiries to{' '}
             <br className="hidden sm:block" />
             <span className="bg-gradient-to-r from-teal-600 to-teal-500 text-transparent bg-clip-text">
-              Successful Referral Partnerships
+              successful referral partnerships.
             </span>
           </h2>
           <p className="mt-4 text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
@@ -1325,10 +1325,10 @@ function FAQSection() {
             <span>Frequently Asked Questions</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-800 leading-tight tracking-tight">
-            Questions from Agency Leaders
+            Questions from agency leaders
           </h2>
           <p className="mt-4 text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
-            Everything your team needs to know about how Poetiq transforms your intake process.
+            Everything you need to know about Poetiq's intake transformation capabilities.
           </p>
         </div>
 
@@ -1422,10 +1422,10 @@ function FinalCTASection() {
 
         {/* Headline */}
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-800 leading-tight tracking-tight">
-          Families Deserve Clarity.{' '}
+          Families deserve clarity.{' '}
           <br className="hidden sm:block" />
           <span className="bg-gradient-to-r from-teal-600 to-teal-500 text-transparent bg-clip-text">
-            Your Agency Deserves the Revenue.
+            Your agency deserves the revenue.
           </span>
         </h2>
 
