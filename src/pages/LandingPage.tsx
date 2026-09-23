@@ -216,9 +216,11 @@ function HeroSection() {
         </p> */}
 
         <p className="mt-6 sm:mt-8 text-lg sm:text-xl md:text-2xl text-slate-500 max-w-3xl mx-auto leading-relaxed font-normal">
-          Poetiq makes it easy for agency care teams to unlock hidden care funds 
+          {/*Poetiq makes it easy for agency care teams to unlock hidden care funds */}
+          Poetiq helps senior care teams to assess elder care needs and unlock 
           <br className="hidden sm:block" />{' '}
-          for desperate families on the very first discovery call 
+          {/*for desperate families on their first discovery call */}
+          hidden care funds for distressed families on the very first call. 
         </p>
 
         {/* CTA Button */}
