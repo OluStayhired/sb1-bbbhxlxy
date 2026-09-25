@@ -385,7 +385,7 @@ export function IntakeWorkflow() {
         </div>
 
         {/* Narrative bar */}
-        <div className="border-t border-slate-100 bg-slate-50/80">
+        <div className="border-t min-h-[130px] border-slate-100 bg-slate-50/80">
           <button
             onClick={() => setExpandedNarrative(e => !e)}
             className="flex items-center justify-between w-full px-5 py-3 text-left"
@@ -664,7 +664,7 @@ function StepDashboard({
   penaltyMonths: number; subStep: number;
 }) {
   return (
-    <div className="p-5">
+    <div className="p-5 min-h-[520px]">
       <div className="flex items-center gap-2 mb-4">
         <Sliders className="w-5 h-5 text-teal-600" />
         <h3 className="text-sm font-bold text-slate-800">Spend-Down Planner Dashboard</h3>
