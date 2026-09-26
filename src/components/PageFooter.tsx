@@ -77,11 +77,13 @@ export function PageFooter({ onOpenOnboardingModal }: PageFooterProps) {
                         personal property record
                     </a>
                   </li>
+                  {/*
                   <li className='w-full'>
                     <Link to="https://app.poetiq.io/login" className="flex items-center gap-3 text-white hover:text-red-500 transition-colors">
                         home-care
                     </Link>
                   </li>  
+                */}
                 </ul>
               </div>
             </div>
