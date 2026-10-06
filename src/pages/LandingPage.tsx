@@ -178,7 +178,8 @@ function HeroSection() {
         {/* Top Pill */}
         <div className="inline-flex items-center px-4 py-2 bg-teal-50 border border-teal-200 rounded-full text-teal-700 text-sm font-medium mb-8">
           <BrainCircuit className="w-4 h-4 mr-2" />
-          <span>The Financial Triage AI-Assistant</span>
+          {/*<span>The Financial Triage AI-Assistant</span>*/}
+          <span>AI-Powered Financial Triage</span>
         </div>
 
         {/* Headline */}
