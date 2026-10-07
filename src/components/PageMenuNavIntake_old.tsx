@@ -220,10 +220,9 @@ function MobileAccordion({ title, items }: {
       {/* ========== COLUMN 1: Crisis Readiness ========== */}
       <div className="col-span-1 space-y-6 group/col1">
         {/* Column 1 Header */}
-        <div className="border-b border-gray-200 space-x-2 flex">
+        <div className="border-b border-gray-200">
           <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3 px-6 group-hover/col1:text-teal-500 transition-colors duration-300">
-            🆘 Screen Families 
-            
+            🆘 Screen Families
           </h4>
         </div>
 
@@ -432,14 +431,6 @@ function MobileAccordion({ title, items }: {
             {/*<HelpCircle className='w-3.5 h-3.5 mr-2' strokeWidth={2.5}/>*/}
             FAQ
           </Link>
-
-          <Link
-            to="/pricing"
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="flex items-center max-w-sm px-4 py-2 text-gray-700 font-normal rounded-lg hover:bg-gray-200 transition-colors"
-          >
-            Pricing
-          </Link>
         </div>
 
         <button
@@ -629,14 +620,6 @@ function MobileAccordion({ title, items }: {
       >
     {/*Testimonial*/}
         Testimonials
-      </Link>
-
-      <Link
-        to="/pricing"
-        onClick={() => setIsMobileMenuOpen(false)}
-        className="flex items-center w-full text-left px-4 py-3 text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-all duration-500"
-      >
-        Pricing
       </Link>
 
       {/* Join Waitlist CTA */}
