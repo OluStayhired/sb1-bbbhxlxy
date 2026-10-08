@@ -215,12 +215,12 @@ function HeroSection() {
         </h1>
 
         {/* Sub-Headline */}
-        <p className="sm:block hidden mt-6 sm:mt-8 text-lg sm:text-xl text-slate-500 max-w-3xl mx-auto leading-relaxed font-normal">
+        <p className="sm:block hidden mt-6 sm:mt-8 text-lg sm:text-2xl text-slate-500 max-w-3xl mx-auto leading-relaxed font-normal">
           {/*When families hear the price of care, most assume they'll have to drain their savings.
           With just a first name and rough estimates, Poetiq shows your coordinator in about three
           minutes whether, with proper legal planning, the family may qualify for Medicaid while
           protecting much of what they've saved.*/}
-          Poetiq makes it easy for you to show families how to qualify for Medicaid and protect their life savings instead of losing the opportunity.
+          Poetiq makes it easy for you to show families how to qualify for Medicaid and protect their life savings.
         </p>
 
         <p className="sm:hidden mt-6 sm:mt-8 text-lg sm:text-xl text-slate-500 max-w-3xl mx-auto leading-relaxed font-normal"> 
