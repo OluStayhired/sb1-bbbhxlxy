@@ -14,12 +14,14 @@ import {
   Users,
   Briefcase,
   Zap,
+  BookOpenText,
   // ADD THESE NEW ONES:
   Phone,
   Activity,
   FileText,
   MessageCircle,
   ChevronRight,
+  Package,
   // NEW for Features section:
   Sliders,
   TrendingUp,
@@ -27,13 +29,13 @@ import {
   CheckCircle2,
   Sparkles,
   Compass,
-  Target,
   Handshake,
   // NEW for Old Way / New Way:
   X,
   Ban,
   Timer,
   Megaphone,
+  Lightbulb,
   // NEW for Testimonial:
   Quote,
 } from 'lucide-react';
@@ -49,6 +51,7 @@ import { SpendDownPillModalMock } from '../components/SpendDownPillModalMock';
 import { AttorneyBriefMock } from '../components/AttorneyBriefMock';
 import { NonMagiMock } from '../components/NonMagiMock';
 import { ScreenCareNeedsMock } from '../components/ScreenCareNeedsMock';
+import { HowCareBecomesAffordableSection, NoPaperworkBand } from '../components/AffordabilitySections';
 
 
 
@@ -57,17 +60,17 @@ import { ScreenCareNeedsMock } from '../components/ScreenCareNeedsMock';
 // ═══════════════════════════════════════════════════════════════════════════════
 
 const CAROUSEL_PILLS = [
-  { label: 'CSRA Calculation',    tooltip: 'Protects spouse savings limits',            icon: ShieldCheck },
-  { label: 'Miller Trust',        tooltip: 'Resolves monthly income caps',              icon: Scale },
-  { label: 'Spend-Down Math',     tooltip: 'Converts assets to exempt care',            icon: Calculator },
-  { label: 'Care Gap',            tooltip: 'Validates 3+ ADL state rules',              icon: HeartPulse },
-  { label: 'Look-Back Penalties', tooltip: 'Calculates gift ineligibility periods',     icon: Clock },
-  { label: 'Spousal Diversion',   tooltip: 'Fills MMMNA income shortfalls',             icon: Users },
-  { label: 'Home Exemptions',     tooltip: 'Applies caregiver child rules',             icon: Home },
-  { label: 'VA Benefits',         tooltip: 'Integrates Aid & Attendance funds',         icon: Star },
-  { label: 'Attorney Briefs',     tooltip: 'Packages files for referral partners',      icon: Briefcase },
-  { label: 'Intake Triage',       tooltip: 'Automates 3-minute live screening',         icon: Zap },
-  { label: 'AI Co-Pilot',         tooltip: 'Answers every complicated question',        icon: BrainCircuit },
+  { label: 'Spouse Savings Protection (CSRA)',     tooltip: 'How much the spouse at home can keep',                 icon: ShieldCheck },
+  { label: 'Income Over the Limit (Miller Trust)', tooltip: 'Flags income above the cap and the trust that fixes it', icon: Scale },
+  { label: 'Spend-Down Calculator',                tooltip: 'How much must be spent before qualifying',             icon: Calculator },
+  { label: 'Care Needs Check (ADLs)',              tooltip: "Checks your state's care-need requirements",          icon: HeartPulse },
+  { label: 'Past Gifts & Penalties (Look-Back)',   tooltip: 'Reviews gifts made in the last five years',            icon: Clock },
+  { label: 'Spouse Income Top-Up (MMMNA)',         tooltip: 'Minimum monthly income the spouse at home can keep',   icon: Users },
+  { label: 'Home & Caregiver-Child Exemptions',    tooltip: 'Rules that can protect the family home',               icon: Home },
+  { label: 'VA Aid & Attendance',                  tooltip: 'Monthly benefit many veteran families never claim',    icon: Star },
+  { label: 'Attorney-Ready Case Summary',          tooltip: 'Organized facts for an elder law attorney',            icon: Briefcase },
+  { label: '3-Minute Intake Screen',               tooltip: 'First names and rough estimates only',                 icon: Zap },
+  { label: 'Ask Ellie, Your AI Helper',            tooltip: 'Plain-language answers to tricky questions',           icon: BrainCircuit },
 ];
 
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -121,6 +124,10 @@ function LandingPage() {
 
         {/* ===================== HERO SECTION ===================== */}
         <HeroSection />
+
+        <HowCareBecomesAffordableSection />
+
+        <NoPaperworkBand />
 
         {/* ===================== HOW IT WORKS ===================== */}
         <HowItWorksSection />
@@ -178,23 +185,19 @@ function HeroSection() {
         {/* Top Pill */}
         <div className="inline-flex items-center px-4 py-2 bg-teal-50 border border-teal-200 rounded-full text-teal-700 text-sm font-medium mb-8">
           <BrainCircuit className="w-4 h-4 mr-2" />
-          {/*<span>The Financial Triage AI-Assistant</span>*/}
-          <span>AI-Powered Financial Triage</span>
+          <span>For home care agencies that accept private-pay and Medicaid</span>
         </div>
 
         {/* Headline */}
         <h1
           ref={headingRef}
-          className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-slate-700 leading-tight tracking-tight transition-all duration-[1200ms] ease-out ${
+          className={`text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-700 leading-tight tracking-tight transition-all duration-[1200ms] ease-out ${
             headingVisible
               ? 'opacity-100 translate-y-0'
               : 'opacity-0 translate-y-4'
           }`}
         >
-          Family Intake{' '}
-          <span className="bg-gradient-to-r from-teal-600 to-teal-500 text-transparent bg-clip-text">
-            Intelligence
-          </span>
+          "We can't afford care" is often
           <br />
           <span
             className={`inline-block transition-all duration-[1400ms] ease-out delay-300 ${
@@ -203,29 +206,19 @@ function HeroSection() {
                 : 'opacity-0 translate-y-3'
             }`}
           >
-            for Home Care Agencies
+            <span className="bg-gradient-to-r from-teal-600 to-teal-500 text-transparent bg-clip-text">
+              not the final answer.
+            </span>
           </span>
         </h1>
 
         {/* Sub-Headline */}
-        {/*
-        <p className="mt-6 sm:mt-8 text-lg sm:text-xl md:text-2xl text-slate-500 max-w-3xl mx-auto leading-relaxed font-normal">
-          Turn discovery calls into signed contracts and attorney referrals.
-          <br className="hidden sm:block" />{' '}
-          Poetiq unlocks hidden care funds using real-time{' '}
-          <span className="font-semibold text-slate-600">Non-MAGI triage</span>.
-        </p> */}
-
-        <p className="mt-6 sm:mt-8 text-lg sm:text-xl md:text-2xl text-slate-500 max-w-3xl mx-auto leading-relaxed font-normal">
-          {/*Poetiq makes it easy for agency care teams to unlock hidden care funds */}
-          {/*Poetiq helps senior care teams to assess elder care needs and unlock*/}
-          Poetiq uncovers hidden care funds and turns sticker-shocked families 
-
-
-          <br className="hidden sm:block" />{' '}
-          {/*for desperate families on their first discovery call */}
-          {/*hidden care funds for distressed families on the very first call. */}
-          into signed private-pay clients on the very first discovery call. 
+        <p className="mt-6 sm:mt-8 text-lg sm:text-xl text-slate-500 max-w-3xl mx-auto leading-relaxed font-normal">
+          {/*When families hear the price of care, most assume they'll have to drain their savings.
+          With just a first name and rough estimates, Poetiq shows your coordinator in about three
+          minutes whether, with proper legal planning, the family may qualify for Medicaid while
+          protecting much of what they've saved.*/}
+          Poetiq makes it easy for you to show families how to qualify for Medicaid and protect their life savings instead of losing the opportunity.
         </p>
 
         {/* CTA Button */}
@@ -234,7 +227,7 @@ function HeroSection() {
             onClick={handleBookDemo}
             className="group inline-flex items-center space-x-3 bg-teal-600 hover:bg-teal-700 text-white px-8 py-4 sm:px-10 sm:py-5 rounded-xl text-lg sm:text-xl font-semibold shadow-lg shadow-teal-600/30 hover:shadow-xl hover:shadow-teal-600/40 transition-all duration-300 hover:-translate-y-0.5"
           >
-            <span>Book a Demo</span>
+            <span>Book a 15-Minute Demo</span>
             <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
 
@@ -242,15 +235,15 @@ function HeroSection() {
           <div className="hidden sm:flex flex-wrap items-center justify-center gap-6 mt-8 text-sm text-gray-500">
             <div className="flex items-center space-x-2">
               <FileSearch className="w-4 h-4 text-teal-500" />
-              <span>3-Minute Intake Screening</span>
+              <span>First names and rough estimates only</span>
             </div>
             <div className="flex items-center space-x-2">
               <CircleDollarSign className="w-4 h-4 text-teal-500" />
-              <span>Unlock Hidden Care Funds</span>
+              <span>Uses your state's Medicaid rules</span>
             </div>
             <div className="flex items-center space-x-2">
               <Briefcase className="w-4 h-4 text-teal-500" />
-              <span>Auto-Generate Attorney Briefs</span>
+              <span>Prepares families for an elder law attorney</span>
             </div>
           </div>
         </div>
@@ -317,7 +310,7 @@ function CapabilitiesCarousel() {
   return (
     <div className="max-w-6xl mx-auto px-6 pb-20 sm:pb-28">
       <p className="text-center text-xs font-semibold tracking-widest text-slate-400 mb-5">
-        What Poetiq delivers in Real-Time 👇
+        What Poetiq checks during a call
       </p>
 
       <div
@@ -346,37 +339,37 @@ const HOW_IT_WORKS_STEPS = [
   {
     id: 'screen',
     num: '01',
-    tab: 'Screen Care Needs',
+    tab: 'Check Care Needs',
     tabIcon: Activity,
-    title: 'Screen the care needs live',
-    description: 'Validate ADL requirements (bathing, dressing, mobility) and flag financial care gaps in 60 seconds.',
+    title: 'Check care needs',
+    description: "Confirm which daily activities need help (bathing, dressing, eating, moving around) and whether your loved one likely meets your state's care-need requirement. About 60 seconds.",
     accent: 'teal',
   },
   {
     id: 'triage',
     num: '02',
-    tab: 'Run Non-MAGI Triage',
+    tab: 'Map the Money',
     tabIcon: Calculator,
-    title: 'Run real-time Non-MAGI triage',
-    description: 'Calculate asset spend-downs using state-specific rules for CSRA protection and Miller Trust income caps.',
+    title: 'Map the money',
+    description: 'Enter rough estimates of savings, income, and any gifts made in the last five years. No statements needed. Poetiq applies your state\'s Medicaid rules for older adults (known as "Non-MAGI" Medicaid) to show what\'s likely protected, what\'s over the limit, and what an attorney may be able to restructure.',
     accent: 'teal',
   },
   {
     id: 'brief',
     num: '03',
-    tab: 'Generate Attorney Brief',
+    tab: 'Hand Off to an Attorney',
     tabIcon: FileText,
-    title: 'Generate the attorney-ready brief',
-    description: 'Secure high-ticket private-pay referrals from elder law firms with actionable diagnostic reports.',
+    title: 'Hand off to an attorney',
+    description: 'When planning is needed, create an attorney-ready brief with the family\'s situation already organized. The family walks into their first legal meeting prepared.',
     accent: 'teal',
   },
   {
     id: 'ellie',
     num: '04',
-    tab: 'Consult Ellie AI',
+    tab: 'Get Unstuck Anytime',
     tabIcon: MessageCircle,
-    title: 'Consult Ellie AI on the fly',
-    description: 'Stuck on a tricky 60-month look-back penalty or asset transfer? Ask now, answer now.',
+    title: 'Get unstuck anytime with Ellie',
+    description: 'A family asks, "Mom gave my brother $20,000 three years ago. Does that matter?" Ask Ellie and get a plain-language answer about the five-year look-back, specific to your state.',
     accent: 'teal',
   },
 ];
@@ -410,21 +403,20 @@ function HowItWorksSection() {
         <div className={`text-center mb-16 transition-all duration-[900ms] ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
           <div className="inline-flex items-center px-4 py-2 bg-teal-50 border border-teal-200 rounded-full text-teal-700 text-sm font-medium mb-6">
             <Phone className="w-4 h-4 mr-2" />
-            {/*<span>Built for Home Care Intake Teams</span>*/}
-            <span>What family intake intelligence does</span>
+            <span>How it works</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-800 leading-tight tracking-tight">
-            {/*} How Poetiq Transforms Your{' '}*/}
-            Resolve complex financial gaps. {' '}
+            {/*Four steps your coordinator can run{' '}*/}
+            4 steps to turn price objections{' '}
             <br className="hidden sm:block" />
             <span className="bg-gradient-to-r from-teal-600 to-teal-500 text-transparent bg-clip-text">
-              {/*Intake Calls in 3 Minutes*/}
-              Answer tricky Non-MAGI questions.
+              {/*while the family is still on the phone.*/}
+              into a clear plan to pay for care. 
             </span>
           </h2>
           <p className="mt-4 text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
-            {/*Stop losing prospects to price sticker shock. Turn complex financial roadblocks into clear care funding opportunities.*/}
-            Family intake teams feel empowered. Financial roadblocks get unblocked. Families uncover care funding opportunities. Home Care Agencies generate more revenue.
+            {/*No finance or legal background needed. Poetiq asks the questions, applies your state's rules, and gives your coordinator plain-language answers to share.*/}
+            No legal or financial background needed. Poetiq asks the questions, applies your state's rules, and gives you plain-language answers to share before the call ends.         
           </p>
         </div>
 
@@ -432,10 +424,10 @@ function HowItWorksSection() {
         <div className={`hidden md:flex items-center justify-center gap-0 mb-14 transition-all duration-[1000ms] delay-200 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
           {[
             { label: 'Family Call', icon: Phone },
-            { label: 'Screen Care Needs', icon: Activity },
-            { label: 'Run Non-MAGI Triage', icon: Calculator },
-            { label: 'Generate Brief', icon: FileText },
-            { label: 'Consult Ellie AI', icon: MessageCircle },
+            { label: 'Care Needs', icon: Activity },
+            { label: 'Funding Check', icon: Calculator },
+            { label: 'Attorney Brief', icon: FileText },
+            { label: 'Ask Ellie Anytime', icon: MessageCircle },
           ].map((item, i, arr) => (
             <div key={item.label} className="flex items-center">
               <div
@@ -546,7 +538,7 @@ function HowItWorksSection() {
                   <div className="flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-teal-50 to-white border-b border-slate-100">
                     <MessageCircle className="w-4 h-4 text-teal-600" />
                     <span className="text-xs font-bold text-teal-700">
-                      Step 4 &middot; Consult Ellie AI
+                      Step 4 &middot; Ask Ellie Anytime
                     </span>
                   </div>
 
@@ -563,7 +555,7 @@ function HowItWorksSection() {
                   <div className="flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-teal-50 to-white border-b border-slate-100">
                     <FileText className="w-4 h-4 text-teal-600" />
                     <span className="text-xs font-bold text-teal-700">
-                      Step 3 &middot; Generate Attorney Brief
+                      Step 3 &middot; Hand Off to an Attorney
                     </span>
                   </div>
 
@@ -580,7 +572,7 @@ function HowItWorksSection() {
                   <div className="flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-teal-50 to-white border-b border-slate-100">
                     <Calculator className="w-4 h-4 text-teal-600" />
                     <span className="text-xs font-bold text-teal-700">
-                      Step 2 &middot; Non-MAGI Triage
+                      Step 2 &middot; Map the Money
                     </span>
                   </div>
 
@@ -597,7 +589,7 @@ function HowItWorksSection() {
                   <div className="flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-teal-50 to-white border-b border-slate-100">
                     <Activity className="w-4 h-4 text-teal-600" />
                     <span className="text-xs font-bold text-teal-700">
-                      Step 1 &middot; Screen Care Needs
+                      Step 1 &middot; Check Care Needs
                     </span>
                   </div>
 
@@ -649,111 +641,111 @@ const FEATURES = [
   {
     id: 'spend-down',
     image: 'https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/poetiq_hero_v3.png',
-    headline: 'Accelerated Intake Triage',
-    subheadline: 'Empower non-technical intake coordinators to conduct sophisticated financial triage and convert more families during an intake call.',
-    label: 'How the Spend Down Planner Works for Your Intake Team',
+    headline: 'The Numbers, in Minutes',
+    subheadline: 'Your coordinator enters rough estimates. Poetiq applies your state\'s Medicaid rules and shows the family what\'s possible, live on the call.',
+    label: 'What the Spend Down Planner Shows Your Team',
     items: [
       {
         icon: ShieldCheck,
-        title: 'Instant Spousal Asset Protection',
-        badge: 'CSRA Active',
+        title: 'Protect the Healthy Spouse\'s Savings',
+        badge: 'CSRA',
         badgeColor: 'bg-green-100 text-green-700 border-green-200',
-        description: 'Automatically calculates the Community Spouse Resource Allowance asset shield and income floor, instantly reassuring families that a healthy spouse can retain savings without facing impoverishment.',
+        description: 'Calculates how much the spouse at home can keep under your state\'s rules, plus the minimum monthly income they\'re entitled to. This is usually the moment a worried spouse relaxes.',
       },
       {
         icon: TrendingUp,
-        title: 'Real-Time Income Spillage & Trust Analysis',
+        title: 'Spot Income Over the Medicaid Limit',
         badge: 'Miller Trust',
         badgeColor: 'bg-amber-100 text-amber-700 border-amber-200',
-        description: 'Instantly identifies when applicant income exceeds state caps, mapping out precise Miller Trust requirements and computing exact spousal income diversions to resolve financial shortfalls on the spot.',
+        description: 'Flags when monthly income is too high to qualify in states with an income cap, and explains the special trust that solves it, so the family knows it\'s fixable.',
       },
       {
         icon: Clock,
-        title: 'Automated Exemption & Look-Back Tracking',
-        badge: 'Penalty Detection',
+        title: 'Catch Past Gifts Before They Cause a Penalty',
+        badge: '5-Year Look-Back',
         badgeColor: 'bg-red-100 text-red-700 border-red-200',
-        description: 'Evaluates complex rules in seconds. For example, validating multi-year child caregiver co-residence exemptions and calculating exact look-back penalty months from past asset transfers.',
+        description: 'Checks money given away in the last five years, estimates any waiting period, and checks exceptions, such as a child who lived at home as a caregiver.',
       },
       {
         icon: Sliders,
-        title: 'Interactive What-If Scenario Sandbox',
-        badge: 'Live Modeling',
+        title: 'Try "What If" Options Live',
+        badge: 'Scenario Planning',
         badgeColor: 'bg-teal-100 text-teal-700 border-teal-200',
-        description: 'Allows your team to model alternative spend-down strategies live on the call. Adjusting direct medical expenses, prepaid burial plans, and home accessibility repairs to instantly update remaining allocation targets.',
+        description: 'Show how a prepaid funeral, home safety changes, or months of in-home care change what\'s left to spend down, while the family is still listening.',
       },
     ],
   },
   {
     id: 'ask-ellie',
     image: 'https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/poetiq_hero_spend_v2.png',
-    headline: 'Answers to Complex Family Inquiries',
-    subheadline: 'Never get stuck on tricky Non-MAGI rules again. Get context-aware guidance on every financial scenario and close more care contracts on autopilot.',
-    label: 'How Ellie Empowers Your Intake Team',
+    headline: 'Answers, in plain language',
+    subheadline: 'Families ask hard questions on the first call. Ellie explains the rule in plain language, applies your state\'s numbers, and suggests when to bring in an attorney.',
+    label: 'Questions Ellie Helps Your Team Answer',
     items: [
       {
-        icon: Users,
-        title: 'Eliminate Guesswork on Spousal Protections',
-        badge: 'CSRA & MMMNA',
+        icon: Home,
+        title: 'Will my dad lose the house?',
+        badge: 'Home Exemptions',
         badgeColor: 'bg-green-100 text-green-700 border-green-200',
-        description: 'Instantly clarify complex rules around Community Spouse Resource Allowances (CSRA) and income floors (MMMNA) so your staff can answer family questions with absolute authority.',
+        description: 'Ellie explains when the family home is protected, including rules for a spouse or caregiver child still living there.',
       },
       {
         icon: Scale,
-        title: 'Instant Clarity on Income Spillage & Trusts',
-        badge: 'State-Specific',
+        title: 'Mom\'s pension is $3k a month. Is that too much?',
+        badge: 'Income Limits',
         badgeColor: 'bg-amber-100 text-amber-700 border-amber-200',
-        description: 'Get immediate, state-specific breakdowns on Miller Trust caps and spillage diversions, turning confusing financial hurdles into reassuring talking points.',
+        description: 'Ellie compares income to your state\'s limit and explains, in everyday words, how families in income-cap states still qualify.',
       },
       {
         icon: AlertTriangle,
-        title: 'Navigate Look-Back Penalties with Ease',
-        badge: 'Risk Mitigation',
+        title: 'We gave the grandkids money last year. Does it matter?',
+        badge: '5-Year Look-Back',
         badgeColor: 'bg-red-100 text-red-700 border-red-200',
-        description: 'Instantly evaluate look-back transfer penalties, asset gifts, and child caregiver exemptions on the fly without needing an elder law attorney on speed dial.',
+        description: 'Ellie explains how past gifts are reviewed, what a waiting period means, and when it\'s time to involve an elder law attorney.',
       },
       {
-        icon: Target,
-        title: 'Turn Hesitation into Signed Contracts',
-        badge: 'Conversion Boost',
+        icon: Users,
+        title: 'Can we pay my sister for caregiving?',
+        badge: 'Family Caregivers',
         badgeColor: 'bg-teal-100 text-teal-700 border-teal-200',
-        description: 'Equip every intake coordinator with veteran-level knowledge, keeping distressed families engaged and dramatically increasing your discovery-call conversion rates.',
+        description: 'Ellie outlines how families can document paid caregiving properly, so it\'s treated as care rather than a gift.',
       },
     ],
   },
   {
     id: 'care-pilot',
     image: 'https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/poetiq_hero_pilot_v1.png',
-    headline: 'Instant Care Gap Intelligence',
-    subheadline: 'Transform messy family care inquiries into structured medical, legal, and financial action plans in 60 seconds. Guide families with absolute clarity.',
-    label: 'How the Care Pilot Assessment Drives Agency Revenue',
+    headline: 'Clear plan, from messy calls',
+    subheadline: 'Turn a worried family\'s story into a step-by-step plan across care, legal documents, and funding, so everyone knows what happens next.',
+    label: 'What the Care Pilot Gives Your Team and the Family',
     items: [
       {
         icon: Activity,
-        title: 'Immediate Clinical & ADL Validation',
+        title: 'Confirm Care Needs and Urgency',
         badge: 'Care Needs',
         badgeColor: 'bg-green-100 text-green-700 border-green-200',
-        description: 'Instantly evaluates a prospective client\'s care needs. For example, critical deficits in eating, bathing, and toileting to confirm immediate in-home care urgency and service fit.',
+        description: 'Records which daily activities need help, such as eating, bathing, or toileting, and whether in-home care fits now.',
       },
       {
         icon: FileSearch,
-        title: 'Automated Look-Back & Legal Flagging',
-        badge: 'Compliance',
+        title: 'Flag Issues That Need a Professional',
+        badge: 'Legal Flags',
         badgeColor: 'bg-red-100 text-red-700 border-red-200',
-        description: 'Detects complex financial hurdles, such as past asset transfers triggering Medicaid look-back penalty periods, so your team can proactively route families to qualified legal support.',
+        description: 'Spots situations, like large past gifts or savings well above the limit, that need an elder law attorney, so families get help early instead of hitting a wall later.',
       },
       {
         icon: CircleDollarSign,
-        title: 'Actionable Financial & Spend-Down Roadmaps',
-        badge: 'Asset Strategy',
+        title: 'Give Families a Step-by-Step Plan',
+        badge: 'Family Plan',
         badgeColor: 'bg-amber-100 text-amber-700 border-amber-200',
-        description: 'Flags high-asset scenarios exceeding standard limits (such as assets up to $150,000) and outlines precise legal spend-down strategies before families get overwhelmed.',
+        description: 'Turns the call into a clear checklist across care, legal documents, and funding, so families leave knowing exactly what to do next.',
       },
       {
         icon: Handshake,
-        title: 'Built-In Attorney Referral Network',
-        badge: 'Revenue Pipeline',
+        title: 'Find a Local Elder Law Attorney',
+        badge: 'Referrals',
         badgeColor: 'bg-teal-100 text-teal-700 border-teal-200',
-        description: 'Seamlessly connects families with local elder law specialists to package unconvertible financial cases into high-value reciprocal private-pay referral partnerships.',
+        description: 'Helps you connect the family with a local specialist and send the organized case summary ahead of time.',
       },
     ],
   },
@@ -787,8 +779,8 @@ function FeaturesSection() {
         {/* Section Header */}
         <div className={`text-center mb-20 transition-all duration-[900ms] ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
           <div className="inline-flex items-center px-4 py-2 bg-teal-50 border border-teal-200 rounded-full text-teal-700 text-sm font-medium mb-6">
-            <Sparkles className="w-4 h-4 mr-2" />
-            <span>Platform Features</span>
+            <Package className="w-4 h-4 mr-2" />
+            <span>Three tools, one intake call</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-800 leading-tight tracking-tight">
             What you get with{' '}
@@ -796,6 +788,9 @@ function FeaturesSection() {
               Poetiq
             </span>
           </h2>
+          <p className="mt-4 text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
+            Spend Down Planner does the math. Ellie explains it. Care Pilot turns it into a plan.
+          </p>
         </div>
 
         {/* Feature Blocks -- Zigzag Layout */}
@@ -964,38 +959,38 @@ const SHIFTS = [
     title: 'Overcoming Price Objections',
     icon: CircleDollarSign,
     before: {
-      headline: 'Inquiries die at "we can\'t afford care"',
-      body: 'Intake staff cannot navigate complex Non-MAGI limits, CSRA spousal asset shields, or Miller Trust caps. Families hang up assuming care is out of reach.',
+      headline: 'Families hang up at the price',
+      body: 'They assume paying for care means spending every dollar they\'ve saved, and your coordinator has no way to show them otherwise.',
     },
     after: {
-      headline: '3-minute financial triage, live on the call',
-      body: 'Your intake team proves care is fully achievable without risking spousal impoverishment, turning sticker shock into signed service agreements.',
+      headline: 'They hear about a path they didn\'t know existed',
+      body: 'Your coordinator shows how much of their savings may be protected and that Medicaid may be within reach with proper planning.',
     },
   },
   {
     num: '02',
-    title: 'Diagnosing Care Gaps & Penalties',
+    title: 'Spotting Care Needs & Hidden Hurdles',
     icon: Activity,
     before: {
-      headline: 'Hours lost untangling ADL deficits',
-      body: 'Staff spend hours manually checking medical needs while missing hidden financial traps like past asset transfers and look-back penalty periods.',
+      headline: 'Hours lost piecing together the situation',
+      body: 'Staff spend time manually checking care needs and often miss hurdles like large past gifts that can delay Medicaid.',
     },
     after: {
-      headline: 'ADLs validated, penalties flagged in 60 seconds',
-      body: 'The Care Pilot instantly validates care needs (eating, bathing, toileting deficits) and flags look-back transfer penalties automatically.',
+      headline: 'Care needs checked, hurdles flagged in minutes',
+      body: 'The Care Pilot records which daily activities need help and flags past gifts that may need an attorney\'s attention.',
     },
   },
   {
     num: '03',
-    title: 'Turning Dead Leads Into Referrals',
+    title: 'Giving Complex Cases a Next Step',
     icon: Briefcase,
     before: {
-      headline: 'Cold leads sit in your CRM as wasted spend',
-      body: 'Price-sensitive inquiries never yield a return because no one packages them into anything an elder law attorney would act on.',
+      headline: 'Complex cases go nowhere',
+      body: 'When a family needs legal planning, there\'s no easy way to hand them off, so the inquiry quietly goes cold.',
     },
     after: {
-      headline: 'Attorney-ready briefs generated instantly',
-      body: 'Complex spend-down and transfer cases are packaged into diagnostic reports that secure high-ticket private-pay referral partnerships with local elder law firms.',
+      headline: 'An organized brief for an elder law attorney',
+      body: 'Complex cases become organized attorney briefs, so the family gets legal help and your agency stays their care provider.',
     },
   },
 ];
@@ -1029,24 +1024,26 @@ function OldVsNewSection() {
         <div className={`text-center mb-16 transition-all duration-[900ms] ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
           <div className="inline-flex items-center px-4 py-2 bg-teal-50 border border-teal-200 rounded-full text-teal-700 text-sm font-medium mb-6">
             <TrendingUp className="w-4 h-4 mr-2" />
-            <span>Your Home Care Agency Transformation</span>
+            <span>What changes for your agency</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-800 leading-tight tracking-tight">
-            From stalled inquiries to{' '}
+            {/*From "we can't afford it"{' '}*/}
+            Shift affordability roadblocks{' '}
             <br className="hidden sm:block" />
             <span className="bg-gradient-to-r from-teal-600 to-teal-500 text-transparent bg-clip-text">
-              successful referral partnerships.
+              {/*to a clear next step.*/}
+              into planned next steps.
             </span>
           </h2>
           <p className="mt-4 text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
-            See how leading home care agencies replace manual financial guesswork with instant, real-time intake intelligence that attracts high-ticket attorneys.
+            See how agencies replace guesswork on the phone with real answers, live.
           </p>
         </div>
 
         {/* Sub-label */}
         <div className={`text-center mb-10 transition-all duration-[900ms] delay-200 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
           <p className="text-xs font-bold text-slate-400 uppercase tracking-[0.2em]">
-            The Three Shifts That Change Everything
+            Three shifts on every intake call
           </p>
         </div>
 
@@ -1146,11 +1143,11 @@ function OldVsNewSection() {
         <div className={`mt-14 text-center transition-all duration-[900ms] delay-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
           <div className="inline-flex items-center gap-3 px-6 py-3 bg-white border border-teal-200 rounded-2xl shadow-sm">
             <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-teal-100">
-              <Sparkles className="w-4 h-4 text-teal-600" />
+              <Lightbulb className="w-4 h-4 text-teal-600" />
             </div>
             <p className="text-sm text-slate-600">
               <span className="font-bold text-slate-800">Result:</span>{' '}
-              Every family intake call becomes a conversion opportunity or a paid attorney referral.
+              Every intake call ends with a next step: a care start date, a clear funding path, or a warm handoff to an elder law attorney.
             </p>
           </div>
         </div>
@@ -1192,14 +1189,14 @@ function TestimonialSection() {
         {/* Section Header */}
         <div className={`text-center mb-12 sm:mb-16 transition-all duration-[900ms] ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-800 leading-tight tracking-tight">
-            Trusted by agencies turning{' '}
+            What one agency saw{' '}
             <br className="hidden sm:block" />
             <span className="bg-gradient-to-r from-teal-600 to-teal-500 text-transparent bg-clip-text">
-              intake calls into revenue.
+              after making the switch.
             </span>
           </h2>
           <p className="mt-4 text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
-            Hear how this home care agency replaced financial guesswork with real-time triage and unlocked a high-ticket referral pipeline.
+            A multi-branch agency that accepts both private-pay and Medicaid clients shares what changed on their intake calls after 4 weeks.
           </p>
         </div>
 
@@ -1218,7 +1215,7 @@ function TestimonialSection() {
 
             <blockquote className="relative z-10">
               <p className="text-lg sm:text-xl md:text-2xl text-slate-700 italic leading-relaxed pl-4 sm:pl-8 ml-4">
-                "We were losing 40% of our inbound calls the moment families heard the cost of care. Our intake team had no way to explain Medicaid asset rules or spousal protections on the spot. With Poetiq, our coordinators now run a live financial triage in under three minutes. Families stay on the line, and we have closed more service agreements in one quarter than in the entire previous year. The attorney referral briefs alone have opened a private-pay pipeline we never knew existed."
+                "We were losing roughly four out of ten calls the moment families heard the cost of care. Our coordinators couldn't explain Medicaid or how a spouse's savings are protected. Now they run a live screening in under three minutes, families stay on the line, and we've signed more service agreements in one quarter than in the whole previous year."
               </p>
 
               <footer className="mt-8 pl-4 sm:pl-8 ml-4">
@@ -1229,22 +1226,25 @@ function TestimonialSection() {
                   </div>
                   <div>
                     <p className="text-teal-700 font-bold text-base">
-                      Sales Director, Regional Home Care Agency
+                      Sales Director, Multi-Branch Home Care Agency
                     </p>
                     <p className="text-slate-400 text-sm mt-0.5">
-                      Multi-branch agency, Southeast U.S.
+                      Southeast U.S.
                     </p>
                   </div>
                 </div>
+                <p className="mt-4 text-xs text-slate-400">
+                  Agency name withheld at their request. Results as reported by the agency.
+                </p>
               </footer>
             </blockquote>
 
             {/* Outcome Metrics */}
             <div className="mt-8 pt-8 border-t border-slate-200 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
               {[
-                { value: '3 min', label: 'Live financial triage per call' },
-                { value: '40%', label: 'Fewer lost intake inquiries' },
-                { value: 'New', label: 'Attorney referral revenue stream' },
+                { value: 'Under 3 min', label: 'Live screening per call' },
+                { value: '4 in 10', label: 'Calls lost at the price conversation before Poetiq (agency-reported)' },
+                { value: '1 quarter', label: 'To beat the previous year\'s signed agreements (agency-reported)' },
               ].map((metric, i) => (
                 <div key={i} className="text-center">
                   <p className="text-2xl sm:text-3xl font-extrabold text-teal-600">{metric.value}</p>
@@ -1261,7 +1261,7 @@ function TestimonialSection() {
             onClick={handleBookDemo}
             className="group inline-flex items-center space-x-2 border-2 border-teal-500 text-teal-600 hover:bg-teal-600 hover:text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-teal-600/20"
           >
-            <span>Book a Demo</span>
+            <span>Book a 15-Minute Demo</span>
             <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
         </div>
@@ -1291,27 +1291,42 @@ function FAQSection() {
     {
       question: 'Does my intake team need any financial or clinical training to use Poetiq?',
       answer:
-        'Not at all. Poetiq is purpose-built for non-technical intake coordinators. The Spend Down Planner and Care Pilot walk your staff through every step with plain-language prompts. No knowledge of CSRA calculations, Miller Trust caps, or look-back rules required. Your team simply enters the family details and Poetiq does the financial reasoning in real time.',
+        'Not at all. Poetiq is built for non-technical intake coordinators. The Spend Down Planner and Care Pilot walk your staff through every step with plain-language prompts. No knowledge of Medicaid rules is required. Your team enters rough estimates from the family, and Poetiq applies your state\'s rules in real time.',
     },
     {
-      question: 'How will the attorney referral brief generate revenue for my agency?',
+      question: 'What does my coordinator need from the family to run a screening?',
       answer:
-        'When a family inquiry involves complex asset transfers or spend-down scenarios your agency cannot resolve alone, Poetiq packages the financial diagnostic into a professional, attorney-ready brief. You share that brief with a partnered elder law firm, who then converts the case into a private-pay engagement. In return, attorneys reciprocate with high-value referrals back to your agency, turning what used to be a dead lead into a recurring revenue partnership.',
+        'Just a first name and rough estimates: approximate savings, monthly income, whether there\'s a spouse at home, any large gifts in the past five years, and which daily activities need help. Families don\'t need documents in front of them. Poetiq gives a clear first picture on the very first call, and the details are confirmed later with an elder law attorney.',
     },
     {
-      question: 'What does a "3-minute financial triage" look like during a live intake call?',
+      question: 'Does Poetiq help with both private-pay and Medicaid families?',
       answer:
-        'While your intake coordinator is on the phone with a prospective family, they enter basic household and financial information into the Spend Down Planner. Poetiq instantly calculates spousal asset protections, flags income cap issues requiring a Miller Trust, checks for look-back penalties, and surfaces a clear spend-down roadmap. All before the family has time to say "we can\'t afford it." The entire process takes under three minutes and keeps families engaged on the call.',
+        'Yes. Many families who call assume they\'ll pay full price until their savings are gone. Poetiq helps your coordinator see whether they may qualify for Medicaid with proper legal planning, while protecting much of their savings. Some families start care as private-pay while their application is processed, and others are covered once they qualify. Either way, they stay with your agency instead of hanging up.',
     },
     {
-      question: 'Is client data secure and compliant with healthcare privacy standards?',
+      question: 'What does a 3-minute screening look like during a live intake call?',
       answer:
-        'Yes. All client financial and medical data entered into Poetiq is protected with encryption at rest and in transit. Access is restricted to authorized team members within your agency. Poetiq is built on enterprise-grade infrastructure designed for healthcare data handling, so your compliance team can adopt it with confidence.',
+        'While your coordinator is on the phone, they enter rough household and financial estimates into the Spend Down Planner. Poetiq shows how much of the spouse\'s savings may be protected, flags income that\'s over your state\'s limit, checks for past gifts that could cause a waiting period, and outlines a clear next step. The whole process takes under three minutes and keeps families engaged on the call.',
+    },
+    {
+      question: 'Is this legal or financial advice?',
+      answer:
+        'No. Poetiq is a screening and education tool. It helps your team understand a family\'s likely options and prepares an organized brief for an elder law attorney, who handles the actual planning. Because screenings use rough estimates, results are a starting point for the conversation, not a final eligibility decision.',
+    },
+    {
+      question: 'Why does Poetiq create an attorney brief?',
+      answer:
+        'Protecting savings while qualifying for Medicaid takes careful legal planning. Poetiq organizes the family\'s situation into a clear brief, so a local elder law attorney can help them faster. Attorneys who receive well-prepared cases often think of your agency when their own clients need in-home care.',
+    },
+    {
+      question: 'How is family information protected?',
+      answer:
+        'Poetiq is designed to need very little personal information. A screening runs on a first name and rough estimates, with no full names, Social Security numbers, account numbers, or medical records. What you do enter is encrypted when stored and when sent, and only authorized members of your agency can see it. We\'re working toward offering signed HIPAA business associate agreements. Until then, we recommend keeping full client records in your existing systems.',
     },
     {
       question: 'Can Poetiq handle state-specific Medicaid rules, or is it one-size-fits-all?',
       answer:
-        'Poetiq is state-aware. The rules engine adapts to your state\'s specific Medicaid income caps, Community Spouse Resource Allowance thresholds, Miller Trust requirements, and look-back penalty calculations. Whether your agency operates in a single state or across multiple regions, the triage output reflects the exact regulatory landscape your families are subject to.',
+        'Poetiq is state-aware. It applies your state\'s income limits, protected savings amounts for spouses, income-cap trust requirements, and look-back rules. Whether your agency operates in one state or several, results reflect the rules your families actually face.',
     },
   ];
 
@@ -1326,14 +1341,14 @@ function FAQSection() {
         {/* Section Header */}
         <div className={`text-center mb-12 sm:mb-16 transition-all duration-[900ms] ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
           <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-teal-600 to-teal-500 text-white rounded-full text-sm font-medium mb-6 shadow-sm">
-            <Sparkles className="w-4 h-4 mr-2" />
+            <BookOpenText className="w-4 h-4 mr-2" />
             <span>Frequently Asked Questions</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-800 leading-tight tracking-tight">
             Questions from agency leaders
           </h2>
           <p className="mt-4 text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
-            Everything you need to know about Poetiq's intake transformation capabilities.
+            Everything you need to know before your first screening.
           </p>
         </div>
 
@@ -1422,31 +1437,30 @@ function FinalCTASection() {
         {/* Pill badge */}
         <div className="inline-flex items-center px-4 py-2 bg-white/80 border border-teal-200 rounded-full text-teal-700 text-sm font-medium mb-8 shadow-sm">
           <Clock className="w-4 h-4 mr-2" />
-          <span>See it in action in 15 minutes</span>
+          <span>See it in 15 minutes</span>
         </div>
 
         {/* Headline */}
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-800 leading-tight tracking-tight">
-          Families deserve clarity.{' '}
+          Families deserve to know their options.{' '}
           <br className="hidden sm:block" />
           <span className="bg-gradient-to-r from-teal-600 to-teal-500 text-transparent bg-clip-text">
-            Your agency deserves the revenue.
+            You deserve the tools to show them.
           </span>
         </h2>
 
         {/* Sub-headline */}
         <p className="mt-6 text-lg sm:text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed">
-          Uncover care funding, eliminate price objections,
-          and turn more family discovery calls into signed care plans
-          with intelligent Non-MAGI triage.
+          Screen care needs, show families how care can become affordable,
+          and hand off planning to an elder law attorney, all on the first call.
         </p>
 
         {/* Benefit pills */}
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
           {[
-            { icon: HeartPulse, label: 'Close care gaps on the call' },
-            { icon: ShieldCheck, label: 'Protect spousal assets instantly' },
-            { icon: Briefcase, label: 'Generate attorney referral briefs' },
+            { icon: FileSearch, label: 'First names and rough estimates only' },
+            { icon: ShieldCheck, label: 'Show what savings may be protected' },
+            { icon: Briefcase, label: 'Prepare attorney-ready cases' },
           ].map((item, i) => (
             <div
               key={i}
@@ -1464,12 +1478,11 @@ function FinalCTASection() {
             onClick={handleBookDemo}
             className="group inline-flex items-center space-x-3 bg-teal-600 hover:bg-teal-700 text-white px-8 py-4 sm:px-10 sm:py-5 rounded-xl text-lg sm:text-xl font-semibold shadow-lg shadow-teal-600/30 hover:shadow-xl hover:shadow-teal-600/40 transition-all duration-300 hover:-translate-y-0.5"
           >
-            <span>Book a Demo</span>
+            <span>Book a 15-Minute Demo</span>
             <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
           <p className="mt-4 text-sm text-slate-400">
-            {/*Quick setup &middot; No commitment required*/}
-            Quick setup &middot; Ready for you in 48hrs!
+            Set up within 48 hours
           </p>
         </div>
       </div>
