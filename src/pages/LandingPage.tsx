@@ -683,7 +683,7 @@ const FEATURES = [
   },
   {
     id: 'ask-ellie',
-    image: 'https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/poetiq_hero_spend_v2.png',
+    image: 'https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/poetiq_hero_spend_v3.png',
     headline: 'Answers, in plain language',
     subheadline: 'Families ask hard questions on the first call. Ellie explains the rule in plain language, applies your state\'s numbers, and suggests when to bring in an attorney.',
     label: 'Questions Ellie Helps Your Team Answer',
