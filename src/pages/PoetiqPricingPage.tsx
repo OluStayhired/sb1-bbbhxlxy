@@ -230,7 +230,7 @@ function PlansSection({ billing, onBillingChange }: { billing: Billing; onBillin
         </div>
 
         <p className="mt-8 text-center text-xs text-slate-400">
-          Intake capacity is an estimate. Starter includes 10M care tokens per month and Pro includes 20M; a typical intake uses 30k–50k.
+          Intake capacity is an estimate. Starter includes 10M care tokens per month and Pro includes 20M; a typical intake uses 600k–750k.
         </p>
       </div>
     </section>
