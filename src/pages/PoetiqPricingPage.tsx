@@ -212,7 +212,7 @@ function PlansSection({ billing, onBillingChange }: { billing: Billing; onBillin
             monthly={199}
             annualTotal={1990}
             annual={annual}
-            capacity="Up to ~15 intakes / month"
+            capacity="Up to ~200 intakes / month"
             features={STARTER_FEATURES}
             excluded="Downloadable Attorney-Ready Briefs"
           />
@@ -222,7 +222,7 @@ function PlansSection({ billing, onBillingChange }: { billing: Billing; onBillin
             monthly={299}
             annualTotal={2990}
             annual={annual}
-            capacity="Up to ~40 intakes / month"
+            capacity="Up to ~400 intakes / month"
             highlight
             features={['Downloadable Attorney-Ready Briefs', 'Everything in Starter', 'Double the intake capacity, so top-ups are rarely needed']}
           />
@@ -446,8 +446,8 @@ function CapacitySection() {
           </p>
           <div className="mt-8 grid sm:grid-cols-2 gap-4">
             {[
-              { plan: 'Starter', value: '~200', note: 'intakes per month' },
-              { plan: 'Pro', value: '~400', note: 'intakes per month, so you rarely think about top-ups' },
+              { plan: 'Starter', value: '~15', note: 'intakes per month' },
+              { plan: 'Pro', value: '~40', note: 'intakes per month, so you rarely think about top-ups' },
             ].map((c) => (
               <div key={c.plan} className="rounded-2xl bg-white border border-slate-200 p-6">
                 <p className="text-sm font-semibold text-slate-500">{c.plan}</p>
@@ -458,7 +458,7 @@ function CapacitySection() {
           </div>
           <p className="mt-6 flex items-start gap-2 text-xs text-slate-400 leading-relaxed">
             <Info className="w-3.5 h-3.5 mt-0.5 flex-shrink-0" />
-            Usage is measured in care tokens. A typical intake uses 30k–50k tokens. Starter includes 10M per month, Pro includes 20M.
+            Usage is measured in care tokens. A typical intake uses 600k–750k tokens. Starter includes 10M per month, Pro includes 20M.
           </p>
         </div>
       </div>
