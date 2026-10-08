@@ -185,20 +185,22 @@ function HeroSection() {
         {/* Top Pill */}
         <div className="inline-flex items-center px-4 py-2 bg-teal-50 border border-teal-200 rounded-full text-teal-700 text-sm font-medium mb-8">
           <BrainCircuit className="w-4 h-4 mr-2" />
-          <span>For home care agencies that accept private-pay and Medicaid</span>
+          <span className="sm:block hidden">For home care agencies that accept private-pay & Medicaid</span>
+          <span className="sm:hidden">For home care agencies open to private-pay & Medicaid</span>
         </div>
 
         {/* Headline */}
         <h1
           ref={headingRef}
-          className={`text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-700 leading-tight tracking-tight transition-all duration-[1200ms] ease-out ${
+          className={`text-3xl sm:text-5xl lg:text-6xl font-bold text-slate-700 leading-tight tracking-tight transition-all duration-[1200ms] ease-out ${
             headingVisible
               ? 'opacity-100 translate-y-0'
               : 'opacity-0 translate-y-4'
           }`}
         >
-          "We can't afford care" is often
-          <br />
+          "We can't afford care" is often {''}
+          {/*<br className='hidden sm:in-line' />*/}
+          <br/>
           <span
             className={`inline-block transition-all duration-[1400ms] ease-out delay-300 ${
               headingVisible
@@ -213,12 +215,16 @@ function HeroSection() {
         </h1>
 
         {/* Sub-Headline */}
-        <p className="mt-6 sm:mt-8 text-lg sm:text-xl text-slate-500 max-w-3xl mx-auto leading-relaxed font-normal">
+        <p className="sm:block hidden mt-6 sm:mt-8 text-lg sm:text-xl text-slate-500 max-w-3xl mx-auto leading-relaxed font-normal">
           {/*When families hear the price of care, most assume they'll have to drain their savings.
           With just a first name and rough estimates, Poetiq shows your coordinator in about three
           minutes whether, with proper legal planning, the family may qualify for Medicaid while
           protecting much of what they've saved.*/}
           Poetiq makes it easy for you to show families how to qualify for Medicaid and protect their life savings instead of losing the opportunity.
+        </p>
+
+        <p className="sm:hidden mt-6 sm:mt-8 text-lg sm:text-xl text-slate-500 max-w-3xl mx-auto leading-relaxed font-normal"> 
+          Poetiq makes it easy for you to show families how to qualify for Medicaid and protect their life savings.
         </p>
 
         {/* CTA Button */}
@@ -1190,7 +1196,8 @@ function TestimonialSection() {
         <div className={`text-center mb-12 sm:mb-16 transition-all duration-[900ms] ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-800 leading-tight tracking-tight">
             What one agency saw{' '}
-            <br className="hidden sm:block" />
+            {/*<br className="hidden sm:block" />*/}
+            <br/>
             <span className="bg-gradient-to-r from-teal-600 to-teal-500 text-transparent bg-clip-text">
               after making the switch.
             </span>

@@ -154,7 +154,7 @@ export function NoPaperworkBand() {
             <Lightbulb className="w-6 h-6 text-teal-300" />
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight tracking-tight">
-            Get clarity on the first call.{' '}
+            Get clarity on the first call.{' '} <br className='sm:hidden'/>
             <span className="text-teal-300">No paperwork required.</span>
           </h2>
         </div>
