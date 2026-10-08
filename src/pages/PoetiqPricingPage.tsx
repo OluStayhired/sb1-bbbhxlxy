@@ -212,7 +212,7 @@ function PlansSection({ billing, onBillingChange }: { billing: Billing; onBillin
             monthly={199}
             annualTotal={1990}
             annual={annual}
-            capacity="Up to ~200 intakes / month"
+            capacity="Up to ~15 intakes / month"
             features={STARTER_FEATURES}
             excluded="Downloadable Attorney-Ready Briefs"
           />
@@ -222,7 +222,7 @@ function PlansSection({ billing, onBillingChange }: { billing: Billing; onBillin
             monthly={299}
             annualTotal={2990}
             annual={annual}
-            capacity="Up to ~400 intakes / month"
+            capacity="Up to ~40 intakes / month"
             highlight
             features={['Downloadable Attorney-Ready Briefs', 'Everything in Starter', 'Double the intake capacity, so top-ups are rarely needed']}
           />
