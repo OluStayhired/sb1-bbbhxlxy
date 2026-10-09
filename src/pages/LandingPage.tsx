@@ -52,6 +52,7 @@ import { AttorneyBriefMock } from '../components/AttorneyBriefMock';
 import { NonMagiMock } from '../components/NonMagiMock';
 import { ScreenCareNeedsMock } from '../components/ScreenCareNeedsMock';
 import { HowCareBecomesAffordableSection, NoPaperworkBand } from '../components/AffordabilitySections';
+import EllieConcierge from '../components/EllieConcierge';
 
 
 
@@ -156,6 +157,7 @@ function LandingPage() {
       {/* Modals */}
       <CommunityModal isOpen={isCommunityModalOpen} onClose={closeCommunityModal} />
       <OnboardingQuestionsModal isOpen={isOnboardingModalOpen} onClose={closeOnboardingModal} />
+      <EllieConcierge />
     </>
   );
 }
