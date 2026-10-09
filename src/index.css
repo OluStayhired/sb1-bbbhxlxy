@@ -1,6 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* A family's own words inside a headline: shown as a quieter voice instead of quote marks */
+@layer components {
+  .spoken-voice {
+    @apply italic font-semibold text-slate-600 whitespace-nowrap pr-[0.08em];
+  }
+}
+
 @keyframes fadeIn {
     from {
       opacity: 0;
