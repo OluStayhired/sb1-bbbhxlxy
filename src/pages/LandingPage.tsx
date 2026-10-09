@@ -721,7 +721,8 @@ const FEATURES = [
   {
     id: 'care-pilot',
     image: 'https://selrznkggmoxbpflzwjz.supabase.co/storage/v1/object/public/poetiq_homepage/poetiq_hero_pilot_v1.png',
-    headline: 'Clear plan, from messy calls',
+    //headline: 'Clear plan, from messy calls',
+    headline: 'Clear plan, on the 1st call',
     subheadline: 'Turn a worried family\'s story into a step-by-step plan across care, legal documents, and funding, so everyone knows what happens next.',
     label: 'What the Care Pilot Gives Your Team and the Family',
     items: [
@@ -1034,7 +1035,7 @@ function OldVsNewSection() {
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-800 leading-tight tracking-tight">
             {/*From "we can't afford it"{' '}*/}
-            Shift affordability roadblocks{' '}
+            Transform financial roadblocks{' '}
             <br className="hidden sm:block" />
             <span className="bg-gradient-to-r from-teal-600 to-teal-500 text-transparent bg-clip-text">
               {/*to a clear next step.*/}
