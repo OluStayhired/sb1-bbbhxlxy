@@ -314,8 +314,8 @@ export function DemoButton({
 
 export function FamilyLinks() {
   const links = [
-    { to: '/elder-care-checklist', title: 'Elder care checklist', sub: 'What to sort out first' },
-    { to: '/personal-care-agreement', title: 'Personal care agreement', sub: 'Paying a family caregiver the right way' },
+    { to: 'https://app.poetiq.io/elder-care-checklist', title: 'Elder care checklist', sub: 'What to sort out first' },
+    { to: 'https://app.poetiq.io/personal-care-agreement', title: 'Personal care agreement', sub: 'Paying a family caregiver the right way' },
   ];
   return (
     <div className="flex flex-col gap-2">
