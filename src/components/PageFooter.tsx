@@ -43,17 +43,17 @@ export function PageFooter({ onOpenOnboardingModal }: PageFooterProps) {
                 <h3 className="text-xl mb-4 font-bold text-gray-700 sm:text-xl">Legal</h3>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li>
-                    <a href="/privacy.html" className="flex items-center gap-3 hover:text-red-500 transition-colors">
+                    <a href="/privacy.html" className="flex items-center gap-3 hover:text-teal-500 transition-colors">
                       privacy policy
                     </a>
                   </li>
                   <li>
-                    <a href="/terms.html" className="flex items-center gap-3 hover:text-red-500 transition-colors">
+                    <a href="/terms.html" className="flex items-center gap-3 hover:text-teal-500 transition-colors">
                       terms of service
                     </a>
                   </li>
                   <li>
-                    <a href="/cookie.html" className="flex items-center gap-3 hover:text-red-500 transition-colors">
+                    <a href="/cookie.html" className="flex items-center gap-3 hover:text-teal-500 transition-colors">
                       cookie policy
                     </a>
                   </li>
@@ -63,28 +63,28 @@ export function PageFooter({ onOpenOnboardingModal }: PageFooterProps) {
                 <h3 className="text-xl mb-4 font-bold text-gray-700 sm:text-xl">resources</h3>
                 <ul className="space-y-2 text-sm text-gray-600">
                 <li>
-                    <Link to="https://app.poetiq.io/pricing" className="flex items-center gap-3 hover:text-red-500 transition-colors">
+                    <Link to="https://app.poetiq.io/pricing" className="flex items-center gap-3 hover:text-teal-500 transition-colors">
                         pricing
                     </Link>
                   </li>
                   <li>
-                    <a href="https://app.poetiq.io/elder-care-checklist" className="flex items-center gap-3 hover:text-red-500 transition-colors">
+                    <a href="https://app.poetiq.io/elder-care-checklist" className="flex items-center gap-3 hover:text-teal-500 transition-colors">
                         elder care document checklist
                     </a>
                   </li>
                   <li>
-                    <a href="https://app.poetiq.io/personal-care-agreement" className="flex items-center gap-3 hover:text-red-500 transition-colors">
+                    <a href="https://app.poetiq.io/personal-care-agreement" className="flex items-center gap-3 hover:text-teal-500 transition-colors">
                         personal care agreement
                     </a>
                   </li>
                   <li>
-                    <a href="https://app.poetiq.io/personal-patient-property-record" className="flex items-center gap-3 hover:text-red-500 transition-colors">
+                    <a href="https://app.poetiq.io/personal-patient-property-record" className="flex items-center gap-3 hover:text-teal-500 transition-colors">
                         personal property record
                     </a>
                   </li>
                   {/*
                   <li className='w-full'>
-                    <Link to="https://app.poetiq.io/login" className="flex items-center gap-3 text-white hover:text-red-500 transition-colors">
+                    <Link to="https://app.poetiq.io/login" className="flex items-center gap-3 text-white hover:text-teal-500 transition-colors">
                         home-care
                     </Link>
                   </li>  
