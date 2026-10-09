@@ -198,7 +198,7 @@ function HeroSection() {
               : 'opacity-0 translate-y-4'
           }`}
         >
-          "We can't afford care" is often {''}
+          <span className="spoken-voice">We can’t afford care</span> is often{' '}
           {/*<br className='hidden sm:in-line' />*/}
           <br/>
           <span
@@ -220,11 +220,11 @@ function HeroSection() {
           With just a first name and rough estimates, Poetiq shows your coordinator in about three
           minutes whether, with proper legal planning, the family may qualify for Medicaid while
           protecting much of what they've saved.*/}
-          Poetiq makes it easy for you to show families how to qualify for Medicaid and protect their life savings.
+          Poetiq makes it easy for you to show private-pay families how to qualify for Medicaid and protect their life savings.
         </p>
 
         <p className="sm:hidden mt-6 sm:mt-8 text-lg sm:text-xl text-slate-500 max-w-3xl mx-auto leading-relaxed font-normal"> 
-          Poetiq makes it easy for you to show families how to qualify for Medicaid and protect their life savings.
+          Poetiq makes it easy for you to show private-pay families how to qualify for Medicaid and protect their life savings.
         </p>
 
         {/* CTA Button */}
