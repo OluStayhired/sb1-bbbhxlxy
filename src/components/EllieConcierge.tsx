@@ -4,16 +4,22 @@ import {
   SESSION_QUESTION_CAP,
   askEllie,
   bookingLink,
+  calculateCliffCost,
   calculatePriceShock,
   campaignGreeting,
+  careManagerGreeting,
   formatMoney,
   readUtm,
   runSampleScreening,
   shouldAutoOpen,
   submitLead,
   trackEvent,
+  type Audience,
   type CalculatorInput,
   type CalculatorResult,
+  type CliffInput,
+  type CliffResult,
+  type DemoKind,
   type SampleScreening,
   type SampleStateAbbr,
 } from '../utils/ellieConcierge';
@@ -21,6 +27,7 @@ import {
   BriefCard,
   CalcResultCard,
   CalcStepCard,
+  CliffResultCard,
   DemoButton,
   FamilyLinks,
   FamilyReferralForm,
@@ -30,15 +37,17 @@ import {
   type CalcStep,
   type StarterId,
 } from './EllieConciergeCards';
+import { CM_CALC_STEPS, CM_COPY, cmLeadSummary, cmSampleScript } from './ellieCareManagerScript';
 
 type Card =
   | { type: 'starters' }
   | { type: 'calcStep'; step: CalcStep }
   | { type: 'calcResult'; result: CalculatorResult }
+  | { type: 'cliffResult'; result: CliffResult }
   | { type: 'statePicker' }
   | { type: 'screening'; s: SampleScreening }
   | { type: 'brief'; s: SampleScreening }
-  | { type: 'demo'; kind: 'agency' | 'partner' }
+  | { type: 'demo'; kind: DemoKind }
   | { type: 'familyLinks' }
   | { type: 'familyReferral' };
 
@@ -119,11 +128,14 @@ function EllieAvatar({ size, ring = 'border-white' }: { size: 'sm' | 'lg'; ring?
   );
 }
 
-export default function EllieConcierge() {
+export default function EllieConcierge({ audience = 'agency' }: { audience?: Audience }) {
+  const isCm = audience === 'care_manager';
+  const mainKind: DemoKind = isCm ? 'care_manager' : 'agency';
+  const calcSteps = isCm ? CM_CALC_STEPS : CALC_STEPS;
   const [utm] = useState(() => readUtm(window.location.search));
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Msg[]>(() => [
-    { id: 1, from: 'ellie', text: campaignGreeting(utm) },
+    { id: 1, from: 'ellie', text: isCm ? careManagerGreeting(utm) : campaignGreeting(utm) },
     { id: 2, from: 'ellie', card: { type: 'starters' } },
   ]);
   const [typing, setTyping] = useState(false);
@@ -135,6 +147,8 @@ export default function EllieConcierge() {
   const tracked = useRef(false);
   const calc = useRef<Partial<CalculatorInput>>({});
   const lastResult = useRef<CalculatorResult | null>(null);
+  const cliff = useRef<Partial<CliffInput>>({});
+  const lastCliff = useRef<CliffResult | null>(null);
   const lastSample = useRef<SampleScreening | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -191,30 +205,63 @@ export default function EllieConcierge() {
     return parts.join(' ') || 'Clicked demo from homepage chat.';
   };
 
-  const book = async (kind: 'agency' | 'partner') => {
+  const book = async (kind: DemoKind) => {
     const win = window.open(bookingLink(utm, kind), '_blank');
     if (win) win.opener = null;
+    const summary =
+      kind === 'partner'
+        ? `Attorney / estate planner asked for a partner demo${isCm ? ' (from Care Manager page)' : ''}.`
+        : kind === 'care_manager'
+          ? cmLeadSummary(lastCliff.current, lastSample.current)
+          : agencySummary();
     try {
-      await submitLead(utm, {
-        leadType: kind === 'partner' ? 'partner_demo' : 'agency_demo',
-        summary: kind === 'partner' ? 'Attorney / estate planner asked for a partner demo.' : agencySummary(),
-      });
+      await submitLead(utm, { leadType: `${kind}_demo`, summary });
     } catch (err) {
       console.error('Ellie lead failed', err);
     }
     if (!win) window.location.href = bookingLink(utm, kind);
   };
 
-  const askCalcStep = (i: number) => say([{ text: CALC_STEPS[i].prompt }, { card: { type: 'calcStep', step: CALC_STEPS[i].step } }]);
+  const askCalcStep = (i: number) => say([{ text: calcSteps[i].prompt }, { card: { type: 'calcStep', step: calcSteps[i].step } }]);
+
+  const finishCliff = async () => {
+    const result = calculateCliffCost(cliff.current as CliffInput);
+    lastCliff.current = result;
+    trackEvent(utm, {
+      outcome: 'calculator_done',
+      answers: {
+        calculator: {
+          audience: 'care_manager',
+          privateClients: result.privateClients,
+          monthlyBilling: result.monthlyBilling,
+          lostPerYear: result.lostPerYear,
+          researchHours: result.researchHours,
+          annualLost: result.annualLost,
+          annualRetained: result.annualRetained,
+        },
+      },
+    });
+    await say([
+      { text: CM_COPY.calcResultIntro },
+      { card: { type: 'cliffResult', result } },
+      { text: CM_COPY.calcResultOutro },
+      { card: { type: 'demo', kind: 'care_manager' } },
+    ]);
+  };
 
   const onCalcAnswer = async (step: CalcStep, value: number, label: string) => {
     push('user', { text: label });
-    if (step.key === 'acceptsMedicaid') calc.current.acceptsMedicaid = value === 1;
-    else calc.current[step.key] = value;
+    if (isCm) cliff.current[step.key as keyof CliffInput] = value;
+    else if (step.key === 'acceptsMedicaid') calc.current.acceptsMedicaid = value === 1;
+    else calc.current[step.key as 'intakeCalls' | 'lostOnPrice' | 'clientValue'] = value;
 
-    const idx = CALC_STEPS.findIndex((c) => c.step.key === step.key);
-    if (idx < CALC_STEPS.length - 1) {
+    const idx = calcSteps.findIndex((c) => c.step.key === step.key);
+    if (idx < calcSteps.length - 1) {
       await askCalcStep(idx + 1);
+      return;
+    }
+    if (isCm) {
+      await finishCliff();
       return;
     }
 
@@ -248,6 +295,18 @@ export default function EllieConcierge() {
     lastSample.current = s;
     push('user', { text: s.stateName });
     trackEvent(utm, { outcome: 'sample_done', answers: { sample: { state: abbr } } });
+    if (isCm) {
+      const t = cmSampleScript(s);
+      await say([
+        { text: t.running },
+        { card: { type: 'screening', s } },
+        { text: t.afterScreening },
+        { card: { type: 'brief', s } },
+        { text: t.closing },
+        { card: { type: 'demo', kind: 'care_manager' } },
+      ]);
+      return;
+    }
     await say([
       { text: `Running Margaret and Frank's numbers under ${s.stateName} rules...` },
       { card: { type: 'screening', s } },
@@ -261,19 +320,26 @@ export default function EllieConcierge() {
   };
 
   const onStarter = async (id: StarterId) => {
-    const labels: Record<StarterId, string> = {
-      calculator: 'What is price shock costing my agency?',
-      sample: 'Show me a sample screening',
-      partner: "I'm an attorney or estate planner",
-      family: "I'm looking for care for a family member",
-    };
+    const labels: Record<StarterId, string> = isCm
+      ? CM_COPY.starterLabels
+      : {
+          calculator: 'What is price shock costing my agency?',
+          sample: 'Show me a sample screening',
+          partner: "I'm an attorney or estate planner",
+          family: "I'm looking for care for a family member",
+        };
     push('user', { text: labels[id] });
     trackEvent(utm, { path: id });
 
     if (id === 'calculator') {
       calc.current = {};
-      await say([{ text: "Let's find out. Four quick questions, ballpark numbers are fine." }]);
+      cliff.current = {};
+      await say([{ text: isCm ? CM_COPY.calcIntro : "Let's find out. Four quick questions, ballpark numbers are fine." }]);
       await askCalcStep(0);
+    } else if (id === 'sample' && isCm) {
+      await say([{ text: CM_COPY.sampleIntro }, { text: 'Which state do they live in?' }, { card: { type: 'statePicker' } }]);
+    } else if (id === 'partner' && isCm) {
+      await say([...CM_COPY.partnerLines.map((text) => ({ text })), { card: { type: 'demo', kind: 'partner' } }]);
     } else if (id === 'sample') {
       await say([
         {
@@ -300,7 +366,9 @@ export default function EllieConcierge() {
         { text: 'These two free guides are a good place to start:' },
         { card: { type: 'familyLinks' } },
         {
-          text: "If you're already talking to a home care agency, tell us who. We'll offer them Poetiq so they can walk you through your options for free.",
+          text: isCm
+            ? CM_COPY.familyReferralAsk
+            : "If you're already talking to a home care agency, tell us who. We'll offer them Poetiq so they can walk you through your options for free.",
         },
         { card: { type: 'familyReferral' } },
       ]);
@@ -313,7 +381,7 @@ export default function EllieConcierge() {
         leadType: 'family_referral',
         agencyName,
         contactEmail: email || undefined,
-        summary: 'Family used homepage chat and named their agency.',
+        summary: isCm ? CM_COPY.familyReferralSummary : 'Family used homepage chat and named their agency.',
       });
     } catch {
       return false;
@@ -333,7 +401,7 @@ export default function EllieConcierge() {
     push('user', { text: q });
     setTyping(true);
     try {
-      const res = await askEllie(utm, q);
+      const res = await askEllie(utm, q, audience);
       setTyping(false);
       setRemaining(res.remaining);
       if (res.status === 'ok') {
@@ -341,7 +409,7 @@ export default function EllieConcierge() {
         if (res.remaining === 0) {
           await say([
             { text: "That was your last typed question for now. The best next step is a quick 15-minute walkthrough." },
-            { card: { type: 'demo', kind: 'agency' } },
+            { card: { type: 'demo', kind: mainKind } },
           ]);
         }
       } else if (res.status === 'out_of_scope') {
@@ -351,7 +419,7 @@ export default function EllieConcierge() {
       } else if (res.status === 'session_limit') {
         await say([
           { text: "You've used all your typed questions. I'd love to keep going on a quick call instead." },
-          { card: { type: 'demo', kind: 'agency' } },
+          { card: { type: 'demo', kind: mainKind } },
         ]);
       } else if (res.status === 'daily_limit') {
         setAiPaused(true);
@@ -371,7 +439,7 @@ export default function EllieConcierge() {
   const renderCard = (card: Card, active: boolean) => {
     switch (card.type) {
       case 'starters':
-        return <StarterChoices active={active && !typing} onPick={onStarter} />;
+        return <StarterChoices active={active && !typing} onPick={onStarter} audience={audience} />;
       case 'calcStep':
         return (
           <CalcStepCard
@@ -382,6 +450,8 @@ export default function EllieConcierge() {
         );
       case 'calcResult':
         return <CalcResultCard r={card.result} />;
+      case 'cliffResult':
+        return <CliffResultCard r={card.result} />;
       case 'statePicker':
         return <StatePicker active={active && !typing} onPick={onStatePick} />;
       case 'screening':
@@ -392,12 +462,16 @@ export default function EllieConcierge() {
         return card.kind === 'partner' ? (
           <DemoButton label="Book a partner demo" note="15 minutes. Pick any time that suits you." onClick={() => book('partner')} />
         ) : (
-          <DemoButton label="Book a 15-minute demo" note="We'll bring your numbers to the call." onClick={() => book('agency')} />
+          <DemoButton
+            label="Book a 15-minute demo"
+            note={card.kind === 'care_manager' ? CM_COPY.demoNote : "We'll bring your numbers to the call."}
+            onClick={() => book(card.kind)}
+          />
         );
       case 'familyLinks':
         return <FamilyLinks />;
       case 'familyReferral':
-        return <FamilyReferralForm active={active} onSubmit={onFamilyReferral} />;
+        return <FamilyReferralForm active={active} onSubmit={onFamilyReferral} audience={audience} />;
     }
   };
 
@@ -419,7 +493,9 @@ export default function EllieConcierge() {
           </span>
           <span className="text-left leading-tight">
             <span className="block text-sm font-semibold">Try Ellie</span>
-            <span className="block text-[11px] text-slate-300">See what price shock costs you</span>
+            <span className="block text-[11px] text-slate-300">
+              {isCm ? CM_COPY.launcherSub : 'See what price shock costs you'}
+            </span>
           </span>
         </button>
       )}
@@ -437,7 +513,9 @@ export default function EllieConcierge() {
             </span>
             <div className="flex-1">
               <div className="text-sm font-semibold">Ellie</div>
-              <div className="text-[11px] text-slate-300">Care-funding concierge &middot; Powered by Poetiq</div>
+              <div className="text-[11px] text-slate-300">
+                {isCm ? CM_COPY.header : 'Care-funding concierge \u00b7 Powered by Poetiq'}
+              </div>
             </div>
             <button
               type="button"

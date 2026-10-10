@@ -5,6 +5,7 @@ import {
   ArrowRight,
   Calculator,
   CalendarCheck,
+  Clock,
   CheckCircle2,
   ClipboardList,
   FileText,
@@ -19,24 +20,44 @@ import {
   PLAN_PRICES,
   SAMPLE_STATES,
   formatMoney,
+  type Audience,
   type CalculatorResult,
+  type CliffResult,
   type SampleScreening,
   type SampleStateAbbr,
 } from '../utils/ellieConcierge';
 
 export type StarterId = 'calculator' | 'sample' | 'partner' | 'family';
 
-const STARTERS: { id: StarterId; label: string; icon: typeof Calculator }[] = [
-  { id: 'calculator', label: 'What is price shock costing my agency?', icon: Calculator },
-  { id: 'sample', label: 'Show me a 60-second sample screening', icon: ClipboardList },
-  { id: 'partner', label: "I'm an elder law attorney or estate planner", icon: Scale },
-  { id: 'family', label: "I'm looking for care for a family member", icon: HeartHandshake },
-];
+type Starter = { id: StarterId; label: string; icon: typeof Calculator };
 
-export function StarterChoices({ onPick, active }: { onPick: (id: StarterId) => void; active: boolean }) {
+const STARTERS: Record<Audience, Starter[]> = {
+  agency: [
+    { id: 'calculator', label: 'What is price shock costing my agency?', icon: Calculator },
+    { id: 'sample', label: 'Show me a 60-second sample screening', icon: ClipboardList },
+    { id: 'partner', label: "I'm an elder law attorney or estate planner", icon: Scale },
+    { id: 'family', label: "I'm looking for care for a family member", icon: HeartHandshake },
+  ],
+  care_manager: [
+    { id: 'calculator', label: 'What is the Medicaid cliff costing my practice?', icon: Calculator },
+    { id: 'sample', label: 'Show me a 60-second asset map', icon: ClipboardList },
+    { id: 'partner', label: "I'm an elder law attorney or estate planner", icon: Scale },
+    { id: 'family', label: "I'm a family member with a Care Manager", icon: HeartHandshake },
+  ],
+};
+
+export function StarterChoices({
+  onPick,
+  active,
+  audience = 'agency',
+}: {
+  onPick: (id: StarterId) => void;
+  active: boolean;
+  audience?: Audience;
+}) {
   return (
     <div className="flex flex-col gap-2">
-      {STARTERS.map(({ id, label, icon: Icon }, i) => (
+      {STARTERS[audience].map(({ id, label, icon: Icon }, i) => (
         <button
           key={id}
           type="button"
@@ -57,7 +78,15 @@ export function StarterChoices({ onPick, active }: { onPick: (id: StarterId) => 
 }
 
 export interface CalcStep {
-  key: 'intakeCalls' | 'lostOnPrice' | 'clientValue' | 'acceptsMedicaid';
+  key:
+    | 'intakeCalls'
+    | 'lostOnPrice'
+    | 'clientValue'
+    | 'acceptsMedicaid'
+    | 'privateClients'
+    | 'monthlyBilling'
+    | 'lostPerYear'
+    | 'researchHours';
   chips: { label: string; value: number }[];
   prefix?: string;
   allowCustom: boolean;
@@ -163,6 +192,57 @@ export function CalcResultCard({ r }: { r: CalculatorResult }) {
           Estimate assumes {Math.round(r.recoveryRate * 100)}% of price-lost families can be helped
           {r.acceptsMedicaid ? ' with Medicaid, VA and savings planning' : ' with VA, insurance and savings planning'}.
           Your results will vary.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+export function CliffResultCard({ r }: { r: CliffResult }) {
+  return (
+    <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+      <div className="bg-gradient-to-br from-slate-800 to-slate-900 px-4 py-3.5 text-white">
+        <div className="flex items-center gap-1.5 text-xs font-medium uppercase tracking-wide text-red-300">
+          <TrendingDown className="h-3.5 w-3.5" /> Lost at the Medicaid cliff
+        </div>
+        <div className="mt-1 text-2xl font-bold">
+          {formatMoney(r.annualLost)}
+          <span className="text-sm font-medium text-slate-300"> / year</span>
+        </div>
+        <div className="text-xs text-slate-300">
+          {r.lostPerYear} {r.lostPerYear === 1 ? 'client' : 'clients'} let go right when Medicaid planning starts
+        </div>
+      </div>
+      <div className="space-y-3 px-4 py-3.5">
+        <div className="flex items-start gap-2.5">
+          <Clock className="mt-0.5 h-4 w-4 shrink-0 text-amber-600" />
+          <div className="text-sm text-slate-700">
+            Plus <strong>{r.researchHours * 12} unbillable hours</strong> a year on Medicaid research, about{' '}
+            <strong>{formatMoney(r.unbillableValue)}</strong> of your time.
+          </div>
+        </div>
+        <div className="flex items-start gap-2.5">
+          <TrendingUp className="mt-0.5 h-4 w-4 shrink-0 text-teal-600" />
+          <div className="text-sm text-slate-700">
+            Keep just <strong>{r.retainedClients}</strong> {r.retainedClients === 1 ? 'client' : 'clients'} through the
+            transition and that's <strong className="text-teal-700">{formatMoney(r.annualRetained)}/year</strong> back.
+          </div>
+        </div>
+        <div className="grid grid-cols-2 gap-2">
+          <div className="rounded-xl bg-teal-50 px-3 py-2">
+            <div className="text-[11px] font-medium uppercase tracking-wide text-teal-700">Hours back</div>
+            <div className="text-sm font-semibold text-slate-800">~{r.hoursBack} a month</div>
+          </div>
+          <div className="rounded-xl bg-emerald-50 px-3 py-2">
+            <div className="text-[11px] font-medium uppercase tracking-wide text-emerald-700">Return</div>
+            <div className="text-sm font-semibold text-slate-800">
+              {r.proMultiple >= 1 ? `${r.proMultiple}x the cost` : 'Pays for itself fast'}
+            </div>
+          </div>
+        </div>
+        <p className="text-[11px] leading-relaxed text-slate-400">
+          Estimate assumes a kept client stays about 12 more months, half of cliff losses can be kept, and your time is
+          worth {formatMoney(r.hourlyRate)}/hour. Your results will vary.
         </p>
       </div>
     </div>
@@ -336,13 +416,29 @@ export function FamilyLinks() {
   );
 }
 
+const REFERRAL_COPY: Record<Audience, { field: string; missing: string; note: string }> = {
+  agency: {
+    field: 'Agency name and city',
+    missing: "Please add the agency's name.",
+    note: "We'll reach out to the agency, not sell to you.",
+  },
+  care_manager: {
+    field: "Care Manager's name, practice and city",
+    missing: "Please add your Care Manager's name or practice.",
+    note: "We'll reach out to your Care Manager, not sell to you.",
+  },
+};
+
 export function FamilyReferralForm({
   active,
   onSubmit,
+  audience = 'agency',
 }: {
   active: boolean;
   onSubmit: (agencyName: string, email: string) => Promise<boolean>;
+  audience?: Audience;
 }) {
+  const copy = REFERRAL_COPY[audience];
   const [agency, setAgency] = useState('');
   const [email, setEmail] = useState('');
   const [busy, setBusy] = useState(false);
@@ -351,7 +447,7 @@ export function FamilyReferralForm({
   const submit = async (e: FormEvent) => {
     e.preventDefault();
     if (!agency.trim()) {
-      setError("Please add the agency's name.");
+      setError(copy.missing);
       return;
     }
     if (email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
@@ -372,8 +468,8 @@ export function FamilyReferralForm({
         onChange={(e) => setAgency(e.target.value)}
         disabled={!active || busy}
         maxLength={150}
-        placeholder="Agency name and city"
-        aria-label="Agency name and city"
+        placeholder={copy.field}
+        aria-label={copy.field}
         className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm text-slate-800 outline-none transition focus:border-teal-500 focus:ring-2 focus:ring-teal-100 disabled:bg-slate-50"
       />
       <input
@@ -396,7 +492,7 @@ export function FamilyReferralForm({
         Let them know about Poetiq
       </button>
       <p className="text-[11px] leading-relaxed text-slate-400">
-        We'll reach out to the agency, not sell to you. Please don't include your loved one's name.
+        {copy.note} Please don't include your loved one's name.
       </p>
     </form>
   );

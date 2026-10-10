@@ -63,8 +63,13 @@ export function PageFooter({ onOpenOnboardingModal }: PageFooterProps) {
                 <h3 className="text-xl mb-4 font-bold text-gray-700 sm:text-xl">resources</h3>
                 <ul className="space-y-2 text-sm text-gray-600">
                 <li>
+                    <Link to="https://app.poetiq.io/for-care-managers" className="flex items-center gap-3 hover:text-teal-500 transition-colors">
+                        Poetiq for care managers
+                    </Link>
+                  </li>
+                  <li>
                     <Link to="https://app.poetiq.io/pricing" className="flex items-center gap-3 hover:text-teal-500 transition-colors">
-                        pricing
+                        Poetiq pricing
                     </Link>
                   </li>
                   <li>

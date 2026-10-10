@@ -16,7 +16,9 @@ export interface Utm {
   content?: string;
 }
 
-export type LeadType = 'agency_demo' | 'partner_demo' | 'family_referral';
+export type LeadType = 'agency_demo' | 'partner_demo' | 'care_manager_demo' | 'family_referral';
+export type Audience = 'agency' | 'care_manager';
+export type DemoKind = 'agency' | 'partner' | 'care_manager';
 export type Outcome = 'opened' | 'calculator_done' | 'sample_done';
 export type Path = 'calculator' | 'sample' | 'partner' | 'family' | 'question';
 
@@ -73,12 +75,23 @@ export function campaignGreeting(utm: Utm): string {
   return "Hi, I'm Ellie, Poetiq's care-funding concierge. I help agencies keep families who walk away over price. Where would you like to start?";
 }
 
-export function bookingLink(utm: Utm, kind: 'agency' | 'partner'): string {
+export function careManagerGreeting(utm: Utm): string {
+  const c = `${utm.campaign ?? ''} ${utm.content ?? ''}`.toLowerCase();
+  if (/attorney|estate|planner|partner|law/.test(c)) {
+    return "Hi, I'm Ellie. If you're an elder law attorney, I can show you how Care Managers using Poetiq send you ready-to-plan cases.";
+  }
+  if (/medicaid|screen|spend|sample/.test(c)) {
+    return "Hi, I'm Ellie. Want to watch me map a client's money and find their Medicaid cliff in about 60 seconds? No sign-up needed.";
+  }
+  return "Hi, I'm Ellie. Want to see what the Medicaid cliff is costing your practice? It takes about 30 seconds.";
+}
+
+export function bookingLink(utm: Utm, kind: DemoKind): string {
   const params = new URLSearchParams({
     utm_source: 'ellie',
-    utm_medium: 'homepage_chat',
+    utm_medium: kind === 'care_manager' ? 'care_manager_page_chat' : 'homepage_chat',
     utm_campaign: utm.campaign ?? 'direct',
-    utm_content: kind === 'partner' ? 'partner_demo' : 'agency_demo',
+    utm_content: `${kind}_demo`,
   });
   return `${BOOKING_URL}?${params.toString()}`;
 }
@@ -118,8 +131,8 @@ export type AskResult =
   | { status: 'ok'; answer: string; disclaimer: string; remaining: number }
   | { status: 'out_of_scope' | 'session_limit' | 'daily_limit' | 'unavailable'; remaining: number };
 
-export async function askEllie(utm: Utm, question: string): Promise<AskResult> {
-  const data = await post<Partial<AskResult>>({ action: 'ask', utm, question });
+export async function askEllie(utm: Utm, question: string, audience: Audience = 'agency'): Promise<AskResult> {
+  const data = await post<Partial<AskResult>>({ action: 'ask', utm, question, audience });
   if (typeof data.status !== 'string' || typeof data.remaining !== 'number') {
     throw new Error('Unexpected response');
   }
@@ -161,6 +174,48 @@ export function calculatePriceShock(input: CalculatorInput): CalculatorResult {
     monthlyRecovered,
     recoveryRate,
     proMultiple: Math.floor(monthlyRecovered / PLAN_PRICES.pro),
+  };
+}
+
+// ── Medicaid-cliff calculator (Care Managers) ─────────────────────────────
+const CM_HOURLY_RATE = 150;
+const CM_RETAINED_SHARE = 0.5;
+const CM_HOURS_SAVED_SHARE = 0.8;
+
+export interface CliffInput {
+  privateClients: number;
+  monthlyBilling: number;
+  lostPerYear: number;
+  researchHours: number;
+}
+
+export interface CliffResult extends CliffInput {
+  annualLost: number;
+  unbillableValue: number;
+  retainedClients: number;
+  annualRetained: number;
+  hoursBack: number;
+  proMultiple: number;
+  hourlyRate: number;
+}
+
+export function calculateCliffCost(input: CliffInput): CliffResult {
+  const lost = Math.min(input.lostPerYear, input.privateClients);
+  // A client kept through the Medicaid transition is roughly another year of engagement.
+  const annualLost = lost * input.monthlyBilling * 12;
+  const retainedClients = lost > 0 ? Math.max(1, Math.round(lost * CM_RETAINED_SHARE)) : 0;
+  const annualRetained = retainedClients * input.monthlyBilling * 12;
+  const hoursBack = Math.round(input.researchHours * CM_HOURS_SAVED_SHARE);
+  return {
+    ...input,
+    lostPerYear: lost,
+    annualLost,
+    unbillableValue: input.researchHours * 12 * CM_HOURLY_RATE,
+    retainedClients,
+    annualRetained,
+    hoursBack,
+    proMultiple: Math.floor(annualRetained / (PLAN_PRICES.pro * 12)),
+    hourlyRate: CM_HOURLY_RATE,
   };
 }
 

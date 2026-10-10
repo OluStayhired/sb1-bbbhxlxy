@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import {
   ArrowRight,
   BrainCircuit,
@@ -231,13 +232,22 @@ function HeroSection() {
 
         {/* CTA Button */}
         <div className="mt-10 sm:mt-12">
-          <button
-            onClick={handleBookDemo}
-            className="group inline-flex items-center space-x-3 bg-teal-600 hover:bg-teal-700 text-white px-8 py-4 sm:px-10 sm:py-5 rounded-xl text-lg sm:text-xl font-semibold shadow-lg shadow-teal-600/30 hover:shadow-xl hover:shadow-teal-600/40 transition-all duration-300 hover:-translate-y-0.5"
-          >
-            <span>Book a 15-Minute Demo</span>
-            <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-          </button>
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4">
+            <button
+              onClick={handleBookDemo}
+              className="group inline-flex items-center justify-center space-x-3 bg-teal-600 hover:bg-teal-700 text-white border-2 border-teal-600 hover:border-teal-700 px-8 py-4 sm:px-10 sm:py-5 rounded-xl text-lg sm:text-xl font-semibold shadow-lg shadow-teal-600/30 hover:shadow-xl hover:shadow-teal-600/40 transition-all duration-300 hover:-translate-y-0.5"
+            >
+              <span>Book a 15-Minute Demo</span>
+              <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+            </button>
+            <Link
+              to="/for-care-managers"
+              className="group inline-flex items-center justify-center space-x-3 bg-white hover:bg-teal-50 text-teal-700 border-2 border-teal-600 px-8 py-4 sm:px-10 sm:py-5 rounded-xl text-lg sm:text-xl font-semibold shadow-sm hover:shadow-lg hover:shadow-teal-600/15 transition-all duration-300 hover:-translate-y-0.5 focus:outline-none focus-visible:ring-4 focus-visible:ring-teal-200"
+            >
+              <span>For Care Managers</span>
+              <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
+          </div>
 
           {/* Trust Indicators */}
           <div className="hidden sm:flex flex-wrap items-center justify-center gap-6 mt-8 text-sm text-gray-500">

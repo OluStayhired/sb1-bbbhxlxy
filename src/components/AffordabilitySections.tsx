@@ -10,7 +10,7 @@ import {
   FileX, Lightbulb, Speech, Sparkles, HeartHandshake,
 } from 'lucide-react';
 
-function useRevealOnScroll<T extends Element>(threshold = 0.15) {
+export function useRevealOnScroll<T extends Element>(threshold = 0.15) {
   const ref = useRef<T>(null);
   const [isVisible, setIsVisible] = useState(false);
 
