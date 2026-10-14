@@ -20,6 +20,7 @@ interface CareManagerVideoPlayerProps {
   onLearnMore: () => void;
   onProgress?: (fraction: number) => void;
   onEndedChange?: (ended: boolean) => void;
+  endHeadline?: string;
 }
 
 const formatTime = (s: number) => {
@@ -35,7 +36,14 @@ const isInteractive = (el: EventTarget | null) => {
   return t.isContentEditable || ['INPUT', 'TEXTAREA', 'SELECT', 'BUTTON', 'A'].includes(t.tagName);
 };
 
-export function CareManagerVideoPlayer({ src, onBook, onLearnMore, onProgress, onEndedChange }: CareManagerVideoPlayerProps) {
+export function CareManagerVideoPlayer({
+  src,
+  onBook,
+  onLearnMore,
+  onProgress,
+  onEndedChange,
+  endHeadline = 'Ready to see it with your own clients?',
+}: CareManagerVideoPlayerProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const barRef = useRef<HTMLDivElement>(null);
@@ -268,7 +276,7 @@ export function CareManagerVideoPlayer({ src, onBook, onLearnMore, onProgress, o
         <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-950/85 px-6 text-center backdrop-blur-sm animate-fade-in">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-teal-300">Thanks for watching</p>
           <h3 className="mt-3 max-w-lg text-xl sm:text-3xl font-bold leading-tight text-white">
-            Ready to see it with your own clients?
+            {endHeadline}
           </h3>
           <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center gap-3">
             <button

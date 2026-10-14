@@ -2,7 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
 import CareManagerVideoPage from './pages/CareManagerVideoPage';
-import CareManagerLandingPage from './pages/CareManagerLandingPage';
+import HomeCareAgencyVideoPage from './pages/HomeCareAgencyVideoPage';
+import CareManagerLandingPage from './pages/CareManagerLandingPage'
 import { PoetiqPricingPage } from './pages/PoetiqPricingPage';
 import Dashboard from './pages/Dashboard';
 import { AuthProvider, useAuth } from './context/AuthContext';
@@ -65,7 +66,8 @@ function AppRoutes() {
     <Routes>
       <Route path="/" element={<LandingPage />} />
       <Route path="/for-care-managers" element={<CareManagerLandingPage />} />
-      <Route path="/care-manager-video" element={<CareManagerVideoPage />} />      
+      <Route path="/care-manager-video" element={<CareManagerVideoPage />} />   
+      <Route path="/home-care-agency-video" element={<HomeCareAgencyVideoPage />} />   
       <Route path="/pricing" element={<PoetiqPricingPage />} />
       <Route path="/blog" element={<BlogListPage />} />    
       <Route path="blog/:slug" element={<BlogPostPage />} /> 
