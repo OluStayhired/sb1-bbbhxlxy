@@ -285,7 +285,8 @@ const FEATURES = [
   },
   {
     id: 'care-pilot',
-    image: `${IMG_BASE}/poetiq_hero_pilot_v1.png`,
+    //image: `${IMG_BASE}/poetiq_hero_pilot_v1.png`,
+    image: `${IMG_BASE}/poetiq_hero_pilot_v2.png`,
     headline: 'Medicaid roadmap for families.',
     subheadline:
       'Turn your assessment into a polished, institutional-grade roadmap across care, legal and funding. A deliverable you can bill for.',
