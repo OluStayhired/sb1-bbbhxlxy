@@ -38,64 +38,88 @@ export function PageFooter({ onOpenOnboardingModal }: PageFooterProps) {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
           
                {/* Legal */}
-              <div>
+               <div>
                 {/*<h3 className="font-semibold mb-4">Legal</h3>*/}
-                <h3 className="text-xl mb-4 font-bold text-gray-700 sm:text-xl">Legal</h3>
+                <h3 className="text-xl mb-4 font-bold text-gray-700 sm:text-xl">Company</h3>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li>
+                    <Link to="/pricing" className="flex items-center gap-3 hover:text-teal-500 transition-colors">
+                        Pricing
+                    </Link>
+                  </li>
+                  <li>
                     <a href="/privacy.html" className="flex items-center gap-3 hover:text-teal-500 transition-colors">
-                      privacy policy
+                      Privacy
                     </a>
                   </li>
                   <li>
                     <a href="/terms.html" className="flex items-center gap-3 hover:text-teal-500 transition-colors">
-                      terms of service
+                      Terms
                     </a>
                   </li>
                   <li>
                     <a href="/cookie.html" className="flex items-center gap-3 hover:text-teal-500 transition-colors">
-                      cookie policy
+                      Cookie
                     </a>
                   </li>
                 </ul>
               </div>
+
+              {/*Start Resources*/}
               <div>
-                <h3 className="text-xl mb-4 font-bold text-gray-700 sm:text-xl">resources</h3>
+                <h3 className="text-xl mb-4 font-bold text-gray-700 sm:text-xl">Resources</h3>
                 <ul className="space-y-2 text-sm text-gray-600">
-                <li>
-                    <Link to="https://app.poetiq.io/for-care-managers" className="flex items-center gap-3 hover:text-teal-500 transition-colors">
+                  <li>
+                    <Link to="https://app.poetiq.io/elder-care-checklist" className="flex items-center gap-3 hover:text-teal-500 transition-colors">
+                        Elder care document checklist
+                    </Link>
+                  </li>
+                    <li className='w-full'>
+                    <Link to="https://app.poetiq.io/personal-care-agreement" className="flex items-center gap-3 hover:text-teal-500 transition-colors">
+                        Personal care agreement
+                    </Link>
+                  </li>
+                    <li className='w-full'>
+                    <Link to="https://app.poetiq.io/personal-patient-property-record" className="flex items-center gap-3 hover:text-teal-500 transition-colors">
+                        Personal property record
+                    </Link>
+                  </li>    
+                  {/*<li className='w-full'>
+                    <Link to="/login" className="flex items-center gap-3 text-white hover:text-teal-500 transition-colors">
+                        home-care
+                    </Link>
+                  </li>*/}  
+                </ul>
+              </div>
+              {/*End Resources*/}
+
+              {/*Start Use Cases*/}
+              <div>
+                <h3 className="text-xl mb-4 font-bold text-gray-700 sm:text-xl">Use Cases</h3>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li>
+                    <Link to="/for-care-managers" className="flex items-center gap-3 hover:text-teal-500 transition-colors">
                         Poetiq for care managers
                     </Link>
                   </li>
                   <li>
-                    <Link to="https://app.poetiq.io/pricing" className="flex items-center gap-3 hover:text-teal-500 transition-colors">
-                        Poetiq pricing
+                    <Link to="/" className="flex items-center gap-3 hover:text-teal-500 transition-colors">
+                        Poetiq for home care agencies
                     </Link>
                   </li>
-                  <li>
-                    <a href="https://app.poetiq.io/elder-care-checklist" className="flex items-center gap-3 hover:text-teal-500 transition-colors">
-                        elder care document checklist
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://app.poetiq.io/personal-care-agreement" className="flex items-center gap-3 hover:text-teal-500 transition-colors">
-                        personal care agreement
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://app.poetiq.io/personal-patient-property-record" className="flex items-center gap-3 hover:text-teal-500 transition-colors">
-                        personal property record
-                    </a>
-                  </li>
-                  {/*
-                  <li className='w-full'>
-                    <Link to="https://app.poetiq.io/login" className="flex items-center gap-3 text-white hover:text-teal-500 transition-colors">
-                        home-care
+                    <li className='w-full'>
+                    <Link to="/care-manager-video" className="flex items-center gap-3 hover:text-teal-500 transition-colors">
+                        Care managers - watch video
                     </Link>
-                  </li>  
-                */}
+                  </li>
+                    <li className='w-full'>
+                    <Link to="/home-care-agency-video" className="flex items-center gap-3 hover:text-teal-500 transition-colors">
+                        Care Agencies - watch video
+                    </Link>
+                  </li>     
                 </ul>
               </div>
+              {/*End Use Cases*/}
             </div>
           </div>
         </div>
