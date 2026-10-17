@@ -28,7 +28,7 @@ import {
         body: 'Bank statements, spreadsheets and state manuals, often on your own time.',
       },
       after: {
-        headline: 'An asset map in about 20 minutes',
+        headline: 'An asset map in under 2 minutes',
         body: 'Rough numbers in, state rules applied, cliff date and risks out.',
       },
     },
