@@ -432,7 +432,8 @@ function MobileAccordion({ title, items }: {
             {/*<HelpCircle className='w-3.5 h-3.5 mr-2' strokeWidth={2.5}/>*/}
             FAQ
           </Link>
-
+          
+        {/*========== Remove Pricing for now
           <Link
             to="/pricing"
             onClick={() => setIsMobileMenuOpen(false)}
@@ -440,6 +441,8 @@ function MobileAccordion({ title, items }: {
           >
             Pricing
           </Link>
+          ==============================*/}
+
         </div>
 
         <button
@@ -631,6 +634,7 @@ function MobileAccordion({ title, items }: {
         Testimonials
       </Link>
 
+      {/*========== Remove Pricing for now
       <Link
         to="/pricing"
         onClick={() => setIsMobileMenuOpen(false)}
@@ -638,6 +642,7 @@ function MobileAccordion({ title, items }: {
       >
         Pricing
       </Link>
+      */}
 
       {/* Join Waitlist CTA */}
       <div className="pt-4">

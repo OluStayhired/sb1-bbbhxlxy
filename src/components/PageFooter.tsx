@@ -42,11 +42,15 @@ export function PageFooter({ onOpenOnboardingModal }: PageFooterProps) {
                 {/*<h3 className="font-semibold mb-4">Legal</h3>*/}
                 <h3 className="text-xl mb-4 font-bold text-gray-700 sm:text-xl">Company</h3>
                 <ul className="space-y-2 text-sm text-gray-600">
+                  
+                  {/*=========== Remove Pricing for now
                   <li>
                     <Link to="/pricing" className="flex items-center gap-3 hover:text-teal-500 transition-colors">
                         Pricing
                     </Link>
                   </li>
+                */}
+
                   <li>
                     <a href="/privacy.html" className="flex items-center gap-3 hover:text-teal-500 transition-colors">
                       Privacy
